@@ -1,6 +1,16 @@
+# Outputs and logs
+outputs/
+logs/
+*.npz
+*.h5
+*.hdf5
+*.parquet
+
+# Python/cache
 __pycache__/
 *.pyc
-*.ipynb_checkpoints/
+.ipynb_checkpoints/
+
+# Secrets
 .env
-collide-env/
-spanet_output/
+*.token
