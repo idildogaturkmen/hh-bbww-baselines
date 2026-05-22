@@ -11,7 +11,7 @@ data_files = {
 }
 
 MAX_JETS = 12
-N_EVENTS_TO_SCAN = 5000
+N_EVENTS_TO_SCAN = None # Set to None to scan all events in the dataset
 
 def delta_phi(phi1, phi2):
     dphi = phi1 - phi2
