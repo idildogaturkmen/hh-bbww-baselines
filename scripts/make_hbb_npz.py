@@ -99,6 +99,9 @@ n_usable = 0
 for event in islice(ds, N_EVENTS_TO_SCAN):
     n_scanned += 1
 
+    if n_scanned % 1000 == 0:
+        print(f"Scanned {n_scanned}; usable so far: {n_usable}", flush=True)
+
     b_indices = find_hbb_bquarks(event)
     if len(b_indices) != 2:
         continue
