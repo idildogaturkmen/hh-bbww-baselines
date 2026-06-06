@@ -1,0 +1,11 @@
+{
+  "auc_train": 0.7656146138500117,
+  "auc_val": 0.7555099659777366,
+  "auc_test": 0.762273478555116,
+  "model": "GradientBoostingClassifier",
+  "n_estimators": 200,
+  "learning_rate": 0.05,
+  "max_depth": 3,
+  "subsample": 0.8,
+  "random_state": 42
+}

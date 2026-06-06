@@ -1,0 +1,32 @@
+{
+  "ttbar_scanned_events": 12171,
+  "ttbar_lt2jets_rejected": 0,
+  "ttbar_usable_events": 12171,
+  "feature_names": [
+    "n_jets",
+    "leading_jet_pt",
+    "subleading_jet_pt",
+    "highest_btag",
+    "second_highest_btag",
+    "mbb_top2_btag",
+    "deltaR_top2_btag",
+    "HT"
+  ],
+  "random_seed": 42,
+  "hh_train_events": 9736,
+  "hh_val_events": 1217,
+  "hh_test_events": 1218,
+  "ttbar_source_files": [
+    "tt0123j_5f_ckm_LO_MLM_semiLeptonic/tt0123j_5f_ckm_LO_MLM_semiLeptonic-NEVENT10000-RS30000001.parquet",
+    "tt0123j_5f_ckm_LO_MLM_semiLeptonic/tt0123j_5f_ckm_LO_MLM_semiLeptonic-NEVENT10000-RS30000002.parquet"
+  ],
+  "train_hh_events": 9736,
+  "train_ttbar_events": 9736,
+  "train_total_events": 19472,
+  "val_hh_events": 1217,
+  "val_ttbar_events": 1217,
+  "val_total_events": 2434,
+  "test_hh_events": 1218,
+  "test_ttbar_events": 1218,
+  "test_total_events": 2436
+}
