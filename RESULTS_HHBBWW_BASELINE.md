@@ -32,6 +32,13 @@ Mean AK4 jet multiplicity in usable events:
 - Validation: 9.277
 - Test: 9.288
 
+
+## MAX_JETS choice
+
+The fixed-size H -> bb reconstruction inputs use `MAX_JETS = 12`. This is now supported by a raw-event diagnostic scan in `scripts/diagnose_max_jets.py`. Before applying any jet cap, 12,232 scanned HH -> bbWW events have both H -> bb b quarks matched to two distinct AK4 jets. Keeping only the first 12 AK4 jets retains 12,171 of these events, or 99.5%, while limiting the unordered pair search to C(12, 2) = 66 candidate jet pairs per event.
+
+Increasing the cap gives only a small retention gain at higher combinatoric cost: `MAX_JETS = 14` retains 12,221 events, or 99.9%, but requires 91 pairs per event; `MAX_JETS = 20` retains all 12,232 matchable events but requires 190 pairs per event. The current choice is therefore a pragmatic balance between H -> bb truth-pair retention and pair-assignment complexity.
+
 ## Simple H → bb jet-assignment baselines
 
 Test-set accuracies:

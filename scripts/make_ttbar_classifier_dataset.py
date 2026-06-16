@@ -1,16 +1,27 @@
+import argparse
 import json
 import math
 from pathlib import Path
 
 import numpy as np
+import pyarrow.parquet as pq
 from datasets import load_dataset
+from huggingface_hub import hf_hub_download
 
 
+REPO_ID = "fastmachinelearning/collide-1m"
 HH_NPZ_DIR = Path("outputs/hbb_npz")
 OUTDIR = Path("outputs/ttbar_classifier")
+CACHE_DIR = Path("outputs/dataset_cache/collide_1m")
 OUTDIR.mkdir(parents=True, exist_ok=True)
 
 RANDOM_SEED = 42
+MAX_JETS = 12
+
+# Must match scripts/make_hbb_npz.py: HH signal events are padded/truncated to the
+# first MAX_JETS AK4 jets before features are computed.  Apply the same cap to
+# ttbar so jet-count, HT, b-tag, and dijet observables compare the same phase
+# space rather than letting the background use extra jets unavailable to signal.
 
 FEATURE_NAMES = [
     "n_jets",
@@ -31,6 +42,15 @@ TTBAR_FILES = {
         "tt0123j_5f_ckm_LO_MLM_semiLeptonic-NEVENT10000-RS30000002.parquet",
     ]
 }
+
+TTBAR_COLUMNS = [
+    "FullReco_JetAK4_PT",
+    "FullReco_JetAK4_Eta",
+    "FullReco_JetAK4_Phi",
+    "FullReco_JetAK4_Mass",
+    "FullReco_JetAK4_BTag",
+    "FullReco_JetAK4_BTagPhys",
+]
 
 
 def delta_phi(phi1, phi2):
@@ -71,7 +91,7 @@ def invariant_mass(j1, j2):
 
 def event_features_from_jets(jets):
     """
-    jets shape: (n_jets, 6)
+    jets shape: (n_jets, 6), already capped at MAX_JETS
     features: pt, eta, phi, mass, btag, btagPhys
     """
     if len(jets) < 2:
@@ -114,6 +134,12 @@ def load_hh_split(split):
     jets_all = data["jets"]
     mask_all = data["mask"]
 
+    if jets_all.shape[1] != MAX_JETS or mask_all.shape[1] != MAX_JETS:
+        raise ValueError(
+            f"Expected HH inputs padded to MAX_JETS={MAX_JETS}, got "
+            f"jets shape {jets_all.shape} and mask shape {mask_all.shape}."
+        )
+
     xs = []
     for jets, mask in zip(jets_all, mask_all):
         real = mask > 0
@@ -124,19 +150,46 @@ def load_hh_split(split):
     return np.stack(xs)
 
 
-def load_ttbar_features(target_n):
+def iter_streaming_ttbar_events():
     ds = load_dataset(
-        "fastmachinelearning/collide-1m",
+        REPO_ID,
         data_files=TTBAR_FILES,
         split="train",
         streaming=True,
     )
+    yield from ds
+
+
+def iter_downloaded_ttbar_events(cache_dir):
+    cache_dir.mkdir(parents=True, exist_ok=True)
+
+    for filename in TTBAR_FILES["train"]:
+        print(f"Downloading/caching {filename}...", flush=True)
+        local_path = hf_hub_download(
+            repo_id=REPO_ID,
+            repo_type="dataset",
+            filename=filename,
+            cache_dir=str(cache_dir),
+        )
+
+        parquet_file = pq.ParquetFile(local_path)
+        for batch in parquet_file.iter_batches(batch_size=256, columns=TTBAR_COLUMNS):
+            columns = batch.to_pydict()
+            for row in range(batch.num_rows):
+                yield {name: columns[name][row] for name in TTBAR_COLUMNS}
+
+
+def load_ttbar_features(target_n, source="streaming", cache_dir=CACHE_DIR):
+    if source == "download":
+        events = iter_downloaded_ttbar_events(cache_dir)
+    else:
+        events = iter_streaming_ttbar_events()
 
     xs = []
     n_scanned = 0
     n_lt2jets = 0
 
-    for event in ds:
+    for event in events:
         n_scanned += 1
 
         pt = event["FullReco_JetAK4_PT"]
@@ -146,18 +199,19 @@ def load_ttbar_features(target_n):
         btag = event["FullReco_JetAK4_BTag"]
         btag_phys = event["FullReco_JetAK4_BTagPhys"]
 
-        n_jets = len(pt)
-        if n_jets < 2:
+        n_jets_raw = len(pt)
+        if n_jets_raw < 2:
             n_lt2jets += 1
             continue
 
+        n_jets = min(n_jets_raw, MAX_JETS)
         jets = np.zeros((n_jets, 6), dtype=np.float32)
-        jets[:, 0] = pt
-        jets[:, 1] = eta
-        jets[:, 2] = phi
-        jets[:, 3] = mass
-        jets[:, 4] = btag
-        jets[:, 5] = btag_phys
+        jets[:, 0] = pt[:n_jets]
+        jets[:, 1] = eta[:n_jets]
+        jets[:, 2] = phi[:n_jets]
+        jets[:, 3] = mass[:n_jets]
+        jets[:, 4] = btag[:n_jets]
+        jets[:, 5] = btag_phys[:n_jets]
 
         feats = event_features_from_jets(jets)
         if feats is not None:
@@ -219,7 +273,34 @@ def save_split(split, X_hh, X_tt, rng):
     }
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Build balanced HH-vs-semileptonic-ttbar feature files for the BDT "
+            "baseline using the same MAX_JETS cap for signal and background."
+        )
+    )
+    parser.add_argument(
+        "--source",
+        choices=["streaming", "download"],
+        default="streaming",
+        help=(
+            "Use Hugging Face streaming range reads, or download/cache ttbar parquet "
+            "files first and scan from local disk. Download mode is more robust to "
+            "streaming timeout errors."
+        ),
+    )
+    parser.add_argument(
+        "--cache-dir",
+        type=Path,
+        default=CACHE_DIR,
+        help="Cache directory used with --source download.",
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
     rng = np.random.default_rng(RANDOM_SEED)
 
     print("Loading HH features...", flush=True)
@@ -237,7 +318,11 @@ def main():
     print(f"HH counts: {hh_counts}, total={total_hh}", flush=True)
 
     print("Loading semileptonic ttbar features...", flush=True)
-    X_tt_all, ttbar_summary = load_ttbar_features(total_hh)
+    X_tt_all, ttbar_summary = load_ttbar_features(
+        total_hh,
+        source=args.source,
+        cache_dir=args.cache_dir,
+    )
 
     perm = rng.permutation(len(X_tt_all))
     X_tt_all = X_tt_all[perm]
@@ -256,6 +341,9 @@ def main():
         {
             "feature_names": FEATURE_NAMES,
             "random_seed": RANDOM_SEED,
+            "max_jets": MAX_JETS,
+            "ttbar_source_mode": args.source,
+            "ttbar_cache_dir": str(args.cache_dir),
             "hh_train_events": int(n_train),
             "hh_val_events": int(n_val),
             "hh_test_events": int(n_test),

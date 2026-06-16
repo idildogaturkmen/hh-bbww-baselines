@@ -13,6 +13,9 @@
     "HT"
   ],
   "random_seed": 42,
+  "max_jets": 12,
+  "ttbar_source_mode": "download",
+  "ttbar_cache_dir": "outputs/dataset_cache/collide_1m",
   "hh_train_events": 9736,
   "hh_val_events": 1217,
   "hh_test_events": 1218,

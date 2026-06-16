@@ -10,6 +10,13 @@ data_files = {
     ]
 }
 
+# Analysis hyperparameter for the fixed-size jet representation.
+#
+# This should be chosen by balancing H->bb truth-pair retention against the
+# combinatorics of scoring unordered jet pairs. For example, 12 jets gives
+# C(12, 2) = 66 candidate pairs per event; 16 jets gives 120. Use
+# scripts/diagnose_max_jets.py to check whether this cap is adequate before
+# changing it and regenerating all downstream outputs.
 MAX_JETS = 12
 N_EVENTS_TO_SCAN = None # Set to None to scan all events in the dataset
 
