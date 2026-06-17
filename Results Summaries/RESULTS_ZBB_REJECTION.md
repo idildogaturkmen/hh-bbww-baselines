@@ -1,6 +1,6 @@
 # HH -> bbWW vs Z->bb Rejection Baseline
 
-This study responds to Harvey's suggestion to test whether a dedicated rejection of Z -> bb can help. It uses COLLIDE-1M HH -> bbWW as signal and `ZJetsTobb_13TeV-madgraphMLM-pythia8` as background.
+This study tests whether a dedicated rejection of Z -> bb can help. It uses COLLIDE-1M HH -> bbWW as signal and `ZJetsTobb_13TeV-madgraphMLM-pythia8` as background.
 
 ## Command
 
@@ -73,7 +73,7 @@ Features:
 
 The mass-only score is a deliberately simple one-sided test using the top-2-btag dijet mass, with larger values treated as more HH-like. It gives only weak Z rejection. The trained BDTs give much stronger rejection, and the no-mbb BDT is nearly as good as the full BDT. This means the current rejection is driven mostly by global event kinematics such as HT, not by a clean m_bb-only Z veto.
 
-Physically, a dedicated ZJetsTobb rejection can help in this COLLIDE-1M baseline, but the result should be treated as a first stress test rather than a final CMS-style background estimate. ZJetsTobb is inclusive here, the classes are balanced, and the study does not include cross-section weights, full event selections, additional backgrounds, or systematic uncertainties.
+Physically, a dedicated ZJetsTobb rejection can help in this COLLIDE-1M baseline, but the result should be treated as a first stress test. ZJetsTobb is inclusive here, the classes are balanced, and the study does not include cross-section weights, full event selections, additional backgrounds, or systematic uncertainties.
 
 ## Outputs
 
