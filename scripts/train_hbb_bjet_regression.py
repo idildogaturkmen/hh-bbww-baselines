@@ -60,7 +60,47 @@ METHOD_LABELS = {
     "uncorrected": "Uncorrected",
     "binned": "pT/eta binned correction",
     "dnn": "DNN regression",
+    "dnn_calibrated": "DNN regression + validation offset",
 }
+
+PF_DERIVED_FEATURES = [
+    "n_constituents",
+    "log_n_constituents",
+    "sum_constituent_pt",
+    "constituent_pt_sum_over_reco_pt",
+    "leading_constituent_pt_frac",
+    "second_constituent_pt_frac",
+    "third_constituent_pt_frac",
+    "ptD",
+    "jet_width",
+    "mean_constituent_deltaR",
+    "max_constituent_deltaR",
+    "charged_pt_frac",
+    "neutral_pt_frac",
+    "charged_multiplicity",
+    "neutral_multiplicity",
+    "charged_multiplicity_frac",
+    "photon_pt_frac",
+    "electron_pt_frac",
+    "muon_pt_frac",
+    "charged_hadron_pt_frac",
+    "neutral_hadron_pt_frac",
+    "mean_puppi_weight",
+    "min_puppi_weight",
+    "max_puppi_weight",
+    "mean_abs_d0_charged",
+    "max_abs_d0_charged",
+    "mean_abs_dz_charged",
+    "max_abs_dz_charged",
+    "mean_abs_d0sig_charged",
+    "mean_abs_dzsig_charged",
+    "has_pf_muon",
+    "n_pf_muons",
+    "pf_muon_pt_frac",
+    "has_pf_electron",
+    "n_pf_electrons",
+    "pf_electron_pt_frac",
+]
 
 
 def set_seed(seed):
@@ -116,6 +156,27 @@ def clean_features(X):
     Replace NaN and infinite values with zero, and convert to float32.
     '''
     return np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0).astype(np.float32)
+
+
+
+def select_feature_indices(feature_names, feature_set):
+    """
+    Choose which input features are used by the DNN.
+
+    all: use all features.
+    no_pf: remove PF-constituent-derived features, keeping basic jet/event
+           features and tight lepton proximity features.
+    """
+    if feature_set == "all":
+        keep = list(range(len(feature_names)))
+    elif feature_set == "no_pf":
+        remove = set(PF_DERIVED_FEATURES)
+        keep = [i for i, name in enumerate(feature_names) if name not in remove]
+    else:
+        raise ValueError(f"Unknown feature_set: {feature_set}")
+
+    selected_names = [feature_names[i] for i in keep]
+    return np.array(keep, dtype=int), selected_names
 
 
 def fit_standardizer(X_train):
@@ -660,8 +721,11 @@ def make_plots(outdir, plot_dir, history, test_df, pred_dict, event_df, response
     plt.figure(figsize=(7.5, 5.0))
     bins = np.linspace(0.0, 250.0, 80)
     for method, label in METHOD_LABELS.items():
+        col = f"mbb_{method}"
+        if col not in event_df.columns:
+            continue
         plt.hist(
-            event_df[f"mbb_{method}"],
+            event_df[col],
             bins=bins,
             histtype="step",
             linewidth=1.5,
@@ -826,6 +890,17 @@ def parse_args():
     parser.add_argument("--min-delta", type=float, default=1.0e-5)
     parser.add_argument("--print-every", type=int, default=10)
     parser.add_argument("--cpu", action="store_true")
+    parser.add_argument(
+        "--feature-set",
+        choices=["all", "no_pf"],
+        default="all",
+        help="Use all features or remove PF-constituent-derived features.",
+    )
+    parser.add_argument(
+        "--dnn-post-calibrate",
+        action="store_true",
+        help="Add a constant validation-derived offset to DNN predictions before test evaluation.",
+    )
 
     parser.add_argument(
         "--pt-bins",
@@ -860,6 +935,13 @@ def main():
     X_val_raw, y_val, val_df = load_split(args.dataset_dir, "val")
     X_test_raw, y_test, test_df = load_split(args.dataset_dir, "test")
 
+    feature_indices, selected_feature_names = select_feature_indices(feature_names, args.feature_set)
+    X_train_raw = X_train_raw[:, feature_indices]
+    X_val_raw = X_val_raw[:, feature_indices]
+    X_test_raw = X_test_raw[:, feature_indices]
+    feature_names = selected_feature_names
+
+    print(f"Using feature set: {args.feature_set} ({len(feature_names)} features)")
     print(f"train: X={X_train_raw.shape}, y={y_train.shape}")
     print(f"val:   X={X_val_raw.shape}, y={y_val.shape}")
     print(f"test:  X={X_test_raw.shape}, y={y_test.shape}")
@@ -898,6 +980,15 @@ def main():
     pred_dnn_val = maybe_clip(pred_dnn_val, args)
     pred_dnn_test = maybe_clip(pred_dnn_test, args)
 
+    dnn_calib_offset = 0.0
+    pred_dnn_calib_test = None
+    if args.dnn_post_calibrate:
+        # Choose a constant offset so the median validation residual is zero:
+        # median(pred + offset - target) = 0
+        dnn_calib_offset = float(np.median(y_val.astype(np.float64) - pred_dnn_val))
+        pred_dnn_calib_test = maybe_clip(pred_dnn_test + dnn_calib_offset, args)
+        print(f"DNN validation post-calibration offset: {dnn_calib_offset:.6f}", flush=True)
+
     # Predictions for test split
     pred_uncorrected_test = np.zeros(len(test_df), dtype=np.float64)
     pred_dict_test = {
@@ -905,6 +996,8 @@ def main():
         "binned": pred_binned_test,
         "dnn": pred_dnn_test,
     }
+    if args.dnn_post_calibrate:
+        pred_dict_test["dnn_calibrated"] = pred_dnn_calib_test
 
     # Save model/scaler
     torch.save(
@@ -940,8 +1033,10 @@ def main():
     event_df, skipped_events = build_event_mass_table(test_df, pred_dict_test)
     event_df.to_csv(args.outdir / "event_masses_test.csv", index=False)
 
+    methods_to_eval = list(pred_dict_test.keys())
+
     mass_rows = []
-    for method in ["uncorrected", "binned", "dnn"]:
+    for method in methods_to_eval:
         mass_rows.append(mass_summary(event_df, method))
     mass_df = pd.DataFrame(mass_rows)
     mass_df.to_csv(args.outdir / "event_mass_summary_test.csv", index=False)
@@ -952,7 +1047,7 @@ def main():
 
     lower_pt_profile = make_lower_pt_mbb_profile(
         event_df,
-        methods=["uncorrected", "binned", "dnn"],
+        methods=methods_to_eval,
         pt_edges=pt_edges,
     )
     lower_pt_profile.to_csv(args.outdir / "lower_pt_mbb_profile_test.csv", index=False)
@@ -968,6 +1063,10 @@ def main():
     pred_test_df["closure_uncorrected"] = np.exp(pred_uncorrected_test - pred_test_df["target"].to_numpy())
     pred_test_df["closure_binned"] = np.exp(pred_binned_test - pred_test_df["target"].to_numpy())
     pred_test_df["closure_dnn"] = np.exp(pred_dnn_test - pred_test_df["target"].to_numpy())
+    if args.dnn_post_calibrate:
+        pred_test_df["pred_dnn_calibrated"] = pred_dnn_calib_test
+        pred_test_df["corr_dnn_calibrated"] = np.exp(pred_dnn_calib_test)
+        pred_test_df["closure_dnn_calibrated"] = np.exp(pred_dnn_calib_test - pred_test_df["target"].to_numpy())
     pred_test_df.to_csv(args.outdir / "predictions_test.csv", index=False)
 
     # Save history
@@ -979,6 +1078,10 @@ def main():
         "dataset_metadata": dataset_metadata,
         "args": {k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
         "n_features": int(X_train.shape[1]),
+        "feature_set": args.feature_set,
+        "selected_feature_names": feature_names,
+        "dnn_post_calibrate": bool(args.dnn_post_calibrate),
+        "dnn_calib_offset": float(dnn_calib_offset),
         "n_train_jets": int(len(train_df)),
         "n_val_jets": int(len(val_df)),
         "n_test_jets": int(len(test_df)),
