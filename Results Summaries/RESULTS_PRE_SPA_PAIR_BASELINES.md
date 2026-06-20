@@ -19,3 +19,44 @@ Events are split deterministically by event_id into train/validation/test.
 | btag_mass_corrected_tuned | 200 | 1969 | 0.6333 | 0.0103 | 121.70 | 21.08 | 0.59 | 0.7288 | 0.7344 |  |  |
 | bdt_uncorrected_features |  | 1969 | 0.6856 | 0.0108 | 104.59 | 19.45 | 0.46 | 0.7288 | 0.5526 | 0.9329 | 0.6070 |
 | bdt_corrected_features |  | 1969 | 0.6978 | 0.0105 | 119.22 | 21.59 | 0.52 | 0.7461 | 0.7359 | 0.9366 | 0.6157 |
+
+- test_pair_accuracy.png*
+    When the method chooses one jet pair, how often is that pair the true H→bb pair?
+
+    BDT corrected features      best
+    BDT uncorrected features    second
+    btag_mass_corrected         best simple physics baseline
+    btag_mass_uncorrected
+    top2_btag
+    closest_mass_corrected
+    closest_mass_uncorrected
+
+    The corrected-feature BDT is the strongest pre-SPA-Net H→bb pair selector.
+
+- test_mbb_width68.png
+    The methods with the smallest width are the mass-only selectors,
+    but they have low true-pair accuracy.
+
+    Mass-only selectors produce narrow Higgs-like mass distributions, but this does not mean they identify the correct H→bb jets.
+
+- test_selected_mbb_distributions.png*
+    There is a tradeoff between mass sculpting and true-pair assignment accuracy.
+
+- roc_bdt_uncorrected_vs_corrected.png*
+    Can the BDT rank true H→bb pairs above wrong candidate pairs?
+
+    BDT uncorrected AUC = 0.9329
+    BDT corrected AUC   = 0.9366
+    Adding DNN-corrected response features improves the pair-level classifier.
+
+- pr_bdt_uncorrected_vs_corrected.png
+    BDT uncorrected AP = 0.6070
+    BDT corrected AP   = 0.6157
+
+    The corrected-feature BDT is better at retrieving true H→bb pairs in an imbalanced candidate-pair classification problem.
+
+- bdt_score_distribution_corrected.png
+    corrected-feature BDT score for:
+        wrong candidate pairs
+        true H→bb pairs
+    The corrected-feature BDT assigns high scores to true H→bb pairs and low scores to most wrong combinations.
