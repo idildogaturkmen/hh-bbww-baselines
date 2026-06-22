@@ -1,0 +1,12 @@
+[
+  "log_pt",
+  "eta",
+  "sin_phi",
+  "cos_phi",
+  "log_mass",
+  "btag",
+  "btag_phys",
+  "response_corr",
+  "log_corrected_pt",
+  "log_corrected_mass"
+]

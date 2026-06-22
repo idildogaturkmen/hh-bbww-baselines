@@ -1,0 +1,27 @@
+INPUTS:
+  SEQUENTIAL:
+    Jets:
+      log_pt: normalize
+      eta: normalize
+      sin_phi: normalize
+      cos_phi: normalize
+      log_mass: normalize
+      btag: normalize
+      btag_phys: normalize
+      response_corr: normalize
+      log_corrected_pt: normalize
+      log_corrected_mass: normalize
+
+  GLOBAL: {}
+
+EVENT:
+  h:
+    - b1
+    - b2
+
+PERMUTATIONS:
+  h:
+    - [b1, b2]
+
+REGRESSIONS: {}
+CLASSIFICATIONS: {}
