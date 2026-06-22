@@ -14,3 +14,14 @@ __pycache__/
 # Secrets
 .env
 *.token
+# Generated SPA-Net data and training artifacts
+data/spanet_hbb/*.h5
+outputs/spanet_runs/
+logs/
+
+# Large generated Hbb assignment arrays
+outputs/spanet_hbb_assignment/*.h5
+outputs/spanet_hbb_assignment/*.npz
+
+# Large WW diagnostic tables
+outputs/hhbbww_status23_ww_targets/*.csv
