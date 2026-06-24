@@ -89,3 +89,6 @@ Generated plots:
 - outputs/plots/min_bjet_pt_cut_scan/test_mbb_width68_vs_min_bjet_pt_cut.png
 - outputs/plots/min_bjet_pt_cut_scan/test_tail_fraction_vs_min_bjet_pt_cut.png
 - outputs/plots/min_bjet_pt_cut_scan/test_corrected_mbb_by_min_bjet_pt_cut.png
+
+## High-mass tail investigation
+The event scan shows that the high-mass tail is not a single effect. Some events already have very large uncorrected m_bb, often with large ΔR between the matched H→bb jets. These should be inspected for matching or topology issues. A second class of events has moderate/high uncorrected m_bb but receives a large response correction on one jet, especially the softer jet, which pushes corrected m_bb further into the high-mass tail.
