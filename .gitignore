@@ -25,3 +25,9 @@ outputs/spanet_hbb_assignment/*.npz
 
 # Large WW diagnostic tables
 outputs/hhbbww_status23_ww_targets/*.csv
+# Large COLLIDE-1M local datasets
+outputs/collide_selected_backgrounds/
+outputs/dataset_cache/
+
+# Large skim outputs
+outputs/all_background_reco_skim/*.parquet
