@@ -45,11 +45,63 @@ GROUP_PATTERNS = OrderedDict(
 )
 
 
-def guess_group(sample_name: str) -> str:
-    for group, pat in GROUP_PATTERNS.items():
-        if re.search(pat, sample_name, flags=re.IGNORECASE):
-            return group
+def guess_group(sample: str) -> str:
+    s = sample.lower()
+
+    # Signal and other HH modes
+    if sample == "HH_bbWW":
+        return "signal_HH_bbWW"
+    if sample.startswith("HH_"):
+        return "HH_other"
+
+    # Top backgrounds
+    if sample.startswith("tt0123j_"):
+        return "ttbar"
+    if sample in {"ttH_incl", "ttW_incl", "ttZ_incl", "tttt_incl"}:
+        return "ttV_ttH_tttt"
+
+    # Single Higgs
+    if (
+        sample.startswith("ggH")
+        or sample.startswith("VBFH")
+        or sample.startswith("VH")
+    ):
+        return "single_higgs"
+
+    # Vector boson + jets
+    if sample.startswith("WJets"):
+        return "Wjets"
+    if sample.startswith("DYJets") or sample.startswith("ZJets"):
+        return "DY_Zjets"
+
+    # Diboson / triboson
+    if sample.startswith(("WW_", "WZ_", "ZZ_")):
+        return "diboson"
+    if sample.startswith("VVV"):
+        return "triboson"
+
+    # Other backgrounds
+    if sample.startswith("QCD"):
+        return "QCD"
+    if sample.startswith("gamma"):
+        return "gamma"
+    if sample.startswith("minbias"):
+        return "minbias"
+    if sample.startswith("upsilon"):
+        return "upsilon"
+
     return "other"
+
+
+def looks_like_sample_root(path: Path) -> bool:
+    """Return True if path looks like a directory containing COLLIDE sample folders."""
+    expected_samples = [
+        "HH_bbWW",
+        "DYJetsToLL_13TeV-madgraphMLM-pythia8",
+        "WJetsToLNu_13TeV-madgraphMLM-pythia8",
+        "tt0123j_5f_ckm_LO_MLM_semiLeptonic",
+    ]
+    return any((path / name).is_dir() for name in expected_samples)
 
 
 def find_snapshot_root(user_root: str | None) -> Path:
@@ -60,6 +112,8 @@ def find_snapshot_root(user_root: str | None) -> Path:
         return root
 
     candidates = [
+        Path("outputs/collide_selected_backgrounds"),
+        Path("/workspace/hh-spanet-surf/repos/hh-bbww-baselines/outputs/collide_selected_backgrounds"),
         Path("outputs/dataset_cache/collide_1m/datasets--fastmachinelearning--collide-1m/snapshots"),
         Path("/workspace/hh-spanet-surf/repos/hh-bbww-baselines/outputs/dataset_cache/collide_1m/datasets--fastmachinelearning--collide-1m/snapshots"),
         Path("/workspace/hh-spanet-surf/repos/hh-bbww-baselines/outputs/dataset_cache/collide_1m"),
@@ -71,20 +125,27 @@ def find_snapshot_root(user_root: str | None) -> Path:
         if not c.exists():
             continue
 
-        # If this is the HF snapshots directory, descend into the snapshot hash.
-        snapshot_dirs = [p for p in c.iterdir() if p.is_dir() and len(p.name) > 20]
-        if snapshot_dirs:
-            # Prefer the most recently modified snapshot.
-            return sorted(snapshot_dirs, key=lambda p: p.stat().st_mtime, reverse=True)[0].resolve()
-
-        # If this directory already contains sample folders, use it.
-        if any((c / name).exists() for name in ["HH_bbWW", "DYJetsToLL_13TeV-madgraphMLM-pythia8"]):
+        # First check whether this directory itself contains sample folders.
+        # This must happen BEFORE the snapshot-hash logic, because many sample
+        # names are longer than 20 characters.
+        if looks_like_sample_root(c):
             return c.resolve()
+
+        # If this is the HF snapshots directory, descend into the snapshot hash.
+        snapshot_dirs = [
+            p for p in c.iterdir()
+            if p.is_dir() and looks_like_sample_root(p)
+        ]
+        if snapshot_dirs:
+            return sorted(
+                snapshot_dirs,
+                key=lambda p: p.stat().st_mtime,
+                reverse=True,
+            )[0].resolve()
 
     raise FileNotFoundError(
         "Could not auto-locate COLLIDE-1M cache. Pass --root /path/to/snapshot."
     )
-
 
 def parquet_info(path: Path) -> dict:
     try:
@@ -133,7 +194,9 @@ def main() -> None:
 
     print(f"[inventory] Using COLLIDE-1M root: {root}")
 
-    sample_dirs = sorted([p for p in root.iterdir() if p.is_dir()])
+    sample_dirs = sorted(
+        [p for p in root.iterdir() if p.is_dir() and not p.name.startswith(".")]
+    )
     file_rows = []
 
     for sample_dir in sample_dirs:
@@ -202,7 +265,7 @@ def main() -> None:
 
     single_top_candidates = samples[
         samples["sample"].str.contains(
-            r"ST_|single|tW|t-channel|s-channel|tZq|tHq",
+            r"^(ST_|single.?top|tW_|tW-|t-channel|s-channel|tZq|tHq)",
             case=False,
             regex=True,
             na=False,
@@ -227,7 +290,9 @@ def main() -> None:
     print("\n=== Process group summary ===")
     print(groups[["process_group_guess", "n_samples", "n_files", "total_rows"]].to_string(index=False))
 
-    print("\n=== Single-top candidate sample names found locally ===")
+    print("\n=== Note ===")
+    print("No dedicated single-top samples were found locally.")
+    print("ttW_incl is classified as ttV_ttH_tttt, not single-top.")
     if len(single_top_candidates):
         print(single_top_candidates[["sample", "process_group_guess", "n_files", "total_rows"]].to_string(index=False))
     else:
