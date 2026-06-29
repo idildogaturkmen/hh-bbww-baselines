@@ -1,0 +1,2 @@
+sample,process_group,xsec_fb,filter_eff,k_factor,status,source,note
+HH_bbWW,signal,7.79,1.0,1.0,usable_proxy,"ggF HH 31.05 fb * BR(HH->bbWW)=2*0.5824*0.2152","Default assumes HH_bbWW is ggF-only. Alternative ggF+VBF is about 8.22 fb. Confirm with COLLIDE-1M authors."

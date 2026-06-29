@@ -220,11 +220,14 @@ def build_jets(
 
 
 def count_leptons(event: dict, names: dict, lepton_pt_min: float):
-    ele_pts = [float(x) for x in list_or_empty(event, names.get("electron_pt"))]
-    mu_pts = [float(x) for x in list_or_empty(event, names.get("muon_pt"))]
+    ele_pts_all = [float(x) for x in list_or_empty(event, names.get("electron_pt"))]
+    mu_pts_all = [float(x) for x in list_or_empty(event, names.get("muon_pt"))]
 
-    n_ele = sum(pt > lepton_pt_min for pt in ele_pts)
-    n_mu = sum(pt > lepton_pt_min for pt in mu_pts)
+    ele_pts = [pt for pt in ele_pts_all if pt > lepton_pt_min]
+    mu_pts = [pt for pt in mu_pts_all if pt > lepton_pt_min]
+
+    n_ele = len(ele_pts)
+    n_mu = len(mu_pts)
     leading_lepton_pt = max(ele_pts + mu_pts) if (ele_pts or mu_pts) else 0.0
 
     return n_ele, n_mu, leading_lepton_pt
@@ -263,7 +266,9 @@ def infer_branch_names(available: set[str]) -> dict:
         "muon_pt": first_existing_name(
             available,
             [
+                "FullReco_MuonTight_PT",
                 "FullReco_Muon_PT",
+                "MuonTight_PT",
                 "Muon_PT",
             ],
         ),
