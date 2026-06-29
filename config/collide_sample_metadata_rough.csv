@@ -1,0 +1,51 @@
+sample,process_group,xsec_fb,filter_eff,k_factor,status,source,note
+HH_bbWW,signal,7.783147008,1.0,1.0,rough_proxy_signal,ggF HH 31.05 fb * 2*BR(H->bb)*BR(H->WW),Assumes HH_bbWW is ggF-only and inclusive in W decays. Alternative ggF+VBF is slightly higher; confirm with COLLIDE-1M authors.
+HH_4b,HH_other,10.531842048,1.0,1.0,rough_proxy_background,ggF HH 31.05 fb * BR(H->bb)^2,
+HH_bbZZ,HH_other,0.9551715264,1.0,1.0,rough_proxy_background,ggF HH 31.05 fb * 2*BR(H->bb)*BR(H->ZZ),
+HH_bbgammagamma,HH_other,0.08209918079999999,1.0,1.0,rough_proxy_background,ggF HH 31.05 fb * 2*BR(H->bb)*BR(H->gammagamma),
+HH_bbtautau,HH_other,2.2683967488,1.0,1.0,rough_proxy_background,ggF HH 31.05 fb * 2*BR(H->bb)*BR(H->tautau),
+WW_hadronic,diboson,53938.56314700001,1.0,1.0,rough_proxy_background,WW inclusive rough proxy * W_had^2,
+WW_semileptonic,diboson,52154.213705999995,1.0,1.0,rough_proxy_background,WW inclusive rough proxy * 2*W_had*W_lep,
+WW_leptonic,diboson,12607.223146999997,1.0,1.0,rough_proxy_background,WW inclusive rough proxy * W_lep^2,
+WZ_hadronic,diboson,23845.923486,1.0,1.0,rough_proxy_background,WZ inclusive * W_had*Z_had,
+WZ_semileptonic,diboson,21792.073028,1.0,1.0,rough_proxy_background,WZ inclusive rough split,
+WZ_leptonic,diboson,4962.003485999999,1.0,1.0,rough_proxy_background,WZ inclusive rough split,
+ZZ_hadronic,diboson,8406.341932000001,1.0,1.0,rough_proxy_background,ZZ inclusive * Z_had^2,
+ZZ_semileptonic,diboson,7236.3561359999985,1.0,1.0,rough_proxy_background,ZZ inclusive rough split,
+ZZ_leptonic,diboson,1557.3019319999996,1.0,1.0,rough_proxy_background,ZZ inclusive rough split,
+WJetsToLNu_13TeV-madgraphMLM-pythia8,wjets,61458858.19521178,1.0,1.0,rough_proxy_background,"Inclusive W proxy scaled to W->e,mu,tau",Large-weight low-local-stat sample; use with caution.
+WJetsToQQ_13TeV-madgraphMLM-pythia8,wjets,127123093.92265195,1.0,1.0,rough_proxy_background,Inclusive W proxy scaled to W->qq,Large-weight low-local-stat sample; use with caution.
+DYJetsToLL_13TeV-madgraphMLM-pythia8,dy_zjets,5857159.833630422,1.0,1.0,rough_proxy_background,"Inclusive Z proxy scaled to charged leptons e,mu,tau",
+ZJetsToQQ_13TeV-madgraphMLM-pythia8,dy_zjets,40541984.55139632,1.0,1.0,rough_proxy_background,Inclusive Z proxy scaled to hadrons,
+ZJetsTobb_13TeV-madgraphMLM-pythia8,dy_zjets,8768342.245989304,1.0,1.0,rough_proxy_background,Inclusive Z proxy scaled to Z->bb,
+ZJetsTocc_13TeV-madgraphMLM-pythia8,dy_zjets,6976399.286987522,1.0,1.0,rough_proxy_background,Inclusive Z proxy scaled to Z->cc,
+ZJetsTovv_13TeV-madgraphMLM-pythia8,dy_zjets,11598336.304218657,1.0,1.0,rough_proxy_background,Inclusive Z proxy scaled to invisible Z decays,
+tt0123j_5f_ckm_LO_MLM_hadronic,ttbar,377978.91175800003,1.0,1.0,rough_proxy_background,ttbar inclusive * W_had^2,
+tt0123j_5f_ckm_LO_MLM_semiLeptonic,ttbar,365474.93648399995,1.0,1.0,rough_proxy_background,ttbar inclusive * 2*W_had*W_lep,
+tt0123j_5f_ckm_LO_MLM_leptonic,ttbar,88346.15175799998,1.0,1.0,rough_proxy_background,ttbar inclusive * W_lep^2,
+ttH_incl,ttV_ttH_tttt,507.1,1.0,1.0,rough_proxy_background,ttH inclusive rough 13 TeV proxy,
+ttW_incl,ttV_ttH_tttt,868.0,1.0,1.0,rough_proxy_background,CMS ttW measured full-phase-space proxy,
+ttZ_incl,ttV_ttH_tttt,990.0,1.0,1.0,rough_proxy_background,CMS ttZ measured full-phase-space proxy,
+tttt_incl,ttV_ttH_tttt,17.7,1.0,1.0,rough_proxy_background,CMS tttt measured full-phase-space proxy,
+ggHWW,single_higgs,10454.416,1.0,1.0,rough_proxy_background,ggH inclusive * BR(H->WW),
+VBFHWW,single_higgs,813.8864,1.0,1.0,rough_proxy_background,VBFH inclusive * BR(H->WW),
+ggHZZ,single_higgs,1282.9977999999999,1.0,1.0,rough_proxy_background,ggH inclusive * BR(H->ZZ),
+VBFHZZ,single_higgs,99.88262,1.0,1.0,rough_proxy_background,VBFH inclusive * BR(H->ZZ),
+ggHbb,single_higgs,28292.992000000002,1.0,1.0,rough_proxy_background,ggH inclusive * BR(H->bb),
+VBFHbb,single_higgs,2202.6368,1.0,1.0,rough_proxy_background,VBFH inclusive * BR(H->bb),
+ggHcc,single_higgs,1403.962,1.0,1.0,rough_proxy_background,ggH inclusive * BR(H->cc),
+VBFHcc,single_higgs,109.29979999999999,1.0,1.0,rough_proxy_background,VBFH inclusive * BR(H->cc),
+ggHgammagamma,single_higgs,110.27659999999999,1.0,1.0,rough_proxy_background,ggH inclusive * BR(H->gammagamma),
+VBFHgammagamma,single_higgs,8.585139999999999,1.0,1.0,rough_proxy_background,VBFH inclusive * BR(H->gammagamma),
+ggHgluglu,single_higgs,3973.844,1.0,1.0,rough_proxy_background,ggH inclusive * BR(H->gluglu),
+VBFHgluglu,single_higgs,309.3676,1.0,1.0,rough_proxy_background,VBFH inclusive * BR(H->gluglu),
+ggHtautau,single_higgs,3046.9375999999997,1.0,1.0,rough_proxy_background,ggH inclusive * BR(H->tautau),
+VBFHtautau,single_higgs,237.20704,1.0,1.0,rough_proxy_background,VBFH inclusive * BR(H->tautau),
+VH_incl,single_higgs,2257.0,1.0,1.0,rough_proxy_background,"WH+ZH inclusive rough proxy, H decays inclusive",
+VVV_incl,triboson,600.0,1.0,1.0,rough_proxy_background,Very rough inclusive VVV proxy,Order-of-magnitude proxy only.
+QCD_HT50toInf,qcd,,,,excluded_pending_metadata,No reliable rough cross section/filter-efficiency mapping yet,Excluded from rough weighted score study until COLLIDE-1M metadata/filter definitions are clarified.
+QCD_HT50tobb,qcd,,,,excluded_pending_metadata,No reliable rough cross section/filter-efficiency mapping yet,Excluded from rough weighted score study until COLLIDE-1M metadata/filter definitions are clarified.
+gamma,gamma,,,,excluded_pending_metadata,No reliable rough cross section/filter-efficiency mapping yet,Excluded from rough weighted score study until COLLIDE-1M metadata/filter definitions are clarified.
+gamma_V,gamma,,,,excluded_pending_metadata,No reliable rough cross section/filter-efficiency mapping yet,Excluded from rough weighted score study until COLLIDE-1M metadata/filter definitions are clarified.
+minbias,minbias,,,,excluded_pending_metadata,No reliable rough cross section/filter-efficiency mapping yet,Excluded from rough weighted score study until COLLIDE-1M metadata/filter definitions are clarified.
+upsilon_to_leptons,upsilon,,,,excluded_pending_metadata,No reliable rough cross section/filter-efficiency mapping yet,Excluded from rough weighted score study until COLLIDE-1M metadata/filter definitions are clarified.
