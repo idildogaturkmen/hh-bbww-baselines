@@ -297,3 +297,30 @@ This is ready for a controlled weighted tabular DNN comparison against the corre
 3. Train a weighted tabular DNN on the corrected recoMET inputs to test whether a DNN improves over the BDT with the same features, weights, and splits.
 4. If the tabular DNN does not improve clearly, focus on normalization/control regions rather than a more complex architecture.
 5. If Harvey specifically wants a CMS-like DNN, move toward a multiclass DNN and later an LBN-style four-vector input, but keep the corrected recoMET BDT as the baseline reference.
+## Tabular DNN comparison
+
+A controlled binary tabular DNN comparison was run using the corrected recoMET simple-topology input:
+
+- Input: `outputs/dnn_inputs_lepemu_rough_topology_recoMET/tabular_dnn_inputs.npz`
+- Features: 57 standardized event-level features
+- Labels: binary HH_bbWW signal vs all backgrounds
+- Training weights: class-balanced
+- Evaluation weights: rough physics weights
+
+Three binary tabular DNN variants were tested:
+
+| Model | Test weighted AUC | Stable threshold | Test S/B | Test Z | Test bkg Neff | Interpretation |
+|---|---:|---:|---:|---:|---:|---|
+| default tabular DNN | 0.609 | 0.395 | 3.47e-6 | 0.00583 | 37.7 | worse than BDT |
+| smaller regularized DNN | 0.583 | 0.060 | 3.18e-6 | 0.00671 | 70.1 | stable but low-purity |
+| almost-linear DNN | 0.621 | 0.365 | 3.20e-6 | 0.00665 | 73.7 | stable but low-purity |
+
+The corrected recoMET simple-topology BDT remains stronger:
+
+| BDT reference point | Test S/B | Test Z | Test bkg Neff |
+|---|---:|---:|---:|
+| high-purity BDT region, threshold 0.685 | 4.66e-5 | 0.00646 | 26.0 |
+| broad stable BDT region, threshold 0.275 | 3.49e-6 | 0.00676 | 58.7 |
+
+Conclusion: the tabular DNN does not improve over the corrected recoMET BDT when using the same engineered event-level features. The DNN only reproduces broad low-purity selections and does not recover the BDT's high-purity category. A more CMS-like DNN would need a different representation, such as multiclass training and eventually four-vector/LBN-style inputs, rather than just a dense network on the same variables.
+
