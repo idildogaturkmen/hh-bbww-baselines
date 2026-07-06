@@ -1,0 +1,4 @@
+sample,process,n_events_target,cross_section_pb,k_factor,filter_efficiency,generator,shower,detector_card,notes
+HH4b,pp>hh>bbbb,,,,MadGraph5_aMC@NLO,Pythia8,delphes_card_CMS.tcl,signal pilot
+ttbar,pp>ttbar,,,,MadGraph5_aMC@NLO,Pythia8,delphes_card_CMS.tcl,background pilot
+bbbb,pp>bbbb,,,,MadGraph5_aMC@NLO,Pythia8,delphes_card_CMS.tcl,QCD heavy-flavor background pilot
