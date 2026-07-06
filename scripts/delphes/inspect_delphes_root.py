@@ -2,6 +2,9 @@
 import argparse
 import uproot
 
+def has_prefix(tree, prefix):
+    return any(name == prefix or name.startswith(prefix + "/") or name.startswith(prefix + ".") for name in tree.keys())
+
 def main():
     parser = argparse.ArgumentParser(description="Inspect a Delphes ROOT file.")
     parser.add_argument("root_file")
@@ -21,14 +24,14 @@ def main():
         print(f"\nTREE: Delphes")
         print(f"ENTRIES: {tree.num_entries}")
 
-        print("\nBRANCHES:")
-        for name in tree.keys():
-            print(f"  {name}")
+        print("\nOBJECT CHECK:")
+        for prefix in ["Event", "Particle", "Jet", "GenJet", "MissingET", "GenMissingET", "Electron", "Muon"]:
+            print(f"  {prefix}: {'OK' if has_prefix(tree, prefix) else 'MISSING'}")
 
-        print("\nREQUIRED PREFIX CHECK:")
-        for prefix in ["Event", "Jet", "GenParticle", "MissingET", "Electron", "Muon"]:
-            ok = any(name == prefix or name.startswith(prefix + ".") for name in tree.keys())
-            print(f"  {prefix}: {'OK' if ok else 'MISSING'}")
+        print("\nSIZE BRANCHES:")
+        for name in tree.keys():
+            if name.endswith("_size"):
+                print(f"  {name}")
 
 if __name__ == "__main__":
     main()
