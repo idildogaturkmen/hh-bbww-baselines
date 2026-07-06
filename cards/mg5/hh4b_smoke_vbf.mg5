@@ -1,0 +1,14 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+generate p p > h h j j QCD=0, (h > b b~), (h > b b~)
+output /uscms_data/d3/iturkmen/hh4b_delphes/mg5/HH4b_smoke_vbf -f
+launch -f
+set nevents 50
+set ebeam1 6500
+set ebeam2 6500
+set iseed 12345
+set cut_decays F
+set ptj 20
+set etaj 5
+set drjj 0.4

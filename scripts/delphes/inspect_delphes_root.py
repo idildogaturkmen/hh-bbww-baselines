@@ -9,7 +9,8 @@ def main():
 
     with uproot.open(args.root_file) as f:
         print(f"FILE: {args.root_file}")
-        print("KEYS:")
+
+        print("\nKEYS:")
         for key in f.keys():
             print(f"  {key}")
 
@@ -17,12 +18,14 @@ def main():
             raise SystemExit("ERROR: no Delphes tree found")
 
         tree = f["Delphes"]
-        print(f"\nENTRIES: {tree.num_entries}")
+        print(f"\nTREE: Delphes")
+        print(f"ENTRIES: {tree.num_entries}")
+
         print("\nBRANCHES:")
         for name in tree.keys():
             print(f"  {name}")
 
-        print("\nCHECKS:")
+        print("\nREQUIRED PREFIX CHECK:")
         for prefix in ["Event", "Jet", "GenParticle", "MissingET", "Electron", "Muon"]:
             ok = any(name == prefix or name.startswith(prefix + ".") for name in tree.keys())
             print(f"  {prefix}: {'OK' if ok else 'MISSING'}")
