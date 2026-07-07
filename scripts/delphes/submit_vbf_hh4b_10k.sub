@@ -11,5 +11,6 @@ request_memory = 4GB
 request_disk = 8GB
 
 getenv = True
+use_x509userproxy = False
 
 queue 10
