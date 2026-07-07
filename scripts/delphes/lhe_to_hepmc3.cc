@@ -9,18 +9,25 @@
 
 int main(int argc, char* argv[]) {
   if (argc < 4) {
-    std::cerr << "Usage: " << argv[0] << " input.lhe output.hepmc nEvents\n";
+    std::cerr << "Usage: " << argv[0]
+              << " input.lhe output.hepmc nEvents [--force-hbb]\n";
     return 1;
   }
 
   const std::string lhe_file = argv[1];
   const std::string hepmc_file = argv[2];
   const int n_events = std::atoi(argv[3]);
+  const bool force_hbb = argc >= 5 && std::string(argv[4]) == "--force-hbb";
 
   Pythia8::Pythia pythia;
 
   pythia.readString("Beams:frameType = 4");
   pythia.readString("Beams:LHEF = " + lhe_file);
+
+  if (force_hbb) {
+    pythia.readString("25:onMode = off");
+    pythia.readString("25:onIfMatch = 5 -5");
+  }
 
   pythia.readString("PartonLevel:all = on");
   pythia.readString("PartonLevel:ISR = on");
