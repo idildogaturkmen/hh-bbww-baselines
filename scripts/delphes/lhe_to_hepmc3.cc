@@ -30,9 +30,9 @@ int main(int argc, char* argv[]) {
   pythia.readString("Check:event = off");
 
   pythia.readString("Next:numberCount = 10");
-  pythia.readString("Next:numberShowInfo = 1");
-  pythia.readString("Next:numberShowProcess = 1");
-  pythia.readString("Next:numberShowEvent = 1");
+  pythia.readString("Next:numberShowInfo = 0");
+  pythia.readString("Next:numberShowProcess = 0");
+  pythia.readString("Next:numberShowEvent = 0");
 
   if (!pythia.init()) {
     std::cerr << "ERROR: Pythia initialization failed\n";
