@@ -1,0 +1,16 @@
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/delphes/run_vbf_hh4b_shard.sh
+arguments = $(Process) 1000
+
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/vbf_hh4b_1k_test_$(Cluster)_$(Process).out
+error  = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/vbf_hh4b_1k_test_$(Cluster)_$(Process).err
+log    = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/vbf_hh4b_1k_test_$(Cluster).log
+
+request_cpus = 1
+request_memory = 4GB
+request_disk = 8GB
+
+getenv = True
+use_x509userproxy = False
+
+queue 1

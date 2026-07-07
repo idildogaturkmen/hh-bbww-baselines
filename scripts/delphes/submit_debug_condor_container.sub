@@ -1,0 +1,15 @@
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/delphes/debug_condor_container.sh
+
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/debug_container_$(Cluster)_$(Process).out
+error  = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/debug_container_$(Cluster)_$(Process).err
+log    = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/debug_container_$(Cluster).log
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+getenv = True
+use_x509userproxy = False
+
+queue 1
