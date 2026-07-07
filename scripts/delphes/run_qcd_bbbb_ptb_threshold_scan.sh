@@ -97,14 +97,14 @@ PY
   echo "Finished and cleaned bulky files for $TAG"
 done
 
-python3 - <<'PY'
+QCD_SCAN_N_EVENTS="$N_EVENTS" python3 - <<'PY'
 from pathlib import Path
 import os
 import re
 import pandas as pd
 
 store = Path(os.environ["HH4B_STORE"])
-n_events = int("${N_EVENTS}")
+n_events = int(os.environ.get("QCD_SCAN_N_EVENTS", "2000"))
 
 rows = []
 for cand_path in sorted((store / "parquet").glob(f"qcd_bbbb_ptb*_{n_events}_hh4b_candidates.parquet")):
