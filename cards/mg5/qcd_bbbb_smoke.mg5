@@ -1,0 +1,4 @@
+import model sm
+define p = g u c d s u~ c~ d~ s~
+generate p p > b b~ b b~
+output /uscms_data/d3/iturkmen/hh4b_delphes/mg5/QCD_bbbb_smoke -f
