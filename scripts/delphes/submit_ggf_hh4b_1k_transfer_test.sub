@@ -1,0 +1,22 @@
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/delphes/run_ggf_hh4b_shard_transfer.sh
+arguments = $(Process) 1000 ggf_hh4b_1k_transfer_test $(Cluster) hh4b_ggf_heft_condor_inputs.tar.gz
+
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/ggf_hh4b_1k_transfer_test_$(Cluster)_$(Process).out
+error  = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/ggf_hh4b_1k_transfer_test_$(Cluster)_$(Process).err
+log    = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/ggf_hh4b_1k_transfer_test_$(Cluster).log
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = /uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ggf_heft_condor_inputs.tar.gz
+transfer_output_files = shard_output.tar.gz
+transfer_output_remaps = "shard_output.tar.gz = /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/ggf_hh4b_1k_transfer_test_$(Cluster)_$(Process).tar.gz"
+
+request_cpus = 1
+request_memory = 4GB
+request_disk = 8GB
+
+getenv = True
+use_x509userproxy = False
+
+queue 1
