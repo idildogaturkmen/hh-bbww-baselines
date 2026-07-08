@@ -1,0 +1,3 @@
+campaign,shard,tag,run_name,seed,events_per_shard,event_parquet,candidate_parquet,root_kept,hepmc_deleted,lhe_deleted
+ttbb_10k,000,ttbb_10k_shard000,run_ttbb_10k_000,106000,5000,/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbb_10k_shard000_event_summary.parquet,/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbb_10k_shard000_hh4b_candidates.parquet,yes,yes,yes
+ttbb_10k,001,ttbb_10k_shard001,run_ttbb_10k_001,106001,5000,/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbb_10k_shard001_event_summary.parquet,/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbb_10k_shard001_hh4b_candidates.parquet,no,yes,yes
