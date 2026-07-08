@@ -13,7 +13,7 @@ samples = [
     ("qcd_bbbb_presel_100k", "QCD bbbb 100k"),
     ("zbbbb_presel_100k", "Zbbbb 100k"),
     ("ttbar_100k", "inclusive ttbar 100k"),
-    ("ttbb_10k", "ttbb 10k diagnostic"),
+    ("ttbb_50k", "ttbb 50k diagnostic"),
 ]
 
 frames = []
@@ -58,8 +58,8 @@ summary = pd.DataFrame(summary_rows)
 
 table_dir = Path("outputs/tables/hh4b_background_campaigns_2026_07_08")
 table_dir.mkdir(parents=True, exist_ok=True)
-summary.to_csv(table_dir / "background_comparison_with_ttbb10k.csv", index=False)
-(table_dir / "background_comparison_with_ttbb10k.md").write_text(summary.to_markdown(index=False) + "\n")
+summary.to_csv(table_dir / "background_comparison_with_ttbb50k.csv", index=False)
+(table_dir / "background_comparison_with_ttbb50k.md").write_text(summary.to_markdown(index=False) + "\n")
 
 print(summary.to_string(index=False))
 
