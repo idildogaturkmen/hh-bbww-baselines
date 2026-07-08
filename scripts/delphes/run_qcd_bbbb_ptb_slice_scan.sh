@@ -112,6 +112,11 @@ n_events = int(os.environ["QCD_SLICE_N_EVENTS"])
 
 rows = []
 for event_path in sorted((store / "parquet").glob(f"qcd_bbbb_ptb*_{n_events}_event_summary.parquet")):
+    stem = event_path.name.replace("_event_summary.parquet", "")
+    # Keep only the bounded slice samples from this script.
+    # Exclude earlier overlapping threshold scan samples like qcd_bbbb_ptb25_2000.
+    if not (("to" in stem) or ("plus" in stem)):
+        continue
     tag = event_path.name.replace("_event_summary.parquet", "")
     cand_path = store / "parquet" / f"{tag}_hh4b_candidates.parquet"
     if not cand_path.exists():
