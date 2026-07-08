@@ -13,9 +13,9 @@ data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/qcd_bbbb_smoke.mg5,0.
 data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/ttbar_smoke.mg5,0.000137,.mg5
 data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/zbb_smoke.mg5,0.000142,.mg5
 data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/zbbbb_presel_smoke.mg5,0.000151,.mg5
-data_release/hh4b_delphes_analysis_v0_2026_07_08/checksums.sha256,0.02737,.sha256
-data_release/hh4b_delphes_analysis_v0_2026_07_08/dataset_inventory.csv,0.018123,.csv
-data_release/hh4b_delphes_analysis_v0_2026_07_08/dataset_inventory.md,0.0231,.md
+data_release/hh4b_delphes_analysis_v0_2026_07_08/checksums.sha256,0.028142,.sha256
+data_release/hh4b_delphes_analysis_v0_2026_07_08/dataset_inventory.csv,0.019854,.csv
+data_release/hh4b_delphes_analysis_v0_2026_07_08/dataset_inventory.md,0.025575,.md
 data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_bbbb_iht_slice_scan_10000.csv,0.001023,.csv
 data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_bbbb_iht_slice_scan_10000_timing.log,0.36175,.log
 data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_bbbb_iht_slice_scan_2000.csv,0.001008,.csv
@@ -31,6 +31,9 @@ data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbar_100k_summary.txt
 data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbb_10k_manifest.csv,0.000605,.csv
 data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbb_10k_storage_safe_timing.log,0.12729,.log
 data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbb_10k_summary.txt,0.000623,.txt
+data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbb_50k_manifest.csv,0.002549,.csv
+data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbb_50k_storage_safe_timing.log,0.631601,.log
+data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbb_50k_summary.txt,0.000619,.txt
 data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/zbbbb_presel_100k_manifest.csv,0.003009,.csv
 data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/zbbbb_presel_100k_summary.txt,0.000653,.txt
 data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/HH4b_ggf_hh4b_10k_transfer_cluster_84730223_merged_10k_event_summary.parquet,0.194592,.parquet
@@ -141,6 +144,8 @@ data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbar_10k_event_summary
 data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbar_10k_hh4b_candidates.parquet,0.013438,.parquet
 data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbb_10k_merged_event_summary.parquet,0.228275,.parquet
 data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbb_10k_merged_hh4b_candidates.parquet,0.142009,.parquet
+data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbb_50k_merged_event_summary.parquet,0.971176,.parquet
+data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbb_50k_merged_hh4b_candidates.parquet,0.662488,.parquet
 data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/zbbbb_presel_100k_merged_event_summary.parquet,1.959588,.parquet
 data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/zbbbb_presel_100k_merged_hh4b_candidates.parquet,0.362505,.parquet
 data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/zbbbb_presel_10k_event_summary.parquet,0.245051,.parquet
