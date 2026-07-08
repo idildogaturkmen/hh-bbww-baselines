@@ -1,7 +1,9 @@
 | path                                                                                                                                      |   size_MB | suffix   |
 |:------------------------------------------------------------------------------------------------------------------------------------------|----------:|:---------|
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/SIMULATION_SETUP.md                                                                      |  0.001595 | .md      |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/delphes/README.md                                                                  |  0.000398 | .md      |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/delphes/delphes_card_CMS.tcl                                                       |  0.022017 | .tcl     |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/delphes/delphes_card_CMS_lpc.tcl                                                   |  0.022017 | .tcl     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/hh4b_ggf_heft_output_only.mg5                                                  |  0.000187 | .mg5     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/hh4b_ggf_heft_smoke.mg5                                                        |  0.000193 | .mg5     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/hh4b_ggf_loop_sm_stable_hh_smoke.mg5                                           |  0.000101 | .mg5     |
@@ -12,7 +14,9 @@
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/ttbar_smoke.mg5                                                                |  0.000137 | .mg5     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/zbb_smoke.mg5                                                                  |  0.000142 | .mg5     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/mg5/zbbbb_presel_smoke.mg5                                                         |  0.000151 | .mg5     |
-| data_release/hh4b_delphes_analysis_v0_2026_07_08/checksums.sha256                                                                         |  0.023545 | .sha256  |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/checksums.sha256                                                                         |  0.024893 | .sha256  |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/dataset_inventory.csv                                                                    |  0.017237 | .csv     |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/dataset_inventory.md                                                                     |  0.021615 | .md      |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_bbbb_iht_slice_scan_2000.csv                                                |  0.001008 | .csv     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_bbbb_presel_100k_manifest.csv                                               |  0.003159 | .csv     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_bbbb_presel_100k_summary.txt                                                |  0.000661 | .txt     |
@@ -20,6 +24,9 @@
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_bbbb_ptb_threshold_scan_2000.csv                                            |  0.000896 | .csv     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_iht_closure_metrics_2026_07_08.csv                                          |  0.000663 | .csv     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/qcd_iht_importance_sampling_summary_2026_07_08.csv                              |  0.0008   | .csv     |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbar_100k_manifest.csv                                                         |  0.002659 | .csv     |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbar_100k_storage_safe_timing.log                                              |  0.883606 | .log     |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbar_100k_summary.txt                                                          |  0.000631 | .txt     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/zbbbb_presel_100k_manifest.csv                                                  |  0.003009 | .csv     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/zbbbb_presel_100k_summary.txt                                                   |  0.000653 | .txt     |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/HH4b_ggf_hh4b_10k_transfer_cluster_84730223_merged_10k_event_summary.parquet     |  0.194592 | .parquet |
@@ -116,6 +123,8 @@
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/qcd_bbbb_ptb80_2000_hh4b_candidates.parquet                                      |  0.055633 | .parquet |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/qcd_bbbb_ptb80plus_2000_event_summary.parquet                                    |  0.057623 | .parquet |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/qcd_bbbb_ptb80plus_2000_hh4b_candidates.parquet                                  |  0.056906 | .parquet |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbar_100k_merged_event_summary.parquet                                          |  2.01203  | .parquet |
+| data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbar_100k_merged_hh4b_candidates.parquet                                        |  0.047243 | .parquet |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbar_10k_event_summary.parquet                                                  |  0.249645 | .parquet |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/ttbar_10k_hh4b_candidates.parquet                                                |  0.013438 | .parquet |
 | data_release/hh4b_delphes_analysis_v0_2026_07_08/parquet/zbbbb_presel_100k_merged_event_summary.parquet                                   |  1.95959  | .parquet |
