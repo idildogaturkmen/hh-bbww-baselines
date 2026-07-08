@@ -1,0 +1,16 @@
+campaign: zbbbb_presel_100k
+shards: 10
+events_per_shard: 10000
+total generated events: 100000
+candidate rows: 3469
+events with >=4 selected jets: 32772
+events with >=4 selected b-tagged jets: 3469
+median xsec pb: 6.912991523742676
+median mbb1: 128.58876831960993
+median mbb2: 108.87989811132077
+median avg_mbb: 121.39141657740652
+median delta_mbb: 37.432069370342674
+median mhh: 343.5137704763321
+median n_selected_bjets: 4.0
+merged event summary: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/zbbbb_presel_100k_merged_event_summary.parquet
+merged candidates: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/zbbbb_presel_100k_merged_hh4b_candidates.parquet

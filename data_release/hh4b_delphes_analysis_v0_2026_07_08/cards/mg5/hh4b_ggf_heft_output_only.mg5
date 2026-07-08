@@ -1,0 +1,4 @@
+import model /uscms_data/d3/iturkmen/hh4b_delphes/mg5_models/heft
+define p = g
+generate p p > h h, (h > b b~), (h > b b~)
+output /uscms_data/d3/iturkmen/hh4b_delphes/mg5/HH4b_ggf_heft -f
