@@ -9,7 +9,7 @@ outdir.mkdir(parents=True, exist_ok=True)
 
 samples = [
     ("ttbar_100k", "inclusive ttbar"),
-    ("ttbb_10k", "ttbb enriched diagnostic"),
+    ("ttbb_50k", "ttbb enriched diagnostic"),
 ]
 
 rows = []
