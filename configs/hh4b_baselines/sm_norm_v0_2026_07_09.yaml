@@ -1,0 +1,65 @@
+analysis_name: sm_norm_v0_2026_07_09
+description: >
+  Provisional SM-normalized HH4b Delphes benchmark.
+  Signal uses external SM HH xsec times BR(H->bb)^2.
+  Backgrounds use MG5 generator cross sections.
+  QCD is modeled with explicit inclusive-HT slices.
+
+luminosity_fb: 450.0
+
+signal_normalization:
+  ggF_HH4b_fb: 10.55
+  VBF_HH4b_fb: 0.587
+  status: provisional_pending_harvey_confirmation
+
+samples:
+  signal:
+    ggF:
+      n_generated: 10000
+      parquet: HH4b_ggf_hh4b_10k_transfer_cluster_84730223_merged_10k_hh4b_candidates.parquet
+    VBF:
+      n_generated: 10000
+      parquet: HH4b_vbf_hh4b_10k_transfer_cluster_3473183_merged_10k_hh4b_candidates.parquet
+
+  backgrounds:
+    qcd_bbbb_iht100to200:
+      n_generated: 20000
+      source: qcd_bbbb_iht_slice_scan_20000.csv
+    qcd_bbbb_iht200to400:
+      n_generated: 20000
+      source: qcd_bbbb_iht_slice_scan_20000.csv
+      note: extra100k production started separately and must be combined without double-counting
+    qcd_bbbb_iht400to600:
+      n_generated: 20000
+      source: qcd_bbbb_iht_slice_scan_20000.csv
+    qcd_bbbb_iht600plus:
+      n_generated: 20000
+      source: qcd_bbbb_iht_slice_scan_20000.csv
+    ttbar:
+      n_generated: 200000
+      xsec_pb: 512.2746276855469
+    Zbbbb:
+      n_generated: 100000
+      xsec_pb: 6.912992
+
+baseline_features_v1:
+  - mbb1
+  - mbb2
+  - avg_mbb
+  - delta_mbb
+  - mhh
+  - drbb1
+  - drbb2
+  - j1_pt
+  - j2_pt
+  - j3_pt
+  - j4_pt
+  - r_hh
+  - pt_sum4
+  - pt_asym_12
+  - pt_asym_34
+
+recommended_working_region:
+  bdt_threshold: 0.84
+  reason: >
+    Best stable multiseed compromise. Higher thresholds have stronger S/B but are MC-stat limited.
