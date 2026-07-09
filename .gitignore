@@ -31,3 +31,11 @@ outputs/dataset_cache/
 
 # Large skim outputs
 outputs/all_background_reco_skim/*.parquet
+
+# Auto-generated MG5/ALOHA/parser cache files
+py.py
+oy.py
+parsetab.py
+parser.out
+__pycache__/
+*.pyc
