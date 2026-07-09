@@ -1,0 +1,6 @@
+sample,xsec_pb,xsec_fb,process,banner
+check_vbf_hjj_stable_sm,3.3321515,3332.1515,generate p p > h j j QCD=0,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_vbf_decay_diagnostics/check_vbf_hjj_stable_sm/Events/run_01/run_01_tag_1_banner.txt
+check_vbf_hjj_bb_sm,2.7476214999999997,2747.6214999999997,"generate p p > h j j QCD=0, h > b b~",/uscms_data/d3/iturkmen/hh4b_delphes/mg5_vbf_decay_diagnostics/check_vbf_hjj_bb_sm/Events/run_01/run_01_tag_1_banner.txt
+check_vbf_hhjj_stable_sm,0.00139031419,1.39031419,generate p p > h h j j QCD=0,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_vbf_decay_diagnostics/check_vbf_hhjj_stable_sm/Events/run_01/run_01_tag_1_banner.txt
+check_vbf_hhjj_decay_single_syntax_sm,0.0009448870299999999,0.94488703,"generate p p > h h j j QCD=0, h > b b~",/uscms_data/d3/iturkmen/hh4b_delphes/mg5_vbf_decay_diagnostics/check_vbf_hhjj_decay_single_syntax_sm/Events/run_01/run_01_tag_1_banner.txt
+check_vbf_hhjj_decay_double_syntax_sm,0.0009448870299999999,0.94488703,"generate p p > h h j j QCD=0, (h > b b~), (h > b b~)",/uscms_data/d3/iturkmen/hh4b_delphes/mg5_vbf_decay_diagnostics/check_vbf_hhjj_decay_double_syntax_sm/Events/run_01/run_01_tag_1_banner.txt
