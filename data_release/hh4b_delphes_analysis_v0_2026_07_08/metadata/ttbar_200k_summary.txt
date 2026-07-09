@@ -1,0 +1,16 @@
+campaign: ttbar_200k
+shards: 20
+events_per_shard: 10000
+total generated events: 200000
+candidate rows: 753
+events with >=4 selected jets: 132770
+events with >=4 selected b-tagged jets: 753
+median xsec pb: 512.2746276855469
+median mbb1: 132.37986965463443
+median mbb2: 121.51038801563135
+median avg_mbb: 130.12246371246897
+median delta_mbb: 40.72634816887263
+median mhh: 403.7954709445123
+median n_selected_bjets: 4.0
+merged event summary: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_200k_merged_event_summary.parquet
+merged candidates: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_200k_merged_hh4b_candidates.parquet
