@@ -1,0 +1,3 @@
+classifier,positive_class,negative_class,unweighted_auc,physics_weighted_auc,n_train_task,n_test_task
+BDT_QCD,SM-normalized HH signal,QCD bbbb HT slices,0.8026852119301155,0.8124859876860069,10712,5775
+BDT_top,SM-normalized HH signal,ttbar / top-like backgrounds,0.6834022590189124,0.6945887450407988,1359,729
