@@ -14,6 +14,7 @@ The table includes per-sample and combined-sample statistics:
 
 import itertools
 import os
+import re
 from pathlib import Path
 
 import awkward as ak
@@ -46,9 +47,46 @@ BRANCHES = [
 ]
 
 
+def find_one_parquet(patterns):
+    matches = []
+    for pat in patterns:
+        matches.extend(sorted((STORE / "parquet").glob(pat)))
+    matches = [p for p in matches if "test" not in p.name.lower()]
+    if not matches:
+        raise FileNotFoundError(f"No parquet match for {patterns}")
+    return matches[-1]
+
+
+def campaign_from_parquet_name(path):
+    m = re.search(r"(transfer_cluster_[0-9]+)", path.name)
+    if not m:
+        raise RuntimeError(f"Could not infer transfer_cluster campaign from {path.name}")
+    return m.group(1)
+
+
+def roots_for_signal(sample_name):
+    if sample_name == "ggF_HH4b":
+        cand_path = find_one_parquet(["HH4b_ggf_hh4b_10k*merged*hh4b_candidates.parquet"])
+        campaign = campaign_from_parquet_name(cand_path)
+        pattern = f"HH4b_ggf_hh4b_10k_{campaign}_shard_*_pythia8_delphes.root"
+    elif sample_name == "VBF_HH4b":
+        cand_path = find_one_parquet(["HH4b_vbf_hh4b_10k*merged*hh4b_candidates.parquet"])
+        campaign = campaign_from_parquet_name(cand_path)
+        pattern = f"HH4b_vbf_hh4b_10k_{campaign}_shard_*_pythia8_delphes.root"
+    else:
+        raise ValueError(sample_name)
+
+    roots = sorted((STORE / "root").glob(pattern))
+    if not roots:
+        raise FileNotFoundError(f"No ROOT files found for {sample_name} with pattern {pattern}")
+
+    print(f"Using {sample_name} campaign {campaign}: {len(roots)} ROOT shards")
+    return roots
+
+
 SIGNAL_ROOTS = {
-    "ggF_HH4b": sorted((STORE / "root").glob("HH4b_ggf_hh4b_10k*shard*_pythia8_delphes.root")),
-    "VBF_HH4b": sorted((STORE / "root").glob("HH4b_vbf_hh4b_10k*shard*_pythia8_delphes.root")),
+    "ggF_HH4b": roots_for_signal("ggF_HH4b"),
+    "VBF_HH4b": roots_for_signal("VBF_HH4b"),
 }
 
 N_GENERATED = {
