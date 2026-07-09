@@ -54,7 +54,7 @@ BACKGROUNDS = {
     },
 }
 
-QCD_META = STORE / "metadata/qcd_bbbb_iht_slice_scan_20000.csv"
+QCD_META = Path(os.environ.get("QCD_META", STORE / "metadata/qcd_bbbb_iht_slice_scan_20000.csv"))
 
 
 def find_one(patterns):

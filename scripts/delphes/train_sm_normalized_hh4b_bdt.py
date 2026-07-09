@@ -98,7 +98,7 @@ def load_all():
         6.912992,
     ))
 
-    qcd_meta = pd.read_csv(STORE / "metadata/qcd_bbbb_iht_slice_scan_20000.csv")
+    qcd_meta = pd.read_csv(Path(os.environ.get("QCD_META", STORE / "metadata/qcd_bbbb_iht_slice_scan_20000.csv")))
     for _, row in qcd_meta.iterrows():
         tag = str(row["tag"])
         frames.append(load_one(
