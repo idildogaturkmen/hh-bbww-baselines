@@ -1,0 +1,3 @@
+campaign,total_generated,total_candidate_rows,sum_xsec_pb,sum_effective_candidate_xsec_pb
+10k/slice,40000,4161,342.82079005241394,13.170598839974403
+20k/slice,80000,8319,344.30709207057953,13.946773540079592
