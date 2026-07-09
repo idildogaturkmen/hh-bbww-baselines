@@ -1,0 +1,3 @@
+classifier,negative_class,unweighted_auc,physics_weighted_auc,n_train_task,n_test_task
+BDT_QCD_event_features,QCD bbbb HT slices,0.8950597561175131,0.9027266553342083,67592,36470
+BDT_top_event_features,ttbar / top-like backgrounds,0.8755490611342798,0.8863682926989698,18335,10075
