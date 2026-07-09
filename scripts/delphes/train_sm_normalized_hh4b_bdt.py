@@ -218,6 +218,39 @@ def main():
         "importance": clf.feature_importances_,
     }).sort_values("importance", ascending=False)
 
+
+    # Composition of selected events at important BDT thresholds.
+    comp_thresholds = [0.84, 0.865, 0.87, 0.885, 0.91]
+    comp_rows = []
+
+    for thr in comp_thresholds:
+        sel = test_df["bdt_score"] >= thr
+        selected = test_df.loc[sel].copy()
+
+        for (sample, group), sub in selected.groupby(["sample", "group"]):
+            xsec_pb = sub["weight_pb_scaled_to_full"].sum()
+            expected_events = xsec_pb * LUMI_PB
+
+            comp_rows.append({
+                "threshold": thr,
+                "sample": sample,
+                "group": group,
+                "selected_test_rows": len(sub),
+                "xsec_pb": xsec_pb,
+                "expected_events_450fb": expected_events,
+            })
+
+    comp = pd.DataFrame(comp_rows)
+
+    if len(comp):
+        comp["fraction_within_group_at_threshold"] = (
+            comp["expected_events_450fb"]
+            / comp.groupby(["threshold", "group"])["expected_events_450fb"].transform("sum")
+        )
+
+        comp.to_csv(OUTDIR / "bdt_threshold_composition_by_sample.csv", index=False)
+        (OUTDIR / "bdt_threshold_composition_by_sample.md").write_text(comp.to_markdown(index=False) + "\n")
+
     by_sample = (
         test_df.assign(expected_events_450fb=lambda d: d["weight_pb_scaled_to_full"] * LUMI_PB)
         .groupby(["sample", "group"], as_index=False)
