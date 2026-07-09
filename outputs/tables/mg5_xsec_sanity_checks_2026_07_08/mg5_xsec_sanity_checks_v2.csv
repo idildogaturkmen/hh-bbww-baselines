@@ -1,0 +1,8 @@
+sample,xsec_pb,xsec_fb,banner
+check_z_to_ee_sm,1388.7,1388700.0,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_xsec_checks_v2/check_z_to_ee_sm/Events/run_01/run_01_tag_1_banner.txt
+check_ggf_h_stable_heft,17.621,17621.0,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_xsec_checks_v2/check_ggf_h_stable_heft/Events/run_01/run_01_tag_1_banner.txt
+check_ggf_h_bb_heft,11.661,11661.0,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_xsec_checks_v2/check_ggf_h_bb_heft/Events/run_01/run_01_tag_1_banner.txt
+check_ggf_hh_stable_heft,0.0022779,2.2779,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_xsec_checks_v2/check_ggf_hh_stable_heft/Events/run_01/run_01_tag_1_banner.txt
+check_ggf_hh_4b_heft,0.00099443,0.9944299999999999,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_xsec_checks_v2/check_ggf_hh_4b_heft/Events/run_01/run_01_tag_1_banner.txt
+check_vbf_hhjj_stable_sm,0.00139031419,1.39031419,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_xsec_checks_v2/check_vbf_hhjj_stable_sm/Events/run_01/run_01_tag_1_banner.txt
+check_vbf_hhjj_4b_sm,0.0009448870299999999,0.94488703,/uscms_data/d3/iturkmen/hh4b_delphes/mg5_xsec_checks_v2/check_vbf_hhjj_4b_sm/Events/run_01/run_01_tag_1_banner.txt
