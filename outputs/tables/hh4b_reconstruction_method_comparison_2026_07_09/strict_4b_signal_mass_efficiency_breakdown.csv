@@ -1,0 +1,3 @@
+method,signal_sample,n_generated,candidate_rows,candidate_efficiency,median_mbb1,median_mbb2,median_avg_mbb,avg_mbb_central68_half_width,median_abs_avg_mbb_minus_125,median_mhh,correct_pairing_accuracy,correct_pairing_note
+strict_4b_closest_mass,ggF_HH4b,10000,641,0.0641,125.11546040952287,110.51655989900905,117.02795283887602,17.728386948723617,13.861528999066167,322.51680792159476,,requires ROOT-level truth matching to Higgs-daughter b quarks
+strict_4b_closest_mass,VBF_HH4b,10000,694,0.0694,125.32342894587596,115.30449534451711,120.84229148858782,24.012390955755308,14.412671502355316,439.8849950615793,,requires ROOT-level truth matching to Higgs-daughter b quarks
