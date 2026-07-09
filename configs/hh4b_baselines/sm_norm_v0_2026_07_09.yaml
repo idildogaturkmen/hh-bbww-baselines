@@ -10,7 +10,7 @@ luminosity_fb: 450.0
 signal_normalization:
   ggF_HH4b_fb: 10.55
   VBF_HH4b_fb: 0.587
-  status: provisional_pending_harvey_confirmation
+  status: confirmed_by_Harvey_2026_07_09
 
 samples:
   signal:

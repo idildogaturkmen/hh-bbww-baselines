@@ -15,4 +15,4 @@ MG5 cross-section checks showed that:
 - VBF HHjj decay handling is internally consistent with the SM card's effective H→bb ratio.
 - However, the effective branching ratios and ggF HH production normalization in the cards differ from the official SM values, so external signal normalization is used provisionally.
 
-This convention should be revisited after Harvey confirms the preferred normalization prescription.
+Harvey confirmed on 2026-07-09 that signal should be normalized to SM HH cross sections times BR\(H→bb\)^2.
