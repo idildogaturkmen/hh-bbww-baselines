@@ -1,6 +1,6 @@
 # SM-normalized HH4b yield summary
 
-This is a provisional analysis scenario while waiting for Harvey's confirmation.
+This is a provisional analysis scenario.
 
 Signal samples are normalized externally to approximate SM HH cross sections times BR(H→bb)^2:
 - ggF HH→4b = 10.55 fb

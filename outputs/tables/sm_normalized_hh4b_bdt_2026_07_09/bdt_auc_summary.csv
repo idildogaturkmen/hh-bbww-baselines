@@ -1,2 +1,2 @@
 training,normalization,test_size,unweighted_auc,physics_weighted_auc,n_train,n_test
-class-balanced GradientBoostingClassifier,"provisional SM-normalized signal, MG5-normalized backgrounds",0.35,0.8107207835600668,0.773740439222234,9019,4857
+class-balanced GradientBoostingClassifier,"provisional SM-normalized signal, MG5-normalized backgrounds",0.35,0.7852123993667581,0.7995225618500599,13460,7249
