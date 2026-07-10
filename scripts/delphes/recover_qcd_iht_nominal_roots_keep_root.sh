@@ -16,6 +16,20 @@ fi
 cd "$HH4B_REPO"
 mkdir -p "$HH4B_STORE/logs" "$HH4B_STORE/root" "$HH4B_STORE/hepmc" "$HH4B_STORE/parquet" "$HH4B_STORE/metadata" "$CAMPAIGN_BACKUP_DIR"
 
+
+check_storage_guard() {
+  local used_gb
+  used_gb=$(du -s "$HH4B_STORE" | awk '{printf "%.0f", $1/1024/1024}')
+  echo "Current HH4B_STORE usage: ${used_gb}G"
+  if (( used_gb > 170 )); then
+    echo "ERROR: HH4B_STORE usage exceeded 170G guardrail. Stopping to avoid quota problems."
+    df -h "$HH4B_STORE"
+  check_storage_guard
+    exit 9
+  fi
+}
+
+
 echo "PROCESS_DIR=$PROCESS_DIR"
 echo "RUN_CARD=$RUN_CARD"
 echo "BACKUP_DIR=$CAMPAIGN_BACKUP_DIR"
@@ -139,6 +153,7 @@ run_one_qcd() {
 
   echo "Kept ROOT: $ROOT_FILE"
   df -h "$HH4B_STORE"
+  check_storage_guard
 }
 
 # Original 20k HT/iHT slices from run_qcd_bbbb_iht_slice_scan.sh.
