@@ -321,6 +321,9 @@ def build(args):
                 n_sel = len(selected)
                 n_btag = int(np.sum(jet_btag[selected] > args.btag_min))
 
+                if n_btag < args.min_btags:
+                    continue
+
                 X = np.zeros((args.max_jets, 5), dtype=np.float32)
                 jet_mask = np.zeros(args.max_jets, dtype=np.bool_)
 
@@ -483,6 +486,7 @@ Inputs:
 Selection:
 - jets with pt > {args.jet_pt_min} GeV and |eta| < {args.jet_eta_max}
 - at least {args.min_jets} selected jets
+- at least {args.min_btags} selected b-tagged jets
 - keep up to leading {args.max_jets} selected jets by pt
 - truth matching ΔR < {args.dr_match}
 
@@ -505,6 +509,7 @@ def main():
     ap.add_argument("--tag", default="nominal_v0")
     ap.add_argument("--max-jets", type=int, default=8)
     ap.add_argument("--min-jets", type=int, default=4)
+    ap.add_argument("--min-btags", type=int, default=0)
     ap.add_argument("--jet-pt-min", type=float, default=30.0)
     ap.add_argument("--jet-eta-max", type=float, default=2.5)
     ap.add_argument("--btag-min", type=float, default=0.0)
