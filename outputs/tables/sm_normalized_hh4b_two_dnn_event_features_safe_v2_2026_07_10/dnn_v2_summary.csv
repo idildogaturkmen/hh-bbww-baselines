@@ -1,0 +1,8 @@
+metric,value
+qcd_weighted_auc_mean,0.775336090392526
+qcd_weighted_auc_std,0.006519495264177527
+top_weighted_auc_mean,0.7390391574987847
+top_weighted_auc_std,0.011701791881805828
+best_per_seed_S_over_sqrtB_mean,0.14913366746813564
+best_per_seed_S_over_sqrtB_std,0.007839572523567446
+best_per_seed_S_over_B_mean,0.0002806828497583322
