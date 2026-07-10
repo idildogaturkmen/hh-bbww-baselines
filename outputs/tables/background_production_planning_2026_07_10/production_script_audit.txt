@@ -1,0 +1,589 @@
+=== Storage ===
+63G	/uscms_data/d3/iturkmen/hh4b_delphes
+Disk quotas for user iturkmen (uid 17821): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+homesrv01.fnal.gov:/uscms
+                   279M      0K   3072M          45947k       0       0        
+cmsnfs2.fnal.gov:/uscms/data3
+                 66207M    200G    220G           43577       0       0        
+
+=== Candidate production scripts ===
+-rwxr-xr-x 1 iturkmen us_cms  910 Jul  8 13:14 scripts/delphes/add_ttbar_100k_to_release.sh
+-rwxr-xr-x 1 iturkmen us_cms 3.3K Jul  9 14:01 scripts/delphes/combine_qcd_iht200to400_120k.py
+-rwxr-xr-x 1 iturkmen us_cms 2.9K Jul  9 13:01 scripts/delphes/compare_ttbar_100k_200k.py
+-rwxr-xr-x 1 iturkmen us_cms 2.0K Jul  8 13:23 scripts/delphes/make_hh4b_background_campaign_summary.py
+-rwxr-xr-x 1 iturkmen us_cms 2.0K Jul  8 13:23 scripts/delphes/make_hh4b_background_campaign_summary.py
+-rwxr-xr-x 1 iturkmen us_cms 3.4K Jul  8 16:04 scripts/delphes/plot_hh4b_background_comparison.py
+-rwxr-xr-x 1 iturkmen us_cms  13K Jul  8 19:49 scripts/delphes/plot_qcd_iht_20k_summary.py
+-rwxr-xr-x 1 iturkmen us_cms 6.5K Jul  8 14:06 scripts/delphes/plot_qcd_iht_importance_sampling_generic.py
+-rwxr-xr-x 1 iturkmen us_cms 5.3K Jul  8 12:01 scripts/delphes/plot_qcd_iht_importance_sampling.py
+-rwxr-xr-x 1 iturkmen us_cms 1.8K Jul  7 18:36 scripts/delphes/plot_qcd_ptb_threshold_scan.py
+-rwxr-xr-x 1 iturkmen us_cms 5.3K Jul 10 00:32 scripts/delphes/recover_qcd_iht_nominal_roots_keep_root.sh
+-rwxr-xr-x 1 iturkmen us_cms 2.4K Jul  9 20:00 scripts/delphes/recover_ttbar_200k_root_shards_keep_root.sh
+-rwxr-xr-x 1 iturkmen us_cms 3.7K Jul  7 15:13 scripts/delphes/run_local_background_sample.sh
+-rwxr-xr-x 1 iturkmen us_cms 2.3K Jul  9 13:54 scripts/delphes/run_qcd_bbbb_iht200to400_extra100k.sh
+-rwxr-xr-x 1 iturkmen us_cms 4.9K Jul  8 11:22 scripts/delphes/run_qcd_bbbb_iht_slice_scan.sh
+-rwxr-xr-x 1 iturkmen us_cms 4.5K Jul  8 11:20 scripts/delphes/run_qcd_bbbb_ptb_slice_scan.sh
+-rwxr-xr-x 1 iturkmen us_cms 4.2K Jul  7 18:35 scripts/delphes/run_qcd_bbbb_ptb_threshold_scan.sh
+-rwxr-xr-x 1 iturkmen us_cms 4.2K Jul  7 16:16 scripts/delphes/run_storage_safe_local_campaign.sh
+-rwxr-xr-x 1 iturkmen us_cms 3.2K Jul  8 12:18 scripts/delphes/summarize_qcd_iht_closure.py
+
+=== run_local_background_sample.sh ===
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 6 ]]; then
+  echo "Usage: $0 PROCESS_DIR RUN_NAME N_EVENTS SEED OUTPUT_TAG APPLY_B_CUTS"
+  echo "Example: $0 \$HH4B_STORE/mg5/QCD_bbbb_presel_smoke run_03_10000 10000 93003 qcd_bbbb_presel_10k yes"
+  exit 1
+fi
+
+PROCESS_DIR="$1"
+RUN_NAME="$2"
+N_EVENTS="$3"
+SEED="$4"
+OUTPUT_TAG="$5"
+APPLY_B_CUTS="$6"
+
+: "${HH4B_REPO:?Need HH4B_REPO}"
+: "${HH4B_STORE:?Need HH4B_STORE}"
+
+echo "PROCESS_DIR=$PROCESS_DIR"
+echo "RUN_NAME=$RUN_NAME"
+echo "N_EVENTS=$N_EVENTS"
+echo "SEED=$SEED"
+echo "OUTPUT_TAG=$OUTPUT_TAG"
+echo "APPLY_B_CUTS=$APPLY_B_CUTS"
+
+cd "$PROCESS_DIR"
+
+python3 - <<PY
+from pathlib import Path
+import re
+
+p = Path("Cards/run_card.dat")
+txt = p.read_text()
+
+def set_param(text, key, value, comment=""):
+    pattern = rf"(?m)^.*=\\s*{re.escape(key)}\\b.*$"
+    newline = f" {value} = {key}"
+    if comment:
+        newline += f" ! {comment}"
+    if re.search(pattern, text):
+        text = re.sub(pattern, newline, text)
+    else:
+        text += "\\n" + newline + "\\n"
+    return text
+
+settings = {
+    "nevents": ("${N_EVENTS}", "Number of unweighted events"),
+    "iseed": ("${SEED}", "Random seed"),
+}
+
+if "${APPLY_B_CUTS}".lower() in ("yes", "true", "1"):
+    settings.update({
+        "ptb": ("25.0", "minimum pt for b quarks"),
+        "etab": ("2.7", "maximum eta for b quarks"),
+        "drbb": ("0.4", "minimum deltaR between b quarks"),
+        "drbj": ("0.4", "minimum deltaR between b and light jets"),
+        "ptj": ("20.0", "minimum pt for jets"),
+        "etaj": ("5.0", "maximum eta for jets"),
+    })
+
+for key, (value, comment) in settings.items():
+    txt = set_param(txt, key, value, comment)
+
+p.write_text(txt)
+PY
+
+echo "Updated run card:"
+grep -E "nevents|iseed|ptb|etab|drbb|drbj|ptj|etaj" Cards/run_card.dat | head -80 || true
+
+LOG="$HH4B_STORE/logs/${OUTPUT_TAG}_generate_events.log"
+./bin/generate_events "$RUN_NAME" -f | tee "$LOG"
+
+LHE="$PROCESS_DIR/Events/$RUN_NAME/unweighted_events.lhe.gz"
+if [[ ! -s "$LHE" ]]; then
+  echo "ERROR: missing LHE: $LHE"
+  exit 2
+fi
+
+N_FOUND=$(zgrep -c "<event>" "$LHE")
+echo "LHE=$LHE"
+echo "N_FOUND=$N_FOUND"
+
+if [[ "$N_FOUND" != "$N_EVENTS" ]]; then
+  echo "ERROR: expected $N_EVENTS events but found $N_FOUND"
+  exit 3
+fi
+
+cd "$HH4B_REPO"
+
+scripts/delphes/run_existing_lhe_pythia_delphes.sh \
+  "$OUTPUT_TAG" \
+  "$LHE" \
+  "$N_EVENTS" \
+  "$OUTPUT_TAG" \
+  | tee "$HH4B_STORE/logs/${OUTPUT_TAG}_pipeline.log"
+
+ROOT="$HH4B_STORE/root/${OUTPUT_TAG}_pythia8_delphes.root"
+CAND="$HH4B_STORE/parquet/${OUTPUT_TAG}_hh4b_candidates.parquet"
+
+python3 scripts/delphes/reconstruct_hh4b_candidates.py \
+  --input "$ROOT" \
+  --out "$CAND" \
+  --sample "$OUTPUT_TAG" \
+  | tee "$HH4B_STORE/logs/${OUTPUT_TAG}_hh4b_candidates.log"
+
+python3 - <<PY
+from pathlib import Path
+import os
+import pandas as pd
+
+store = Path(os.environ["HH4B_STORE"])
+tag = "${OUTPUT_TAG}"
+
+event_path = store / "parquet" / f"{tag}_event_summary.parquet"
+cand_path = store / "parquet" / f"{tag}_hh4b_candidates.parquet"
+
+ev = pd.read_parquet(event_path)
+cand = pd.read_parquet(cand_path)
+
+lines = []
+lines.append(f"sample: {tag}")
+lines.append(f"events: {len(ev)}")
+lines.append(f"candidate rows: {len(cand)}")
+lines.append(f"cross-section median pb: {ev['event_cross_section_pb'].median()}")
+lines.append(f"events with >=4 selected jets: {int((ev['n_jet_pt30_eta25'] >= 4).sum())}")
+lines.append(f"events with >=4 selected b-tagged jets: {int((ev['n_bjet_pt30_eta25'] >= 4).sum())}")
+
+if len(cand):
+    for c in ["mbb1","mbb2","avg_mbb","delta_mbb","mhh","n_selected_bjets"]:
+        lines.append(f"median {c}: {cand[c].median()}")
+
+out = store / "metadata" / f"{tag}_summary.txt"
+out.write_text("\\n".join(lines) + "\\n")
+print("\\n".join(lines))
+print("Wrote:", out)
+PY
+
+echo "DONE $OUTPUT_TAG"
+
+=== recover_ttbar_200k_root_shards_keep_root.sh ===
+#!/usr/bin/env bash
+set -euo pipefail
+
+: "${HH4B_REPO:?Need HH4B_REPO}"
+: "${HH4B_STORE:?Need HH4B_STORE}"
+
+PROCESS_DIR="$HH4B_STORE/mg5/TTbar_smoke"
+CAMPAIGN="ttbar_200k"
+
+if [[ ! -f "$PROCESS_DIR/Cards/run_card.dat" ]]; then
+  echo "ERROR: PROCESS_DIR does not look like an MG5 process dir: $PROCESS_DIR"
+  exit 2
+fi
+
+cd "$HH4B_REPO"
+
+mkdir -p "$HH4B_STORE/logs" "$HH4B_STORE/root" "$HH4B_STORE/hepmc" "$HH4B_STORE/parquet" "$HH4B_STORE/metadata"
+BACKUP_DIR="$HH4B_STORE/recovery_backups/ttbar_200k_$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$BACKUP_DIR"
+
+echo "PROCESS_DIR=$PROCESS_DIR"
+echo "CAMPAIGN=$CAMPAIGN"
+echo "BACKUP_DIR=$BACKUP_DIR"
+
+# Save the current TTbar run card for provenance.
+cp -p "$PROCESS_DIR/Cards/run_card.dat" "$BACKUP_DIR/run_card_before_recovery.dat"
+cp -p "$PROCESS_DIR/Cards/proc_card_mg5.dat" "$BACKUP_DIR/proc_card_mg5.dat" || true
+
+for i in $(seq 1 19); do
+  SHARD=$(printf "%03d" "$i")
+  TAG="${CAMPAIGN}_shard${SHARD}"
+  RUN_NAME="run_${CAMPAIGN}_${SHARD}"
+  SEED=$((109000 + i))
+  ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+
+  echo
+  echo "============================================================"
+  echo "Recovering ROOT for $TAG"
+  echo "RUN_NAME=$RUN_NAME"
+  echo "SEED=$SEED"
+  echo "ROOT_FILE=$ROOT_FILE"
+  echo "============================================================"
+
+  if [[ -s "$ROOT_FILE" ]]; then
+    echo "ROOT already exists, skipping: $ROOT_FILE"
+    continue
+  fi
+
+  # Back up existing per-shard parquet/metadata before regeneration.
+  for f in \
+    "$HH4B_STORE/parquet/${TAG}_event_summary.parquet" \
+    "$HH4B_STORE/parquet/${TAG}_hh4b_candidates.parquet" \
+    "$HH4B_STORE/metadata/${TAG}_diagnostic.csv" \
+    "$HH4B_STORE/metadata/${TAG}_summary.txt"
+  do
+    if [[ -f "$f" ]]; then
+      cp -p "$f" "$BACKUP_DIR/"
+    fi
+  done
+
+  scripts/delphes/run_local_background_sample.sh \
+    "$PROCESS_DIR" \
+    "$RUN_NAME" \
+    10000 \
+    "$SEED" \
+    "$TAG" \
+    no \
+    2>&1 | tee "$HH4B_STORE/logs/${TAG}_root_recovery_pipeline.log"
+
+  # Keep ROOT, delete bulky temporary files.
+  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
+
+  if [[ ! -s "$ROOT_FILE" ]]; then
+    echo "ERROR: expected ROOT was not produced: $ROOT_FILE"
+    exit 3
+  fi
+
+  echo "Kept ROOT: $ROOT_FILE"
+done
+
+echo
+echo "DONE recovering ttbar_200k ROOT shards 001-019"
+
+=== recover_qcd_iht_nominal_roots_keep_root.sh ===
+#!/usr/bin/env bash
+set -euo pipefail
+
+: "${HH4B_REPO:?Need HH4B_REPO}"
+: "${HH4B_STORE:?Need HH4B_STORE}"
+
+PROCESS_DIR="$HH4B_STORE/mg5/QCD_bbbb_presel_smoke"
+RUN_CARD="$PROCESS_DIR/Cards/run_card.dat"
+CAMPAIGN_BACKUP_DIR="$HH4B_STORE/recovery_backups/qcd_iht_nominal_$(date +%Y%m%d_%H%M%S)"
+
+if [[ ! -f "$RUN_CARD" ]]; then
+  echo "ERROR: missing QCD run card: $RUN_CARD"
+  exit 2
+fi
+
+cd "$HH4B_REPO"
+mkdir -p "$HH4B_STORE/logs" "$HH4B_STORE/root" "$HH4B_STORE/hepmc" "$HH4B_STORE/parquet" "$HH4B_STORE/metadata" "$CAMPAIGN_BACKUP_DIR"
+
+
+check_storage_guard() {
+  local used_gb
+  used_gb=$(du -s "$HH4B_STORE" | awk '{printf "%.0f", $1/1024/1024}')
+  echo "Current HH4B_STORE usage: ${used_gb}G"
+  if (( used_gb > 170 )); then
+    echo "ERROR: HH4B_STORE usage exceeded 170G guardrail. Stopping to avoid quota problems."
+    df -h "$HH4B_STORE"
+  check_storage_guard
+    exit 9
+  fi
+}
+
+
+echo "PROCESS_DIR=$PROCESS_DIR"
+echo "RUN_CARD=$RUN_CARD"
+echo "BACKUP_DIR=$CAMPAIGN_BACKUP_DIR"
+
+cp -p "$RUN_CARD" "$CAMPAIGN_BACKUP_DIR/run_card_before_qcd_recovery.dat"
+cp -p "$PROCESS_DIR/Cards/proc_card_mg5.dat" "$CAMPAIGN_BACKUP_DIR/proc_card_mg5.dat" || true
+
+restore_run_card() {
+  cp "$CAMPAIGN_BACKUP_DIR/run_card_before_qcd_recovery.dat" "$RUN_CARD"
+}
+trap restore_run_card EXIT
+
+set_qcd_iht_card() {
+  local IHTMIN="$1"
+  local IHTMAX="$2"
+
+  python3 - <<PY
+from pathlib import Path
+import re
+
+p = Path("${RUN_CARD}")
+txt = p.read_text()
+
+def set_param(text, key, value, comment=""):
+    pattern = rf"(?m)^.*=\\s*{re.escape(key)}\\b.*$"
+    newline = f" {value} = {key}"
+    if comment:
+        newline += f" ! {comment}"
+    if re.search(pattern, text):
+        return re.sub(pattern, newline, text)
+    return text + "\\n" + newline + "\\n"
+
+settings = {
+    "ptb": ("25.0", "minimum pt for b quarks"),
+    "ptbmax": ("-1.0", "maximum pt for b quarks"),
+    "etab": ("2.7", "maximum eta for b quarks"),
+    "drbb": ("0.4", "minimum deltaR between b quarks"),
+    "drbj": ("0.4", "minimum deltaR between b and light jets"),
+    "ptj": ("20.0", "minimum pt for jets"),
+    "etaj": ("5.0", "maximum eta for jets"),
+    "ihtmin": ("${IHTMIN}", "inclusive HT minimum for all partons including b"),
+    "ihtmax": ("${IHTMAX}", "inclusive HT maximum for all partons including b"),
+    "ht2min": ("0.0", "minimum HT for two leading jets"),
+    "ht3min": ("0.0", "minimum HT for three leading jets"),
+    "ht4min": ("0.0", "minimum HT for four leading jets"),
+    "ht2max": ("-1.0", "maximum HT for two leading jets"),
+    "ht3max": ("-1.0", "maximum HT for three leading jets"),
+    "ht4max": ("-1.0", "maximum HT for four leading jets"),
+}
+
+for key, (value, comment) in settings.items():
+    txt = set_param(txt, key, value, comment)
+
+p.write_text(txt)
+PY
+
+  echo "Updated QCD run-card slice settings:"
+  grep -E "ptb|ptbmax|ihtmin|ihtmax|ht2min|ht3min|ht4min|ht2max|ht3max|ht4max" "$RUN_CARD" | head -80 || true
+}
+
+backup_existing_outputs() {
+  local TAG="$1"
+  for f in \
+    "$HH4B_STORE/parquet/${TAG}_event_summary.parquet" \
+    "$HH4B_STORE/parquet/${TAG}_hh4b_candidates.parquet" \
+    "$HH4B_STORE/metadata/${TAG}_diagnostic.csv" \
+    "$HH4B_STORE/metadata/${TAG}_summary.txt"
+  do
+    if [[ -f "$f" ]]; then
+      cp -p "$f" "$CAMPAIGN_BACKUP_DIR/"
+    fi
+  done
+}
+
+run_one_qcd() {
+  local TAG="$1"
+  local RUN_NAME="$2"
+  local N_EVENTS="$3"
+  local SEED="$4"
+  local IHTMIN="$5"
+  local IHTMAX="$6"
+
+  local ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+
+  echo
+  echo "============================================================"
+  echo "Recovering QCD ROOT for $TAG"
+  echo "RUN_NAME=$RUN_NAME"
+  echo "N_EVENTS=$N_EVENTS"
+  echo "SEED=$SEED"
+  echo "IHTMIN=$IHTMIN"
+  echo "IHTMAX=$IHTMAX"
+  echo "ROOT_FILE=$ROOT_FILE"
+  echo "============================================================"
+
+  if [[ -s "$ROOT_FILE" ]]; then
+    echo "ROOT already exists, skipping: $ROOT_FILE"
+    return
+  fi
+
+  set_qcd_iht_card "$IHTMIN" "$IHTMAX"
+  backup_existing_outputs "$TAG"
+
+  scripts/delphes/run_local_background_sample.sh \
+    "$PROCESS_DIR" \
+    "$RUN_NAME" \
+    "$N_EVENTS" \
+    "$SEED" \
+    "$TAG" \
+    no \
+    2>&1 | tee "$HH4B_STORE/logs/${TAG}_qcd_root_recovery_pipeline.log"
+
+  # Keep ROOT, delete bulky temporary files.
+  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
+
+  if [[ ! -s "$ROOT_FILE" ]]; then
+    echo "ERROR: expected ROOT was not produced: $ROOT_FILE"
+    exit 3
+  fi
+
+  echo "Kept ROOT: $ROOT_FILE"
+  df -h "$HH4B_STORE"
+  check_storage_guard
+}
+
+# Original 20k HT/iHT slices from run_qcd_bbbb_iht_slice_scan.sh.
+run_one_qcd "qcd_bbbb_iht100to200_20000" "run_qcd_bbbb_iht100to200_20000" 20000 161000 100 200
+run_one_qcd "qcd_bbbb_iht200to400_20000" "run_qcd_bbbb_iht200to400_20000" 20000 162000 200 400
+run_one_qcd "qcd_bbbb_iht400to600_20000" "run_qcd_bbbb_iht400to600_20000" 20000 163000 400 600
+run_one_qcd "qcd_bbbb_iht600plus_20000"  "run_qcd_bbbb_iht600plus_20000"  20000 164000 600 -1
+
+# Extra 100k iHT200-400 campaign. Shard000 already exists, so this recovers missing shards 001-009.
+for i in $(seq 0 9); do
+  SHARD=$(printf "%03d" "$i")
+  TAG="qcd_bbbb_iht200to400_extra100k_shard${SHARD}"
+  RUN_NAME="run_qcd_bbbb_iht200to400_extra100k_${SHARD}"
+  SEED=$((252000 + i))
+  run_one_qcd "$TAG" "$RUN_NAME" 10000 "$SEED" 200 400
+done
+
+echo
+echo "DONE recovering nominal QCD iHT ROOT files with ROOT kept."
+
+=== Dangerous deletion commands to check ===
+scripts/delphes/run_delphes_one_shard.sh:5:echo "Arguments will eventually include sample name, seed, input HepMC/LHE, output ROOT, and metadata path."
+scripts/delphes/lhe_to_hepmc3.cc:2:#include "Pythia8Plugins/HepMC3.h"
+scripts/delphes/lhe_to_hepmc3.cc:3:#include "HepMC3/GenEvent.h"
+scripts/delphes/lhe_to_hepmc3.cc:4:#include "HepMC3/WriterAscii.h"
+scripts/delphes/lhe_to_hepmc3.cc:13:              << " input.lhe output.hepmc nEvents [--force-hbb]\n";
+scripts/delphes/lhe_to_hepmc3.cc:17:  const std::string lhe_file = argv[1];
+scripts/delphes/lhe_to_hepmc3.cc:18:  const std::string hepmc_file = argv[2];
+scripts/delphes/lhe_to_hepmc3.cc:25:  pythia.readString("Beams:LHEF = " + lhe_file);
+scripts/delphes/lhe_to_hepmc3.cc:49:  HepMC3::WriterAscii hepmc_writer(hepmc_file);
+scripts/delphes/lhe_to_hepmc3.cc:50:  Pythia8::Pythia8ToHepMC to_hepmc;
+scripts/delphes/lhe_to_hepmc3.cc:60:    HepMC3::GenEvent hepmc_event;
+scripts/delphes/lhe_to_hepmc3.cc:61:    to_hepmc.fill_next_event(pythia, &hepmc_event);
+scripts/delphes/lhe_to_hepmc3.cc:62:    hepmc_writer.write_event(hepmc_event);
+scripts/delphes/lhe_to_hepmc3.cc:68:  hepmc_writer.close();
+scripts/delphes/lhe_to_hepmc3.cc:70:  std::cout << "Wrote " << n_written << " events to " << hepmc_file << "\n";
+scripts/delphes/run_existing_lhe_pythia_delphes.sh:20:  "$HH4B_STORE/hepmc" \
+scripts/delphes/run_existing_lhe_pythia_delphes.sh:27:HEPMC="$HH4B_STORE/hepmc/${OUTPUT_TAG}_pythia8.hepmc"
+scripts/delphes/run_existing_lhe_pythia_delphes.sh:28:ROOT_OUT="$HH4B_STORE/root/${OUTPUT_TAG}_pythia8_delphes.root"
+scripts/delphes/run_existing_lhe_pythia_delphes.sh:48:rm -f "$HEPMC" "$ROOT_OUT"
+scripts/delphes/run_existing_lhe_pythia_delphes.sh:50:"$HH4B_SOFTWARE/bin/lhe_to_hepmc3" \
+scripts/delphes/run_existing_lhe_pythia_delphes.sh:54:  2>&1 | tee "$HH4B_STORE/logs/${OUTPUT_TAG}_lhe_to_hepmc3.log"
+scripts/delphes/run_existing_lhe_pythia_delphes.sh:56:"$DELPHES_DIR/DelphesHepMC3" \
+scripts/delphes/run_existing_lhe_pythia_delphes.sh:62:python3 "$HH4B_REPO/scripts/delphes/inspect_delphes_root.py" "$ROOT_OUT"
+scripts/delphes/run_vbf_hh4b_shard.sh:28:rm -rf "$WORK_PROC"
+scripts/delphes/run_vbf_hh4b_shard.sh:71:LHE_GZ="$WORK_PROC/Events/$RUN_NAME/unweighted_events.lhe.gz"
+scripts/delphes/run_vbf_hh4b_shard.sh:86:"$HH4B_REPO/scripts/delphes/run_existing_lhe_pythia_delphes.sh" \
+scripts/delphes/run_vbf_hh4b_shard.sh:93:  --input "$HH4B_STORE/root/${OUTPUT_TAG}_pythia8_delphes.root" \
+scripts/delphes/debug_condor_container.sh:36:for cmd in python3 root-config pythia8-config HepMC3-config mg5_aMC; do
+scripts/delphes/debug_condor_container.sh:44:      HepMC3-config) HepMC3-config --version ;;
+scripts/delphes/debug_condor_container.sh:55:echo "---- DelphesHepMC3 search ----"
+scripts/delphes/debug_condor_container.sh:57:DELPHES_MATCHES="$(timeout 120s find /cvmfs/sft.cern.ch -name DelphesHepMC3 2>/dev/null | head -20)"
+scripts/delphes/debug_condor_container.sh:63:  echo "MISSING: DelphesHepMC3 not found under /cvmfs/sft.cern.ch"
+scripts/delphes/debug_condor_container.sh:65:echo "FIND_STATUS: DelphesHepMC3 -> $find_status"
+scripts/delphes/prepare_condor_hh4b_inputs.sh:26:  rm -rf "$STAGE_DIR"
+scripts/delphes/prepare_condor_hh4b_inputs.sh:50:if [ ! -x "$DELPHES_DIR/DelphesHepMC3" ]; then
+scripts/delphes/prepare_condor_hh4b_inputs.sh:51:  echo "ERROR: missing executable DelphesHepMC3 under DELPHES_DIR=$DELPHES_DIR"
+scripts/delphes/prepare_condor_hh4b_inputs.sh:69:  DelphesHepMC3 \
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:89:for cmd in python3 root-config pythia8-config HepMC3-config mg5_aMC g++ tar gzip; do
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:105:if [ ! -x "$DELPHES_DIR/DelphesHepMC3" ]; then
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:106:  echo "ERROR: missing transferred DelphesHepMC3: $DELPHES_DIR/DelphesHepMC3"
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:119:CONVERTER="$SCRATCH/lhe_to_hepmc3"
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:120:echo "Compiling LHE -> HepMC3 converter..."
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:122:  "$HH4B_REPO/scripts/delphes/lhe_to_hepmc3.cc" \
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:125:  $(HepMC3-config --cxxflags) \
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:127:  $(HepMC3-config --libs) \
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:128:  2>&1 | tee "$OUTDIR/logs/${OUTPUT_TAG}_compile_lhe_to_hepmc3.log"
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:172:LHE_GZ="$WORK_PROC/Events/$RUN_NAME/unweighted_events.lhe.gz"
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:185:LHE="$SCRATCH/work/${OUTPUT_TAG}.lhe"
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:186:HEPMC="$SCRATCH/work/${OUTPUT_TAG}.hepmc"
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:187:ROOT_OUT="$OUTDIR/root/${OUTPUT_TAG}_pythia8_delphes.root"
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:192:  2>&1 | tee "$OUTDIR/logs/${OUTPUT_TAG}_lhe_to_hepmc3.log"
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:194:"$DELPHES_DIR/DelphesHepMC3" \
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:200:python3 "$HH4B_REPO/scripts/delphes/inspect_delphes_root.py" "$ROOT_OUT" \
+scripts/delphes/run_vbf_hh4b_shard_transfer.sh:232:    "lhe_events": int("${N_FOUND}"),
+scripts/delphes/merge_hh4b_10k_outputs.py:40:    root_files = sorted(root_dir.glob(f"{base}_pythia8_delphes.root"), key=shard_id)
+scripts/delphes/prepare_condor_ggf_hh4b_inputs.sh:27:  rm -rf "$STAGE_DIR"
+scripts/delphes/prepare_condor_ggf_hh4b_inputs.sh:51:if [ ! -x "$DELPHES_DIR/DelphesHepMC3" ]; then
+scripts/delphes/prepare_condor_ggf_hh4b_inputs.sh:52:  echo "ERROR: missing executable DelphesHepMC3 under DELPHES_DIR=$DELPHES_DIR"
+scripts/delphes/prepare_condor_ggf_hh4b_inputs.sh:70:  DelphesHepMC3 \
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:92:for cmd in python3 root-config pythia8-config HepMC3-config mg5_aMC g++ tar gzip; do
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:108:if [ ! -x "$DELPHES_DIR/DelphesHepMC3" ]; then
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:109:  echo "ERROR: missing transferred DelphesHepMC3: $DELPHES_DIR/DelphesHepMC3"
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:122:CONVERTER="$SCRATCH/lhe_to_hepmc3"
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:123:echo "Compiling LHE -> HepMC3 converter..."
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:125:  "$HH4B_REPO/scripts/delphes/lhe_to_hepmc3.cc" \
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:128:  $(HepMC3-config --cxxflags) \
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:130:  $(HepMC3-config --libs) \
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:131:  2>&1 | tee "$OUTDIR/logs/${OUTPUT_TAG}_compile_lhe_to_hepmc3.log"
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:173:LHE_GZ="$WORK_PROC/Events/$RUN_NAME/unweighted_events.lhe.gz"
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:186:LHE="$SCRATCH/work/${OUTPUT_TAG}.lhe"
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:187:HEPMC="$SCRATCH/work/${OUTPUT_TAG}.hepmc"
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:188:ROOT_OUT="$OUTDIR/root/${OUTPUT_TAG}_pythia8_delphes.root"
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:193:  2>&1 | tee "$OUTDIR/logs/${OUTPUT_TAG}_lhe_to_hepmc3.log"
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:195:"$DELPHES_DIR/DelphesHepMC3" \
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:201:python3 "$HH4B_REPO/scripts/delphes/inspect_delphes_root.py" "$ROOT_OUT" \
+scripts/delphes/run_ggf_hh4b_shard_transfer.sh:235:    "lhe_events": int("${N_FOUND}"),
+scripts/delphes/make_delphes_hh4b_summary_root.cc:181:      if (auto* event = dynamic_cast<HepMCEvent*>(event_branch->At(0))) {
+scripts/delphes/run_local_background_sample.sh:74:LHE="$PROCESS_DIR/Events/$RUN_NAME/unweighted_events.lhe.gz"
+scripts/delphes/run_local_background_sample.sh:91:scripts/delphes/run_existing_lhe_pythia_delphes.sh \
+scripts/delphes/run_local_background_sample.sh:98:ROOT="$HH4B_STORE/root/${OUTPUT_TAG}_pythia8_delphes.root"
+scripts/delphes/make_hh4b_today_summary.py:258:- For larger production, ROOT and HepMC cannot be kept for every event due to storage limits. Future 100k/1M production should keep compact parquet/features and only retain small ROOT validation subsets.
+scripts/delphes/run_storage_safe_local_campaign.sh:5:  echo "Usage: $0 CAMPAIGN PROCESS_DIR N_SHARDS EVENTS_PER_SHARD SEED0 APPLY_B_CUTS KEEP_ROOT_SHARDS DELETE_LHE"
+scripts/delphes/run_storage_safe_local_campaign.sh:17:KEEP_ROOT_SHARDS="$7"
+scripts/delphes/run_storage_safe_local_campaign.sh:28:echo "campaign,shard,tag,run_name,seed,events_per_shard,event_parquet,candidate_parquet,root_kept,hepmc_deleted,lhe_deleted" > "$MANIFEST"
+scripts/delphes/run_storage_safe_local_campaign.sh:52:  ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+scripts/delphes/run_storage_safe_local_campaign.sh:53:  HEPMC_FILE="$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+scripts/delphes/run_storage_safe_local_campaign.sh:59:  if (( i >= KEEP_ROOT_SHARDS )); then
+scripts/delphes/run_storage_safe_local_campaign.sh:60:    rm -f "$ROOT_FILE"
+scripts/delphes/run_storage_safe_local_campaign.sh:66:    rm -f "$HEPMC_FILE"
+scripts/delphes/run_storage_safe_local_campaign.sh:72:    rm -rf "$LHE_DIR"
+scripts/delphes/run_qcd_bbbb_ptb_threshold_scan.sh:88:  ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+scripts/delphes/run_qcd_bbbb_ptb_threshold_scan.sh:89:  HEPMC_FILE="$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+scripts/delphes/run_qcd_bbbb_ptb_threshold_scan.sh:93:  rm -f "$ROOT_FILE"
+scripts/delphes/run_qcd_bbbb_ptb_threshold_scan.sh:94:  rm -f "$HEPMC_FILE"
+scripts/delphes/run_qcd_bbbb_ptb_threshold_scan.sh:95:  rm -rf "$LHE_DIR"
+scripts/delphes/run_qcd_bbbb_ptb_slice_scan.sh:97:  rm -f "$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+scripts/delphes/run_qcd_bbbb_ptb_slice_scan.sh:98:  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+scripts/delphes/run_qcd_bbbb_ptb_slice_scan.sh:99:  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
+scripts/delphes/run_qcd_bbbb_iht_slice_scan.sh:104:  rm -f "$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+scripts/delphes/run_qcd_bbbb_iht_slice_scan.sh:105:  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+scripts/delphes/run_qcd_bbbb_iht_slice_scan.sh:106:  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
+scripts/delphes/run_mg5_xsec_sanity_checks_v2.sh:95:  rm -rf "$outdir"
+scripts/delphes/run_mg5_xsec_sanity_checks_v2.sh:143:rm -rf "$OUT_BASE"
+scripts/delphes/inspect_mg5_xsec_outputs.py:72:def find_lhe(sample_dir):
+scripts/delphes/inspect_mg5_xsec_outputs.py:73:    candidates = sorted((sample_dir / "Events").glob("*/unweighted_events.lhe*"))
+scripts/delphes/inspect_mg5_xsec_outputs.py:77:def open_lhe(path):
+scripts/delphes/inspect_mg5_xsec_outputs.py:83:def count_lhe_final_states(lhe_path, max_events=300):
+scripts/delphes/inspect_mg5_xsec_outputs.py:90:    with open_lhe(lhe_path) as f:
+scripts/delphes/inspect_mg5_xsec_outputs.py:180:    lhe_rows = []
+scripts/delphes/inspect_mg5_xsec_outputs.py:183:        lhe = find_lhe(sample_dir)
+scripts/delphes/inspect_mg5_xsec_outputs.py:184:        if lhe is None:
+scripts/delphes/inspect_mg5_xsec_outputs.py:187:        counts = count_lhe_final_states(lhe)
+scripts/delphes/inspect_mg5_xsec_outputs.py:189:        lhe_rows.append(
+scripts/delphes/inspect_mg5_xsec_outputs.py:192:                "lhe_file": str(lhe),
+scripts/delphes/inspect_mg5_xsec_outputs.py:200:    lhe_df = pd.DataFrame(lhe_rows)
+scripts/delphes/inspect_mg5_xsec_outputs.py:203:    print(lhe_df[["sample", "n_events_checked", "final_b_or_bbar_counts", "final_higgs_counts"]].to_string(index=False))
+scripts/delphes/inspect_mg5_xsec_outputs.py:245:    lhe_df.to_csv(OUTDIR / "mg5_lhe_final_state_diagnostics.csv", index=False)
+scripts/delphes/inspect_mg5_xsec_outputs.py:249:    (OUTDIR / "mg5_lhe_final_state_diagnostics.md").write_text(lhe_df.to_markdown(index=False) + "\n")
+scripts/delphes/run_mg5_vbf_decay_diagnostics.sh:85:  rm -rf "$outdir"
+scripts/delphes/run_mg5_vbf_decay_diagnostics.sh:107:rm -rf "$OUT_BASE"
+scripts/delphes/make_hh4b_truth_matched_reco_comparison.py:71:        pattern = f"HH4b_ggf_hh4b_10k_{campaign}_shard_*_pythia8_delphes.root"
+scripts/delphes/make_hh4b_truth_matched_reco_comparison.py:75:        pattern = f"HH4b_vbf_hh4b_10k_{campaign}_shard_*_pythia8_delphes.root"
+scripts/delphes/audit_hh4b_sample_usage.py:56:        pattern = f"HH4b_ggf_hh4b_10k_{campaign}_shard_*_pythia8_delphes.root"
+scripts/delphes/audit_hh4b_sample_usage.py:57:        broad = "HH4b_ggf_hh4b_10k*shard*_pythia8_delphes.root"
+scripts/delphes/audit_hh4b_sample_usage.py:59:        pattern = f"HH4b_vbf_hh4b_10k_{campaign}_shard_*_pythia8_delphes.root"
+scripts/delphes/audit_hh4b_sample_usage.py:60:        broad = "HH4b_vbf_hh4b_10k*shard*_pythia8_delphes.root"
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:67:        roots = roots_from_patterns([f"HH4b_ggf_hh4b_10k_{campaign}_shard_*_pythia8_delphes.root"])
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:73:        roots = roots_from_patterns([f"HH4b_vbf_hh4b_10k_{campaign}_shard_*_pythia8_delphes.root"])
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:96:        "roots": roots_from_patterns(["ttbar_200k*delphes.root", "ttbar*200k*delphes.root"]),
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:102:        "roots": roots_from_patterns(["zbbbb_presel_100k*delphes.root", "Zbbbb*100k*delphes.root"]),
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:108:        "roots": roots_from_patterns(["qcd_bbbb_iht100to200_20000*delphes.root"]),
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:115:            "qcd_bbbb_iht200to400_20000*delphes.root",
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:116:            "qcd_bbbb_iht200to400_extra100k*delphes.root",
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:123:        "roots": roots_from_patterns(["qcd_bbbb_iht400to600_20000*delphes.root"]),
+scripts/delphes/run_hh4b_v2_reconstruction_nominal_samples.py:129:        "roots": roots_from_patterns(["qcd_bbbb_iht600plus_20000*delphes.root"]),
+scripts/delphes/audit_v2_root_availability.py:19:        "root_patterns": ["HH4b_ggf_hh4b_10k_transfer_cluster_84730223_shard_*_pythia8_delphes.root"],
+scripts/delphes/audit_v2_root_availability.py:24:        "root_patterns": ["HH4b_vbf_hh4b_10k_transfer_cluster_3473183_shard_*_pythia8_delphes.root"],
+scripts/delphes/audit_v2_root_availability.py:29:        "root_patterns": ["ttbar_200k_shard*_pythia8_delphes.root"],
+scripts/delphes/audit_v2_root_availability.py:34:        "root_patterns": ["zbbbb_presel_100k_shard*_pythia8_delphes.root", "Zbbbb*100k*delphes.root"],
+scripts/delphes/audit_v2_root_availability.py:39:        "root_patterns": ["qcd_bbbb_iht100to200_20000*delphes.root"],
+scripts/delphes/audit_v2_root_availability.py:44:        "root_patterns": ["qcd_bbbb_iht200to400_20000*delphes.root", "qcd_bbbb_iht200to400_extra100k*delphes.root"],
+scripts/delphes/audit_v2_root_availability.py:49:        "root_patterns": ["qcd_bbbb_iht400to600_20000*delphes.root"],
+scripts/delphes/audit_v2_root_availability.py:54:        "root_patterns": ["qcd_bbbb_iht600plus_20000*delphes.root"],
+scripts/delphes/recover_ttbar_200k_root_shards_keep_root.sh:17:mkdir -p "$HH4B_STORE/logs" "$HH4B_STORE/root" "$HH4B_STORE/hepmc" "$HH4B_STORE/parquet" "$HH4B_STORE/metadata"
+scripts/delphes/recover_ttbar_200k_root_shards_keep_root.sh:34:  ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+scripts/delphes/recover_ttbar_200k_root_shards_keep_root.sh:71:  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+scripts/delphes/recover_ttbar_200k_root_shards_keep_root.sh:72:  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
+scripts/delphes/recover_qcd_iht_nominal_roots_keep_root.sh:17:mkdir -p "$HH4B_STORE/logs" "$HH4B_STORE/root" "$HH4B_STORE/hepmc" "$HH4B_STORE/parquet" "$HH4B_STORE/metadata" "$CAMPAIGN_BACKUP_DIR"
+scripts/delphes/recover_qcd_iht_nominal_roots_keep_root.sh:115:  local ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+scripts/delphes/recover_qcd_iht_nominal_roots_keep_root.sh:146:  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+scripts/delphes/recover_qcd_iht_nominal_roots_keep_root.sh:147:  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
+scripts/delphes/recover_zbbbb_100k_root_shards_keep_root.sh:17:mkdir -p "$HH4B_STORE/logs" "$HH4B_STORE/root" "$HH4B_STORE/hepmc" "$HH4B_STORE/parquet" "$HH4B_STORE/metadata"
+scripts/delphes/recover_zbbbb_100k_root_shards_keep_root.sh:44:  ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+scripts/delphes/recover_zbbbb_100k_root_shards_keep_root.sh:79:  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+scripts/delphes/recover_zbbbb_100k_root_shards_keep_root.sh:80:  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
