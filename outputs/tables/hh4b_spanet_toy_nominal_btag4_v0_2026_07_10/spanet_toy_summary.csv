@@ -1,0 +1,2 @@
+test_auc_all_unweighted,test_auc_all_weighted,test_qcd_weighted_auc,test_top_weighted_auc,test_assignment_mask_events,best_threshold,best_signal_events_450fb,best_background_events_450fb,best_S_over_B,best_S_over_sqrtB,best_n_signal_test_rows,best_n_background_test_rows
+0.7558238612157258,0.7687291451651723,0.7959261577628369,0.5699661198731802,140,0.88,61.59547401030928,118315.46268908212,0.000520603753815123,0.1790721502294225,32.0,50.0
