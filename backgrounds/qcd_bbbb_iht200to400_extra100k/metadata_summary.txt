@@ -1,0 +1,16 @@
+campaign: qcd_bbbb_iht200to400_extra100k
+shards: 10
+events_per_shard: 10000
+total generated events: 100000
+candidate rows: 6865
+events with >=4 selected jets: 52124
+events with >=4 selected b-tagged jets: 6865
+median xsec pb: 126.32426071166992
+median mbb1: 134.87595787908347
+median mbb2: 112.934105567795
+median avg_mbb: 125.39993911708908
+median delta_mbb: 37.64118053101426
+median mhh: 374.2160250228525
+median n_selected_bjets: 4.0
+merged event summary: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/qcd_bbbb_iht200to400_extra100k_merged_event_summary.parquet
+merged candidates: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/qcd_bbbb_iht200to400_extra100k_merged_hh4b_candidates.parquet
