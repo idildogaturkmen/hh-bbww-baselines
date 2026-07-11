@@ -39,3 +39,6 @@ parsetab.py
 parser.out
 __pycache__/
 *.pyc
+
+# Large diagnostic event-level score dumps; keep locally, do not commit.
+outputs/tables/hh4b_bdt_v2_tail_audit_2026_07_11/event_level_bdt_scores_by_seed.csv
