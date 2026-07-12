@@ -34,3 +34,9 @@ Current intended combined count after including this sample:
 The parquet-level outputs are available for all 10 shards and include merged candidate outputs.
 
 Only the ROOT files listed in `root_file_manifest.txt` are currently retained in storage.
+
+## BDT-v2 integration status
+
+The merged candidate parquet currently contains the older compact candidate schema with 15 columns. It is not directly ready for the current BDT-v2 / tail-audit pipeline because several v2 event-topology and activity features are missing.
+
+This sample should not be merged into the BDT-v2 training set until v2 candidate features are reconstructed or the sample is regenerated with v2 feature production enabled.
