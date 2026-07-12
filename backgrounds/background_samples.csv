@@ -1,8 +1,9 @@
 sample,group,process,phase_space,n_generated,xsec_pb,weight_pb,status,notes
-ttbar_200k,background,ttbar,inclusive,200000,512.2746276855469,0.0025613731384277345,nominal,Existing nominal ttbar Delphes sample
-Zbbbb_100k,background,Z+bbbb,presel,100000,6.912992,0.00006912992,nominal,Existing nominal Zbbbb Delphes sample
-qcd_bbbb_iht100to200_20000,background,QCD bbbb,100 <= iHT < 200 GeV,20000,206.2399139404297,0.010311995697021484,nominal,Existing nominal QCD low-iHT slice
-qcd_bbbb_iht200to400_combined120k,background,QCD bbbb,200 <= iHT < 400 GeV,120000,126.35226440429688,0.001052935536702474,nominal_combined,Existing combined nominal 20k + extra 100k QCD iHT200-400 sample
-qcd_bbbb_iht400to600_20000,background,QCD bbbb,400 <= iHT < 600 GeV,20000,9.774867057800293,0.0004887433528900147,nominal,Existing nominal QCD high-iHT slice
-qcd_bbbb_iht600plus_20000,background,QCD bbbb,iHT >= 600 GeV,20000,1.7876876592636108,0.00008938438296318054,nominal,Existing nominal QCD very-high-iHT slice
-qcd_bbbb_iht200to400_extra100k,background,QCD bbbb,200 <= iHT < 400 GeV,100000,126.35226440429688,0.0012635226440429688,extra_produced_2026_07_11,New overnight extra QCD statistics; do not double-count cross section when combining with nominal iHT200-400
+ttbar_200k,background,ttbar,inclusive,200000,512.2746276855469,0.0025613731384277,nominal,Existing nominal ttbar Delphes sample
+Zbbbb_100k,background,Z+bbbb,presel,100000,6.912992,6.912992e-05,nominal,Existing nominal Zbbbb Delphes sample
+qcd_bbbb_iht100to200_20000,background,QCD bbbb,100 <= iHT < 200 GeV,20000,206.2399139404297,0.0103119956970214,nominal,Existing nominal QCD low-iHT slice
+qcd_bbbb_iht200to400_combined120k,background,QCD bbbb,200 <= iHT < 400 GeV,120000,126.35226440429688,0.0010529355367024,nominal_combined,Existing combined nominal 20k + extra 100k QCD iHT200-400 sample
+qcd_bbbb_iht400to600_20000,background,QCD bbbb,400 <= iHT < 600 GeV,20000,9.774867057800291,0.00048874335289,nominal,Existing nominal QCD high-iHT slice
+qcd_bbbb_iht600plus_20000,background,QCD bbbb,iHT >= 600 GeV,20000,1.7876876592636108,8.93843829631e-05,nominal,Existing nominal QCD very-high-iHT slice
+qcd_bbbb_iht200to400_extra100k,background,QCD bbbb,200 <= iHT < 400 GeV,100000,126.35226440429688,0.0012635226440429,extra_produced_2026_07_11,New overnight extra QCD statistics; do not double-count cross section when combining with nominal iHT200-400
+qcd_bbbb_iht200to400_extra100k_v2,background,QCD bbbb,200 <= iHT < 400 GeV,100000,126.68674087524414,0.0012668674087524415,extra_produced_2026_07_11,Second non-overlapping extra QCD iHT200-400 sample with seed base 452000; do not double-count cross section when combining iHT200-400 samples
