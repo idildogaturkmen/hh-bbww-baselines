@@ -1,0 +1,19 @@
+tag: qcd_bbbb_iht200to400_combined220k_bdtv2
+phase_space: 200 <= iHT < 400 GeV
+total_generated_events: 220000
+xsec_eff_pb: 126.37602476640181
+event_weight_pb: 0.0005744364762109174
+combined_candidate_rows: 15038
+output: /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal_plus_extra/qcd_bbbb_iht200to400_combined220k_bdtv2_hh4b_candidates.parquet
+
+components:
+  - label: qcd_bbbb_iht200to400_combined120k_v2
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal/qcd_bbbb_iht200to400_combined120k_v2_hh4b_candidates.parquet
+    n_generated: 120000
+    xsec_pb: 126.35226440429688
+    candidate_rows: 8196
+  - label: qcd_bbbb_iht200to400_extra100k_v3
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/qcd_bbbb_iht200to400_extra100k_v3_merged_hh4b_candidates_bdtv2_ready.parquet
+    n_generated: 100000
+    xsec_pb: 126.40453720092773
+    candidate_rows: 6842
