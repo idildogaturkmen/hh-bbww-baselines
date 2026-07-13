@@ -1,0 +1,128 @@
+Loaded ggF_HH4b_SMnorm: rows=641, xsec_pb=0.01055, path=ggF_HH4b_SMnorm_v2_hh4b_candidates.parquet
+Loaded VBF_HH4b_SMnorm: rows=694, xsec_pb=0.000587, path=VBF_HH4b_SMnorm_v2_hh4b_candidates.parquet
+Loaded ttbar_200k: rows=737, xsec_pb=512.2746276855469, path=ttbar_200k_v2_hh4b_candidates.parquet
+Loaded Zbbbb_100k: rows=3434, xsec_pb=6.912992, path=Zbbbb_100k_v2_hh4b_candidates.parquet
+Loaded qcd_bbbb_iht100to200_20000: rows=319, xsec_pb=206.2399139404297, path=qcd_bbbb_iht100to200_20000_v2_hh4b_candidates.parquet
+Loaded qcd_bbbb_iht200to400_combined220k_bdtv2: rows=15038, xsec_pb=126.37602476640181, path=qcd_bbbb_iht200to400_combined220k_bdtv2_hh4b_candidates.parquet
+Loaded qcd_bbbb_iht400to600_combined120k_bdtv2: rows=17761, xsec_pb=9.782172997792562, path=qcd_bbbb_iht400to600_combined120k_bdtv2_hh4b_candidates.parquet
+Loaded qcd_bbbb_iht600plus_20000: rows=3635, xsec_pb=1.7876876592636108, path=qcd_bbbb_iht600plus_20000_v2_hh4b_candidates.parquet
+
+=== V3 qcdplus input row counts ===
+                        analysis_sample      group  rows  n_generated    xsec_pb
+                        VBF_HH4b_SMnorm     signal   694        10000   0.000587
+                             Zbbbb_100k background  3434       100000   6.912992
+                        ggF_HH4b_SMnorm     signal   641        10000   0.010550
+             qcd_bbbb_iht100to200_20000 background   319        20000 206.239914
+qcd_bbbb_iht200to400_combined220k_bdtv2 background 15038       220000 126.376025
+qcd_bbbb_iht400to600_combined120k_bdtv2 background 17761       120000   9.782173
+              qcd_bbbb_iht600plus_20000 background  3635        20000   1.787688
+                             ttbar_200k background   737       200000 512.274628
+
+=== V3 qcdplus BDT feature columns ===
+  mbb1
+  mbb2
+  avg_mbb
+  delta_mbb
+  r_hh
+  r_hh_125_125
+  r_hh_125_120
+  mhh
+  hh_pt
+  hh_eta
+  h1_pt
+  h1_eta
+  h2_pt
+  h2_eta
+  h_delta_eta
+  h_delta_phi
+  h_delta_r
+  h_pt_balance
+  drbb1
+  drbb2
+  n_selected_jets
+  n_selected_bjets
+  n_extra_selected_jets
+  n_extra_selected_bjets
+  ht_selected_jets
+  ht_selected_bjets
+  ht_candidate_jets
+  j1_pt
+  j2_pt
+  j3_pt
+  j4_pt
+  j1_eta
+  j2_eta
+  j3_eta
+  j4_eta
+  j1_mass
+  j2_mass
+  j3_mass
+  j4_mass
+  pt_sum4
+  ht_over_mhh
+  pt_asym_12
+  pt_asym_34
+  avg_drbb
+  max_drbb
+  min_drbb
+
+=== Safe merge row counts ===
+                        analysis_sample      group  rows  n_generated    xsec_pb
+                        VBF_HH4b_SMnorm     signal   694        10000   0.000587
+                             Zbbbb_100k background  3434       100000   6.912992
+                        ggF_HH4b_SMnorm     signal   641        10000   0.010550
+             qcd_bbbb_iht100to200_20000 background   319        20000 206.239914
+qcd_bbbb_iht200to400_combined220k_bdtv2 background 15038       220000 126.376025
+qcd_bbbb_iht400to600_combined120k_bdtv2 background 17761       120000   9.782173
+              qcd_bbbb_iht600plus_20000 background  3635        20000   1.787688
+                             ttbar_200k background   737       200000 512.274628
+
+All-candidate signal events at 450/fb: 322.64676
+
+=== Safe event-feature AUC summary ===
+                 classifier               negative_class  unweighted_auc  physics_weighted_auc  n_train_task  n_test_task
+BDT_QCD_event_features_safe           QCD bbbb HT slices        0.862507              0.835526         24756        13332
+BDT_top_event_features_safe ttbar / top-like backgrounds        0.785095              0.808987          1347          725
+
+=== Best stable safe event-feature rectangles ===
+ qcd_threshold  top_threshold  signal_events_450fb  background_events_450fb  S_over_B  S_over_sqrtB  S_over_10pctB  n_signal_test_rows  n_background_test_rows  neff_signal  neff_background
+         0.800          0.500            92.112665            214886.271510  0.000429      0.198708       0.004287                 144                     389    74.256548       127.083918
+         0.800          0.550            86.356133            191487.964884  0.000451      0.197343       0.004510                 134                     360    69.549425       120.175206
+         0.850          0.875            18.592703              8944.407599  0.002079      0.196592       0.020787                  31                      24    15.118235         5.797030
+         0.775          0.500           104.639435            287827.405338  0.000364      0.195043       0.003635                 161                     495    84.183539       129.436959
+         0.825          0.500            79.431194            167056.748542  0.000475      0.194339       0.004755                 125                     290    64.088308        88.814569
+         0.800          0.525            86.665534            203038.388006  0.000427      0.192335       0.004268                 138                     379    70.033057       125.043863
+         0.850          0.500            68.545085            127046.828616  0.000540      0.192307       0.005395                  97                     199    54.590197        57.800967
+         0.825          0.550            73.752012            147791.526793  0.000499      0.191844       0.004990                 116                     270    59.501934        84.402261
+         0.800          0.575            82.232109            184635.716833  0.000445      0.191374       0.004454                 129                     349    66.321044       116.740039
+         0.750          0.500           114.597341            360188.239432  0.000318      0.190946       0.003182                 177                     610    92.239752       140.431994
+         0.775          0.550            97.482445            261791.329436  0.000372      0.190524       0.003724                 149                     459    78.360265       118.140269
+         0.850          0.550            63.020604            109754.429240  0.000574      0.190227       0.005742                  90                     186    50.243573        53.547794
+         0.625          0.500           172.178967            819786.766980  0.000210      0.190165       0.002100                 245                    1346   137.212925       305.771091
+         0.800          0.600            79.508544            178836.681908  0.000445      0.188012       0.004446                 126                     336    64.209285       111.008393
+         0.825          0.525            74.061413            156039.233735  0.000475      0.187489       0.004746                 120                     282    59.986517        86.613241
+
+=== Top feature importances ===
+              feature  importance_top
+         r_hh_125_120        0.090697
+      n_selected_jets        0.073425
+n_extra_selected_jets        0.065725
+                hh_pt        0.063266
+              j1_mass        0.053291
+                 mbb2        0.049359
+     ht_selected_jets        0.039615
+              avg_mbb        0.035651
+            h_delta_r        0.035177
+          ht_over_mhh        0.032920
+          h_delta_phi        0.028594
+              j3_mass        0.028472
+                drbb2        0.025071
+               hh_eta        0.022738
+          h_delta_eta        0.021791
+                 mbb1        0.020607
+             avg_drbb        0.020335
+            delta_mbb        0.020255
+               j1_eta        0.019266
+              j2_mass        0.017084
+
+Wrote outputs to: /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/tables/sm_normalized_hh4b_two_bdt_event_features_safe_v3_qcdplus_2026_07_13

@@ -1,0 +1,8 @@
+-rw-r--r-- 1 iturkmen us_cms 285K Jul 10 12:51 /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal/ggF_HH4b_SMnorm_v2_hh4b_candidates.parquet
+-rw-r--r-- 1 iturkmen us_cms 304K Jul 10 12:51 /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal/VBF_HH4b_SMnorm_v2_hh4b_candidates.parquet
+-rw-r--r-- 1 iturkmen us_cms 321K Jul 10 12:54 /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal/ttbar_200k_v2_hh4b_candidates.parquet
+-rw-r--r-- 1 iturkmen us_cms 1.3M Jul 10 12:56 /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal/Zbbbb_100k_v2_hh4b_candidates.parquet
+-rw-r--r-- 1 iturkmen us_cms 165K Jul 10 12:56 /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal/qcd_bbbb_iht100to200_20000_v2_hh4b_candidates.parquet
+-rw-r--r-- 1 iturkmen us_cms 6.7M Jul 13 12:11 /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal_plus_extra/qcd_bbbb_iht200to400_combined220k_bdtv2_hh4b_candidates.parquet
+-rw-r--r-- 1 iturkmen us_cms 8.0M Jul 13 12:11 /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal_plus_extra/qcd_bbbb_iht400to600_combined120k_bdtv2_hh4b_candidates.parquet
+-rw-r--r-- 1 iturkmen us_cms 1.4M Jul 10 12:58 /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal/qcd_bbbb_iht600plus_20000_v2_hh4b_candidates.parquet
