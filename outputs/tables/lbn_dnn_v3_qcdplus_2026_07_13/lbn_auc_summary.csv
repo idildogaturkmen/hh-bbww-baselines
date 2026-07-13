@@ -1,0 +1,5 @@
+mode,classifier,negative_class,unweighted_auc,physics_weighted_auc,n_train_task,n_test_task
+lbn_p4_only,LBN_QCD,QCD bbbb HT slices,0.6570412672301134,0.6328757073152751,24729,13359
+lbn_p4_only,LBN_top,ttbar / top-like backgrounds,0.542374096207431,0.5380356477747453,1366,706
+lbn_p4_plus_topology,LBN_QCD,QCD bbbb HT slices,0.7459585181720516,0.7185244014568543,24729,13359
+lbn_p4_plus_topology,LBN_top,ttbar / top-like backgrounds,0.6667726877693458,0.6691980199225458,1366,706

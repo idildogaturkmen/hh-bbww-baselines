@@ -1,0 +1,6 @@
+| mode                 | classifier   | negative_class               |   unweighted_auc |   physics_weighted_auc |   n_train_task |   n_test_task |
+|:---------------------|:-------------|:-----------------------------|-----------------:|-----------------------:|---------------:|--------------:|
+| lbn_p4_only          | LBN_QCD      | QCD bbbb HT slices           |           0.657  |                 0.6329 |          24729 |         13359 |
+| lbn_p4_only          | LBN_top      | ttbar / top-like backgrounds |           0.5424 |                 0.538  |           1366 |           706 |
+| lbn_p4_plus_topology | LBN_QCD      | QCD bbbb HT slices           |           0.746  |                 0.7185 |          24729 |         13359 |
+| lbn_p4_plus_topology | LBN_top      | ttbar / top-like backgrounds |           0.6668 |                 0.6692 |           1366 |           706 |
