@@ -19,8 +19,8 @@ for run, d in RUNS.items():
     auc = pd.read_csv(d / "category_audit_auc_summary.csv")
     yields = pd.read_csv(d / "category_yields.csv")
 
-    qcd_auc = auc[auc["classifier"].str.contains("QCD", case=False, na=False)].iloc[0]
-    top_auc = auc[auc["classifier"].str.contains("top", case=False, na=False)].iloc[0]
+    qcd_auc = auc[auc["classifier"].str.startswith("BDT_QCD")].iloc[0]
+    top_auc = auc[auc["classifier"].str.startswith("BDT_top")].iloc[0]
 
     selected = yields.copy()
     selected["run"] = run
