@@ -108,7 +108,7 @@ file_rows = []
 
 for cfg in CONFIGS:
     files = collect(cfg["patterns"])
-    total_entries = 0
+    total_events = 0
     n_bad = 0
 
     for f in files:
@@ -118,7 +118,7 @@ for cfg in CONFIGS:
             n_for_sum = 0
         else:
             n_for_sum = n
-            total_entries += n
+            total_events += n
 
         file_rows.append({
             "sample": cfg["sample"],
@@ -131,10 +131,10 @@ for cfg in CONFIGS:
         "sample": cfg["sample"],
         "group": cfg["group"],
         "n_files": len(files),
-        "root_events": total_entries,
+        "root_events": total_events,
         "expected_generated": cfg["expected_generated"],
-        "coverage_fraction": total_entries / cfg["expected_generated"] if cfg["expected_generated"] else 0,
-        "status": "OK" if total_entries == cfg["expected_generated"] and n_bad == 0 else "CHECK",
+        "coverage_fraction": total_events / cfg["expected_generated"] if cfg["expected_generated"] else 0.0,
+        "status": "OK" if total_events == cfg["expected_generated"] and n_bad == 0 else "CHECK",
         "patterns": "; ".join(cfg["patterns"]),
     })
 
