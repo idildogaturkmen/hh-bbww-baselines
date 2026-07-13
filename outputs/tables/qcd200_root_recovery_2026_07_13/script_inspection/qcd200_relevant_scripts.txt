@@ -1,0 +1,641 @@
+=== scripts/delphes/recover_qcd_iht_nominal_roots_keep_root.sh ===
+#!/usr/bin/env bash
+set -euo pipefail
+
+: "${HH4B_REPO:?Need HH4B_REPO}"
+: "${HH4B_STORE:?Need HH4B_STORE}"
+
+PROCESS_DIR="$HH4B_STORE/mg5/QCD_bbbb_presel_smoke"
+RUN_CARD="$PROCESS_DIR/Cards/run_card.dat"
+CAMPAIGN_BACKUP_DIR="$HH4B_STORE/recovery_backups/qcd_iht_nominal_$(date +%Y%m%d_%H%M%S)"
+
+if [[ ! -f "$RUN_CARD" ]]; then
+  echo "ERROR: missing QCD run card: $RUN_CARD"
+  exit 2
+fi
+
+cd "$HH4B_REPO"
+mkdir -p "$HH4B_STORE/logs" "$HH4B_STORE/root" "$HH4B_STORE/hepmc" "$HH4B_STORE/parquet" "$HH4B_STORE/metadata" "$CAMPAIGN_BACKUP_DIR"
+
+
+check_storage_guard() {
+  local used_gb
+  used_gb=$(du -s "$HH4B_STORE" | awk '{printf "%.0f", $1/1024/1024}')
+  echo "Current HH4B_STORE usage: ${used_gb}G"
+  if (( used_gb > 170 )); then
+    echo "ERROR: HH4B_STORE usage exceeded 170G guardrail. Stopping to avoid quota problems."
+    df -h "$HH4B_STORE"
+  check_storage_guard
+    exit 9
+  fi
+}
+
+
+echo "PROCESS_DIR=$PROCESS_DIR"
+echo "RUN_CARD=$RUN_CARD"
+echo "BACKUP_DIR=$CAMPAIGN_BACKUP_DIR"
+
+cp -p "$RUN_CARD" "$CAMPAIGN_BACKUP_DIR/run_card_before_qcd_recovery.dat"
+cp -p "$PROCESS_DIR/Cards/proc_card_mg5.dat" "$CAMPAIGN_BACKUP_DIR/proc_card_mg5.dat" || true
+
+restore_run_card() {
+  cp "$CAMPAIGN_BACKUP_DIR/run_card_before_qcd_recovery.dat" "$RUN_CARD"
+}
+trap restore_run_card EXIT
+
+set_qcd_iht_card() {
+  local IHTMIN="$1"
+  local IHTMAX="$2"
+
+  python3 - <<PY
+from pathlib import Path
+import re
+
+p = Path("${RUN_CARD}")
+txt = p.read_text()
+
+def set_param(text, key, value, comment=""):
+    pattern = rf"(?m)^.*=\\s*{re.escape(key)}\\b.*$"
+    newline = f" {value} = {key}"
+    if comment:
+        newline += f" ! {comment}"
+    if re.search(pattern, text):
+        return re.sub(pattern, newline, text)
+    return text + "\\n" + newline + "\\n"
+
+settings = {
+    "ptb": ("25.0", "minimum pt for b quarks"),
+    "ptbmax": ("-1.0", "maximum pt for b quarks"),
+    "etab": ("2.7", "maximum eta for b quarks"),
+    "drbb": ("0.4", "minimum deltaR between b quarks"),
+    "drbj": ("0.4", "minimum deltaR between b and light jets"),
+    "ptj": ("20.0", "minimum pt for jets"),
+    "etaj": ("5.0", "maximum eta for jets"),
+    "ihtmin": ("${IHTMIN}", "inclusive HT minimum for all partons including b"),
+    "ihtmax": ("${IHTMAX}", "inclusive HT maximum for all partons including b"),
+    "ht2min": ("0.0", "minimum HT for two leading jets"),
+    "ht3min": ("0.0", "minimum HT for three leading jets"),
+    "ht4min": ("0.0", "minimum HT for four leading jets"),
+    "ht2max": ("-1.0", "maximum HT for two leading jets"),
+    "ht3max": ("-1.0", "maximum HT for three leading jets"),
+    "ht4max": ("-1.0", "maximum HT for four leading jets"),
+}
+
+for key, (value, comment) in settings.items():
+    txt = set_param(txt, key, value, comment)
+
+p.write_text(txt)
+PY
+
+  echo "Updated QCD run-card slice settings:"
+  grep -E "ptb|ptbmax|ihtmin|ihtmax|ht2min|ht3min|ht4min|ht2max|ht3max|ht4max" "$RUN_CARD" | head -80 || true
+}
+
+backup_existing_outputs() {
+  local TAG="$1"
+  for f in \
+    "$HH4B_STORE/parquet/${TAG}_event_summary.parquet" \
+    "$HH4B_STORE/parquet/${TAG}_hh4b_candidates.parquet" \
+    "$HH4B_STORE/metadata/${TAG}_diagnostic.csv" \
+    "$HH4B_STORE/metadata/${TAG}_summary.txt"
+  do
+    if [[ -f "$f" ]]; then
+      cp -p "$f" "$CAMPAIGN_BACKUP_DIR/"
+    fi
+  done
+}
+
+run_one_qcd() {
+  local TAG="$1"
+  local RUN_NAME="$2"
+  local N_EVENTS="$3"
+  local SEED="$4"
+  local IHTMIN="$5"
+  local IHTMAX="$6"
+
+  local ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+
+  echo
+  echo "============================================================"
+  echo "Recovering QCD ROOT for $TAG"
+  echo "RUN_NAME=$RUN_NAME"
+  echo "N_EVENTS=$N_EVENTS"
+  echo "SEED=$SEED"
+  echo "IHTMIN=$IHTMIN"
+  echo "IHTMAX=$IHTMAX"
+  echo "ROOT_FILE=$ROOT_FILE"
+  echo "============================================================"
+
+  if [[ -s "$ROOT_FILE" ]]; then
+    echo "ROOT already exists, skipping: $ROOT_FILE"
+    return
+  fi
+
+  set_qcd_iht_card "$IHTMIN" "$IHTMAX"
+  backup_existing_outputs "$TAG"
+
+  scripts/delphes/run_local_background_sample.sh \
+    "$PROCESS_DIR" \
+    "$RUN_NAME" \
+    "$N_EVENTS" \
+    "$SEED" \
+    "$TAG" \
+    no \
+    2>&1 | tee "$HH4B_STORE/logs/${TAG}_qcd_root_recovery_pipeline.log"
+
+  # Keep ROOT, delete bulky temporary files.
+  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
+
+  if [[ ! -s "$ROOT_FILE" ]]; then
+    echo "ERROR: expected ROOT was not produced: $ROOT_FILE"
+    exit 3
+  fi
+
+  echo "Kept ROOT: $ROOT_FILE"
+  df -h "$HH4B_STORE"
+  check_storage_guard
+}
+
+# Original 20k HT/iHT slices from run_qcd_bbbb_iht_slice_scan.sh.
+run_one_qcd "qcd_bbbb_iht100to200_20000" "run_qcd_bbbb_iht100to200_20000" 20000 161000 100 200
+run_one_qcd "qcd_bbbb_iht200to400_20000" "run_qcd_bbbb_iht200to400_20000" 20000 162000 200 400
+run_one_qcd "qcd_bbbb_iht400to600_20000" "run_qcd_bbbb_iht400to600_20000" 20000 163000 400 600
+run_one_qcd "qcd_bbbb_iht600plus_20000"  "run_qcd_bbbb_iht600plus_20000"  20000 164000 600 -1
+
+# Extra 100k iHT200-400 campaign. Shard000 already exists, so this recovers missing shards 001-009.
+for i in $(seq 0 9); do
+  SHARD=$(printf "%03d" "$i")
+  TAG="qcd_bbbb_iht200to400_extra100k_shard${SHARD}"
+  RUN_NAME="run_qcd_bbbb_iht200to400_extra100k_${SHARD}"
+  SEED=$((252000 + i))
+  run_one_qcd "$TAG" "$RUN_NAME" 10000 "$SEED" 200 400
+done
+
+echo
+echo "DONE recovering nominal QCD iHT ROOT files with ROOT kept."
+
+=== scripts/delphes/run_qcd_bbbb_iht200to400_extra100k_v3.sh ===
+#!/usr/bin/env bash
+set -euo pipefail
+
+: "${HH4B_REPO:?Need HH4B_REPO}"
+: "${HH4B_STORE:?Need HH4B_STORE}"
+
+cd "$HH4B_REPO"
+
+PROCESS_DIR="$HH4B_STORE/mg5/QCD_bbbb_presel_smoke"
+RUN_CARD="$PROCESS_DIR/Cards/run_card.dat"
+BACKUP_RUN_CARD="${RUN_CARD}.before_iht200to400_extra100k"
+
+CAMPAIGN="qcd_bbbb_iht200to400_extra100k_v3"
+N_SHARDS=10
+EVENTS_PER_SHARD=10000
+SEED0=652000
+
+cp "$RUN_CARD" "$BACKUP_RUN_CARD"
+
+restore_run_card() {
+  cp "$BACKUP_RUN_CARD" "$RUN_CARD"
+}
+trap restore_run_card EXIT
+
+python3 - <<PY
+from pathlib import Path
+import re
+
+p = Path("${RUN_CARD}")
+txt = p.read_text()
+
+def set_param(text, key, value, comment=""):
+    pattern = rf"(?m)^.*=\\s*{re.escape(key)}\\b.*$"
+    newline = f" {value} = {key}"
+    if comment:
+        newline += f" ! {comment}"
+    if re.search(pattern, text):
+        return re.sub(pattern, newline, text)
+    return text + "\\n" + newline + "\\n"
+
+settings = {
+    "ptb": ("25.0", "minimum pt for b quarks"),
+    "ptbmax": ("-1.0", "maximum pt for b quarks"),
+    "etab": ("2.7", "maximum eta for b quarks"),
+    "drbb": ("0.4", "minimum deltaR between b quarks"),
+    "drbj": ("0.4", "minimum deltaR between b and light jets"),
+    "ptj": ("20.0", "minimum pt for jets"),
+    "etaj": ("5.0", "maximum eta for jets"),
+
+    # Target slice
+    "ihtmin": ("200", "inclusive HT minimum for all partons including b"),
+    "ihtmax": ("400", "inclusive HT maximum for all partons including b"),
+
+    # Disable other HT slicing requirements
+    "ht2min": ("0.0", "minimum HT for two leading jets"),
+    "ht3min": ("0.0", "minimum HT for three leading jets"),
+    "ht4min": ("0.0", "minimum HT for four leading jets"),
+    "ht2max": ("-1.0", "maximum HT for two leading jets"),
+    "ht3max": ("-1.0", "maximum HT for three leading jets"),
+    "ht4max": ("-1.0", "maximum HT for four leading jets"),
+}
+
+for key, (value, comment) in settings.items():
+    txt = set_param(txt, key, value, comment)
+
+p.write_text(txt)
+PY
+
+echo "Using QCD bbbb iht200to400 run-card settings:"
+grep -E "ptb|ptbmax|ihtmin|ihtmax|ht2min|ht3min|ht4min|ht2max|ht3max|ht4max" "$RUN_CARD" | head -80 || true
+
+scripts/delphes/run_storage_safe_local_campaign_v2.sh \
+  "$CAMPAIGN" \
+  "$PROCESS_DIR" \
+  "$N_SHARDS" \
+  "$EVENTS_PER_SHARD" \
+  "$SEED0" \
+  no \
+  1 \
+  yes
+
+echo
+echo "DONE $CAMPAIGN"
+
+=== scripts/delphes/run_qcd_bbbb_iht200to400_extra100k_v2.sh ===
+#!/usr/bin/env bash
+set -euo pipefail
+
+: "${HH4B_REPO:?Need HH4B_REPO}"
+: "${HH4B_STORE:?Need HH4B_STORE}"
+
+cd "$HH4B_REPO"
+
+PROCESS_DIR="$HH4B_STORE/mg5/QCD_bbbb_presel_smoke"
+RUN_CARD="$PROCESS_DIR/Cards/run_card.dat"
+BACKUP_RUN_CARD="${RUN_CARD}.before_iht200to400_extra100k"
+
+CAMPAIGN="qcd_bbbb_iht200to400_extra100k_v2"
+N_SHARDS=10
+EVENTS_PER_SHARD=10000
+SEED0=452000
+
+cp "$RUN_CARD" "$BACKUP_RUN_CARD"
+
+restore_run_card() {
+  cp "$BACKUP_RUN_CARD" "$RUN_CARD"
+}
+trap restore_run_card EXIT
+
+python3 - <<PY
+from pathlib import Path
+import re
+
+p = Path("${RUN_CARD}")
+txt = p.read_text()
+
+def set_param(text, key, value, comment=""):
+    pattern = rf"(?m)^.*=\\s*{re.escape(key)}\\b.*$"
+    newline = f" {value} = {key}"
+    if comment:
+        newline += f" ! {comment}"
+    if re.search(pattern, text):
+        return re.sub(pattern, newline, text)
+    return text + "\\n" + newline + "\\n"
+
+settings = {
+    "ptb": ("25.0", "minimum pt for b quarks"),
+    "ptbmax": ("-1.0", "maximum pt for b quarks"),
+    "etab": ("2.7", "maximum eta for b quarks"),
+    "drbb": ("0.4", "minimum deltaR between b quarks"),
+    "drbj": ("0.4", "minimum deltaR between b and light jets"),
+    "ptj": ("20.0", "minimum pt for jets"),
+    "etaj": ("5.0", "maximum eta for jets"),
+
+    # Target slice
+    "ihtmin": ("200", "inclusive HT minimum for all partons including b"),
+    "ihtmax": ("400", "inclusive HT maximum for all partons including b"),
+
+    # Disable other HT slicing requirements
+    "ht2min": ("0.0", "minimum HT for two leading jets"),
+    "ht3min": ("0.0", "minimum HT for three leading jets"),
+    "ht4min": ("0.0", "minimum HT for four leading jets"),
+    "ht2max": ("-1.0", "maximum HT for two leading jets"),
+    "ht3max": ("-1.0", "maximum HT for three leading jets"),
+    "ht4max": ("-1.0", "maximum HT for four leading jets"),
+}
+
+for key, (value, comment) in settings.items():
+    txt = set_param(txt, key, value, comment)
+
+p.write_text(txt)
+PY
+
+echo "Using QCD bbbb iht200to400 run-card settings:"
+grep -E "ptb|ptbmax|ihtmin|ihtmax|ht2min|ht3min|ht4min|ht2max|ht3max|ht4max" "$RUN_CARD" | head -80 || true
+
+scripts/delphes/run_storage_safe_local_campaign.sh \
+  "$CAMPAIGN" \
+  "$PROCESS_DIR" \
+  "$N_SHARDS" \
+  "$EVENTS_PER_SHARD" \
+  "$SEED0" \
+  no \
+  1 \
+  yes
+
+echo
+echo "DONE $CAMPAIGN"
+
+=== scripts/delphes/run_storage_safe_local_campaign.sh ===
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 8 ]]; then
+  echo "Usage: $0 CAMPAIGN PROCESS_DIR N_SHARDS EVENTS_PER_SHARD SEED0 APPLY_B_CUTS KEEP_ROOT_SHARDS DELETE_LHE"
+  echo "Example:"
+  echo "  $0 qcd_bbbb_presel_100k \$HH4B_STORE/mg5/QCD_bbbb_presel_smoke 10 10000 103000 yes 1 yes"
+  exit 1
+fi
+
+CAMPAIGN="$1"
+PROCESS_DIR="$2"
+N_SHARDS="$3"
+EVENTS_PER_SHARD="$4"
+SEED0="$5"
+APPLY_B_CUTS="$6"
+KEEP_ROOT_SHARDS="$7"
+DELETE_LHE="$8"
+
+: "${HH4B_REPO:?Need HH4B_REPO}"
+: "${HH4B_STORE:?Need HH4B_STORE}"
+
+cd "$HH4B_REPO"
+
+MANIFEST="$HH4B_STORE/metadata/${CAMPAIGN}_manifest.csv"
+SUMMARY="$HH4B_STORE/metadata/${CAMPAIGN}_summary.txt"
+
+echo "campaign,shard,tag,run_name,seed,events_per_shard,event_parquet,candidate_parquet,root_kept,hepmc_deleted,lhe_deleted" > "$MANIFEST"
+
+for i in $(seq 0 $((N_SHARDS - 1))); do
+  SHARD=$(printf "%03d" "$i")
+  SEED=$((SEED0 + i))
+  TAG="${CAMPAIGN}_shard${SHARD}"
+  RUN_NAME="run_${CAMPAIGN}_${SHARD}"
+
+  echo
+  echo "============================================================"
+  echo "Starting shard $SHARD / campaign $CAMPAIGN"
+  echo "TAG=$TAG"
+  echo "RUN_NAME=$RUN_NAME"
+  echo "SEED=$SEED"
+  echo "============================================================"
+
+  scripts/delphes/run_local_background_sample.sh \
+    "$PROCESS_DIR" \
+    "$RUN_NAME" \
+    "$EVENTS_PER_SHARD" \
+    "$SEED" \
+    "$TAG" \
+    "$APPLY_B_CUTS"
+
+  ROOT_FILE="$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+  HEPMC_FILE="$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+  EVENT_PARQUET="$HH4B_STORE/parquet/${TAG}_event_summary.parquet"
+  CAND_PARQUET="$HH4B_STORE/parquet/${TAG}_hh4b_candidates.parquet"
+  LHE_DIR="$PROCESS_DIR/Events/$RUN_NAME"
+
+  ROOT_KEPT="yes"
+  if (( i >= KEEP_ROOT_SHARDS )); then
+    rm -f "$ROOT_FILE"
+    ROOT_KEPT="no"
+  fi
+
+  HEPMC_DELETED="no"
+  if [[ -f "$HEPMC_FILE" ]]; then
+    rm -f "$HEPMC_FILE"
+    HEPMC_DELETED="yes"
+  fi
+
+  LHE_DELETED="no"
+  if [[ "$DELETE_LHE" == "yes" && -d "$LHE_DIR" ]]; then
+    rm -rf "$LHE_DIR"
+    LHE_DELETED="yes"
+  fi
+
+  echo "$CAMPAIGN,$SHARD,$TAG,$RUN_NAME,$SEED,$EVENTS_PER_SHARD,$EVENT_PARQUET,$CAND_PARQUET,$ROOT_KEPT,$HEPMC_DELETED,$LHE_DELETED" >> "$MANIFEST"
+
+  echo "Finished shard $SHARD"
+done
+
+python3 - <<PY
+from pathlib import Path
+import os
+import pandas as pd
+
+store = Path(os.environ["HH4B_STORE"])
+campaign = "${CAMPAIGN}"
+n_shards = int("${N_SHARDS}")
+events_per_shard = int("${EVENTS_PER_SHARD}")
+
+event_files = sorted((store / "parquet").glob(f"{campaign}_shard*_event_summary.parquet"))
+cand_files = sorted((store / "parquet").glob(f"{campaign}_shard*_hh4b_candidates.parquet"))
+
+if len(event_files) != n_shards:
+    raise RuntimeError(f"Expected {n_shards} event parquet files, found {len(event_files)}")
+if len(cand_files) != n_shards:
+    raise RuntimeError(f"Expected {n_shards} candidate parquet files, found {len(cand_files)}")
+
+events = pd.concat([pd.read_parquet(p) for p in event_files], ignore_index=True)
+cands = pd.concat([pd.read_parquet(p) for p in cand_files], ignore_index=True)
+
+event_out = store / "parquet" / f"{campaign}_merged_event_summary.parquet"
+cand_out = store / "parquet" / f"{campaign}_merged_hh4b_candidates.parquet"
+
+events.to_parquet(event_out, index=False)
+cands.to_parquet(cand_out, index=False)
+
+lines = []
+lines.append(f"campaign: {campaign}")
+lines.append(f"shards: {n_shards}")
+lines.append(f"events_per_shard: {events_per_shard}")
+lines.append(f"total generated events: {len(events)}")
+lines.append(f"candidate rows: {len(cands)}")
+lines.append(f"events with >=4 selected jets: {int((events['n_jet_pt30_eta25'] >= 4).sum())}")
+lines.append(f"events with >=4 selected b-tagged jets: {int((events['n_bjet_pt30_eta25'] >= 4).sum())}")
+lines.append(f"median xsec pb: {events['event_cross_section_pb'].median()}")
+
+if len(cands):
+    for col in ["mbb1", "mbb2", "avg_mbb", "delta_mbb", "mhh", "n_selected_bjets"]:
+        lines.append(f"median {col}: {cands[col].median()}")
+
+lines.append(f"merged event summary: {event_out}")
+lines.append(f"merged candidates: {cand_out}")
+
+summary = store / "metadata" / f"{campaign}_summary.txt"
+summary.write_text("\\n".join(lines) + "\\n")
+
+print("\\n".join(lines))
+print("Wrote:", summary)
+PY
+
+echo
+echo "DONE campaign $CAMPAIGN"
+echo "Manifest: $MANIFEST"
+echo "Summary: $SUMMARY"
+
+=== scripts/delphes/run_qcd_bbbb_iht_slice_scan.sh ===
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 N_EVENTS"
+  echo "Runs first-pass non-overlapping QCD bbbb inclusive-HT slices:"
+  echo "  100-200, 200-400, 400-600, >600 GeV"
+  exit 1
+fi
+
+N_EVENTS="$1"
+
+: "${HH4B_REPO:?Need HH4B_REPO}"
+: "${HH4B_STORE:?Need HH4B_STORE}"
+
+PROCESS_DIR="$HH4B_STORE/mg5/QCD_bbbb_presel_smoke"
+RUN_CARD="$PROCESS_DIR/Cards/run_card.dat"
+BACKUP_RUN_CARD="${RUN_CARD}.before_iht_slice_scan"
+
+cp "$RUN_CARD" "$BACKUP_RUN_CARD"
+restore_run_card() {
+  cp "$BACKUP_RUN_CARD" "$RUN_CARD"
+}
+trap restore_run_card EXIT
+
+cd "$HH4B_REPO"
+
+# Format: label ihtmin ihtmax seed_offset
+# Baseline ptb remains 25 GeV. These are inclusive HT slices over all partons, including b quarks.
+SLICES=(
+  "iht100to200 100 200 141000"
+  "iht200to400 200 400 142000"
+  "iht400to600 400 600 143000"
+  "iht600plus 600 -1 144000"
+)
+
+for entry in "${SLICES[@]}"; do
+  read -r LABEL IHTMIN IHTMAX SEED0 <<< "$entry"
+  TAG="qcd_bbbb_${LABEL}_${N_EVENTS}"
+  RUN_NAME="run_${TAG}"
+  SEED=$((SEED0 + N_EVENTS))
+
+  echo
+  echo "============================================================"
+  echo "QCD bbbb inclusive-HT slice"
+  echo "LABEL=$LABEL"
+  echo "IHTMIN=$IHTMIN"
+  echo "IHTMAX=$IHTMAX"
+  echo "TAG=$TAG"
+  echo "RUN_NAME=$RUN_NAME"
+  echo "SEED=$SEED"
+  echo "============================================================"
+
+  python3 - <<PY
+from pathlib import Path
+import re
+
+p = Path("${RUN_CARD}")
+txt = p.read_text()
+
+def set_param(text, key, value, comment=""):
+    pattern = rf"(?m)^.*=\\s*{re.escape(key)}\\b.*$"
+    newline = f" {value} = {key}"
+    if comment:
+        newline += f" ! {comment}"
+    if re.search(pattern, text):
+        return re.sub(pattern, newline, text)
+    return text + "\\n" + newline + "\\n"
+
+settings = {
+    "ptb": ("25.0", "minimum pt for b quarks"),
+    "ptbmax": ("-1.0", "maximum pt for b quarks"),
+    "etab": ("2.7", "maximum eta for b quarks"),
+    "drbb": ("0.4", "minimum deltaR between b quarks"),
+    "drbj": ("0.4", "minimum deltaR between b and light jets"),
+    "ptj": ("20.0", "minimum pt for jets"),
+    "etaj": ("5.0", "maximum eta for jets"),
+    "ihtmin": ("${IHTMIN}", "inclusive HT minimum for all partons including b"),
+    "ihtmax": ("${IHTMAX}", "inclusive HT maximum for all partons including b"),
+    "ht2min": ("0.0", "minimum HT for two leading jets"),
+    "ht3min": ("0.0", "minimum HT for three leading jets"),
+    "ht4min": ("0.0", "minimum HT for four leading jets"),
+    "ht2max": ("-1.0", "maximum HT for two leading jets"),
+    "ht3max": ("-1.0", "maximum HT for three leading jets"),
+    "ht4max": ("-1.0", "maximum HT for four leading jets"),
+}
+
+for key, (value, comment) in settings.items():
+    txt = set_param(txt, key, value, comment)
+
+p.write_text(txt)
+PY
+
+  grep -E "ptb|ptbmax|ihtmin|ihtmax|ht2min|ht3min|ht4min|ht2max|ht3max|ht4max" "$RUN_CARD" | head -80 || true
+
+  scripts/delphes/run_local_background_sample.sh \
+    "$PROCESS_DIR" \
+    "$RUN_NAME" \
+    "$N_EVENTS" \
+    "$SEED" \
+    "$TAG" \
+    no
+
+  rm -f "$HH4B_STORE/root/${TAG}_pythia8_delphes.root"
+  rm -f "$HH4B_STORE/hepmc/${TAG}_pythia8.hepmc"
+  rm -rf "$PROCESS_DIR/Events/$RUN_NAME"
+
+  echo "Finished and cleaned bulky files for $TAG"
+done
+
+QCD_IHT_N_EVENTS="$N_EVENTS" python3 - <<'PY'
+from pathlib import Path
+import os
+import pandas as pd
+
+store = Path(os.environ["HH4B_STORE"])
+n_events = int(os.environ["QCD_IHT_N_EVENTS"])
+
+rows = []
+for event_path in sorted((store / "parquet").glob(f"qcd_bbbb_iht*_{n_events}_event_summary.parquet")):
+    tag = event_path.name.replace("_event_summary.parquet", "")
+    cand_path = store / "parquet" / f"{tag}_hh4b_candidates.parquet"
+    if not cand_path.exists():
+        continue
+
+    ev = pd.read_parquet(event_path)
+    cand = pd.read_parquet(cand_path)
+    xsec = float(ev["event_cross_section_pb"].median())
+    n_gen = len(ev)
+    n_cand = len(cand)
+
+    rows.append({
+        "tag": tag,
+        "slice_label": tag.replace("qcd_bbbb_", "").replace(f"_{n_events}", ""),
+        "n_generated": n_gen,
+        "xsec_pb": xsec,
+        "n_ge4_jets": int((ev["n_jet_pt30_eta25"] >= 4).sum()),
+        "n_ge4_btags": int((ev["n_bjet_pt30_eta25"] >= 4).sum()),
+        "candidate_rows": n_cand,
+        "candidate_eff": n_cand / n_gen if n_gen else 0.0,
+        "effective_candidate_xsec_pb": xsec * n_cand / n_gen if n_gen else 0.0,
+        "median_mbb1": cand["mbb1"].median() if n_cand else None,
+        "median_mbb2": cand["mbb2"].median() if n_cand else None,
+        "median_avg_mbb": cand["avg_mbb"].median() if n_cand else None,
+        "median_delta_mbb": cand["delta_mbb"].median() if n_cand else None,
+        "median_mhh": cand["mhh"].median() if n_cand else None,
+        "median_ht_pt30_eta25": ev["ht_pt30_eta25"].median() if "ht_pt30_eta25" in ev.columns else None,
+    })
+
+df = pd.DataFrame(rows)
+out = store / "metadata" / f"qcd_bbbb_iht_slice_scan_{n_events}.csv"
+df.to_csv(out, index=False)
+print(df.to_string(index=False))
+print("Wrote:", out)
+PY
+
