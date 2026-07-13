@@ -13,7 +13,7 @@ Labels and masks:
 - `y`: signal label.
 - `is_qcd`: QCD-background mask.
 - `is_top`: top-background mask.
-- `train_mask` and `test_mask`: deterministic split using the same random seed and test fraction as the BDT/DNN studies.
+- `train_mask` and `test_mask`: deterministic split using the same random seed, test fraction, and target stratification as the BDT/DNN studies.
 
 Interpretation:
 This dataset is intended for an LBN-DNN baseline. Since LBN uses four-vectors, it should be treated as physics-structured and mass-aware by construction.

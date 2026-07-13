@@ -126,7 +126,7 @@ def main():
         indices,
         test_size=TEST_SIZE,
         random_state=RANDOM_STATE,
-        stratify=y,
+        stratify=df["target"],
     )
 
     train_mask = np.zeros(len(df), dtype=bool)
@@ -167,6 +167,7 @@ def main():
         mass_aware_feature_names=np.asarray(mass_features, dtype="U"),
         analysis_sample=df["analysis_sample"].astype(str).values.astype("U"),
         group=df["group"].astype(str).values.astype("U"),
+        target=df["target"].astype(str).values.astype("U"),
     )
 
     summary_rows = [
@@ -233,7 +234,7 @@ def main():
         "- `y`: signal label.\n"
         "- `is_qcd`: QCD-background mask.\n"
         "- `is_top`: top-background mask.\n"
-        "- `train_mask` and `test_mask`: deterministic split using the same random seed and test fraction as the BDT/DNN studies.\n\n"
+        "- `train_mask` and `test_mask`: deterministic split using the same random seed, test fraction, and target stratification as the BDT/DNN studies.\n\n"
         "Interpretation:\n"
         "This dataset is intended for an LBN-DNN baseline. Since LBN uses four-vectors, it should be treated as physics-structured and mass-aware by construction.\n"
     )
