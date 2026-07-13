@@ -3,5 +3,7 @@ BDT mass_aware,CAT0+CAT1+CAT2,92.113,214886.272,0.000429,0.198708,0.004287
 DNN mass_aware,"best stable rectangle: qcd>=0.95, top>=0.575",45.67,87898.786,0.00052,0.154042,0.005196
 BDT topology_only,CAT0+CAT1+CAT2,52.444,136389.982,0.000385,0.142005,0.003845
 lbn_p4_plus_topology,"best stable rectangle: qcd>=0.625, top>=0.5",78.377,408549.368,0.000192,0.122621,0.001918
+lbn_p4_plus_massaware_btag,"best stable rectangle: qcd>=0.525, top>=0.8",89.253,549416.202,0.000162,0.120412,0.001624
+lbn_p4_plus_topology_btag,"best stable rectangle: qcd>=0.525, top>=0.775",66.436,383816.905,0.000173,0.107236,0.001731
 DNN topology_only,"best stable rectangle: qcd>=0.8, top>=0.5",69.074,432189.885,0.00016,0.10507,0.001598
 lbn_p4_only,"best stable rectangle: qcd>=0.55, top>=0.5",70.93,712715.356,0.0001,0.084018,0.000995

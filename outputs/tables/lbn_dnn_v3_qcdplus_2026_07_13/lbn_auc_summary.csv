@@ -3,3 +3,7 @@ lbn_p4_only,LBN_QCD,QCD bbbb HT slices,0.6570412672301134,0.6328757073152751,247
 lbn_p4_only,LBN_top,ttbar / top-like backgrounds,0.542374096207431,0.5380356477747453,1366,706
 lbn_p4_plus_topology,LBN_QCD,QCD bbbb HT slices,0.7459585181720516,0.7185244014568543,24729,13359
 lbn_p4_plus_topology,LBN_top,ttbar / top-like backgrounds,0.6667726877693458,0.6691980199225458,1366,706
+lbn_p4_plus_topology_btag,LBN_QCD,QCD bbbb HT slices,0.7344436501297885,0.725073416090035,24729,13359
+lbn_p4_plus_topology_btag,LBN_top,ttbar / top-like backgrounds,0.6852785965792516,0.6787048485235821,1366,706
+lbn_p4_plus_massaware_btag,LBN_QCD,QCD bbbb HT slices,0.7717727109951824,0.7424933389934347,24729,13359
+lbn_p4_plus_massaware_btag,LBN_top,ttbar / top-like backgrounds,0.7053255445154238,0.7094762336154475,1366,706

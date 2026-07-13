@@ -23,8 +23,6 @@ required = [
     LBN_DIR / "lbn_auc_summary.csv",
     LBN_DIR / "lbn_best_stable_rectangles.csv",
     LBN_DIR / "lbn_category_yields.csv",
-    BDT_COMPARE_DIR / "mass_aware_vs_topology_only_inclusive_cat012.csv",
-    BDT_COMPARE_DIR / "mass_aware_vs_topology_only_category_summary.csv",
     DNN_SUMMARY_DIR / "bdt_vs_dnn_best_region_comparison.csv",
     DNN_SUMMARY_DIR / "bdt_vs_dnn_auc_comparison.csv",
 ]
@@ -36,10 +34,10 @@ lbn_auc = pd.read_csv(LBN_DIR / "lbn_auc_summary.csv")
 lbn_best = pd.read_csv(LBN_DIR / "lbn_best_stable_rectangles.csv")
 lbn_yields = pd.read_csv(LBN_DIR / "lbn_category_yields.csv")
 
-bdt_dnn_auc = pd.read_csv(DNN_SUMMARY_DIR / "bdt_vs_dnn_auc_comparison.csv")
 bdt_dnn_best = pd.read_csv(DNN_SUMMARY_DIR / "bdt_vs_dnn_best_region_comparison.csv")
+bdt_dnn_auc = pd.read_csv(DNN_SUMMARY_DIR / "bdt_vs_dnn_auc_comparison.csv")
 
-# LBN compact AUC table
+# Compact LBN AUC table
 lbn_auc_compact = lbn_auc.copy()
 for c in ["unweighted_auc", "physics_weighted_auc"]:
     lbn_auc_compact[c] = lbn_auc_compact[c].astype(float).round(4)
@@ -49,9 +47,9 @@ lbn_auc_compact.to_csv(TABLE_DIR / "lbn_auc_summary_compact.csv", index=False)
     lbn_auc_compact.to_markdown(index=False) + "\n"
 )
 
-# LBN best rows by mode
+# Best stable row per LBN mode
 best_rows = []
-for mode in ["lbn_p4_only", "lbn_p4_plus_topology"]:
+for mode in sorted(lbn_best["mode"].unique()):
     row = lbn_best[lbn_best["mode"] == mode].sort_values("S_over_sqrtB", ascending=False).iloc[0]
     best_rows.append(row)
 
@@ -66,7 +64,7 @@ lbn_best_compact.to_csv(TABLE_DIR / "lbn_best_region_compact.csv", index=False)
     lbn_best_compact.to_markdown(index=False) + "\n"
 )
 
-# LBN category yields compact
+# Category yields
 lbn_yields_compact = lbn_yields.copy()
 for c in ["signal_events_450fb", "background_events_450fb"]:
     lbn_yields_compact[c] = lbn_yields_compact[c].astype(float).round(3)
@@ -78,7 +76,7 @@ lbn_yields_compact.to_csv(TABLE_DIR / "lbn_category_yields_compact.csv", index=F
     lbn_yields_compact.to_markdown(index=False) + "\n"
 )
 
-# All-model best-region comparison
+# All-model comparison
 rows = []
 for _, r in bdt_dnn_best.iterrows():
     rows.append({
@@ -109,23 +107,23 @@ all_best.to_csv(TABLE_DIR / "all_model_best_region_comparison.csv", index=False)
     all_best.to_markdown(index=False) + "\n"
 )
 
-# Plots
-plt.figure(figsize=(9, 5))
+# Plot: all model S/sqrtB
+plt.figure(figsize=(10, 5))
 plt.bar(all_best["model"], all_best["S_over_sqrtB"])
-plt.xticks(rotation=30, ha="right")
+plt.xticks(rotation=35, ha="right")
 plt.ylabel("Best stable S/sqrt(B)")
 plt.title("Best stable sensitivity across BDT, DNN, and LBN baselines")
 plt.tight_layout()
 plt.savefig(PLOT_DIR / "all_model_best_s_over_sqrtB.png", dpi=180)
 plt.close()
 
-# LBN AUC plot
+# Plot: LBN weighted AUC
 auc_pivot = lbn_auc_compact.pivot(index="mode", columns="classifier", values="physics_weighted_auc")
-plt.figure(figsize=(7, 5))
+plt.figure(figsize=(9, 5))
 x = np.arange(len(auc_pivot.index))
 plt.bar(x - 0.18, auc_pivot["LBN_QCD"], width=0.36, label="QCD weighted AUC")
 plt.bar(x + 0.18, auc_pivot["LBN_top"], width=0.36, label="top weighted AUC")
-plt.xticks(x, auc_pivot.index, rotation=20, ha="right")
+plt.xticks(x, auc_pivot.index, rotation=30, ha="right")
 plt.ylabel("Physics-weighted AUC")
 plt.title("LBN-DNN weighted AUC")
 plt.legend()
@@ -142,22 +140,22 @@ Branch: `delphes-hh4b-production`
 
 ## Purpose
 
-This note documents the lightweight LBN-style neural-network baseline for the HH→4b Delphes analysis.
+This note documents the lightweight LBN-style neural-network baselines for the HH→4b Delphes analysis.
 
 The LBN-DNN uses the same BDT-v3 qcdplus candidate dataset as the BDT and ordinary DNN studies. The input dataset contains four selected candidate jet four-vectors in `[E, px, py, pz]` format.
 
-Two modes are evaluated:
+Modes evaluated:
 
-1. **lbn_p4_only**
-   - Uses only the four candidate jet four-vectors.
-2. **lbn_p4_plus_topology**
-   - Uses the four candidate jet four-vectors plus topology-only scalar auxiliary features.
+1. `lbn_p4_only`: four candidate jet four-vectors only.
+2. `lbn_p4_plus_topology`: four-vectors plus topology-only scalar features.
+3. `lbn_p4_plus_topology_btag`: four-vectors plus topology-only features plus candidate b-tag scores.
+4. `lbn_p4_plus_massaware_btag`: four-vectors plus mass-aware scalar features plus candidate b-tag scores. This is an upper-bound, mass-aware LBN mode.
 
 ## Main conclusion
 
-The LBN-DNN does not beat the BDT baseline. The four-vector-only model is weak, especially for the top-background classifier. Adding topology features improves performance substantially, but the result remains below the BDT and ordinary mass-aware DNN baselines.
+The LBN-DNN does not beat the BDT baseline. The best LBN mode by AUC is `lbn_p4_plus_massaware_btag`, but the best LBN mode by expected sensitivity is `lbn_p4_plus_topology`.
 
-The LBN-DNN is still useful because it provides a physics-structured neural-network baseline between the plain dense DNN and SPA-Net.
+Adding b-tag and mass-aware auxiliary information improves the global AUC but does not improve the best stable S/sqrt(B). Therefore, further LBN optimization is not the highest-priority next step.
 
 ## LBN AUC summary
 
@@ -177,30 +175,31 @@ The LBN-DNN is still useful because it provides a physics-structured neural-netw
 
 ## Interpretation
 
-### lbn_p4_only
+### Four-vector-only LBN
 
-The four-vector-only model performs poorly. This suggests that the current LBN implementation and four selected candidate jet four-vectors alone do not capture enough information to compete with the tabular baselines.
+The four-vector-only model is too weak, especially for top-background rejection. Fixed candidate jet four-vectors alone are not enough.
 
-### lbn_p4_plus_topology
+### LBN plus topology
 
-Adding topology-only auxiliary variables improves the LBN significantly. This confirms that global event topology and candidate-level scalar features are important. However, the model still underperforms the BDT.
+Adding topology features gives the strongest LBN sensitivity. This shows that global event topology is important.
 
-### Current model ordering
+### LBN plus topology and b-tags
 
-Using best stable S/sqrt(B), the current ordering is:
+Adding b-tags improves the weighted AUC slightly but worsens the best stable S/sqrt(B). It does not improve the analysis-level performance.
 
-1. Mass-aware BDT-v3 qcdplus
-2. Mass-aware DNN-v3 qcdplus
-3. Topology-only BDT-v3 qcdplus
-4. LBN-DNN p4 plus topology
-5. Topology-only DNN-v3 qcdplus
-6. LBN-DNN p4 only
+### LBN plus mass-aware features and b-tags
+
+This upper-bound mode gives the best LBN AUC, but not the best LBN sensitivity. It remains below the mass-aware BDT and mass-aware DNN baselines.
+
+## Current conclusion
+
+The current fixed-candidate LBN-DNN models do not outperform the BDT baseline. The next architecture worth trying is SPA-Net, because SPA-Net can address the jet-assignment and permutation problem directly instead of only classifying already chosen candidate jets.
 
 ## Next steps
 
-1. Try one improved LBN variant with explicit b-tag auxiliary inputs.
-2. If the improved LBN still does not approach BDT performance, stop optimizing LBN.
-3. Move to SPA-Net as the next architecture baseline.
+1. Commit this final LBN summary.
+2. Stop optimizing LBN for now.
+3. Begin the SPA-Net dataset audit or SPA-Net training workflow.
 4. In parallel, begin ZZ→4b and ZH→4b Delphes validation samples.
 """
 

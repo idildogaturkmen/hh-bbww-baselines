@@ -9,6 +9,7 @@ for the BDT-v3 and DNN-v3 qcdplus baselines.
 Models:
 - lbn_p4_only: four candidate jet four-vectors only
 - lbn_p4_plus_topology: four-vectors plus topology-only auxiliary features
+- lbn_p4_plus_topology_btag: four-vectors plus topology-only features plus four candidate b-tag scores
 
 Tasks:
 - signal vs QCD bbbb HT slices
@@ -159,6 +160,32 @@ def train_one_classifier(arrays, mode, task):
         aux_scaler = None
     elif mode == "lbn_p4_plus_topology":
         aux_all = arrays["X_aux_topology"].astype("float32")
+        aux_scaler = StandardScaler()
+        aux_train = aux_scaler.fit_transform(aux_all[train_task]).astype("float32")
+        aux_test_task = aux_scaler.transform(aux_all[test_task]).astype("float32")
+        aux_test_all = aux_scaler.transform(aux_all[test_mask]).astype("float32")
+        aux_dim = aux_train.shape[1]
+    elif mode == "lbn_p4_plus_topology_btag":
+        aux_all = np.concatenate(
+            [
+                arrays["X_aux_topology"].astype("float32"),
+                arrays["X_btag"].astype("float32"),
+            ],
+            axis=1,
+        )
+        aux_scaler = StandardScaler()
+        aux_train = aux_scaler.fit_transform(aux_all[train_task]).astype("float32")
+        aux_test_task = aux_scaler.transform(aux_all[test_task]).astype("float32")
+        aux_test_all = aux_scaler.transform(aux_all[test_mask]).astype("float32")
+        aux_dim = aux_train.shape[1]
+    elif mode == "lbn_p4_plus_massaware_btag":
+        aux_all = np.concatenate(
+            [
+                arrays["X_aux_mass_aware"].astype("float32"),
+                arrays["X_btag"].astype("float32"),
+            ],
+            axis=1,
+        )
         aux_scaler = StandardScaler()
         aux_train = aux_scaler.fit_transform(aux_all[train_task]).astype("float32")
         aux_test_task = aux_scaler.transform(aux_all[test_task]).astype("float32")
@@ -382,7 +409,7 @@ def main():
     all_yields = []
     all_comp = []
 
-    for mode in ["lbn_p4_only", "lbn_p4_plus_topology"]:
+    for mode in ["lbn_p4_only", "lbn_p4_plus_topology", "lbn_p4_plus_topology_btag", "lbn_p4_plus_massaware_btag"]:
         qcd_scores, qcd_auc, qcd_wauc, qcd_ntrain, qcd_ntest = train_one_classifier(arrays, mode, "qcd")
         top_scores, top_auc, top_wauc, top_ntrain, top_ntest = train_one_classifier(arrays, mode, "top")
 
@@ -453,7 +480,7 @@ def main():
         "This directory contains lightweight LBN-style DNN results for the HH→4b Delphes analysis.\n\n"
         "Modes:\n"
         "- `lbn_p4_only`: four candidate jet four-vectors only.\n"
-        "- `lbn_p4_plus_topology`: four-vectors plus topology-only auxiliary features.\n\n"
+        "- `lbn_p4_plus_topology`: four-vectors plus topology-only auxiliary features.\n- `lbn_p4_plus_topology_btag`: four-vectors plus topology-only features plus candidate b-tag scores.\n- `lbn_p4_plus_massaware_btag`: four-vectors plus mass-aware scalar features plus candidate b-tag scores. This is an upper-bound, mass-aware LBN mode.\n\n"
         "The LBN layer learns non-negative combinations of the four candidate jet four-vectors and computes Lorentz features before a dense classifier.\n\n"
         "This is a physics-structured neural-network baseline between the plain DNN and SPA-Net.\n"
     )
