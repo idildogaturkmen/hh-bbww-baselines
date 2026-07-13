@@ -1,0 +1,5 @@
+run,classifier,negative_class,unweighted_auc,physics_weighted_auc,n_train_task,n_test_task,n_features
+mass_aware,DNN_QCD,QCD bbbb HT slices,0.8131339522343753,0.7731318768174444,24729,13359,46
+mass_aware,DNN_top,ttbar / top-like backgrounds,0.7407918432440666,0.7462261255773451,1366,706,46
+topology_only,DNN_QCD,QCD bbbb HT slices,0.777532636477247,0.7346198193244872,24729,13359,33
+topology_only,DNN_top,ttbar / top-like backgrounds,0.7098187487120675,0.7150740082555418,1366,706,33

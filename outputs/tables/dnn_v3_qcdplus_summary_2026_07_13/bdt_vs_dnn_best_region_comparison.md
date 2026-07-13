@@ -1,0 +1,6 @@
+| model             | region                                       |   signal_events_450fb |   background_events_450fb |   S_over_B |   S_over_sqrtB |   S_over_10pctB |   n_signal_test_rows |   n_background_test_rows |
+|:------------------|:---------------------------------------------|----------------------:|--------------------------:|-----------:|---------------:|----------------:|---------------------:|-------------------------:|
+| BDT mass_aware    | CAT0+CAT1+CAT2                               |                92.113 |                  214886   |   0.000429 |       0.198708 |        0.004287 |                  144 |                      389 |
+| BDT topology_only | CAT0+CAT1+CAT2                               |                52.444 |                  136390   |   0.000385 |       0.142005 |        0.003845 |                   66 |                      223 |
+| DNN mass_aware    | best stable rectangle: qcd>=0.95, top>=0.575 |                45.67  |                   87898.8 |   0.00052  |       0.154042 |        0.005196 |                   68 |                      146 |
+| DNN topology_only | best stable rectangle: qcd>=0.8, top>=0.5    |                69.074 |                  432190   |   0.00016  |       0.10507  |        0.001598 |                  117 |                      672 |
