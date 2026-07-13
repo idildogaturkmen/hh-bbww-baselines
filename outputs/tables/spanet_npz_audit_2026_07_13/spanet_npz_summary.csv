@@ -1,0 +1,5 @@
+split,path,n_events,n_signal_y1,n_background_y0,n_assignment_valid,assignment_valid_fraction,sum_weight_pb,X_jets_shape,feature_names
+all,/uscms_data/d3/iturkmen/hh4b_delphes/spanet_npz/nominal_btag4_v0/hh4b_spanet_leading8_all.npz,20664,1331,19333,924,0.044715447154471545,15.82366060235485,"(20664, 8, 5)","pt, eta, phi, mass, btag"
+train,/uscms_data/d3/iturkmen/hh4b_delphes/spanet_npz/nominal_btag4_v0/hh4b_spanet_leading8_train.npz,14462,931,13531,644,0.044530493707647625,11.072267450628377,"(14462, 8, 5)","pt, eta, phi, mass, btag"
+val,/uscms_data/d3/iturkmen/hh4b_delphes/spanet_npz/nominal_btag4_v0/hh4b_spanet_leading8_val.npz,3095,198,2897,140,0.045234248788368334,2.3619719967315094,"(3095, 8, 5)","pt, eta, phi, mass, btag"
+test,/uscms_data/d3/iturkmen/hh4b_delphes/spanet_npz/nominal_btag4_v0/hh4b_spanet_leading8_test.npz,3107,202,2905,140,0.04505954296749276,2.389421154994963,"(3107, 8, 5)","pt, eta, phi, mass, btag"
