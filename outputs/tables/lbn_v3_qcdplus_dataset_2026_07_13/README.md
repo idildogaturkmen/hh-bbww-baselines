@@ -8,6 +8,7 @@ Main array:
 Auxiliary arrays:
 - `X_aux_topology`: topology-only scalar features.
 - `X_aux_mass_aware`: mass-aware scalar features.
+- `X_btag`: four candidate jet b-tag scores.
 
 Labels and masks:
 - `y`: signal label.

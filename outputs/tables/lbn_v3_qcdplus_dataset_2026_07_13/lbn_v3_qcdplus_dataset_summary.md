@@ -7,3 +7,4 @@
 | n_background          |   40924 |
 | n_topology_features   |      33 |
 | n_mass_aware_features |      46 |
+| n_btag_features       |       4 |

@@ -109,6 +109,12 @@ def main():
     X_aux_topology = df[topology_features].values.astype("float32")
     X_aux_mass_aware = df[mass_features].values.astype("float32")
 
+    btag_features = ["j1_btag", "j2_btag", "j3_btag", "j4_btag"]
+    missing_btag = [c for c in btag_features if c not in df.columns]
+    if missing_btag:
+        raise RuntimeError(f"Missing btag columns for LBN auxiliary input: {missing_btag}")
+    X_btag = df[btag_features].values.astype("float32")
+
     y = df["is_signal"].astype("int64").values
     is_signal = df["is_signal"].astype(bool).values
     is_qcd = df["is_qcd"].astype(bool).values
@@ -151,6 +157,7 @@ def main():
         X_p4=X_p4,
         X_aux_topology=X_aux_topology,
         X_aux_mass_aware=X_aux_mass_aware,
+        X_btag=X_btag,
         y=y,
         is_signal=is_signal,
         is_qcd=is_qcd,
@@ -165,6 +172,7 @@ def main():
         sample_names=sample_names,
         topology_feature_names=np.asarray(topology_features, dtype="U"),
         mass_aware_feature_names=np.asarray(mass_features, dtype="U"),
+        btag_feature_names=np.asarray(btag_features, dtype="U"),
         analysis_sample=df["analysis_sample"].astype(str).values.astype("U"),
         group=df["group"].astype(str).values.astype("U"),
         target=df["target"].astype(str).values.astype("U"),
@@ -199,6 +207,10 @@ def main():
             "quantity": "n_mass_aware_features",
             "value": len(mass_features),
         },
+        {
+            "quantity": "n_btag_features",
+            "value": len(btag_features),
+        },
     ]
 
     summary = pd.DataFrame(summary_rows)
@@ -229,7 +241,8 @@ def main():
         "- `X_p4`: shape `(N, 4, 4)`, containing the four selected candidate jets in `[E, px, py, pz]` format.\n\n"
         "Auxiliary arrays:\n"
         "- `X_aux_topology`: topology-only scalar features.\n"
-        "- `X_aux_mass_aware`: mass-aware scalar features.\n\n"
+        "- `X_aux_mass_aware`: mass-aware scalar features.\n"
+        "- `X_btag`: four candidate jet b-tag scores.\n\n"
         "Labels and masks:\n"
         "- `y`: signal label.\n"
         "- `is_qcd`: QCD-background mask.\n"
@@ -243,6 +256,7 @@ def main():
     print("X_p4:", X_p4.shape)
     print("X_aux_topology:", X_aux_topology.shape)
     print("X_aux_mass_aware:", X_aux_mass_aware.shape)
+    print("X_btag:", X_btag.shape)
     print("n_train:", train_mask.sum())
     print("n_test:", test_mask.sum())
 
