@@ -1,0 +1,5 @@
+metric,auc
+test_auc_all_unweighted,0.7436843781875749
+test_auc_all_weighted,0.7231001790241316
+test_qcd_weighted_auc,0.7586867909124071
+test_top_weighted_auc,0.459550061835456
