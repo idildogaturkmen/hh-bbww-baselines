@@ -1,0 +1,4 @@
+roc,auc_unweighted,auc_weighted
+combined_signal_vs_all,0.6934562403266651,0.5675896956036712
+qcd_head_signal_vs_qcdlike,0.7750227703114454,0.7436679514561169
+top_head_signal_vs_ttbar,0.7432943294329434,0.7220199812195106
