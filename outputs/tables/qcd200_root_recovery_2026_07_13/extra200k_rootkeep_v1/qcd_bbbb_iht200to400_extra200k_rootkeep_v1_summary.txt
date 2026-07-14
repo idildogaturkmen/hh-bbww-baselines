@@ -1,0 +1,17 @@
+campaign: qcd_bbbb_iht200to400_extra200k_rootkeep_v1
+shards: 20
+events_per_shard: 10000
+total generated events: 200000
+candidate rows: 13744
+root files kept: 20
+events with >=4 selected jets: 105012
+events with >=4 selected b-tagged jets: 13744
+median xsec pb: 126.41079330444336
+median mbb1: 134.55765777276713
+median mbb2: 113.16004845145525
+median avg_mbb: 124.93592998493011
+median delta_mbb: 37.633039102603036
+median mhh: 372.0528484110848
+median n_selected_bjets: 4.0
+merged event summary: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/qcd_bbbb_iht200to400_extra200k_rootkeep_v1_merged_event_summary.parquet
+merged candidates: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/qcd_bbbb_iht200to400_extra200k_rootkeep_v1_merged_hh4b_candidates.parquet
