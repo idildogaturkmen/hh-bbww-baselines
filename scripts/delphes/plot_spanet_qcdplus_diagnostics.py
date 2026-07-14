@@ -27,26 +27,21 @@ OUT_PLOT.mkdir(parents=True, exist_ok=True)
 
 LUMI_PB = 450_000.0
 
-def analysis_label(ax, lumi_fb=450, extra="Private work"):
-    ax.text(
-        0.02, 0.96, "Delphes simulation",
-        transform=ax.transAxes,
+def analysis_label(ax, lumi_fb=450, extra=None):
+    """Draw a non-CMS analysis label above the plotting area."""
+    fig = ax.figure
+
+    fig.text(
+        0.105, 0.988, "Delphes simulation",
         fontsize=13,
         fontweight="bold",
+        ha="left",
         va="top",
     )
-    ax.text(
-        0.02, 0.90, extra,
-        transform=ax.transAxes,
-        fontsize=11,
-        style="italic",
-        va="top",
-    )
-    ax.text(
-        0.98, 0.96,
+    fig.text(
+        0.90, 0.988,
         rf"13 TeV, {lumi_fb:g} fb$^{{-1}}$",
-        transform=ax.transAxes,
-        fontsize=11,
+        fontsize=10.5,
         ha="right",
         va="top",
     )
@@ -80,7 +75,7 @@ def make_roc(y, score, weight, label, outbase):
     ax.grid(True, alpha=0.3)
     ax.legend(loc="lower right", frameon=False)
     analysis_label(ax)
-    fig.tight_layout()
+    fig.tight_layout(rect=[0.02, 0.02, 0.98, 0.93])
     fig.savefig(OUT_PLOT / f"{outbase}.png", dpi=220)
     fig.savefig(OUT_PLOT / f"{outbase}.pdf")
     plt.close(fig)
@@ -95,7 +90,7 @@ def make_roc(y, score, weight, label, outbase):
     ax.grid(True, which="both", alpha=0.3)
     ax.legend(loc="upper right", frameon=False)
     analysis_label(ax)
-    fig.tight_layout()
+    fig.tight_layout(rect=[0.02, 0.02, 0.98, 0.93])
     fig.savefig(OUT_PLOT / f"{outbase}_background_rejection.png", dpi=220)
     fig.savefig(OUT_PLOT / f"{outbase}_background_rejection.pdf")
     plt.close(fig)
@@ -124,7 +119,7 @@ def score_hist(df):
     ax.grid(True, which="both", alpha=0.3)
     ax.legend(frameon=False)
     analysis_label(ax)
-    fig.tight_layout()
+    fig.tight_layout(rect=[0.02, 0.02, 0.98, 0.93])
     fig.savefig(OUT_PLOT / "spanet_score_distribution.png", dpi=220)
     fig.savefig(OUT_PLOT / "spanet_score_distribution.pdf")
     plt.close(fig)
@@ -145,7 +140,7 @@ def training_history():
     ax.grid(True, alpha=0.3)
     ax.legend(frameon=False)
     analysis_label(ax)
-    fig.tight_layout()
+    fig.tight_layout(rect=[0.02, 0.02, 0.98, 0.93])
     fig.savefig(OUT_PLOT / "spanet_training_losses.png", dpi=220)
     fig.savefig(OUT_PLOT / "spanet_training_losses.pdf")
     plt.close(fig)
@@ -159,7 +154,7 @@ def training_history():
     ax.set_ylabel("Validation AUC")
     ax.grid(True, alpha=0.3)
     analysis_label(ax)
-    fig.tight_layout()
+    fig.tight_layout(rect=[0.02, 0.02, 0.98, 0.93])
     fig.savefig(OUT_PLOT / "spanet_validation_auc.png", dpi=220)
     fig.savefig(OUT_PLOT / "spanet_validation_auc.pdf")
     plt.close(fig)

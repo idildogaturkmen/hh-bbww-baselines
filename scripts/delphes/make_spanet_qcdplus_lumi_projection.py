@@ -19,26 +19,21 @@ OUT_PLOT.mkdir(parents=True, exist_ok=True)
 LUMIS_FB = [138, 350, 450, 4000]
 
 
-def analysis_label(ax, extra="Private work"):
-    ax.text(
-        0.02, 0.96, "Delphes simulation",
-        transform=ax.transAxes,
+def analysis_label(ax, extra=None):
+    """Draw a non-CMS analysis label above the plotting area."""
+    fig = ax.figure
+
+    fig.text(
+        0.105, 0.988, "Delphes simulation",
         fontsize=13,
         fontweight="bold",
+        ha="left",
         va="top",
     )
-    ax.text(
-        0.02, 0.90, extra,
-        transform=ax.transAxes,
-        fontsize=11,
-        style="italic",
-        va="top",
-    )
-    ax.text(
-        0.98, 0.96,
-        r"13 TeV",
-        transform=ax.transAxes,
-        fontsize=11,
+    fig.text(
+        0.90, 0.988,
+        "13 TeV",
+        fontsize=10.5,
         ha="right",
         va="top",
     )
@@ -107,7 +102,7 @@ def main():
     ax.grid(True, alpha=0.25)
     ax.legend(frameon=False)
     analysis_label(ax, extra="Luminosity projection, statistical only")
-    fig.tight_layout()
+    fig.tight_layout(rect=[0.02, 0.02, 0.98, 0.93])
     fig.savefig(OUT_PLOT / "spanet_threshold_scan_by_lumi_stat.png", dpi=220)
     fig.savefig(OUT_PLOT / "spanet_threshold_scan_by_lumi_stat.pdf")
     plt.close(fig)
@@ -134,7 +129,7 @@ def main():
     ax.grid(True, which="both", alpha=0.25)
     ax.legend(frameon=False)
     analysis_label(ax, extra="Same trained SPA-Net score")
-    fig.tight_layout()
+    fig.tight_layout(rect=[0.02, 0.02, 0.98, 0.93])
     fig.savefig(OUT_PLOT / "spanet_best_sensitivity_vs_lumi.png", dpi=220)
     fig.savefig(OUT_PLOT / "spanet_best_sensitivity_vs_lumi.pdf")
     plt.close(fig)
