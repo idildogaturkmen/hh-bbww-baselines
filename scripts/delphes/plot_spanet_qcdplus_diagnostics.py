@@ -27,11 +27,30 @@ OUT_PLOT.mkdir(parents=True, exist_ok=True)
 
 LUMI_PB = 450_000.0
 
-def cms_label(ax, extra="Simulation Preliminary"):
-    ax.text(0.02, 0.96, "CMS", transform=ax.transAxes, fontsize=15, fontweight="bold", va="top")
-    ax.text(0.14, 0.96, extra, transform=ax.transAxes, fontsize=12, style="italic", va="top")
-    ax.text(0.98, 0.96, r"Delphes, 13 TeV, 450 fb$^{-1}$", transform=ax.transAxes,
-            fontsize=11, ha="right", va="top")
+def analysis_label(ax, lumi_fb=450, extra="Private work"):
+    ax.text(
+        0.02, 0.96, "Delphes simulation",
+        transform=ax.transAxes,
+        fontsize=13,
+        fontweight="bold",
+        va="top",
+    )
+    ax.text(
+        0.02, 0.90, extra,
+        transform=ax.transAxes,
+        fontsize=11,
+        style="italic",
+        va="top",
+    )
+    ax.text(
+        0.98, 0.96,
+        rf"13 TeV, {lumi_fb:g} fb$^{{-1}}$",
+        transform=ax.transAxes,
+        fontsize=11,
+        ha="right",
+        va="top",
+    )
+
 
 def load_train_module():
     spec = importlib.util.spec_from_file_location("spanet_train", TRAIN_SCRIPT)
@@ -60,7 +79,7 @@ def make_roc(y, score, weight, label, outbase):
     ax.set_ylim(0, 1)
     ax.grid(True, alpha=0.3)
     ax.legend(loc="lower right", frameon=False)
-    cms_label(ax)
+    analysis_label(ax)
     fig.tight_layout()
     fig.savefig(OUT_PLOT / f"{outbase}.png", dpi=220)
     fig.savefig(OUT_PLOT / f"{outbase}.pdf")
@@ -75,7 +94,7 @@ def make_roc(y, score, weight, label, outbase):
     ax.set_xlim(0, 1)
     ax.grid(True, which="both", alpha=0.3)
     ax.legend(loc="upper right", frameon=False)
-    cms_label(ax)
+    analysis_label(ax)
     fig.tight_layout()
     fig.savefig(OUT_PLOT / f"{outbase}_background_rejection.png", dpi=220)
     fig.savefig(OUT_PLOT / f"{outbase}_background_rejection.pdf")
@@ -104,7 +123,7 @@ def score_hist(df):
     ax.set_ylabel(r"Expected events / bin")
     ax.grid(True, which="both", alpha=0.3)
     ax.legend(frameon=False)
-    cms_label(ax)
+    analysis_label(ax)
     fig.tight_layout()
     fig.savefig(OUT_PLOT / "spanet_score_distribution.png", dpi=220)
     fig.savefig(OUT_PLOT / "spanet_score_distribution.pdf")
@@ -125,7 +144,7 @@ def training_history():
     ax.set_ylabel("Loss")
     ax.grid(True, alpha=0.3)
     ax.legend(frameon=False)
-    cms_label(ax)
+    analysis_label(ax)
     fig.tight_layout()
     fig.savefig(OUT_PLOT / "spanet_training_losses.png", dpi=220)
     fig.savefig(OUT_PLOT / "spanet_training_losses.pdf")
@@ -139,7 +158,7 @@ def training_history():
     ax.set_xlabel("Epoch")
     ax.set_ylabel("Validation AUC")
     ax.grid(True, alpha=0.3)
-    cms_label(ax)
+    analysis_label(ax)
     fig.tight_layout()
     fig.savefig(OUT_PLOT / "spanet_validation_auc.png", dpi=220)
     fig.savefig(OUT_PLOT / "spanet_validation_auc.pdf")
