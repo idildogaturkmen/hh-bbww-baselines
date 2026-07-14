@@ -193,7 +193,7 @@ gzip -cd "$LHE_GZ" > "$LHE"
   2>&1 | tee "$OUTDIR/logs/${OUTPUT_TAG}_lhe_to_hepmc3.log"
 
 "$DELPHES_DIR/DelphesHepMC3" \
-  "$HH4B_REPO/cards/delphes/delphes_card_CMS_lpc.tcl" \
+  "${HH4B_DELPHES_CARD:-$HH4B_REPO/cards/delphes/delphes_card_CMS_lpc.tcl}" \
   "$ROOT_OUT" \
   "$HEPMC" \
   2>&1 | tee "$OUTDIR/logs/${OUTPUT_TAG}_pythia8_delphes.log"
