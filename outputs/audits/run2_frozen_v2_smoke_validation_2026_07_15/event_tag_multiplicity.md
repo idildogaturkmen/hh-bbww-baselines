@@ -1,0 +1,22 @@
+| sample   | version   | tag_multiplicity   |   n_events |
+|:---------|:----------|:-------------------|-----------:|
+| ggF_HH   | old       | 0                  |        692 |
+| ggF_HH   | old       | 1                  |       2014 |
+| ggF_HH   | old       | 2                  |       2260 |
+| ggF_HH   | old       | 3                  |       1098 |
+| ggF_HH   | old       | 4+                 |        236 |
+| ggF_HH   | new       | 0                  |        656 |
+| ggF_HH   | new       | 1                  |       2024 |
+| ggF_HH   | new       | 2                  |       2290 |
+| ggF_HH   | new       | 3                  |       1124 |
+| ggF_HH   | new       | 4+                 |        206 |
+| ttbar    | old       | 0                  |       1485 |
+| ttbar    | old       | 1                  |       2655 |
+| ttbar    | old       | 2                  |       1403 |
+| ttbar    | old       | 3                  |        196 |
+| ttbar    | old       | 4+                 |         12 |
+| ttbar    | new       | 0                  |       1497 |
+| ttbar    | new       | 1                  |       2692 |
+| ttbar    | new       | 2                  |       1388 |
+| ttbar    | new       | 3                  |        162 |
+| ttbar    | new       | 4+                 |         12 |
