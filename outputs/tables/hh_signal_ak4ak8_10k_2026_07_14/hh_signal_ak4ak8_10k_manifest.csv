@@ -1,0 +1,3 @@
+tag,root_exists,root_size_GB,hepmc_exists,hepmc_size_GB,event_parquet_exists,candidate_parquet_exists,events,candidate_rows,cross_section_median_pb,events_with_ge4_selected_jets,events_with_ge4_selected_b_tagged_jets,median_mbb1,median_mbb2,median_avg_mbb,median_delta_mbb,median_mhh
+ggf_hh4b_ak4ak8_10k,True,0.8693814920261502,True,2.6040983060374856,True,True,10000,699,0.0009929699590429664,5839,699,123.21890571972811,111.38410838085775,117.23789580061566,23.660782893279688,312.34582936652697
+vbf_hh4b_ak4ak8_10k,True,0.8371325517073274,True,2.4865142069756985,True,True,10000,653,0.0009718814981169999,6328,653,121.62103613572847,111.87557732408271,117.40367067164757,27.384622381459508,434.2202808724207
