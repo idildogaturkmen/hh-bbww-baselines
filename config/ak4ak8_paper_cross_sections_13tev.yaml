@@ -1,0 +1,71 @@
+# AK4/AK8 v1 normalization choices for HH→4b Delphes study.
+# Energies: 13 TeV unless otherwise stated.
+# Units: pb.
+#
+# Important:
+# - Signal cross sections use CMS/LHCHXSWG-style SM inclusive HH cross sections
+#   multiplied by BR(H→bb)^2.
+# - QCD_bbbb and Zbbbb are not official inclusive CMS-recommended values here;
+#   they are retained as fiducial generator-level placeholders until replaced by
+#   a data-driven/control-region normalization or official CMS MC campaign values.
+
+metadata:
+  sqrts_TeV: 13
+  br_hbb: 0.5824
+  luminosities_fb:
+    - 138
+    - 350
+    - 450
+    - 3000
+
+samples:
+  ggF_HH_4b:
+    tag_pattern: "ggf_hh4b_ak4ak8_10k"
+    role: "signal"
+    source_status: "official_signal_xsec_times_BR_Hbb_squared"
+    inclusive_xsec_fb: 31.05
+    xsec_pb: 0.010532
+    note: "31.05 fb × BR(H→bb)^2 with BR(H→bb)=0.5824."
+
+  VBF_HH_4b:
+    tag_pattern: "vbf_hh4b_ak4ak8_10k"
+    role: "signal"
+    source_status: "official_signal_xsec_times_BR_Hbb_squared"
+    inclusive_xsec_fb: 1.726
+    xsec_pb: 0.0005855
+    note: "1.726 fb × BR(H→bb)^2 with BR(H→bb)=0.5824."
+
+  ttbar:
+    tag_pattern: "ttbar_extra50k_ak4ak8_v1_shard*"
+    role: "background"
+    source_status: "standard_inclusive_ttbar_NNLO_NNLL"
+    xsec_pb: 832.0
+    note: "Use standard inclusive ttbar normalization at 13 TeV; verify exact CMS campaign value with Harvey/CMS DAS before paper submission."
+
+  QCD_bbbb:
+    tag_pattern: "qcd_bbbb_ak4ak8_extra50k_v1_shard*"
+    role: "background"
+    source_status: "fiducial_generator_placeholder_not_final_CMS_recommended"
+    xsec_pb: 346.977325
+    note: "LO fiducial generator cross section from current MG5 sample; use only as placeholder. CMS-style final should use data-driven/control-region normalization or official MC campaign prescription."
+
+  Zbbbb:
+    tag_pattern: "zbbbb_ak4ak8_extra50k_v1_shard*"
+    role: "background"
+    source_status: "fiducial_generator_placeholder_not_final_CMS_recommended"
+    xsec_pb: 6.914365
+    note: "LO fiducial generator cross section from current MG5 sample; use only as placeholder. Validate/correct in control region."
+
+  ZZ_4b:
+    tag_pattern: "zz4b_ak4ak8_pilot10k"
+    role: "validation"
+    source_status: "validation_generator_placeholder"
+    xsec_pb: 0.192980
+    note: "Validation sample only; not used as main background yield."
+
+  ZH_4b:
+    tag_pattern: "zh4b_ak4ak8_pilot10k"
+    role: "validation"
+    source_status: "validation_generator_placeholder"
+    xsec_pb: 0.068820
+    note: "Validation sample only; not used as main background yield."

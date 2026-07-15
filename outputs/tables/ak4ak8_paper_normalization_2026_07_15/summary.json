@@ -1,0 +1,9 @@
+{
+  "important_caveat": "Signal rows use official SM HH cross sections times BR(H->bb)^2. QCD_bbbb and Zbbbb are fiducial generator placeholders, not final CMS-recommended normalizations.",
+  "luminosities_fb": [
+    138,
+    350,
+    450,
+    3000
+  ]
+}
