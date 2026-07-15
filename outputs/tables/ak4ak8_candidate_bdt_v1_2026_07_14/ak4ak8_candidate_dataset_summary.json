@@ -1,0 +1,20 @@
+{
+  "n_rows": 2291,
+  "n_signal_rows": 1352,
+  "n_background_rows": 939,
+  "features": [
+    "n_selected_bjets",
+    "mbb1",
+    "mbb2",
+    "avg_mbb",
+    "delta_mbb",
+    "mhh",
+    "drbb1",
+    "drbb2",
+    "j1_pt",
+    "j2_pt",
+    "j3_pt",
+    "j4_pt"
+  ],
+  "n_features": 12
+}
