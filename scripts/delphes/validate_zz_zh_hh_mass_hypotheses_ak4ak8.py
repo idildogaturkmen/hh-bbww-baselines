@@ -14,14 +14,14 @@ OUTDIR.mkdir(parents=True, exist_ok=True)
 
 INPUTS = [
     (
-        "HH_ggF_smoke20",
+        "HH_ggF_ak4ak8_10k",
         "HH",
-        STORE / "root_ak4ak8_smoke/ggf_hh4b_smoke20_ak4ak8_delphes.root",
+        STORE / "root/ggf_hh4b_ak4ak8_10k_pythia8_delphes.root",
     ),
     (
-        "HH_VBF_smoke1000",
+        "HH_VBF_ak4ak8_10k",
         "HH",
-        STORE / "root_ak4ak8_smoke/vbf_hh4b_smoke1000_ak4ak8_delphes.root",
+        STORE / "root/vbf_hh4b_ak4ak8_10k_pythia8_delphes.root",
     ),
     (
         "ZZ4b_pilot10k",
