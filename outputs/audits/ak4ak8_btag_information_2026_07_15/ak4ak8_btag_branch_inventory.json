@@ -1,6 +1,138 @@
 {
-  "ggF_HH": [],
-  "QCD_bbbb": [],
-  "ttbar": [],
-  "Zbbbb": []
+  "ggF_HH": [
+    {
+      "path": "FatJet/FatJet.BTag",
+      "leaf": "FatJet.BTag"
+    },
+    {
+      "path": "FatJet/FatJet.BTagAlgo",
+      "leaf": "FatJet.BTagAlgo"
+    },
+    {
+      "path": "FatJet/FatJet.BTagPhys",
+      "leaf": "FatJet.BTagPhys"
+    },
+    {
+      "path": "FatJet/FatJet.BoostedTag",
+      "leaf": "FatJet.BoostedTag"
+    },
+    {
+      "path": "Jet/Jet.BTag",
+      "leaf": "Jet.BTag"
+    },
+    {
+      "path": "Jet/Jet.BTagAlgo",
+      "leaf": "Jet.BTagAlgo"
+    },
+    {
+      "path": "Jet/Jet.BTagPhys",
+      "leaf": "Jet.BTagPhys"
+    },
+    {
+      "path": "Jet/Jet.BoostedTag",
+      "leaf": "Jet.BoostedTag"
+    }
+  ],
+  "QCD_bbbb": [
+    {
+      "path": "FatJet/FatJet.BTag",
+      "leaf": "FatJet.BTag"
+    },
+    {
+      "path": "FatJet/FatJet.BTagAlgo",
+      "leaf": "FatJet.BTagAlgo"
+    },
+    {
+      "path": "FatJet/FatJet.BTagPhys",
+      "leaf": "FatJet.BTagPhys"
+    },
+    {
+      "path": "FatJet/FatJet.BoostedTag",
+      "leaf": "FatJet.BoostedTag"
+    },
+    {
+      "path": "Jet/Jet.BTag",
+      "leaf": "Jet.BTag"
+    },
+    {
+      "path": "Jet/Jet.BTagAlgo",
+      "leaf": "Jet.BTagAlgo"
+    },
+    {
+      "path": "Jet/Jet.BTagPhys",
+      "leaf": "Jet.BTagPhys"
+    },
+    {
+      "path": "Jet/Jet.BoostedTag",
+      "leaf": "Jet.BoostedTag"
+    }
+  ],
+  "ttbar": [
+    {
+      "path": "FatJet/FatJet.BTag",
+      "leaf": "FatJet.BTag"
+    },
+    {
+      "path": "FatJet/FatJet.BTagAlgo",
+      "leaf": "FatJet.BTagAlgo"
+    },
+    {
+      "path": "FatJet/FatJet.BTagPhys",
+      "leaf": "FatJet.BTagPhys"
+    },
+    {
+      "path": "FatJet/FatJet.BoostedTag",
+      "leaf": "FatJet.BoostedTag"
+    },
+    {
+      "path": "Jet/Jet.BTag",
+      "leaf": "Jet.BTag"
+    },
+    {
+      "path": "Jet/Jet.BTagAlgo",
+      "leaf": "Jet.BTagAlgo"
+    },
+    {
+      "path": "Jet/Jet.BTagPhys",
+      "leaf": "Jet.BTagPhys"
+    },
+    {
+      "path": "Jet/Jet.BoostedTag",
+      "leaf": "Jet.BoostedTag"
+    }
+  ],
+  "Zbbbb": [
+    {
+      "path": "FatJet/FatJet.BTag",
+      "leaf": "FatJet.BTag"
+    },
+    {
+      "path": "FatJet/FatJet.BTagAlgo",
+      "leaf": "FatJet.BTagAlgo"
+    },
+    {
+      "path": "FatJet/FatJet.BTagPhys",
+      "leaf": "FatJet.BTagPhys"
+    },
+    {
+      "path": "FatJet/FatJet.BoostedTag",
+      "leaf": "FatJet.BoostedTag"
+    },
+    {
+      "path": "Jet/Jet.BTag",
+      "leaf": "Jet.BTag"
+    },
+    {
+      "path": "Jet/Jet.BTagAlgo",
+      "leaf": "Jet.BTagAlgo"
+    },
+    {
+      "path": "Jet/Jet.BTagPhys",
+      "leaf": "Jet.BTagPhys"
+    },
+    {
+      "path": "Jet/Jet.BoostedTag",
+      "leaf": "Jet.BoostedTag"
+    }
+  ]
 }

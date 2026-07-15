@@ -3,6 +3,7 @@
 from pathlib import Path
 import json
 import os
+import re
 
 import awkward as ak
 import numpy as np
@@ -16,10 +17,7 @@ OUTDIR = REPO / "outputs/audits/ak4ak8_btag_information_2026_07_15"
 OUTDIR.mkdir(parents=True, exist_ok=True)
 
 SAMPLES = {
-    "ggF_HH": (
-        STORE
-        / "root/ggf_hh4b_ak4ak8_10k_pythia8_delphes.root"
-    ),
+    "ggF_HH": STORE / "root/ggf_hh4b_ak4ak8_10k_pythia8_delphes.root",
     "QCD_bbbb": (
         STORE
         / "root/qcd_bbbb_ak4ak8_extra50k_v1_shard000_pythia8_delphes.root"
@@ -35,7 +33,7 @@ SAMPLES = {
 }
 
 rows = []
-branch_inventory = {}
+inventory = {}
 
 for sample, path in SAMPLES.items():
     if not path.exists():
@@ -46,38 +44,64 @@ for sample, path in SAMPLES.items():
 
     with uproot.open(path) as root_file:
         tree = root_file["Delphes"]
-        all_branches = list(tree.keys())
 
-        btag_branches = sorted(
-            branch
-            for branch in all_branches
-            if (
-                branch.startswith("Jet.")
-                or branch.startswith("FatJet.")
-            )
-            and "BTag" in branch
-        )
+        # Delphes split branches commonly appear as:
+        # Jet/Jet.BTag, FatJet/FatJet.BTag, etc.
+        all_paths = sorted({
+            str(key).split(";")[0]
+            for key in tree.keys(recursive=True)
+        })
 
-        branch_inventory[sample] = btag_branches
+        discovered = []
 
-        for branch in btag_branches:
+        for branch_path in all_paths:
+            leaf = branch_path.rsplit("/", 1)[-1]
+
+            if not re.match(r"^(Jet|FatJet)\.", leaf):
+                continue
+
+            if "BTag" not in leaf and "BoostedTag" not in leaf:
+                continue
+
+            discovered.append({
+                "path": branch_path,
+                "leaf": leaf,
+            })
+
+        inventory[sample] = discovered
+
+        if not discovered:
+            print("WARNING: no tag branches found")
+            print("Other tag-like paths:")
+            for key in all_paths:
+                if "tag" in key.lower():
+                    print(" ", repr(key))
+
+        for item in discovered:
+            branch_path = item["path"]
+            leaf = item["leaf"]
+
             try:
-                array = tree[branch].array(
+                array = tree[branch_path].array(
                     entry_stop=10000,
                     library="ak",
                 )
 
-                flat = ak.to_numpy(
-                    ak.flatten(array, axis=None)
+                flat = np.asarray(
+                    ak.to_numpy(ak.flatten(array, axis=None))
                 )
 
-                flat = np.asarray(flat)
-                flat = flat[np.isfinite(flat)]
+                if flat.size:
+                    try:
+                        flat = flat[np.isfinite(flat)]
+                    except TypeError:
+                        pass
 
-                if len(flat) == 0:
+                if flat.size == 0:
                     rows.append({
                         "sample": sample,
-                        "branch": branch,
+                        "branch_path": branch_path,
+                        "branch": leaf,
                         "n_values": 0,
                         "n_unique": 0,
                         "minimum": np.nan,
@@ -93,32 +117,33 @@ for sample, path in SAMPLES.items():
                     })
                     continue
 
+                numeric = flat.astype(float)
                 unique = np.unique(flat)
 
                 if len(unique) <= 30:
-                    preview = ", ".join(
-                        str(value) for value in unique
-                    )
+                    preview = ", ".join(str(x) for x in unique)
                 else:
-                    preview = ", ".join(
-                        str(value) for value in unique[:30]
-                    ) + ", ..."
+                    preview = (
+                        ", ".join(str(x) for x in unique[:30])
+                        + ", ..."
+                    )
 
                 rows.append({
                     "sample": sample,
-                    "branch": branch,
-                    "n_values": int(len(flat)),
+                    "branch_path": branch_path,
+                    "branch": leaf,
+                    "n_values": int(len(numeric)),
                     "n_unique": int(len(unique)),
-                    "minimum": float(np.min(flat)),
-                    "maximum": float(np.max(flat)),
-                    "mean": float(np.mean(flat)),
-                    "q01": float(np.quantile(flat, 0.01)),
-                    "q10": float(np.quantile(flat, 0.10)),
-                    "q50": float(np.quantile(flat, 0.50)),
-                    "q90": float(np.quantile(flat, 0.90)),
-                    "q99": float(np.quantile(flat, 0.99)),
+                    "minimum": float(np.min(numeric)),
+                    "maximum": float(np.max(numeric)),
+                    "mean": float(np.mean(numeric)),
+                    "q01": float(np.quantile(numeric, 0.01)),
+                    "q10": float(np.quantile(numeric, 0.10)),
+                    "q50": float(np.quantile(numeric, 0.50)),
+                    "q90": float(np.quantile(numeric, 0.90)),
+                    "q99": float(np.quantile(numeric, 0.99)),
                     "fraction_nonzero": float(
-                        np.mean(flat != 0)
+                        np.mean(numeric != 0.0)
                     ),
                     "unique_values_preview": preview,
                 })
@@ -126,7 +151,8 @@ for sample, path in SAMPLES.items():
             except Exception as exc:
                 rows.append({
                     "sample": sample,
-                    "branch": branch,
+                    "branch_path": branch_path,
+                    "branch": leaf,
                     "n_values": -1,
                     "n_unique": -1,
                     "minimum": np.nan,
@@ -154,13 +180,9 @@ summary.to_csv(
 
 (
     OUTDIR / "ak4ak8_btag_branch_inventory.json"
-).write_text(json.dumps(branch_inventory, indent=2))
+).write_text(json.dumps(inventory, indent=2))
 
-card = (
-    REPO
-    / "cards/delphes/delphes_card_CMS_lpc_ak4ak8.tcl"
-)
-
+card = REPO / "cards/delphes/delphes_card_CMS_lpc_ak4ak8.tcl"
 card_lines = []
 
 if card.exists():
@@ -168,7 +190,12 @@ if card.exists():
         card.read_text(errors="replace").splitlines(),
         start=1,
     ):
-        if "btag" in line.lower() or "efficiencyformula" in line.lower():
+        low = line.lower()
+        if (
+            "btag" in low
+            or "bitnumber" in low
+            or "efficiencyformula" in low
+        ):
             card_lines.append(f"{number}: {line}")
 
 (
@@ -177,22 +204,28 @@ if card.exists():
 
 readme = """# AK4/AK8 b-tag information audit
 
-This audit determines whether the current Delphes files contain only binary
-tag decisions, multiple working-point bits, or a continuous discriminator.
+This audit searches recursively through Delphes split-branch paths.
 
 Interpretation:
 
-- Two unique values, usually 0 and 1: binary working-point decision.
-- Several integer values or powers of two: possible working-point bit mask.
-- Many continuously distributed values: continuous tag-score candidate.
+- Values {0, 1}: one binary tagging decision.
+- Several integer values: possible Delphes working-point bit mask.
+- Many continuously distributed values: possible score-like variable.
 
-The final production card must be frozen before large-scale sample production.
+Delphes BTag fields must not be described as DeepJet discriminators unless
+a calibrated continuous discriminator has explicitly been implemented.
 """
 
 (OUTDIR / "README.md").write_text(readme)
 
+print("\n=== B-tag branch inventory ===")
+print(json.dumps(inventory, indent=2))
+
 print("\n=== B-tag branch summary ===")
-print(summary.to_string(index=False))
+if summary.empty:
+    print("EMPTY: no matching branches were successfully discovered")
+else:
+    print(summary.to_string(index=False))
 
 print("\n=== Card lines ===")
 print("\n".join(card_lines))

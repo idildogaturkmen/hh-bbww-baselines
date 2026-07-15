@@ -1,1 +1,34 @@
-
+| sample   | branch_path              | branch            |   n_values |   n_unique |   minimum |   maximum |      mean |   q01 |   q10 |   q50 |   q90 |   q99 |   fraction_nonzero | unique_values_preview   |
+|:---------|:-------------------------|:------------------|-----------:|-----------:|----------:|----------:|----------:|------:|------:|------:|------:|------:|-------------------:|:------------------------|
+| ggF_HH   | FatJet/FatJet.BTag       | FatJet.BTag       |       2518 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ggF_HH   | FatJet/FatJet.BTagAlgo   | FatJet.BTagAlgo   |       2518 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ggF_HH   | FatJet/FatJet.BTagPhys   | FatJet.BTagPhys   |       2518 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ggF_HH   | FatJet/FatJet.BoostedTag | FatJet.BoostedTag |       2518 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ggF_HH   | Jet/Jet.BTag             | Jet.BTag          |      50037 |          2 |         0 |         1 | 0.431581  |     0 |     0 |     0 |     1 |     1 |          0.431581  | 0, 1                    |
+| ggF_HH   | Jet/Jet.BTagAlgo         | Jet.BTagAlgo      |      50037 |          2 |         0 |         1 | 0.01345   |     0 |     0 |     0 |     0 |     1 |          0.01345   | 0, 1                    |
+| ggF_HH   | Jet/Jet.BTagPhys         | Jet.BTagPhys      |      50037 |          2 |         0 |         1 | 0.0127106 |     0 |     0 |     0 |     0 |     1 |          0.0127106 | 0, 1                    |
+| ggF_HH   | Jet/Jet.BoostedTag       | Jet.BoostedTag    |      50037 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| QCD_bbbb | FatJet/FatJet.BTag       | FatJet.BTag       |        318 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| QCD_bbbb | FatJet/FatJet.BTagAlgo   | FatJet.BTagAlgo   |        318 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| QCD_bbbb | FatJet/FatJet.BTagPhys   | FatJet.BTagPhys   |        318 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| QCD_bbbb | FatJet/FatJet.BoostedTag | FatJet.BoostedTag |        318 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| QCD_bbbb | Jet/Jet.BTag             | Jet.BTag          |      40306 |          2 |         0 |         1 | 0.501216  |     0 |     0 |     1 |     1 |     1 |          0.501216  | 0, 1                    |
+| QCD_bbbb | Jet/Jet.BTagAlgo         | Jet.BTagAlgo      |      40306 |          2 |         0 |         1 | 0.0120329 |     0 |     0 |     0 |     0 |     1 |          0.0120329 | 0, 1                    |
+| QCD_bbbb | Jet/Jet.BTagPhys         | Jet.BTagPhys      |      40306 |          2 |         0 |         1 | 0.0113135 |     0 |     0 |     0 |     0 |     1 |          0.0113135 | 0, 1                    |
+| QCD_bbbb | Jet/Jet.BoostedTag       | Jet.BoostedTag    |      40306 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ttbar    | FatJet/FatJet.BTag       | FatJet.BTag       |       1908 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ttbar    | FatJet/FatJet.BTagAlgo   | FatJet.BTagAlgo   |       1908 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ttbar    | FatJet/FatJet.BTagPhys   | FatJet.BTagPhys   |       1908 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ttbar    | FatJet/FatJet.BoostedTag | FatJet.BoostedTag |       1908 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| ttbar    | Jet/Jet.BTag             | Jet.BTag          |      53614 |          2 |         0 |         1 | 0.241075  |     0 |     0 |     0 |     1 |     1 |          0.241075  | 0, 1                    |
+| ttbar    | Jet/Jet.BTagAlgo         | Jet.BTagAlgo      |      53614 |          2 |         0 |         1 | 0.0127206 |     0 |     0 |     0 |     0 |     1 |          0.0127206 | 0, 1                    |
+| ttbar    | Jet/Jet.BTagPhys         | Jet.BTagPhys      |      53614 |          2 |         0 |         1 | 0.0124408 |     0 |     0 |     0 |     0 |     1 |          0.0124408 | 0, 1                    |
+| ttbar    | Jet/Jet.BoostedTag       | Jet.BoostedTag    |      53614 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| Zbbbb    | FatJet/FatJet.BTag       | FatJet.BTag       |        455 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| Zbbbb    | FatJet/FatJet.BTagAlgo   | FatJet.BTagAlgo   |        455 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| Zbbbb    | FatJet/FatJet.BTagPhys   | FatJet.BTagPhys   |        455 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| Zbbbb    | FatJet/FatJet.BoostedTag | FatJet.BoostedTag |        455 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
+| Zbbbb    | Jet/Jet.BTag             | Jet.BTag          |      39971 |          2 |         0 |         1 | 0.485777  |     0 |     0 |     0 |     1 |     1 |          0.485777  | 0, 1                    |
+| Zbbbb    | Jet/Jet.BTagAlgo         | Jet.BTagAlgo      |      39971 |          2 |         0 |         1 | 0.0120087 |     0 |     0 |     0 |     0 |     1 |          0.0120087 | 0, 1                    |
+| Zbbbb    | Jet/Jet.BTagPhys         | Jet.BTagPhys      |      39971 |          2 |         0 |         1 | 0.0115334 |     0 |     0 |     0 |     0 |     1 |          0.0115334 | 0, 1                    |
+| Zbbbb    | Jet/Jet.BoostedTag       | Jet.BoostedTag    |      39971 |          1 |         0 |         0 | 0         |     0 |     0 |     0 |     0 |     0 |          0         | 0                       |
