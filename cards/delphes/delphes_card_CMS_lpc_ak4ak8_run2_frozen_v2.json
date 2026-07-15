@@ -1,0 +1,13 @@
+{
+  "card": "cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl",
+  "sha256": "1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c",
+  "analysis_scope": "13 TeV Run-2-like Delphes",
+  "ak4_radius": 0.4,
+  "ak8_radius": 0.8,
+  "ak4_flavor_association_delta_r": 0.4,
+  "ak4_btag_representation": "single binary Delphes working point",
+  "ak4_btag_bit_number": 0,
+  "fatjet_tagging": "not implemented",
+  "continuous_cms_discriminators": false,
+  "status": "candidate frozen card pending smoke validation"
+}
