@@ -1,0 +1,19 @@
+{
+  "observed_Jet_BTag_values": [
+    0.0,
+    1.0
+  ],
+  "btag_interpretation": "Four jets are ranked by Delphes Jet.BTag and then pT. If Jet.BTag is binary, this is a proxy rather than a continuous DeepJet-score ranking.",
+  "analysis_centers_GeV": [
+    125.0,
+    120.0
+  ],
+  "validation_centers_GeV": [
+    179.0,
+    172.0
+  ],
+  "signal_region_radius_GeV": 25.0,
+  "control_region_outer_radius_GeV": 50.0,
+  "jet_pt_min_GeV": 40.0,
+  "jet_abs_eta_max": 2.5
+}
