@@ -17,9 +17,7 @@ SAMPLES = [
 
     ("background", "ttbar", "ttbar_extra50k_ak4ak8_v1_shard000"),
     ("background", "ttbar", "ttbar_extra50k_ak4ak8_v1_shard001"),
-    ("background", "ttbar", "ttbar_extra50k_ak4_extra50k_ak4ak8_v1_shard000"),
-    ("background", "ttbar", "ttbar_extra50k_ak4ak8_v1_shard001"),
-ak8_v1_shard002"),
+    ("background", "ttbar", "ttbar_extra50k_ak4ak8_v1_shard002"),
     ("background", "ttbar", "ttbar_extra50k_ak4ak8_v1_shard003"),
     ("background", "ttbar", "ttbar_extra50k_ak4ak8_v1_shard004"),
 
@@ -38,9 +36,6 @@ ak8_v1_shard002"),
     ("validation", "ZZ_4b", "zz4b_ak4ak8_pilot10k"),
     ("validation", "ZH_4b", "zh4b_ak4ak8_pilot10k"),
 ]
-
-def size_gb(path):
-    return path.stat().st_size / 1024**3 if path.exists() else None
 
 def parse_summary(path):
     out = {}
@@ -63,8 +58,12 @@ def parse_summary(path):
     for key in keys:
         m = re.search(rf"^{re.escape(key)}:\s*([^\n]+)", text, flags=re.M)
         if m:
-            out[key.replace(" ", "_").replace(">=", "ge").replace("-", "_")] = m.group(1).strip()
+            clean = key.replace(" ", "_").replace(">=", "ge").replace("-", "_")
+            out[clean] = m.group(1).strip()
     return out
+
+def size_gb(path):
+    return path.stat().st_size / 1024**3 if path.exists() else None
 
 rows = []
 
@@ -100,10 +99,13 @@ for role, process, tag in SAMPLES:
 
 df = pd.DataFrame(rows)
 
-# Convert numeric-looking columns for nicer totals.
-for col in df.columns:
-    if col not in ["role", "process", "tag", "root_path", "hepmc_path", "event_summary_parquet", "candidate_parquet", "diagnostic_csv", "summary_txt"]:
-        df[col] = pd.to_numeric(df[col], errors="ignore")
+for col in [
+    "events", "candidate_rows", "cross_section_median_pb",
+    "events_with_ge4_selected_jets", "events_with_ge4_selected_b_tagged_jets",
+    "root_size_GB", "hepmc_size_GB"
+]:
+    if col in df.columns:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
 
 df.to_csv(OUTDIR / "ak4ak8_v1_local_manifest.csv", index=False)
 (OUTDIR / "ak4ak8_v1_local_manifest.md").write_text(df.to_markdown(index=False) + "\n")
@@ -115,10 +117,12 @@ by_process = (
         n_shards=("tag", "count"),
         total_events=("events", "sum"),
         total_candidate_rows=("candidate_rows", "sum"),
+        median_xsec_pb=("cross_section_median_pb", "median"),
         total_root_GB=("root_size_GB", "sum"),
         total_hepmc_GB=("hepmc_size_GB", "sum"),
     )
 )
+
 by_process.to_csv(OUTDIR / "ak4ak8_v1_process_summary.csv", index=False)
 (OUTDIR / "ak4ak8_v1_process_summary.md").write_text(by_process.to_markdown(index=False) + "\n")
 
@@ -126,35 +130,7 @@ readme = """# AK4/AK8 v1 local Delphes dataset catalog
 
 This folder records the local AK4/AK8 Delphes samples used for the HH→4b study.
 
-The large ROOT and HepMC files are **not committed to git**. This catalog stores sample names, local file paths, event counts, candidate counts, cross sections, and derived parquet locations.
-
-## Samples
-
-- Signal:
-  - ggF HH→4b, 10k events
-  - VBF HH→4b, 10k events
-- Background:
-  - ttbar, 50k events
-  - QCD bbbb, 50k events
-  - Zbbbb, 50k events
-- Validation:
-  - ZZ→4b, 10k pilot
-  - ZH→4b, 10k pilot
-
-## Object definition
-
-These samples use the AK4/AK8 Delphes card:
-
-- small-radius anti-kT jets with R = 0.4
-- AK8-like FatJets with R = 0.8
-
-## Files in this folder
-
-- `ak4ak8_v1_local_manifest.csv`: one row per shard/sample tag
-- `ak4ak8_v1_local_manifest.md`: markdown version
-- `ak4ak8_v1_local_manifest.json`: JSON version
-- `ak4ak8_v1_process_summary.csv`: grouped process summary
-- `ak4ak8_v1_process_summary.md`: markdown process summary
+The large ROOT and HepMC files are not committed to git. This catalog stores sample names, local file paths, event counts, candidate counts, generator cross sections, and derived parquet locations.
 
 For a public release, these local paths should later be replaced by EOS/XRootD/Zenodo paths and checksums.
 """
