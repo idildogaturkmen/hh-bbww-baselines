@@ -1,0 +1,233 @@
+schema_version: 1
+
+metadata:
+  name: hh4b_final_production_v1
+  analysis: CMS-inspired HH_to_4b AK4_AK8 Delphes and ML study
+  status: frozen_manifest_candidate
+  shard_size_events: 10000
+
+storage:
+  local_work:
+    base: /uscms_data/d3/iturkmen/hh4b_delphes
+    purpose: temporary generation and active processing
+  eos:
+    base: /store/user/iturkmen/hh4b_delphes
+    xrootd_prefix: root://cmseos.fnal.gov/
+    quota_TB: 2
+  temporary_products:
+    - lhe
+    - hepmc
+  permanent_products:
+    - root
+    - candidate_parquet
+    - region_parquet
+    - constituent_parquet
+    - metadata_json
+    - checksums
+
+detector_cards:
+  run2:
+    path: cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl
+    sha256: 1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c
+    status: frozen
+    limitations:
+      - one_binary_AK4_btag_working_point
+      - no_continuous_DeepJet_score
+      - no_AK8_flavor_tagger
+      - no_explicit_pileup_campaign
+
+  run3:
+    path: null
+    status: pending_card_definition_and_smoke_validation
+
+  phase2:
+    path: null
+    status: pending_Phase2_card_definition_and_smoke_validation
+
+campaigns:
+  run2_13tev:
+    sqrt_s_TeV: 13.0
+    beam_energy_GeV: 6500
+    luminosity_fb: 138
+    detector_card: run2
+    status: ready_for_final_pilots
+
+  run3_13p6tev:
+    sqrt_s_TeV: 13.6
+    beam_energy_GeV: 6800
+    luminosity_fb: 212
+    detector_card: run3
+    status: blocked_until_card_validation
+
+  combined_350fb:
+    type: combined_likelihood
+    components:
+      - campaign: run2_13tev
+        luminosity_fb: 138
+      - campaign: run3_13p6tev
+        luminosity_fb: 212
+    total_luminosity_fb: 350
+    merge_event_files: false
+
+  hllhc_14tev:
+    sqrt_s_TeV: 14.0
+    beam_energy_GeV: 7000
+    luminosity_fb: 3000
+    detector_card: phase2
+    pileup_scenario: PU200_or_explicitly_documented_noPU_extrapolation
+    status: blocked_until_card_validation
+
+dataset_splits:
+  unit: complete_shard
+  train_fraction: 0.60
+  validation_fraction: 0.20
+  test_fraction: 0.20
+  assignment_rule: sha256(campaign/process/shard_index)_mod_10
+  train_values: [0, 1, 2, 3, 4, 5]
+  validation_values: [6, 7]
+  test_values: [8, 9]
+  immutable_after_generation: true
+
+normalization:
+  signal:
+    method: official_SM_cross_section_times_branching_fractions
+  dominant_background:
+    method: simulated_3b_to_4b_transfer_factor_and_closure
+  minor_background:
+    method: theory_cross_section_times_branching_fraction_and_event_weight
+  cross_section_registry:
+    path: config/production/hh4b_cross_sections_v1.yaml
+    status: pending_exact_process_card_freeze
+
+quality_targets:
+  minimum_effective_events_per_final_bin: 400
+  warning_effective_events_per_final_bin: 100
+  require_unique_random_seed: true
+  require_nonzero_sum_weights: true
+  require_card_hash_match: true
+  require_eos_checksum_match: true
+  require_region_count_summary: true
+  require_constituent_integrity_check: true
+
+processes:
+  signals:
+    ggF_HH_4b:
+      generator: MG5_aMC_or_validated_existing_HH_generator
+      pilot_events: 100000
+      physics_yields: true
+      ml_training: true
+
+    VBF_HH_4b:
+      generator: MG5_aMC
+      pilot_events: 100000
+      physics_yields: true
+      ml_training: true
+
+  dominant_physics_backgrounds:
+    QCD_inclusive:
+      generator: Pythia8_HardQCD_or_validated_merged_QCD
+      pilot_events_per_bin: 100000
+      pthat_bins_GeV:
+        - [100, 200]
+        - [200, 300]
+        - [300, 500]
+        - [500, 700]
+        - [700, 1000]
+        - [1000, null]
+      physics_yields: true
+      ml_training: true
+      overlap_policy: exclusive_pthat_bins
+
+    ttbar_inclusive:
+      generator: MG5_aMC_or_POWHEG_equivalent_fast_simulation
+      pilot_events: 200000
+      physics_yields: true
+      ml_training: true
+      overlap_policy: do_not_add_ttbb_enriched_to_physics_yields
+
+  minor_physics_backgrounds:
+    Zjets_inclusive:
+      pilot_events: 100000
+      physics_yields: true
+      ml_training: true
+      overlap_policy: do_not_add_Zbbbb_enriched_to_physics_yields
+
+    Wjets_inclusive:
+      pilot_events: 100000
+      physics_yields: true
+      ml_training: true
+
+    single_top_tchannel:
+      pilot_events: 50000
+      physics_yields: true
+
+    single_top_tW:
+      pilot_events: 50000
+      physics_yields: true
+
+    single_top_schannel:
+      pilot_events: 50000
+      physics_yields: true
+
+    WW:
+      pilot_events: 50000
+      physics_yields: true
+
+    WZ:
+      pilot_events: 50000
+      physics_yields: true
+
+    ZZ:
+      pilot_events: 50000
+      physics_yields: true
+
+    ggH_Hbb:
+      pilot_events: 50000
+      physics_yields: true
+
+    VBFH_Hbb:
+      pilot_events: 50000
+      physics_yields: true
+
+    WH_Hbb:
+      pilot_events: 50000
+      physics_yields: true
+
+    ZH_Hbb:
+      pilot_events: 50000
+      physics_yields: true
+
+    ttH_Hbb:
+      pilot_events: 50000
+      physics_yields: true
+
+  ml_enrichment:
+    QCD_bbbb:
+      pilot_events: 100000
+      physics_yields: false
+      ml_training: true
+      reason: heavy_flavor_enrichment
+
+    ttbb:
+      pilot_events: 100000
+      physics_yields: false
+      ml_training: true
+      reason: top_heavy_flavor_enrichment
+
+    Zbbbb:
+      pilot_events: 100000
+      physics_yields: false
+      ml_training: true
+      reason: Z_heavy_flavor_enrichment
+
+    ZZ_4b_validation:
+      pilot_events: 50000
+      physics_yields: false
+      ml_training: false
+      validation_only: true
+
+    ZH_4b_validation:
+      pilot_events: 50000
+      physics_yields: false
+      ml_training: false
+      validation_only: true
