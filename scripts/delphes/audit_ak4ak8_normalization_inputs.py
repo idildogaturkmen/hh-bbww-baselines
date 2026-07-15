@@ -101,16 +101,22 @@ def run_parameters(path: Path):
         return found
 
     for raw in path.read_text(errors="replace").splitlines():
-        line = raw.split("#", 1)[0].strip()
+        # MG5 cards commonly use both ! and # for comments.
+        line = re.split(r"[#!]", raw, maxsplit=1)[0].strip()
+
         if "=" not in line:
             continue
 
-        value, key = line.split("=", 1)
-        key = key.strip()
-        value = value.strip()
+        left, right = [part.strip() for part in line.split("=", 1)]
 
-        if key in RUN_KEYS:
-            found[key] = value
+        # Support both:
+        #     10000 = nevents
+        # and:
+        #     nevents = 10000
+        if right in RUN_KEYS:
+            found[right] = left
+        elif left in RUN_KEYS:
+            found[left] = right
 
     return found
 

@@ -19,7 +19,7 @@ import model /uscms_data/d3/iturkmen/hh4b_delphes/mg5_models/heft | define j = g
 **Important run-card parameters**
 
 ```json
-{}
+{"cut_decays": "False", "drbb": "0.0", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "-1.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "10000", "pdlabel": "nn23lo1", "ptb": "0.0"}
 ```
 
 ### ggF_HH_4b: `HH4b_ggf_heft_smoke`
@@ -33,7 +33,7 @@ import model /uscms_data/d3/iturkmen/hh4b_delphes/mg5_models/heft | define j = g
 **Important run-card parameters**
 
 ```json
-{}
+{"cut_decays": "False", "drbb": "0.4", "drbj": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "10000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
 ### ggF_HH_4b: `HH4b_ggf_loop_smoke`
@@ -47,7 +47,7 @@ import model loop_sm | define j = g u c d s u~ c~ d~ s~ | define l+ = e+ mu+ | d
 **Important run-card parameters**
 
 ```json
-{}
+{"ebeam1": "6500.0", "ebeam2": "6500.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "nevents": "10000", "pdlabel": "nn23lo1"}
 ```
 
 ### VBF_HH_4b: `HH4b_smoke_vbf`
@@ -61,7 +61,7 @@ import model sm | define l+ = e+ mu+ | define l- = e- mu- | define vl = ve vm vt
 **Important run-card parameters**
 
 ```json
-{}
+{"cut_decays": "False", "drbb": "0.4", "drbj": "0.4", "drjj": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "mmjj": "0.0", "nevents": "10000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
 ### QCD_bbbb: `QCD_bbbb_presel_smoke`
@@ -75,7 +75,7 @@ import model sm | define j = g u c d s u~ c~ d~ s~ | define l+ = e+ mu+ | define
 **Important run-card parameters**
 
 ```json
-{}
+{"drbb": "0.4", "drbj": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "10000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
 ### QCD_bbbb: `QCD_bbbb_smoke`
@@ -89,7 +89,7 @@ import model sm | define j = g u c d s u~ c~ d~ s~ | define l+ = e+ mu+ | define
 **Important run-card parameters**
 
 ```json
-{}
+{"drbb": "0.0", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "-1.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "20", "pdlabel": "nn23lo1", "ptb": "0.0"}
 ```
 
 ### ttbar: `TTbar_smoke`
@@ -103,7 +103,7 @@ import model sm | define p = g u c d s u~ c~ d~ s~ | define j = g u c d s u~ c~ 
 **Important run-card parameters**
 
 ```json
-{}
+{"drbb": "0.4", "drbj": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "5", "nevents": "10000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
 ### other: `TTbb_smoke`
@@ -117,7 +117,7 @@ import model sm | define j = g u c d s u~ c~ d~ s~ | define l+ = e+ mu+ | define
 **Important run-card parameters**
 
 ```json
-{}
+{"drbb": "0.4", "drbj": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "5000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
 ### ZH_4b: `ZH4b_smoke`
@@ -131,7 +131,7 @@ import model sm | define j = g u c d s u~ c~ d~ s~ | define l+ = e+ mu+ | define
 **Important run-card parameters**
 
 ```json
-{}
+{"cut_decays": "False", "drbb": "0.4", "drbj": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "10000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
 ### ZZ_4b: `ZZ4b_smoke`
@@ -145,7 +145,7 @@ import model sm | define j = g u c d s u~ c~ d~ s~ | define l+ = e+ mu+ | define
 **Important run-card parameters**
 
 ```json
-{}
+{"cut_decays": "False", "drbb": "0.4", "drbj": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "10000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
 ### other: `Zbb_smoke`
@@ -159,7 +159,7 @@ import model sm | define j = g u c d s u~ c~ d~ s~ | define l+ = e+ mu+ | define
 **Important run-card parameters**
 
 ```json
-{}
+{"cut_decays": "False", "drbb": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "1000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
 ### Zbbbb: `Zbbbb_presel_smoke`
@@ -173,6 +173,6 @@ import model sm | define j = g u c d s u~ c~ d~ s~ | define l+ = e+ mu+ | define
 **Important run-card parameters**
 
 ```json
-{}
+{"cut_decays": "False", "drbb": "0.4", "drbj": "0.4", "ebeam1": "6500.0", "ebeam2": "6500.0", "etab": "2.7", "etaj": "5.0", "iseed": "0", "lhaid": "230000", "maxjetflavor": "4", "mmbb": "0.0", "nevents": "10000", "pdlabel": "nn23lo1", "ptb": "25.0", "ptj": "20.0"}
 ```
 
