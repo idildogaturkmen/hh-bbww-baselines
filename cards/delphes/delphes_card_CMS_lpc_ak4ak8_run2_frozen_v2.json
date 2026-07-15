@@ -9,5 +9,27 @@
   "ak4_btag_bit_number": 0,
   "fatjet_tagging": "not implemented",
   "continuous_cms_discriminators": false,
-  "status": "candidate frozen card pending smoke validation"
+  "status": "frozen_for_13TeV_Run2_like_fast_simulation",
+  "validation": {
+    "smoke_samples": [
+      "ggF_HH_4b_10k",
+      "ttbar_10k"
+    ],
+    "result": "passed_statistical_validation",
+    "validated_properties": [
+      "successful Delphes execution",
+      "successful AK4 candidate reconstruction",
+      "b-tag efficiencies versus flavor and jet pT",
+      "stable signal mass distributions",
+      "reasonable event-level b-tag multiplicities"
+    ],
+    "important_note": "Independent Delphes reruns are stochastic. Event-by-event detector-level identity is not expected unless the random-number state is explicitly controlled.",
+    "limitations": [
+      "single binary AK4 b-tag working point",
+      "no continuous DeepJet discriminator",
+      "no AK8 flavor tagger",
+      "no full CMS detector simulation",
+      "no explicit pileup campaign"
+    ]
+  }
 }
