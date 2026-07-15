@@ -1,0 +1,8 @@
+{
+  "store": "/uscms_data/d3/iturkmen/hh4b_delphes",
+  "n_files": 1133,
+  "total_size_GB": 182.10765606,
+  "n_root_files": 141,
+  "n_hepmc_files": 43,
+  "n_parquet_files": 451
+}
