@@ -30,9 +30,6 @@ SAMPLES = [
         "paths": [STORE / "parquet/ggf_hh4b_ak4ak8_10k_hh4b_candidates.parquet"],
     },
     {
-        "samplepaths": [STORE / "parquet/ggf_hh4b_ak4ak8_10k_hh4b_candidates.parquet"],
-    },
-    {
         "sample": "VBF_HH_ak4ak8_10k",
         "group": "signal",
         "label": 1,
@@ -42,33 +39,25 @@ SAMPLES = [
         "sample": "ttbar_ak4ak8_extra50k",
         "group": "ttbar",
         "label": 0,
-        "paths": sorted(STORE.glob("parquet/ttbar_extra50k_ak4ak8_v1_shard*_hh4b_candidates.parquet")),
-    },
-    {
-        "sample": "qcd_bbbb_ak4ak8_smoke10k",
-        "group": "qcd_bbbb",
-        "label": 0,
-        "paths": [STORE / "parquet/qcd_bbbb_ak4ak8_smoke10k_hh4b_candidates.parquet"],
+        "paths": sorted((STORE / "parquet").glob("ttbar_extra50k_ak4ak8_v1_shard*_hh4b_candidates.parquet")),
     },
     {
         "sample": "qcd_bbbb_ak4ak8_extra50k",
         "group": "qcd_bbbb",
         "label": 0,
-        "paths": sorted(STORE.glob("parquet/qcd_bbbb_ak4ak8_extra50k_v1_shard*_hh4b_candidates.parquet")),
-    },
-    {
-        "sample": "zbbbb_ak4ak8_smoke10k",
-        "group": "zbbbb",
-        "label": 0,
-        "paths": [STORE / "parquet/zbbbb_ak4ak8_smoke10k_hh4b_candidates.parquet"],
+        "paths": sorted((STORE / "parquet").glob("qcd_bbbb_ak4ak8_extra50k_v1_shard*_hh4b_candidates.parquet")),
     },
     {
         "sample": "zbbbb_ak4ak8_extra50k",
         "group": "zbbbb",
         "label": 0,
-        "paths": sorted(STORE.glob("parquet/zbbbb_ak4ak8_extra50k_v1_shard*_hh4b_candidates.parquet")),
+        "paths": sorted((STORE / "parquet").glob("zbbbb_ak4ak8_extra50k_v1_shard*_hh4b_candidates.parquet")),
     },
 ]
+
+for spec in SAMPLES:
+    if "paths" not in spec:
+        raise KeyError(f"Malformed sample spec without paths: {spec}")
 
 frames = []
 manifest_rows = []
@@ -99,10 +88,17 @@ manifest = pd.DataFrame(manifest_rows)
 manifest.to_csv(OUTDIR / "ak4ak8_candidate_dataset_manifest_v2.csv", index=False)
 (OUTDIR / "ak4ak8_candidate_dataset_manifest_v2.md").write_text(manifest.to_markdown(index=False) + "\n")
 
+if not frames:
+    raise RuntimeError("No candidate parquet files found.")
+
 data = pd.concat(frames, ignore_index=True)
 
 exclude = {
-    "event", "label", "weight", "xsec_pb", "source_file",
+    "event",
+    "label",
+    "weight",
+    "xsec_pb",
+    "source_file",
 }
 numeric_cols = []
 for c in data.columns:
@@ -125,9 +121,9 @@ y = data["label"].astype(int).values
 groups = data["analysis_group"].values
 samples = data["analysis_sample"].values
 
-# Balanced row weights: signal vs background, then equalize background groups.
-n_sig = max(np.sum(y == 1), 1)
-n_bkg = max(np.sum(y == 0), 1)
+n_sig = max(int(np.sum(y == 1)), 1)
+n_bkg = max(int(np.sum(y == 0)), 1)
+
 w = np.where(y == 1, 0.5 / n_sig, 0.5 / n_bkg)
 
 bkg_groups = sorted(set(groups[y == 0]))
@@ -150,6 +146,7 @@ dataset_summary = {
 
 summary_rows = []
 pred_seed0 = None
+feature_importance_seed0 = None
 
 seeds = list(range(150))
 
@@ -180,7 +177,6 @@ for seed in seeds:
     )
 
     score = model.predict_proba(X.iloc[test_idx])[:, 1]
-
     auc_all = roc_auc_score(y[test_idx], score)
 
     def auc_vs_group(group_name):
@@ -209,7 +205,6 @@ for seed in seeds:
         if b < 25:
             continue
 
-        z = s / np.sqrt(b) if b > 0 else np.nan
         cand = {
             "threshold": float(thr),
             "selected_signal_rows": s,
@@ -217,7 +212,7 @@ for seed in seeds:
             "selected_ttbar_rows": b_tt,
             "selected_qcd_bbbb_rows": b_qcd,
             "selected_zbbbb_rows": b_zbb,
-            "S_over_sqrtB_rows": float(z),
+            "S_over_sqrtB_rows": float(s / np.sqrt(b)) if b > 0 else np.nan,
             "S_over_B_rows": float(s / b) if b > 0 else np.nan,
         }
 
@@ -237,6 +232,12 @@ for seed in seeds:
             "analysis_sample": samples[test_idx],
             "analysis_group": groups[test_idx],
         })
+
+        gb = model.named_steps["gradientboostingclassifier"]
+        feature_importance_seed0 = pd.DataFrame({
+            "feature": good_cols,
+            "importance": gb.feature_importances_,
+        }).sort_values("importance", ascending=False)
 
         fpr, tpr, _ = roc_curve(y[test_idx], score)
         plt.figure(figsize=(5, 5))
@@ -258,6 +259,12 @@ summary.to_csv(OUTDIR / "ak4ak8_candidate_bdt_v2_multiseed_summary.csv", index=F
 agg = summary.agg(["mean", "std", "min", "max"]).reset_index().rename(columns={"index": "stat"})
 agg.to_csv(OUTDIR / "ak4ak8_candidate_bdt_v2_multiseed_aggregate.csv", index=False)
 (OUTDIR / "ak4ak8_candidate_bdt_v2_multiseed_aggregate.md").write_text(agg.to_markdown(index=False) + "\n")
+
+if feature_importance_seed0 is not None:
+    feature_importance_seed0.to_csv(OUTDIR / "ak4ak8_candidate_bdt_v2_feature_importance_seed0.csv", index=False)
+    (OUTDIR / "ak4ak8_candidate_bdt_v2_feature_importance_seed0.md").write_text(
+        feature_importance_seed0.head(30).to_markdown(index=False) + "\n"
+    )
 
 if pred_seed0 is not None:
     seed0 = summary.loc[summary["seed"] == 0].iloc[0]
@@ -320,6 +327,10 @@ if pred_seed0 is not None:
     print(inspection.to_string(index=False))
     print("\n=== Seed 0 selected composition ===")
     print(comp.to_string(index=False))
+
+if feature_importance_seed0 is not None:
+    print("\n=== Top feature importances ===")
+    print(feature_importance_seed0.head(30).to_string(index=False))
 
 print("\nWrote:", OUTDIR)
 print("Wrote:", PLOTDIR)

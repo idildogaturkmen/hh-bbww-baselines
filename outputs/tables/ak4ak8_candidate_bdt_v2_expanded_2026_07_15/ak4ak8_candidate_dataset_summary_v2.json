@@ -1,0 +1,23 @@
+{
+  "n_rows": 5048,
+  "n_signal_rows": 1352,
+  "n_background_rows": 3696,
+  "n_ttbar_rows": 247,
+  "n_qcd_bbbb_rows": 1898,
+  "n_zbbbb_rows": 1551,
+  "n_features": 12,
+  "features": [
+    "n_selected_bjets",
+    "mbb1",
+    "mbb2",
+    "avg_mbb",
+    "delta_mbb",
+    "mhh",
+    "drbb1",
+    "drbb2",
+    "j1_pt",
+    "j2_pt",
+    "j3_pt",
+    "j4_pt"
+  ]
+}

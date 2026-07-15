@@ -1,0 +1,7 @@
+| analysis_group   | analysis_sample          |   n_selected |
+|:-----------------|:-------------------------|-------------:|
+| qcd_bbbb         | qcd_bbbb_ak4ak8_extra50k |           17 |
+| signal           | VBF_HH_ak4ak8_10k        |           60 |
+| signal           | ggF_HH_ak4ak8_10k        |           60 |
+| ttbar            | ttbar_ak4ak8_extra50k    |            9 |
+| zbbbb            | zbbbb_ak4ak8_extra50k    |           14 |
