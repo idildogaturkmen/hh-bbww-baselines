@@ -168,6 +168,7 @@ export LD_LIBRARY_PATH="$DELPHES:${LD_LIBRARY_PATH:-}"
 
 for COMMAND in \
   g++ \
+  openssl \
   python3 \
   xrdcp \
   xrdfs
@@ -184,15 +185,13 @@ if [[ "$COMPILE_ONLY" -eq 0 ]]; then
     exit 4
   }
 
-  if command -v voms-proxy-info >/dev/null 2>&1; then
-    voms-proxy-info \
-      -file "$X509_USER_PROXY" \
-      -exists \
-      -valid 1:00 || {
-        echo "ERROR: X.509 proxy has less than one hour remaining"
-        exit 4
-      }
-  fi
+  openssl x509 \
+    -in "$X509_USER_PROXY" \
+    -noout \
+    -checkend 3600 >/dev/null || {
+      echo "ERROR: X.509 proxy certificate has less than one hour remaining"
+      exit 4
+    }
 fi
 
 test -x "$COMPILE_HELPER" || {
