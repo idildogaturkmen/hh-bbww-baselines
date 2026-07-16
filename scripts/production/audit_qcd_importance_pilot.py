@@ -40,6 +40,8 @@ REGIONS = [
     "rhh_lt50",
 ]
 
+ZERO_COUNT_CONFIDENCE = 0.95
+
 
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
@@ -90,6 +92,38 @@ def conditional_selection_variance_pb2(
         indicator.astype(float) - selected_fraction
     )
     return float(n_events / (n_events - 1.0) * np.square(residuals).sum())
+
+
+def one_sided_zero_count_efficiency_upper(
+    n_trials: int, confidence: float = ZERO_COUNT_CONFIDENCE
+) -> float:
+    """Exact Clopper-Pearson upper bound for zero successes."""
+    if n_trials <= 0:
+        raise ValueError("zero-count upper bound requires at least one trial")
+    if not 0.0 < confidence < 1.0:
+        raise ValueError("confidence must be strictly between zero and one")
+    return -math.expm1(math.log1p(-confidence) / n_trials)
+
+
+def weighted_residual_second_moment(
+    raw_weights: np.ndarray, indicator: np.ndarray
+) -> tuple[float, float]:
+    if len(raw_weights) == 0 or len(raw_weights) != len(indicator):
+        raise ValueError("weighted residual inputs must have equal nonzero length")
+    mean_weight = float(raw_weights.mean())
+    total_weight = float(raw_weights.sum())
+    if not math.isfinite(mean_weight) or mean_weight <= 0 or total_weight <= 0:
+        raise ValueError("weighted residual inputs must have positive finite weight")
+    smoothed_probability = (
+        float(raw_weights[indicator].sum()) + 0.5 * mean_weight
+    ) / (total_weight + mean_weight)
+    second_moment = float(
+        np.mean(
+            np.square(raw_weights)
+            * np.square(indicator.astype(float) - smoothed_probability)
+        )
+    )
+    return smoothed_probability, second_moment
 
 
 def allocation_fractions(scores: np.ndarray, floor_fraction: float) -> np.ndarray:
@@ -420,8 +454,17 @@ def main() -> None:
         }
         allocation_counts = {
             "generated": int(allocation_mask.sum()),
+            "exactly_2b": int(
+                (allocation_mask & region_indicators["exactly_2b"]).sum()
+            ),
+            "exactly_3b": int(
+                (allocation_mask & region_indicators["exactly_3b"]).sum()
+            ),
             "atleast_4b": int(
                 (allocation_mask & region_indicators["atleast_4b"]).sum()
+            ),
+            "hh_candidate": int(
+                (allocation_mask & region_indicators["hh_candidate"]).sum()
             ),
             "rhh_lt80": int(
                 (allocation_mask & region_indicators["rhh_lt80"]).sum()
@@ -481,16 +524,26 @@ def main() -> None:
             allocation_counts["generated"] + 1.0
         )
         allocation_raw_weights = raw_event_weights[allocation_mask]
-        allocation_tail = region_indicators["rhh_lt80"][allocation_mask]
         mean_raw_weight = float(allocation_raw_weights.mean())
-        p_tail_physics = (
-            float(allocation_raw_weights[allocation_tail].sum()) + 0.5 * mean_raw_weight
-        ) / (float(allocation_raw_weights.sum()) + mean_raw_weight)
-        weighted_residual_second_moment = float(
-            np.mean(
-                np.square(allocation_raw_weights)
-                * np.square(allocation_tail.astype(float) - p_tail_physics)
+        allocation_weight_sum = float(allocation_raw_weights.sum())
+        allocation_region_metrics: dict[str, dict[str, float]] = {}
+        for region in ("rhh_lt80", "exactly_2b", "exactly_3b"):
+            allocation_indicator = region_indicators[region][allocation_mask]
+            smoothed_probability, residual_second_moment = (
+                weighted_residual_second_moment(
+                    allocation_raw_weights, allocation_indicator
+                )
             )
+            allocation_region_metrics[region] = {
+                "smoothed_probability": smoothed_probability,
+                "weighted_residual_second_moment": residual_second_moment,
+                "weighted_yield_pb": sigma_pb
+                * float(allocation_raw_weights[allocation_indicator].sum())
+                / allocation_weight_sum,
+            }
+        control_aware_residual_second_moment = sum(
+            allocation_region_metrics[region]["weighted_residual_second_moment"]
+            for region in ("rhh_lt80", "exactly_2b", "exactly_3b")
         )
 
         bin_id = inferred_bin_id
@@ -532,16 +585,43 @@ def main() -> None:
             "n_validation": int((split_frame["split"] == "validation").sum()),
             "n_test": int((split_frame["split"] == "test").sum()),
             "allocation_n_train_plus_validation": allocation_counts["generated"],
+            "allocation_n_exactly_2b": allocation_counts["exactly_2b"],
+            "allocation_n_exactly_3b": allocation_counts["exactly_3b"],
             "allocation_n_atleast_4b": allocation_counts["atleast_4b"],
+            "allocation_n_hh_candidate": allocation_counts["hh_candidate"],
             "allocation_n_rhh_lt80": allocation_counts["rhh_lt80"],
             "physics_neyman_score": sigma_pb
-            * math.sqrt(weighted_residual_second_moment)
+            * math.sqrt(control_aware_residual_second_moment)
+            / mean_raw_weight,
+            "physics_rhh_lt80_neyman_score": sigma_pb
+            * math.sqrt(
+                allocation_region_metrics["rhh_lt80"][
+                    "weighted_residual_second_moment"
+                ]
+            )
             / mean_raw_weight,
             "ml_tail_score": math.sqrt(p_tail_ml),
         }
+        for region, metrics in allocation_region_metrics.items():
+            row[f"allocation_weighted_yield_{region}_pb"] = metrics[
+                "weighted_yield_pb"
+            ]
+            row[f"allocation_weighted_residual_second_moment_{region}"] = metrics[
+                "weighted_residual_second_moment"
+            ]
         for region in REGIONS:
             row[f"n_{region}"] = counts[region]
             row[f"eff_{region}"] = counts[region] / n_events
+            row[f"eff_{region}_one_sided_95_upper_if_zero"] = (
+                one_sided_zero_count_efficiency_upper(n_events)
+                if counts[region] == 0
+                else np.nan
+            )
+            row[f"cross_section_{region}_pb_one_sided_95_upper_if_zero"] = (
+                sigma_pb * one_sided_zero_count_efficiency_upper(n_events)
+                if counts[region] == 0
+                else np.nan
+            )
             row[f"weighted_yield_{region}_pb"] = float(
                 physical_weights_pb[region_indicators[region]].sum()
             )
@@ -550,8 +630,20 @@ def main() -> None:
                     physical_weights_pb, region_indicators[region]
                 )
             )
+        row["allocation_eff_hh_candidate_one_sided_95_upper_if_zero"] = (
+            one_sided_zero_count_efficiency_upper(allocation_counts["generated"])
+            if allocation_counts["hh_candidate"] == 0
+            else np.nan
+        )
+        row["allocation_eff_rhh_lt80_one_sided_95_upper_if_zero"] = (
+            one_sided_zero_count_efficiency_upper(allocation_counts["generated"])
+            if allocation_counts["rhh_lt80"] == 0
+            else np.nan
+        )
 
         checks: dict[str, bool] = {
+            "event_parquet_readable": True,
+            "candidate_parquet_readable": True,
             "metadata_event_count": int(metadata["n_events"]) == n_events,
             "metadata_attempt_accounting": int(metadata["n_attempts"])
             == n_events + int(metadata["n_failed_attempts"]),
@@ -582,6 +674,36 @@ def main() -> None:
             "tag": tag,
             "bin_id": bin_id,
             "checks": checks,
+            "selection_statistics": {
+                "n_generated": n_events,
+                "n_hh_candidate": counts["hh_candidate"],
+                "hh_candidate_efficiency": counts["hh_candidate"] / n_events,
+                "hh_candidate_efficiency_one_sided_95_upper_if_zero": (
+                    one_sided_zero_count_efficiency_upper(n_events)
+                    if counts["hh_candidate"] == 0
+                    else None
+                ),
+                "hh_candidate_cross_section_pb_one_sided_95_upper_if_zero": (
+                    sigma_pb * one_sided_zero_count_efficiency_upper(n_events)
+                    if counts["hh_candidate"] == 0
+                    else None
+                ),
+                "allocation_n_train_plus_validation": allocation_counts["generated"],
+                "allocation_n_exactly_2b": allocation_counts["exactly_2b"],
+                "allocation_n_exactly_3b": allocation_counts["exactly_3b"],
+                "allocation_n_hh_candidate": allocation_counts["hh_candidate"],
+                "allocation_n_rhh_lt80": allocation_counts["rhh_lt80"],
+                "allocation_weighted_yield_exactly_2b_pb": (
+                    allocation_region_metrics["exactly_2b"]["weighted_yield_pb"]
+                ),
+                "allocation_weighted_yield_exactly_3b_pb": (
+                    allocation_region_metrics["exactly_3b"]["weighted_yield_pb"]
+                ),
+                "allocation_weighted_yield_rhh_lt80_pb": (
+                    allocation_region_metrics["rhh_lt80"]["weighted_yield_pb"]
+                ),
+                "physics_control_aware_neyman_score": row["physics_neyman_score"],
+            },
         }
 
         if cross_layer_enabled:
@@ -932,7 +1054,7 @@ def main() -> None:
     )
 
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "created_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "status": status,
         "inputs": {
@@ -966,6 +1088,32 @@ def main() -> None:
                 "is reported separately"
             ),
         },
+        "zero_candidate_policy": {
+            "empty_candidate_parquet_is_valid": True,
+            "physical_contribution_is_never_set_to_zero_from_zero_candidates": True,
+            "one_sided_confidence": ZERO_COUNT_CONFIDENCE,
+            "upper_bound_definition": (
+                "exact Clopper-Pearson binomial efficiency upper bound for zero "
+                "observed successes: 1 - (1-confidence)^(1/n)"
+            ),
+            "additional_simulation_evidence": [
+                "weighted r_HH<80 residual variance",
+                "weighted exactly-2b control-region yield and residual variance",
+                "weighted exactly-3b control-region yield and residual variance",
+            ],
+        },
+        "sample_roles": {
+            "physics_weighted_inference": (
+                "inclusive pTHat-stratified HardQCD with physical cross-section weights"
+            ),
+            "ml_enrichment_only": [
+                "QCD_bbbb",
+                "Zbbbb",
+                "ttbb",
+                "other targeted heavy-flavor samples",
+            ],
+            "ml_enrichment_excluded_from_physical_qcd_normalization": True,
+        },
         "splitting": {
             "algorithm": "SHA256(split_salt, tag, event), 70% train / 15% validation / 15% test",
             "salt": args.split_salt,
@@ -988,11 +1136,17 @@ def main() -> None:
             "event_total": args.allocation_total,
             "minimum_fraction_per_bin": args.allocation_floor_fraction,
             "physics": {
-                "objective": "Neyman allocation for r_HH<80 target-region cross-section variance",
-                "score": (
-                    "sigma_i * sqrt(mean(raw_weight^2 * (indicator-p_i)^2)) / "
-                    "mean(raw_weight), using a Jeffreys-smoothed weighted p_i"
+                "objective": (
+                    "control-aware Neyman allocation for inclusive pTHat QCD using "
+                    "weighted r_HH<80 plus exactly-2b and exactly-3b residual variance"
                 ),
+                "score": (
+                    "sigma_i / mean(raw_weight) times sqrt(the sum of empirical "
+                    "weighted residual second moments for r_HH<80, exactly-2b, and "
+                    "exactly-3b), using a Jeffreys-smoothed weighted p_i per region"
+                ),
+                "zero_candidate_bins_retained": True,
+                "control_regions": ["exactly_2b", "exactly_3b"],
                 "events_by_bin": {
                     str(int(row.bin_id)): int(row.physics_allocation_events)
                     for row in result.itertuples()
@@ -1028,8 +1182,10 @@ def main() -> None:
         "n_exactly_2b",
         "n_exactly_3b",
         "n_atleast_4b",
+        "n_hh_candidate",
         "n_rhh_lt80",
         "n_rhh_lt50",
+        "eff_hh_candidate_one_sided_95_upper_if_zero",
         "physics_allocation_events",
         "ml_tail_allocation_events",
     ]
