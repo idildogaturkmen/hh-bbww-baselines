@@ -10,6 +10,7 @@ RECEIPT_DIR="$1"
 OUTPUT_DIR="$2"
 X509_PROXY="$3"
 EOS_HOST="${HH4B_EOS_HOST:-root://cmseos.fnal.gov}"
+EXTRACT_DIR="${HH4B_EXTRACT_DIR:-$OUTPUT_DIR/extracted}"
 
 test -d "$RECEIPT_DIR" || {
   echo "ERROR: missing receipt directory: $RECEIPT_DIR" >&2
@@ -26,7 +27,12 @@ if [[ -e "$OUTPUT_DIR" ]]; then
   exit 4
 fi
 
-for COMMAND in openssl python3 xrdcp xrdfs; do
+if [[ "$EXTRACT_DIR" != "$OUTPUT_DIR/extracted" && -e "$EXTRACT_DIR" ]]; then
+  echo "ERROR: refusing to reuse external extraction path: $EXTRACT_DIR" >&2
+  exit 4
+fi
+
+for COMMAND in openssl python3 sha256sum xrdcp xrdfs; do
   command -v "$COMMAND" >/dev/null || {
     echo "ERROR: missing command: $COMMAND" >&2
     exit 3
@@ -95,7 +101,7 @@ if [[ "${#PLAN_LINES[@]}" -ne 8 ]]; then
   exit 5
 fi
 
-mkdir -p "$OUTPUT_DIR/bundles" "$OUTPUT_DIR/extracted"
+mkdir -p "$OUTPUT_DIR/bundles" "$EXTRACT_DIR"
 CHECKSUM_MANIFEST="$OUTPUT_DIR/eos_bundle_checksums.csv"
 EXTRACTED_MEMBERS_MANIFEST="$OUTPUT_DIR/extracted_file_members.txt"
 : > "$EXTRACTED_MEMBERS_MANIFEST"
@@ -106,7 +112,7 @@ import sys
 
 with Path(sys.argv[1]).open("w", newline="") as handle:
     csv.writer(handle).writerow([
-        "bin_id", "receipt", "remote_bundle", "local_bundle",
+        "bin_id", "receipt", "receipt_sha256", "remote_bundle", "local_bundle",
         "receipt_adler32", "eos_adler32", "local_adler32",
         "bundle_bytes", "status",
     ])
@@ -157,7 +163,7 @@ PY_ADLER
 
   python3 - \
     "$LOCAL_BUNDLE" \
-    "$OUTPUT_DIR/extracted" \
+    "$EXTRACT_DIR" \
     "$EXTRACTED_MEMBERS_MANIFEST" <<'PY_EXTRACT'
 from pathlib import Path, PurePosixPath
 import sys
@@ -207,6 +213,7 @@ PY_EXTRACT
   python3 - "$CHECKSUM_MANIFEST" \
     "$BIN_ID" \
     "$RECEIPT" \
+    "$(sha256sum "$RECEIPT" | awk '{print $1}')" \
     "$REMOTE_BUNDLE" \
     "$LOCAL_BUNDLE" \
     "$RECEIPT_ADLER32" \
@@ -224,4 +231,4 @@ done
 
 echo "Downloaded and extracted ${#PLAN_LINES[@]} verified bundles"
 echo "Checksum manifest: $CHECKSUM_MANIFEST"
-echo "Extracted campaign: $OUTPUT_DIR/extracted"
+echo "Extracted campaign: $EXTRACT_DIR"

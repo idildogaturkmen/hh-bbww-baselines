@@ -567,6 +567,10 @@ def main() -> None:
             "pthat_max_GeV": normalize_pthat_max(metadata.get("pthat_max_GeV")),
             "seed": int(metadata["seed"]),
             "n_generated": n_events,
+            "n_hepmc": np.nan,
+            "n_root": np.nan,
+            "n_event_summary": len(events),
+            "n_candidate_parquet": len(candidates),
             "sigma_gen_pb": sigma_pb,
             "sigma_err_pb": sigma_err_pb,
             "event_weight_convention": weight_convention,
@@ -629,6 +633,15 @@ def main() -> None:
                 conditional_selection_variance_pb2(
                     physical_weights_pb, region_indicators[region]
                 )
+            )
+            selected_physical_weights = physical_weights_pb[
+                region_indicators[region]
+            ].tolist()
+            row[f"effective_sample_size_{region}"] = effective_sample_size(
+                selected_physical_weights
+            )
+            row[f"maximum_single_event_weight_fraction_{region}"] = (
+                maximum_weight_fraction(selected_physical_weights)
             )
         row["allocation_eff_hh_candidate_one_sided_95_upper_if_zero"] = (
             one_sided_zero_count_efficiency_upper(allocation_counts["generated"])
@@ -703,6 +716,22 @@ def main() -> None:
                     allocation_region_metrics["rhh_lt80"]["weighted_yield_pb"]
                 ),
                 "physics_control_aware_neyman_score": row["physics_neyman_score"],
+            },
+            "weighted_and_unweighted_statistics": {
+                region: {
+                    "unweighted_count": counts[region],
+                    "weighted_yield_pb": row[f"weighted_yield_{region}_pb"],
+                    "conditional_mc_variance_pb2": row[
+                        f"conditional_mc_variance_{region}_pb2"
+                    ],
+                    "effective_sample_size": row[
+                        f"effective_sample_size_{region}"
+                    ],
+                    "maximum_single_event_weight_fraction": row[
+                        f"maximum_single_event_weight_fraction_{region}"
+                    ],
+                }
+                for region in REGIONS
             },
         }
 
@@ -846,8 +875,23 @@ def main() -> None:
             check_equal(
                 checks,
                 "acquisition_receipt_path",
-                Path(eos_row["receipt"]).resolve(),
-                receipt_path.resolve(),
+                Path(eos_row["receipt"]).name,
+                receipt_path.name,
+            )
+            acquisition_receipt_path = Path(eos_row["receipt"])
+            if eos_row.get("receipt_sha256"):
+                acquisition_receipt_sha256 = eos_row["receipt_sha256"].lower()
+            elif acquisition_receipt_path.is_file():
+                # Schema-v1 acquisition manifests predate the receipt hash.
+                # Verify their original receipt rather than trusting path identity.
+                acquisition_receipt_sha256 = sha256_file(acquisition_receipt_path)
+            else:
+                acquisition_receipt_sha256 = ""
+            check_equal(
+                checks,
+                "acquisition_receipt_sha256",
+                acquisition_receipt_sha256,
+                sha256_file(receipt_path),
             )
             check_equal(
                 checks,
@@ -869,7 +913,10 @@ def main() -> None:
             )
             checks["bundle_files_equal_audited_files"] = archive_files_match
             check_equal(checks, "hepmc_sha256", provenance["hepmc_sha256"], hepmc_sha256)
-            check_equal(checks, "hepmc_event_count", count_hepmc_events(hepmc_path), n_events)
+            hepmc_events = count_hepmc_events(hepmc_path)
+            row["n_hepmc"] = hepmc_events
+            row["n_root"] = root_events
+            check_equal(checks, "hepmc_event_count", hepmc_events, n_events)
             check_equal(checks, "root_sha256", provenance["root_sha256"], root_sha256)
             check_equal(checks, "root_event_count", root_events, n_events)
             check_equal(
