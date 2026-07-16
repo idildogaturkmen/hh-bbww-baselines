@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ "$#" -ne 7 ]]; then
-  echo "Usage: $0 BIN_ID SHARD_ID N_EVENTS CAMPAIGN CLUSTER INPUT_TARBALL EOS_DIR"
+if [[ "$#" -lt 8 || "$#" -gt 9 ]]; then
+  echo "Usage: $0 BIN_ID SHARD_ID N_EVENTS CAMPAIGN CLUSTER INPUT_TARBALL EOS_DIR EXPECTED_PAYLOAD_SHA256 [--compile-only]"
   exit 1
 fi
 
@@ -13,6 +13,16 @@ CAMPAIGN="$4"
 CLUSTER_ID="$5"
 INPUT_TARBALL="$6"
 EOS_DIR="$7"
+EXPECTED_PAYLOAD_SHA256="$8"
+COMPILE_ONLY=0
+
+if [[ "$#" -eq 9 ]]; then
+  [[ "$9" == "--compile-only" ]] || {
+    echo "ERROR: the only supported optional argument is --compile-only"
+    exit 1
+  }
+  COMPILE_ONLY=1
+fi
 
 [[ "$BIN_ID" =~ ^[0-7]$ ]] || {
   echo "ERROR: BIN_ID must be 0--7"
@@ -26,6 +36,11 @@ EOS_DIR="$7"
 
 [[ "$N_EVENTS" =~ ^[1-9][0-9]*$ ]] || {
   echo "ERROR: bad N_EVENTS"
+  exit 1
+}
+
+[[ "$EXPECTED_PAYLOAD_SHA256" =~ ^[0-9a-f]{64}$ ]] || {
+  echo "ERROR: bad expected payload SHA-256"
   exit 1
 }
 
@@ -72,6 +87,14 @@ finalize() {
   "stage": "$STAGE",
   "remote_bundle": "$REMOTE_BUNDLE",
   "adler32": "$ADLER32",
+  "payload_sha256": "${PAYLOAD_SHA256:-}",
+  "expected_payload_sha256": "$EXPECTED_PAYLOAD_SHA256",
+  "delphes_card_sha256": "${CARD_HASH:-}",
+  "wrapper_sha256": "${WRAPPER_SHA256:-}",
+  "lcg_setup": "${LCG_SETUP:-}",
+  "lcg_setup_sha256": "${LCG_SETUP_SHA256:-}",
+  "pythia_configuration": "${PYTHIA_CONFIG_METHOD:-}",
+  "hepmc3_configuration": "${HEPMC3_CONFIG_METHOD:-}",
   "exit_status": $STATUS,
   "finished_utc": "$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
 }
@@ -89,24 +112,14 @@ test -s "$INPUT_TARBALL" || {
 
 PAYLOAD_SHA256=$(sha256sum "$INPUT_TARBALL" | awk '{print $1}')
 
-tar -xzf "$INPUT_TARBALL"
-
-PAYLOAD="$SCRATCH/payload"
-REPO="$PAYLOAD/repo"
-DELPHES="$PAYLOAD/Delphes"
-
-CARD="$REPO/cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl"
-SOURCE="$REPO/scripts/production/generate_pythia8_hardqcd_hepmc3.cc"
-
-EXPECTED_CARD_HASH="1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c"
-CARD_HASH=$(sha256sum "$CARD" | awk '{print $1}')
-
-if [[ "$CARD_HASH" != "$EXPECTED_CARD_HASH" ]]; then
-  echo "ERROR: card hash mismatch"
-  exit 3
+if [[ "$PAYLOAD_SHA256" != "$EXPECTED_PAYLOAD_SHA256" ]]; then
+  echo "ERROR: transferred payload hash mismatch"
+  exit 2
 fi
 
-LCG_SETUP="/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh"
+tar -xzf "$INPUT_TARBALL"
+
+LCG_SETUP="${HH4B_LCG_SETUP:-/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh}"
 
 test -r "$LCG_SETUP" || {
   echo "ERROR: missing LCG environment"
@@ -116,13 +129,45 @@ test -r "$LCG_SETUP" || {
 set +u
 source "$LCG_SETUP"
 set -u
+unset SOURCE
+LCG_SETUP_SHA256=$(sha256sum "$LCG_SETUP" | awk '{print $1}')
+
+PAYLOAD="$SCRATCH/payload"
+REPO="$PAYLOAD/repo"
+DELPHES="$PAYLOAD/Delphes"
+MANIFEST="$PAYLOAD/manifest.txt"
+CARD="$REPO/cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl"
+GENERATOR_SOURCE="$REPO/scripts/production/generate_pythia8_hardqcd_hepmc3.cc"
+COMPILE_HELPER="$REPO/scripts/production/compile_pythia8_hepmc3.sh"
+
+EXPECTED_CARD_HASH="1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c"
+CARD_HASH=$(sha256sum "$CARD" | awk '{print $1}')
+
+if [[ "$CARD_HASH" != "$EXPECTED_CARD_HASH" ]]; then
+  echo "ERROR: card hash mismatch"
+  exit 3
+fi
+
+WRAPPER_SHA256=$(sha256sum "$0" | awk '{print $1}')
+
+EXPECTED_WRAPPER_SHA256=$(awk -F= '$1 == "worker_wrapper_sha256" {print $2}' "$MANIFEST")
+EXPECTED_COMPILE_HELPER_SHA256=$(awk -F= '$1 == "compile_helper_sha256" {print $2}' "$MANIFEST")
+COMPILE_HELPER_SHA256=$(sha256sum "$COMPILE_HELPER" | awk '{print $1}')
+
+if [[ -z "$EXPECTED_WRAPPER_SHA256" || "$WRAPPER_SHA256" != "$EXPECTED_WRAPPER_SHA256" ]]; then
+  echo "ERROR: worker wrapper hash mismatch"
+  exit 3
+fi
+
+if [[ -z "$EXPECTED_COMPILE_HELPER_SHA256" || "$COMPILE_HELPER_SHA256" != "$EXPECTED_COMPILE_HELPER_SHA256" ]]; then
+  echo "ERROR: compiler helper hash mismatch"
+  exit 3
+fi
 
 export LD_LIBRARY_PATH="$DELPHES:${LD_LIBRARY_PATH:-}"
 
 for COMMAND in \
   g++ \
-  pythia8-config \
-  HepMC3-config \
   python3 \
   xrdcp \
   xrdfs
@@ -132,6 +177,28 @@ do
     exit 4
   }
 done
+
+if [[ "$COMPILE_ONLY" -eq 0 ]]; then
+  test -r "${X509_USER_PROXY:-}" || {
+    echo "ERROR: X509_USER_PROXY is missing or unreadable"
+    exit 4
+  }
+
+  if command -v voms-proxy-info >/dev/null 2>&1; then
+    voms-proxy-info \
+      -file "$X509_USER_PROXY" \
+      -exists \
+      -valid 1:00 || {
+        echo "ERROR: X.509 proxy has less than one hour remaining"
+        exit 4
+      }
+  fi
+fi
+
+test -x "$COMPILE_HELPER" || {
+  echo "ERROR: missing compiler helper: $COMPILE_HELPER"
+  exit 4
+}
 
 OUT="$SCRATCH/output"
 
@@ -146,13 +213,24 @@ GENERATOR="$SCRATCH/generate_hardqcd"
 
 STAGE="compiling"
 
-g++ -O2 -std=c++17 \
-  "$SOURCE" \
-  -o "$GENERATOR" \
-  $(pythia8-config --cxxflags) \
-  $(HepMC3-config --cxxflags) \
-  $(pythia8-config --libs) \
-  $(HepMC3-config --libs)
+"$COMPILE_HELPER" \
+  "$GENERATOR_SOURCE" \
+  "$GENERATOR" \
+  "$OUT/logs/${TAG}_compile_arguments.txt"
+
+PYTHIA_CONFIG_METHOD=$(
+  awk -F= '$1 == "pythia_configuration" {print $2}' \
+    "$OUT/logs/${TAG}_compile_arguments.txt"
+)
+HEPMC3_CONFIG_METHOD=$(
+  awk -F= '$1 == "hepmc3_configuration" {print $2}' \
+    "$OUT/logs/${TAG}_compile_arguments.txt"
+)
+
+if [[ "$COMPILE_ONLY" -eq 1 ]]; then
+  STAGE="compile_preflight_complete"
+  exit 0
+fi
 
 HEPMC="$OUT/hepmc/${TAG}.hepmc"
 ROOT_FILE="$OUT/root/${TAG}_delphes.root"
@@ -233,6 +311,12 @@ python3 - \
   "$TAG" \
   "$PAYLOAD_SHA256" \
   "$CARD_HASH" \
+  "$WRAPPER_SHA256" \
+  "$COMPILE_HELPER_SHA256" \
+  "$LCG_SETUP" \
+  "$LCG_SETUP_SHA256" \
+  "$PYTHIA_CONFIG_METHOD" \
+  "$HEPMC3_CONFIG_METHOD" \
   "$HEPMC_SHA" \
   "$ROOT_SHA" \
   "$N_ROOT" \
@@ -247,6 +331,12 @@ import sys
     tag,
     payload_sha,
     card_sha,
+    wrapper_sha,
+    compile_helper_sha,
+    lcg_setup,
+    lcg_setup_sha,
+    pythia_configuration,
+    hepmc3_configuration,
     hepmc_sha,
     root_sha,
     n_root,
@@ -261,6 +351,12 @@ record = {
     "physics_role": "inclusive_QCD_importance_stratum",
     "payload_sha256": payload_sha,
     "delphes_card_sha256": card_sha,
+    "worker_wrapper_sha256": wrapper_sha,
+    "compile_helper_sha256": compile_helper_sha,
+    "lcg_setup": lcg_setup,
+    "lcg_setup_sha256": lcg_setup_sha,
+    "pythia_configuration": pythia_configuration,
+    "hepmc3_configuration": hepmc3_configuration,
     "hepmc_sha256": hepmc_sha,
     "root_sha256": root_sha,
     "root_events": int(n_root),
@@ -279,14 +375,6 @@ BUNDLE="$SCRATCH/${TAG}_bundle.tar.gz"
 
 tar -C "$OUT" -czf "$BUNDLE" .
 
-ADLER32=$(
-  python3 -c \
-    'import sys,zlib; c=1; f=open(sys.argv[1],"rb"); [None for b in iter(lambda:f.read(8*1024*1024),b"") if not (c:=zlib.adler32(b,c))]; print(f"{c & 0xffffffff:08x}")' \
-    "$BUNDLE"
-)
-
-# Recalculate with a clearer implementation to avoid relying on
-# expression behavior above.
 ADLER32=$(
   python3 - "$BUNDLE" <<'PY_ADLER'
 import sys

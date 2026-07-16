@@ -28,8 +28,6 @@ fi
 
 for COMMAND in \
   g++ \
-  pythia8-config \
-  HepMC3-config \
   python3 \
   root-config
 do
@@ -51,19 +49,17 @@ mkdir -p \
   "$OUTBASE/metadata" \
   "$LOGBASE"
 
-SOURCE="$HH4B_REPO/scripts/production/generate_pythia8_hardqcd_hepmc3.cc"
+GENERATOR_SOURCE="$HH4B_REPO/scripts/production/generate_pythia8_hardqcd_hepmc3.cc"
+COMPILE_HELPER="$HH4B_REPO/scripts/production/compile_pythia8_hepmc3.sh"
 
 GENERATOR="$OUTBASE/generate_pythia8_hardqcd_hepmc3"
 
 echo "Compiling HardQCD generator..."
 
-g++ -O2 -std=c++17 \
-  "$SOURCE" \
-  -o "$GENERATOR" \
-  $(pythia8-config --cxxflags) \
-  $(HepMC3-config --cxxflags) \
-  $(pythia8-config --libs) \
-  $(HepMC3-config --libs)
+"$COMPILE_HELPER" \
+  "$GENERATOR_SOURCE" \
+  "$GENERATOR" \
+  "$LOGBASE/compile_arguments.txt"
 
 test -x "$GENERATOR"
 

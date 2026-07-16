@@ -5,8 +5,14 @@ export HH4B_REPO="${HH4B_REPO:-/uscms_data/d3/$USER/repos/hh-bbww-baselines}"
 export HH4B_STORE="${HH4B_STORE:-/uscms_data/d3/$USER/hh4b_delphes}"
 export DELPHES_DIR="${DELPHES_DIR:-/uscms_data/d3/$USER/software/Delphes}"
 
-INPUT_DIR="$HH4B_STORE/condor_inputs"
-TARBALL="$INPUT_DIR/qcd_hardqcd_importance_inputs.tar.gz"
+if [[ "$#" -gt 1 ]]; then
+  echo "Usage: $0 [OUTPUT_TARBALL]" >&2
+  exit 1
+fi
+
+DEFAULT_INPUT_DIR="$HH4B_STORE/condor_inputs"
+TARBALL="${1:-$DEFAULT_INPUT_DIR/qcd_hardqcd_importance_inputs.tar.gz}"
+INPUT_DIR=$(dirname "$TARBALL")
 
 CARD="$HH4B_REPO/cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl"
 EXPECTED_HASH="1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c"
@@ -37,6 +43,7 @@ mkdir -p \
 
 cp \
   "$HH4B_REPO/scripts/production/generate_pythia8_hardqcd_hepmc3.cc" \
+  "$HH4B_REPO/scripts/production/compile_pythia8_hepmc3.sh" \
   "$PAYLOAD/repo/scripts/production/"
 
 cp \
@@ -64,12 +71,18 @@ do
 done
 
 GIT_HEAD=$(git -C "$HH4B_REPO" rev-parse HEAD)
+GENERATOR_SHA=$(sha256sum "$HH4B_REPO/scripts/production/generate_pythia8_hardqcd_hepmc3.cc" | awk '{print $1}')
+COMPILE_HELPER_SHA=$(sha256sum "$HH4B_REPO/scripts/production/compile_pythia8_hepmc3.sh" | awk '{print $1}')
+WRAPPER_SHA=$(sha256sum "$HH4B_REPO/scripts/production/run_qcd_importance_bundle.sh" | awk '{print $1}')
 
 cat > "$PAYLOAD/manifest.txt" <<EOF
 sample=Pythia8_HardQCD_importance_pilot
 created_utc=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
 git_head=$GIT_HEAD
 card_sha256=$OBSERVED_HASH
+generator_source_sha256=$GENERATOR_SHA
+compile_helper_sha256=$COMPILE_HELPER_SHA
+worker_wrapper_sha256=$WRAPPER_SHA
 sqrt_s_GeV=13000
 tune=Monash2013_TuneEE7_TunePP14
 EOF
