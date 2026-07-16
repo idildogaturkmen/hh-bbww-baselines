@@ -168,7 +168,8 @@ done
 
 python3 \
   scripts/production/audit_qcd_importance_pilot.py \
-  "$OUTBASE"
+  "$OUTBASE" \
+  --local-only
 
 echo
 echo "QCD IMPORTANCE PILOT COMPLETE"

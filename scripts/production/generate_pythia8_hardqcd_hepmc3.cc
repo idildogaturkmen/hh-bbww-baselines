@@ -2,6 +2,8 @@
 #include "Pythia8Plugins/HepMC3.h"
 #include "HepMC3/WriterAscii.h"
 
+#include <algorithm>
+#include <cmath>
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>
@@ -94,6 +96,10 @@ int main(int argc, char* argv[]) {
   int nAttempts = 0;
   int nFailures = 0;
   const int maxFailures = 1000 + 20 * nEvents;
+  double sumEventWeights = 0.0;
+  double sumSquaredEventWeights = 0.0;
+  double minEventWeight = 0.0;
+  double maxEventWeight = 0.0;
 
   while (nWritten < nEvents) {
     ++nAttempts;
@@ -109,6 +115,22 @@ int main(int argc, char* argv[]) {
 
       continue;
     }
+
+    const double eventWeight = pythia.info.weight();
+    if (!std::isfinite(eventWeight) || eventWeight <= 0.0) {
+      std::cerr << "ERROR: invalid Pythia event weight\n";
+      return 7;
+    }
+
+    if (nWritten == 0) {
+      minEventWeight = eventWeight;
+      maxEventWeight = eventWeight;
+    } else {
+      minEventWeight = std::min(minEventWeight, eventWeight);
+      maxEventWeight = std::max(maxEventWeight, eventWeight);
+    }
+    sumEventWeights += eventWeight;
+    sumSquaredEventWeights += eventWeight * eventWeight;
 
     HepMC3::GenEvent event(
         HepMC3::Units::GEV,
@@ -170,6 +192,16 @@ int main(int argc, char* argv[]) {
            << sigmaPb << ",\n";
   metadata << "  \"sigma_err_pb\": "
            << sigmaErrPb << ",\n";
+  metadata << "  \"event_weight_convention\": "
+           << "\"pythia_info_weight_normalized_to_sigma_gen\",\n";
+  metadata << "  \"sum_event_weights\": "
+           << sumEventWeights << ",\n";
+  metadata << "  \"sum_squared_event_weights\": "
+           << sumSquaredEventWeights << ",\n";
+  metadata << "  \"min_event_weight\": "
+           << minEventWeight << ",\n";
+  metadata << "  \"max_event_weight\": "
+           << maxEventWeight << ",\n";
   metadata << "  \"physics_role\": "
            << "\"inclusive_QCD_importance_stratum\",\n";
   metadata << "  \"generator_filter\": \"none\"\n";
