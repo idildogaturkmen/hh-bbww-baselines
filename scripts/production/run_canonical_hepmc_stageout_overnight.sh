@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# Keep errexit and pipefail active, but enable nounset only after
+# the external LCG environment has been sourced.
+set -eo pipefail
 
 export HH4B_REPO="/uscms_data/d3/$USER/repos/hh-bbww-baselines"
 export HH4B_STORE="/uscms_data/d3/$USER/hh4b_delphes"
 
 cd "$HH4B_REPO"
 source scripts/delphes/setup_lpc_delphes_env.sh
+
+# The LCG setup references variables that may initially be unset.
+# It is now safe to enable strict undefined-variable checking.
+set -u
 
 export X509_USER_PROXY="/tmp/x509up_u$(id -u)"
 
