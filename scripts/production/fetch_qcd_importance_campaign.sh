@@ -179,8 +179,12 @@ with tarfile.open(bundle, "r:gz") as archive:
             continue
         path = PurePosixPath(name)
         canonical = str(path)
+        if canonical == "." and member.isdir():
+            continue
         if not name or path.is_absolute() or ".." in path.parts:
             raise SystemExit(f"unsafe tar member: {member.name}")
+        if not path.parts:
+            raise SystemExit(f"empty tar member path: {member.name}")
         if canonical in normalized:
             raise SystemExit(f"duplicate tar member: {member.name}")
         if not (member.isfile() or member.isdir()):
