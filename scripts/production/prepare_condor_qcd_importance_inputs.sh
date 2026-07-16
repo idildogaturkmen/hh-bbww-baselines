@@ -49,6 +49,7 @@ cp \
 cp \
   "$HH4B_REPO/scripts/delphes/make_delphes_event_summary.py" \
   "$HH4B_REPO/scripts/delphes/reconstruct_hh4b_candidates_v2.py" \
+  "$HH4B_REPO/scripts/delphes/write_parquet_from_pickle.py" \
   "$PAYLOAD/repo/scripts/delphes/"
 
 cp "$CARD" "$PAYLOAD/repo/cards/delphes/"
@@ -74,6 +75,7 @@ GIT_HEAD=$(git -C "$HH4B_REPO" rev-parse HEAD)
 GENERATOR_SHA=$(sha256sum "$HH4B_REPO/scripts/production/generate_pythia8_hardqcd_hepmc3.cc" | awk '{print $1}')
 COMPILE_HELPER_SHA=$(sha256sum "$HH4B_REPO/scripts/production/compile_pythia8_hepmc3.sh" | awk '{print $1}')
 WRAPPER_SHA=$(sha256sum "$HH4B_REPO/scripts/production/run_qcd_importance_bundle.sh" | awk '{print $1}')
+PARQUET_WRITER_SHA=$(sha256sum "$HH4B_REPO/scripts/delphes/write_parquet_from_pickle.py" | awk '{print $1}')
 
 cat > "$PAYLOAD/manifest.txt" <<EOF
 sample=Pythia8_HardQCD_importance_pilot
@@ -83,6 +85,7 @@ card_sha256=$OBSERVED_HASH
 generator_source_sha256=$GENERATOR_SHA
 compile_helper_sha256=$COMPILE_HELPER_SHA
 worker_wrapper_sha256=$WRAPPER_SHA
+parquet_writer_sha256=$PARQUET_WRITER_SHA
 sqrt_s_GeV=13000
 tune=Monash2013_TuneEE7_TunePP14
 EOF

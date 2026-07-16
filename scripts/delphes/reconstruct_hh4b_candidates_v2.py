@@ -2,11 +2,14 @@
 
 import argparse
 from itertools import combinations
+import os
 from pathlib import Path
+import pickle
+import subprocess
+import sys
 
 import awkward as ak
 import numpy as np
-import pandas as pd
 import uproot
 
 
@@ -307,31 +310,33 @@ def main():
 
         rows.append(row)
 
-    df = pd.DataFrame(rows)
-
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(out, index=False)
+    parquet_writer = Path(__file__).with_name("write_parquet_from_pickle.py")
+    if not parquet_writer.is_file():
+        raise SystemExit(f"ERROR: missing isolated Parquet writer: {parquet_writer}")
+
+    temporary_pickle = out.with_name(f".{out.name}.{os.getpid()}.pickle")
+    try:
+        with temporary_pickle.open("wb") as handle:
+            pickle.dump(rows, handle, protocol=pickle.HIGHEST_PROTOCOL)
+        subprocess.run(
+            [
+                sys.executable,
+                str(parquet_writer),
+                "--input",
+                str(temporary_pickle),
+                "--output",
+                str(out),
+            ],
+            check=True,
+        )
+    finally:
+        temporary_pickle.unlink(missing_ok=True)
 
     print(f"Input events: {n_events}")
-    print(f"Events with >=4 selected b-tagged jets: {len(df)}")
+    print(f"Events with >=4 selected b-tagged jets: {len(rows)}")
     print(f"Wrote: {out}")
-
-    if len(df) > 0:
-        print()
-        cols = [
-            "mbb1",
-            "mbb2",
-            "avg_mbb",
-            "delta_mbb",
-            "r_hh",
-            "mhh",
-            "n_selected_jets",
-            "n_selected_bjets",
-            "n_extra_selected_jets",
-            "n_extra_selected_bjets",
-        ]
-        print(df[cols].describe())
 
 
 if __name__ == "__main__":

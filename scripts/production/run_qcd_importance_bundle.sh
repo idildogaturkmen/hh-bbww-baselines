@@ -139,6 +139,7 @@ MANIFEST="$PAYLOAD/manifest.txt"
 CARD="$REPO/cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl"
 GENERATOR_SOURCE="$REPO/scripts/production/generate_pythia8_hardqcd_hepmc3.cc"
 COMPILE_HELPER="$REPO/scripts/production/compile_pythia8_hepmc3.sh"
+PARQUET_WRITER="$REPO/scripts/delphes/write_parquet_from_pickle.py"
 
 EXPECTED_CARD_HASH="1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c"
 CARD_HASH=$(sha256sum "$CARD" | awk '{print $1}')
@@ -153,6 +154,8 @@ WRAPPER_SHA256=$(sha256sum "$0" | awk '{print $1}')
 EXPECTED_WRAPPER_SHA256=$(awk -F= '$1 == "worker_wrapper_sha256" {print $2}' "$MANIFEST")
 EXPECTED_COMPILE_HELPER_SHA256=$(awk -F= '$1 == "compile_helper_sha256" {print $2}' "$MANIFEST")
 COMPILE_HELPER_SHA256=$(sha256sum "$COMPILE_HELPER" | awk '{print $1}')
+EXPECTED_PARQUET_WRITER_SHA256=$(awk -F= '$1 == "parquet_writer_sha256" {print $2}' "$MANIFEST")
+PARQUET_WRITER_SHA256=$(sha256sum "$PARQUET_WRITER" | awk '{print $1}')
 
 if [[ -z "$EXPECTED_WRAPPER_SHA256" || "$WRAPPER_SHA256" != "$EXPECTED_WRAPPER_SHA256" ]]; then
   echo "ERROR: worker wrapper hash mismatch"
@@ -161,6 +164,11 @@ fi
 
 if [[ -z "$EXPECTED_COMPILE_HELPER_SHA256" || "$COMPILE_HELPER_SHA256" != "$EXPECTED_COMPILE_HELPER_SHA256" ]]; then
   echo "ERROR: compiler helper hash mismatch"
+  exit 3
+fi
+
+if [[ -z "$EXPECTED_PARQUET_WRITER_SHA256" || "$PARQUET_WRITER_SHA256" != "$EXPECTED_PARQUET_WRITER_SHA256" ]]; then
+  echo "ERROR: isolated Parquet writer hash mismatch"
   exit 3
 fi
 
@@ -312,6 +320,7 @@ python3 - \
   "$CARD_HASH" \
   "$WRAPPER_SHA256" \
   "$COMPILE_HELPER_SHA256" \
+  "$PARQUET_WRITER_SHA256" \
   "$LCG_SETUP" \
   "$LCG_SETUP_SHA256" \
   "$PYTHIA_CONFIG_METHOD" \
@@ -332,6 +341,7 @@ import sys
     card_sha,
     wrapper_sha,
     compile_helper_sha,
+    parquet_writer_sha,
     lcg_setup,
     lcg_setup_sha,
     pythia_configuration,
@@ -352,6 +362,7 @@ record = {
     "delphes_card_sha256": card_sha,
     "worker_wrapper_sha256": wrapper_sha,
     "compile_helper_sha256": compile_helper_sha,
+    "parquet_writer_sha256": parquet_writer_sha,
     "lcg_setup": lcg_setup,
     "lcg_setup_sha256": lcg_setup_sha,
     "pythia_configuration": pythia_configuration,
