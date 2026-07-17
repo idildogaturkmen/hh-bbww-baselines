@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "authorized_for_single_submission_after_preflight",
+  "campaign": "qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717",
+  "reviewed_manifest_sha256": "b4fbd7e967859bd7956e1a479380116f981c57267ed28bf09f6ef2cff466c58a",
+  "reviewed_summary_sha256": "beca2400f7278fbaf23855c6e06db599372509063bd72da73aeab96fbe273a9c",
+  "authorized_jobs": 56,
+  "authorized_events": 500000,
+  "combined_test_bins": [0, 1, 2, 3, 4, 5, 6, 7],
+  "forced_sealed_test_bins": [1, 4, 5, 6, 7],
+  "authorization_conditions": [
+    "repository clean and pushed",
+    "payload built from current reviewed commit",
+    "EL9 compile preflight passes",
+    "EOS campaign namespace absent",
+    "Condor dry-run contains exactly 56 jobs",
+    "reviewed assignments reproduced byte-for-byte"
+  ],
+  "submission_count_authorized": 1,
+  "five_million_authorized": false
+}
