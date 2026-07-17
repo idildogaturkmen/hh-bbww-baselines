@@ -1,0 +1,13 @@
+{
+  "campaign": "qcd_hardqcd_importance_adaptive500k_phys_20260717_0022",
+  "cluster_id": 84891534,
+  "schedd": "lpcschedd6.fnal.gov",
+  "submitted_jobs": 54,
+  "submitted_events": 500000,
+  "submit_exit_code": 0,
+  "submitted_exactly_once": true,
+  "submitted_utc": "2026-07-17T00:31:31Z",
+  "five_million_authorized": false,
+  "payload_sha256": "0b3d93777252bf35c5bd2f9037dcc5fbebd6b3b7e99a67a04a675319d6df52a4",
+  "git_head": "ce9964783b56a0d9eca84a6b2a5304a06c7b978f"
+}

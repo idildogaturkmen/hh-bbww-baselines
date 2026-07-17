@@ -132,3 +132,40 @@ campaign before authorizing any duplicate QCD generation.
 
 The separate ML-tail campaign must remain explicitly classified as
 training enrichment and must not replace the physical QCD estimate.
+
+## Physical-QCD adaptive 500K audit
+
+Campaign:
+
+`qcd_hardqcd_importance_adaptive500k_phys_20260717_0022`
+
+Production status:
+
+`VALID`
+
+Statistical status:
+
+`SIGNAL_LIKE_TAIL_NOT_CONVERGED`
+
+Validated:
+
+- 54 completed jobs
+- 500,000 generated events
+- 54 verified canonical bundles
+- 4,266 cross-layer checks passed
+
+Signal-like statistics:
+
+- 27 HH-like rows, ESS 3.188
+- 11 rHH<80 rows, ESS 3.169
+- 5 rHH<50 rows, ESS 1.991
+- maximum event fractions between 41% and 59%
+- bootstrap uncertainties between 51% and 67%
+
+The sealed test split contains only pTHat strata 0, 2, and 3.
+
+The next approved action is preparation and review of one additional
+adaptive physical-QCD wave with sealed test shards declared for missing
+strata 1, 4, 5, 6, and 7.
+
+No 5M campaign and no final ML inference are authorized.

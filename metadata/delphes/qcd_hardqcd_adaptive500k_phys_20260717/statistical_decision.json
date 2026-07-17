@@ -1,0 +1,23 @@
+{
+  "campaign": "qcd_hardqcd_importance_adaptive500k_phys_20260717_0022",
+  "production_status": "valid",
+  "statistical_status": "signal_like_tail_not_converged",
+  "jobs": 54,
+  "generated_events": 500000,
+  "verified_bundles": 54,
+  "cross_layer_checks_passed": 4266,
+  "hh_like_rows": 27,
+  "rhh_lt80_rows": 11,
+  "rhh_lt50_rows": 5,
+  "hh_like_ess": 3.188,
+  "rhh_lt80_ess": 3.169,
+  "rhh_lt50_ess": 1.991,
+  "hh_like_maximum_event_fraction": 0.411098,
+  "rhh_lt80_maximum_event_fraction": 0.412305,
+  "rhh_lt50_maximum_event_fraction": 0.593906,
+  "test_strata_present": [0, 2, 3],
+  "test_strata_missing": [1, 4, 5, 6, 7],
+  "recommendation": "prepare_one_additional_adaptive_physical_qcd_wave",
+  "five_million_authorized": false,
+  "final_ml_inference_authorized": false
+}
