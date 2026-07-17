@@ -1,0 +1,12 @@
+{
+  "has_qcd_general_banner_evidence": true,
+  "has_qcd_iht400to600_banner_evidence": true,
+  "has_ttbar_banner_evidence": true,
+  "has_zbbbb_banner_evidence": true,
+  "n_banner_candidate_rows": 355,
+  "n_evidence_file_matches": 1211,
+  "n_phase1_manifest_rows": 25,
+  "n_run_banners": 42,
+  "status": "lineage_discovery_complete",
+  "warning": "Banner-family matches are candidates only. Exact HepMC-to-banner lineage is not proven by family matching."
+}
