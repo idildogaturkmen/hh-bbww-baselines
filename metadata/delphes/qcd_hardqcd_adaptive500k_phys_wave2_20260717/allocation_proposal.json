@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "proposal_not_authorized_for_submission",
+  "physics_role": "inclusive_pthat_stratified_hardqcd_physical_inference",
+  "source_campaign": "qcd_hardqcd_importance_adaptive500k_phys_20260717_0022",
+  "source_production_status": "valid",
+  "source_statistical_status": "signal_like_tail_not_converged",
+  "allocation_uses_train_and_validation_only": true,
+  "existing_final_test_excluded_from_allocation": true,
+  "objective": "control-aware adaptive allocation using exactly-2b, exactly-3b, HH-like and rHH residual variance with a per-bin floor",
+  "total_events": 500000,
+  "events_by_bin": {
+    "0": 301212,
+    "1": 82809,
+    "2": 51052,
+    "3": 14532,
+    "4": 12864,
+    "5": 12527,
+    "6": 12504,
+    "7": 12500
+  },
+  "pthat_bins_GeV": {
+    "0": [50, 75],
+    "1": [75, 100],
+    "2": [100, 200],
+    "3": [200, 300],
+    "4": [300, 500],
+    "5": [500, 700],
+    "6": [700, 1000],
+    "7": [1000, 0]
+  },
+  "existing_test_bins": [0, 2, 3],
+  "required_new_sealed_test_bins": [1, 4, 5, 6, 7],
+  "minimum_forced_test_events_per_missing_bin": 10000,
+  "maximum_events_per_job": 10000,
+  "five_million_authorized": false,
+  "submission_authorized": false
+}
