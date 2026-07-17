@@ -106,3 +106,29 @@ Gate 1B: exact HepMC generation-lineage audit using immutable MG5 run
 banners, logs, card snapshots, and stored generation metadata.
 
 No new event generation should be submitted until Gate 1B is reviewed.
+
+## Gate 1C exact generation lineage
+
+Status:
+
+`GATE1C_EXACT_LINEAGE_VALID`
+
+Validated:
+
+- 25 exact HepMC-to-MG5-run mappings
+- 25 unique run banners
+- 25 unique HepMC hashes
+- 25 unique seeds
+- banner and propagated generator cross sections mutually consistent
+  to a maximum relative difference of 5.49e-08
+
+The general targeted QCD-bbbb campaign contains the IHT 400–600
+region and is not additive with the targeted IHT 400–600 campaign.
+
+## Current next gate
+
+Audit and freeze the existing adaptive 500K physical-QCD importance
+campaign before authorizing any duplicate QCD generation.
+
+The separate ML-tail campaign must remain explicitly classified as
+training enrichment and must not replace the physical QCD estimate.

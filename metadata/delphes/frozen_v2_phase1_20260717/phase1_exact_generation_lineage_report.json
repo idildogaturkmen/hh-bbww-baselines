@@ -1,0 +1,18 @@
+{
+  "maximum_xsec_relative_difference": 5.486613340678164e-08,
+  "n_exact_lineage_rows": 25,
+  "n_manifest_rows": 25,
+  "n_unique_banners": 25,
+  "n_unique_hepmc_hashes": 25,
+  "n_unique_run_names": 25,
+  "n_unique_seeds": 25,
+  "n_xsec_comparisons": 25,
+  "process_counts": {
+    "qcd_bbbb_general": 5,
+    "qcd_bbbb_iht400to600": 10,
+    "ttbar": 5,
+    "zbbbb": 5
+  },
+  "scientific_warning": "Exact generation lineage does not make overlapping samples additive. qcd_bbbb_general includes the IHT 400-600 phase space.",
+  "status": "exact_lineage_valid"
+}
