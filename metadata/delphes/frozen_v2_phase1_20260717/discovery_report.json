@@ -1,0 +1,30 @@
+{
+  "frozen_detector_card": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl",
+  "frozen_detector_card_sha256": "1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c",
+  "n_process_directories": 12,
+  "n_retained_hepmc_files": 43,
+  "phase1_hepmc_files_mapped": 25,
+  "phase1_manifest": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/frozen_v2_phase1_reprocess_20260717/phase1_manifest.tsv",
+  "process_family_counts": {
+    "ggf_hh4b": 3,
+    "qcd_bbbb": 2,
+    "ttbar": 1,
+    "ttbb": 1,
+    "unresolved": 1,
+    "vbf_hh4b": 1,
+    "zbbbb": 1,
+    "zh4b": 1,
+    "zz4b": 1
+  },
+  "retained_hepmc_family_counts": {
+    "ggf_hh4b": 2,
+    "qcd_bbbb": 19,
+    "ttbar": 7,
+    "unresolved": 1,
+    "vbf_hh4b": 5,
+    "zbbbb": 7,
+    "zh4b": 1,
+    "zz4b": 1
+  },
+  "status": "discovery_complete"
+}
