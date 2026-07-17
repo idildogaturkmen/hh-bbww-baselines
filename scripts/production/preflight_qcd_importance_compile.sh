@@ -65,6 +65,8 @@ PREFLIGHT_PAYLOAD_SHA256=$(sha256sum "$PREFLIGHT_TARBALL" | awk '{print $1}')
     qcd_compile_preflight_inputs.tar.gz \
     /store/user/unused/qcd_compile_preflight \
     "$PREFLIGHT_PAYLOAD_SHA256" \
+    train \
+    qcd-adaptive-preflight-shard-v1 \
     --compile-only
 ) 2>&1 | tee "$OUTPUT_DIR/preflight.log"
 
@@ -95,6 +97,12 @@ for key in (
 
 if receipt["payload_sha256"] != receipt["expected_payload_sha256"]:
     raise SystemExit("ERROR: compile preflight payload hashes disagree")
+
+if receipt.get("dataset_split") != "train":
+    raise SystemExit("ERROR: compile preflight did not preserve the dataset split")
+
+if receipt.get("split_assignment_unit") != "whole_shard":
+    raise SystemExit("ERROR: compile preflight did not preserve whole-shard assignment")
 
 print(json.dumps(receipt, indent=2, sort_keys=True))
 PY_RECEIPT

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ "$#" -lt 8 || "$#" -gt 9 ]]; then
-  echo "Usage: $0 BIN_ID SHARD_ID N_EVENTS CAMPAIGN CLUSTER INPUT_TARBALL EOS_DIR EXPECTED_PAYLOAD_SHA256 [--compile-only]"
+if [[ "$#" -lt 8 || "$#" -gt 11 ]]; then
+  echo "Usage: $0 BIN_ID SHARD_ID N_EVENTS CAMPAIGN CLUSTER INPUT_TARBALL EOS_DIR EXPECTED_PAYLOAD_SHA256 [DATASET_SPLIT SPLIT_SALT] [--compile-only]"
   exit 1
 fi
 
@@ -15,10 +15,26 @@ INPUT_TARBALL="$6"
 EOS_DIR="$7"
 EXPECTED_PAYLOAD_SHA256="$8"
 COMPILE_ONLY=0
+DATASET_SPLIT="legacy_unassigned"
+SPLIT_SALT="legacy_unassigned"
+SPLIT_ASSIGNMENT_UNIT="legacy_unassigned"
 
 if [[ "$#" -eq 9 ]]; then
   [[ "$9" == "--compile-only" ]] || {
-    echo "ERROR: the only supported optional argument is --compile-only"
+    echo "ERROR: DATASET_SPLIT requires SPLIT_SALT"
+    exit 1
+  }
+  COMPILE_ONLY=1
+elif [[ "$#" -eq 10 ]]; then
+  DATASET_SPLIT="$9"
+  SPLIT_SALT="${10}"
+  SPLIT_ASSIGNMENT_UNIT="whole_shard"
+elif [[ "$#" -eq 11 ]]; then
+  DATASET_SPLIT="$9"
+  SPLIT_SALT="${10}"
+  SPLIT_ASSIGNMENT_UNIT="whole_shard"
+  [[ "${11}" == "--compile-only" ]] || {
+    echo "ERROR: bad final argument"
     exit 1
   }
   COMPILE_ONLY=1
@@ -43,6 +59,22 @@ fi
   echo "ERROR: bad expected payload SHA-256"
   exit 1
 }
+
+[[ "$DATASET_SPLIT" =~ ^(train|validation|test|legacy_unassigned)$ ]] || {
+  echo "ERROR: bad dataset split"
+  exit 1
+}
+
+[[ "$SPLIT_SALT" =~ ^[A-Za-z0-9_.-]+$ ]] || {
+  echo "ERROR: bad split salt"
+  exit 1
+}
+
+if [[ "$DATASET_SPLIT" == "legacy_unassigned" && "$SPLIT_SALT" != "legacy_unassigned" ]] ||
+  [[ "$DATASET_SPLIT" != "legacy_unassigned" && "$SPLIT_SALT" == "legacy_unassigned" ]]; then
+  echo "ERROR: dataset split and split salt must be assigned together"
+  exit 1
+fi
 
 PTHAT_MIN=(50 75 100 200 300 500 700 1000)
 PTHAT_MAX=(75 100 200 300 500 700 1000 0)
@@ -83,6 +115,9 @@ finalize() {
   "pthat_max_GeV": $PTMAX,
   "n_events": $N_EVENTS,
   "seed": $SEED,
+  "dataset_split": "$DATASET_SPLIT",
+  "split_assignment_unit": "$SPLIT_ASSIGNMENT_UNIT",
+  "split_salt": "$SPLIT_SALT",
   "cluster_id": "$CLUSTER_ID",
   "stage": "$STAGE",
   "remote_bundle": "$REMOTE_BUNDLE",
@@ -328,7 +363,13 @@ python3 - \
   "$HEPMC_SHA" \
   "$ROOT_SHA" \
   "$N_ROOT" \
-  "$N_CANDIDATES" <<'PY_PROVENANCE'
+  "$N_CANDIDATES" \
+  "$BIN_ID" \
+  "$SHARD_ID" \
+  "$SEED" \
+  "$DATASET_SPLIT" \
+  "$SPLIT_SALT" \
+  "$SPLIT_ASSIGNMENT_UNIT" <<'PY_PROVENANCE'
 from pathlib import Path
 import json
 import sys
@@ -350,6 +391,12 @@ import sys
     root_sha,
     n_root,
     n_candidates,
+    bin_id,
+    shard_id,
+    seed,
+    dataset_split,
+    split_salt,
+    split_assignment_unit,
 ) = sys.argv[1:]
 
 generator = json.loads(Path(generator_path).read_text())
@@ -358,6 +405,12 @@ record = {
     "tag": tag,
     "sample": "Pythia8 inclusive HardQCD",
     "physics_role": "inclusive_QCD_importance_stratum",
+    "bin_id": int(bin_id),
+    "shard_id": int(shard_id),
+    "seed": int(seed),
+    "dataset_split": dataset_split,
+    "split_assignment_unit": split_assignment_unit,
+    "split_salt": split_salt,
     "payload_sha256": payload_sha,
     "delphes_card_sha256": card_sha,
     "worker_wrapper_sha256": wrapper_sha,
