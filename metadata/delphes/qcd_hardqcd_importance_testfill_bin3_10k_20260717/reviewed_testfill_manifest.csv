@@ -1,0 +1,2 @@
+campaign,job_id,bin_id,pthat_min_GeV,pthat_max_GeV,n_events,shard_id,seed,dataset_split,split_assignment_reason,split_salt
+qcd_hardqcd_importance_testfill_bin3_10k_20260717,0,3,200,300,10000,3909,1233909,test,predeclared_test_fill_for_underfilled_bin3,qcd-adaptive-testfill-bin3-v1

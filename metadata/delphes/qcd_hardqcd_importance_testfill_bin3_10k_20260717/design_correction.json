@@ -1,0 +1,16 @@
+{
+  "campaign": "qcd_hardqcd_importance_testfill_bin3_10k_20260717",
+  "combined_bin3_test_events_after_fill": 14543,
+  "dataset_split": "test",
+  "decision_based_only_on_manifest_counts": true,
+  "five_million_authorized": false,
+  "reason": "Wave 1 plus reviewed Wave 2 provided only 4543 pre-outcome test events in pTHat bin 3",
+  "schema_version": 1,
+  "status": "authorized_for_single_submission_after_preflight",
+  "submission_count_authorized": 1,
+  "testfill_events": 10000,
+  "wave1_bin3_test_events": 4543,
+  "wave2_bin3_test_events": 0,
+  "wave2_cluster": 59823913,
+  "wave2_results_inspected_before_decision": false
+}

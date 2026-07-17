@@ -1,0 +1,12 @@
+{
+  "bin_id": 3,
+  "campaign": "qcd_hardqcd_importance_testfill_bin3_10k_20260717",
+  "dataset_split": "test",
+  "identity_collision_count": 0,
+  "n_events": 10000,
+  "pthat_max_GeV": 300,
+  "pthat_min_GeV": 200,
+  "seed": 1233909,
+  "shard_id": 3909,
+  "split_salt": "qcd-adaptive-testfill-bin3-v1"
+}
