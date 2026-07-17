@@ -1,0 +1,16 @@
+{
+  "bin_id": 3,
+  "campaign": "qcd_hardqcd_importance_testfill_bin3_10k_20260717",
+  "cluster_id": 59823934,
+  "completion_status": "not_yet_audited",
+  "dataset_split": "test",
+  "five_million_authorized": false,
+  "payload_sha256": "e531040ccd2a82c67ba1073a59e4c07884544f1b08356bf4a4691359e9023d44",
+  "repository_head_at_record_creation": "73425a2ca90e9d2e7f1ddef0c7483dda4188b8bc",
+  "schedd": "lpcschedd5.fnal.gov",
+  "seed": 1233909,
+  "shard_id": 3909,
+  "submission_status": "submitted_once_monitoring",
+  "submitted_events": 10000,
+  "submitted_jobs": 1
+}

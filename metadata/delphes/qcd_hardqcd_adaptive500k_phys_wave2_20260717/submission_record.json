@@ -1,0 +1,11 @@
+{
+  "campaign": "qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717",
+  "cluster_id": 59823913,
+  "completion_status": "not_yet_audited",
+  "five_million_authorized": false,
+  "payload_sha256": "2942542d8c6caf02a649888909c8621876c120da3c2db249aa04d63631828f81",
+  "schedd": "lpcschedd5.fnal.gov",
+  "submission_status": "submitted_once_monitoring",
+  "submitted_events": 500000,
+  "submitted_jobs": 56
+}
