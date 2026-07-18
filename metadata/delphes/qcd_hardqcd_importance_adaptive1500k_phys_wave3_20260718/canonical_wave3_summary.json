@@ -1,0 +1,27 @@
+{
+  "additional_qcd_generation_authorized": false,
+  "campaign": "qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718",
+  "canonical_events": 1500000,
+  "canonical_shards": 150,
+  "events_by_bin": {
+    "0": 730000,
+    "1": 440000,
+    "2": 280000,
+    "3": 10000,
+    "4": 10000,
+    "5": 10000,
+    "6": 10000,
+    "7": 10000
+  },
+  "events_by_split": {
+    "train": 1120000,
+    "validation": 380000
+  },
+  "exact_recoveries": 1,
+  "excluded_failed_attempts": 1,
+  "new_test_events": 0,
+  "original_successes": 149,
+  "registry_sha256": "30eaca3830b29e4a5308051a5f2bd9454c6113f251d749f7d49783646ee57d4a",
+  "schema_version": 1,
+  "status": "canonical_registry_ready_for_cross_layer_audit"
+}

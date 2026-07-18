@@ -1,0 +1,14 @@
+{
+  "original_failed_job": "84901352.1",
+  "recovery_adds_no_duplicate_statistical_identity": true,
+  "recovery_adler32": "7c06c8ec",
+  "recovery_bundle": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718/qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718_bin00_pthat50to75_shard1034_seed1201034_bundle.tar.gz",
+  "recovery_cluster": 3591876,
+  "recovery_events": 10000,
+  "recovery_payload_sha256": "3e17b5a4872b7a141183599c2a5119fd716f671b65daefa88bb4733c13f6e6b9",
+  "recovery_receipt_sha256": "59b250932184570d95ae1851537139891be4f930bd39f818d59c623ed119e9ec",
+  "recovery_seed": 1201034,
+  "recovery_shard": 1034,
+  "schema_version": 1,
+  "status": "exact_recovery_complete_and_registered"
+}

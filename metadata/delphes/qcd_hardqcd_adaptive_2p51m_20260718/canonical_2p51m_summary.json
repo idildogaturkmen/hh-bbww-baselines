@@ -1,0 +1,34 @@
+{
+  "additional_qcd_generation_authorized": false,
+  "canonical_events": 2510000,
+  "canonical_shards": 261,
+  "events_by_bin": {
+    "0": 1340375,
+    "1": 600197,
+    "2": 379573,
+    "3": 49075,
+    "4": 35719,
+    "5": 35053,
+    "6": 35008,
+    "7": 35000
+  },
+  "events_by_split": {
+    "test": 184543,
+    "train": 1811373,
+    "validation": 514084
+  },
+  "events_remaining_to_target": 2490000,
+  "five_million_authorized": false,
+  "jobs_by_wave": {
+    "testfill": 1,
+    "wave1": 54,
+    "wave2": 56,
+    "wave3": 150
+  },
+  "new_wave3_test_events": 0,
+  "registry_sha256": "f0209b8df13e606c73e693dd8f78be11805c947486119825fe1cfe7ba46cb6e6",
+  "schema_version": 1,
+  "status": "canonical_registry_ready_for_cross_layer_audit",
+  "target_total_events": 5000000,
+  "test_set_unchanged_and_sealed": true
+}
