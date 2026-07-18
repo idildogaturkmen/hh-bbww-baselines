@@ -326,12 +326,93 @@ python3 \
   --sample "$TAG" \
   2>&1 | tee "$OUT/logs/${TAG}_event_summary.log"
 
+set +e
+
 python3 \
   "$REPO/scripts/delphes/reconstruct_hh4b_candidates_v2.py" \
   --input "$ROOT_FILE" \
   --out "$CANDIDATES" \
   --sample "$TAG" \
   2>&1 | tee "$OUT/logs/${TAG}_candidates.log"
+
+RECONSTRUCTION_STATUS=${PIPESTATUS[0]}
+
+set -e
+
+if [[ "$RECONSTRUCTION_STATUS" -ne 0 ]]; then
+  if [[ "$RECONSTRUCTION_STATUS" -ne 134 ]]; then
+    echo "ERROR: candidate reconstruction failed with status $RECONSTRUCTION_STATUS"
+    exit "$RECONSTRUCTION_STATUS"
+  fi
+
+  # A known EL9 LCG 106 teardown abort may occur only after a valid
+  # empty candidate Parquet has been written. Continue solely when the
+  # event summary proves that no event had four selected b jets and the
+  # candidate Parquet is readable and empty.
+  python3 - "$EVENT_SUMMARY" "$CANDIDATES" "$N_EVENTS" <<'PY_EMPTY_GUARD'
+from pathlib import Path
+import os
+import sys
+
+import pandas as pd
+
+
+event_path = Path(sys.argv[1])
+candidate_path = Path(sys.argv[2])
+expected_events = int(sys.argv[3])
+
+if not event_path.is_file() or event_path.stat().st_size == 0:
+    raise SystemExit(
+        "ERROR: event summary is missing after reconstruction abort"
+    )
+
+if not candidate_path.is_file() or candidate_path.stat().st_size == 0:
+    raise SystemExit(
+        "ERROR: candidate Parquet is missing after reconstruction abort"
+    )
+
+events = pd.read_parquet(event_path)
+candidates = pd.read_parquet(candidate_path)
+
+if len(events) != expected_events:
+    raise SystemExit(
+        "ERROR: event-summary row count differs from requested events"
+    )
+
+required = {
+    "n_bjet_pt30_eta25",
+}
+
+missing = required - set(events.columns)
+
+if missing:
+    raise SystemExit(
+        f"ERROR: event summary lacks columns: {sorted(missing)}"
+    )
+
+events_with_four_b = int(
+    (events["n_bjet_pt30_eta25"] >= 4).sum()
+)
+
+if events_with_four_b != 0:
+    raise SystemExit(
+        "ERROR: teardown guard found events with >=4 selected b jets"
+    )
+
+if len(candidates) != 0:
+    raise SystemExit(
+        "ERROR: teardown guard found nonempty candidate Parquet"
+    )
+
+message = (
+    "RECOVERED_VALID_EMPTY_CANDIDATE_"
+    "TEARDOWN_EXIT_134\\n"
+)
+
+os.write(1, message.encode())
+os._exit(0)
+PY_EMPTY_GUARD
+fi
 
 test -s "$EVENT_SUMMARY"
 test -s "$CANDIDATES"

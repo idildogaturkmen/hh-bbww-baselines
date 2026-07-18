@@ -334,20 +334,22 @@ def main():
     finally:
         temporary_pickle.unlink(missing_ok=True)
 
+    # The isolated writer has already written and round-trip checked the
+    # Parquet file, and the temporary pickle has already been removed.
+    # Exit immediately on the empty-output path before any additional
+    # Python or C++ teardown can trigger the EL9 LCG 106 abort.
+    if not rows:
+        os.write(
+            1,
+            (
+                f"EMPTY_CANDIDATE_OUTPUT_VALID={out}\\n"
+            ).encode(),
+        )
+        os._exit(0)
+
     print(f"Input events: {n_events}")
     print(f"Events with >=4 selected b-tagged jets: {len(rows)}")
     print(f"Wrote: {out}")
-
-    # The EL9 LCG 106 environment can abort during C++ static-library
-    # destruction after a valid zero-row, zero-column candidate Parquet
-    # has already been written and round-trip verified by the isolated
-    # writer. All durable work and temporary-file cleanup are complete
-    # here. Skip only interpreter/library teardown on this verified
-    # empty-output success path.
-    if not rows:
-        sys.stdout.flush()
-        sys.stderr.flush()
-        os._exit(0)
 
 
 if __name__ == "__main__":
