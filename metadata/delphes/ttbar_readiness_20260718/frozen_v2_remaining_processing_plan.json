@@ -1,0 +1,58 @@
+{
+  "already_detector_complete_shards": [
+    0
+  ],
+  "frozen_card": "cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl",
+  "frozen_card_sha256": "1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c",
+  "operation": "process existing exact-lineage HepMC through frozen-v2 Delphes; do not generate new events",
+  "planned_events": 30000,
+  "planned_train_validation_shards": [
+    {
+      "events": 10000,
+      "generator_xsec_pb": 512.6113,
+      "lineage_status": "EXACT_LINEAGE_VALID",
+      "seed": 714001,
+      "shard": 1,
+      "source_eos_path": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718/ttbar_extra50k_ak4ak8_v1_shard001_pythia8.hepmc",
+      "source_hepmc_basename": "ttbar_extra50k_ak4ak8_v1_shard001_pythia8.hepmc",
+      "source_hepmc_sha256": "b998b96cfee4f4b609c5ea31d9d300523fa059b52c05d98af4e5b55643840354",
+      "split": "train",
+      "target_tag": "ttbar_ak4ak8_run2_frozen_v2_shard001_10k"
+    },
+    {
+      "events": 10000,
+      "generator_xsec_pb": 512.30196,
+      "lineage_status": "EXACT_LINEAGE_VALID",
+      "seed": 714002,
+      "shard": 2,
+      "source_eos_path": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718/ttbar_extra50k_ak4ak8_v1_shard002_pythia8.hepmc",
+      "source_hepmc_basename": "ttbar_extra50k_ak4ak8_v1_shard002_pythia8.hepmc",
+      "source_hepmc_sha256": "3369ea82eedf30894b0d30dd27d1392736521d491afd43378934691ff2fc5757",
+      "split": "train",
+      "target_tag": "ttbar_ak4ak8_run2_frozen_v2_shard002_10k"
+    },
+    {
+      "events": 10000,
+      "generator_xsec_pb": 512.44917,
+      "lineage_status": "EXACT_LINEAGE_VALID",
+      "seed": 714003,
+      "shard": 3,
+      "source_eos_path": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718/ttbar_extra50k_ak4ak8_v1_shard003_pythia8.hepmc",
+      "source_hepmc_basename": "ttbar_extra50k_ak4ak8_v1_shard003_pythia8.hepmc",
+      "source_hepmc_sha256": "6921af83f6dabd464b88104174736491b6661dd38217f46bef5b62d68c24b00c",
+      "split": "validation",
+      "target_tag": "ttbar_ak4ak8_run2_frozen_v2_shard003_10k"
+    }
+  ],
+  "reason_not_authorized": "worker payload and EOS bundle receipt workflow have not yet passed a one-shard end-to-end preflight",
+  "required_execution_model": "worker-local scratch, source HepMC copied from EOS, frozen-v2 Delphes, candidate extraction, checksum-verified EOS bundle",
+  "schema_version": 1,
+  "status": "remaining_frozen_v2_ttbar_detector_processing_planned",
+  "submission_authorized": false,
+  "test_shard": {
+    "action": "sealed_do_not_process_or_inspect_now",
+    "seed": 714004,
+    "shard": 4,
+    "split": "test"
+  }
+}
