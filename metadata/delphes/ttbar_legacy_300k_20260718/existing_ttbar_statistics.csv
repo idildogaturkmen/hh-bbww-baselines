@@ -1,0 +1,3 @@
+family,generated_rows,event_summary_path,candidate_path,sum_event_weights,sum_squared_event_weights,n_atleast_4j,n_exactly_2b,n_exactly_3b,n_atleast_4b,candidate_rows,n_rhh_lt80,n_rhh_lt50
+ttbar_100k,100000,/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_100k_merged_event_summary.parquet,/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_100k_merged_hh4b_candidates.parquet,51217688.59863281,26232539813.65634,66063,30170,4457,375,375,277,190
+ttbar_200k,200000,/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_200k_merged_event_summary.parquet,/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_200k_merged_hh4b_candidates.parquet,102448687.43896484,52478726585.74123,132770,60445,8987,753,753,575,384

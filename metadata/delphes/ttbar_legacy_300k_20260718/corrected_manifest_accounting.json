@@ -1,0 +1,35 @@
+{
+  "campaigns": [
+    {
+      "campaign": "ttbar_100k",
+      "events_per_shard": [
+        10000
+      ],
+      "manifest": "/uscms_data/d3/iturkmen/hh4b_delphes/metadata/ttbar_100k_manifest.csv",
+      "maximum_seed": 105009,
+      "minimum_seed": 105000,
+      "shards": 10,
+      "total_events": 100000,
+      "unique_seeds": 10
+    },
+    {
+      "campaign": "ttbar_200k",
+      "events_per_shard": [
+        10000
+      ],
+      "manifest": "/uscms_data/d3/iturkmen/hh4b_delphes/metadata/ttbar_200k_manifest.csv",
+      "maximum_seed": 109019,
+      "minimum_seed": 109000,
+      "shards": 20,
+      "total_events": 200000,
+      "unique_seeds": 20
+    }
+  ],
+  "combined_events": 300000,
+  "combined_shards": 30,
+  "cross_campaign_seed_overlap": [],
+  "extra50k_included": false,
+  "provisional_canonical_event_count": 300000,
+  "schema_version": 1,
+  "status": "seed_disjoint_manifest_accounting_valid"
+}

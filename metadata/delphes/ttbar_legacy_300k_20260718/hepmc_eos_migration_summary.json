@@ -1,0 +1,13 @@
+{
+  "all_size_and_adler32_checks_passed": true,
+  "bytes": 17104616038,
+  "eos_quota_total_tb": 2.0,
+  "eos_quota_used_gb_after_copy": 724.06,
+  "files": 7,
+  "gib": 15.929915046319366,
+  "local_copies_removed_after_verification": true,
+  "nfs_quota_after_removal_gb": 192,
+  "remote_directory": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718",
+  "schema_version": 1,
+  "status": "verified_eos_migration_complete"
+}

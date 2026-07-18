@@ -1,0 +1,50 @@
+{
+  "additional_production_authorized": false,
+  "campaigns": [
+    "ttbar_100k",
+    "ttbar_200k"
+  ],
+  "combined_events": 300000,
+  "combined_shards": 30,
+  "counts": {
+    "candidate_rows": 1128,
+    "generated_rows": 300000,
+    "n_atleast_4b": 1128,
+    "n_atleast_4j": 198833,
+    "n_exactly_2b": 90615,
+    "n_exactly_3b": 13444,
+    "n_rhh_lt50": 574,
+    "n_rhh_lt80": 852
+  },
+  "detector_card_compatibility_status": "not_yet_proven",
+  "explicit_decay_overrides_found": false,
+  "extra50k_included": false,
+  "generator_process": "p p > t t~",
+  "generator_xsec_estimate_pb": 512.2212534586589,
+  "normalization_status": "generator_level_provisional_not_final_higher_order",
+  "regions": {
+    "hh_candidate": {
+      "provisional_generator_level_cross_section_pb": 1.9259519130045575,
+      "raw_efficiency": 0.00376,
+      "raw_events": 1128,
+      "raw_relative_mc_error": 0.029774566708770683
+    },
+    "rhh_lt50": {
+      "provisional_generator_level_cross_section_pb": 0.9800499982842341,
+      "raw_efficiency": 0.0019133333333333333,
+      "raw_events": 574,
+      "raw_relative_mc_error": 0.04173919355648411
+    },
+    "rhh_lt80": {
+      "provisional_generator_level_cross_section_pb": 1.4547083598225914,
+      "raw_efficiency": 0.00284,
+      "raw_events": 852,
+      "raw_relative_mc_error": 0.03425943549137658
+    }
+  },
+  "schema_version": 1,
+  "seed_disjoint": true,
+  "status": "provisional_legacy_300k_statistics_valid",
+  "sum_event_weights": 153666376.03759766,
+  "sum_squared_event_weights": 78711266399.39757
+}
