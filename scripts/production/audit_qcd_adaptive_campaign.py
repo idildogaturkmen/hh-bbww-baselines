@@ -819,6 +819,20 @@ def main() -> None:
     parser.add_argument("--bootstrap", type=int, default=1000)
     parser.add_argument("--bootstrap-seed", type=int, default=500000)
     parser.add_argument("--pilot-summary", type=Path)
+    parser.add_argument(
+        "--temp-root",
+        type=Path,
+        default=Path(
+            os.environ.get(
+                "HH4B_QCD_AUDIT_TMPDIR",
+                "/tmp",
+            )
+        ),
+        help=(
+            "Directory used for one-bundle-at-a-time temporary "
+            "downloads and extraction"
+        ),
+    )
     args = parser.parse_args()
 
     if args.max_shards is not None and args.max_shards <= 0:
@@ -827,6 +841,20 @@ def main() -> None:
         parser.error(f"proxy is missing: {args.proxy}")
     if not args.receipt_dir.is_dir():
         parser.error(f"receipt directory is missing: {args.receipt_dir}")
+
+    args.temp_root.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    if not os.access(
+        args.temp_root,
+        os.W_OK | os.X_OK,
+    ):
+        parser.error(
+            f"temporary directory is not writable: {args.temp_root}"
+        )
+
     environment = dict(os.environ)
     environment["X509_USER_PROXY"] = str(args.proxy.resolve())
     run_checked(["openssl", "x509", "-in", str(args.proxy), "-noout", "-checkend", "3600"], environment)
@@ -861,7 +889,7 @@ def main() -> None:
         )
         try:
             with tempfile.TemporaryDirectory(
-                prefix=f"qcd_adaptive_job{manifest['job_id']}_", dir="/tmp"
+                prefix=f"qcd_adaptive_job{manifest['job_id']}_", dir=str(args.temp_root.resolve())
             ) as temporary:
                 shards.append(
                     validate_shard(
@@ -938,7 +966,7 @@ def main() -> None:
         "eos_host": args.eos_host,
         "streaming": {
             "one_bundle_at_a_time": True,
-            "temporary_root": "/tmp",
+            "temporary_root": str(args.temp_root.resolve()),
             "persistent_event_artifacts": False,
             "persistent_outputs_are_compact_sufficient_statistics": True,
         },

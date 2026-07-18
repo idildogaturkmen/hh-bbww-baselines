@@ -1,0 +1,18 @@
+{
+  "additional_generation_authorized": false,
+  "eos_checksum_failure": false,
+  "failed_attempt_report": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_failed_attempt_20260718_1055/qcd_1p01m_cross_layer_validation.json",
+  "failed_attempt_report_sha256": "97b9d9e806dad72528216139ae0984f5f4335517c1c169b473357b3f7b93e358",
+  "failure_class": "local_temporary_storage_exhaustion",
+  "failure_error": "[Errno 28] No space left on device",
+  "full_retry_authorized": true,
+  "new_temp_root": "/uscms_data/d3/iturkmen/hh4b_delphes/audit_tmp/qcd_2p51m_20260718",
+  "physics_data_failure": false,
+  "registry_failure": false,
+  "schema_version": 1,
+  "smoke_test_processed_events": 10000,
+  "smoke_test_processed_shards": 1,
+  "smoke_test_report": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_temp_root_smoke_20260718/qcd_1p01m_cross_layer_validation.json",
+  "smoke_test_report_sha256": "160b77cb25eaf025f597088394c90a127859710c9a4fd613c3a9f476cc78b1a1",
+  "status": "retry_authorized_after_temp_storage_smoke_test"
+}

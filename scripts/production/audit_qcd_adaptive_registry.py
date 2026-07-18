@@ -207,6 +207,21 @@ def parse_args() -> argparse.Namespace:
         type=int,
     )
 
+    parser.add_argument(
+        "--temp-root",
+        type=Path,
+        default=Path(
+            os.environ.get(
+                "HH4B_QCD_AUDIT_TMPDIR",
+                "/tmp",
+            )
+        ),
+        help=(
+            "Directory used for one-bundle-at-a-time temporary "
+            "downloads and extraction"
+        ),
+    )
+
     return parser.parse_args()
 
 
@@ -216,6 +231,20 @@ def main() -> None:
     if not args.proxy.is_file():
         raise SystemExit(
             f"ERROR: proxy is missing: {args.proxy}"
+        )
+
+    args.temp_root.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    if not os.access(
+        args.temp_root,
+        os.W_OK | os.X_OK,
+    ):
+        raise SystemExit(
+            "ERROR: temporary directory is not writable: "
+            f"{args.temp_root}"
         )
 
     environment = dict(os.environ)
@@ -360,7 +389,7 @@ def main() -> None:
                     f"qcd_registry_"
                     f"{index:03d}_"
                 ),
-                dir="/tmp",
+                dir=str(args.temp_root.resolve()),
             ) as temporary:
                 stats = CORE.validate_shard(
                     manifest=manifest,
@@ -611,7 +640,7 @@ def main() -> None:
         "streaming": {
             "one_bundle_at_a_time": True,
             "persistent_event_artifacts": False,
-            "temporary_root": "/tmp",
+            "temporary_root": str(args.temp_root.resolve()),
         },
         "physical_weighting": {
             "normalization": (
