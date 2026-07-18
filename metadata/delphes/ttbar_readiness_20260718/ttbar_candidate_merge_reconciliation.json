@@ -1,0 +1,410 @@
+{
+  "campaigns": {
+    "ttbar_100k": {
+      "campaign": "ttbar_100k",
+      "first_keys_only_in_merged": [],
+      "first_keys_only_in_shards": [],
+      "key_columns": [
+        "sample",
+        "event"
+      ],
+      "manifest_path": "/uscms_data/d3/iturkmen/hh4b_delphes/metadata/ttbar_100k_manifest.csv",
+      "manifest_shards": 10,
+      "merged_columns": [
+        "avg_mbb",
+        "delta_mbb",
+        "drbb1",
+        "drbb2",
+        "event",
+        "j1_pt",
+        "j2_pt",
+        "j3_pt",
+        "j4_pt",
+        "mbb1",
+        "mbb2",
+        "mhh",
+        "n_selected_bjets",
+        "pairing",
+        "sample"
+      ],
+      "merged_duplicate_rows_by_key": 0,
+      "merged_path": "/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_100k_merged_hh4b_candidates.parquet",
+      "merged_regions": {
+        "mhh_gt600": 71,
+        "mhh_gt800": 32,
+        "rhh_lt30": 102,
+        "rhh_lt50": 190,
+        "rhh_lt50_and_mhh_gt400": 51,
+        "rhh_lt80": 277,
+        "rows": 375
+      },
+      "merged_unique_keys": 375,
+      "only_in_merged_columns": [],
+      "only_in_per_shard_columns": [],
+      "per_shard_columns": [
+        "avg_mbb",
+        "delta_mbb",
+        "drbb1",
+        "drbb2",
+        "event",
+        "j1_pt",
+        "j2_pt",
+        "j3_pt",
+        "j4_pt",
+        "mbb1",
+        "mbb2",
+        "mhh",
+        "n_selected_bjets",
+        "pairing",
+        "sample"
+      ],
+      "per_shard_duplicate_rows_by_key": 0,
+      "per_shard_regions": {
+        "mhh_gt600": 71,
+        "mhh_gt800": 32,
+        "rhh_lt30": 102,
+        "rhh_lt50": 190,
+        "rhh_lt50_and_mhh_gt400": 51,
+        "rhh_lt80": 277,
+        "rows": 375
+      },
+      "per_shard_unique_keys": 375,
+      "region_differences_merged_minus_shards": {
+        "mhh_gt600": 0,
+        "mhh_gt800": 0,
+        "rhh_lt30": 0,
+        "rhh_lt50": 0,
+        "rhh_lt50_and_mhh_gt400": 0,
+        "rhh_lt80": 0,
+        "rows": 0
+      },
+      "rows_only_in_merged_by_key": 0,
+      "rows_only_in_shards_by_key": 0
+    },
+    "ttbar_200k": {
+      "campaign": "ttbar_200k",
+      "first_keys_only_in_merged": [
+        [
+          "ttbar_200k_shard001",
+          "392"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "549"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "573"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "630"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "698"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "983"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1125"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1345"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1419"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1495"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1601"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1978"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "2825"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "2953"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "3123"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "3287"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "3557"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "3625"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "4075"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "5169"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "6085"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "6701"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "7029"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "7076"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "8292"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "8348"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "8474"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "9093"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "9358"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "9431"
+        ]
+      ],
+      "first_keys_only_in_shards": [
+        [
+          "ttbar_200k_shard001",
+          "301"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "308"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "328"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "455"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "516"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "572"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "949"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1087"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1143"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1266"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1444"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "1830"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "2623"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "3118"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "3131"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "3306"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "4515"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "4533"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "4613"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "5102"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "5551"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "5689"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "5842"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "5943"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "5966"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "6255"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "6284"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "6486"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "6500"
+        ],
+        [
+          "ttbar_200k_shard001",
+          "6551"
+        ]
+      ],
+      "key_columns": [
+        "sample",
+        "event"
+      ],
+      "manifest_path": "/uscms_data/d3/iturkmen/hh4b_delphes/metadata/ttbar_200k_manifest.csv",
+      "manifest_shards": 20,
+      "merged_columns": [
+        "avg_mbb",
+        "delta_mbb",
+        "drbb1",
+        "drbb2",
+        "event",
+        "j1_pt",
+        "j2_pt",
+        "j3_pt",
+        "j4_pt",
+        "mbb1",
+        "mbb2",
+        "mhh",
+        "n_selected_bjets",
+        "pairing",
+        "sample"
+      ],
+      "merged_duplicate_rows_by_key": 0,
+      "merged_path": "/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_200k_merged_hh4b_candidates.parquet",
+      "merged_regions": {
+        "mhh_gt600": 149,
+        "mhh_gt800": 56,
+        "rhh_lt30": 188,
+        "rhh_lt50": 384,
+        "rhh_lt50_and_mhh_gt400": 119,
+        "rhh_lt80": 575,
+        "rows": 753
+      },
+      "merged_unique_keys": 753,
+      "only_in_merged_columns": [],
+      "only_in_per_shard_columns": [],
+      "per_shard_columns": [
+        "avg_mbb",
+        "delta_mbb",
+        "drbb1",
+        "drbb2",
+        "event",
+        "j1_pt",
+        "j2_pt",
+        "j3_pt",
+        "j4_pt",
+        "mbb1",
+        "mbb2",
+        "mhh",
+        "n_selected_bjets",
+        "pairing",
+        "sample"
+      ],
+      "per_shard_duplicate_rows_by_key": 0,
+      "per_shard_regions": {
+        "mhh_gt600": 133,
+        "mhh_gt800": 60,
+        "rhh_lt30": 195,
+        "rhh_lt50": 407,
+        "rhh_lt50_and_mhh_gt400": 140,
+        "rhh_lt80": 561,
+        "rows": 737
+      },
+      "per_shard_unique_keys": 737,
+      "region_differences_merged_minus_shards": {
+        "mhh_gt600": 16,
+        "mhh_gt800": -4,
+        "rhh_lt30": -7,
+        "rhh_lt50": -23,
+        "rhh_lt50_and_mhh_gt400": -21,
+        "rhh_lt80": 14,
+        "rows": 16
+      },
+      "rows_only_in_merged_by_key": 667,
+      "rows_only_in_shards_by_key": 651
+    }
+  },
+  "schema_version": 1,
+  "status": "candidate_merge_reconciliation_complete"
+}

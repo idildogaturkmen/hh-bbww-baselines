@@ -1,0 +1,21 @@
+{
+  "additional_production_authorized": false,
+  "canonical_candidate_source": "candidate_parquet paths listed in ttbar_100k_manifest.csv and ttbar_200k_manifest.csv",
+  "canonical_combined_candidate_counts": {
+    "hh_candidate": 1112,
+    "mhh_gt600": 204,
+    "mhh_gt800": 92,
+    "rhh_lt30": 297,
+    "rhh_lt50": 597,
+    "rhh_lt50_and_mhh_gt400": 191,
+    "rhh_lt80": 838
+  },
+  "merged_ttbar_200k_file_action": "preserve_for_forensics_do_not_use_for_current_statistics",
+  "schema_version": 1,
+  "status": "manifest_listed_per_shard_candidate_parquets_selected_as_canonical",
+  "ttbar_100k_merged_status": "consistent_with_manifest_shards",
+  "ttbar_200k_merged_duplicate_keys": 0,
+  "ttbar_200k_merged_status": "inconsistent_with_manifest_shards_not_canonical",
+  "ttbar_200k_rows_only_in_merged": 667,
+  "ttbar_200k_rows_only_in_shards": 651
+}

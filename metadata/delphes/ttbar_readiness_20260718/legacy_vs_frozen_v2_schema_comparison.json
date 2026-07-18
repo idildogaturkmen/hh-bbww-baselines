@@ -1,0 +1,678 @@
+{
+  "core_branch_status": {
+    "Electron": {
+      "frozen_v2": true,
+      "legacy": true,
+      "same_signature": true
+    },
+    "Event": {
+      "frozen_v2": true,
+      "legacy": true,
+      "same_signature": true
+    },
+    "GenJet": {
+      "frozen_v2": true,
+      "legacy": true,
+      "same_signature": true
+    },
+    "Jet": {
+      "frozen_v2": true,
+      "legacy": true,
+      "same_signature": true
+    },
+    "MissingET": {
+      "frozen_v2": true,
+      "legacy": true,
+      "same_signature": true
+    },
+    "Muon": {
+      "frozen_v2": true,
+      "legacy": true,
+      "same_signature": true
+    },
+    "Particle": {
+      "frozen_v2": true,
+      "legacy": true,
+      "same_signature": true
+    },
+    "ScalarHT": {
+      "frozen_v2": true,
+      "legacy": true,
+      "same_signature": true
+    }
+  },
+  "frozen_v2": {
+    "branch_count": 34,
+    "branches": {
+      "EFlowNeutralHadron": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "EFlowNeutralHadron_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowNeutralHadron_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "EFlowNeutralHadron_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowPhoton": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "EFlowPhoton_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowPhoton_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "EFlowPhoton_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowTrack": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "EFlowTrack_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowTrack_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "EFlowTrack_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Electron": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Electron_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Electron_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Electron_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Event": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Event_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Event_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Event_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "FatJet": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "FatJet_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "FatJet_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "FatJet_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "GenJet": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "GenJet_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "GenJet_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "GenJet_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "GenMissingET": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "GenMissingET_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "GenMissingET_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "GenMissingET_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Jet": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Jet_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Jet_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Jet_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "MissingET": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "MissingET_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "MissingET_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "MissingET_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Muon": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Muon_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Muon_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Muon_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Particle": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Particle_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Particle_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Particle_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Photon": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Photon_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Photon_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Photon_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "ScalarHT": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "ScalarHT_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "ScalarHT_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "ScalarHT_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Tower": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Tower_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Tower_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Tower_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Track": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Track_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Track_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Track_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Weight": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Weight_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Weight_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Weight_size",
+            "type": "Int_t"
+          }
+        ]
+      }
+    },
+    "entries": 10000,
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/root_run2_frozen_v2_smoke/ttbar_ak4ak8_run2_frozen_v2_shard000_10k_delphes.root",
+    "size_bytes": 916574166
+  },
+  "interpretation": "ROOT schema comparison only; this does not prove identical detector parameterization",
+  "legacy": {
+    "branch_count": 34,
+    "branches": {
+      "EFlowNeutralHadron": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "EFlowNeutralHadron_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowNeutralHadron_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "EFlowNeutralHadron_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowPhoton": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "EFlowPhoton_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowPhoton_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "EFlowPhoton_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowTrack": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "EFlowTrack_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "EFlowTrack_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "EFlowTrack_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Electron": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Electron_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Electron_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Electron_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Event": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Event_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Event_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Event_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "FatJet": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "FatJet_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "FatJet_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "FatJet_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "GenJet": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "GenJet_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "GenJet_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "GenJet_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "GenMissingET": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "GenMissingET_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "GenMissingET_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "GenMissingET_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Jet": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Jet_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Jet_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Jet_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "MissingET": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "MissingET_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "MissingET_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "MissingET_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Muon": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Muon_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Muon_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Muon_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Particle": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Particle_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Particle_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Particle_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Photon": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Photon_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Photon_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Photon_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "ScalarHT": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "ScalarHT_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "ScalarHT_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "ScalarHT_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Tower": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Tower_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Tower_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Tower_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Track": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Track_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Track_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Track_size",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Weight": {
+        "class_name": "TClonesArray",
+        "leaves": [
+          {
+            "name": "Weight_",
+            "type": "Int_t"
+          }
+        ]
+      },
+      "Weight_size": {
+        "class_name": "",
+        "leaves": [
+          {
+            "name": "Weight_size",
+            "type": "Int_t"
+          }
+        ]
+      }
+    },
+    "entries": 10000,
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/root/ttbar_200k_shard000_pythia8_delphes.root",
+    "size_bytes": 921766145
+  },
+  "only_in_frozen_v2": [],
+  "only_in_legacy": [],
+  "schema_version": 1,
+  "shared_branch_count": 34,
+  "type_mismatches": []
+}

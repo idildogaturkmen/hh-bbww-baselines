@@ -4,17 +4,26 @@
     "ttbar_100k",
     "ttbar_200k"
   ],
+  "candidate_source": "manifest-listed per-shard candidate Parquets",
+  "candidate_source_correction": {
+    "merged_ttbar_200k_candidate_file_canonical": false,
+    "reason": "ttbar_200k merged candidate Parquet is inconsistent with current manifest-listed shard candidate Parquets",
+    "ttbar_100k_merged_consistent": true,
+    "ttbar_200k_merged_duplicate_keys": 0,
+    "ttbar_200k_rows_only_in_merged": 667,
+    "ttbar_200k_rows_only_in_shards": 651
+  },
   "combined_events": 300000,
   "combined_shards": 30,
   "counts": {
-    "candidate_rows": 1128,
+    "candidate_rows": 1112,
     "generated_rows": 300000,
     "n_atleast_4b": 1128,
     "n_atleast_4j": 198833,
     "n_exactly_2b": 90615,
     "n_exactly_3b": 13444,
-    "n_rhh_lt50": 574,
-    "n_rhh_lt80": 852
+    "n_rhh_lt50": 597,
+    "n_rhh_lt80": 838
   },
   "detector_card_compatibility_status": "not_yet_proven",
   "explicit_decay_overrides_found": false,
@@ -24,27 +33,27 @@
   "normalization_status": "generator_level_provisional_not_final_higher_order",
   "regions": {
     "hh_candidate": {
-      "provisional_generator_level_cross_section_pb": 1.9259519130045575,
-      "raw_efficiency": 0.00376,
-      "raw_events": 1128,
-      "raw_relative_mc_error": 0.029774566708770683
+      "provisional_generator_level_cross_section_pb": 1.898633446153429,
+      "raw_efficiency": 0.0037066666666666667,
+      "raw_events": 1112,
+      "raw_relative_mc_error": 0.02998800719520336
     },
     "rhh_lt50": {
-      "provisional_generator_level_cross_section_pb": 0.9800499982842341,
-      "raw_efficiency": 0.0019133333333333333,
-      "raw_events": 574,
-      "raw_relative_mc_error": 0.04173919355648411
+      "provisional_generator_level_cross_section_pb": 1.0193202943827313,
+      "raw_efficiency": 0.00199,
+      "raw_events": 597,
+      "raw_relative_mc_error": 0.0409272754535029
     },
     "rhh_lt80": {
-      "provisional_generator_level_cross_section_pb": 1.4547083598225914,
-      "raw_efficiency": 0.00284,
-      "raw_events": 852,
-      "raw_relative_mc_error": 0.03425943549137658
+      "provisional_generator_level_cross_section_pb": 1.4308047013278538,
+      "raw_efficiency": 0.0027933333333333334,
+      "raw_events": 838,
+      "raw_relative_mc_error": 0.03454442679267334
     }
   },
   "schema_version": 1,
   "seed_disjoint": true,
-  "status": "provisional_legacy_300k_statistics_valid",
+  "status": "provisional_legacy_300k_statistics_corrected_from_manifest_shards",
   "sum_event_weights": 153666376.03759766,
   "sum_squared_event_weights": 78711266399.39757
 }

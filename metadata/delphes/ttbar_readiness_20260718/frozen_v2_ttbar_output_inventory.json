@@ -1,0 +1,144 @@
+{
+  "detector_output_complete_count": 1,
+  "detector_output_complete_shards": [
+    0
+  ],
+  "generation_lineage_events": 50000,
+  "generation_lineage_shards": 5,
+  "lineage_file": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/metadata/delphes/frozen_v2_phase1_20260717/phase1_exact_generation_lineage.csv",
+  "results": [
+    {
+      "candidate_parquet_files": 1,
+      "detector_output_complete": true,
+      "event_parquet_files": 0,
+      "expected_migrated_eos_hepmc": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718/ttbar_extra50k_ak4ak8_v1_shard000_pythia8.hepmc",
+      "expected_run_name": "run_ttbar_extra50k_ak4ak8_v1_000",
+      "generator_xsec_pb": 511.11637,
+      "input_hepmc_basename": "ttbar_extra50k_ak4ak8_v1_shard000_pythia8.hepmc",
+      "input_hepmc_local_exists": false,
+      "input_hepmc_sha256": "61e8b38c1d8b35e831dd6bfcf8b14e9f2f0a7ff5e3a931937e6697d25dbea73a",
+      "lineage_status": "EXACT_LINEAGE_VALID",
+      "local_matches": [
+        {
+          "bytes": 8141,
+          "path": "/uscms_data/d3/iturkmen/hh4b_delphes/logs/run2_frozen_v2_smoke/ttbar_ak4ak8_run2_frozen_v2_shard000_10k.log"
+        },
+        {
+          "bytes": 14093,
+          "path": "/uscms_data/d3/iturkmen/hh4b_delphes/parquet_run2_frozen_v2_smoke/ttbar_ak4ak8_run2_frozen_v2_shard000_10k_candidates.parquet"
+        },
+        {
+          "bytes": 916574166,
+          "path": "/uscms_data/d3/iturkmen/hh4b_delphes/root_run2_frozen_v2_smoke/ttbar_ak4ak8_run2_frozen_v2_shard000_10k_delphes.root"
+        }
+      ],
+      "log_files": 1,
+      "metadata_generator_xsec_pb": 511.1163635253906,
+      "n_events": 10000,
+      "root_files": 1,
+      "seed": 714000,
+      "shard": 0,
+      "split": "train",
+      "tag": "ttbar_run2_frozen_v2_shard000_10k"
+    },
+    {
+      "candidate_parquet_files": 0,
+      "detector_output_complete": false,
+      "event_parquet_files": 0,
+      "expected_migrated_eos_hepmc": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718/ttbar_extra50k_ak4ak8_v1_shard001_pythia8.hepmc",
+      "expected_run_name": "run_ttbar_extra50k_ak4ak8_v1_001",
+      "generator_xsec_pb": 512.6113,
+      "input_hepmc_basename": "ttbar_extra50k_ak4ak8_v1_shard001_pythia8.hepmc",
+      "input_hepmc_local_exists": false,
+      "input_hepmc_sha256": "b998b96cfee4f4b609c5ea31d9d300523fa059b52c05d98af4e5b55643840354",
+      "lineage_status": "EXACT_LINEAGE_VALID",
+      "local_matches": [],
+      "log_files": 0,
+      "metadata_generator_xsec_pb": 512.611328125,
+      "n_events": 10000,
+      "root_files": 0,
+      "seed": 714001,
+      "shard": 1,
+      "split": "train",
+      "tag": "ttbar_run2_frozen_v2_shard001_10k"
+    },
+    {
+      "candidate_parquet_files": 0,
+      "detector_output_complete": false,
+      "event_parquet_files": 0,
+      "expected_migrated_eos_hepmc": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718/ttbar_extra50k_ak4ak8_v1_shard002_pythia8.hepmc",
+      "expected_run_name": "run_ttbar_extra50k_ak4ak8_v1_002",
+      "generator_xsec_pb": 512.30196,
+      "input_hepmc_basename": "ttbar_extra50k_ak4ak8_v1_shard002_pythia8.hepmc",
+      "input_hepmc_local_exists": false,
+      "input_hepmc_sha256": "3369ea82eedf30894b0d30dd27d1392736521d491afd43378934691ff2fc5757",
+      "lineage_status": "EXACT_LINEAGE_VALID",
+      "local_matches": [],
+      "log_files": 0,
+      "metadata_generator_xsec_pb": 512.3019409179688,
+      "n_events": 10000,
+      "root_files": 0,
+      "seed": 714002,
+      "shard": 2,
+      "split": "train",
+      "tag": "ttbar_run2_frozen_v2_shard002_10k"
+    },
+    {
+      "candidate_parquet_files": 0,
+      "detector_output_complete": false,
+      "event_parquet_files": 0,
+      "expected_migrated_eos_hepmc": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718/ttbar_extra50k_ak4ak8_v1_shard003_pythia8.hepmc",
+      "expected_run_name": "run_ttbar_extra50k_ak4ak8_v1_003",
+      "generator_xsec_pb": 512.44917,
+      "input_hepmc_basename": "ttbar_extra50k_ak4ak8_v1_shard003_pythia8.hepmc",
+      "input_hepmc_local_exists": false,
+      "input_hepmc_sha256": "6921af83f6dabd464b88104174736491b6661dd38217f46bef5b62d68c24b00c",
+      "lineage_status": "EXACT_LINEAGE_VALID",
+      "local_matches": [],
+      "log_files": 0,
+      "metadata_generator_xsec_pb": 512.4491577148438,
+      "n_events": 10000,
+      "root_files": 0,
+      "seed": 714003,
+      "shard": 3,
+      "split": "validation",
+      "tag": "ttbar_run2_frozen_v2_shard003_10k"
+    },
+    {
+      "candidate_parquet_files": 0,
+      "detector_output_complete": false,
+      "event_parquet_files": 0,
+      "expected_migrated_eos_hepmc": "/store/user/iturkmen/hh4b_delphes/legacy_local_migration/ttbar_hepmc_20260718/ttbar_extra50k_ak4ak8_v1_shard004_pythia8.hepmc",
+      "expected_run_name": "run_ttbar_extra50k_ak4ak8_v1_004",
+      "generator_xsec_pb": 511.93321,
+      "input_hepmc_basename": "ttbar_extra50k_ak4ak8_v1_shard004_pythia8.hepmc",
+      "input_hepmc_local_exists": false,
+      "input_hepmc_sha256": "3cf6898ca9dba3d52e1330d98b6f635f8bff42fdabd39b1ffec162ad0b408f5f",
+      "lineage_status": "EXACT_LINEAGE_VALID",
+      "local_matches": [],
+      "log_files": 0,
+      "metadata_generator_xsec_pb": 511.9331970214844,
+      "n_events": 10000,
+      "root_files": 0,
+      "seed": 714004,
+      "shard": 4,
+      "split": "test",
+      "tag": "ttbar_run2_frozen_v2_shard004_10k"
+    }
+  ],
+  "schema_version": 2,
+  "scientific_status": "Exact generation lineage is valid. The local inventory separately determines which shards have frozen-v2 detector outputs. This is not yet a canonical EOS bundle registry.",
+  "seeds": [
+    714000,
+    714001,
+    714002,
+    714003,
+    714004
+  ],
+  "splits": {
+    "test": 1,
+    "train": 3,
+    "validation": 1
+  },
+  "status": "frozen_v2_ttbar_generation_lineage_and_local_output_inventory_complete"
+}
