@@ -338,6 +338,17 @@ def main():
     print(f"Events with >=4 selected b-tagged jets: {len(rows)}")
     print(f"Wrote: {out}")
 
+    # The EL9 LCG 106 environment can abort during C++ static-library
+    # destruction after a valid zero-row, zero-column candidate Parquet
+    # has already been written and round-trip verified by the isolated
+    # writer. All durable work and temporary-file cleanup are complete
+    # here. Skip only interpreter/library teardown on this verified
+    # empty-output success path.
+    if not rows:
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os._exit(0)
+
 
 if __name__ == "__main__":
     main()
