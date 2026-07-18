@@ -1,0 +1,48 @@
+{
+  "additional_events_to_target": 3990000,
+  "additional_generation_authorized": false,
+  "all_test_bins_present": true,
+  "canonical_events": 1010000,
+  "canonical_jobs": 111,
+  "events_by_bin": {
+    "0": 610375,
+    "1": 160197,
+    "2": 99573,
+    "3": 39075,
+    "4": 25719,
+    "5": 25053,
+    "6": 25008,
+    "7": 25000
+  },
+  "events_by_split": {
+    "test": 184543,
+    "train": 691373,
+    "validation": 134084
+  },
+  "five_million_authorized": false,
+  "frozen_card_sha256": "1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c",
+  "jobs_by_wave": {
+    "testfill": 1,
+    "wave1": 54,
+    "wave2": 56
+  },
+  "legacy_anchor_compatibility_pending": true,
+  "legacy_one_million_anchor_included": false,
+  "physics_role": "inclusive_QCD_importance_sampling",
+  "schema_version": 1,
+  "statistical_audit_complete": false,
+  "status": "canonical_registry_frozen_pending_statistical_audit",
+  "target_total_events": 5000000,
+  "test_events_by_bin": {
+    "0": 80000,
+    "1": 30000,
+    "2": 20000,
+    "3": 14543,
+    "4": 10000,
+    "5": 10000,
+    "6": 10000,
+    "7": 10000
+  },
+  "unique_bundle_paths": true,
+  "unique_seeds": true
+}
