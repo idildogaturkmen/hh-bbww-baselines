@@ -49,6 +49,20 @@ def parse_args() -> argparse.Namespace:
 
     parser.add_argument("--campaign", required=True)
     parser.add_argument(
+        "--expected-total",
+        type=int,
+        default=EXPECTED_TOTAL,
+    )
+    parser.add_argument(
+        "--max-projected-tib",
+        type=float,
+        default=MAX_PROJECTED_TIB,
+    )
+    parser.add_argument(
+        "--allow-no-new-test",
+        action="store_true",
+    )
+    parser.add_argument(
         "--reviewed-manifest",
         type=Path,
         required=True,
@@ -426,7 +440,7 @@ def main() -> None:
             "ERROR: reviewed summary campaign mismatch"
         )
 
-    if summary.get("total_events") != EXPECTED_TOTAL:
+    if summary.get("total_events") != args.expected_total:
         raise SystemExit(
             "ERROR: reviewed summary event mismatch"
         )
@@ -468,12 +482,22 @@ def main() -> None:
             "ERROR: reviewed job-count mismatch"
         )
 
+    if int(
+        authorization.get(
+            "authorized_events",
+            -1,
+        )
+    ) != args.expected_total:
+        raise SystemExit(
+            "ERROR: authorization event-count mismatch"
+        )
+
     if sum(
         int(row["n_events"])
         for row in reviewed_rows
-    ) != EXPECTED_TOTAL:
+    ) != args.expected_total:
         raise SystemExit(
-            "ERROR: reviewed manifest is not 500K"
+            "ERROR: reviewed manifest event total mismatch"
         )
 
     expected_job_ids = list(range(len(reviewed_rows)))
@@ -573,7 +597,13 @@ def main() -> None:
             "ERROR: multiple split salts in manifest"
         )
 
-    if forced_bins != {1, 4, 5, 6, 7}:
+    if args.allow_no_new_test:
+        if forced_bins:
+            raise SystemExit(
+                "ERROR: train/validation-only checkpoint "
+                "contains forced test assignments"
+            )
+    elif forced_bins != {1, 4, 5, 6, 7}:
         raise SystemExit(
             "ERROR: forced test-bin set changed"
         )
@@ -589,6 +619,12 @@ def main() -> None:
         for row in reviewed_rows
         if row["dataset_split"] == "test"
     }
+
+    if args.allow_no_new_test and new_test_bins:
+        raise SystemExit(
+            "ERROR: train/validation-only checkpoint "
+            "contains new test shards"
+        )
 
     if previous_test_bins | new_test_bins != set(range(8)):
         raise SystemExit(
@@ -616,7 +652,7 @@ def main() -> None:
 
     projected_tib = projected_bytes / 2**40
 
-    if projected_tib >= MAX_PROJECTED_TIB:
+    if projected_tib >= args.max_projected_tib:
         raise SystemExit(
             "ERROR: projected storage exceeds gate: "
             f"{projected_tib:.9f} TiB"
@@ -878,7 +914,7 @@ def main() -> None:
         "status": "prepared_not_submitted",
         "campaign": args.campaign,
         "total_jobs": len(reviewed_rows),
-        "total_events": EXPECTED_TOTAL,
+        "total_events": args.expected_total,
         "events_by_bin": summary["events_by_bin"],
         "jobs_by_bin": summary["jobs_by_bin"],
         "split_job_counts": dict(split_jobs),
@@ -907,7 +943,7 @@ def main() -> None:
         "projected_compressed_TiB": (
             projected_tib
         ),
-        "storage_gate_TiB": MAX_PROJECTED_TIB,
+        "storage_gate_TiB": args.max_projected_tib,
         "storage_gate_pass": True,
         "bytes_per_event_reference_by_bin": {
             str(key): bytes_per_event[key]
@@ -938,7 +974,7 @@ def main() -> None:
     print("QCD_REVIEWED_MANIFEST_PREPARED")
     print("campaign:", args.campaign)
     print("jobs:", len(reviewed_rows))
-    print("events:", EXPECTED_TOTAL)
+    print("events:", args.expected_total)
     print(
         "projected compressed TiB:",
         f"{projected_tib:.9f}",

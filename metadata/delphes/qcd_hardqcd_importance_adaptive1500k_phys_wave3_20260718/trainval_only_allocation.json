@@ -1,0 +1,54 @@
+{
+  "allocation_excludes_test": true,
+  "allocation_uses_splits": [
+    "train",
+    "validation"
+  ],
+  "campaign": "qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718",
+  "checkpoint_1500000_authorized": false,
+  "current_trainval_events_by_bin": {
+    "0": 530375,
+    "1": 130197,
+    "2": 79573,
+    "3": 24532,
+    "4": 15719,
+    "5": 15053,
+    "6": 15008,
+    "7": 15000
+  },
+  "events_by_bin": {
+    "0": 730000,
+    "1": 440000,
+    "2": 280000,
+    "3": 10000,
+    "4": 10000,
+    "5": 10000,
+    "6": 10000,
+    "7": 10000
+  },
+  "full_remaining_3990000_authorized": false,
+  "projected_regions": {
+    "hh_candidate": {
+      "expected_additional_raw_selected": 39.66676870557777,
+      "projected_relative_standard_error": 0.22557444339386226,
+      "projected_standard_error_pb": 33.64068006037196,
+      "trainval_yield_proxy_pb": 149.13338388087675
+    },
+    "rhh_lt50": {
+      "expected_additional_raw_selected": 15.156769885875429,
+      "projected_relative_standard_error": 0.29108514957227133,
+      "projected_standard_error_pb": 22.83270557437445,
+      "trainval_yield_proxy_pb": 78.43995342230777
+    },
+    "rhh_lt80": {
+      "expected_additional_raw_selected": 26.869834787031845,
+      "projected_relative_standard_error": 0.23188913604497882,
+      "projected_standard_error_pb": 33.5477179103381,
+      "trainval_yield_proxy_pb": 144.67136530204223
+    }
+  },
+  "schema_version": 1,
+  "status": "checkpoint_proposal_not_authorized_for_submission",
+  "submission_authorized": false,
+  "total_new_events": 1500000
+}

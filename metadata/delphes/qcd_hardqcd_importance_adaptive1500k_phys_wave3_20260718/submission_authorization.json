@@ -1,0 +1,16 @@
+{
+  "allocation_excludes_test": true,
+  "allocation_sha256": "61eb9a74ed22e9a7204e07cefdb896452f9276a690b9a4946cf4cd5f75f04582",
+  "authorization_scope": "one overnight physical-QCD checkpoint only",
+  "authorized_events": 1500000,
+  "authorized_jobs": 150,
+  "campaign": "qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718",
+  "checkpoint_1500000_authorized": true,
+  "five_million_authorized": false,
+  "full_remaining_3990000_authorized": false,
+  "reviewed_manifest_sha256": "fe4121f1c9efa05c80768a4f45f2ae5711155e1983f464a842e88f4ee58ebafa",
+  "reviewed_summary_sha256": "d983fc4902974dfa53792f1f2534ad7f009368c12176a75b210256a47086b3eb",
+  "schema_version": 1,
+  "status": "authorized_for_single_submission_after_preflight",
+  "submission_count_authorized": 1
+}

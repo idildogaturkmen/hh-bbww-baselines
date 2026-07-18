@@ -1,0 +1,73 @@
+{
+  "allocation_excludes_test": true,
+  "allocation_file": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/metadata/delphes/qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718/trainval_only_allocation.json",
+  "allocation_sha256": "61eb9a74ed22e9a7204e07cefdb896452f9276a690b9a4946cf4cd5f75f04582",
+  "allocation_used_final_test": false,
+  "campaign": "qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718",
+  "checkpoint_1500000_authorized": false,
+  "combined_test_bins": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "events_by_bin": {
+    "0": 730000,
+    "1": 440000,
+    "2": 280000,
+    "3": 10000,
+    "4": 10000,
+    "5": 10000,
+    "6": 10000,
+    "7": 10000
+  },
+  "five_million_authorized": false,
+  "forced_sealed_test_bins": [],
+  "full_remaining_3990000_authorized": false,
+  "jobs_by_bin": {
+    "0": 73,
+    "1": 44,
+    "2": 28,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1
+  },
+  "new_test_bins": [],
+  "previous_test_bins": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "schema_version": 1,
+  "seed_reuse_count": 0,
+  "shard_id_base": 1033,
+  "shard_reuse_count": 0,
+  "source_registry": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/metadata/delphes/qcd_hardqcd_adaptive_1p01m_20260718/canonical_1p01m_registry.csv",
+  "source_registry_sha256": "2c8505f7a539792a0d2daf5b04630f2051a0c407712c29cea940daa345006d25",
+  "source_split_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_1p01m_full_audit_20260718/qcd_1p01m_split_summary.csv",
+  "source_split_summary_sha256": "39ccc778f364c94701b75a461fca2f3ec9fc82a7eacf97b96a3e320c9cdbaff9",
+  "split_event_counts": {
+    "train": 1120000,
+    "validation": 380000
+  },
+  "split_job_counts": {
+    "train": 112,
+    "validation": 38
+  },
+  "split_salt": "qcd-adaptive-wave3-trainval-v1",
+  "status": "proposal_not_authorized_for_submission",
+  "submission_authorized": false,
+  "total_events": 1500000,
+  "total_jobs": 150
+}
