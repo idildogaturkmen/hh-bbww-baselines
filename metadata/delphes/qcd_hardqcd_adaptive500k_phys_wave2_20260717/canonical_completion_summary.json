@@ -1,0 +1,40 @@
+{
+  "all_card_hashes_match": true,
+  "all_eos_checksums_match": true,
+  "all_manifest_identities_match": true,
+  "campaign": "qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717",
+  "canonical_events": 500000,
+  "canonical_jobs": 56,
+  "events_by_bin": {
+    "0": 301212,
+    "1": 82809,
+    "2": 51052,
+    "3": 14532,
+    "4": 12864,
+    "5": 12527,
+    "6": 12504,
+    "7": 12500
+  },
+  "excluded_failed_attempts": 1,
+  "failed_attempt": {
+    "bin_id": 0,
+    "cluster_id": 59823913,
+    "exit_status": 134,
+    "proc_id": 15,
+    "seed": 1209788,
+    "shard_id": 9788,
+    "stage": "reconstruction"
+  },
+  "five_million_authorized": false,
+  "original_successful_jobs": 55,
+  "recovery": {
+    "bin_id": 0,
+    "cluster_id": 59825065,
+    "payload_sha256": "282e90296f38934817d287bd02a42b02cd7139401ce43ff131bb6ebe1539b17d",
+    "seed": 1209788,
+    "shard_id": 9788
+  },
+  "recovery_successful_jobs": 1,
+  "schema_version": 1,
+  "status": "canonical_wave2_valid"
+}

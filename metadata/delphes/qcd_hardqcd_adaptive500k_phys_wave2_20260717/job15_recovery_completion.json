@@ -1,0 +1,21 @@
+{
+  "adler32": "b6a56cb5",
+  "bin_id": 0,
+  "campaign": "qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717",
+  "dataset_split": "train",
+  "exit_status": 0,
+  "five_million_authorized": false,
+  "n_events": 10000,
+  "old_failed_attempt_removed": true,
+  "original_job": "59823913.15",
+  "payload_sha256": "282e90296f38934817d287bd02a42b02cd7139401ce43ff131bb6ebe1539b17d",
+  "receipt_sha256": "feb6f00b348e4ed8262ee7a7ac5c003656dbc0f229ad55a3f296451a486692d0",
+  "recovery_adds_no_new_statistical_events": true,
+  "recovery_cluster_id": 59825065,
+  "remote_bundle": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717/qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717_bin00_pthat50to75_shard9788_seed1209788_bundle.tar.gz",
+  "schema_version": 1,
+  "seed": 1209788,
+  "shard_id": 9788,
+  "stage": "complete_copied_and_verified",
+  "status": "recovery_completed_and_validated"
+}
