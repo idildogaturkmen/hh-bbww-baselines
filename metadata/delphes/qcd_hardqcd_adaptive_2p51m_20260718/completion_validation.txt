@@ -1,0 +1,4 @@
+QCD_ADAPTIVE_2P51M_CROSS_LAYER_AUDIT_VALID
+processed_shards=261
+processed_events=2510000
+failures=0

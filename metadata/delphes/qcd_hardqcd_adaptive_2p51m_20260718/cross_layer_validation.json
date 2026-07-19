@@ -1,0 +1,65 @@
+{
+  "additional_events_to_target": 2490000,
+  "additional_generation_authorized": false,
+  "artifacts": {
+    "bin_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_full_audit_20260718_retry1/qcd_1p01m_bin_summary.csv",
+    "bootstrap_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_full_audit_20260718_retry1/qcd_1p01m_bootstrap_summary.csv",
+    "inclusive_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_full_audit_20260718_retry1/qcd_1p01m_inclusive_summary.csv",
+    "shard_validation": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_full_audit_20260718_retry1/qcd_1p01m_shard_validation.csv",
+    "split_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_full_audit_20260718_retry1/qcd_1p01m_split_summary.csv",
+    "wave_bin_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_full_audit_20260718_retry1/qcd_1p01m_wave_bin_summary.csv",
+    "wave_inclusive_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/qcd_adaptive_2p51m_full_audit_20260718_retry1/qcd_1p01m_wave_inclusive_summary.csv"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 2510000,
+    "unit": "whole shard within pTHat stratum"
+  },
+  "events_by_bin": {
+    "0": 1340375,
+    "1": 600197,
+    "2": 379573,
+    "3": 49075,
+    "4": 35719,
+    "5": 35053,
+    "6": 35008,
+    "7": 35000
+  },
+  "events_by_split": {
+    "test": 184543,
+    "train": 1811373,
+    "validation": 514084
+  },
+  "expected_events": 2510000,
+  "expected_shards": 261,
+  "failures": [],
+  "five_million_authorized": false,
+  "jobs_by_wave": {
+    "testfill": 1,
+    "wave1": 54,
+    "wave2": 56,
+    "wave3": 150
+  },
+  "physical_weighting": {
+    "never_normalized_per_shard": true,
+    "normalization": "all accepted shards are combined within each disjoint pTHat stratum",
+    "waves_combined_before_stratum_weighting": true
+  },
+  "processed_events": 2510000,
+  "processed_shards": 261,
+  "registry": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/metadata/delphes/qcd_hardqcd_adaptive_2p51m_20260718/canonical_2p51m_registry.csv",
+  "registry_sha256": "f0209b8df13e606c73e693dd8f78be11805c947486119825fe1cfe7ba46cb6e6",
+  "schema_version": 1,
+  "splitting": {
+    "test_is_evaluation_only": true,
+    "test_used_for_training": false,
+    "whole_shard_assignment": true
+  },
+  "status": "pass",
+  "streaming": {
+    "one_bundle_at_a_time": true,
+    "persistent_event_artifacts": false,
+    "temporary_root": "/uscms_data/d3/iturkmen/hh4b_delphes/audit_tmp/qcd_2p51m_20260718"
+  },
+  "target_total_events": 5000000
+}
