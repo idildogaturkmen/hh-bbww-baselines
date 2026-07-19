@@ -1,0 +1,9 @@
+TTBAR_SHARD1_END_TO_END_PREFLIGHT_VALID
+schedd=lpcschedd5.fnal.gov
+cluster=59827325
+root_events=10000
+candidate_rows=34
+remote_bundle=/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/ttbar_existing_hepmc_frozen_v2_shard1_preflight_20260718/ttbar_ak4ak8_run2_frozen_v2_shard001_10k_bundle.tar.gz
+adler32=4636cd29
+validated_utc=2026-07-19T06:28:14Z
+next_step=authorize_train_shard2_and_validation_shard3

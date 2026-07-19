@@ -1,0 +1,16 @@
+{
+  "adler32": "4636cd29",
+  "campaign": "ttbar_existing_hepmc_frozen_v2_shard1_preflight_20260718",
+  "candidate_rows": 34,
+  "cluster": 59827325,
+  "dataset_split": "train",
+  "delphes_card_sha256": "1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c",
+  "event_summary_rows": 10000,
+  "payload_sha256": "b6dbdb6e564f3d676dee4c7a3f0a0fa9b38373d13c1568d7a1553414a85c5d2d",
+  "remote_bundle": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/ttbar_existing_hepmc_frozen_v2_shard1_preflight_20260718/ttbar_ak4ak8_run2_frozen_v2_shard001_10k_bundle.tar.gz",
+  "root_events": 10000,
+  "schema_version": 1,
+  "seed": 714001,
+  "source_sha256": "b998b96cfee4f4b609c5ea31d9d300523fa059b52c05d98af4e5b55643840354",
+  "status": "ttbar_shard1_end_to_end_preflight_valid"
+}
