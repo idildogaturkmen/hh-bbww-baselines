@@ -1,0 +1,7 @@
+Dry-Run job(s)..
+2 job(s) dry-run to cluster 1.
+[WARNING]: -name parameter is disabled for LPC submission..
+[WARNING]: Ignoring the flag and using the system defined schedd..
+Querying the CMS LPC pool and trying to find an available schedd...
+
+Attempting to submit jobs to lpcschedd5.fnal.gov

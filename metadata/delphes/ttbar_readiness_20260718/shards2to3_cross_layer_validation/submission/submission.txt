@@ -1,0 +1,7 @@
+Submitting job(s)..
+2 job(s) submitted to cluster 59827326.
+[WARNING]: -name parameter is disabled for LPC submission..
+[WARNING]: Ignoring the flag and using the system defined schedd..
+Querying the CMS LPC pool and trying to find an available schedd...
+
+Attempting to submit jobs to lpcschedd5.fnal.gov

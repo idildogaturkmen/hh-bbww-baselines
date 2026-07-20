@@ -1,0 +1,26 @@
+{
+  "adler32": "85804bee",
+  "candidate_acceptance": 0.0043,
+  "candidate_max_nonfinite_fraction": 0.0,
+  "candidate_max_null_fraction": 0.0,
+  "candidate_rows": 43,
+  "candidate_schema_sha256": "d44e5af4a4ec3f191e88f52b54c2e8afe64cbdc78431bad500a000de56b600c5",
+  "candidate_sha256": "38f8770be2b1fc4d15c2c77ba6f8b5523830c426450fa1a18edd1aa61996bf42",
+  "columns_to_exclude_from_ml_features": [
+    "sample"
+  ],
+  "dataset_split": "validation",
+  "event_max_nonfinite_fraction": 0.0,
+  "event_max_null_fraction": 0.0,
+  "event_schema_sha256": "0259586415e02c7755767f5da07236b30ff1ee9afe953a0ff5100a18abe7efcd",
+  "event_summary_rows": 10000,
+  "event_summary_sha256": "c8862359024d6e3ed7db0afc52036b3f6d161035e4b085a0c0140815e0b726ef",
+  "remote_bundle": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1/ttbar_ak4ak8_run2_frozen_v2_shard003_10k_bundle.tar.gz",
+  "root_events": 10000,
+  "root_schema_sha256": "cee4ccc1ce6126eb7f03d05f84f40ff2dbf8d8f68672b885cd4faab80dfbf3f7",
+  "root_sha256": "f809530e59adf25e9ff3254b54ca5771c28688d95669e4be15981021b779ee8e",
+  "schema_version": 1,
+  "seed": 714003,
+  "shard_id": 3,
+  "status": "valid"
+}

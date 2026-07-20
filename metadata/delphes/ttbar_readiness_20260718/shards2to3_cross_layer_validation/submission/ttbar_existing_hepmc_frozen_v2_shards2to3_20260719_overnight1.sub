@@ -1,0 +1,34 @@
+universe = vanilla
+
+executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_ttbar_existing_hepmc_bundle.sh
+
+arguments = ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1 $(target_tag) $(shard_id) $(n_events) $(seed) $(dataset_split) ttbar-frozen-v2-trainval-v1 $(generator_xsec_pb) $(source_eos) $(source_sha256) ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1_inputs_b6dbdb6e564f3d67.tar.gz /store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1 b6dbdb6e564f3d676dee4c7a3f0a0fa9b38373d13c1568d7a1553414a85c5d2d $(Cluster)
+
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1_$(Cluster)_shard$(shard_id).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1_$(Cluster)_shard$(shard_id).err
+log = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1_$(Cluster).log
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+transfer_input_files = /uscms_data/d3/iturkmen/hh4b_delphes/condor_submit/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1_inputs_b6dbdb6e564f3d67.tar.gz
+
+transfer_output_files = job_receipt.json
+transfer_output_remaps = "job_receipt.json = /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1/receipts/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1_$(Cluster)_shard$(shard_id)_receipt.json"
+
+request_cpus = 1
+request_memory = 4GB
+request_disk = 15GB
+
+getenv = False
+environment = "LC_ALL=C LANG=C"
+
+use_x509userproxy = True
+x509userproxy = /uscms_data/d3/iturkmen/hh4b_delphes/condor_credentials/x509up_u17821_qcd_hardqcd_importance_mltail500k_enrich_20260717_0641
+
++JobBatchName = "ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1"
++DesiredOS = "EL9"
+
+on_exit_hold = (ExitBySignal == True) || (ExitCode != 0)
+
+queue target_tag, shard_id, n_events, seed, dataset_split, generator_xsec_pb, source_eos, source_sha256 from /uscms_data/d3/iturkmen/hh4b_delphes/condor_submit/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1/ttbar_existing_hepmc_frozen_v2_shards2to3_20260719_overnight1_items.txt

@@ -1,0 +1,5 @@
+TTBAR_SHARDS2TO3_CROSS_LAYER_VALID
+processed_shards=2
+processed_events=20000
+validation_summary=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/ttbar_shards2to3_cross_layer_validation_20260720/validation_summary.json
+next_step=audit_and_assemble_frozen_v2_shards0to3
