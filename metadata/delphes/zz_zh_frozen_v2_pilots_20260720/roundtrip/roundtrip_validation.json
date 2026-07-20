@@ -1,0 +1,61 @@
+{
+  "candidate_rows": 441,
+  "next_step": "copy small audit and promotion records to tracked metadata and commit",
+  "samples": [
+    {
+      "bundle_member_count": 10,
+      "bundle_members": [
+        "zh4b_ak4ak8_run2_frozen_v2_10k_delphes.root",
+        "zh4b_ak4ak8_run2_frozen_v2_10k_event_summary.parquet",
+        "zh4b_ak4ak8_run2_frozen_v2_10k_hh4b_candidates_v2.parquet",
+        "run_zh4b_ak4ak8_pilot10k_tag_1_banner.txt",
+        "proc_card_mg5.dat",
+        "run_card.dat",
+        "pythia8_card_default.dat",
+        "delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl",
+        "zh4b_validation.json",
+        "zh4b_ak4ak8_run2_frozen_v2_10k_promotion_manifest.json"
+      ],
+      "bundle_remote_size_and_adler_verified": true,
+      "bundle_roundtrip_adler32_verified": true,
+      "bundle_roundtrip_sha256_verified": true,
+      "candidate_rows": 315,
+      "event_summary_rows": 10000,
+      "manifest_artifacts_verified": 8,
+      "sample": "ZH4b",
+      "source_remote_size_and_adler_verified": true,
+      "status": "eos_roundtrip_valid",
+      "tag": "zh4b_ak4ak8_run2_frozen_v2_10k"
+    },
+    {
+      "bundle_member_count": 10,
+      "bundle_members": [
+        "zz4b_ak4ak8_run2_frozen_v2_10k_delphes.root",
+        "zz4b_ak4ak8_run2_frozen_v2_10k_event_summary.parquet",
+        "zz4b_ak4ak8_run2_frozen_v2_10k_hh4b_candidates_v2.parquet",
+        "run_zz4b_ak4ak8_pilot10k_tag_1_banner.txt",
+        "proc_card_mg5.dat",
+        "run_card.dat",
+        "pythia8_card_default.dat",
+        "delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl",
+        "zz4b_validation.json",
+        "zz4b_ak4ak8_run2_frozen_v2_10k_promotion_manifest.json"
+      ],
+      "bundle_remote_size_and_adler_verified": true,
+      "bundle_roundtrip_adler32_verified": true,
+      "bundle_roundtrip_sha256_verified": true,
+      "candidate_rows": 126,
+      "event_summary_rows": 10000,
+      "manifest_artifacts_verified": 8,
+      "sample": "ZZ4b",
+      "source_remote_size_and_adler_verified": true,
+      "status": "eos_roundtrip_valid",
+      "tag": "zz4b_ak4ak8_run2_frozen_v2_10k"
+    }
+  ],
+  "schema_version": 1,
+  "status": "zz_zh_eos_roundtrip_audit_valid",
+  "test_usage_authorized": false,
+  "verified_events": 20000,
+  "verified_samples": 2
+}

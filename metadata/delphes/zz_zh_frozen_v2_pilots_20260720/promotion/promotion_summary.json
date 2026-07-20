@@ -1,0 +1,69 @@
+{
+  "campaign": "zz_zh_frozen_v2_pilot_promotion_20260720",
+  "candidate_rows": 441,
+  "dataset_role": "trainval_pilot",
+  "next_step": "track promotion metadata and commit; then audit targeted bbbb and zbbbb enrichment strata",
+  "promoted_events": 20000,
+  "promoted_samples": 2,
+  "samples": [
+    {
+      "candidate_rows": 315,
+      "dataset_role": "trainval_pilot",
+      "delphes_card_sha256": "1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c",
+      "detector_bundle": {
+        "adler32": "925ea8ca",
+        "remote_path": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/zz_zh_frozen_v2_pilot_promotion_20260720/zh4b_ak4ak8_run2_frozen_v2_10k_bundle.tar.gz",
+        "sha256": "78fdd0b4404511e0e1a1356a1fbcdef675440f480ac6f645c4dd6ff9b1c1b468",
+        "size_bytes": 795375041
+      },
+      "generator_seed": 715002,
+      "generator_xsec_pb": 0.06882,
+      "promotion_manifest": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/zz_zh_frozen_v2_pilot_promotion_20260720/manifests/zh4b_ak4ak8_run2_frozen_v2_10k_promotion_manifest.json",
+      "repository_head": "14b61b4aa7708cb3414accc07242fe220915d827",
+      "root_events": 10000,
+      "sample": "ZH4b",
+      "schema_version": 1,
+      "source_hepmc": {
+        "adler32": "a56f96af",
+        "remote_path": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/sources/zz_zh_frozen_v2_pilot_promotion_20260720/zh4b_ak4ak8_pilot10k_pythia8.hepmc",
+        "sha256": "4cf63b8d1e6107239becd72e968bc14c7c60fa822adc812b1dbdbd2d9c92896b",
+        "size_bytes": 2498512176
+      },
+      "status": "eos_promotion_valid",
+      "tag": "zh4b_ak4ak8_run2_frozen_v2_10k",
+      "test_usage_authorized": false,
+      "validation_status": "valid"
+    },
+    {
+      "candidate_rows": 126,
+      "dataset_role": "trainval_pilot",
+      "delphes_card_sha256": "1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c",
+      "detector_bundle": {
+        "adler32": "a5e75099",
+        "remote_path": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/zz_zh_frozen_v2_pilot_promotion_20260720/zz4b_ak4ak8_run2_frozen_v2_10k_bundle.tar.gz",
+        "sha256": "2648d924b6ff957f58e41b32c4e06f55bb1e03f62a2e3b0c31fe32be0dcc8689",
+        "size_bytes": 781266329
+      },
+      "generator_seed": 715001,
+      "generator_xsec_pb": 0.19298,
+      "promotion_manifest": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/zz_zh_frozen_v2_pilot_promotion_20260720/manifests/zz4b_ak4ak8_run2_frozen_v2_10k_promotion_manifest.json",
+      "repository_head": "14b61b4aa7708cb3414accc07242fe220915d827",
+      "root_events": 10000,
+      "sample": "ZZ4b",
+      "schema_version": 1,
+      "source_hepmc": {
+        "adler32": "ce11f7df",
+        "remote_path": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/sources/zz_zh_frozen_v2_pilot_promotion_20260720/zz4b_ak4ak8_pilot10k_pythia8.hepmc",
+        "sha256": "1136583499d88d6b8aa85d320fd86871714d7f39a70522c16b8a7b7e5ff8a92d",
+        "size_bytes": 2477166105
+      },
+      "status": "eos_promotion_valid",
+      "tag": "zz4b_ak4ak8_run2_frozen_v2_10k",
+      "test_usage_authorized": false,
+      "validation_status": "valid"
+    }
+  ],
+  "schema_version": 1,
+  "status": "zz_zh_eos_promotion_valid",
+  "test_usage_authorized": false
+}

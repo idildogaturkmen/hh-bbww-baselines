@@ -1,0 +1,5 @@
+ZZ_ZH_LOCAL_LINEAGE_AND_ARTIFACT_AUDIT_VALID
+processed_samples=2
+processed_events=20000
+candidate_rows=441
+next_step=create_checksum_verified_eos_bundles

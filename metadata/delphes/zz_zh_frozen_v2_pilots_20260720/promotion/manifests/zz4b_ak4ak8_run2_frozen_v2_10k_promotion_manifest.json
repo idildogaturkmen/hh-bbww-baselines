@@ -1,0 +1,90 @@
+{
+  "artifacts": {
+    "banner": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/mg5/ZZ4b_smoke/Events/run_zz4b_ak4ak8_pilot10k/run_zz4b_ak4ak8_pilot10k_tag_1_banner.txt",
+      "sha256": "3d2d1d740b8a6bd8549ee9be5a468c01a7a1a549c7282889e92160af8c85ca09",
+      "size_bytes": 19822
+    },
+    "candidate": {
+      "path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/zz_zh_frozen_v2_local_audit_20260720/parquet/zz4b_ak4ak8_run2_frozen_v2_10k_hh4b_candidates_v2.parquet",
+      "sha256": "f87ddff16f2c9ffd661ec2a0a7c320168efd0bf3abebb07c2b1552af932eae7f",
+      "size_bytes": 95135
+    },
+    "event_summary": {
+      "path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/zz_zh_frozen_v2_local_audit_20260720/parquet/zz4b_ak4ak8_run2_frozen_v2_10k_event_summary.parquet",
+      "sha256": "3e6b27143f013e34daeace2fcc13a14e5ef21d5f351a46ef7de6407c45e7c3e7",
+      "size_bytes": 242973
+    },
+    "frozen_delphes_card": {
+      "path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/cards/delphes/delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl",
+      "sha256": "1b2041245162de8360defdc502404e0696496c50773d4aa7f043798651a9517c",
+      "size_bytes": 22460
+    },
+    "process_card": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/mg5/ZZ4b_smoke/Cards/proc_card_mg5.dat",
+      "sha256": "1dffd9a749835b7f6a9881211293244e1071df84c16fa7d984a2e4885f9a12e7",
+      "size_bytes": 2036
+    },
+    "pythia_card": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/mg5/ZZ4b_smoke/Cards/pythia8_card_default.dat",
+      "sha256": "eae9ab88aed291ccfa93aad879abb00c479fe5e852b50a14f48ee2c4ee25a255",
+      "size_bytes": 4434
+    },
+    "root": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/root_run2_frozen_v2_smoke/zz4b_ak4ak8_run2_frozen_v2_10k_delphes.root",
+      "sha256": "3143863cb8a7460058d091089f0e79cb1c4f6f781be84fd6a18b071851e2a0ae",
+      "size_bytes": 803886788
+    },
+    "run_card": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/mg5/ZZ4b_smoke/Cards/run_card.dat",
+      "sha256": "443bbde9d7e078e9bc3263c715cb6208212e06adcbec699246211e64b298ce63",
+      "size_bytes": 10383
+    },
+    "source_hepmc": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/hepmc/zz4b_ak4ak8_pilot10k_pythia8.hepmc",
+      "sha256": "1136583499d88d6b8aa85d320fd86871714d7f39a70522c16b8a7b7e5ff8a92d",
+      "size_bytes": 2477166105
+    }
+  },
+  "dataset_role": "trainval_pilot",
+  "remote_detector_bundle": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/zz_zh_frozen_v2_pilot_promotion_20260720/zz4b_ak4ak8_run2_frozen_v2_10k_bundle.tar.gz",
+  "remote_source_hepmc": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/sources/zz_zh_frozen_v2_pilot_promotion_20260720/zz4b_ak4ak8_pilot10k_pythia8.hepmc",
+  "repository_branch": "delphes-hh4b-production",
+  "repository_head": "14b61b4aa7708cb3414accc07242fe220915d827",
+  "sample": "ZZ4b",
+  "schema_version": 1,
+  "status": "prepared_for_eos_promotion",
+  "tag": "zz4b_ak4ak8_run2_frozen_v2_10k",
+  "test_usage_authorized": false,
+  "validation": {
+    "banner_nevents": 10000,
+    "banner_sha256": "3d2d1d740b8a6bd8549ee9be5a468c01a7a1a549c7282889e92160af8c85ca09",
+    "candidate_acceptance": 0.0126,
+    "candidate_max_nonfinite_fraction": 0.0,
+    "candidate_max_null_fraction": 0.0,
+    "candidate_rows": 126,
+    "candidate_schema_sha256": "d44e5af4a4ec3f191e88f52b54c2e8afe64cbdc78431bad500a000de56b600c5",
+    "candidate_sha256": "f87ddff16f2c9ffd661ec2a0a7c320168efd0bf3abebb07c2b1552af932eae7f",
+    "dataset_role": "inspected_train_or_validation_pilot_not_test",
+    "event_max_nonfinite_fraction": 0.0,
+    "event_max_null_fraction": 0.0,
+    "event_schema_sha256": "0259586415e02c7755767f5da07236b30ff1ee9afe953a0ff5100a18abe7efcd",
+    "event_summary_rows": 10000,
+    "event_summary_sha256": "3e6b27143f013e34daeace2fcc13a14e5ef21d5f351a46ef7de6407c45e7c3e7",
+    "existing_candidate_sha256": "f87ddff16f2c9ffd661ec2a0a7c320168efd0bf3abebb07c2b1552af932eae7f",
+    "generator_seed": 715001,
+    "generator_xsec_pb": 0.19298,
+    "hepmc_events": 10000,
+    "hepmc_sha256": "1136583499d88d6b8aa85d320fd86871714d7f39a70522c16b8a7b7e5ff8a92d",
+    "process_definition": "generate p p > z z, (z > b b~), (z > b b~)",
+    "r_hh_lt50": 70,
+    "r_hh_lt80": 121,
+    "root_events": 10000,
+    "root_schema_sha256": "cee4ccc1ce6126eb7f03d05f84f40ff2dbf8d8f68672b885cd4faab80dfbf3f7",
+    "root_sha256": "3143863cb8a7460058d091089f0e79cb1c4f6f781be84fd6a18b071851e2a0ae",
+    "sample": "ZZ4b",
+    "schema_version": 1,
+    "status": "valid",
+    "validation_scope": "local exact-lineage HepMC, generator banner, frozen-v2 ROOT, regenerated event summary, and regenerated canonical candidates; not yet an EOS receipt audit"
+  }
+}

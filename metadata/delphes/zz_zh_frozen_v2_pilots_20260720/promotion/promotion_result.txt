@@ -1,0 +1,7 @@
+ZZ_ZH_EOS_PROMOTION_VALID
+promoted_samples=2
+promoted_events=20000
+candidate_rows=441
+dataset_role=trainval_pilot
+test_usage_authorized=false
+next_step=track_and_commit_promotion_records

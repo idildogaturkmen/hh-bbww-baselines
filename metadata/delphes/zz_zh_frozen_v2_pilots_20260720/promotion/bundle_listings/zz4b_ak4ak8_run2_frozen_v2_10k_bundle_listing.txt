@@ -1,0 +1,10 @@
+zz4b_ak4ak8_run2_frozen_v2_10k_delphes.root
+zz4b_ak4ak8_run2_frozen_v2_10k_event_summary.parquet
+zz4b_ak4ak8_run2_frozen_v2_10k_hh4b_candidates_v2.parquet
+run_zz4b_ak4ak8_pilot10k_tag_1_banner.txt
+proc_card_mg5.dat
+run_card.dat
+pythia8_card_default.dat
+delphes_card_CMS_lpc_ak4ak8_run2_frozen_v2.tcl
+zz4b_validation.json
+zz4b_ak4ak8_run2_frozen_v2_10k_promotion_manifest.json
