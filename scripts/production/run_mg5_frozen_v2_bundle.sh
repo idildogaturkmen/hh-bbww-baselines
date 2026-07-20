@@ -254,6 +254,10 @@ mkdir -p \
 
 cp -a "$MG5_TEMPLATE" "$WORK"
 
+mkdir -p \
+  "$WORK/Events" \
+  "$WORK/HTML"
+
 RUN_NAME="run_${TARGET_TAG}"
 
 python3 - \
