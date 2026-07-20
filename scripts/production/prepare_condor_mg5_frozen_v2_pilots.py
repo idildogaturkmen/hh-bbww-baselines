@@ -255,8 +255,10 @@ queue 1
 
         subprocess.run(
             [
-                "condor_submit",
-                "-dry-run",
+                "/bin/bash",
+                "-lc",
+                'condor_submit -dry-run "$1" "$2"',
+                "condor-submit-dry-run",
                 str(dry_run),
                 str(submit_file),
             ],
