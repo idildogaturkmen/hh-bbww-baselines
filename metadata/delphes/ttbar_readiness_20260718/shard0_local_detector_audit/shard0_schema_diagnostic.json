@@ -1,0 +1,85 @@
+{
+  "candidate_columns": [
+    "sample",
+    "event",
+    "n_selected_bjets",
+    "mbb1",
+    "mbb2",
+    "avg_mbb",
+    "delta_mbb",
+    "mhh",
+    "drbb1",
+    "drbb2",
+    "pairing",
+    "j1_pt",
+    "j2_pt",
+    "j3_pt",
+    "j4_pt"
+  ],
+  "candidate_dtypes": {
+    "avg_mbb": "float64",
+    "delta_mbb": "float64",
+    "drbb1": "float64",
+    "drbb2": "float64",
+    "event": "int64",
+    "j1_pt": "float64",
+    "j2_pt": "float64",
+    "j3_pt": "float64",
+    "j4_pt": "float64",
+    "mbb1": "float64",
+    "mbb2": "float64",
+    "mhh": "float64",
+    "n_selected_bjets": "int64",
+    "pairing": "object",
+    "sample": "object"
+  },
+  "candidate_rows": 39,
+  "event_columns": [
+    "sample",
+    "event",
+    "event_weight",
+    "event_cross_section_pb",
+    "n_particle",
+    "n_jet",
+    "n_jet_pt30_eta25",
+    "n_bjet_pt30_eta25",
+    "n_genjet",
+    "n_electron",
+    "n_muon",
+    "ht_pt30_eta25",
+    "met"
+  ],
+  "event_dtypes": {
+    "event": "int64",
+    "event_cross_section_pb": "float64",
+    "event_weight": "float64",
+    "ht_pt30_eta25": "float32",
+    "met": "float64",
+    "n_bjet_pt30_eta25": "int64",
+    "n_electron": "int64",
+    "n_genjet": "int64",
+    "n_jet": "int64",
+    "n_jet_pt30_eta25": "int64",
+    "n_muon": "int64",
+    "n_particle": "int64",
+    "sample": "object"
+  },
+  "event_summary_rows": 10000,
+  "expected": {
+    "candidate_schema_sha256": "d44e5af4a4ec3f191e88f52b54c2e8afe64cbdc78431bad500a000de56b600c5",
+    "event_schema_sha256": "0259586415e02c7755767f5da07236b30ff1ee9afe953a0ff5100a18abe7efcd",
+    "root_schema_sha256": "cee4ccc1ce6126eb7f03d05f84f40ff2dbf8d8f68672b885cd4faab80dfbf3f7"
+  },
+  "matches": {
+    "candidate_schema_sha256": false,
+    "event_schema_sha256": true,
+    "root_schema_sha256": true
+  },
+  "observed": {
+    "candidate_schema_sha256": "3d0e69fcf235b44b1f6315bf5e67d595630e71bf2235c507eb2df3837334ff10",
+    "event_schema_sha256": "0259586415e02c7755767f5da07236b30ff1ee9afe953a0ff5100a18abe7efcd",
+    "root_schema_sha256": "cee4ccc1ce6126eb7f03d05f84f40ff2dbf8d8f68672b885cd4faab80dfbf3f7"
+  },
+  "root_events": 10000,
+  "schema_version": 1
+}

@@ -1,0 +1,7 @@
+]633;E;echo "TTBAR_SHARD0_LOCAL_DETECTOR_ARTIFACT_VALID";52062810-0a4a-4af6-bdf5-1d0109472eae]633;CTTBAR_SHARD0_LOCAL_DETECTOR_ARTIFACT_VALID
+root_events=10000
+event_summary_rows=10000
+candidate_rows=39
+dataset_split=train
+seed=714000
+validation_scope=local_detector_artifacts_not_eos_receipt
