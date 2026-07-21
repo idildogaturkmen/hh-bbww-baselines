@@ -57,104 +57,82 @@ hash -r
   head -n 1
 
   echo
-  echo "=== Search for global mg5_aMC executables ==="
+  echo "=== Deterministic MG5 selection ==="
 
-  {
-    find \
-      /cvmfs/sft.cern.ch/lcg/releases/MCGenerators/madgraph5amc \
-      -type f \
-      -path '*/bin/mg5_aMC' \
-      -perm -u+x \
-      2>/dev/null
+  EXPECTED_MG5="/cvmfs/sft.cern.ch/lcg/releases/MCGenerators/madgraph5amc/3.5.3.atlas7-2c347/x86_64-el9-gcc13-opt/bin/mg5_aMC"
 
-    find \
-      "/uscms_data/d3/$USER/software" \
-      -maxdepth 10 \
-      -type f \
-      -path '*/bin/mg5_aMC' \
-      -perm -u+x \
-      2>/dev/null
-  } |
-  sort -u |
-  tee "$MG5_LIST"
-
-  MG5_COUNT="$(
-    grep -c . "$MG5_LIST" 2>/dev/null ||
+  VIEW_MG5="$(
+    command -v mg5_aMC 2>/dev/null ||
     true
   )"
 
-  echo "mg5_candidate_count=$MG5_COUNT"
+  if test -n "$VIEW_MG5" \
+    && test -x "$VIEW_MG5"
+  then
+    SELECTED_MG5="$(
+      readlink -f "$VIEW_MG5"
+    )"
 
-  if test "$MG5_COUNT" -eq 0; then
-    echo "ERROR: no global mg5_aMC executable was found"
+    SELECTION_SOURCE="LCG_106_PATH"
+  elif test -x "$EXPECTED_MG5"
+  then
+    SELECTED_MG5="$EXPECTED_MG5"
+    SELECTION_SOURCE="EXPECTED_LCG106_BUILD"
+  else
+    echo "ERROR: expected MG5 3.5.3 executable is unavailable"
+    echo "expected_mg5=$EXPECTED_MG5"
     exit 20
   fi
 
-  echo
-  echo "=== MG5 candidate version probes ==="
+  printf '%s\n' "$SELECTED_MG5" \
+    > "$MG5_LIST"
 
-  VALID_FILE="$OUTPUT_DIR/mg5_353_candidates.txt"
-  : > "$VALID_FILE"
-
-  while IFS= read -r MG5_BIN
-  do
-    test -n "$MG5_BIN" || continue
-
-    echo
-    echo "candidate=$MG5_BIN"
-
-    PROBE_LOG="$OUTPUT_DIR/$(echo "$MG5_BIN" | sha256sum | awk '{print $1}').log"
-
-    timeout 60 \
-      bash -c "printf 'quit\n' | \"\$1\"" \
-      _ \
-      "$MG5_BIN" \
-      > "$PROBE_LOG" \
-      2>&1 \
-    || true
-
-    sed -n '1,45p' "$PROBE_LOG"
-
-    if grep -Eq \
-      '(^|[^0-9])3[.]5[.]3([^0-9]|$)' \
-      "$PROBE_LOG"
-    then
-      echo "$MG5_BIN" >> "$VALID_FILE"
-      echo "version_353=true"
-    else
-      echo "version_353=false"
-    fi
-  done < "$MG5_LIST"
-
-  VALID_COUNT="$(
-    grep -c . "$VALID_FILE" 2>/dev/null ||
-    true
-  )"
-
-  echo
-  echo "mg5_353_candidate_count=$VALID_COUNT"
-
-  if test "$VALID_COUNT" -eq 0; then
-    echo "ERROR: no working MG5_aMC 3.5.3 executable was found"
-    exit 21
-  fi
-
-  SELECTED_MG5="$(
-    grep \
-      'x86_64-el9-gcc13-opt' \
-      "$VALID_FILE" |
-    head -n 1
-  )"
-
-  if test -z "$SELECTED_MG5"; then
-    SELECTED_MG5="$(
-      head -n 1 "$VALID_FILE"
-    )"
-  fi
+  echo "mg5_candidate_count=1"
+  echo "selection_source=$SELECTION_SOURCE"
+  echo "selected_mg5=$SELECTED_MG5"
 
   test -x "$SELECTED_MG5"
 
-  echo "selected_mg5=$SELECTED_MG5"
+  echo
+  echo "=== Selected MG5 version probe ==="
+
+  PROBE_LOG="$OUTPUT_DIR/mg5_selected_probe.log"
+  PROBE_RC=0
+
+  env \
+    -u PYTHONHOME \
+    -u PYTHONPATH \
+    -u PYTHONSTARTUP \
+    -u PYTHONUSERBASE \
+    timeout 60 \
+    bash -c '
+      printf "quit\n" |
+      "$1"
+    ' \
+    _ \
+    "$SELECTED_MG5" \
+    > "$PROBE_LOG" \
+    2>&1 \
+  || PROBE_RC=$?
+
+  echo "mg5_probe_exit_code=$PROBE_RC"
+
+  sed -n '1,60p' "$PROBE_LOG"
+
+  if test "$PROBE_RC" -ne 0; then
+    echo "ERROR: selected MG5 executable did not start cleanly"
+    exit 21
+  fi
+
+  if ! grep -Eq \
+    '(^|[^0-9])3[.]5[.]3([^0-9]|$)' \
+    "$PROBE_LOG"
+  then
+    echo "ERROR: selected executable did not report MG5 3.5.3"
+    exit 22
+  fi
+
+  echo "version_353=true"
 
   echo
   echo "=== LHAPDF runtime ==="
@@ -173,7 +151,7 @@ hash -r
       -name 'NNPDF*' \
       -printf '%f\n' |
     sort |
-    head -n 100
+    sed -n '1,100p'
   else
     echo "lhapdf_config=not_found"
   fi
