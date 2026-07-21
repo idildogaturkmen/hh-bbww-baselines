@@ -73,3 +73,25 @@ After each 10k pilot, record:
 - whether an additional HT or boson-pT stratum is justified
 
 Do not scale a family solely because it has a high raw candidate count.
+
+## Wave-B baseline-first revision
+
+For single-Higgs, single-top, rare-top, and electroweak backgrounds,
+the first pilot must be an inclusive physical reference sample or a
+decay-filtered physical stratum.
+
+Dedicated HT or additional-heavy-flavor enrichment is not authorized
+for these families until an inclusive 10k pilot establishes:
+
+- reconstructed candidate efficiency;
+- weighted candidate yield;
+- effective sample size;
+- maximum single-event weight fraction;
+- a nonoverlapping or explicitly stitched phase-space definition.
+
+The tchannel_bb_hf and wwbb_hf proposals are therefore replaced by
+inclusive s-channel single-top and inclusive WW pilots.
+
+Dedicated phase-space importance sampling remains appropriate for the
+dominant QCD and Z+jets backgrounds, where the unfiltered generation
+requirements are computationally prohibitive.
