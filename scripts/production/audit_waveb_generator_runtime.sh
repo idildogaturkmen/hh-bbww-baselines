@@ -96,15 +96,40 @@ hash -r
   echo
   echo "=== Selected MG5 version probe ==="
 
+  echo "=== MG5 Python dependency probe ==="
+
+  SIX_PROBE_LOG="$OUTPUT_DIR/mg5_python_dependencies.log"
+  SIX_PROBE_RC=0
+
+  python3 -c '
+import sys
+import six
+
+print(f"python_executable={sys.executable}")
+print(f"python_version={sys.version.split()[0]}")
+print(f"six_version={six.__version__}")
+print(f"six_file={six.__file__}")
+' \
+    > "$SIX_PROBE_LOG" \
+    2>&1 \
+  || SIX_PROBE_RC=$?
+
+  cat "$SIX_PROBE_LOG"
+
+  echo "six_probe_exit_code=$SIX_PROBE_RC"
+
+  if test "$SIX_PROBE_RC" -ne 0; then
+    echo "ERROR: six is unavailable in the sourced LCG environment"
+    exit 23
+  fi
+
+  echo
+  echo "=== Selected MG5 version probe ==="
+
   PROBE_LOG="$OUTPUT_DIR/mg5_selected_probe.log"
   PROBE_RC=0
 
-  env \
-    -u PYTHONHOME \
-    -u PYTHONPATH \
-    -u PYTHONSTARTUP \
-    -u PYTHONUSERBASE \
-    timeout 60 \
+  timeout 60 \
     bash -c '
       printf "quit\n" |
       "$1"
