@@ -1,0 +1,15 @@
+sample_class	family	existing_or_provisional_events	final_target_events	additional_events	train_fraction	validation_fraction	count_toward_background_5m	status
+signal	ggf_hh4b_sm	30000	100000	70000	0.8	0.2	False	await_20k_product_audit
+signal	vbf_hh4b_sm	10000	100000	90000	0.8	0.2	False	require_frozen_v2_canary_and_10k_pilot
+background	ggh_hbb	0	100000	100000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	bbh_hbb_4fs	0	50000	50000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	wh_hbb	0	60000	60000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	tchannel_top	0	80000	80000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	tchannel_antitop	0	80000	80000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	tw_top	0	70000	70000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	tw_antitop	0	70000	70000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	schannel_single_top	0	30000	30000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	ttw	0	60000	60000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	wz_zbb	0	60000	60000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	ww	0	40000	40000	0.8	0.2	True	require_template_canary_and_10k_pilot
+background	triboson_zbb	0	50000	50000	0.8	0.2	True	require_template_canary_and_10k_pilot
