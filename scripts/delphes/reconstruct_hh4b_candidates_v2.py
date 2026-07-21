@@ -339,12 +339,9 @@ def main():
     # Exit immediately on the empty-output path before any additional
     # Python or C++ teardown can trigger the EL9 LCG 106 abort.
     if not rows:
-        os.write(
-            1,
-            (
-                f"EMPTY_CANDIDATE_OUTPUT_VALID={out}\\n"
-            ).encode(),
-        )
+        # The isolated writer has already written and round-trip
+        # validated the empty Parquet file. Exit immediately,
+        # without performing any additional output or C++ teardown.
         os._exit(0)
 
     print(f"Input events: {n_events}")
