@@ -1,0 +1,5 @@
+family,process_dir,shard_id,events,seed,dataset_split,run_card_profile,dataset_role
+tth_hbb,/uscms_data/d3/iturkmen/hh4b_delphes/mg5/waveb_priority_smokes_20260721/WaveB_ttH_Hbb_smoke100,9001,100,941001,train,preserve_template,physical_stratum
+ttz_zbb,/uscms_data/d3/iturkmen/hh4b_delphes/mg5/waveb_priority_smokes_20260721/WaveB_ttZ_Zbb_smoke100,9002,100,941002,validation,preserve_template,physical_stratum
+tttt,/uscms_data/d3/iturkmen/hh4b_delphes/mg5/waveb_priority_smokes_20260721/WaveB_fourtop_smoke100,9003,100,941003,train,preserve_template,physical_reference
+vbf_hbb,/uscms_data/d3/iturkmen/hh4b_delphes/mg5/waveb_priority_smokes_20260721/WaveB_EW_Hjj_Hbb_smoke100,9004,100,941004,validation,preserve_template,physical_reference
