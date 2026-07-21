@@ -181,8 +181,10 @@ def parse_lhe(
 ]:
     event_particle_counts: list[Counter[int]] = []
     current_particles: Counter[int] | None = None
+
     inside_init = False
     init_data_lines: list[str] = []
+    expect_event_header = False
 
     with open_lhe(path) as handle:
         for raw_line in handle:
@@ -207,7 +209,13 @@ def parse_lhe(
                 continue
 
             if line == "<event>":
+                if current_particles is not None:
+                    raise RuntimeError(
+                        "Nested LHE event block"
+                    )
+
                 current_particles = Counter()
+                expect_event_header = True
                 continue
 
             if line == "</event>":
@@ -216,11 +224,17 @@ def parse_lhe(
                         "Malformed LHE event block"
                     )
 
+                if expect_event_header:
+                    raise RuntimeError(
+                        "LHE event is missing its header"
+                    )
+
                 event_particle_counts.append(
                     current_particles
                 )
 
                 current_particles = None
+                expect_event_header = False
                 continue
 
             if current_particles is None:
@@ -235,6 +249,23 @@ def parse_lhe(
 
             fields = line.split()
 
+            if expect_event_header:
+                if len(fields) < 2:
+                    raise RuntimeError(
+                        "Malformed LHE event header"
+                    )
+
+                try:
+                    int(fields[0])
+                    int(fields[1])
+                except ValueError as exc:
+                    raise RuntimeError(
+                        "Could not parse LHE event header"
+                    ) from exc
+
+                expect_event_header = False
+                continue
+
             if len(fields) < 2:
                 continue
 
@@ -245,24 +276,46 @@ def parse_lhe(
                 continue
 
             if status in {-1, 1, 2}:
-                current_particles[abs(pdg_id)] += 1
+                current_particles[
+                    abs(pdg_id)
+                ] += 1
 
-    if len(init_data_lines) < 3:
+    if current_particles is not None:
+        raise RuntimeError(
+            "Unclosed LHE event block"
+        )
+
+    if not init_data_lines:
         raise RuntimeError(
             "Could not parse the LHE init block"
         )
 
+    beam_line_fields = (
+        init_data_lines[0].split()
+    )
+
+    if len(beam_line_fields) < 10:
+        raise RuntimeError(
+            "Malformed LHE init beam line"
+        )
+
     try:
         n_processes = int(
-            init_data_lines[1].split()[0]
+            float(beam_line_fields[-1])
         )
-    except Exception as exc:
+    except ValueError as exc:
         raise RuntimeError(
-            "Could not parse NPRUP"
+            "Could not parse NPRUP from "
+            "the LHE init beam line"
         ) from exc
 
+    if n_processes <= 0:
+        raise RuntimeError(
+            f"Invalid NPRUP value: {n_processes}"
+        )
+
     process_lines = init_data_lines[
-        2 : 2 + n_processes
+        1 : 1 + n_processes
     ]
 
     if len(process_lines) != n_processes:
@@ -272,13 +325,23 @@ def parse_lhe(
 
     cross_section_pb = 0.0
 
-    for line in process_lines:
-        fields = line.split()
+    for process_line in process_lines:
+        fields = process_line.split()
 
-        if not fields:
-            continue
+        if len(fields) < 4:
+            raise RuntimeError(
+                "Malformed LHE process line"
+            )
 
-        cross_section_pb += float(fields[0])
+        try:
+            cross_section_pb += float(
+                fields[0]
+            )
+        except ValueError as exc:
+            raise RuntimeError(
+                "Could not parse process "
+                "cross section"
+            ) from exc
 
     return (
         len(event_particle_counts),
