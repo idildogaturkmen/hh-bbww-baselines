@@ -1,0 +1,5 @@
+family	template_name	events	seed	dataset_split	process_definition	process_line	decay_strategy	dataset_role
+tth_hbb	WaveB_ttH_Hbb_smoke100	100	931001	train	ttH with forced H_to_bb	generate p p > t t~ h, h > b b~	mg5_decay_chain_H_only	physical_stratum
+ttz_zbb	WaveB_ttZ_Zbb_smoke100	100	931002	validation	ttZ with forced Z_to_bb	generate p p > t t~ z, z > b b~	mg5_decay_chain_Z_only	physical_stratum
+tttt	WaveB_fourtop_smoke100	100	931003	train	inclusive four-top	generate p p > t t~ t t~	stable_tops_for_pythia	physical_reference
+vbf_hbb	WaveB_EW_Hjj_Hbb_smoke100	100	931004	train	gauge-complete electroweak Hjj with forced H_to_bb	generate p p > h j j QCD=0, h > b b~	mg5_decay_chain_H_only	physical_stratum
