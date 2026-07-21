@@ -20,6 +20,68 @@ PAIRINGS = [
 ]
 
 
+BASE_CANDIDATE_COLUMNS = [
+    "sample",
+    "event",
+    "n_selected_jets",
+    "n_selected_bjets",
+    "n_extra_selected_jets",
+    "n_extra_selected_bjets",
+    "ht_selected_jets",
+    "ht_selected_bjets",
+    "ht_candidate_jets",
+    "pairing",
+    "pairing_combo_bjet_ranks",
+    "pairing_score_125_125",
+    "higgs_ordering",
+    "mbb1",
+    "mbb2",
+    "avg_mbb",
+    "delta_mbb",
+    "r_hh",
+    "r_hh_125_125",
+    "r_hh_125_120",
+    "mhh",
+    "hh_pt",
+    "hh_eta",
+    "hh_phi",
+    "h1_pt",
+    "h1_eta",
+    "h1_phi",
+    "h2_pt",
+    "h2_eta",
+    "h2_phi",
+    "h_delta_eta",
+    "h_delta_phi",
+    "h_delta_r",
+    "h_pt_balance",
+    "drbb1",
+    "drbb2",
+    "j1_pt",
+    "j2_pt",
+    "j3_pt",
+    "j4_pt",
+]
+
+CANDIDATE_COLUMNS = (
+    BASE_CANDIDATE_COLUMNS
+    + [
+        f"j{index}_{field}"
+        for index in range(1, 5)
+        for field in (
+            "eta",
+            "phi",
+            "mass",
+            "btag",
+            "flavor",
+            "raw_index",
+            "selected_index",
+            "bjet_rank",
+        )
+    ]
+)
+
+
 def four_vector(pt, eta, phi, mass):
     px = pt * np.cos(phi)
     py = pt * np.sin(phi)
@@ -316,10 +378,30 @@ def main():
     if not parquet_writer.is_file():
         raise SystemExit(f"ERROR: missing isolated Parquet writer: {parquet_writer}")
 
+    if rows:
+        observed_columns = list(rows[0])
+
+        if observed_columns != CANDIDATE_COLUMNS:
+            raise SystemExit(
+                "ERROR: candidate row schema differs from "
+                "the frozen candidate column order"
+            )
+
+        parquet_payload = rows
+    else:
+        parquet_payload = {
+            column: []
+            for column in CANDIDATE_COLUMNS
+        }
+
     temporary_pickle = out.with_name(f".{out.name}.{os.getpid()}.pickle")
     try:
         with temporary_pickle.open("wb") as handle:
-            pickle.dump(rows, handle, protocol=pickle.HIGHEST_PROTOCOL)
+            pickle.dump(
+                parquet_payload,
+                handle,
+                protocol=pickle.HIGHEST_PROTOCOL,
+            )
         subprocess.run(
             [
                 sys.executable,
