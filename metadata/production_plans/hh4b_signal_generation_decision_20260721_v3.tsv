@@ -1,0 +1,3 @@
+family	validated_split_safe_events	legacy_local_events_under_review	target_split_safe_events	additional_events_authorized	status	physics_yield_authorized
+ggf_hh4b_sm	100000	10000	100000	0	complete_canonical_split_safe100k	False
+vbf_hh4b_sm	0	20000	100000	0	two_legacy_10k_campaigns_lineage_and_duplicate_review_required	False

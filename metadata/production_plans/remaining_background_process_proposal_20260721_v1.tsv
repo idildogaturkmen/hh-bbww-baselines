@@ -1,0 +1,13 @@
+family	preparation_wave	proposed_process_definition	decay_handling	modeling_issue	review_status	canary_authorized	bulk_authorized
+wh_hbb	wave_c1	generate p p > w+ h, h > b b~ ; add process p p > w- h, h > b b~	H forced to bb; W inclusive in shower	Confirm inclusive W treatment and reference normalization	proposed_not_authorized	False	False
+ttw	wave_c1	generate p p > t t~ w+ ; add process p p > t t~ w-	top and W decays inclusive in shower	Confirm charge sum and higher-order normalization	proposed_not_authorized	False	False
+wz_zbb	wave_c1	generate p p > w+ z, z > b b~ ; add process p p > w- z, z > b b~	Z forced to bb; W inclusive in shower	Confirm exclusive Zbb stratum normalization	proposed_not_authorized	False	False
+ww	wave_c1	generate p p > w+ w-	W decays inclusive in shower	Expected low HH4b candidate efficiency	proposed_not_authorized	False	False
+tchannel_top	wave_c2	REVIEW_REQUIRED	top inclusive	Choose 4FS or 5FS and exclude s-channel overlap	deferred_physics_review	False	False
+tchannel_antitop	wave_c2	REVIEW_REQUIRED	antitop inclusive	Choose 4FS or 5FS and exclude s-channel overlap	deferred_physics_review	False	False
+schannel_single_top	wave_c2	REVIEW_REQUIRED	top and antitop inclusive	Define charge combination and flavor scheme	deferred_physics_review	False	False
+ggh_hbb	wave_c3	REVIEW_REQUIRED	H forced to bb	Choose loop_sm versus effective theory	deferred_physics_review	False	False
+bbh_hbb_4fs	wave_c3	REVIEW_REQUIRED	H forced to bb	Define 4FS PDFs and exclusive extra-b cuts	deferred_physics_review	False	False
+tw_top	wave_c3	REVIEW_REQUIRED	top and W inclusive	Define tW versus ttbar overlap scheme	deferred_physics_review	False	False
+tw_antitop	wave_c3	REVIEW_REQUIRED	antitop and W inclusive	Define tW versus ttbar overlap scheme	deferred_physics_review	False	False
+triboson_zbb	wave_c3	REVIEW_REQUIRED	at least one Z forced to bb	Define WWZ, WZZ, and ZZZ mixture without duplication	deferred_physics_review	False	False
