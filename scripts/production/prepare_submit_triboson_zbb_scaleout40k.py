@@ -697,8 +697,8 @@ def main() -> None:
             lineterminator="\n",
         )
 
-        writer.writeheader()
-
+        # HTCondor queue-from treats every line as a job.
+        # This file must contain data rows only, with no TSV header.
         writer.writerows(
             queue_rows
         )
@@ -779,6 +779,19 @@ queue family, target_tag, shard_id, accepted_events, maximum_input_events, seed,
     )
 
     print(dryrun_output)
+
+    dryrun_job_matches = re.findall(
+        r"(?m)^([0-9]+) job\(s\) dry-run to cluster",
+        dryrun_output,
+    )
+
+    require(
+        dryrun_job_matches == ["12"],
+        (
+            "Condor dry run did not contain exactly "
+            f"12 jobs: {dryrun_job_matches}"
+        ),
+    )
 
     require(
         dryrun_ads.is_file()
