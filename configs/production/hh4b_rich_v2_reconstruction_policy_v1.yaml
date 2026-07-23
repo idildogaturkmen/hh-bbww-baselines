@@ -1,0 +1,88 @@
+schema_version: 1
+
+policy_name: hh4b_rich_v2_reconstruction_policy_v1
+
+status:
+  reconstruction_policy_frozen: true
+  historical_command_line_recovered: false
+  policy_is_explicit_canonical_choice: true
+  physics_yield_authorized: false
+
+implementation:
+  builder: scripts/delphes/reconstruct_hh4b_candidates_v2.py
+  builder_sha256: 4d7eb8e3400ec50c1c254744e6f3a2b11bd033a4525c13ec22e85247ecf59c57
+  repository_commit_at_policy_creation: 1afcaf2ab57e3953e2dc9b63642e9fe011ef2132
+  output_schema_columns: 72
+
+candidate_reconstruction:
+  target_mass_gev: 125.0
+
+  jet_selection:
+    pt_operator: ">"
+    pt_min_gev: 30.0
+    abs_eta_operator: "<"
+    abs_eta_max: 2.5
+
+  btag_selection:
+    branch: Jet.BTag
+    operator: ">"
+    threshold: 0.0
+    interpretation: Delphes binary b-tag flag
+    cms_deepjet_equivalent: false
+
+  minimum_selected_bjets: 4
+  max_bjets_for_pairing: 8
+
+  pairing:
+    primary_objective: minimize_abs_mbb1_minus_125_plus_abs_mbb2_minus_125
+    first_tiebreaker: minimize_abs_mbb1_minus_mbb2
+    second_tiebreaker: maximize_sum_higgs_candidate_pt
+
+  higgs_ordering: pt
+  candidate_jets_ordering: pt
+
+derived_variables:
+  r_hh_125_125:
+    formula: sqrt((mbb1 - 125)^2 + (mbb2 - 125)^2)
+
+  r_hh_125_120:
+    formula: sqrt((mbb1 - 125)^2 + (mbb2 - 120)^2)
+
+empty_candidate_output:
+  policy: typed_zero_row_parquet
+  schema_columns: 72
+  preserve_original_source_checksum: true
+  record_normalization_transformation_in_receipt: true
+
+applicability:
+  backgrounds:
+    - qcd
+    - ttbar
+    - wavea
+    - waveb
+    - wavec1
+    - single_top
+    - single_higgs
+    - triboson
+
+  signal_modes:
+    - ggf_hh4b
+    - vbf_hh4b
+
+validation_evidence:
+  remote_schema_adjudication:
+    outputs/agent_runs/background_5m_candidate_schema_canary_adjudication_20260723_v2/schema_canary_adjudication.json
+
+  remote_semantics_audit:
+    outputs/agent_runs/background_5m_rich_v2_semantics_audit_20260723_v1/rich_v2_semantics_audit.json
+
+  observed_maximum_pairing_bjet_rank: 5
+  note:
+    The observed rank validates compatibility with a multi-b-jet pairing
+    pool but does not recover the original historical max-bjets argument.
+
+restrictions:
+  - Do not interpret Delphes Jet.BTag as a CMS DeepJet score.
+  - Do not calculate physics yields before normalization freeze.
+  - Do not combine ggF and VBF according to raw generated-event counts.
+  - Do not use the background test split for cut optimization.
