@@ -1,0 +1,59 @@
+{
+  "candidate_rows": 12395,
+  "candidate_rows_by_mode": {
+    "ggf_hh4b": 6112,
+    "vbf_hh4b": 6283
+  },
+  "candidate_rows_by_split": {
+    "test": 174,
+    "train": 9975,
+    "validation": 2246
+  },
+  "canonical_members": 110,
+  "combined_by_generated_sample_size": false,
+  "common_ml_schema_columns": 72,
+  "common_ml_schema_sha256": "4008b937032acad6aac87c2fea1df12a110d19a3876d1f8008496e9ca0c85cf4",
+  "full_signal_background_cutflow_authorized": false,
+  "generated_events": 200000,
+  "generated_events_by_mode": {
+    "ggf_hh4b": 100000,
+    "vbf_hh4b": 100000
+  },
+  "generated_events_by_split": {
+    "test": 3000,
+    "train": 160000,
+    "validation": 37000
+  },
+  "ggf_signal_schema_columns": 75,
+  "ggf_signal_schema_sha256": "0aca5014841a8e3ca7fffcde416ce3bfe96695a92b87190395ce9de5a01858d6",
+  "ggf_test_members_present": true,
+  "ggf_test_members_sealed": true,
+  "mode_membership_preserved": true,
+  "mode_specific_normalization_required": true,
+  "normalization_frozen": false,
+  "physics_yield_authorized": false,
+  "reference_baseline_freeze_authorized": true,
+  "registry": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_canonical_signal200k_registry_audit_20260723_v1/hh4b_canonical_signal200k_registry.tsv",
+  "schema_version": 1,
+  "signal_modes": [
+    "ggf_hh4b",
+    "vbf_hh4b"
+  ],
+  "source_registries": {
+    "ggf_hh4b": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/ggf_hh4b_canonical100k_registry_audit_20260723_v2/ggf_hh4b_canonical100k_registry.tsv",
+    "vbf_hh4b": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/vbf_hh4b_canonical100k_materialization_audit_20260723_v1/vbf_hh4b_canonical100k_materialized_registry.tsv"
+  },
+  "source_registry_sha256": {
+    "ggf_hh4b": "e0385488fe53bba2eb46b0a6cc30038aba42cff21ddaa9726a7de99101e54afb",
+    "vbf_hh4b": "3346a54d70416aa079419ad2e76f272d4849ba3352c4b7cbb493def2687d8a09"
+  },
+  "source_summary_sha256": {
+    "ggf_hh4b": "af3e76d524499ebe40dd193769602f566afc7f6c8fb46046a34f7a018f619fca",
+    "vbf_hh4b": "98bc4a405f95e27c12f698779bee1099d5853ed925d22093ab4e7fb2ea3b7b71"
+  },
+  "status": "pass",
+  "vbf_candidate_schema_columns": 72,
+  "vbf_candidate_schema_sha256": "4008b937032acad6aac87c2fea1df12a110d19a3876d1f8008496e9ca0c85cf4",
+  "vbf_test_members_present": false,
+  "vbf_test_split_invented": false
+}

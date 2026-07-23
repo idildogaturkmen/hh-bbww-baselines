@@ -1,0 +1,122 @@
+schema_version: 1
+
+baseline_name: hh4b_cms_run2_resolved_rich_v2_reference_v1
+
+status: frozen_reference
+
+analysis_scope:
+  process: HH_to_4b
+  reconstruction_level: Delphes_reduced_candidates
+  interpretation: CMS_inspired_resolved_HH4b
+  exact_full_CMS_selection: false
+
+candidate_schema:
+  common_columns: 72
+  schema_sha256: 4008b937032acad6aac87c2fea1df12a110d19a3876d1f8008496e9ca0c85cf4
+
+candidate_denominator:
+  description: rich_v2_events_with_a_reconstructed_HH4b_candidate
+  inherited_requirements:
+    minimum_selected_bjets: 4
+    jet_pt_minimum_gev: 30.0
+    jet_abs_eta_maximum: 2.5
+    btag_requirement: greater_than_zero
+    pairing_jet_limit: 8
+    higgs_ordering: pt
+
+selection_order:
+  - candidate_denominator
+  - four_candidate_jets_pt40
+  - four_candidate_jets_abs_eta24
+  - analysis_region_rhh55
+  - signal_or_control_region
+  - mhh_category
+
+cuts:
+  four_candidate_jets_pt40:
+    columns:
+      - j1_pt
+      - j2_pt
+      - j3_pt
+      - j4_pt
+    operator: all_strictly_greater_than
+    threshold_gev: 40.0
+
+  four_candidate_jets_abs_eta24:
+    columns:
+      - j1_eta
+      - j2_eta
+      - j3_eta
+      - j4_eta
+    operator: all_absolute_values_strictly_less_than
+    threshold: 2.4
+
+regions:
+  analysis_region:
+    variable: r_hh_125_120
+    lower_bound: null
+    lower_inclusive: false
+    upper_bound: 55.0
+    upper_inclusive: false
+
+  signal_region:
+    variable: r_hh_125_120
+    lower_bound: null
+    lower_inclusive: false
+    upper_bound: 30.0
+    upper_inclusive: false
+
+  control_region:
+    variable: r_hh_125_120
+    lower_bound: 30.0
+    lower_inclusive: true
+    upper_bound: 55.0
+    upper_inclusive: false
+
+categories:
+  low_mhh:
+    variable: mhh
+    lower_bound_gev: null
+    lower_inclusive: false
+    upper_bound_gev: 450.0
+    upper_inclusive: false
+
+  high_mhh:
+    variable: mhh
+    lower_bound_gev: 450.0
+    lower_inclusive: true
+    upper_bound_gev: null
+    upper_inclusive: false
+
+available_selection_limitations:
+  lepton_veto_available: false
+  trigger_selection_available: false
+  exact_CMS_btag_working_point_available: false
+  full_CMS_object_identification_available: false
+
+reporting:
+  generated_event_efficiency: true
+  candidate_relative_efficiency: true
+  report_signal_modes_separately: true
+  report_background_families_separately: true
+  combine_signal_modes_before_normalization: false
+
+optimization_policy:
+  reference_selection_is_immutable: true
+  train_split_may_be_scanned: true
+  validation_split_may_select_working_point: true
+  sealed_test_may_be_used_during_optimization: false
+  vbf_test_split_may_be_invented: false
+
+normalization:
+  frozen: false
+  physics_yield_authorized: false
+  official_mode_specific_cross_sections_required: true
+  branching_fraction_h_to_bb_squared_required: true
+
+authorization:
+  signal_only_descriptive_cutflow: true
+  full_signal_background_cutflow: false
+  cut_optimization: false
+  physical_yields: false
+  significance: false
