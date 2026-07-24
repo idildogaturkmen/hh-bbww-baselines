@@ -1,0 +1,152 @@
+schema_version: 1
+
+policy_name: hh4b_3b_control_reconstruction_policy_v1
+implementation_status: implemented_and_unit_tested
+production_authorized: false
+validation_reconstruction_authorized: false
+test_access_authorized: false
+physics_yield_authorized: false
+transfer_factor_authorized: false
+next_gate: prove_hh4b_4b_parity_on_real_delphes_canaries
+
+source_commit: 88acf8e44663da5239a4205f3ac9a5c310e734a1
+
+immutable_references:
+  frozen_builder:
+    path: scripts/delphes/reconstruct_hh4b_candidates_v2.py
+    sha256: 4d7eb8e3400ec50c1c254744e6f3a2b11bd033a4525c13ec22e85247ecf59c57
+  frozen_policy:
+    path: configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml
+    sha256: 4b2a951dba7ac8bd0e2e982e3447e998e07b86d63390c248600976b3f4912b68
+
+implementation:
+  builder:
+    path: scripts/delphes/reconstruct_hh4b_3b_control_candidates.py
+    sha256: d81a27538437d90878f98d7f7760e5aa574814b9af6da99810642d76c6c2afa8
+  unit_test:
+    path: tests/test_reconstruct_hh4b_3b_control_candidates.py
+    tests_collected: 23
+    tests_passed: 23
+    tests_failed: 0
+    input_scope: deterministic_synthetic_inputs_and_temporary_files_only
+
+command_line_modes:
+  explicit_mode_required: true
+  names:
+    - threeb-control
+    - fourb-parity
+  mode_inference_allowed: false
+
+root_reading:
+  shared_event_reader: true
+  shared_jet_selection: true
+  allowed_branches:
+    - Jet.PT
+    - Jet.Eta
+    - Jet.Phi
+    - Jet.Mass
+    - Jet.BTag
+    - Jet.Flavor
+  additional_branches_allowed: false
+
+common_selection:
+  jet:
+    pt_operator: ">"
+    pt_min_gev: 30.0
+    abs_eta_operator: "<"
+    abs_eta_max: 2.5
+  btag:
+    branch: Jet.BTag
+    operator: ">"
+    threshold: 0.0
+    interpretation: Delphes binary b-tag flag, not CMS DeepJet
+
+threeb_control:
+  selected_tagged_jet_count:
+    operator: "=="
+    value: 3
+  minimum_selected_jet_count: 4
+  selected_untagged_definition: Jet.BTag <= 0.0
+  promoted_jet:
+    count: 1
+    rule: highest_pt_selected_untagged
+    chosen_before_pairing: true
+    bjet_rank: -1
+    prohibited_selection_objectives:
+      - mass
+      - r_hh
+      - pairing
+      - higgs_candidate
+      - classifier
+      - signal_region
+  fixed_candidate_jets:
+    tagged_selected_jets: 3
+    promoted_selected_untagged_jets: 1
+  tagged_candidate_bjet_ranks:
+    - 0
+    - 1
+    - 2
+  fixed_jet_pairings_evaluated: 3
+  candidate_category: exactly_3b_plus_highest_pt_untagged
+
+fourb_parity:
+  minimum_selected_tagged_jets: 4
+  maximum_pairing_pool: 8
+  pairing_pool_definition: highest_pt_selected_tagged_jets
+  evaluate_all_four_jet_combinations: true
+  pairings_per_combination: 3
+  frozen_algorithm_required: true
+
+pairing:
+  target_mass_gev: 125.0
+  primary_objective: minimize_abs_mbb1_minus_125_plus_abs_mbb2_minus_125
+  first_tiebreaker: minimize_abs_mbb1_minus_mbb2
+  second_tiebreaker: maximize_sum_higgs_candidate_pt
+  higgs_ordering: descending_higgs_candidate_pt
+  candidate_jet_ordering: descending_jet_pt
+  four_vector_implementation: identical_to_frozen_builder
+  derived_variable_definitions: identical_to_frozen_builder
+
+output_schemas:
+  fourb-parity:
+    column_count: 72
+    contract: exact_frozen_names_order_semantics_and_compatible_dtypes
+    zero_row_output: typed_parquet_with_exact_frozen_schema
+  threeb-control:
+    column_count: 83
+    frozen_prefix_column_count: 72
+    zero_row_output: typed_parquet_with_deterministic_complete_schema
+    appended_provenance_columns:
+      - candidate_category
+      - promoted_jet_rule
+      - promoted_jet_raw_index
+      - promoted_jet_selected_index
+      - promoted_jet_pt
+      - promoted_jet_eta
+      - promoted_jet_phi
+      - promoted_jet_mass
+      - promoted_jet_btag
+      - promoted_jet_flavor
+      - n_selected_untagged_jets
+
+synthetic_parity:
+  status: passed
+  tolerance:
+    relative: 0.0
+    absolute: 1.0e-12
+  integer_and_string_comparison: exact
+  row_count_comparison: exact
+  schema_comparison: exact
+  zero_row_comparison: exact
+  real_delphes_parity_substitute: false
+
+prohibited_uses:
+  - production reconstruction
+  - validation reconstruction
+  - test dataset access
+  - physics yield calculation
+  - significance calculation
+  - normalization calculation
+  - transfer-factor calculation
+  - cut optimization
+  - replacement or redirection of the frozen builder

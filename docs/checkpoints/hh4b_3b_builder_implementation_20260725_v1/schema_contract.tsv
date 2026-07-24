@@ -1,0 +1,156 @@
+column_name	mode	order	logical_type	nullable	semantic_definition	frozen_column_status
+sample	fourb-parity	1	string	no	caller-supplied sample label	frozen_exact
+event	fourb-parity	2	integer	no	zero-based Delphes tree entry index	frozen_exact
+n_selected_jets	fourb-parity	3	integer	no	number of jets passing strict pT and absolute-eta selection	frozen_exact
+n_selected_bjets	fourb-parity	4	integer	no	number of selected jets with Jet.BTag > 0.0	frozen_exact
+n_extra_selected_jets	fourb-parity	5	integer	no	max(n_selected_jets - 4, 0)	frozen_exact
+n_extra_selected_bjets	fourb-parity	6	integer	no	max(n_selected_bjets - 4, 0)	frozen_exact
+ht_selected_jets	fourb-parity	7	float	no	scalar pT sum of all selected jets	frozen_exact
+ht_selected_bjets	fourb-parity	8	float	no	scalar pT sum of all selected tagged jets	frozen_exact
+ht_candidate_jets	fourb-parity	9	float	no	scalar pT sum of the four paired candidate jets	frozen_exact
+pairing	fourb-parity	10	string	no	string form of the winning local four-jet pairing	frozen_exact
+pairing_combo_bjet_ranks	fourb-parity	11	string	no	string form of candidate b-jet ranks; threeb includes promoted rank -1	frozen_exact
+pairing_score_125_125	fourb-parity	12	float	no	abs(mbb(pair 1)-125) + abs(mbb(pair 2)-125)	frozen_exact
+higgs_ordering	fourb-parity	13	string	no	Higgs candidate ordering rule; frozen default is pt	frozen_exact
+mbb1	fourb-parity	14	float	no	invariant mass of pT-leading reconstructed Higgs candidate	frozen_exact
+mbb2	fourb-parity	15	float	no	invariant mass of pT-subleading reconstructed Higgs candidate	frozen_exact
+avg_mbb	fourb-parity	16	float	no	(mbb1 + mbb2) / 2	frozen_exact
+delta_mbb	fourb-parity	17	float	no	abs(mbb1 - mbb2)	frozen_exact
+r_hh	fourb-parity	18	float	no	alias of r_hh_125_125	frozen_exact
+r_hh_125_125	fourb-parity	19	float	no	sqrt((mbb1-125)^2 + (mbb2-125)^2)	frozen_exact
+r_hh_125_120	fourb-parity	20	float	no	sqrt((mbb1-125)^2 + (mbb2-120)^2)	frozen_exact
+mhh	fourb-parity	21	float	no	invariant mass of the four candidate jets	frozen_exact
+hh_pt	fourb-parity	22	float	no	transverse momentum of the four-candidate-jet system	frozen_exact
+hh_eta	fourb-parity	23	float	no	pseudorapidity of the four-candidate-jet system	frozen_exact
+hh_phi	fourb-parity	24	float	no	azimuth of the four-candidate-jet system	frozen_exact
+h1_pt	fourb-parity	25	float	no	transverse momentum of the pT-leading Higgs candidate	frozen_exact
+h1_eta	fourb-parity	26	float	no	pseudorapidity of the pT-leading Higgs candidate	frozen_exact
+h1_phi	fourb-parity	27	float	no	azimuth of the pT-leading Higgs candidate	frozen_exact
+h2_pt	fourb-parity	28	float	no	transverse momentum of the pT-subleading Higgs candidate	frozen_exact
+h2_eta	fourb-parity	29	float	no	pseudorapidity of the pT-subleading Higgs candidate	frozen_exact
+h2_phi	fourb-parity	30	float	no	azimuth of the pT-subleading Higgs candidate	frozen_exact
+h_delta_eta	fourb-parity	31	float	no	h1_eta - h2_eta	frozen_exact
+h_delta_phi	fourb-parity	32	float	no	wrapped h1_phi - h2_phi	frozen_exact
+h_delta_r	fourb-parity	33	float	no	sqrt(h_delta_eta^2 + h_delta_phi^2)	frozen_exact
+h_pt_balance	fourb-parity	34	float	no	abs(h1_pt-h2_pt)/(h1_pt+h2_pt+1e-6)	frozen_exact
+drbb1	fourb-parity	35	float	no	delta-R between the two jets assigned to h1	frozen_exact
+drbb2	fourb-parity	36	float	no	delta-R between the two jets assigned to h2	frozen_exact
+j1_pt	fourb-parity	37	float	no	transverse momentum of candidate jet 1, ordered by descending pT	frozen_exact
+j2_pt	fourb-parity	38	float	no	transverse momentum of candidate jet 2, ordered by descending pT	frozen_exact
+j3_pt	fourb-parity	39	float	no	transverse momentum of candidate jet 3, ordered by descending pT	frozen_exact
+j4_pt	fourb-parity	40	float	no	transverse momentum of candidate jet 4, ordered by descending pT	frozen_exact
+j1_eta	fourb-parity	41	float	no	pseudorapidity of candidate jet 1, ordered by descending pT	frozen_exact
+j1_phi	fourb-parity	42	float	no	azimuth of candidate jet 1, ordered by descending pT	frozen_exact
+j1_mass	fourb-parity	43	float	no	mass of candidate jet 1, ordered by descending pT	frozen_exact
+j1_btag	fourb-parity	44	float	no	Jet.BTag value of candidate jet 1, ordered by descending pT	frozen_exact
+j1_flavor	fourb-parity	45	integer	no	Jet.Flavor value of candidate jet 1, ordered by descending pT	frozen_exact
+j1_raw_index	fourb-parity	46	integer	no	raw Delphes jet index of candidate jet 1, ordered by descending pT	frozen_exact
+j1_selected_index	fourb-parity	47	integer	no	pT-ordered selected-jet index of candidate jet 1, ordered by descending pT	frozen_exact
+j1_bjet_rank	fourb-parity	48	integer	no	pT-ordered selected-tagged-jet rank; promoted threeb jet is -1 of candidate jet 1, ordered by descending pT	frozen_exact
+j2_eta	fourb-parity	49	float	no	pseudorapidity of candidate jet 2, ordered by descending pT	frozen_exact
+j2_phi	fourb-parity	50	float	no	azimuth of candidate jet 2, ordered by descending pT	frozen_exact
+j2_mass	fourb-parity	51	float	no	mass of candidate jet 2, ordered by descending pT	frozen_exact
+j2_btag	fourb-parity	52	float	no	Jet.BTag value of candidate jet 2, ordered by descending pT	frozen_exact
+j2_flavor	fourb-parity	53	integer	no	Jet.Flavor value of candidate jet 2, ordered by descending pT	frozen_exact
+j2_raw_index	fourb-parity	54	integer	no	raw Delphes jet index of candidate jet 2, ordered by descending pT	frozen_exact
+j2_selected_index	fourb-parity	55	integer	no	pT-ordered selected-jet index of candidate jet 2, ordered by descending pT	frozen_exact
+j2_bjet_rank	fourb-parity	56	integer	no	pT-ordered selected-tagged-jet rank; promoted threeb jet is -1 of candidate jet 2, ordered by descending pT	frozen_exact
+j3_eta	fourb-parity	57	float	no	pseudorapidity of candidate jet 3, ordered by descending pT	frozen_exact
+j3_phi	fourb-parity	58	float	no	azimuth of candidate jet 3, ordered by descending pT	frozen_exact
+j3_mass	fourb-parity	59	float	no	mass of candidate jet 3, ordered by descending pT	frozen_exact
+j3_btag	fourb-parity	60	float	no	Jet.BTag value of candidate jet 3, ordered by descending pT	frozen_exact
+j3_flavor	fourb-parity	61	integer	no	Jet.Flavor value of candidate jet 3, ordered by descending pT	frozen_exact
+j3_raw_index	fourb-parity	62	integer	no	raw Delphes jet index of candidate jet 3, ordered by descending pT	frozen_exact
+j3_selected_index	fourb-parity	63	integer	no	pT-ordered selected-jet index of candidate jet 3, ordered by descending pT	frozen_exact
+j3_bjet_rank	fourb-parity	64	integer	no	pT-ordered selected-tagged-jet rank; promoted threeb jet is -1 of candidate jet 3, ordered by descending pT	frozen_exact
+j4_eta	fourb-parity	65	float	no	pseudorapidity of candidate jet 4, ordered by descending pT	frozen_exact
+j4_phi	fourb-parity	66	float	no	azimuth of candidate jet 4, ordered by descending pT	frozen_exact
+j4_mass	fourb-parity	67	float	no	mass of candidate jet 4, ordered by descending pT	frozen_exact
+j4_btag	fourb-parity	68	float	no	Jet.BTag value of candidate jet 4, ordered by descending pT	frozen_exact
+j4_flavor	fourb-parity	69	integer	no	Jet.Flavor value of candidate jet 4, ordered by descending pT	frozen_exact
+j4_raw_index	fourb-parity	70	integer	no	raw Delphes jet index of candidate jet 4, ordered by descending pT	frozen_exact
+j4_selected_index	fourb-parity	71	integer	no	pT-ordered selected-jet index of candidate jet 4, ordered by descending pT	frozen_exact
+j4_bjet_rank	fourb-parity	72	integer	no	pT-ordered selected-tagged-jet rank; promoted threeb jet is -1 of candidate jet 4, ordered by descending pT	frozen_exact
+sample	threeb-control	1	string	no	caller-supplied sample label	frozen_exact
+event	threeb-control	2	integer	no	zero-based Delphes tree entry index	frozen_exact
+n_selected_jets	threeb-control	3	integer	no	number of jets passing strict pT and absolute-eta selection	frozen_exact
+n_selected_bjets	threeb-control	4	integer	no	number of selected jets with Jet.BTag > 0.0	frozen_exact
+n_extra_selected_jets	threeb-control	5	integer	no	max(n_selected_jets - 4, 0)	frozen_exact
+n_extra_selected_bjets	threeb-control	6	integer	no	max(n_selected_bjets - 4, 0)	frozen_exact
+ht_selected_jets	threeb-control	7	float	no	scalar pT sum of all selected jets	frozen_exact
+ht_selected_bjets	threeb-control	8	float	no	scalar pT sum of all selected tagged jets	frozen_exact
+ht_candidate_jets	threeb-control	9	float	no	scalar pT sum of the four paired candidate jets	frozen_exact
+pairing	threeb-control	10	string	no	string form of the winning local four-jet pairing	frozen_exact
+pairing_combo_bjet_ranks	threeb-control	11	string	no	string form of candidate b-jet ranks; threeb includes promoted rank -1	frozen_exact
+pairing_score_125_125	threeb-control	12	float	no	abs(mbb(pair 1)-125) + abs(mbb(pair 2)-125)	frozen_exact
+higgs_ordering	threeb-control	13	string	no	Higgs candidate ordering rule; frozen default is pt	frozen_exact
+mbb1	threeb-control	14	float	no	invariant mass of pT-leading reconstructed Higgs candidate	frozen_exact
+mbb2	threeb-control	15	float	no	invariant mass of pT-subleading reconstructed Higgs candidate	frozen_exact
+avg_mbb	threeb-control	16	float	no	(mbb1 + mbb2) / 2	frozen_exact
+delta_mbb	threeb-control	17	float	no	abs(mbb1 - mbb2)	frozen_exact
+r_hh	threeb-control	18	float	no	alias of r_hh_125_125	frozen_exact
+r_hh_125_125	threeb-control	19	float	no	sqrt((mbb1-125)^2 + (mbb2-125)^2)	frozen_exact
+r_hh_125_120	threeb-control	20	float	no	sqrt((mbb1-125)^2 + (mbb2-120)^2)	frozen_exact
+mhh	threeb-control	21	float	no	invariant mass of the four candidate jets	frozen_exact
+hh_pt	threeb-control	22	float	no	transverse momentum of the four-candidate-jet system	frozen_exact
+hh_eta	threeb-control	23	float	no	pseudorapidity of the four-candidate-jet system	frozen_exact
+hh_phi	threeb-control	24	float	no	azimuth of the four-candidate-jet system	frozen_exact
+h1_pt	threeb-control	25	float	no	transverse momentum of the pT-leading Higgs candidate	frozen_exact
+h1_eta	threeb-control	26	float	no	pseudorapidity of the pT-leading Higgs candidate	frozen_exact
+h1_phi	threeb-control	27	float	no	azimuth of the pT-leading Higgs candidate	frozen_exact
+h2_pt	threeb-control	28	float	no	transverse momentum of the pT-subleading Higgs candidate	frozen_exact
+h2_eta	threeb-control	29	float	no	pseudorapidity of the pT-subleading Higgs candidate	frozen_exact
+h2_phi	threeb-control	30	float	no	azimuth of the pT-subleading Higgs candidate	frozen_exact
+h_delta_eta	threeb-control	31	float	no	h1_eta - h2_eta	frozen_exact
+h_delta_phi	threeb-control	32	float	no	wrapped h1_phi - h2_phi	frozen_exact
+h_delta_r	threeb-control	33	float	no	sqrt(h_delta_eta^2 + h_delta_phi^2)	frozen_exact
+h_pt_balance	threeb-control	34	float	no	abs(h1_pt-h2_pt)/(h1_pt+h2_pt+1e-6)	frozen_exact
+drbb1	threeb-control	35	float	no	delta-R between the two jets assigned to h1	frozen_exact
+drbb2	threeb-control	36	float	no	delta-R between the two jets assigned to h2	frozen_exact
+j1_pt	threeb-control	37	float	no	transverse momentum of candidate jet 1, ordered by descending pT	frozen_exact
+j2_pt	threeb-control	38	float	no	transverse momentum of candidate jet 2, ordered by descending pT	frozen_exact
+j3_pt	threeb-control	39	float	no	transverse momentum of candidate jet 3, ordered by descending pT	frozen_exact
+j4_pt	threeb-control	40	float	no	transverse momentum of candidate jet 4, ordered by descending pT	frozen_exact
+j1_eta	threeb-control	41	float	no	pseudorapidity of candidate jet 1, ordered by descending pT	frozen_exact
+j1_phi	threeb-control	42	float	no	azimuth of candidate jet 1, ordered by descending pT	frozen_exact
+j1_mass	threeb-control	43	float	no	mass of candidate jet 1, ordered by descending pT	frozen_exact
+j1_btag	threeb-control	44	float	no	Jet.BTag value of candidate jet 1, ordered by descending pT	frozen_exact
+j1_flavor	threeb-control	45	integer	no	Jet.Flavor value of candidate jet 1, ordered by descending pT	frozen_exact
+j1_raw_index	threeb-control	46	integer	no	raw Delphes jet index of candidate jet 1, ordered by descending pT	frozen_exact
+j1_selected_index	threeb-control	47	integer	no	pT-ordered selected-jet index of candidate jet 1, ordered by descending pT	frozen_exact
+j1_bjet_rank	threeb-control	48	integer	no	pT-ordered selected-tagged-jet rank; promoted threeb jet is -1 of candidate jet 1, ordered by descending pT	frozen_exact
+j2_eta	threeb-control	49	float	no	pseudorapidity of candidate jet 2, ordered by descending pT	frozen_exact
+j2_phi	threeb-control	50	float	no	azimuth of candidate jet 2, ordered by descending pT	frozen_exact
+j2_mass	threeb-control	51	float	no	mass of candidate jet 2, ordered by descending pT	frozen_exact
+j2_btag	threeb-control	52	float	no	Jet.BTag value of candidate jet 2, ordered by descending pT	frozen_exact
+j2_flavor	threeb-control	53	integer	no	Jet.Flavor value of candidate jet 2, ordered by descending pT	frozen_exact
+j2_raw_index	threeb-control	54	integer	no	raw Delphes jet index of candidate jet 2, ordered by descending pT	frozen_exact
+j2_selected_index	threeb-control	55	integer	no	pT-ordered selected-jet index of candidate jet 2, ordered by descending pT	frozen_exact
+j2_bjet_rank	threeb-control	56	integer	no	pT-ordered selected-tagged-jet rank; promoted threeb jet is -1 of candidate jet 2, ordered by descending pT	frozen_exact
+j3_eta	threeb-control	57	float	no	pseudorapidity of candidate jet 3, ordered by descending pT	frozen_exact
+j3_phi	threeb-control	58	float	no	azimuth of candidate jet 3, ordered by descending pT	frozen_exact
+j3_mass	threeb-control	59	float	no	mass of candidate jet 3, ordered by descending pT	frozen_exact
+j3_btag	threeb-control	60	float	no	Jet.BTag value of candidate jet 3, ordered by descending pT	frozen_exact
+j3_flavor	threeb-control	61	integer	no	Jet.Flavor value of candidate jet 3, ordered by descending pT	frozen_exact
+j3_raw_index	threeb-control	62	integer	no	raw Delphes jet index of candidate jet 3, ordered by descending pT	frozen_exact
+j3_selected_index	threeb-control	63	integer	no	pT-ordered selected-jet index of candidate jet 3, ordered by descending pT	frozen_exact
+j3_bjet_rank	threeb-control	64	integer	no	pT-ordered selected-tagged-jet rank; promoted threeb jet is -1 of candidate jet 3, ordered by descending pT	frozen_exact
+j4_eta	threeb-control	65	float	no	pseudorapidity of candidate jet 4, ordered by descending pT	frozen_exact
+j4_phi	threeb-control	66	float	no	azimuth of candidate jet 4, ordered by descending pT	frozen_exact
+j4_mass	threeb-control	67	float	no	mass of candidate jet 4, ordered by descending pT	frozen_exact
+j4_btag	threeb-control	68	float	no	Jet.BTag value of candidate jet 4, ordered by descending pT	frozen_exact
+j4_flavor	threeb-control	69	integer	no	Jet.Flavor value of candidate jet 4, ordered by descending pT	frozen_exact
+j4_raw_index	threeb-control	70	integer	no	raw Delphes jet index of candidate jet 4, ordered by descending pT	frozen_exact
+j4_selected_index	threeb-control	71	integer	no	pT-ordered selected-jet index of candidate jet 4, ordered by descending pT	frozen_exact
+j4_bjet_rank	threeb-control	72	integer	no	pT-ordered selected-tagged-jet rank; promoted threeb jet is -1 of candidate jet 4, ordered by descending pT	frozen_exact
+candidate_category	threeb-control	73	string	no	constant exactly_3b_plus_highest_pt_untagged	threeb_extension
+promoted_jet_rule	threeb-control	74	string	no	constant highest_pt_selected_untagged	threeb_extension
+promoted_jet_raw_index	threeb-control	75	integer	no	raw Delphes jet index of the promoted untagged jet	threeb_extension
+promoted_jet_selected_index	threeb-control	76	integer	no	pT-ordered selected-jet index of the promoted untagged jet	threeb_extension
+promoted_jet_pt	threeb-control	77	float	no	transverse momentum of the promoted untagged jet	threeb_extension
+promoted_jet_eta	threeb-control	78	float	no	pseudorapidity of the promoted untagged jet	threeb_extension
+promoted_jet_phi	threeb-control	79	float	no	azimuth of the promoted untagged jet	threeb_extension
+promoted_jet_mass	threeb-control	80	float	no	mass of the promoted untagged jet	threeb_extension
+promoted_jet_btag	threeb-control	81	float	no	Jet.BTag value of promoted jet; required <= 0.0	threeb_extension
+promoted_jet_flavor	threeb-control	82	integer	no	Jet.Flavor value of the promoted untagged jet	threeb_extension
+n_selected_untagged_jets	threeb-control	83	integer	no	number of selected jets with Jet.BTag <= 0.0	threeb_extension

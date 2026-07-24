@@ -1,0 +1,24 @@
+{
+  "fourb_parity_builder_invocations": 2,
+  "frozen_builder_invocations": 2,
+  "parity_columns_compared": 72,
+  "parity_mismatches": 0,
+  "parity_rows_compared": 6,
+  "physics_yields_calculated": 0,
+  "real_development_root_files_opened": 0,
+  "real_test_root_files_opened": 0,
+  "real_validation_root_files_opened": 0,
+  "schema_version": 1,
+  "synthetic_events_processed": 30,
+  "synthetic_event_processing_breakdown": {
+    "direct_function_level_event_invocations": 12,
+    "root_fixture_event_invocations": 18
+  },
+  "synthetic_root_files_created": 2,
+  "synthetic_root_files_opened": 4,
+  "temporary_files_remaining": 0,
+  "test_command": "pytest -q tests/test_reconstruct_hh4b_3b_control_candidates.py",
+  "tests_collected": 23,
+  "tests_failed": 0,
+  "tests_passed": 23
+}

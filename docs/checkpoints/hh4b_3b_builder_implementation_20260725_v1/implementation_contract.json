@@ -1,0 +1,91 @@
+{
+  "btag_selection": {
+    "branch": "Jet.BTag",
+    "interpretation": "Delphes binary b-tag flag, not CMS DeepJet",
+    "operator": ">",
+    "threshold": 0.0
+  },
+  "frozen_builder_path": "scripts/delphes/reconstruct_hh4b_candidates_v2.py",
+  "frozen_builder_sha256": "4d7eb8e3400ec50c1c254744e6f3a2b11bd033a4525c13ec22e85247ecf59c57",
+  "frozen_policy_path": "configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml",
+  "frozen_policy_sha256": "4b2a951dba7ac8bd0e2e982e3447e998e07b86d63390c248600976b3f4912b68",
+  "jet_selection": {
+    "abs_eta_max": 2.5,
+    "abs_eta_operator": "<",
+    "pt_min_gev": 30.0,
+    "pt_operator": ">"
+  },
+  "mode_names": [
+    "threeb-control",
+    "fourb-parity"
+  ],
+  "new_builder_path": "scripts/delphes/reconstruct_hh4b_3b_control_candidates.py",
+  "new_builder_sha256": "d81a27538437d90878f98d7f7760e5aa574814b9af6da99810642d76c6c2afa8",
+  "next_gate": "prove_hh4b_4b_parity_on_real_delphes_canaries",
+  "output_schema_contract": {
+    "fourb-parity": {
+      "column_count": 72,
+      "columns": "exact frozen names and order",
+      "threeb_only_fields_present": false,
+      "zero_row_behavior": "typed Parquet with exact frozen schema"
+    },
+    "threeb-control": {
+      "appended_provenance_columns": [
+        "candidate_category",
+        "promoted_jet_rule",
+        "promoted_jet_raw_index",
+        "promoted_jet_selected_index",
+        "promoted_jet_pt",
+        "promoted_jet_eta",
+        "promoted_jet_phi",
+        "promoted_jet_mass",
+        "promoted_jet_btag",
+        "promoted_jet_flavor",
+        "n_selected_untagged_jets"
+      ],
+      "column_count": 83,
+      "frozen_prefix_column_count": 72,
+      "zero_row_behavior": "typed Parquet with deterministic complete schema"
+    }
+  },
+  "pairing_contract": {
+    "candidate_jet_ordering": "descending jet pT",
+    "first_tiebreaker": "minimize abs(mbb1 - mbb2)",
+    "fourb_pairing_pool": "up to eight highest-pT selected tagged jets",
+    "higgs_ordering": "descending Higgs-candidate pT",
+    "pairings_per_fixed_four_jets": 3,
+    "primary_objective": "minimize abs(mbb1 - 125) + abs(mbb2 - 125)",
+    "second_tiebreaker": "maximize pT(h1) + pT(h2)",
+    "target_mass_gev": 125.0
+  },
+  "production_authorized": false,
+  "promoted_jet_rule": {
+    "bjet_rank": -1,
+    "chosen_before_pairing": true,
+    "rule": "highest_pt_selected_untagged"
+  },
+  "required_root_branches": [
+    "Jet.PT",
+    "Jet.Eta",
+    "Jet.Phi",
+    "Jet.Mass",
+    "Jet.BTag",
+    "Jet.Flavor"
+  ],
+  "schema_version": 1,
+  "source_commit": "88acf8e44663da5239a4205f3ac9a5c310e734a1",
+  "test_access_authorized": false,
+  "threeb_category_definition": {
+    "candidate_category": "exactly_3b_plus_highest_pt_untagged",
+    "candidate_jets": "three selected tagged jets plus the highest-pT selected untagged jet",
+    "minimum_selected_jets": 4,
+    "required_selected_tagged_jets": 3,
+    "selected_untagged_definition": "Jet.BTag <= 0.0",
+    "tagged_candidate_bjet_ranks": [
+      0,
+      1,
+      2
+    ]
+  },
+  "validation_reconstruction_authorized": false
+}

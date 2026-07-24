@@ -1,0 +1,28 @@
+requirement_id	scope	requirement	comparison	pass_condition
+P001	input	source ROOT member	exact locator and checksum	the frozen and parity builders read the same real Delphes canary member
+P002	input	mode selection	exact command contract	the new builder is invoked explicitly with --mode fourb-parity
+P003	input	ROOT branches	exact ordered set	both builders read only Jet.PT, Jet.Eta, Jet.Phi, Jet.Mass, Jet.BTag, and Jet.Flavor
+P004	configuration	jet pT selection	exact value and operator	Jet.PT > 30.0 in both builders
+P005	configuration	jet eta selection	exact value and operator	abs(Jet.Eta) < 2.5 in both builders
+P006	configuration	b-tag selection	exact branch, value, and operator	Jet.BTag > 0.0 in both builders
+P007	configuration	target mass	exact value	125.0 GeV in both builders
+P008	configuration	maximum pairing pool	exact value	eight highest-pT selected tagged jets in both builders
+P009	algorithm	four-jet combinations	exact enumeration	every four-jet combination from the pairing pool is evaluated in the same order
+P010	algorithm	fixed-jet pairings	exact enumeration	all three distinct pairings are evaluated in the same order
+P011	algorithm	pairing primary objective	exact formula	minimize abs(mbb1 - 125) + abs(mbb2 - 125)
+P012	algorithm	first tie-breaker	exact formula	minimize abs(mbb1 - mbb2)
+P013	algorithm	second tie-breaker	exact formula	maximize pT(h1) + pT(h2)
+P014	algorithm	Higgs ordering	exact rule	descending Higgs-candidate pT
+P015	algorithm	candidate-jet ordering	exact rule	descending jet pT
+P016	output	row count	exact equality	identical selected-candidate row count per real canary
+P017	output	column names and order	exact equality	identical ordered 72-column schema
+P018	output	event identifiers	exact equality	identical event values in identical row order
+P019	output	integer columns	exact equality	every integer value and dtype are compatible
+P020	output	string columns	exact equality	every string value and dtype are compatible
+P021	output	floating-point columns	numeric equality	rtol = 0 and atol = 1e-12 for every finite value with identical non-finite masks
+P022	output	derived variables	numeric equality	all frozen kinematic and R_HH fields satisfy P021
+P023	output	pairing provenance	exact equality	pairing and pairing_combo_bjet_ranks strings are identical
+P024	output	candidate-jet provenance	exact equality	raw indices, selected indices, and b-jet ranks are identical
+P025	output	zero-candidate behavior	exact schema equality	both builders write readable zero-row Parquet with the ordered frozen 72 columns and compatible dtypes
+P026	safety	threeb-only fields	exact absence	no threeb provenance field is present in fourb-parity output
+P027	evidence	parity mismatch total	exact count	zero mismatches across every required comparison
