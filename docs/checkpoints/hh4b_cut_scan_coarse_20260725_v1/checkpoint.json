@@ -1,0 +1,43 @@
+{
+  "classification": "provisional_train_only_development_result",
+  "comparison_percent_changes": {
+    "balanced_proxy_s_over_b": -16.526079309271314,
+    "balanced_proxy_s_over_sqrt_b": 31.983015632289735,
+    "selected_background": 161.3491124260355,
+    "selected_signal": 108.56560163154319
+  },
+  "configuration": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/configs/baselines/hh4b_optimized_cut_scan_coarse_v1.json",
+  "configuration_sha256": "5b7ab1f77c908cf6abc8f8b3a3bfc06ee5ea36caefed228ddd474addfc6ae52a",
+  "figures": [
+    "coarse_best_proxy_vs_ptmin.svg",
+    "coarse_best_proxy_vs_rhh.svg",
+    "coarse_proxy_heatmap_eta2p4.svg",
+    "coarse_proxy_heatmap_eta2p5.svg",
+    "coarse_scan_pareto.svg"
+  ],
+  "grid_points": 512,
+  "near_optimal_plateau_points": 6,
+  "next_gate": "run_train_only_fine_cut_scan",
+  "pareto_frontier_points": 78,
+  "physical_background_normalization_frozen": false,
+  "physical_significance_authorized": false,
+  "physical_significance_computed": false,
+  "provisional_coarse_working_point": {
+    "balanced_proxy_s_over_sqrt_b": 1.245031376543508,
+    "jet_abs_eta_max": 2.5,
+    "jet_pt_min_GeV": 30.0,
+    "point_id": "pt30_eta2p5_rhh34",
+    "rhh_sr_max": 34.0
+  },
+  "schema_version": 1,
+  "source_cache": "/uscms_data/d3/iturkmen/hh4b_delphes/analysis_cache/hh4b_cut_scan_development_20260725_v1.parquet",
+  "source_cache_sha256": "ac9d088152fa333dcce36c77e6c891d0c446b29f35aeb12c09d33d3133690be0",
+  "source_commit": "038f793c783ed5842edcbc4891907963b7aef457",
+  "source_shortlist": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cut_scan_coarse_train_20260725_v1/coarse_scan_shortlist.tsv",
+  "source_shortlist_sha256": "811ea6af4583245a9227c14baa9e902aa7216261c0c9236fd73ddbf231cfaa49",
+  "source_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cut_scan_coarse_train_20260725_v1/coarse_scan_summary.json",
+  "source_summary_sha256": "a2621f617ee1f61c1b24d674753e6384a845da9749440a6a7315368557b29d2a",
+  "status": "hh4b_coarse_cut_scan_checkpoint",
+  "test_candidate_files_opened": 0,
+  "validation_rows_evaluated": 0
+}

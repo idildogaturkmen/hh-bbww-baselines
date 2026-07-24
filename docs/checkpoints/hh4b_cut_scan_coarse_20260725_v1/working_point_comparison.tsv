@@ -1,0 +1,3 @@
+working_point	point_id	jet_pt_min_GeV	jet_abs_eta_max	rhh_sr_max	selected_signal	selected_background	balanced_signal_efficiency	family_balanced_background_efficiency	balanced_proxy_s_over_sqrt_b	balanced_proxy_s_over_b	status
+reference	pt40_eta2p4_rhh30	40.0	2.4	30.0	2942	4225	0.2949786590051904	0.09778150005968853	0.9433269656545945	3.01671235177541	frozen_reference_cut_point
+coarse_proxy_optimum	pt30_eta2p5_rhh34	30.0	2.5	34.0	6136	11042	0.6155677785603654	0.2444506323585033	1.245031376543508	2.518168075988422	provisional_train_only_coarse_working_point
