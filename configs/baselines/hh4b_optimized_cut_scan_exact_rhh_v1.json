@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "analysis_name": "hh4b_optimized_cut_baseline_exact_rhh_v1",
+  "scan_stage": "exact_observed_rhh_train_only",
+  "cache_path": "/uscms_data/d3/iturkmen/hh4b_delphes/analysis_cache/hh4b_cut_scan_development_20260725_v1.parquet",
+  "cache_sha256": "ac9d088152fa333dcce36c77e6c891d0c446b29f35aeb12c09d33d3133690be0",
+  "fine_summary_path": "outputs/agent_runs/hh4b_cut_scan_fine_train_20260725_v1/fine_scan_summary.json",
+  "fine_summary_sha256": "9905bedbc297409936a58b7cb0efd79a45c646adce9d6504521935d934b2c9b8",
+  "fine_plateau_path": "outputs/agent_runs/hh4b_cut_scan_fine_train_20260725_v1/fine_scan_plateau.tsv",
+  "fine_plateau_sha256": "c529f59af3e32bf91bd89353aa1c7d2a62260bfad5af13d193b72f7e8cc581d5",
+  "output_dir": "outputs/agent_runs/hh4b_cut_scan_exact_rhh_train_20260725_v1",
+  "dataset_split": "train",
+  "expected_rows": {
+    "total": 57326,
+    "signal": 9975,
+    "background": 47351,
+    "ggf_hh4b": 4893,
+    "vbf_hh4b": 5082
+  },
+  "fixed_acceptance": {
+    "jet_pt_variable": "min_jet_pt",
+    "jet_pt_min_GeV": 30.0,
+    "jet_pt_inequality": ">",
+    "jet_eta_variable": "max_abs_jet_eta",
+    "jet_abs_eta_max": 2.5,
+    "jet_eta_inequality": "<",
+    "rhh_variable": "r_hh_125_120"
+  },
+  "exact_scan_window": {
+    "rhh_min": 31.0,
+    "rhh_max": 36.5,
+    "derivation": "fine-grid near-optimal region with a 0.5-unit margin"
+  },
+  "rounded_anchor_thresholds": [
+    {
+      "label": "higher-purity rounded anchor",
+      "rhh_sr_max": 31.5
+    },
+    {
+      "label": "fine-grid proxy optimum",
+      "rhh_sr_max": 34.0
+    },
+    {
+      "label": "higher-efficiency rounded anchor",
+      "rhh_sr_max": 35.5
+    }
+  ],
+  "signal_modes": [
+    "ggf_hh4b",
+    "vbf_hh4b"
+  ],
+  "ranking": {
+    "metric": "balanced_proxy_s_over_sqrt_b",
+    "minimum_selected_background": 100,
+    "minimum_selected_events_per_signal_mode": 50,
+    "stable_fraction_of_best": 0.995
+  },
+  "plotting": {
+    "formats": [
+      "svg",
+      "pdf",
+      "png"
+    ],
+    "dpi": 180,
+    "style_description": "CMS-paper-inspired without CMS branding",
+    "latex_math_labels": true
+  },
+  "physical_background_normalization_frozen": false,
+  "physical_significance_authorized": false,
+  "validation_used_for_optimization": false,
+  "test_access_allowed": false
+}
