@@ -1,0 +1,15 @@
+{
+  "classification": "paper_quality_delphes_branch_metadata_checkpoint",
+  "next_gate": "implement_hh4b_3b_control_candidate_builder_with_4b_parity_mode",
+  "representatives_audited": 54,
+  "representatives_failed": 0,
+  "required_branch_checks": 324,
+  "root_event_arrays_read": 0,
+  "schema_strata": 52,
+  "schema_version": 1,
+  "source_commit": "9e32ae1b3159e30953fa13dac5a25fecf8edf654",
+  "source_map_sha256": "e797ab8cc878ea1fbb84c05cd52fb8919c6e67bb56bab07bef46701615a29f60",
+  "status": "hh4b_3b_delphes_branch_audit_pass",
+  "temporary_files_remaining": 0,
+  "test_members_considered": 0
+}

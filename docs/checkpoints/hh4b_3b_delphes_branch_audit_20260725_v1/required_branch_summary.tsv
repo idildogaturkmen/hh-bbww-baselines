@@ -1,0 +1,7 @@
+branch_name	required_compatibility	representatives_checked	present_checks	missing_checks	compatible_checks	incompatible_checks	observed_typenames_json	observed_interpretations_json	status
+Jet.PT	floating_point_jagged	54	54	0	54	0	"[""float[]""]"	"[""AsJagged(AsDtype('>f4'))""]"	pass
+Jet.Eta	floating_point_jagged	54	54	0	54	0	"[""float[]""]"	"[""AsJagged(AsDtype('>f4'))""]"	pass
+Jet.Phi	floating_point_jagged	54	54	0	54	0	"[""float[]""]"	"[""AsJagged(AsDtype('>f4'))""]"	pass
+Jet.Mass	floating_point_jagged	54	54	0	54	0	"[""float[]""]"	"[""AsJagged(AsDtype('>f4'))""]"	pass
+Jet.BTag	numeric_or_boolean_jagged	54	54	0	54	0	"[""uint32_t[]""]"	"[""AsJagged(AsDtype('>u4'))""]"	pass
+Jet.Flavor	integral_numeric_jagged	54	54	0	54	0	"[""uint32_t[]""]"	"[""AsJagged(AsDtype('>u4'))""]"	pass

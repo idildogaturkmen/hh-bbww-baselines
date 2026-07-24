@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "analysis_name": "hh4b_3b_delphes_branch_audit_v1",
+  "source_commit": "9e32ae1b3159e30953fa13dac5a25fecf8edf654",
+  "source_map_path": "docs/checkpoints/hh4b_3b_root_source_map_20260725_v1/member_level_root_source_map.tsv",
+  "source_map_sha256": "e797ab8cc878ea1fbb84c05cd52fb8919c6e67bb56bab07bef46701615a29f60",
+  "source_map_checkpoint_dir": "docs/checkpoints/hh4b_3b_root_source_map_20260725_v1",
+  "output_dir": "outputs/agent_runs/hh4b_3b_delphes_branch_audit_20260725_v1",
+  "checkpoint_dir": "docs/checkpoints/hh4b_3b_delphes_branch_audit_20260725_v1",
+  "temporary_root": "/tmp",
+  "xrdcp_timeout_seconds": 1800,
+  "required_tree": "Delphes",
+  "required_branches": {
+    "Jet.PT": "floating_point_jagged",
+    "Jet.Eta": "floating_point_jagged",
+    "Jet.Phi": "floating_point_jagged",
+    "Jet.Mass": "floating_point_jagged",
+    "Jet.BTag": "numeric_or_boolean_jagged",
+    "Jet.Flavor": "integral_numeric_jagged"
+  },
+  "development_splits": [
+    "train",
+    "validation"
+  ],
+  "test_access_allowed": false,
+  "expected": {
+    "development_members": 581,
+    "train_members": 458,
+    "validation_members": 123,
+    "signal_members": 107,
+    "background_members": 474,
+    "zero_row_background_members": 220,
+    "required_branches": 6,
+    "root_event_arrays_read": 0,
+    "candidate_files_read": 0,
+    "candidate_physics_columns_read": 0,
+    "test_members_considered": 0,
+    "event_generation_performed": 0,
+    "reconstruction_performed": 0,
+    "physics_yields_calculated": 0
+  }
+}
