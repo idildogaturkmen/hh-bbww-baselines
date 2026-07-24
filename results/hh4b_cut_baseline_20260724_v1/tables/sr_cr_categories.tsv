@@ -1,0 +1,13 @@
+process	category	category_label	selected_events	efficiency_vs_generated	efficiency_vs_candidate
+ggF HH→4b	signal_region_low_mhh	SR, mHH < 450	1456	0.015010309278350516	0.2452004041764904
+ggF HH→4b	signal_region_high_mhh	SR, mHH >= 450	311	0.003206185567010309	0.05237453688110475
+ggF HH→4b	control_region_low_mhh	CR, mHH < 450	503	0.005185567010309278	0.08470865611316941
+ggF HH→4b	control_region_high_mhh	CR, mHH >= 450	147	0.0015154639175257731	0.024755810037049512
+VBF HH→4b	signal_region_low_mhh	SR, mHH < 450	954	0.00954	0.15183829380869013
+VBF HH→4b	signal_region_high_mhh	SR, mHH >= 450	901	0.00901	0.14340283304154067
+VBF HH→4b	control_region_low_mhh	CR, mHH < 450	411	0.00411	0.06541461085468725
+VBF HH→4b	control_region_high_mhh	CR, mHH >= 450	394	0.00394	0.06270889702371478
+All background	signal_region_low_mhh	SR, mHH < 450	3684	0.0008104795623410364	0.0636819360414866
+All background	signal_region_high_mhh	SR, mHH >= 450	1487	0.0003271398233444954	0.02570440795159896
+All background	control_region_low_mhh	CR, mHH < 450	3799	0.0008357795486790437	0.06566983578219533
+All background	control_region_high_mhh	CR, mHH >= 450	3099	0.0006817796318389989	0.05356957649092481

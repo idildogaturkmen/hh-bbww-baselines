@@ -1,0 +1,19 @@
+process	stage_index	stage	stage_label	generated_events	candidate_denominator	selected_events	efficiency_vs_generated	efficiency_vs_candidate
+ggF HH→4b	0	candidate_denominator	Candidate denominator	97000	5938	5938	0.061216494845360826	1.0
+ggF HH→4b	1	four_candidate_jets_pt40	Four jets pT > 40	97000	5938	3015	0.031082474226804123	0.5077467160660155
+ggF HH→4b	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	97000	5938	2932	0.03022680412371134	0.4937689457729875
+ggF HH→4b	3	analysis_region_rhh55	RHH < 55	97000	5938	2417	0.024917525773195875	0.40703940720781406
+ggF HH→4b	4	signal_region_rhh30	SR: RHH < 30	97000	5938	1767	0.018216494845360826	0.29757494105759513
+ggF HH→4b	5	control_region_rhh30_55	CR: 30 <= RHH < 55	97000	5938	650	0.006701030927835051	0.10946446615021893
+VBF HH→4b	0	candidate_denominator	Candidate denominator	100000	6283	6283	0.06283	1.0
+VBF HH→4b	1	four_candidate_jets_pt40	Four jets pT > 40	100000	6283	3491	0.03491	0.5556262931720516
+VBF HH→4b	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	100000	6283	3336	0.03336	0.5309565494190673
+VBF HH→4b	3	analysis_region_rhh55	RHH < 55	100000	6283	2660	0.0266	0.42336463472863284
+VBF HH→4b	4	signal_region_rhh30	SR: RHH < 30	100000	6283	1855	0.01855	0.2952411268502308
+VBF HH→4b	5	control_region_rhh30_55	CR: 30 <= RHH < 55	100000	6283	805	0.00805	0.12812350787840204
+All background	0	candidate_denominator	Candidate denominator	4545457	57850	57850	0.012726993127423711	1.0
+All background	1	four_candidate_jets_pt40	Four jets pT > 40	4545457	57850	33621	0.007396616005827357	0.5811754537597235
+All background	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	4545457	57850	32283	0.007102256164781671	0.5580466724286949
+All background	3	analysis_region_rhh55	RHH < 55	4545457	57850	12069	0.0026551785662035743	0.2086257562662057
+All background	4	signal_region_rhh30	SR: RHH < 30	4545457	57850	5171	0.0011376193856855318	0.08938634399308557
+All background	5	control_region_rhh30_55	CR: 30 <= RHH < 55	4545457	57850	6898	0.0015175591805180425	0.11923941227312014

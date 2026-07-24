@@ -1,0 +1,44 @@
+{
+  "background_families_preserved": true,
+  "baseline_name": "hh4b_cms_run2_resolved_rich_v2_reference_v1",
+  "development_results": {
+    "all_background": {
+      "candidate_rows": 57850,
+      "generated_events": 4545457,
+      "signal_region_efficiency_vs_candidate": 0.08938634399308557,
+      "signal_region_efficiency_vs_generated": 0.0011376193856855318,
+      "signal_region_events": 5171
+    },
+    "ggf_hh4b": {
+      "candidate_rows": 5938,
+      "generated_events": 97000,
+      "signal_region_efficiency_vs_candidate": 0.29757494105759513,
+      "signal_region_efficiency_vs_generated": 0.018216494845360826,
+      "signal_region_events": 1767
+    },
+    "vbf_hh4b": {
+      "candidate_rows": 6283,
+      "generated_events": 100000,
+      "signal_region_efficiency_vs_candidate": 0.2952411268502308,
+      "signal_region_efficiency_vs_generated": 0.01855,
+      "signal_region_events": 1855
+    }
+  },
+  "next_comparison": "BDT_on_same_validation_population",
+  "optimization_performed": false,
+  "physical_S_over_B_authorized": false,
+  "physical_S_over_sqrt_B_authorized": false,
+  "physical_asimov_ZA_authorized": false,
+  "physical_background_normalization_frozen": false,
+  "processed_splits": [
+    "train",
+    "validation"
+  ],
+  "run2_signal_normalization_available": true,
+  "run3_and_hl_lhc_are_projections": true,
+  "schema_version": 1,
+  "sealed_test_accessed": false,
+  "signal_modes_combined": false,
+  "source_commit": "d01abcfdd714dd9b3da3ba82dbd600880609f5c9",
+  "status": "paper_cut_baseline_package_complete"
+}

@@ -1,0 +1,37 @@
+process	dataset_split	stage_index	stage	stage_label	generated_events	candidate_denominator	selected_events	efficiency_vs_generated	efficiency_vs_candidate
+ggF HH→4b	train	0	candidate_denominator	Candidate denominator	80000	4893	4893	0.0611625	1.0
+ggF HH→4b	train	1	four_candidate_jets_pt40	Four jets pT > 40	80000	4893	2480	0.031	0.5068465154302064
+ggF HH→4b	train	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	80000	4893	2414	0.030175	0.4933578581647251
+ggF HH→4b	train	3	analysis_region_rhh55	RHH < 55	80000	4893	1994	0.024925	0.40752094829348046
+ggF HH→4b	train	4	signal_region_rhh30	SR: RHH < 30	80000	4893	1454	0.018175	0.2971592070304517
+ggF HH→4b	train	5	control_region_rhh30_55	CR: 30 <= RHH < 55	80000	4893	540	0.00675	0.11036174126302882
+ggF HH→4b	validation	0	candidate_denominator	Candidate denominator	17000	1045	1045	0.06147058823529412	1.0
+ggF HH→4b	validation	1	four_candidate_jets_pt40	Four jets pT > 40	17000	1045	535	0.03147058823529412	0.5119617224880383
+ggF HH→4b	validation	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	17000	1045	518	0.030470588235294117	0.49569377990430624
+ggF HH→4b	validation	3	analysis_region_rhh55	RHH < 55	17000	1045	423	0.02488235294117647	0.4047846889952153
+ggF HH→4b	validation	4	signal_region_rhh30	SR: RHH < 30	17000	1045	313	0.018411764705882353	0.29952153110047847
+ggF HH→4b	validation	5	control_region_rhh30_55	CR: 30 <= RHH < 55	17000	1045	110	0.006470588235294118	0.10526315789473684
+VBF HH→4b	train	0	candidate_denominator	Candidate denominator	80000	5082	5082	0.063525	1.0
+VBF HH→4b	train	1	four_candidate_jets_pt40	Four jets pT > 40	80000	5082	2811	0.0351375	0.5531286894923259
+VBF HH→4b	train	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	80000	5082	2680	0.0335	0.5273514364423455
+VBF HH→4b	train	3	analysis_region_rhh55	RHH < 55	80000	5082	2130	0.026625	0.41912632821723733
+VBF HH→4b	train	4	signal_region_rhh30	SR: RHH < 30	80000	5082	1488	0.0186	0.29279811097992914
+VBF HH→4b	train	5	control_region_rhh30_55	CR: 30 <= RHH < 55	80000	5082	642	0.008025	0.12632821723730814
+VBF HH→4b	validation	0	candidate_denominator	Candidate denominator	20000	1201	1201	0.06005	1.0
+VBF HH→4b	validation	1	four_candidate_jets_pt40	Four jets pT > 40	20000	1201	680	0.034	0.5661948376353039
+VBF HH→4b	validation	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	20000	1201	656	0.0328	0.5462114904246461
+VBF HH→4b	validation	3	analysis_region_rhh55	RHH < 55	20000	1201	530	0.0265	0.4412989175686928
+VBF HH→4b	validation	4	signal_region_rhh30	SR: RHH < 30	20000	1201	367	0.01835	0.305578684429642
+VBF HH→4b	validation	5	control_region_rhh30_55	CR: 30 <= RHH < 55	20000	1201	163	0.00815	0.1357202331390508
+All background	train	0	candidate_denominator	Candidate denominator	3571373	47351	47351	0.01325848630204686	1.0
+All background	train	1	four_candidate_jets_pt40	Four jets pT > 40	3571373	47351	27657	0.007744080497892547	0.5840848134147114
+All background	train	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	3571373	47351	26562	0.007437475727122314	0.5609596418238263
+All background	train	3	analysis_region_rhh55	RHH < 55	3571373	47351	9879	0.0027661630414969256	0.20863339739393044
+All background	train	4	signal_region_rhh30	SR: RHH < 30	3571373	47351	4225	0.0011830184077664249	0.08922726024793563
+All background	train	5	control_region_rhh30_55	CR: 30 <= RHH < 55	3571373	47351	5654	0.0015831446337305009	0.11940613714599481
+All background	validation	0	candidate_denominator	Candidate denominator	974084	10499	10499	0.010778331232214059	1.0
+All background	validation	1	four_candidate_jets_pt40	Four jets pT > 40	974084	10499	5964	0.006122675251826331	0.5680541003905134
+All background	validation	2	four_candidate_jets_abs_eta24	Four jets |eta| < 2.4	974084	10499	5721	0.005873210113296184	0.5449090389560911
+All background	validation	3	analysis_region_rhh55	RHH < 55	974084	10499	2190	0.002248266063296389	0.20859129440899132
+All background	validation	4	signal_region_rhh30	SR: RHH < 30	974084	10499	946	0.0009711688109033718	0.09010381941137251
+All background	validation	5	control_region_rhh30_55	CR: 30 <= RHH < 55	974084	10499	1244	0.0012770972523930173	0.11848747499761882

@@ -1,0 +1,3 @@
+model	evaluation_split	operating_point	ggf_signal_efficiency_vs_candidate	vbf_signal_efficiency_vs_candidate	background_efficiency_vs_candidate	roc_auc	physical_S_over_B	physical_S_over_sqrt_B	physical_asimov_ZA	status
+fixed_cut_baseline	validation	r_hh_125_120 < 30 after fixed preselection	0.29952153110047847	0.305578684429642	0.09010381941137251					cut_baseline_complete; physical metrics pending
+BDT	validation	to_be_frozen_from_validation								pending

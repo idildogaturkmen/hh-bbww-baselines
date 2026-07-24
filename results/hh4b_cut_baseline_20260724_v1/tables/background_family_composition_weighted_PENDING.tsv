@@ -1,0 +1,24 @@
+family	run2_138fb_expected_yield	normalization_status	blocker
+qcd_bbbb_iht400to600		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+tttt		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+tth_hbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+zbbbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+ttz_zbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+qcd_bbbb_general		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+ttbar_inclusive		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+bbh_hbb_4fs		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+ttw		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+tw_top		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+tw_antitop		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+wzz_zbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+schannel_single_top		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+tchannel_antitop		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+wwz_zbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+zzz_zbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+ggh_hbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+qcd_hardqcd		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+vbf_hbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+wh_hbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+tchannel_top		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+wz_zbb		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen
+ww		not_authorized	Background normalization, QCD overlap/stratum weights, and filtered-sample semantics not frozen

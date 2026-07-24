@@ -1,0 +1,9 @@
+selection_order	selection_name	definition	threshold	status
+0	candidate_denominator	Rich-v2 reconstructed HH4b candidate; at least four selected b-tagged jets	inherited reconstruction	frozen
+1	four_candidate_jets_pt40	All four candidate jets satisfy pT > 40 GeV	40 GeV, strict	frozen
+2	four_candidate_jets_abs_eta24	All four candidate jets satisfy |eta| < 2.4	2.4, strict	frozen
+3	analysis_region_rhh55	r_hh_125_120 < 55	55, strict upper bound	frozen
+4	signal_region_rhh30	r_hh_125_120 < 30	30, strict upper bound	frozen
+5	control_region_rhh30_55	30 <= r_hh_125_120 < 55	[30, 55)	frozen
+6	low_mhh	mHH < 450 GeV	450 GeV, strict upper bound	frozen
+7	high_mhh	mHH >= 450 GeV	450 GeV, inclusive lower bound	frozen
