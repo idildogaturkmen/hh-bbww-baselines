@@ -1,0 +1,49 @@
+{
+  "analysis_name": "hh4b_3b_source_inventory_v1",
+  "candidate_event_arrays_read": 0,
+  "candidate_provenance_schema_inventory": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_3b_source_preflight_20260725_v2/candidate_provenance_schema_inventory.tsv",
+  "candidate_provenance_values_read": 0,
+  "classification": "paper_quality_provenance_control_artifact",
+  "configuration": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/configs/baselines/hh4b_3b_source_preflight_v1.json",
+  "configuration_sha256": "774323958ac7a4b38ba331f8223ef3064115a14ed481d5741a74451e904ebaa2",
+  "dataset_split_member_counts": {
+    "train": 458,
+    "validation": 123
+  },
+  "development_candidate_rows": 70071,
+  "development_manifest": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_canonical72_development_manifest_20260725_v2/hh4b_canonical72_development_manifest.tsv",
+  "development_manifest_sha256": "b3e42a0af56594445e297e2347ccfd3bd799fd107a578af844c9733bfd2ebe6a",
+  "development_members": 581,
+  "direct_complete_root_field_candidates": [
+    {
+      "development_rows": 10,
+      "field_name": "eos_url",
+      "table_label": "vbf_cache_manifest",
+      "table_path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_vbf_signal_local_cache_audit_20260725_v1/vbf_signal_local_cache_manifest.tsv"
+    }
+  ],
+  "frozen_builder_branch_references": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_3b_source_preflight_20260725_v2/frozen_builder_branch_references.tsv",
+  "members_with_source_root_schema": 97,
+  "next_gate": "build_member_level_root_source_resolution_map",
+  "nonzero_candidate_metadata_files_opened": 361,
+  "observed_schema_column_counts": {
+    "72": 264,
+    "75": 97
+  },
+  "root_files_opened": 0,
+  "root_source_resolution_complete": false,
+  "sample_class_member_counts": {
+    "background": 474,
+    "signal": 107
+  },
+  "schema_version": 1,
+  "source_commit": "8a6ad6e1c1d501a1bd22e6e4b60e10658107c40a",
+  "source_field_inventory": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_3b_source_preflight_20260725_v2/source_field_inventory.tsv",
+  "source_resolution_candidates": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_3b_source_preflight_20260725_v2/source_resolution_candidates.json",
+  "source_table_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_3b_source_preflight_20260725_v2/source_table_summary.tsv",
+  "status": "hh4b_3b_source_inventory_pass",
+  "test_event_rows_read": 0,
+  "test_members_considered": 0,
+  "test_root_files_opened": 0,
+  "zero_row_candidate_files_skipped": 220
+}

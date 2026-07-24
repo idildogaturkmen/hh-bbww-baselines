@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "analysis_name": "hh4b_3b_source_inventory_v1",
+  "output_dir": "outputs/agent_runs/hh4b_3b_source_preflight_20260725_v2",
+  "checkpoint_dir": "docs/checkpoints/hh4b_3b_source_inventory_20260725_v1",
+  "source_commit": "8a6ad6e1c1d501a1bd22e6e4b60e10658107c40a",
+  "development_manifest_path": "outputs/agent_runs/hh4b_canonical72_development_manifest_20260725_v2/hh4b_canonical72_development_manifest.tsv",
+  "development_manifest_sha256": "b3e42a0af56594445e297e2347ccfd3bd799fd107a578af844c9733bfd2ebe6a",
+  "signal_registry_path": "outputs/agent_runs/hh4b_canonical_signal200k_registry_audit_20260723_v1/hh4b_canonical_signal200k_registry.tsv",
+  "background_registry_path": "outputs/agent_runs/background_frozen_v2_strict493_final_payload_audit_20260724_v1/strict493_final_payload_audit.tsv",
+  "vbf_cache_manifest_path": "outputs/agent_runs/hh4b_vbf_signal_local_cache_audit_20260725_v1/vbf_signal_local_cache_manifest.tsv",
+  "frozen_builder_path": "scripts/delphes/reconstruct_hh4b_candidates_v2.py",
+  "frozen_policy_path": "configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml",
+  "expected": {
+    "development_members": 581,
+    "development_candidate_rows": 70071,
+    "signal_development_members": 107,
+    "background_development_members": 474,
+    "train_members": 458,
+    "validation_members": 123,
+    "nonzero_candidate_files": 361,
+    "zero_row_candidate_files": 220,
+    "canonical72_files": 264,
+    "canonical75_files": 97,
+    "candidate_files_with_source_root_column": 97
+  },
+  "development_splits": [
+    "train",
+    "validation"
+  ],
+  "test_access_allowed": false
+}

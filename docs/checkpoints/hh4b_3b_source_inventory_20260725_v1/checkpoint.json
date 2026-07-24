@@ -1,0 +1,13 @@
+{
+  "classification": "paper_quality_provenance_control_artifact",
+  "development_members": 581,
+  "event_arrays_read": 0,
+  "members_with_source_root_schema": 97,
+  "next_gate": "build_member_level_root_source_resolution_map",
+  "root_files_opened": 0,
+  "root_source_resolution_complete": false,
+  "schema_version": 1,
+  "source_commit": "8a6ad6e1c1d501a1bd22e6e4b60e10658107c40a",
+  "status": "hh4b_3b_source_inventory_checkpoint",
+  "test_members_considered": 0
+}

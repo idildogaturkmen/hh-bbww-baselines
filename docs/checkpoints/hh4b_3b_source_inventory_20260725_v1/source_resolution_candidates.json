@@ -1,0 +1,24 @@
+{
+  "candidate_parquet_provenance": {
+    "event_values_read": 0,
+    "members_with_analysis_sample_column": 97,
+    "members_with_source_root_column": 97,
+    "members_with_source_root_index_column": 97
+  },
+  "direct_complete_root_field_candidates": [
+    {
+      "development_rows": 10,
+      "field_name": "eos_url",
+      "table_label": "vbf_cache_manifest",
+      "table_path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_vbf_signal_local_cache_audit_20260725_v1/vbf_signal_local_cache_manifest.tsv"
+    }
+  ],
+  "next_gate": "build_member_level_root_source_resolution_map",
+  "parquet_metadata_key_frequencies": {
+    "ARROW:schema": 361,
+    "pandas": 361
+  },
+  "reason": "No single registry field is assumed to be authoritative. Member-level values must be resolved from direct registry fields, candidate provenance columns, production receipts, and cache/source manifests.",
+  "root_source_resolution_complete": false,
+  "schema_version": 1
+}

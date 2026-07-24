@@ -1,0 +1,15 @@
+reference_type	reference
+literal_dotted_branch	Jet.BTag
+literal_dotted_branch	Jet.Eta
+literal_dotted_branch	Jet.Flavor
+literal_dotted_branch	Jet.Mass
+literal_dotted_branch	Jet.PT
+literal_dotted_branch	Jet.Phi
+source_token	BTag
+source_token	Eta
+source_token	Event
+source_token	Flavor
+source_token	Jet
+source_token	Mass
+source_token	PT
+source_token	Phi

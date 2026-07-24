@@ -1,0 +1,5 @@
+table_label	table_path	development_rows	field_count	split_field	complete_root_fields_json
+canonical_development_manifest	/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_canonical72_development_manifest_20260725_v2/hh4b_canonical72_development_manifest.tsv	581	20	dataset_split	[]
+signal_registry	/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_canonical_signal200k_registry_audit_20260723_v1/hh4b_canonical_signal200k_registry.tsv	107	24	immutable_split	[]
+background_registry	/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/background_frozen_v2_strict493_final_payload_audit_20260724_v1/strict493_final_payload_audit.tsv	474	17	dataset_split	[]
+vbf_cache_manifest	/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_vbf_signal_local_cache_audit_20260725_v1/vbf_signal_local_cache_manifest.tsv	10	15	dataset_split	"[""eos_url""]"
