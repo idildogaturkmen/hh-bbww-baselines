@@ -1,0 +1,4 @@
+resolution_method	resolved_members	expected_members	status
+background_receipt_standard_bundle_layout	474	474	pass
+vbf_registry_standard_bundle_layout	10	10	pass
+candidate_source_root_nested_reconstruction_bundle	97	97	pass

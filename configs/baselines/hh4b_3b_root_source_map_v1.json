@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "analysis_name": "hh4b_3b_root_source_map_v1",
+  "source_commit": "a231664d59c5c5a84e1f7aea08c7a7906e9a0321",
+  "preflight_config_path": "configs/baselines/hh4b_3b_source_preflight_v1.json",
+  "preflight_config_sha256": "774323958ac7a4b38ba331f8223ef3064115a14ed481d5741a74451e904ebaa2",
+  "signal_registry_sha256": "402b7e377247fb3d7a3a4b8f75df302c3fba7a44a07e9c362824247adc5ab420",
+  "background_registry_sha256": "3c0e7bb29d6de4fa6950ba7bf35c6f864a465139bb5994ca9c9464c130515325",
+  "archive_canary_inventory_path": "outputs/agent_runs/hh4b_3b_bundle_archive_canary_20260724_161239/archive_canary_inventory.tsv",
+  "archive_canary_inventory_sha256": "bfb408ef2246b03aacd36adf2b1d77694ba5ea97e5efae86c8b52bb257e71d79",
+  "ggf_layout_inventory_path": "outputs/agent_runs/hh4b_ggf_bundle_layout_adjudication_20260724_161944/ggf_bundle_layout_inventory.tsv",
+  "ggf_layout_inventory_sha256": "640c531ddadc5f2e54e115dd42b4eebdf90337e60583a6bc86223e36716a9a7c",
+  "output_dir": "outputs/agent_runs/hh4b_3b_root_source_map_20260725_v1",
+  "checkpoint_dir": "docs/checkpoints/hh4b_3b_root_source_map_20260725_v1",
+  "eos_host": "root://cmseos.fnal.gov",
+  "remote_stat_workers": 24,
+  "remote_stat_timeout_seconds": 30,
+  "development_splits": [
+    "train",
+    "validation"
+  ],
+  "test_access_allowed": false,
+  "expected": {
+    "development_members": 581,
+    "train_members": 458,
+    "validation_members": 123,
+    "signal_members": 107,
+    "background_members": 474,
+    "zero_row_background_members": 220,
+    "ggf_members": 97,
+    "vbf_members": 10,
+    "candidate_provenance_files_read": 97,
+    "candidate_physics_columns_read": 0,
+    "test_members_considered": 0,
+    "background_receipt_standard_bundle_layout": 474,
+    "vbf_registry_standard_bundle_layout": 10,
+    "candidate_source_root_nested_reconstruction_bundle": 97
+  }
+}

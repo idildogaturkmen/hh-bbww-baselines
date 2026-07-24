@@ -1,0 +1,13 @@
+{
+  "classification": "paper_quality_root_source_provenance_checkpoint",
+  "cross_split_source_locator_groups": 0,
+  "development_members": 581,
+  "next_gate": "audit_required_delphes_branches_for_3b_reconstruction",
+  "remote_metadata_checks_failed": 0,
+  "resolved_members": 581,
+  "root_files_opened": 0,
+  "schema_version": 1,
+  "source_commit": "a231664d59c5c5a84e1f7aea08c7a7906e9a0321",
+  "status": "hh4b_3b_root_source_map_pass",
+  "test_members_considered": 0
+}
