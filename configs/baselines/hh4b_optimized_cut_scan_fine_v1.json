@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "analysis_name": "hh4b_optimized_cut_baseline_fine_v1",
+  "scan_stage": "fine_train_only",
+  "display_stage": "train-only fine scan",
+  "output_prefix": "fine",
+  "cache_path": "/uscms_data/d3/iturkmen/hh4b_delphes/analysis_cache/hh4b_cut_scan_development_20260725_v1.parquet",
+  "cache_sha256": "ac9d088152fa333dcce36c77e6c891d0c446b29f35aeb12c09d33d3133690be0",
+  "coarse_summary_path": "outputs/agent_runs/hh4b_cut_scan_coarse_train_20260725_v1/coarse_scan_summary.json",
+  "coarse_summary_sha256": "a2621f617ee1f61c1b24d674753e6384a845da9749440a6a7315368557b29d2a",
+  "output_dir": "outputs/agent_runs/hh4b_cut_scan_fine_train_20260725_v1",
+  "dataset_split": "train",
+  "expected_rows": {
+    "total": 57326,
+    "signal": 9975,
+    "background": 47351,
+    "ggf_hh4b": 4893,
+    "vbf_hh4b": 5082
+  },
+  "selection": {
+    "jet_pt_variable": "min_jet_pt",
+    "jet_eta_variable": "max_abs_jet_eta",
+    "rhh_variable": "r_hh_125_120",
+    "jet_pt_inequality": ">",
+    "jet_eta_inequality": "<",
+    "rhh_inequality": "<"
+  },
+  "thresholds": {
+    "jet_pt_min_GeV": [
+      30.0,
+      30.5,
+      31.0,
+      31.5,
+      32.0,
+      32.5,
+      33.0,
+      33.5,
+      34.0
+    ],
+    "jet_abs_eta_max": [
+      2.4,
+      2.45,
+      2.5
+    ],
+    "rhh_sr_max": [
+      28.0,
+      28.5,
+      29.0,
+      29.5,
+      30.0,
+      30.5,
+      31.0,
+      31.5,
+      32.0,
+      32.5,
+      33.0,
+      33.5,
+      34.0,
+      34.5,
+      35.0,
+      35.5,
+      36.0,
+      36.5,
+      37.0,
+      37.5,
+      38.0,
+      38.5,
+      39.0,
+      39.5,
+      40.0,
+      40.5,
+      41.0,
+      41.5,
+      42.0
+    ]
+  },
+  "reference_point": {
+    "label": "reference",
+    "jet_pt_min_GeV": 40.0,
+    "jet_abs_eta_max": 2.4,
+    "rhh_sr_max": 30.0
+  },
+  "anchor_point": {
+    "label": "coarse proxy optimum",
+    "jet_pt_min_GeV": 30.0,
+    "jet_abs_eta_max": 2.5,
+    "rhh_sr_max": 34.0
+  },
+  "signal_modes": [
+    "ggf_hh4b",
+    "vbf_hh4b"
+  ],
+  "ranking": {
+    "metric": "balanced_proxy_s_over_sqrt_b",
+    "minimum_selected_background": 100,
+    "minimum_selected_events_per_signal_mode": 50,
+    "plateau_fraction_of_best": 0.99,
+    "shortlist_size": 20
+  },
+  "plotting": {
+    "formats": [
+      "svg",
+      "pdf",
+      "png"
+    ],
+    "dpi": 180,
+    "style_description": "CMS-paper-inspired without CMS branding",
+    "latex_math_labels": true
+  },
+  "physical_background_normalization_frozen": false,
+  "physical_significance_authorized": false,
+  "validation_used_for_optimization": false,
+  "test_access_allowed": false
+}
