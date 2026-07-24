@@ -1,0 +1,27 @@
+{
+  "background_normalization_frozen": false,
+  "component_weights": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cms_style_signal_normalization_20260724_v1/cms_style_signal_component_weights.tsv",
+  "full_weighted_cutflow_authorized": false,
+  "hl_lhc_signal_projection_frozen": true,
+  "next_gate": "freeze_background_process_semantics_overlap_and_energy_specific_xsecs",
+  "normalization_spec": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cms_style_signal_normalization_20260724_v1/cms_style_signal_normalization.json",
+  "normalization_spec_sha256": "5b54809f88fc17ba590001c14be60fd529c4bb0daf99be8a2ccecd6267bcf0a7",
+  "normalized_signal_cutflow": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cms_style_signal_normalization_20260724_v1/cms_style_signal_normalized_cutflow.tsv",
+  "physical_total_background_yield_authorized": false,
+  "run2_plus_run3_signal_projection_frozen": true,
+  "run2_signal_normalization_frozen": true,
+  "schema_version": 1,
+  "sealed_test_accessed": false,
+  "signal_modes": [
+    "ggf_hh4b",
+    "vbf_hh4b"
+  ],
+  "signal_modes_combined": false,
+  "signal_region_yields": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cms_style_signal_normalization_20260724_v1/cms_style_signal_sr_yields.tsv",
+  "significance_authorized": false,
+  "source_joint_baseline": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_joint_unweighted_reference_baseline_20260724_v1/hh4b_joint_unweighted_reference_baseline.json",
+  "source_joint_baseline_sha256": "63a8195af9cc2c08a680ffd622b1c75865389bfc45ccb45117b61649785216fe",
+  "source_value_audit": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_normalization_value_consistency_audit_20260724_v1/normalization_value_consistency_audit.json",
+  "source_value_audit_sha256": "ccec7fb5e3aec595e64e52c89561f907004622a83f0117b89b7968a8fb064d09",
+  "status": "pass"
+}

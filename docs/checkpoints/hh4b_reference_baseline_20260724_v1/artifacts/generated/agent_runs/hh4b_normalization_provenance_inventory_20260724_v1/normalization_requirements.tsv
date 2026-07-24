@@ -1,0 +1,131 @@
+sample_class	process_or_mode	required_quantity	required_provenance	status
+signal	ggf_hh4b	sm_hh_production_cross_section_pb	official LHC Higgs Cross Section Working Group	unresolved
+signal	ggf_hh4b	branching_fraction_h_to_bb	official SM Higgs branching-ratio recommendation	unresolved
+signal	ggf_hh4b	hh_to_bbbb_cross_section_pb	production_xsec * BR(H->bb)^2	unresolved
+signal	ggf_hh4b	generated_event_denominator	canonical signal registry	registry_available
+signal	ggf_hh4b	mode_specific_event_weight_formula	normalization configuration	unresolved
+signal	vbf_hh4b	sm_hh_production_cross_section_pb	official LHC Higgs Cross Section Working Group	unresolved
+signal	vbf_hh4b	branching_fraction_h_to_bb	official SM Higgs branching-ratio recommendation	unresolved
+signal	vbf_hh4b	hh_to_bbbb_cross_section_pb	production_xsec * BR(H->bb)^2	unresolved
+signal	vbf_hh4b	generated_event_denominator	canonical signal registry	registry_available
+signal	vbf_hh4b	mode_specific_event_weight_formula	normalization configuration	unresolved
+background	bbh_hbb_4fs	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	bbh_hbb_4fs	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	bbh_hbb_4fs	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	bbh_hbb_4fs	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	bbh_hbb_4fs	event_weight_formula	normalization configuration	unresolved
+background	ggh_hbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	ggh_hbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	ggh_hbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	ggh_hbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	ggh_hbb	event_weight_formula	normalization configuration	unresolved
+background	qcd_bbbb_general	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	qcd_bbbb_general	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	qcd_bbbb_general	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	qcd_bbbb_general	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	qcd_bbbb_general	event_weight_formula	normalization configuration	unresolved
+background	qcd_bbbb_iht400to600	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	qcd_bbbb_iht400to600	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	qcd_bbbb_iht400to600	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	qcd_bbbb_iht400to600	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	qcd_bbbb_iht400to600	event_weight_formula	normalization configuration	unresolved
+background	qcd_hardqcd	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	qcd_hardqcd	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	qcd_hardqcd	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	qcd_hardqcd	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	qcd_hardqcd	event_weight_formula	normalization configuration	unresolved
+background	schannel_single_top	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	schannel_single_top	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	schannel_single_top	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	schannel_single_top	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	schannel_single_top	event_weight_formula	normalization configuration	unresolved
+background	tchannel_antitop	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	tchannel_antitop	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	tchannel_antitop	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	tchannel_antitop	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	tchannel_antitop	event_weight_formula	normalization configuration	unresolved
+background	tchannel_top	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	tchannel_top	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	tchannel_top	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	tchannel_top	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	tchannel_top	event_weight_formula	normalization configuration	unresolved
+background	ttbar_inclusive	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	ttbar_inclusive	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	ttbar_inclusive	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	ttbar_inclusive	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	ttbar_inclusive	event_weight_formula	normalization configuration	unresolved
+background	tth_hbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	tth_hbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	tth_hbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	tth_hbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	tth_hbb	event_weight_formula	normalization configuration	unresolved
+background	tttt	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	tttt	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	tttt	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	tttt	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	tttt	event_weight_formula	normalization configuration	unresolved
+background	ttw	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	ttw	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	ttw	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	ttw	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	ttw	event_weight_formula	normalization configuration	unresolved
+background	ttz_zbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	ttz_zbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	ttz_zbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	ttz_zbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	ttz_zbb	event_weight_formula	normalization configuration	unresolved
+background	tw_antitop	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	tw_antitop	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	tw_antitop	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	tw_antitop	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	tw_antitop	event_weight_formula	normalization configuration	unresolved
+background	tw_top	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	tw_top	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	tw_top	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	tw_top	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	tw_top	event_weight_formula	normalization configuration	unresolved
+background	vbf_hbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	vbf_hbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	vbf_hbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	vbf_hbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	vbf_hbb	event_weight_formula	normalization configuration	unresolved
+background	wh_hbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	wh_hbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	wh_hbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	wh_hbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	wh_hbb	event_weight_formula	normalization configuration	unresolved
+background	ww	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	ww	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	ww	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	ww	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	ww	event_weight_formula	normalization configuration	unresolved
+background	wwz_zbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	wwz_zbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	wwz_zbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	wwz_zbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	wwz_zbb	event_weight_formula	normalization configuration	unresolved
+background	wz_zbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	wz_zbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	wz_zbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	wz_zbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	wz_zbb	event_weight_formula	normalization configuration	unresolved
+background	wzz_zbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	wzz_zbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	wzz_zbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	wzz_zbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	wzz_zbb	event_weight_formula	normalization configuration	unresolved
+background	zbbbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	zbbbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	zbbbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	zbbbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	zbbbb	event_weight_formula	normalization configuration	unresolved
+background	zzz_zbb	generator_cross_section_pb	generator receipt, run metadata, or validated external source	inventory_pending_review
+background	zzz_zbb	filter_efficiency	generator receipt or run metadata; use 1 only when explicitly justified	inventory_pending_review
+background	zzz_zbb	k_factor	validated process-specific source or explicit unity policy	inventory_pending_review
+background	zzz_zbb	generated_denominator_or_sumw	canonical registry and generator metadata	inventory_pending_review
+background	zzz_zbb	event_weight_formula	normalization configuration	unresolved
+background	qcd_hardqcd	pthat_stratum_cross_section_pb	generator metadata for every pTHat stratum	inventory_pending_review
+background	qcd_hardqcd	importance_sampling_correction	physical allocation and ML-tail campaign manifests	inventory_pending_review
+global	__all__	integrated_luminosity_fb_inverse	analysis configuration	unresolved
+global	__all__	finite_mc_uncertainty_policy	sumw2 plus shard-stratified bootstrap configuration	unresolved
+global	__all__	systematic_uncertainty_model	frozen analysis assumptions	unresolved

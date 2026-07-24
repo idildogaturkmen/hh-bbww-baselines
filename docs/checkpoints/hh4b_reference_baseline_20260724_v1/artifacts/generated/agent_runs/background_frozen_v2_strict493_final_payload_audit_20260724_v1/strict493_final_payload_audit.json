@@ -1,0 +1,43 @@
+{
+  "all_known_hashes_matched": true,
+  "all_nonzero_files_common72": true,
+  "all_pending_hashes_established": true,
+  "all_receipts_passed": true,
+  "audit_table": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/background_frozen_v2_strict493_final_payload_audit_20260724_v1_incomplete/strict493_final_payload_audit.tsv",
+  "candidate_hash_state_counts": {
+    "established_during_materialization": 258,
+    "matched_frozen_plan": 235
+  },
+  "candidate_rows_audited": 57869,
+  "development_candidate_rows": 57850,
+  "development_generated_events": 4545457,
+  "development_members": 474,
+  "development_row_access_authorized": true,
+  "generated_events_audited": 4730000,
+  "members_audited": 493,
+  "physics_yield_authorized": false,
+  "schema_class_counts": {
+    "common72_nonzero": 261,
+    "zero_row_72_named_columns": 8,
+    "zero_row_schema_less": 224
+  },
+  "schema_version": 1,
+  "split_candidate_counts": {
+    "test": 19,
+    "train": 47351,
+    "validation": 10499
+  },
+  "split_member_counts": {
+    "test": 19,
+    "train": 370,
+    "validation": 104
+  },
+  "status": "pass",
+  "technical_test_metadata_audited": true,
+  "test_candidate_rows": 19,
+  "test_generated_events": 184543,
+  "test_members": 19,
+  "test_row_access_authorized": false,
+  "test_row_content_accessed": false,
+  "unweighted_development_cutflow_authorized": true
+}

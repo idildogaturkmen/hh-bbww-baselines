@@ -1,0 +1,9 @@
+checkpoint_name=hh4b_reference_baseline_20260724_v1
+created_utc=2026-07-24T16:37:00Z
+source_branch=delphes-hh4b-production
+source_commit=e4aa6885cbad98c7d892886ff61b5c7202e71fda
+canonical_artifact_count=20
+unweighted_reference_baseline_frozen=true
+run2_signal_normalization_frozen=true
+background_normalization_frozen=false
+sealed_test_accessed=false

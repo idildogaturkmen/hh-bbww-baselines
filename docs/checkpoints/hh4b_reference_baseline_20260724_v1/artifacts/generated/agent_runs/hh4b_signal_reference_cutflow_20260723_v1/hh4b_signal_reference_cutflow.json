@@ -1,0 +1,24 @@
+{
+  "baseline_name": "hh4b_cms_run2_resolved_rich_v2_reference_v1",
+  "baseline_sha256": "d7c35e273fbd40e3a371ac9622c1e6b219f1198778d8f1c7ad6eb011d45bd2d9",
+  "cutflow": "outputs/agent_runs/hh4b_signal_reference_cutflow_20260723_v1/hh4b_signal_reference_cutflow.tsv",
+  "member_cutflow": "outputs/agent_runs/hh4b_signal_reference_cutflow_20260723_v1/hh4b_signal_reference_cutflow_members.tsv",
+  "optimization_performed": false,
+  "physical_yields_reported": false,
+  "processed_candidate_rows": 12221,
+  "processed_generated_events": 197000,
+  "processed_members": 107,
+  "processed_splits": [
+    "train",
+    "validation"
+  ],
+  "registry_sha256": "402b7e377247fb3d7a3a4b8f75df302c3fba7a44a07e9c362824247adc5ab420",
+  "schema_version": 1,
+  "sealed_test_accessed": false,
+  "sealed_test_candidate_rows_skipped": 174,
+  "sealed_test_generated_events_skipped": 3000,
+  "sealed_test_members_skipped": 3,
+  "signal_modes_combined": false,
+  "significance_reported": false,
+  "status": "pass"
+}

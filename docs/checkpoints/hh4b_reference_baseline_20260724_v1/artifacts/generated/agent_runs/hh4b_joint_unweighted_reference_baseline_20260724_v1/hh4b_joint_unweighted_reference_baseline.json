@@ -1,0 +1,187 @@
+{
+  "background_development_candidate_rows": 57850,
+  "background_development_counts": {
+    "candidate_denominator": 57850,
+    "counts": {
+      "analysis_region_rhh55": 12069,
+      "candidate_denominator": 57850,
+      "control_region_high_mhh": 3099,
+      "control_region_low_mhh": 3799,
+      "control_region_rhh30_55": 6898,
+      "four_candidate_jets_abs_eta24": 32283,
+      "four_candidate_jets_pt40": 33621,
+      "signal_region_high_mhh": 1487,
+      "signal_region_low_mhh": 3684,
+      "signal_region_rhh30": 5171
+    },
+    "generated_events": 4545457,
+    "members": 474
+  },
+  "background_development_generated_events": 4545457,
+  "background_development_members": 474,
+  "background_families_preserved": true,
+  "background_test_files_read": 0,
+  "background_test_rows_read": 0,
+  "background_total_counts": {
+    "train": {
+      "candidate_denominator": 47351,
+      "counts": {
+        "analysis_region_rhh55": 9879,
+        "candidate_denominator": 47351,
+        "control_region_high_mhh": 2556,
+        "control_region_low_mhh": 3098,
+        "control_region_rhh30_55": 5654,
+        "four_candidate_jets_abs_eta24": 26562,
+        "four_candidate_jets_pt40": 27657,
+        "signal_region_high_mhh": 1216,
+        "signal_region_low_mhh": 3009,
+        "signal_region_rhh30": 4225
+      },
+      "generated_events": 3571373,
+      "members": 370
+    },
+    "validation": {
+      "candidate_denominator": 10499,
+      "counts": {
+        "analysis_region_rhh55": 2190,
+        "candidate_denominator": 10499,
+        "control_region_high_mhh": 543,
+        "control_region_low_mhh": 701,
+        "control_region_rhh30_55": 1244,
+        "four_candidate_jets_abs_eta24": 5721,
+        "four_candidate_jets_pt40": 5964,
+        "signal_region_high_mhh": 271,
+        "signal_region_low_mhh": 675,
+        "signal_region_rhh30": 946
+      },
+      "generated_events": 974084,
+      "members": 104
+    }
+  },
+  "baseline_config": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/configs/baselines/hh4b_cms_run2_resolved_rich_v2_reference_v1.yaml",
+  "baseline_config_sha256": "d7c35e273fbd40e3a371ac9622c1e6b219f1198778d8f1c7ad6eb011d45bd2d9",
+  "baseline_name": "hh4b_cms_run2_resolved_rich_v2_reference_v1",
+  "comparison_table": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_joint_unweighted_reference_baseline_20260724_v1/hh4b_joint_unweighted_signal_background_comparison.tsv",
+  "comparison_table_sha256": "baf18d383faf8b0624c747693519d5cf648d5a2691915e1f741c20747698c80c",
+  "joint_cutflow": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_joint_unweighted_reference_baseline_20260724_v1/hh4b_joint_unweighted_reference_cutflow.tsv",
+  "joint_cutflow_sha256": "f6f17d7b6d532723fa2e3bf7e529dfe9216f5833b2b1d9538be78a35c6dd1933",
+  "marker_file": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_joint_unweighted_reference_baseline_20260724_v1/hh4b_joint_baseline_markers.txt",
+  "marker_file_sha256": "6b8edc0dce7300186cb0f7a282453c3ec1d56ea8943fc60e58e759378f41b133",
+  "next_gate": "freeze_process_and_mode_normalization_provenance",
+  "normalization_frozen": false,
+  "optimization_performed": false,
+  "physical_yield_authorized": false,
+  "processed_splits": [
+    "train",
+    "validation"
+  ],
+  "raw_signal_background_ratio_reported": false,
+  "schema_version": 1,
+  "sealed_test_accessed": false,
+  "signal_counts": {
+    "ggf_hh4b": {
+      "train": {
+        "candidate_denominator": 4893,
+        "counts": {
+          "analysis_region_rhh55": 1994,
+          "candidate_denominator": 4893,
+          "control_region_high_mhh": 127,
+          "control_region_low_mhh": 413,
+          "control_region_rhh30_55": 540,
+          "four_candidate_jets_abs_eta24": 2414,
+          "four_candidate_jets_pt40": 2480,
+          "signal_region_high_mhh": 249,
+          "signal_region_low_mhh": 1205,
+          "signal_region_rhh30": 1454
+        },
+        "generated_events": 80000,
+        "members": 80
+      },
+      "validation": {
+        "candidate_denominator": 1045,
+        "counts": {
+          "analysis_region_rhh55": 423,
+          "candidate_denominator": 1045,
+          "control_region_high_mhh": 20,
+          "control_region_low_mhh": 90,
+          "control_region_rhh30_55": 110,
+          "four_candidate_jets_abs_eta24": 518,
+          "four_candidate_jets_pt40": 535,
+          "signal_region_high_mhh": 62,
+          "signal_region_low_mhh": 251,
+          "signal_region_rhh30": 313
+        },
+        "generated_events": 17000,
+        "members": 17
+      }
+    },
+    "vbf_hh4b": {
+      "train": {
+        "candidate_denominator": 5082,
+        "counts": {
+          "analysis_region_rhh55": 2130,
+          "candidate_denominator": 5082,
+          "control_region_high_mhh": 308,
+          "control_region_low_mhh": 334,
+          "control_region_rhh30_55": 642,
+          "four_candidate_jets_abs_eta24": 2680,
+          "four_candidate_jets_pt40": 2811,
+          "signal_region_high_mhh": 720,
+          "signal_region_low_mhh": 768,
+          "signal_region_rhh30": 1488
+        },
+        "generated_events": 80000,
+        "members": 8
+      },
+      "validation": {
+        "candidate_denominator": 1201,
+        "counts": {
+          "analysis_region_rhh55": 530,
+          "candidate_denominator": 1201,
+          "control_region_high_mhh": 86,
+          "control_region_low_mhh": 77,
+          "control_region_rhh30_55": 163,
+          "four_candidate_jets_abs_eta24": 656,
+          "four_candidate_jets_pt40": 680,
+          "signal_region_high_mhh": 181,
+          "signal_region_low_mhh": 186,
+          "signal_region_rhh30": 367
+        },
+        "generated_events": 20000,
+        "members": 2
+      }
+    }
+  },
+  "signal_development_candidate_rows": 12221,
+  "signal_development_generated_events": 197000,
+  "signal_development_members": 107,
+  "signal_modes": [
+    "ggf_hh4b",
+    "vbf_hh4b"
+  ],
+  "signal_modes_combined": false,
+  "signal_sealed_test_accessed": false,
+  "significance_authorized": false,
+  "source_background_cutflow": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_background_strict493_reference_cutflow_20260724_v1/background_reference_cutflow_by_family_split.tsv",
+  "source_background_cutflow_sha256": "b26ade8a30e8daab11281f3806a51801cbda91a71d0028db48d36828f6a3a1e0",
+  "source_background_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_background_strict493_reference_cutflow_20260724_v1/background_reference_cutflow_summary.json",
+  "source_background_summary_sha256": "abdfc29d1fd949f0d12d2f6a2296c050ff9c6f57089f8c4f946ff9f483c1d53a",
+  "source_signal_cutflow": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_signal_reference_cutflow_20260723_v1/hh4b_signal_reference_cutflow.tsv",
+  "source_signal_cutflow_sha256": "d44b0980c116171d38f59d7dde33d736272db822aa5e5875561a3990b3a8a76e",
+  "source_signal_summary": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_signal_reference_cutflow_20260723_v1/hh4b_signal_reference_cutflow.json",
+  "source_signal_summary_sha256": "6a3c1c6d0d0b497c10ee3d9e850db77b45bd63c28c3002c2b5991ae07f045b80",
+  "stages": [
+    "candidate_denominator",
+    "four_candidate_jets_pt40",
+    "four_candidate_jets_abs_eta24",
+    "analysis_region_rhh55",
+    "signal_region_rhh30",
+    "control_region_rhh30_55",
+    "signal_region_low_mhh",
+    "signal_region_high_mhh",
+    "control_region_low_mhh",
+    "control_region_high_mhh"
+  ],
+  "status": "pass",
+  "unweighted_reference_baseline_frozen": true
+}

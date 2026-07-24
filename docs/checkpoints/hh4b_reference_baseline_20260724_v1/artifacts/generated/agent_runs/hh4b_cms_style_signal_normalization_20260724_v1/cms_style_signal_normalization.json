@@ -1,0 +1,97 @@
+{
+  "analysis_baseline": "hh4b_cms_run2_resolved_rich_v2_reference_v1",
+  "background_blockers": [
+    "qcd_hardqcd requires per-pThat cross sections and importance sampling corrections",
+    "qcd sample overlap/exclusivity must be frozen before summing qcd_bbbb and qcd_hardqcd",
+    "filtered triboson samples require effective filter probabilities",
+    "background cross-section semantics and higher-order normalization targets must be frozen",
+    "13.6 and 14 TeV energy-specific background cross sections are absent"
+  ],
+  "background_normalization_frozen": false,
+  "branching_fraction_h_to_bb": 0.5824,
+  "branching_fraction_h_to_bb_squared": 0.33918976,
+  "component_weight_table": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cms_style_signal_normalization_20260724_v1/cms_style_signal_component_weights.tsv",
+  "full_weighted_cutflow_authorized": false,
+  "hl_lhc_phase2_acceptance_simulated": false,
+  "hl_lhc_signal_projection_authorized": true,
+  "next_gate": "freeze_background_process_semantics_overlap_and_energy_specific_xsecs",
+  "normalized_signal_cutflow": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cms_style_signal_normalization_20260724_v1/cms_style_signal_normalized_cutflow.tsv",
+  "run2_signal_normalization_authorized": true,
+  "run3_acceptance_simulated_at_13p6tev": false,
+  "run3_signal_projection_authorized": true,
+  "scenarios": {
+    "hl_lhc_3000fb": {
+      "components": [
+        {
+          "energy_tev": "14",
+          "luminosity_fb_inverse": 3000.0
+        }
+      ],
+      "description": "HL-LHC, 3000 fb^-1 at 14 TeV",
+      "projection_class": "cross_section_luminosity_only_projection_using_run2_delphes_acceptance_not_phase2"
+    },
+    "run2_138fb": {
+      "components": [
+        {
+          "energy_tev": "13",
+          "luminosity_fb_inverse": 138.0
+        }
+      ],
+      "description": "CMS Run 2, 138 fb^-1 at 13 TeV",
+      "projection_class": "direct_run2_normalization"
+    },
+    "run2_plus_run3_2022_2024_309fb": {
+      "components": [
+        {
+          "energy_tev": "13",
+          "luminosity_fb_inverse": 138.0
+        },
+        {
+          "energy_tev": "13.6",
+          "luminosity_fb_inverse": 171.0
+        }
+      ],
+      "description": "Run 2 plus certified CMS 2022-2024 Run 3 data: 138 + 171 fb^-1",
+      "projection_class": "energy_separated_cross_section_projection_using_run2_acceptance"
+    },
+    "run2_plus_run3_hh_published_200fb": {
+      "components": [
+        {
+          "energy_tev": "13",
+          "luminosity_fb_inverse": 138.0
+        },
+        {
+          "energy_tev": "13.6",
+          "luminosity_fb_inverse": 62.0
+        }
+      ],
+      "description": "CMS HH-paper scenario: 138 fb^-1 at 13 TeV plus 62 fb^-1 at 13.6 TeV",
+      "projection_class": "energy_separated_cross_section_projection_using_run2_acceptance"
+    }
+  },
+  "schema_version": 1,
+  "signal_background_ratio_authorized": false,
+  "signal_cross_section_provenance": {
+    "ggf_precision": "NNLO_FTapprox",
+    "higgs_mass_gev": 125.0,
+    "provider": "LHC Higgs Working Group",
+    "vbf_precision": "N3LO_QCD_plus_NLO_EW"
+  },
+  "signal_cross_sections_fb": {
+    "13": {
+      "ggf_hh4b": 30.77,
+      "vbf_hh4b": 1.687
+    },
+    "13.6": {
+      "ggf_hh4b": 34.13,
+      "vbf_hh4b": 1.874
+    },
+    "14": {
+      "ggf_hh4b": 36.37,
+      "vbf_hh4b": 2.005
+    }
+  },
+  "signal_region_yield_table": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_cms_style_signal_normalization_20260724_v1/cms_style_signal_sr_yields.tsv",
+  "significance_authorized": false,
+  "status": "signal_normalization_frozen"
+}
