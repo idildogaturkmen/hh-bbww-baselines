@@ -1,0 +1,45 @@
+{
+  "classification": "paper_quality_train_only_optimization_result",
+  "exact_gain_over_rounded_34_percent": 0.2211618363758605,
+  "exact_observed_transition_optimum": {
+    "balanced_proxy_s_over_sqrt_b": 1.2477849107993273,
+    "rhh_sr_max": 34.12742053804616,
+    "selected_background": 11096,
+    "selected_signal": 6156
+  },
+  "fixed_acceptance": {
+    "jet_abs_eta_max": 2.5,
+    "jet_pt_min_GeV": 30.0
+  },
+  "next_gate": "freeze_physical_background_normalization_and_systematics",
+  "nominal_working_point": {
+    "point_id": "rounded_rhh_34p0",
+    "rationale": "Rounded threshold lies inside the 99.5%-of-maximum stable component and retains 99.779% of the exact train proxy.",
+    "rhh_sr_max": 34.0,
+    "selection": "min_jet_pt > 30 GeV, max_abs_jet_eta < 2.5, r_hh_125_120 < 34"
+  },
+  "physical_background_normalization_frozen": false,
+  "physical_significance_computed": false,
+  "rounded_alternatives": [
+    {
+      "rhh_sr_max": 31.5,
+      "role": "higher_purity"
+    },
+    {
+      "rhh_sr_max": 35.5,
+      "role": "higher_efficiency"
+    }
+  ],
+  "schema_version": 1,
+  "source_commit": "0615ce2506979c7d21e72112e8445224cf5f8547",
+  "source_summary_sha256": "50b9d5f3d123031ba302a9e1b48130b81fb080ccec586f44913b8ebc779a45c1",
+  "stable_component": {
+    "fraction_of_best": 0.995,
+    "points": 233,
+    "transition_max": 34.136808566437125,
+    "transition_min": 33.790760367166136
+  },
+  "status": "hh4b_train_only_cut_working_points_frozen",
+  "test_candidate_files_opened": 0,
+  "validation_rows_evaluated": 0
+}

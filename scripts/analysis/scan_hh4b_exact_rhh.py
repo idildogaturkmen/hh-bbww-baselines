@@ -1604,7 +1604,7 @@ def main() -> None:
         "NEXT_GATE="
         + summary["next_gate"]
     )
-    print(f"summary_json={summary_path}")
+    print(f"summary_json={output_dir / 'exact_rhh_scan_summary.json'}")
 
 
 if __name__ == "__main__":
