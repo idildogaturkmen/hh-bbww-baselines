@@ -1,0 +1,577 @@
+member_index	column_name	column_order	logical_type_class	frozen_arrow_type	parity_arrow_type	row_count	exact_mismatch_count	finite_comparison_count	max_absolute_difference	nonfinite_mask_match	comparison_status
+1	sample	1	string	string	string	58	0	0			pass
+1	event	2	integer	int64	int64	58	0	0			pass
+1	n_selected_jets	3	integer	int64	int64	58	0	0			pass
+1	n_selected_bjets	4	integer	int64	int64	58	0	0			pass
+1	n_extra_selected_jets	5	integer	int64	int64	58	0	0			pass
+1	n_extra_selected_bjets	6	integer	int64	int64	58	0	0			pass
+1	ht_selected_jets	7	floating	double	double	58	0	58	0.0	True	pass
+1	ht_selected_bjets	8	floating	double	double	58	0	58	0.0	True	pass
+1	ht_candidate_jets	9	floating	double	double	58	0	58	0.0	True	pass
+1	pairing	10	string	string	string	58	0	0			pass
+1	pairing_combo_bjet_ranks	11	string	string	string	58	0	0			pass
+1	pairing_score_125_125	12	floating	double	double	58	0	58	0.0	True	pass
+1	higgs_ordering	13	string	string	string	58	0	0			pass
+1	mbb1	14	floating	double	double	58	0	58	0.0	True	pass
+1	mbb2	15	floating	double	double	58	0	58	0.0	True	pass
+1	avg_mbb	16	floating	double	double	58	0	58	0.0	True	pass
+1	delta_mbb	17	floating	double	double	58	0	58	0.0	True	pass
+1	r_hh	18	floating	double	double	58	0	58	0.0	True	pass
+1	r_hh_125_125	19	floating	double	double	58	0	58	0.0	True	pass
+1	r_hh_125_120	20	floating	double	double	58	0	58	0.0	True	pass
+1	mhh	21	floating	double	double	58	0	58	0.0	True	pass
+1	hh_pt	22	floating	double	double	58	0	58	0.0	True	pass
+1	hh_eta	23	floating	double	double	58	0	58	0.0	True	pass
+1	hh_phi	24	floating	double	double	58	0	58	0.0	True	pass
+1	h1_pt	25	floating	double	double	58	0	58	0.0	True	pass
+1	h1_eta	26	floating	double	double	58	0	58	0.0	True	pass
+1	h1_phi	27	floating	double	double	58	0	58	0.0	True	pass
+1	h2_pt	28	floating	double	double	58	0	58	0.0	True	pass
+1	h2_eta	29	floating	double	double	58	0	58	0.0	True	pass
+1	h2_phi	30	floating	double	double	58	0	58	0.0	True	pass
+1	h_delta_eta	31	floating	double	double	58	0	58	0.0	True	pass
+1	h_delta_phi	32	floating	double	double	58	0	58	0.0	True	pass
+1	h_delta_r	33	floating	double	double	58	0	58	0.0	True	pass
+1	h_pt_balance	34	floating	double	double	58	0	58	0.0	True	pass
+1	drbb1	35	floating	double	double	58	0	58	0.0	True	pass
+1	drbb2	36	floating	double	double	58	0	58	0.0	True	pass
+1	j1_pt	37	floating	double	double	58	0	58	0.0	True	pass
+1	j2_pt	38	floating	double	double	58	0	58	0.0	True	pass
+1	j3_pt	39	floating	double	double	58	0	58	0.0	True	pass
+1	j4_pt	40	floating	double	double	58	0	58	0.0	True	pass
+1	j1_eta	41	floating	double	double	58	0	58	0.0	True	pass
+1	j1_phi	42	floating	double	double	58	0	58	0.0	True	pass
+1	j1_mass	43	floating	double	double	58	0	58	0.0	True	pass
+1	j1_btag	44	floating	double	double	58	0	58	0.0	True	pass
+1	j1_flavor	45	integer	int64	int64	58	0	0			pass
+1	j1_raw_index	46	integer	int64	int64	58	0	0			pass
+1	j1_selected_index	47	integer	int64	int64	58	0	0			pass
+1	j1_bjet_rank	48	integer	int64	int64	58	0	0			pass
+1	j2_eta	49	floating	double	double	58	0	58	0.0	True	pass
+1	j2_phi	50	floating	double	double	58	0	58	0.0	True	pass
+1	j2_mass	51	floating	double	double	58	0	58	0.0	True	pass
+1	j2_btag	52	floating	double	double	58	0	58	0.0	True	pass
+1	j2_flavor	53	integer	int64	int64	58	0	0			pass
+1	j2_raw_index	54	integer	int64	int64	58	0	0			pass
+1	j2_selected_index	55	integer	int64	int64	58	0	0			pass
+1	j2_bjet_rank	56	integer	int64	int64	58	0	0			pass
+1	j3_eta	57	floating	double	double	58	0	58	0.0	True	pass
+1	j3_phi	58	floating	double	double	58	0	58	0.0	True	pass
+1	j3_mass	59	floating	double	double	58	0	58	0.0	True	pass
+1	j3_btag	60	floating	double	double	58	0	58	0.0	True	pass
+1	j3_flavor	61	integer	int64	int64	58	0	0			pass
+1	j3_raw_index	62	integer	int64	int64	58	0	0			pass
+1	j3_selected_index	63	integer	int64	int64	58	0	0			pass
+1	j3_bjet_rank	64	integer	int64	int64	58	0	0			pass
+1	j4_eta	65	floating	double	double	58	0	58	0.0	True	pass
+1	j4_phi	66	floating	double	double	58	0	58	0.0	True	pass
+1	j4_mass	67	floating	double	double	58	0	58	0.0	True	pass
+1	j4_btag	68	floating	double	double	58	0	58	0.0	True	pass
+1	j4_flavor	69	integer	int64	int64	58	0	0			pass
+1	j4_raw_index	70	integer	int64	int64	58	0	0			pass
+1	j4_selected_index	71	integer	int64	int64	58	0	0			pass
+1	j4_bjet_rank	72	integer	int64	int64	58	0	0			pass
+18	sample	1	string	string	string	74	0	0			pass
+18	event	2	integer	int64	int64	74	0	0			pass
+18	n_selected_jets	3	integer	int64	int64	74	0	0			pass
+18	n_selected_bjets	4	integer	int64	int64	74	0	0			pass
+18	n_extra_selected_jets	5	integer	int64	int64	74	0	0			pass
+18	n_extra_selected_bjets	6	integer	int64	int64	74	0	0			pass
+18	ht_selected_jets	7	floating	double	double	74	0	74	0.0	True	pass
+18	ht_selected_bjets	8	floating	double	double	74	0	74	0.0	True	pass
+18	ht_candidate_jets	9	floating	double	double	74	0	74	0.0	True	pass
+18	pairing	10	string	string	string	74	0	0			pass
+18	pairing_combo_bjet_ranks	11	string	string	string	74	0	0			pass
+18	pairing_score_125_125	12	floating	double	double	74	0	74	0.0	True	pass
+18	higgs_ordering	13	string	string	string	74	0	0			pass
+18	mbb1	14	floating	double	double	74	0	74	0.0	True	pass
+18	mbb2	15	floating	double	double	74	0	74	0.0	True	pass
+18	avg_mbb	16	floating	double	double	74	0	74	0.0	True	pass
+18	delta_mbb	17	floating	double	double	74	0	74	0.0	True	pass
+18	r_hh	18	floating	double	double	74	0	74	0.0	True	pass
+18	r_hh_125_125	19	floating	double	double	74	0	74	0.0	True	pass
+18	r_hh_125_120	20	floating	double	double	74	0	74	0.0	True	pass
+18	mhh	21	floating	double	double	74	0	74	0.0	True	pass
+18	hh_pt	22	floating	double	double	74	0	74	0.0	True	pass
+18	hh_eta	23	floating	double	double	74	0	74	0.0	True	pass
+18	hh_phi	24	floating	double	double	74	0	74	0.0	True	pass
+18	h1_pt	25	floating	double	double	74	0	74	0.0	True	pass
+18	h1_eta	26	floating	double	double	74	0	74	0.0	True	pass
+18	h1_phi	27	floating	double	double	74	0	74	0.0	True	pass
+18	h2_pt	28	floating	double	double	74	0	74	0.0	True	pass
+18	h2_eta	29	floating	double	double	74	0	74	0.0	True	pass
+18	h2_phi	30	floating	double	double	74	0	74	0.0	True	pass
+18	h_delta_eta	31	floating	double	double	74	0	74	0.0	True	pass
+18	h_delta_phi	32	floating	double	double	74	0	74	0.0	True	pass
+18	h_delta_r	33	floating	double	double	74	0	74	0.0	True	pass
+18	h_pt_balance	34	floating	double	double	74	0	74	0.0	True	pass
+18	drbb1	35	floating	double	double	74	0	74	0.0	True	pass
+18	drbb2	36	floating	double	double	74	0	74	0.0	True	pass
+18	j1_pt	37	floating	double	double	74	0	74	0.0	True	pass
+18	j2_pt	38	floating	double	double	74	0	74	0.0	True	pass
+18	j3_pt	39	floating	double	double	74	0	74	0.0	True	pass
+18	j4_pt	40	floating	double	double	74	0	74	0.0	True	pass
+18	j1_eta	41	floating	double	double	74	0	74	0.0	True	pass
+18	j1_phi	42	floating	double	double	74	0	74	0.0	True	pass
+18	j1_mass	43	floating	double	double	74	0	74	0.0	True	pass
+18	j1_btag	44	floating	double	double	74	0	74	0.0	True	pass
+18	j1_flavor	45	integer	int64	int64	74	0	0			pass
+18	j1_raw_index	46	integer	int64	int64	74	0	0			pass
+18	j1_selected_index	47	integer	int64	int64	74	0	0			pass
+18	j1_bjet_rank	48	integer	int64	int64	74	0	0			pass
+18	j2_eta	49	floating	double	double	74	0	74	0.0	True	pass
+18	j2_phi	50	floating	double	double	74	0	74	0.0	True	pass
+18	j2_mass	51	floating	double	double	74	0	74	0.0	True	pass
+18	j2_btag	52	floating	double	double	74	0	74	0.0	True	pass
+18	j2_flavor	53	integer	int64	int64	74	0	0			pass
+18	j2_raw_index	54	integer	int64	int64	74	0	0			pass
+18	j2_selected_index	55	integer	int64	int64	74	0	0			pass
+18	j2_bjet_rank	56	integer	int64	int64	74	0	0			pass
+18	j3_eta	57	floating	double	double	74	0	74	0.0	True	pass
+18	j3_phi	58	floating	double	double	74	0	74	0.0	True	pass
+18	j3_mass	59	floating	double	double	74	0	74	0.0	True	pass
+18	j3_btag	60	floating	double	double	74	0	74	0.0	True	pass
+18	j3_flavor	61	integer	int64	int64	74	0	0			pass
+18	j3_raw_index	62	integer	int64	int64	74	0	0			pass
+18	j3_selected_index	63	integer	int64	int64	74	0	0			pass
+18	j3_bjet_rank	64	integer	int64	int64	74	0	0			pass
+18	j4_eta	65	floating	double	double	74	0	74	0.0	True	pass
+18	j4_phi	66	floating	double	double	74	0	74	0.0	True	pass
+18	j4_mass	67	floating	double	double	74	0	74	0.0	True	pass
+18	j4_btag	68	floating	double	double	74	0	74	0.0	True	pass
+18	j4_flavor	69	integer	int64	int64	74	0	0			pass
+18	j4_raw_index	70	integer	int64	int64	74	0	0			pass
+18	j4_selected_index	71	integer	int64	int64	74	0	0			pass
+18	j4_bjet_rank	72	integer	int64	int64	74	0	0			pass
+99	sample	1	string	string	string	612	0	0			pass
+99	event	2	integer	int64	int64	612	0	0			pass
+99	n_selected_jets	3	integer	int64	int64	612	0	0			pass
+99	n_selected_bjets	4	integer	int64	int64	612	0	0			pass
+99	n_extra_selected_jets	5	integer	int64	int64	612	0	0			pass
+99	n_extra_selected_bjets	6	integer	int64	int64	612	0	0			pass
+99	ht_selected_jets	7	floating	double	double	612	0	612	0.0	True	pass
+99	ht_selected_bjets	8	floating	double	double	612	0	612	0.0	True	pass
+99	ht_candidate_jets	9	floating	double	double	612	0	612	0.0	True	pass
+99	pairing	10	string	string	string	612	0	0			pass
+99	pairing_combo_bjet_ranks	11	string	string	string	612	0	0			pass
+99	pairing_score_125_125	12	floating	double	double	612	0	612	0.0	True	pass
+99	higgs_ordering	13	string	string	string	612	0	0			pass
+99	mbb1	14	floating	double	double	612	0	612	0.0	True	pass
+99	mbb2	15	floating	double	double	612	0	612	0.0	True	pass
+99	avg_mbb	16	floating	double	double	612	0	612	0.0	True	pass
+99	delta_mbb	17	floating	double	double	612	0	612	0.0	True	pass
+99	r_hh	18	floating	double	double	612	0	612	0.0	True	pass
+99	r_hh_125_125	19	floating	double	double	612	0	612	0.0	True	pass
+99	r_hh_125_120	20	floating	double	double	612	0	612	0.0	True	pass
+99	mhh	21	floating	double	double	612	0	612	0.0	True	pass
+99	hh_pt	22	floating	double	double	612	0	612	0.0	True	pass
+99	hh_eta	23	floating	double	double	612	0	612	0.0	True	pass
+99	hh_phi	24	floating	double	double	612	0	612	0.0	True	pass
+99	h1_pt	25	floating	double	double	612	0	612	0.0	True	pass
+99	h1_eta	26	floating	double	double	612	0	612	0.0	True	pass
+99	h1_phi	27	floating	double	double	612	0	612	0.0	True	pass
+99	h2_pt	28	floating	double	double	612	0	612	0.0	True	pass
+99	h2_eta	29	floating	double	double	612	0	612	0.0	True	pass
+99	h2_phi	30	floating	double	double	612	0	612	0.0	True	pass
+99	h_delta_eta	31	floating	double	double	612	0	612	0.0	True	pass
+99	h_delta_phi	32	floating	double	double	612	0	612	0.0	True	pass
+99	h_delta_r	33	floating	double	double	612	0	612	0.0	True	pass
+99	h_pt_balance	34	floating	double	double	612	0	612	0.0	True	pass
+99	drbb1	35	floating	double	double	612	0	612	0.0	True	pass
+99	drbb2	36	floating	double	double	612	0	612	0.0	True	pass
+99	j1_pt	37	floating	double	double	612	0	612	0.0	True	pass
+99	j2_pt	38	floating	double	double	612	0	612	0.0	True	pass
+99	j3_pt	39	floating	double	double	612	0	612	0.0	True	pass
+99	j4_pt	40	floating	double	double	612	0	612	0.0	True	pass
+99	j1_eta	41	floating	double	double	612	0	612	0.0	True	pass
+99	j1_phi	42	floating	double	double	612	0	612	0.0	True	pass
+99	j1_mass	43	floating	double	double	612	0	612	0.0	True	pass
+99	j1_btag	44	floating	double	double	612	0	612	0.0	True	pass
+99	j1_flavor	45	integer	int64	int64	612	0	0			pass
+99	j1_raw_index	46	integer	int64	int64	612	0	0			pass
+99	j1_selected_index	47	integer	int64	int64	612	0	0			pass
+99	j1_bjet_rank	48	integer	int64	int64	612	0	0			pass
+99	j2_eta	49	floating	double	double	612	0	612	0.0	True	pass
+99	j2_phi	50	floating	double	double	612	0	612	0.0	True	pass
+99	j2_mass	51	floating	double	double	612	0	612	0.0	True	pass
+99	j2_btag	52	floating	double	double	612	0	612	0.0	True	pass
+99	j2_flavor	53	integer	int64	int64	612	0	0			pass
+99	j2_raw_index	54	integer	int64	int64	612	0	0			pass
+99	j2_selected_index	55	integer	int64	int64	612	0	0			pass
+99	j2_bjet_rank	56	integer	int64	int64	612	0	0			pass
+99	j3_eta	57	floating	double	double	612	0	612	0.0	True	pass
+99	j3_phi	58	floating	double	double	612	0	612	0.0	True	pass
+99	j3_mass	59	floating	double	double	612	0	612	0.0	True	pass
+99	j3_btag	60	floating	double	double	612	0	612	0.0	True	pass
+99	j3_flavor	61	integer	int64	int64	612	0	0			pass
+99	j3_raw_index	62	integer	int64	int64	612	0	0			pass
+99	j3_selected_index	63	integer	int64	int64	612	0	0			pass
+99	j3_bjet_rank	64	integer	int64	int64	612	0	0			pass
+99	j4_eta	65	floating	double	double	612	0	612	0.0	True	pass
+99	j4_phi	66	floating	double	double	612	0	612	0.0	True	pass
+99	j4_mass	67	floating	double	double	612	0	612	0.0	True	pass
+99	j4_btag	68	floating	double	double	612	0	612	0.0	True	pass
+99	j4_flavor	69	integer	int64	int64	612	0	0			pass
+99	j4_raw_index	70	integer	int64	int64	612	0	0			pass
+99	j4_selected_index	71	integer	int64	int64	612	0	0			pass
+99	j4_bjet_rank	72	integer	int64	int64	612	0	0			pass
+123	sample	1	floating	double	double	0	0	0	0.0	True	pass
+123	event	2	floating	double	double	0	0	0	0.0	True	pass
+123	n_selected_jets	3	floating	double	double	0	0	0	0.0	True	pass
+123	n_selected_bjets	4	floating	double	double	0	0	0	0.0	True	pass
+123	n_extra_selected_jets	5	floating	double	double	0	0	0	0.0	True	pass
+123	n_extra_selected_bjets	6	floating	double	double	0	0	0	0.0	True	pass
+123	ht_selected_jets	7	floating	double	double	0	0	0	0.0	True	pass
+123	ht_selected_bjets	8	floating	double	double	0	0	0	0.0	True	pass
+123	ht_candidate_jets	9	floating	double	double	0	0	0	0.0	True	pass
+123	pairing	10	floating	double	double	0	0	0	0.0	True	pass
+123	pairing_combo_bjet_ranks	11	floating	double	double	0	0	0	0.0	True	pass
+123	pairing_score_125_125	12	floating	double	double	0	0	0	0.0	True	pass
+123	higgs_ordering	13	floating	double	double	0	0	0	0.0	True	pass
+123	mbb1	14	floating	double	double	0	0	0	0.0	True	pass
+123	mbb2	15	floating	double	double	0	0	0	0.0	True	pass
+123	avg_mbb	16	floating	double	double	0	0	0	0.0	True	pass
+123	delta_mbb	17	floating	double	double	0	0	0	0.0	True	pass
+123	r_hh	18	floating	double	double	0	0	0	0.0	True	pass
+123	r_hh_125_125	19	floating	double	double	0	0	0	0.0	True	pass
+123	r_hh_125_120	20	floating	double	double	0	0	0	0.0	True	pass
+123	mhh	21	floating	double	double	0	0	0	0.0	True	pass
+123	hh_pt	22	floating	double	double	0	0	0	0.0	True	pass
+123	hh_eta	23	floating	double	double	0	0	0	0.0	True	pass
+123	hh_phi	24	floating	double	double	0	0	0	0.0	True	pass
+123	h1_pt	25	floating	double	double	0	0	0	0.0	True	pass
+123	h1_eta	26	floating	double	double	0	0	0	0.0	True	pass
+123	h1_phi	27	floating	double	double	0	0	0	0.0	True	pass
+123	h2_pt	28	floating	double	double	0	0	0	0.0	True	pass
+123	h2_eta	29	floating	double	double	0	0	0	0.0	True	pass
+123	h2_phi	30	floating	double	double	0	0	0	0.0	True	pass
+123	h_delta_eta	31	floating	double	double	0	0	0	0.0	True	pass
+123	h_delta_phi	32	floating	double	double	0	0	0	0.0	True	pass
+123	h_delta_r	33	floating	double	double	0	0	0	0.0	True	pass
+123	h_pt_balance	34	floating	double	double	0	0	0	0.0	True	pass
+123	drbb1	35	floating	double	double	0	0	0	0.0	True	pass
+123	drbb2	36	floating	double	double	0	0	0	0.0	True	pass
+123	j1_pt	37	floating	double	double	0	0	0	0.0	True	pass
+123	j2_pt	38	floating	double	double	0	0	0	0.0	True	pass
+123	j3_pt	39	floating	double	double	0	0	0	0.0	True	pass
+123	j4_pt	40	floating	double	double	0	0	0	0.0	True	pass
+123	j1_eta	41	floating	double	double	0	0	0	0.0	True	pass
+123	j1_phi	42	floating	double	double	0	0	0	0.0	True	pass
+123	j1_mass	43	floating	double	double	0	0	0	0.0	True	pass
+123	j1_btag	44	floating	double	double	0	0	0	0.0	True	pass
+123	j1_flavor	45	floating	double	double	0	0	0	0.0	True	pass
+123	j1_raw_index	46	floating	double	double	0	0	0	0.0	True	pass
+123	j1_selected_index	47	floating	double	double	0	0	0	0.0	True	pass
+123	j1_bjet_rank	48	floating	double	double	0	0	0	0.0	True	pass
+123	j2_eta	49	floating	double	double	0	0	0	0.0	True	pass
+123	j2_phi	50	floating	double	double	0	0	0	0.0	True	pass
+123	j2_mass	51	floating	double	double	0	0	0	0.0	True	pass
+123	j2_btag	52	floating	double	double	0	0	0	0.0	True	pass
+123	j2_flavor	53	floating	double	double	0	0	0	0.0	True	pass
+123	j2_raw_index	54	floating	double	double	0	0	0	0.0	True	pass
+123	j2_selected_index	55	floating	double	double	0	0	0	0.0	True	pass
+123	j2_bjet_rank	56	floating	double	double	0	0	0	0.0	True	pass
+123	j3_eta	57	floating	double	double	0	0	0	0.0	True	pass
+123	j3_phi	58	floating	double	double	0	0	0	0.0	True	pass
+123	j3_mass	59	floating	double	double	0	0	0	0.0	True	pass
+123	j3_btag	60	floating	double	double	0	0	0	0.0	True	pass
+123	j3_flavor	61	floating	double	double	0	0	0	0.0	True	pass
+123	j3_raw_index	62	floating	double	double	0	0	0	0.0	True	pass
+123	j3_selected_index	63	floating	double	double	0	0	0	0.0	True	pass
+123	j3_bjet_rank	64	floating	double	double	0	0	0	0.0	True	pass
+123	j4_eta	65	floating	double	double	0	0	0	0.0	True	pass
+123	j4_phi	66	floating	double	double	0	0	0	0.0	True	pass
+123	j4_mass	67	floating	double	double	0	0	0	0.0	True	pass
+123	j4_btag	68	floating	double	double	0	0	0	0.0	True	pass
+123	j4_flavor	69	floating	double	double	0	0	0	0.0	True	pass
+123	j4_raw_index	70	floating	double	double	0	0	0	0.0	True	pass
+123	j4_selected_index	71	floating	double	double	0	0	0	0.0	True	pass
+123	j4_bjet_rank	72	floating	double	double	0	0	0	0.0	True	pass
+184	sample	1	string	string	string	1	0	0			pass
+184	event	2	integer	int64	int64	1	0	0			pass
+184	n_selected_jets	3	integer	int64	int64	1	0	0			pass
+184	n_selected_bjets	4	integer	int64	int64	1	0	0			pass
+184	n_extra_selected_jets	5	integer	int64	int64	1	0	0			pass
+184	n_extra_selected_bjets	6	integer	int64	int64	1	0	0			pass
+184	ht_selected_jets	7	floating	double	double	1	0	1	0.0	True	pass
+184	ht_selected_bjets	8	floating	double	double	1	0	1	0.0	True	pass
+184	ht_candidate_jets	9	floating	double	double	1	0	1	0.0	True	pass
+184	pairing	10	string	string	string	1	0	0			pass
+184	pairing_combo_bjet_ranks	11	string	string	string	1	0	0			pass
+184	pairing_score_125_125	12	floating	double	double	1	0	1	0.0	True	pass
+184	higgs_ordering	13	string	string	string	1	0	0			pass
+184	mbb1	14	floating	double	double	1	0	1	0.0	True	pass
+184	mbb2	15	floating	double	double	1	0	1	0.0	True	pass
+184	avg_mbb	16	floating	double	double	1	0	1	0.0	True	pass
+184	delta_mbb	17	floating	double	double	1	0	1	0.0	True	pass
+184	r_hh	18	floating	double	double	1	0	1	0.0	True	pass
+184	r_hh_125_125	19	floating	double	double	1	0	1	0.0	True	pass
+184	r_hh_125_120	20	floating	double	double	1	0	1	0.0	True	pass
+184	mhh	21	floating	double	double	1	0	1	0.0	True	pass
+184	hh_pt	22	floating	double	double	1	0	1	0.0	True	pass
+184	hh_eta	23	floating	double	double	1	0	1	0.0	True	pass
+184	hh_phi	24	floating	double	double	1	0	1	0.0	True	pass
+184	h1_pt	25	floating	double	double	1	0	1	0.0	True	pass
+184	h1_eta	26	floating	double	double	1	0	1	0.0	True	pass
+184	h1_phi	27	floating	double	double	1	0	1	0.0	True	pass
+184	h2_pt	28	floating	double	double	1	0	1	0.0	True	pass
+184	h2_eta	29	floating	double	double	1	0	1	0.0	True	pass
+184	h2_phi	30	floating	double	double	1	0	1	0.0	True	pass
+184	h_delta_eta	31	floating	double	double	1	0	1	0.0	True	pass
+184	h_delta_phi	32	floating	double	double	1	0	1	0.0	True	pass
+184	h_delta_r	33	floating	double	double	1	0	1	0.0	True	pass
+184	h_pt_balance	34	floating	double	double	1	0	1	0.0	True	pass
+184	drbb1	35	floating	double	double	1	0	1	0.0	True	pass
+184	drbb2	36	floating	double	double	1	0	1	0.0	True	pass
+184	j1_pt	37	floating	double	double	1	0	1	0.0	True	pass
+184	j2_pt	38	floating	double	double	1	0	1	0.0	True	pass
+184	j3_pt	39	floating	double	double	1	0	1	0.0	True	pass
+184	j4_pt	40	floating	double	double	1	0	1	0.0	True	pass
+184	j1_eta	41	floating	double	double	1	0	1	0.0	True	pass
+184	j1_phi	42	floating	double	double	1	0	1	0.0	True	pass
+184	j1_mass	43	floating	double	double	1	0	1	0.0	True	pass
+184	j1_btag	44	floating	double	double	1	0	1	0.0	True	pass
+184	j1_flavor	45	integer	int64	int64	1	0	0			pass
+184	j1_raw_index	46	integer	int64	int64	1	0	0			pass
+184	j1_selected_index	47	integer	int64	int64	1	0	0			pass
+184	j1_bjet_rank	48	integer	int64	int64	1	0	0			pass
+184	j2_eta	49	floating	double	double	1	0	1	0.0	True	pass
+184	j2_phi	50	floating	double	double	1	0	1	0.0	True	pass
+184	j2_mass	51	floating	double	double	1	0	1	0.0	True	pass
+184	j2_btag	52	floating	double	double	1	0	1	0.0	True	pass
+184	j2_flavor	53	integer	int64	int64	1	0	0			pass
+184	j2_raw_index	54	integer	int64	int64	1	0	0			pass
+184	j2_selected_index	55	integer	int64	int64	1	0	0			pass
+184	j2_bjet_rank	56	integer	int64	int64	1	0	0			pass
+184	j3_eta	57	floating	double	double	1	0	1	0.0	True	pass
+184	j3_phi	58	floating	double	double	1	0	1	0.0	True	pass
+184	j3_mass	59	floating	double	double	1	0	1	0.0	True	pass
+184	j3_btag	60	floating	double	double	1	0	1	0.0	True	pass
+184	j3_flavor	61	integer	int64	int64	1	0	0			pass
+184	j3_raw_index	62	integer	int64	int64	1	0	0			pass
+184	j3_selected_index	63	integer	int64	int64	1	0	0			pass
+184	j3_bjet_rank	64	integer	int64	int64	1	0	0			pass
+184	j4_eta	65	floating	double	double	1	0	1	0.0	True	pass
+184	j4_phi	66	floating	double	double	1	0	1	0.0	True	pass
+184	j4_mass	67	floating	double	double	1	0	1	0.0	True	pass
+184	j4_btag	68	floating	double	double	1	0	1	0.0	True	pass
+184	j4_flavor	69	integer	int64	int64	1	0	0			pass
+184	j4_raw_index	70	integer	int64	int64	1	0	0			pass
+184	j4_selected_index	71	integer	int64	int64	1	0	0			pass
+184	j4_bjet_rank	72	integer	int64	int64	1	0	0			pass
+413	sample	1	string	string	string	334	0	0			pass
+413	event	2	integer	int64	int64	334	0	0			pass
+413	n_selected_jets	3	integer	int64	int64	334	0	0			pass
+413	n_selected_bjets	4	integer	int64	int64	334	0	0			pass
+413	n_extra_selected_jets	5	integer	int64	int64	334	0	0			pass
+413	n_extra_selected_bjets	6	integer	int64	int64	334	0	0			pass
+413	ht_selected_jets	7	floating	double	double	334	0	334	0.0	True	pass
+413	ht_selected_bjets	8	floating	double	double	334	0	334	0.0	True	pass
+413	ht_candidate_jets	9	floating	double	double	334	0	334	0.0	True	pass
+413	pairing	10	string	string	string	334	0	0			pass
+413	pairing_combo_bjet_ranks	11	string	string	string	334	0	0			pass
+413	pairing_score_125_125	12	floating	double	double	334	0	334	0.0	True	pass
+413	higgs_ordering	13	string	string	string	334	0	0			pass
+413	mbb1	14	floating	double	double	334	0	334	0.0	True	pass
+413	mbb2	15	floating	double	double	334	0	334	0.0	True	pass
+413	avg_mbb	16	floating	double	double	334	0	334	0.0	True	pass
+413	delta_mbb	17	floating	double	double	334	0	334	0.0	True	pass
+413	r_hh	18	floating	double	double	334	0	334	0.0	True	pass
+413	r_hh_125_125	19	floating	double	double	334	0	334	0.0	True	pass
+413	r_hh_125_120	20	floating	double	double	334	0	334	0.0	True	pass
+413	mhh	21	floating	double	double	334	0	334	0.0	True	pass
+413	hh_pt	22	floating	double	double	334	0	334	0.0	True	pass
+413	hh_eta	23	floating	double	double	334	0	334	0.0	True	pass
+413	hh_phi	24	floating	double	double	334	0	334	0.0	True	pass
+413	h1_pt	25	floating	double	double	334	0	334	0.0	True	pass
+413	h1_eta	26	floating	double	double	334	0	334	0.0	True	pass
+413	h1_phi	27	floating	double	double	334	0	334	0.0	True	pass
+413	h2_pt	28	floating	double	double	334	0	334	0.0	True	pass
+413	h2_eta	29	floating	double	double	334	0	334	0.0	True	pass
+413	h2_phi	30	floating	double	double	334	0	334	0.0	True	pass
+413	h_delta_eta	31	floating	double	double	334	0	334	0.0	True	pass
+413	h_delta_phi	32	floating	double	double	334	0	334	0.0	True	pass
+413	h_delta_r	33	floating	double	double	334	0	334	0.0	True	pass
+413	h_pt_balance	34	floating	double	double	334	0	334	0.0	True	pass
+413	drbb1	35	floating	double	double	334	0	334	0.0	True	pass
+413	drbb2	36	floating	double	double	334	0	334	0.0	True	pass
+413	j1_pt	37	floating	double	double	334	0	334	0.0	True	pass
+413	j2_pt	38	floating	double	double	334	0	334	0.0	True	pass
+413	j3_pt	39	floating	double	double	334	0	334	0.0	True	pass
+413	j4_pt	40	floating	double	double	334	0	334	0.0	True	pass
+413	j1_eta	41	floating	double	double	334	0	334	0.0	True	pass
+413	j1_phi	42	floating	double	double	334	0	334	0.0	True	pass
+413	j1_mass	43	floating	double	double	334	0	334	0.0	True	pass
+413	j1_btag	44	floating	double	double	334	0	334	0.0	True	pass
+413	j1_flavor	45	integer	int64	int64	334	0	0			pass
+413	j1_raw_index	46	integer	int64	int64	334	0	0			pass
+413	j1_selected_index	47	integer	int64	int64	334	0	0			pass
+413	j1_bjet_rank	48	integer	int64	int64	334	0	0			pass
+413	j2_eta	49	floating	double	double	334	0	334	0.0	True	pass
+413	j2_phi	50	floating	double	double	334	0	334	0.0	True	pass
+413	j2_mass	51	floating	double	double	334	0	334	0.0	True	pass
+413	j2_btag	52	floating	double	double	334	0	334	0.0	True	pass
+413	j2_flavor	53	integer	int64	int64	334	0	0			pass
+413	j2_raw_index	54	integer	int64	int64	334	0	0			pass
+413	j2_selected_index	55	integer	int64	int64	334	0	0			pass
+413	j2_bjet_rank	56	integer	int64	int64	334	0	0			pass
+413	j3_eta	57	floating	double	double	334	0	334	0.0	True	pass
+413	j3_phi	58	floating	double	double	334	0	334	0.0	True	pass
+413	j3_mass	59	floating	double	double	334	0	334	0.0	True	pass
+413	j3_btag	60	floating	double	double	334	0	334	0.0	True	pass
+413	j3_flavor	61	integer	int64	int64	334	0	0			pass
+413	j3_raw_index	62	integer	int64	int64	334	0	0			pass
+413	j3_selected_index	63	integer	int64	int64	334	0	0			pass
+413	j3_bjet_rank	64	integer	int64	int64	334	0	0			pass
+413	j4_eta	65	floating	double	double	334	0	334	0.0	True	pass
+413	j4_phi	66	floating	double	double	334	0	334	0.0	True	pass
+413	j4_mass	67	floating	double	double	334	0	334	0.0	True	pass
+413	j4_btag	68	floating	double	double	334	0	334	0.0	True	pass
+413	j4_flavor	69	integer	int64	int64	334	0	0			pass
+413	j4_raw_index	70	integer	int64	int64	334	0	0			pass
+413	j4_selected_index	71	integer	int64	int64	334	0	0			pass
+413	j4_bjet_rank	72	integer	int64	int64	334	0	0			pass
+443	sample	1	string	string	string	36	0	0			pass
+443	event	2	integer	int64	int64	36	0	0			pass
+443	n_selected_jets	3	integer	int64	int64	36	0	0			pass
+443	n_selected_bjets	4	integer	int64	int64	36	0	0			pass
+443	n_extra_selected_jets	5	integer	int64	int64	36	0	0			pass
+443	n_extra_selected_bjets	6	integer	int64	int64	36	0	0			pass
+443	ht_selected_jets	7	floating	double	double	36	0	36	0.0	True	pass
+443	ht_selected_bjets	8	floating	double	double	36	0	36	0.0	True	pass
+443	ht_candidate_jets	9	floating	double	double	36	0	36	0.0	True	pass
+443	pairing	10	string	string	string	36	0	0			pass
+443	pairing_combo_bjet_ranks	11	string	string	string	36	0	0			pass
+443	pairing_score_125_125	12	floating	double	double	36	0	36	0.0	True	pass
+443	higgs_ordering	13	string	string	string	36	0	0			pass
+443	mbb1	14	floating	double	double	36	0	36	0.0	True	pass
+443	mbb2	15	floating	double	double	36	0	36	0.0	True	pass
+443	avg_mbb	16	floating	double	double	36	0	36	0.0	True	pass
+443	delta_mbb	17	floating	double	double	36	0	36	0.0	True	pass
+443	r_hh	18	floating	double	double	36	0	36	0.0	True	pass
+443	r_hh_125_125	19	floating	double	double	36	0	36	0.0	True	pass
+443	r_hh_125_120	20	floating	double	double	36	0	36	0.0	True	pass
+443	mhh	21	floating	double	double	36	0	36	0.0	True	pass
+443	hh_pt	22	floating	double	double	36	0	36	0.0	True	pass
+443	hh_eta	23	floating	double	double	36	0	36	0.0	True	pass
+443	hh_phi	24	floating	double	double	36	0	36	0.0	True	pass
+443	h1_pt	25	floating	double	double	36	0	36	0.0	True	pass
+443	h1_eta	26	floating	double	double	36	0	36	0.0	True	pass
+443	h1_phi	27	floating	double	double	36	0	36	0.0	True	pass
+443	h2_pt	28	floating	double	double	36	0	36	0.0	True	pass
+443	h2_eta	29	floating	double	double	36	0	36	0.0	True	pass
+443	h2_phi	30	floating	double	double	36	0	36	0.0	True	pass
+443	h_delta_eta	31	floating	double	double	36	0	36	0.0	True	pass
+443	h_delta_phi	32	floating	double	double	36	0	36	0.0	True	pass
+443	h_delta_r	33	floating	double	double	36	0	36	0.0	True	pass
+443	h_pt_balance	34	floating	double	double	36	0	36	0.0	True	pass
+443	drbb1	35	floating	double	double	36	0	36	0.0	True	pass
+443	drbb2	36	floating	double	double	36	0	36	0.0	True	pass
+443	j1_pt	37	floating	double	double	36	0	36	0.0	True	pass
+443	j2_pt	38	floating	double	double	36	0	36	0.0	True	pass
+443	j3_pt	39	floating	double	double	36	0	36	0.0	True	pass
+443	j4_pt	40	floating	double	double	36	0	36	0.0	True	pass
+443	j1_eta	41	floating	double	double	36	0	36	0.0	True	pass
+443	j1_phi	42	floating	double	double	36	0	36	0.0	True	pass
+443	j1_mass	43	floating	double	double	36	0	36	0.0	True	pass
+443	j1_btag	44	floating	double	double	36	0	36	0.0	True	pass
+443	j1_flavor	45	integer	int64	int64	36	0	0			pass
+443	j1_raw_index	46	integer	int64	int64	36	0	0			pass
+443	j1_selected_index	47	integer	int64	int64	36	0	0			pass
+443	j1_bjet_rank	48	integer	int64	int64	36	0	0			pass
+443	j2_eta	49	floating	double	double	36	0	36	0.0	True	pass
+443	j2_phi	50	floating	double	double	36	0	36	0.0	True	pass
+443	j2_mass	51	floating	double	double	36	0	36	0.0	True	pass
+443	j2_btag	52	floating	double	double	36	0	36	0.0	True	pass
+443	j2_flavor	53	integer	int64	int64	36	0	0			pass
+443	j2_raw_index	54	integer	int64	int64	36	0	0			pass
+443	j2_selected_index	55	integer	int64	int64	36	0	0			pass
+443	j2_bjet_rank	56	integer	int64	int64	36	0	0			pass
+443	j3_eta	57	floating	double	double	36	0	36	0.0	True	pass
+443	j3_phi	58	floating	double	double	36	0	36	0.0	True	pass
+443	j3_mass	59	floating	double	double	36	0	36	0.0	True	pass
+443	j3_btag	60	floating	double	double	36	0	36	0.0	True	pass
+443	j3_flavor	61	integer	int64	int64	36	0	0			pass
+443	j3_raw_index	62	integer	int64	int64	36	0	0			pass
+443	j3_selected_index	63	integer	int64	int64	36	0	0			pass
+443	j3_bjet_rank	64	integer	int64	int64	36	0	0			pass
+443	j4_eta	65	floating	double	double	36	0	36	0.0	True	pass
+443	j4_phi	66	floating	double	double	36	0	36	0.0	True	pass
+443	j4_mass	67	floating	double	double	36	0	36	0.0	True	pass
+443	j4_btag	68	floating	double	double	36	0	36	0.0	True	pass
+443	j4_flavor	69	integer	int64	int64	36	0	0			pass
+443	j4_raw_index	70	integer	int64	int64	36	0	0			pass
+443	j4_selected_index	71	integer	int64	int64	36	0	0			pass
+443	j4_bjet_rank	72	integer	int64	int64	36	0	0			pass
+543	sample	1	string	string	string	1189	0	0			pass
+543	event	2	integer	int64	int64	1189	0	0			pass
+543	n_selected_jets	3	integer	int64	int64	1189	0	0			pass
+543	n_selected_bjets	4	integer	int64	int64	1189	0	0			pass
+543	n_extra_selected_jets	5	integer	int64	int64	1189	0	0			pass
+543	n_extra_selected_bjets	6	integer	int64	int64	1189	0	0			pass
+543	ht_selected_jets	7	floating	double	double	1189	0	1189	0.0	True	pass
+543	ht_selected_bjets	8	floating	double	double	1189	0	1189	0.0	True	pass
+543	ht_candidate_jets	9	floating	double	double	1189	0	1189	0.0	True	pass
+543	pairing	10	string	string	string	1189	0	0			pass
+543	pairing_combo_bjet_ranks	11	string	string	string	1189	0	0			pass
+543	pairing_score_125_125	12	floating	double	double	1189	0	1189	0.0	True	pass
+543	higgs_ordering	13	string	string	string	1189	0	0			pass
+543	mbb1	14	floating	double	double	1189	0	1189	0.0	True	pass
+543	mbb2	15	floating	double	double	1189	0	1189	0.0	True	pass
+543	avg_mbb	16	floating	double	double	1189	0	1189	0.0	True	pass
+543	delta_mbb	17	floating	double	double	1189	0	1189	0.0	True	pass
+543	r_hh	18	floating	double	double	1189	0	1189	0.0	True	pass
+543	r_hh_125_125	19	floating	double	double	1189	0	1189	0.0	True	pass
+543	r_hh_125_120	20	floating	double	double	1189	0	1189	0.0	True	pass
+543	mhh	21	floating	double	double	1189	0	1189	0.0	True	pass
+543	hh_pt	22	floating	double	double	1189	0	1189	0.0	True	pass
+543	hh_eta	23	floating	double	double	1189	0	1189	0.0	True	pass
+543	hh_phi	24	floating	double	double	1189	0	1189	0.0	True	pass
+543	h1_pt	25	floating	double	double	1189	0	1189	0.0	True	pass
+543	h1_eta	26	floating	double	double	1189	0	1189	0.0	True	pass
+543	h1_phi	27	floating	double	double	1189	0	1189	0.0	True	pass
+543	h2_pt	28	floating	double	double	1189	0	1189	0.0	True	pass
+543	h2_eta	29	floating	double	double	1189	0	1189	0.0	True	pass
+543	h2_phi	30	floating	double	double	1189	0	1189	0.0	True	pass
+543	h_delta_eta	31	floating	double	double	1189	0	1189	0.0	True	pass
+543	h_delta_phi	32	floating	double	double	1189	0	1189	0.0	True	pass
+543	h_delta_r	33	floating	double	double	1189	0	1189	0.0	True	pass
+543	h_pt_balance	34	floating	double	double	1189	0	1189	0.0	True	pass
+543	drbb1	35	floating	double	double	1189	0	1189	0.0	True	pass
+543	drbb2	36	floating	double	double	1189	0	1189	0.0	True	pass
+543	j1_pt	37	floating	double	double	1189	0	1189	0.0	True	pass
+543	j2_pt	38	floating	double	double	1189	0	1189	0.0	True	pass
+543	j3_pt	39	floating	double	double	1189	0	1189	0.0	True	pass
+543	j4_pt	40	floating	double	double	1189	0	1189	0.0	True	pass
+543	j1_eta	41	floating	double	double	1189	0	1189	0.0	True	pass
+543	j1_phi	42	floating	double	double	1189	0	1189	0.0	True	pass
+543	j1_mass	43	floating	double	double	1189	0	1189	0.0	True	pass
+543	j1_btag	44	floating	double	double	1189	0	1189	0.0	True	pass
+543	j1_flavor	45	integer	int64	int64	1189	0	0			pass
+543	j1_raw_index	46	integer	int64	int64	1189	0	0			pass
+543	j1_selected_index	47	integer	int64	int64	1189	0	0			pass
+543	j1_bjet_rank	48	integer	int64	int64	1189	0	0			pass
+543	j2_eta	49	floating	double	double	1189	0	1189	0.0	True	pass
+543	j2_phi	50	floating	double	double	1189	0	1189	0.0	True	pass
+543	j2_mass	51	floating	double	double	1189	0	1189	0.0	True	pass
+543	j2_btag	52	floating	double	double	1189	0	1189	0.0	True	pass
+543	j2_flavor	53	integer	int64	int64	1189	0	0			pass
+543	j2_raw_index	54	integer	int64	int64	1189	0	0			pass
+543	j2_selected_index	55	integer	int64	int64	1189	0	0			pass
+543	j2_bjet_rank	56	integer	int64	int64	1189	0	0			pass
+543	j3_eta	57	floating	double	double	1189	0	1189	0.0	True	pass
+543	j3_phi	58	floating	double	double	1189	0	1189	0.0	True	pass
+543	j3_mass	59	floating	double	double	1189	0	1189	0.0	True	pass
+543	j3_btag	60	floating	double	double	1189	0	1189	0.0	True	pass
+543	j3_flavor	61	integer	int64	int64	1189	0	0			pass
+543	j3_raw_index	62	integer	int64	int64	1189	0	0			pass
+543	j3_selected_index	63	integer	int64	int64	1189	0	0			pass
+543	j3_bjet_rank	64	integer	int64	int64	1189	0	0			pass
+543	j4_eta	65	floating	double	double	1189	0	1189	0.0	True	pass
+543	j4_phi	66	floating	double	double	1189	0	1189	0.0	True	pass
+543	j4_mass	67	floating	double	double	1189	0	1189	0.0	True	pass
+543	j4_btag	68	floating	double	double	1189	0	1189	0.0	True	pass
+543	j4_flavor	69	integer	int64	int64	1189	0	0			pass
+543	j4_raw_index	70	integer	int64	int64	1189	0	0			pass
+543	j4_selected_index	71	integer	int64	int64	1189	0	0			pass
+543	j4_bjet_rank	72	integer	int64	int64	1189	0	0			pass

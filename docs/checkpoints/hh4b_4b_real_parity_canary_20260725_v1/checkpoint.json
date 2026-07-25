@@ -1,0 +1,21 @@
+{
+  "canaries_passed": 8,
+  "canaries_selected": 8,
+  "classification": "paper_quality_real_delphes_fourb_parity_canary_checkpoint",
+  "next_gate": "run_hh4b_3b_control_train_canary",
+  "normalizations_calculated": 0,
+  "parity_columns_compared": 576,
+  "parity_rows_compared": 2304,
+  "physics_yields_calculated": 0,
+  "root_files_opened_in_threeb_mode": 0,
+  "schema_version": 1,
+  "significances_calculated": 0,
+  "source_commit": "7f511757e8888f6f93cbe4e130cf62548a778a7e",
+  "status": "hh4b_4b_real_delphes_parity_pass",
+  "temporary_files_remaining": 0,
+  "test_members_considered": 0,
+  "threeb_candidates_reconstructed": 0,
+  "total_parity_mismatches": 0,
+  "transfer_factors_calculated": 0,
+  "validation_members_considered": 0
+}

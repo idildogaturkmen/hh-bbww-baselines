@@ -1,0 +1,9 @@
+member_index	delphes_num_entries	frozen_selected_rows	maximum_n_selected_jets	maximum_n_selected_bjets	selected_event_with_more_than_four_tagged_jets	selected_event_with_more_than_eight_tagged_jets	maximum_observed_pairing_bjet_rank	zero_4b_candidates_selected
+1	1000	58	9	5	True	False	3	False
+18	1000	74	11	5	True	False	4	False
+99	10000	612	10	5	True	False	4	False
+123	10000	0			False	False		True
+184	10000	1	4	4	False	False	3	False
+413	10000	334	8	6	True	False	5	False
+443	10000	36	10	5	True	False	4	False
+543	10000	1189	12	6	True	False	5	False
