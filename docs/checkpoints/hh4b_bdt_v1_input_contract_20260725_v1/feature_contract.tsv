@@ -1,0 +1,35 @@
+feature_order_mass_aware	feature_order_mass_plane_blind	feature	source_column_or_expression	logical_dtype	common_non_mass_plane_feature	mass_aware_feature	mass_plane_blind_feature	feature_role	latex_short_label	status
+1	1	n_selected_jets	n_selected_jets	int64	True	True	True	common_non_mass_plane	$N_{\mathrm{jet}}$	pass
+2	2	n_selected_bjets	n_selected_bjets	int64	True	True	True	common_non_mass_plane	$N_{b\mathrm{-jet}}$	pass
+3	3	ht_selected_jets	ht_selected_jets	float64	True	True	True	common_non_mass_plane	$H_{\mathrm{T}}^{\mathrm{jets}}$	pass
+4	4	ht_selected_bjets	ht_selected_bjets	float64	True	True	True	common_non_mass_plane	$H_{\mathrm{T}}^{b\mathrm{-jets}}$	pass
+5	5	ht_candidate_jets	ht_candidate_jets	float64	True	True	True	common_non_mass_plane	$H_{\mathrm{T}}^{HH\ \mathrm{jets}}$	pass
+6	6	mhh	mhh	float64	True	True	True	common_non_mass_plane	$m_{HH}$	pass
+7	7	hh_pt	hh_pt	float64	True	True	True	common_non_mass_plane	$p_{\mathrm{T}}^{HH}$	pass
+8	8	abs_hh_eta	abs(hh_eta)	float64	True	True	True	common_non_mass_plane	$|\eta_{HH}|$	pass
+9	9	h1_pt	h1_pt	float64	True	True	True	common_non_mass_plane	$p_{\mathrm{T}}^{H_1}$	pass
+10	10	abs_h1_eta	abs(h1_eta)	float64	True	True	True	common_non_mass_plane	$|\eta_{H_1}|$	pass
+11	11	h2_pt	h2_pt	float64	True	True	True	common_non_mass_plane	$p_{\mathrm{T}}^{H_2}$	pass
+12	12	abs_h2_eta	abs(h2_eta)	float64	True	True	True	common_non_mass_plane	$|\eta_{H_2}|$	pass
+13	13	abs_h_delta_eta	abs(h_delta_eta)	float64	True	True	True	common_non_mass_plane	$|\Delta\eta_{HH}|$	pass
+14	14	abs_h_delta_phi	abs(h_delta_phi)	float64	True	True	True	common_non_mass_plane	$|\Delta\phi_{HH}|$	pass
+15	15	h_delta_r	h_delta_r	float64	True	True	True	common_non_mass_plane	$\Delta R_{HH}$	pass
+16	16	h_pt_balance	h_pt_balance	float64	True	True	True	common_non_mass_plane	$p_{\mathrm{T}}\ \mathrm{balance}$	pass
+17	17	drbb1	drbb1	float64	True	True	True	common_non_mass_plane	$\Delta R_{bb}^{H_1}$	pass
+18	18	drbb2	drbb2	float64	True	True	True	common_non_mass_plane	$\Delta R_{bb}^{H_2}$	pass
+19	19	j1_pt	j1_pt	float64	True	True	True	common_non_mass_plane	$p_{\mathrm{T}}^{j_1}$	pass
+20	20	abs_j1_eta	abs(j1_eta)	float64	True	True	True	common_non_mass_plane	$|\eta_{j_1}|$	pass
+21	21	j1_mass	j1_mass	float64	True	True	True	common_non_mass_plane	$m_{j_1}$	pass
+22	22	j2_pt	j2_pt	float64	True	True	True	common_non_mass_plane	$p_{\mathrm{T}}^{j_2}$	pass
+23	23	abs_j2_eta	abs(j2_eta)	float64	True	True	True	common_non_mass_plane	$|\eta_{j_2}|$	pass
+24	24	j2_mass	j2_mass	float64	True	True	True	common_non_mass_plane	$m_{j_2}$	pass
+25	25	j3_pt	j3_pt	float64	True	True	True	common_non_mass_plane	$p_{\mathrm{T}}^{j_3}$	pass
+26	26	abs_j3_eta	abs(j3_eta)	float64	True	True	True	common_non_mass_plane	$|\eta_{j_3}|$	pass
+27	27	j3_mass	j3_mass	float64	True	True	True	common_non_mass_plane	$m_{j_3}$	pass
+28	28	j4_pt	j4_pt	float64	True	True	True	common_non_mass_plane	$p_{\mathrm{T}}^{j_4}$	pass
+29	29	abs_j4_eta	abs(j4_eta)	float64	True	True	True	common_non_mass_plane	$|\eta_{j_4}|$	pass
+30	30	j4_mass	j4_mass	float64	True	True	True	common_non_mass_plane	$m_{j_4}$	pass
+31		mbb1	mbb1	float64	False	True	False	explicit_mass_plane	$m_{bb}^{H_1}$	pass
+32		mbb2	mbb2	float64	False	True	False	explicit_mass_plane	$m_{bb}^{H_2}$	pass
+33		delta_mbb	delta_mbb	float64	False	True	False	explicit_mass_plane	$|m_{bb}^{H_1}-m_{bb}^{H_2}|$	pass
+34		r_hh_125_125	r_hh_125_125	float64	False	True	False	explicit_mass_plane	$R_{HH}^{125,125}$	pass

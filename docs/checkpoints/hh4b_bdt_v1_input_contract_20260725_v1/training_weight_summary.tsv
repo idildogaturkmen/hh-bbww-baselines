@@ -1,0 +1,14 @@
+level	category	parent	candidate_rows	members	candidate_bearing_members	target_hierarchical_fraction	raw_weight_sum	rescale_factor	training_weight_sum	mean_training_weight	physical_normalization	status
+global	all_train_candidates		57326	458	290	1.0	1.0	57326.0	57325.99999999999	0.9999999999999999	none_development_balancing_only	pass
+class	signal	all	9975	88	88	0.5	0.5	57326.0	28663.0	2.873483709273183	none_development_balancing_only	pass
+class	background	all	47351	370	202	0.5	0.5	57326.0	28663.0	0.6053304048488944	none_development_balancing_only	pass
+signal_mode	ggf_hh4b	signal	4893	80	80	0.25	0.25	57326.0	14331.5	2.9289801757612914	none_development_balancing_only	pass
+signal_mode	vbf_hh4b	signal	5082	8	8	0.25	0.24999999999999997	57326.0	14331.5	2.8200511609602517	none_development_balancing_only	pass
+background_family	diboson	background	7	8	4	0.0625	0.0625	57326.0	3582.875	511.8392857142857	none_development_balancing_only	pass
+background_family	qcd_multijet	background	22863	210	48	0.0625	0.062499999999999986	57326.0	3582.8750000000005	0.15671062415256093	none_development_balancing_only	pass
+background_family	single_higgs	background	1466	21	21	0.0625	0.0625	57326.0	3582.875	2.4439802182810366	none_development_balancing_only	pass
+background_family	single_top	background	175	24	22	0.0625	0.06249999999999999	57326.0	3582.875	20.47357142857143	none_development_balancing_only	pass
+background_family	top_associated	background	14889	15	15	0.0625	0.0625	57326.0	3582.875	0.24063906239505675	none_development_balancing_only	pass
+background_family	triboson	background	159	12	12	0.0625	0.06249999999999998	57326.0	3582.875	22.53380503144654	none_development_balancing_only	pass
+background_family	ttbar	background	1947	60	60	0.0625	0.0625	57326.0	3582.8750000000005	1.8402028762198257	none_development_balancing_only	pass
+background_family	zbbbb	background	5845	20	20	0.0625	0.0625	57326.0	3582.875	0.6129811804961506	none_development_balancing_only	pass

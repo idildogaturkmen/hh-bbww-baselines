@@ -1,0 +1,8 @@
+scope	sample_class	metadata_source	members	candidate_rows	candidate_files_opened	status
+development	all	manifest_metadata	581	70071	458	pass
+train	all	manifest_and_opened_train_candidates	458	57326	458	pass
+train_signal	signal	manifest_and_opened_train_candidates	88	9975		pass
+train_background	background	manifest_and_opened_train_candidates	370	47351		pass
+validation	all	manifest_metadata_only	123	12745	0	pass
+validation_signal	signal	manifest_metadata_only	19	2246	0	pass
+validation_background	background	manifest_metadata_only	104	10499	0	pass

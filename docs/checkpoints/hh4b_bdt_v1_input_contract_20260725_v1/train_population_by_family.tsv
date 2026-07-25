@@ -1,0 +1,11 @@
+category_type	category	sample_class	training_target	members	candidate_bearing_members	zero_candidate_members	candidate_rows	mapping_source	status
+background_family	diboson	background	0	8	4	4	7	explicit_config_mapping_from_process_or_mode	pass
+background_family	qcd_multijet	background	0	210	48	162	22863	explicit_config_mapping_from_process_or_mode	pass
+background_family	single_higgs	background	0	21	21	0	1466	explicit_config_mapping_from_process_or_mode	pass
+background_family	single_top	background	0	24	22	2	175	explicit_config_mapping_from_process_or_mode	pass
+background_family	top_associated	background	0	15	15	0	14889	explicit_config_mapping_from_process_or_mode	pass
+background_family	triboson	background	0	12	12	0	159	explicit_config_mapping_from_process_or_mode	pass
+background_family	ttbar	background	0	60	60	0	1947	explicit_config_mapping_from_process_or_mode	pass
+background_family	zbbbb	background	0	20	20	0	5845	explicit_config_mapping_from_process_or_mode	pass
+signal_mode	ggf_hh4b	signal	1	80	80	0	4893	authoritative_process_or_mode_direct	pass
+signal_mode	vbf_hh4b	signal	1	8	8	0	5082	authoritative_process_or_mode_direct	pass

@@ -1,0 +1,3 @@
+manifest_process_or_mode	signal_mode	source_field	train_members	train_candidate_rows	validation_members_from_manifest	validation_candidate_rows_from_manifest	status
+ggf_hh4b	ggf_hh4b	process_or_mode	80	4893	17	1045	pass
+vbf_hh4b	vbf_hh4b	process_or_mode	8	5082	2	1201	pass

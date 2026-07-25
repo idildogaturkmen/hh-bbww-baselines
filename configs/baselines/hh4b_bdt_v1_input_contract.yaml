@@ -1,0 +1,146 @@
+schema_version: 1
+contract_name: hh4b_bdt_v1_input_contract
+source_commit: 3d26a8ba6e018cbf80d445985013a664a2ec4586
+manifest:
+  path: outputs/agent_runs/hh4b_canonical72_development_manifest_20260725_v2/hh4b_canonical72_development_manifest.tsv
+  sha256: b3e42a0af56594445e297e2347ccfd3bd799fd107a578af844c9733bfd2ebe6a
+  authoritative_label_fields:
+    - sample_class
+    - training_target
+    - process_or_mode
+  candidate_path_field: local_path
+output_dir: outputs/agent_runs/hh4b_bdt_v1_input_contract_20260725_v1
+checkpoint_dir: docs/checkpoints/hh4b_bdt_v1_input_contract_20260725_v1
+
+population:
+  candidate_category: at_least_four_selected_tagged_jets
+  selected_jet_pt_min_GeV: 30.0
+  selected_jet_abs_eta_max: 2.5
+  common_bdt_r_hh_125_125_cut: null
+  optimized_cut_baseline_r_hh_125_125_max: 34.0
+  expected:
+    development_members: 581
+    train_members: 458
+    validation_members: 123
+    train_signal_members: 88
+    train_background_members: 370
+    validation_signal_members: 19
+    validation_background_members: 104
+    development_candidate_rows: 70071
+    train_candidate_rows: 57326
+    train_signal_rows: 9975
+    train_background_rows: 47351
+    validation_candidate_rows: 12745
+
+signal_mode_mapping:
+  ggf_hh4b: ggf_hh4b
+  vbf_hh4b: vbf_hh4b
+
+# process_family is absent from the canonical development manifest.  This
+# explicit map derives broad physics families only from authoritative
+# process_or_mode metadata; filenames and paths are never used.
+background_family_mapping:
+  bbh_hbb_4fs: single_higgs
+  ggh_hbb: single_higgs
+  qcd_bbbb_general: qcd_multijet
+  qcd_bbbb_iht400to600: qcd_multijet
+  qcd_hardqcd: qcd_multijet
+  schannel_single_top: single_top
+  tchannel_antitop: single_top
+  tchannel_top: single_top
+  ttbar_inclusive: ttbar
+  tth_hbb: top_associated
+  tttt: top_associated
+  ttw: top_associated
+  ttz_zbb: top_associated
+  tw_antitop: single_top
+  tw_top: single_top
+  vbf_hbb: single_higgs
+  wh_hbb: single_higgs
+  ww: diboson
+  wwz_zbb: triboson
+  wz_zbb: diboson
+  wzz_zbb: triboson
+  zbbbb: zbbbb
+  zzz_zbb: triboson
+
+feature_sets:
+  mass_plane_blind_description: explicit dijet-mass-plane-blind ablation
+  common:
+    - n_selected_jets
+    - n_selected_bjets
+    - ht_selected_jets
+    - ht_selected_bjets
+    - ht_candidate_jets
+    - mhh
+    - hh_pt
+    - abs_hh_eta
+    - h1_pt
+    - abs_h1_eta
+    - h2_pt
+    - abs_h2_eta
+    - abs_h_delta_eta
+    - abs_h_delta_phi
+    - h_delta_r
+    - h_pt_balance
+    - drbb1
+    - drbb2
+    - j1_pt
+    - abs_j1_eta
+    - j1_mass
+    - j2_pt
+    - abs_j2_eta
+    - j2_mass
+    - j3_pt
+    - abs_j3_eta
+    - j3_mass
+    - j4_pt
+    - abs_j4_eta
+    - j4_mass
+  mass_plane_append:
+    - mbb1
+    - mbb2
+    - delta_mbb
+    - r_hh_125_125
+
+folds:
+  count: 5
+  random_seed: null
+  preferred_algorithm: StratifiedGroupKFold
+  fallback_algorithm: deterministic_stratum_greedy_largest_candidate_count_first_v1
+  grouping_key: member_index
+
+weighting:
+  name: hierarchical_development_balancing
+  physical_normalization: false
+  class_total_fraction:
+    signal: 0.5
+    background: 0.5
+  equal_signal_mode_totals: true
+  equal_background_family_totals: true
+  equal_candidate_bearing_member_totals_within_stratum: true
+  zero_candidate_member_policy: retained_in_folds_no_row_weight_exists
+  normalized_mean_row_weight: 1.0
+  tolerance: 1.0e-10
+
+plotting:
+  style_helper: scripts/plotting/hh4b_cms_style.py
+  dpi: 300
+  text_usetex: false
+  header: Delphes simulation
+  energy_label: '$\sqrt{s}=13\,\mathrm{TeV}$'
+  plots:
+    - train_population_by_family
+    - train_fold_composition
+    - mass_aware_feature_correlation
+
+legacy_inventory:
+  compatibility_default: legacy_noncanonical
+  disposition: do_not_reuse_as_canonical_bdt
+
+authorization:
+  canonical_bdt_training_authorized: false
+  validation_evaluation_authorized: false
+  test_access_authorized: false
+  physical_significance_authorized: false
+  next_gate: train_hh4b_bdt_v1_grouped_cross_validation
