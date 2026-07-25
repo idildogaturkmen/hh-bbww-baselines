@@ -1,0 +1,16 @@
+{
+  "classification": "canonical_hh4b_bdt_v1_grouped_cv_checkpoint",
+  "final_full_train_models_fitted": false,
+  "grouped_cv_complete": true,
+  "models_committed": 0,
+  "next_gate": "freeze_hh4b_bdt_v1_models_and_evaluate_validation_once",
+  "oof_predictions_committed": 0,
+  "physical_significance_authorized": false,
+  "schema_version": 1,
+  "selected_hyperparameters_frozen": true,
+  "source_commit": "835f58798e0cb209d962f3836a1d2f3001003823",
+  "status": "hh4b_bdt_v1_grouped_cross_validation_pass",
+  "test_access_authorized": false,
+  "train_oof_working_points_frozen": true,
+  "validation_evaluation_authorized": false
+}

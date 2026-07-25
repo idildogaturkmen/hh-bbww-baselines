@@ -1,0 +1,160 @@
+schema_version: 1
+analysis_name: hh4b_bdt_v1_grouped_cv
+source_commit: 835f58798e0cb209d962f3836a1d2f3001003823
+required_interpreter: /uscms_data/d3/iturkmen/venvs/hh4b-bdt-v1/bin/python
+
+input_contract:
+  checkpoint_dir: docs/checkpoints/hh4b_bdt_v1_input_contract_20260725_v1
+  config_path: configs/baselines/hh4b_bdt_v1_input_contract.yaml
+  common_helper_path: scripts/analysis/hh4b_bdt_v1_common.py
+  feature_contract: feature_contract.tsv
+  member_fold_assignment: member_fold_assignment.tsv
+  member_weight_summary: member_weight_summary.tsv
+  background_family_mapping: background_family_mapping.tsv
+  signal_mode_mapping: signal_mode_mapping.tsv
+
+runtime_output_dir: outputs/agent_runs/hh4b_bdt_v1_grouped_cv_20260725_v1
+checkpoint_dir: docs/checkpoints/hh4b_bdt_v1_grouped_cv_20260725_v1
+
+required_environment:
+  python_major_minor: "3.9"
+  sklearn_version: "1.6.1"
+  xgboost_version: "2.1.4"
+  controls:
+    OMP_NUM_THREADS: "8"
+    OPENBLAS_NUM_THREADS: "1"
+    MKL_NUM_THREADS: "1"
+    NUMEXPR_NUM_THREADS: "1"
+
+expected_population:
+  development_members: 581
+  train_members: 458
+  validation_members: 123
+  train_rows: 57326
+  signal_rows: 9975
+  background_rows: 47351
+  folds: 5
+  features_mass_aware: 34
+  features_mass_plane_blind: 30
+
+model_variants:
+  mass_aware:
+    display_name: Mass-aware BDT
+    feature_set: mass_aware
+  explicit_dijet_mass_plane_blind:
+    display_name: Dijet-mass-plane-blind BDT
+    feature_set: mass_plane_blind
+    scientific_description: explicit dijet-mass-plane-blind ablation
+
+estimator_fixed_parameters:
+  objective: "binary:logistic"
+  booster: gbtree
+  tree_method: hist
+  max_bin: 256
+  eval_metric: logloss
+  n_jobs: 8
+  random_state: 20260725
+  verbosity: 0
+  scale_pos_weight: 1.0
+
+hyperparameter_search:
+  deterministic_seed: 20260725
+  configurations: 24
+  n_estimators: [200, 400, 700]
+  max_depth: [2, 3, 4, 5]
+  learning_rate: [0.03, 0.05, 0.08]
+  min_child_weight: [1, 3, 7]
+  subsample: [0.75, 0.90, 1.00]
+  colsample_bytree: [0.75, 0.90, 1.00]
+  reg_lambda: [1, 5, 20]
+  reg_alpha: [0, 0.1, 1]
+  gamma: [0, 0.1]
+  baseline:
+    n_estimators: 400
+    max_depth: 3
+    learning_rate: 0.05
+    min_child_weight: 3
+    subsample: 0.90
+    colsample_bytree: 0.90
+    reg_lambda: 5
+    reg_alpha: 0.1
+    gamma: 0
+  selection_order:
+    - highest_mean_heldout_weighted_roc_auc
+    - highest_worst_fold_weighted_roc_auc
+    - lowest_fold_weighted_roc_auc_standard_deviation
+    - lowest_n_estimators_times_two_to_max_depth
+    - lowest_trial_id
+
+working_points:
+  weighted_signal_efficiencies: [0.30, 0.50, 0.70]
+  include_cut_matched_signal_efficiency: true
+  score_comparison: greater_than_or_equal
+
+cut_baseline:
+  variable: r_hh_125_125
+  operator: less_than
+  threshold: 34.0
+  apply_to_bdt_population: false
+
+score_mass_diagnostics:
+  background_score_quantiles: 5
+  rhh_thresholds: [34.0, 50.0, 80.0]
+  plot_rhh_bin_edges:
+    - 0
+    - 10
+    - 20
+    - 30
+    - 40
+    - 50
+    - 60
+    - 70
+    - 80
+    - 90
+    - 100
+    - 110
+    - 120
+    - 130
+    - 140
+    - 150
+    - 160
+    - 170
+    - 180
+    - 190
+    - 200
+    - 250
+    - 300
+    - 350
+    - 400
+    - 500
+    - 600
+    - 800
+    - 1000
+    - 1200
+
+plotting:
+  style_helper: scripts/plotting/hh4b_cms_style.py
+  dpi: 300
+  score_bin_edges: 41
+  plots:
+    - oof_roc_development_weighted
+    - oof_roc_raw
+    - oof_precision_recall_development_weighted
+    - oof_score_mass_aware
+    - oof_score_mass_plane_blind
+    - fold_auc_stability
+    - background_family_efficiency_at_50pct_signal
+    - feature_importance_mass_aware
+    - feature_importance_mass_plane_blind
+    - background_rhh_by_score_quintile_mass_aware
+    - background_rhh_by_score_quintile_mass_plane_blind
+
+authorization:
+  grouped_cv_complete: false
+  selected_hyperparameters_frozen: false
+  train_oof_working_points_frozen: false
+  final_full_train_models_fitted: false
+  validation_evaluation_authorized: false
+  test_access_authorized: false
+  physical_significance_authorized: false
+  next_gate: freeze_hh4b_bdt_v1_models_and_evaluate_validation_once
