@@ -1,0 +1,27 @@
+plot_path	sample_scope	plot_name	title	fixed_binning	unweighted_rows_used	file_size_bytes	plot_status
+plots/background_candidate_rows_by_process.png	background_only	background_candidate_rows_by_process.png	"Unweighted train-canary QA — not a physics prediction
+Background candidate rows by process"	categorical process_or_mode; raw row counts	11756	81433	pass
+plots/background_mbb_plane_threeb.png	background_only	background_mbb_plane_threeb.png	"Unweighted train-canary QA — not a physics prediction
+Background exactly-3b mbb plane (N=8354)"	60x60 bins; axes [0.0, 300.0] GeV	8354	55353	pass
+plots/background_mbb_plane_fourb.png	background_only	background_mbb_plane_fourb.png	"Unweighted train-canary QA — not a physics prediction
+Background fourb-parity mbb plane (N=3402)"	60x60 bins; axes [0.0, 300.0] GeV	3402	53876	pass
+plots/background_rhh_threeb_fourb.png	background_only	background_rhh_threeb_fourb.png	"Unweighted train-canary QA — not a physics prediction
+Background R_HH"	50 bins; [0.0, 400.0]	11756	47346	pass
+plots/background_mhh_threeb_fourb.png	background_only	background_mhh_threeb_fourb.png	"Unweighted train-canary QA — not a physics prediction
+Background mHH"	50 bins; [0.0, 2000.0]	11756	48428	pass
+plots/background_selected_jet_multiplicity_threeb.png	background_only	background_selected_jet_multiplicity_threeb.png	"Unweighted train-canary QA — not a physics prediction
+Background selected-jet multiplicity (3b)"	[3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5]	8354	46946	pass
+plots/background_promoted_jet_pt.png	background_only	background_promoted_jet_pt.png	"Unweighted train-canary QA — not a physics prediction
+Background Promoted jet pT [GeV]"	50 bins; [0.0, 500.0]	8354	45469	pass
+plots/background_promoted_jet_eta.png	background_only	background_promoted_jet_eta.png	"Unweighted train-canary QA — not a physics prediction
+Background Promoted jet eta"	50 bins; [-2.5, 2.5]	8354	41512	pass
+plots/background_promoted_jet_flavor.png	background_only	background_promoted_jet_flavor.png	"Unweighted train-canary QA — not a physics prediction
+Background promoted-jet flavor (N=8354)"	fixed categories ['0', '1', '2', '3', '4', '5', '21', 'other']	8354	45426	pass
+plots/background_promoted_jet_candidate_position.png	background_only	background_promoted_jet_candidate_position.png	"Unweighted train-canary QA — not a physics prediction
+Background promoted-jet candidate position (N=8354)"	fixed categories [1, 2, 3, 4]	8354	42230	pass
+plots/signal_candidate_rows_by_mode.png	signal_only	signal_candidate_rows_by_mode.png	"Unweighted train-canary QA — not a physics prediction
+Signal reconstruction QA candidate rows by mode"	categorical process_or_mode; raw row counts	3003	52497	pass
+plots/signal_mbb_plane_threeb.png	signal_only	signal_mbb_plane_threeb.png	"Unweighted train-canary QA — not a physics prediction
+Signal reconstruction QA exactly-3b mbb plane (N=2259)"	60x60 bins; axes [0.0, 300.0] GeV	2259	54059	pass
+plots/signal_mbb_plane_fourb.png	signal_only	signal_mbb_plane_fourb.png	"Unweighted train-canary QA — not a physics prediction
+Signal reconstruction QA fourb-parity mbb plane (N=744)"	60x60 bins; axes [0.0, 300.0] GeV	744	50411	pass

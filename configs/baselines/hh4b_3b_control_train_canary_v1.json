@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "analysis_name": "hh4b_3b_control_train_canary_v1",
+  "source_commit": "1976e57d414f8a62e6bf37d70de9623d0589a022",
+  "source_map_path": "docs/checkpoints/hh4b_3b_root_source_map_20260725_v1/member_level_root_source_map.tsv",
+  "source_map_sha256": "e797ab8cc878ea1fbb84c05cd52fb8919c6e67bb56bab07bef46701615a29f60",
+  "prerequisite_checkpoint_dirs": [
+    "docs/checkpoints/hh4b_3b_root_source_map_20260725_v1",
+    "docs/checkpoints/hh4b_3b_delphes_branch_audit_20260725_v1",
+    "docs/checkpoints/hh4b_3b_builder_implementation_20260725_v1",
+    "docs/checkpoints/hh4b_4b_real_parity_canary_20260725_v1"
+  ],
+  "real_parity_summary_path": "docs/checkpoints/hh4b_4b_real_parity_canary_20260725_v1/summary.json",
+  "builder_path": "scripts/delphes/reconstruct_hh4b_3b_control_candidates.py",
+  "builder_sha256": "d81a27538437d90878f98d7f7760e5aa574814b9af6da99810642d76c6c2afa8",
+  "protected_files": {
+    "scripts/delphes/reconstruct_hh4b_candidates_v2.py": "4d7eb8e3400ec50c1c254744e6f3a2b11bd033a4525c13ec22e85247ecf59c57",
+    "scripts/delphes/reconstruct_hh4b_3b_control_candidates.py": "d81a27538437d90878f98d7f7760e5aa574814b9af6da99810642d76c6c2afa8",
+    "configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml": "4b2a951dba7ac8bd0e2e982e3447e998e07b86d63390c248600976b3f4912b68",
+    "configs/production/hh4b_3b_control_reconstruction_policy_v1.yaml": "b7c2ace61677b6016aa63b7d98fd7585c6bd9e9db4b54920542349c401097bf4"
+  },
+  "output_dir": "outputs/agent_runs/hh4b_3b_control_train_canary_20260725_v1",
+  "checkpoint_dir": "docs/checkpoints/hh4b_3b_control_train_canary_20260725_v1",
+  "temporary_root": "/tmp",
+  "xrdcp_timeout_seconds": 1800,
+  "builder_timeout_seconds": 1800,
+  "allowed_dataset_split": "train",
+  "validation_access_allowed": false,
+  "test_access_allowed": false,
+  "selection_policy": "lowest_member_index_per_rule_then_deduplicate",
+  "minimum_unique_canaries": 12,
+  "selection_rules": [
+    {
+      "rule_id": "qcd_hardqcd_existing_zero_4b",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "qcd_hardqcd"
+        },
+        {
+          "field": "candidate_rows",
+          "operator": "int_eq",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "rule_id": "qcd_hardqcd_existing_nonzero_4b",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "qcd_hardqcd"
+        },
+        {
+          "field": "candidate_rows",
+          "operator": "int_gt",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "rule_id": "qcd_bbbb_general",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "qcd_bbbb_general"
+        }
+      ]
+    },
+    {
+      "rule_id": "qcd_bbbb_iht400to600",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "qcd_bbbb_iht400to600"
+        }
+      ]
+    },
+    {
+      "rule_id": "ttbar_inclusive",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "ttbar_inclusive"
+        }
+      ]
+    },
+    {
+      "rule_id": "high_heavy_flavor_or_multiplicity",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "in",
+          "value": [
+            "tttt",
+            "tth_hbb"
+          ]
+        }
+      ]
+    },
+    {
+      "rule_id": "single_top",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "in",
+          "value": [
+            "schannel_single_top",
+            "tchannel_antitop",
+            "tchannel_top",
+            "tw_antitop",
+            "tw_top"
+          ]
+        }
+      ]
+    },
+    {
+      "rule_id": "single_higgs_non_tth",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "in",
+          "value": [
+            "bbh_hbb_4fs",
+            "ggh_hbb",
+            "vbf_hbb",
+            "wh_hbb"
+          ]
+        }
+      ]
+    },
+    {
+      "rule_id": "diboson",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "ww"
+        }
+      ]
+    },
+    {
+      "rule_id": "triboson_zbb",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "in",
+          "value": [
+            "wwz_zbb",
+            "wzz_zbb",
+            "zzz_zbb"
+          ]
+        }
+      ]
+    },
+    {
+      "rule_id": "ggf_ext20k_campaign",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "ggf_hh4b"
+        },
+        {
+          "field": "remote_bundle_path",
+          "operator": "contains",
+          "value": "ext20k"
+        }
+      ]
+    },
+    {
+      "rule_id": "ggf_ext80k_campaign",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "ggf_hh4b"
+        },
+        {
+          "field": "remote_bundle_path",
+          "operator": "contains",
+          "value": "ext80k"
+        }
+      ]
+    },
+    {
+      "rule_id": "vbf_hh_signal",
+      "all": [
+        {
+          "field": "process_family",
+          "operator": "eq",
+          "value": "vbf_hh4b"
+        }
+      ]
+    }
+  ],
+  "reconstruction_parameters": {
+    "target_mass": 125.0,
+    "jet_pt_min": 30.0,
+    "jet_eta_max": 2.5,
+    "btag_min": 0.0,
+    "max_bjets_for_pairing": 8,
+    "higgs_ordering": "pt"
+  },
+  "required_root_branches": [
+    "Jet.PT",
+    "Jet.Eta",
+    "Jet.Phi",
+    "Jet.Mass",
+    "Jet.BTag",
+    "Jet.Flavor"
+  ],
+  "plot_binning": {
+    "mbb": {
+      "bins": 60,
+      "min": 0.0,
+      "max": 300.0
+    },
+    "rhh": {
+      "bins": 50,
+      "min": 0.0,
+      "max": 400.0
+    },
+    "mhh": {
+      "bins": 50,
+      "min": 0.0,
+      "max": 2000.0
+    },
+    "selected_jet_multiplicity_edges": [
+      3.5,
+      4.5,
+      5.5,
+      6.5,
+      7.5,
+      8.5,
+      9.5,
+      10.5,
+      11.5,
+      12.5,
+      13.5,
+      14.5,
+      15.5
+    ],
+    "promoted_jet_pt": {
+      "bins": 50,
+      "min": 0.0,
+      "max": 500.0
+    },
+    "promoted_jet_eta": {
+      "bins": 50,
+      "min": -2.5,
+      "max": 2.5
+    },
+    "promoted_flavor_values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      21
+    ],
+    "promoted_candidate_positions": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "next_gate": "freeze_hh4b_3b_4b_common_mass_region_geometry"
+}
