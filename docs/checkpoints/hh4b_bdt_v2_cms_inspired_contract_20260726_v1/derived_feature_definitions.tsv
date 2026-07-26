@@ -1,0 +1,19 @@
+feature_order_after_v1	feature_order_mass_aware	feature	definition	inputs	units	generator_truth_used	absolute_azimuth_feature	latex_label	status
+1	35	dr_j1_j2	DeltaR(j1,j2) with wrapped DeltaPhi	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\Delta R(j_1,j_2)$	pass
+2	36	dr_j1_j3	DeltaR(j1,j3) with wrapped DeltaPhi	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\Delta R(j_1,j_3)$	pass
+3	37	dr_j1_j4	DeltaR(j1,j4) with wrapped DeltaPhi	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\Delta R(j_1,j_4)$	pass
+4	38	dr_j2_j3	DeltaR(j2,j3) with wrapped DeltaPhi	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\Delta R(j_2,j_3)$	pass
+5	39	dr_j2_j4	DeltaR(j2,j4) with wrapped DeltaPhi	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\Delta R(j_2,j_4)$	pass
+6	40	dr_j3_j4	DeltaR(j3,j4) with wrapped DeltaPhi	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\Delta R(j_3,j_4)$	pass
+7	41	min_candidate_pair_dr	minimum of all six candidate-jet DeltaR values	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\min\,\Delta R_{jj}$	pass
+8	42	max_candidate_pair_dr	maximum of all six candidate-jet DeltaR values	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\max\,\Delta R_{jj}$	pass
+9	43	mean_candidate_pair_dr	arithmetic mean of all six candidate-jet DeltaR values	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\langle\Delta R_{jj}\rangle$	pass
+10	44	min_cross_higgs_pair_dr	minimum DeltaR among the four cross-Higgs jet pairs	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\min\,\Delta R_{jj}^{\mathrm{cross}}$	pass
+11	45	max_cross_higgs_pair_dr	maximum DeltaR among the four cross-Higgs jet pairs	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\max\,\Delta R_{jj}^{\mathrm{cross}}$	pass
+12	46	candidate_vector_pt_sum	|vector sum of four candidate-jet transverse momenta|	four candidate-jet (pt,eta,phi,mass) four-vectors	GeV	false	false	$|\sum_{j=1}^{4}\vec{p}_{\mathrm{T}}^{\,j}|$	pass
+13	47	cos_theta_star_h1_in_hh_rest	cosine between H1 in the HH rest frame and the HH lab flight direction	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\cos\theta^{*}_{H_1}$	pass
+14	48	abs_cos_theta_star_h1_in_hh_rest	absolute value of cos_theta_star_h1_in_hh_rest	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$|\cos\theta^{*}_{H_1}|$	pass
+15	49	cos_theta_j1_in_h1_rest	cosine between leading-pT H1 jet in the H1 rest frame and the H1 lab flight direction	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\cos\theta_{j_1}^{H_1}$	pass
+16	50	abs_cos_theta_j1_in_h1_rest	absolute value of cos_theta_j1_in_h1_rest	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$|\cos\theta_{j_1}^{H_1}|$	pass
+17	51	cos_theta_j_h2_leading_in_h2_rest	cosine between leading-pT H2 jet in the H2 rest frame and the H2 lab flight direction	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$\cos\theta_{j_{\mathrm{lead}}}^{H_2}$	pass
+18	52	abs_cos_theta_j_h2_leading_in_h2_rest	absolute value of cos_theta_j_h2_leading_in_h2_rest	four candidate-jet (pt,eta,phi,mass) four-vectors	dimensionless	false	false	$|\cos\theta_{j_{\mathrm{lead}}}^{H_2}|$	pass

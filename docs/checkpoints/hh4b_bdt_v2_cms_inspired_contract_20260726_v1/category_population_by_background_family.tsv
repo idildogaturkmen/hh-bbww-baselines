@@ -1,0 +1,17 @@
+category	background_family	training_target	rows	source_members	frozen_folds	development_weight_sum	status
+low_mhh	diboson	0	3	3	3	1343.578125	pass
+low_mhh	qcd_multijet	0	7659	36	5	1518.66322045	pass
+low_mhh	single_higgs	0	1057	21	5	2169.08775224	pass
+low_mhh	single_top	0	91	21	5	1846.03417431	pass
+low_mhh	top_associated	0	6936	15	5	1930.90564634	pass
+low_mhh	triboson	0	90	12	5	1959.80952354	pass
+low_mhh	ttbar	0	1284	60	5	2353.65750704	pass
+low_mhh	zbbbb	0	4282	20	5	2625.25212995	pass
+high_mhh	diboson	0	4	4	4	2239.296875	pass
+high_mhh	qcd_multijet	0	15204	41	5	2064.21177955	pass
+high_mhh	single_higgs	0	409	20	5	1413.78724776	pass
+high_mhh	single_top	0	84	20	5	1736.84082569	pass
+high_mhh	top_associated	0	7953	15	5	1651.96935366	pass
+high_mhh	triboson	0	69	12	5	1623.06547646	pass
+high_mhh	ttbar	0	663	60	5	1229.21749296	pass
+high_mhh	zbbbb	0	1563	20	5	957.622870046	pass

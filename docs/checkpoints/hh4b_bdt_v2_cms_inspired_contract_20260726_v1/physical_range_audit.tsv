@@ -1,0 +1,39 @@
+category	check	rows	failures	minimum	maximum	tolerance	clipping_applied	status
+low_mhh	dr_j1_j2 >= 0	28164	0	0.400873653682	4.89251915814	1e-10	false	pass
+low_mhh	dr_j1_j3 >= 0	28164	0	0.39716295757	4.95820881281	1e-10	false	pass
+low_mhh	dr_j1_j4 >= 0	28164	0	0.391549178564	5.02826047412	1e-10	false	pass
+low_mhh	dr_j2_j3 >= 0	28164	0	0.398313322025	4.93968961671	1e-10	false	pass
+low_mhh	dr_j2_j4 >= 0	28164	0	0.396691941791	5.08118482249	1e-10	false	pass
+low_mhh	dr_j3_j4 >= 0	28164	0	0.388477717005	5.08571319763	1e-10	false	pass
+low_mhh	min_candidate_pair_dr >= 0	28164	0	0.388477717005	2.83034838492	1e-10	false	pass
+low_mhh	max_candidate_pair_dr >= 0	28164	0	0.843294464381	5.08571319763	1e-10	false	pass
+low_mhh	mean_candidate_pair_dr >= 0	28164	0	0.577446954873	3.41909236803	1e-10	false	pass
+low_mhh	min_cross_higgs_pair_dr >= 0	28164	0	0.388477717005	3.77375988346	1e-10	false	pass
+low_mhh	max_cross_higgs_pair_dr >= 0	28164	0	0.723396557869	5.08571319763	1e-10	false	pass
+low_mhh	min_candidate_pair_dr <= max_candidate_pair_dr	28164	0	0.388958557845	4.58002708003	1e-10	false	pass
+low_mhh	-1 <= cos_theta_star_h1_in_hh_rest <= 1	28164	0	-0.997236851683	0.999988837797	1e-10	false	pass
+low_mhh	-1 <= cos_theta_j1_in_h1_rest <= 1	28164	0	-0.865227837543	0.999853542103	1e-10	false	pass
+low_mhh	-1 <= cos_theta_j_h2_leading_in_h2_rest <= 1	28164	0	-0.900086833787	0.999334348495	1e-10	false	pass
+low_mhh	0 <= abs_cos_theta_star_h1_in_hh_rest <= 1	28164	0	6.17855098316e-06	0.999988837797	1e-10	false	pass
+low_mhh	0 <= abs_cos_theta_j1_in_h1_rest <= 1	28164	0	3.24300623097e-07	0.999853542103	1e-10	false	pass
+low_mhh	0 <= abs_cos_theta_j_h2_leading_in_h2_rest <= 1	28164	0	3.05215376281e-05	0.999334348495	1e-10	false	pass
+low_mhh	candidate_vector_pt_sum >= 0	28164	0	0.668005608126	1077.36583035	1e-10	false	pass
+high_mhh	dr_j1_j2 >= 0	29162	0	0.391257962359	5.73419634651	1e-10	false	pass
+high_mhh	dr_j1_j3 >= 0	29162	0	0.393647651305	5.64374537316	1e-10	false	pass
+high_mhh	dr_j1_j4 >= 0	29162	0	0.396953419966	5.5218701033	1e-10	false	pass
+high_mhh	dr_j2_j3 >= 0	29162	0	0.391450730716	5.54827959122	1e-10	false	pass
+high_mhh	dr_j2_j4 >= 0	29162	0	0.386790825552	5.54897696413	1e-10	false	pass
+high_mhh	dr_j3_j4 >= 0	29162	0	0.393617585342	5.63272604499	1e-10	false	pass
+high_mhh	min_candidate_pair_dr >= 0	29162	0	0.386790825552	3.13072351694	1e-10	false	pass
+high_mhh	max_candidate_pair_dr >= 0	29162	0	1.29835822159	5.73419634651	1e-10	false	pass
+high_mhh	mean_candidate_pair_dr >= 0	29162	0	0.830386595101	4.11973256897	1e-10	false	pass
+high_mhh	min_cross_higgs_pair_dr >= 0	29162	0	0.386790825552	4.85292983292	1e-10	false	pass
+high_mhh	max_cross_higgs_pair_dr >= 0	29162	0	1.22923127009	5.73419634651	1e-10	false	pass
+high_mhh	min_candidate_pair_dr <= max_candidate_pair_dr	29162	0	0.459634313452	5.08353750324	1e-10	false	pass
+high_mhh	-1 <= cos_theta_star_h1_in_hh_rest <= 1	29162	0	-0.998280193173	0.999945205587	1e-10	false	pass
+high_mhh	-1 <= cos_theta_j1_in_h1_rest <= 1	29162	0	-0.875635428873	0.999631656797	1e-10	false	pass
+high_mhh	-1 <= cos_theta_j_h2_leading_in_h2_rest <= 1	29162	0	-0.94084072687	0.999801844711	1e-10	false	pass
+high_mhh	0 <= abs_cos_theta_star_h1_in_hh_rest <= 1	29162	0	0.000197816623047	0.999945205587	1e-10	false	pass
+high_mhh	0 <= abs_cos_theta_j1_in_h1_rest <= 1	29162	0	1.20268181485e-06	0.999631656797	1e-10	false	pass
+high_mhh	0 <= abs_cos_theta_j_h2_leading_in_h2_rest <= 1	29162	0	1.59095466583e-05	0.999801844711	1e-10	false	pass
+high_mhh	candidate_vector_pt_sum >= 0	29162	0	0.50744928853	1349.35397813	1e-10	false	pass

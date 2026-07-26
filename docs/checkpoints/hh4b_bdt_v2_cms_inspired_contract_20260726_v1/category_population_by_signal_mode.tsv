@@ -1,0 +1,5 @@
+category	signal_mode	training_target	rows	source_members	frozen_folds	development_weight_sum	status
+low_mhh	ggf_hh4b	1	3965	80	5	11607.4395858	pass
+low_mhh	vbf_hh4b	1	2797	8	5	7884.54890594	pass
+high_mhh	ggf_hh4b	1	928	80	5	2724.0604142	pass
+high_mhh	vbf_hh4b	1	2285	8	5	6446.95109406	pass

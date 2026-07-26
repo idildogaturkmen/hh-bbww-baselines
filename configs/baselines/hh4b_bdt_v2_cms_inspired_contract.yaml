@@ -1,0 +1,175 @@
+schema_version: 1
+contract_name: hh4b_bdt_v2_cms_inspired_category_and_feature_contract
+analysis_description: CMS-inspired resolved HH→4b mHH categorization
+source_commit: 79957151015444a1d005fe75523eba184df0011b
+
+inputs:
+  v1_input_contract:
+    checkpoint_dir: docs/checkpoints/hh4b_bdt_v1_input_contract_20260725_v1
+    sha256sums_sha256: 355c4c931503efccd55383e4ade0c3f2b9e5ef91662244ea0c6230b3756bc8c2
+    required_status: hh4b_bdt_v1_input_contract_pass
+    config_path: configs/baselines/hh4b_bdt_v1_input_contract.yaml
+    feature_contract: feature_contract.tsv
+    member_fold_assignment: member_fold_assignment.tsv
+    member_weight_summary: member_weight_summary.tsv
+    signal_mode_mapping: signal_mode_mapping.tsv
+    background_family_mapping: background_family_mapping.tsv
+  v1_grouped_cv:
+    checkpoint_dir: docs/checkpoints/hh4b_bdt_v1_grouped_cv_20260725_v1
+    sha256sums_sha256: 11e3d4d423892086ce9873948ecf6903e74f0abfe63d14bf23ebdb8c39cb63e0
+    required_status: hh4b_bdt_v1_grouped_cross_validation_pass
+
+population:
+  manifest_scope: canonical_581_member_development_manifest
+  opened_candidate_split: train
+  validation_candidate_access: forbidden
+  test_candidate_access: forbidden
+  expected:
+    train_members: 458
+    train_rows: 57326
+    signal_rows: 9975
+    background_rows: 47351
+    folds: 5
+    missing_oof_rows: 0
+    duplicate_oof_rows: 0
+    member_leakage_rows: 0
+
+categorization:
+  description: CMS-inspired resolved HH→4b mHH categorization
+  optimization_performed: false
+  boundary_GeV: 450.0
+  boundary_provenance: CMS-inspired_and_frozen_a_priori
+  categories:
+    low_mhh:
+      expression: mhh < 450.0
+      lower_edge_GeV: null
+      upper_edge_GeV: 450.0
+      upper_edge_inclusive: false
+    high_mhh:
+      expression: mhh >= 450.0
+      lower_edge_GeV: 450.0
+      lower_edge_inclusive: true
+      upper_edge_GeV: null
+  signal_policy:
+    ggf_hh4b: categorized_by_reconstructed_mhh
+    vbf_hh4b: categorized_by_reconstructed_mhh
+  vbf_production_mode_bdt_created: false
+  vbf_deferral_reason: canonical_candidate_schema_lacks_frozen_complete_two_vbf_tagging_jet_representation
+
+pairing_reconstruction:
+  inputs: four_candidate_jet_four_vectors_only
+  stored_pairing_metadata_used_as_feature: false
+  primary: minimize_sum_abs_dijet_mass_minus_125_GeV
+  first_tiebreaker: minimize_abs_dijet_mass_difference
+  second_tiebreaker: maximize_sum_dijet_pt
+  h1_ordering: descending_dijet_pt
+  exact_h1_tie: first_pair_in_frozen_pairing_order
+  leading_jet_within_higgs: higher_pt
+  exact_jet_pt_tie: lower_candidate_jet_index
+
+rest_frame_conventions:
+  lorentz_metric: (+,-,-,-)
+  stored_jet_mass_convention: signed_source_value_used_quadratically_in_energy_without_clipping
+  boost_to_parent_rest: beta_equals_parent_spatial_momentum_over_energy
+  theta_star:
+    child: reconstructed_H1
+    frame: reconstructed_HH_rest
+    axis: reconstructed_HH_laboratory_flight_direction
+  h1_decay_angle:
+    child: leading_pt_jet_in_reconstructed_H1
+    frame: reconstructed_H1_rest
+    axis: reconstructed_H1_laboratory_flight_direction
+  h2_decay_angle:
+    child: leading_pt_jet_in_reconstructed_H2
+    frame: reconstructed_H2_rest
+    axis: reconstructed_H2_laboratory_flight_direction
+  zero_parent_momentum_fallback_axis: positive_laboratory_z
+  cosine_clipping: forbidden
+  generator_truth_used: false
+
+feature_variants:
+  global_v1_mass_aware_reference:
+    role: canonical_uncategorized_reference_only
+    retrain_in_this_gate: false
+    base: exact_frozen_bdt_v1_34_feature_order
+  low_mhh_cms_inspired_mass_aware:
+    category: low_mhh
+    base: exact_frozen_bdt_v1_34_feature_order
+    append: all_accepted_cms_inspired_derived_features
+  high_mhh_cms_inspired_mass_aware:
+    category: high_mhh
+    base: exact_frozen_bdt_v1_34_feature_order
+    append: all_accepted_cms_inspired_derived_features
+  categorized_explicit_dijet_mass_plane_blind:
+    description: categorized explicit dijet-mass-plane-blind ablation
+    remove:
+      - mbb1
+      - mbb2
+      - delta_mbb
+      - r_hh_125_125
+    retain:
+      - mhh
+    fully_mass_decorrelated_claimed: false
+
+derived_features:
+  requested:
+    - dr_j1_j2
+    - dr_j1_j3
+    - dr_j1_j4
+    - dr_j2_j3
+    - dr_j2_j4
+    - dr_j3_j4
+    - min_candidate_pair_dr
+    - max_candidate_pair_dr
+    - mean_candidate_pair_dr
+    - min_cross_higgs_pair_dr
+    - max_cross_higgs_pair_dr
+    - candidate_vector_pt_sum
+    - cos_theta_star_h1_in_hh_rest
+    - abs_cos_theta_star_h1_in_hh_rest
+    - cos_theta_j1_in_h1_rest
+    - abs_cos_theta_j1_in_h1_rest
+    - cos_theta_j_h2_leading_in_h2_rest
+    - abs_cos_theta_j_h2_leading_in_h2_rest
+  prohibited_sources:
+    - generator_truth
+    - Jet.Flavor
+    - source_metadata
+    - nominal_absolute_azimuth
+    - invented_continuous_btag_score
+    - bjet_energy_regression
+    - per_jet_resolution
+
+outputs:
+  runtime_dir: outputs/agent_runs/hh4b_bdt_v2_cms_inspired_contract_20260726_v1
+  checkpoint_dir: docs/checkpoints/hh4b_bdt_v2_cms_inspired_contract_20260726_v1
+  event_level_matrices: forbidden
+  row_level_predictions: forbidden
+  models: forbidden
+
+plotting:
+  style_helper: scripts/plotting/hh4b_cms_style.py
+  dpi: 300
+  text_usetex: false
+  header: Delphes simulation
+  energy_label: '$\sqrt{s}=13\,\mathrm{TeV}$'
+  official_cms_status_claimed: false
+  plots:
+    - train_mhh_category_population
+    - train_mhh_by_target
+    - train_mhh_by_signal_mode
+    - train_mhh_by_background_family
+    - category_fold_composition
+    - min_max_candidate_pair_dr_by_target
+    - abs_cos_theta_star_by_target
+    - derived_feature_correlation_low_mhh
+    - derived_feature_correlation_high_mhh
+
+authorization:
+  v1_global_bdt_preserved: true
+  v2_category_contract_frozen: true
+  v2_training_authorized: false
+  validation_evaluation_authorized: false
+  test_access_authorized: false
+  physical_significance_authorized: false
+  next_gate: train_hh4b_bdt_v2_cms_inspired_categorized_grouped_cv

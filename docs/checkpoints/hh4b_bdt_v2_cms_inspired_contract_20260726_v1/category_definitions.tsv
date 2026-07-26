@@ -1,0 +1,3 @@
+category	definition	latex_definition	boundary_GeV	boundary_in_category	boundary_optimized	description	status
+low_mhh	mhh < 450.0 GeV	$m_{HH}<450\,\mathrm{GeV}$	450	false	false	CMS-inspired resolved HH→4b mHH categorization	pass
+high_mhh	mhh >= 450.0 GeV	$m_{HH}\geq450\,\mathrm{GeV}$	450	true	false	CMS-inspired resolved HH→4b mHH categorization	pass

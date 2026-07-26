@@ -1,0 +1,19 @@
+{
+  "analysis_description": "CMS-inspired resolved HH\u21924b mHH categorization",
+  "input_checkpoints": {
+    "hh4b_bdt_v1_grouped_cv_20260725_v1": "11e3d4d423892086ce9873948ecf6903e74f0abfe63d14bf23ebdb8c39cb63e0",
+    "hh4b_bdt_v1_input_contract_20260725_v1": "355c4c931503efccd55383e4ade0c3f2b9e5ef91662244ea0c6230b3756bc8c2"
+  },
+  "next_gate": "train_hh4b_bdt_v2_cms_inspired_categorized_grouped_cv",
+  "policy": {
+    "physical_significance_authorized": false,
+    "test_access_authorized": false,
+    "v1_global_bdt_preserved": true,
+    "v2_category_contract_frozen": true,
+    "v2_training_authorized": false,
+    "validation_evaluation_authorized": false
+  },
+  "schema_version": 1,
+  "source_commit": "79957151015444a1d005fe75523eba184df0011b",
+  "status": "hh4b_bdt_v2_cms_inspired_category_and_feature_contract_pass"
+}

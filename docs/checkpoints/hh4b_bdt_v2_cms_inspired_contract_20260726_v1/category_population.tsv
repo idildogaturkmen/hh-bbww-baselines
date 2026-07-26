@@ -1,0 +1,5 @@
+category	training_target	target_label	rows	source_members	frozen_folds	development_weight_sum	raw_fraction_within_category	normalization	status
+low_mhh	1	signal	6762	88	5	19491.9884917	0.240093736685	raw_rows_and_development_balancing	pass
+low_mhh	0	background	21402	188	5	15746.9880789	0.759906263315	raw_rows_and_development_balancing	pass
+high_mhh	1	signal	3213	88	5	9171.01150826	0.110177628421	raw_rows_and_development_balancing	pass
+high_mhh	0	background	25949	192	5	12916.0119211	0.889822371579	raw_rows_and_development_balancing	pass

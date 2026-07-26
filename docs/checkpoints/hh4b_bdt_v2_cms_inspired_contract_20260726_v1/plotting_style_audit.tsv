@@ -1,0 +1,10 @@
+plot_name	png_written	pdf_written	white_background	outward_major_minor_ticks	colorblind_accessible_palette	frameless_legend	text_usetex	cms_inspired_style_applied	official_cms_status_claimed	status
+train_mhh_category_population	true	true	true	true	true	true	false	true	false	pass
+train_mhh_by_target	true	true	true	true	true	true	false	true	false	pass
+train_mhh_by_signal_mode	true	true	true	true	true	true	false	true	false	pass
+train_mhh_by_background_family	true	true	true	true	true	true	false	true	false	pass
+category_fold_composition	true	true	true	true	true	true	false	true	false	pass
+min_max_candidate_pair_dr_by_target	true	true	true	true	true	true	false	true	false	pass
+abs_cos_theta_star_by_target	true	true	true	true	true	true	false	true	false	pass
+derived_feature_correlation_low_mhh	true	true	true	true	true	true	false	true	false	pass
+derived_feature_correlation_high_mhh	true	true	true	true	true	true	false	true	false	pass
