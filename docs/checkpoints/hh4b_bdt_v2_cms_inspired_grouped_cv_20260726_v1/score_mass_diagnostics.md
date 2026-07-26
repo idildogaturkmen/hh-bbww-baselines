@@ -1,0 +1,32 @@
+| strategy | category | score quintile | rows | weighted fraction | score minimum | score maximum |
+|---|---|---|---|---|---|---|
+| categorized_cms_inspired_mass_aware | low_mhh | 1 | 5805 | 0.200018389052 | 0.00921812374145 | 0.281824201345 |
+| categorized_cms_inspired_mass_aware | low_mhh | 2 | 3912 | 0.19998594698 | 0.281831800938 | 0.406547784805 |
+| categorized_cms_inspired_mass_aware | low_mhh | 3 | 3198 | 0.200029558243 | 0.406569540501 | 0.509597539902 |
+| categorized_cms_inspired_mass_aware | low_mhh | 4 | 4360 | 0.199952030821 | 0.509598612785 | 0.666631579399 |
+| categorized_cms_inspired_mass_aware | low_mhh | 5 | 4127 | 0.200014074904 | 0.666637957096 | 0.970470488071 |
+| categorized_cms_inspired_mass_aware | high_mhh | 1 | 6664 | 0.209040040768 | 0.0174604803324 | 0.190486490726 |
+| categorized_cms_inspired_mass_aware | high_mhh | 2 | 6462 | 0.190958586106 | 0.190517529845 | 0.301918685436 |
+| categorized_cms_inspired_mass_aware | high_mhh | 3 | 2817 | 0.200036100827 | 0.301928013563 | 0.362690210342 |
+| categorized_cms_inspired_mass_aware | high_mhh | 4 | 5686 | 0.200208422215 | 0.362698197365 | 0.55425041914 |
+| categorized_cms_inspired_mass_aware | high_mhh | 5 | 4320 | 0.199756850083 | 0.554304420948 | 0.978813290596 |
+| categorized_v1_features_mass_aware_ablation | low_mhh | 1 | 6044 | 0.199812891087 | 0.00519729079679 | 0.289332956076 |
+| categorized_v1_features_mass_aware_ablation | low_mhh | 2 | 4417 | 0.20019050411 | 0.289341002703 | 0.428046554327 |
+| categorized_v1_features_mass_aware_ablation | low_mhh | 3 | 3404 | 0.197788410092 | 0.428069263697 | 0.53968089819 |
+| categorized_v1_features_mass_aware_ablation | low_mhh | 4 | 3256 | 0.208244530111 | 0.539685070515 | 0.656354486942 |
+| categorized_v1_features_mass_aware_ablation | low_mhh | 5 | 4281 | 0.193963664599 | 0.65639257431 | 0.974767565727 |
+| categorized_v1_features_mass_aware_ablation | high_mhh | 1 | 7953 | 0.199999027541 | 0.0178960114717 | 0.22417588532 |
+| categorized_v1_features_mass_aware_ablation | high_mhh | 2 | 3592 | 0.20049380263 | 0.224176123738 | 0.284476816654 |
+| categorized_v1_features_mass_aware_ablation | high_mhh | 3 | 5069 | 0.19950769587 | 0.28448754549 | 0.387362867594 |
+| categorized_v1_features_mass_aware_ablation | high_mhh | 4 | 5501 | 0.200147752604 | 0.387386262417 | 0.581578433514 |
+| categorized_v1_features_mass_aware_ablation | high_mhh | 5 | 3834 | 0.199851721355 | 0.581764280796 | 0.981298983097 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | low_mhh | 1 | 5821 | 0.19994445903 | 0.00695282360539 | 0.336502730846 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | low_mhh | 2 | 3111 | 0.195172162376 | 0.336535215378 | 0.439924001694 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | low_mhh | 3 | 3649 | 0.204834653452 | 0.439972996712 | 0.543426036835 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | low_mhh | 4 | 4392 | 0.200057212819 | 0.543434679508 | 0.659893751144 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | low_mhh | 5 | 4429 | 0.199991512323 | 0.659917891026 | 0.952718138695 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | high_mhh | 1 | 7050 | 0.200000478637 | 0.0101444413885 | 0.236764147878 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | high_mhh | 2 | 5949 | 0.199447308092 | 0.236792385578 | 0.369570344687 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | high_mhh | 3 | 2474 | 0.200546075823 | 0.369578152895 | 0.432624131441 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | high_mhh | 4 | 6778 | 0.201210302911 | 0.432640820742 | 0.664456427097 |
+| categorized_cms_inspired_explicit_dijet_mass_plane_blind | high_mhh | 5 | 3698 | 0.198795834537 | 0.664489150047 | 0.962232232094 |

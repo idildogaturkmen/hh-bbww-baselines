@@ -1,0 +1,111 @@
+schema_version: 1
+analysis_name: hh4b_bdt_v2_cms_inspired_categorized_grouped_cv
+source_commit: f82f8a5b7f440f1e74ccd52ae09fdcf2522bcdb4
+required_interpreter: /uscms_data/d3/iturkmen/venvs/hh4b-bdt-v1/bin/python
+
+inputs:
+  v1_input_checkpoint: docs/checkpoints/hh4b_bdt_v1_input_contract_20260725_v1
+  v1_grouped_cv_checkpoint: docs/checkpoints/hh4b_bdt_v1_grouped_cv_20260725_v1
+  v1_grouped_cv_runtime: outputs/agent_runs/hh4b_bdt_v1_grouped_cv_20260725_v1
+  v2_contract_checkpoint: docs/checkpoints/hh4b_bdt_v2_cms_inspired_contract_20260726_v1
+  v1_input_config: configs/baselines/hh4b_bdt_v1_input_contract.yaml
+  v1_grouped_cv_config: configs/baselines/hh4b_bdt_v1_grouped_cv.yaml
+  v2_contract_config: configs/baselines/hh4b_bdt_v2_cms_inspired_contract.yaml
+
+runtime_output_dir: outputs/agent_runs/hh4b_bdt_v2_cms_inspired_grouped_cv_20260726_v1
+checkpoint_dir: docs/checkpoints/hh4b_bdt_v2_cms_inspired_grouped_cv_20260726_v1
+
+required_environment:
+  python_version: "3.9.25"
+  numpy_version: "1.26.4"
+  scipy_version: "1.13.1"
+  sklearn_version: "1.6.1"
+  xgboost_version: "2.1.4"
+  controls:
+    OMP_NUM_THREADS: "8"
+    OPENBLAS_NUM_THREADS: "1"
+    MKL_NUM_THREADS: "1"
+    NUMEXPR_NUM_THREADS: "1"
+
+expected_population:
+  train_members: 458
+  train_rows: 57326
+  signal_rows: 9975
+  background_rows: 47351
+  low_mhh_rows: 28164
+  low_mhh_signal_rows: 6762
+  low_mhh_background_rows: 21402
+  high_mhh_rows: 29162
+  high_mhh_signal_rows: 3213
+  high_mhh_background_rows: 25949
+  folds: 5
+
+strategies:
+  categorized_cms_inspired_mass_aware:
+    features: categorized_mass_aware
+    tune: true
+    display_name: Categorized mass-aware BDT v2
+  categorized_v1_features_mass_aware_ablation:
+    features: global_v1_mass_aware
+    tune: false
+    display_name: Category-split-only ablation
+  categorized_cms_inspired_explicit_dijet_mass_plane_blind:
+    features: categorized_mass_plane_blind
+    tune: false
+    display_name: Categorized dijet-mass-plane-blind BDT
+
+estimator_fixed_parameters:
+  objective: "binary:logistic"
+  booster: gbtree
+  tree_method: hist
+  max_bin: 256
+  eval_metric: logloss
+  n_jobs: 8
+  random_state: 20260726
+  verbosity: 0
+  scale_pos_weight: 1.0
+
+working_points:
+  target_weighted_signal_efficiencies:
+    - 0.30
+    - 0.50
+    - 0.70
+    - 0.5859573147685532
+  cut_matched_target: 0.5859573147685532
+  numerical_tolerance: 5.0e-4
+  numerical_tolerance_contract: strict_absolute_efficiency_difference_bounded_by_finite_oof_row_resolution
+
+bootstrap:
+  seed: 20260726
+  replicates: 1000
+  unit: source_member
+
+plotting:
+  style_helper: scripts/plotting/hh4b_cms_style.py
+  dpi: 300
+  plots:
+    - low_mhh_weighted_roc
+    - high_mhh_weighted_roc
+    - low_mhh_precision_recall
+    - high_mhh_precision_recall
+    - combined_background_rejection_at_fixed_signal_efficiency
+    - cut_matched_method_comparison
+    - category_fold_auc_stability
+    - low_mhh_score_distributions_primary
+    - high_mhh_score_distributions_primary
+    - low_mhh_feature_importance_primary
+    - high_mhh_feature_importance_primary
+    - background_family_efficiency_cut_matched
+    - signal_mode_efficiency_cut_matched
+    - background_rhh_score_quintiles_low_mhh_primary
+    - background_rhh_score_quintiles_high_mhh_primary
+    - member_bootstrap_background_efficiency_difference
+
+authorization:
+  v1_global_reference_preserved: true
+  final_model_choice_frozen: false
+  final_full_train_models_fitted: false
+  validation_evaluation_authorized: false
+  test_access_authorized: false
+  physical_significance_authorized: false
+  next_gate: freeze_hh4b_bdt_model_choice_after_train_only_comparison

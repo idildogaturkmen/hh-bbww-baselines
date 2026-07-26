@@ -1,0 +1,3 @@
+comparison	replicates	seed	median_difference	percentile_16	percentile_84	percentile_2_5	percentile_97_5	fraction_favoring_first_method	interpretation	status
+v2 minus global v1	1000	20260726	-0.000479674979924	-0.00765176495605	0.00625310675503	-0.0134913838606	0.0133359939886	0.533	train_only_member_bootstrap_diagnostic_not_final_confidence_interval_or_systematic	pass
+v2 minus category-split	1000	20260726	-0.00992663187495	-0.0292393521904	0.00390435545131	-0.0510148117723	0.0133537679295	0.745	train_only_member_bootstrap_diagnostic_not_final_confidence_interval_or_systematic	pass

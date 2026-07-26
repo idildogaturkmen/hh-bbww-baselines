@@ -1,0 +1,39 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Feature and category ablations.}
+\label{tab:v2\_ablation}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+comparison & category & metric & first method & second method & first value & second value \\
+\midrule
+categorization\_alone & low\_mhh & weighted\_roc\_auc & categorized\_v1\_features\_mass\_aware\_ablation & global\_v1\_mass\_aware & 0.732298600605 & 0.740623470143 \\
+categorization\_alone & low\_mhh & fold\_std\_weighted\_roc\_auc & categorized\_v1\_features\_mass\_aware\_ablation & global\_v1\_mass\_aware & 0.0204614130333 & 0.015976521592 \\
+added\_18\_features & low\_mhh & weighted\_roc\_auc & categorized\_cms\_inspired\_mass\_aware & categorized\_v1\_features\_mass\_aware\_ablation & 0.753744498261 & 0.732298600605 \\
+added\_18\_features & low\_mhh & fold\_std\_weighted\_roc\_auc & categorized\_cms\_inspired\_mass\_aware & categorized\_v1\_features\_mass\_aware\_ablation & 0.0177918454707 & 0.0204614130333 \\
+explicit\_mass\_plane\_dependence & low\_mhh & weighted\_roc\_auc & categorized\_cms\_inspired\_mass\_aware & categorized\_cms\_inspired\_explicit\_dijet\_mass\_plane\_blind & 0.753744498261 & 0.720446872512 \\
+explicit\_mass\_plane\_dependence & low\_mhh & fold\_std\_weighted\_roc\_auc & categorized\_cms\_inspired\_mass\_aware & categorized\_cms\_inspired\_explicit\_dijet\_mass\_plane\_blind & 0.0177918454707 & 0.0135134119214 \\
+categorization\_alone & high\_mhh & weighted\_roc\_auc & categorized\_v1\_features\_mass\_aware\_ablation & global\_v1\_mass\_aware & 0.80113168093 & 0.798590810687 \\
+categorization\_alone & high\_mhh & fold\_std\_weighted\_roc\_auc & categorized\_v1\_features\_mass\_aware\_ablation & global\_v1\_mass\_aware & 0.027410575476 & 0.0312077521087 \\
+added\_18\_features & high\_mhh & weighted\_roc\_auc & categorized\_cms\_inspired\_mass\_aware & categorized\_v1\_features\_mass\_aware\_ablation & 0.805324916529 & 0.80113168093 \\
+added\_18\_features & high\_mhh & fold\_std\_weighted\_roc\_auc & categorized\_cms\_inspired\_mass\_aware & categorized\_v1\_features\_mass\_aware\_ablation & 0.035517663457 & 0.027410575476 \\
+explicit\_mass\_plane\_dependence & high\_mhh & weighted\_roc\_auc & categorized\_cms\_inspired\_mass\_aware & categorized\_cms\_inspired\_explicit\_dijet\_mass\_plane\_blind & 0.805324916529 & 0.768686433991 \\
+explicit\_mass\_plane\_dependence & high\_mhh & fold\_std\_weighted\_roc\_auc & categorized\_cms\_inspired\_mass\_aware & categorized\_cms\_inspired\_explicit\_dijet\_mass\_plane\_blind & 0.035517663457 & 0.0396068764623 \\
+categorization\_alone & combined & background\_efficiency\_at\_signal\_0.3 & categorized\_v1\_features\_mass\_aware\_ablation & global\_v1\_mass\_aware & 0.0483801389672 & 0.0433572359306 \\
+added\_18\_features & combined & background\_efficiency\_at\_signal\_0.3 & categorized\_cms\_inspired\_mass\_aware & categorized\_v1\_features\_mass\_aware\_ablation & 0.0404427122116 & 0.0483801389672 \\
+explicit\_mass\_plane\_dependence & combined & background\_efficiency\_at\_signal\_0.3 & categorized\_cms\_inspired\_mass\_aware & categorized\_cms\_inspired\_explicit\_dijet\_mass\_plane\_blind & 0.0404427122116 & 0.0661210637725 \\
+categorization\_alone & combined & background\_efficiency\_at\_signal\_0.5 & categorized\_v1\_features\_mass\_aware\_ablation & global\_v1\_mass\_aware & 0.128728901158 & 0.122795610902 \\
+added\_18\_features & combined & background\_efficiency\_at\_signal\_0.5 & categorized\_cms\_inspired\_mass\_aware & categorized\_v1\_features\_mass\_aware\_ablation & 0.128906515606 & 0.128728901158 \\
+explicit\_mass\_plane\_dependence & combined & background\_efficiency\_at\_signal\_0.5 & categorized\_cms\_inspired\_mass\_aware & categorized\_cms\_inspired\_explicit\_dijet\_mass\_plane\_blind & 0.128906515606 & 0.182864433827 \\
+categorization\_alone & combined & background\_efficiency\_at\_signal\_0.7 & categorized\_v1\_features\_mass\_aware\_ablation & global\_v1\_mass\_aware & 0.309409885075 & 0.30734147342 \\
+added\_18\_features & combined & background\_efficiency\_at\_signal\_0.7 & categorized\_cms\_inspired\_mass\_aware & categorized\_v1\_features\_mass\_aware\_ablation & 0.275044417218 & 0.309409885075 \\
+explicit\_mass\_plane\_dependence & combined & background\_efficiency\_at\_signal\_0.7 & categorized\_cms\_inspired\_mass\_aware & categorized\_cms\_inspired\_explicit\_dijet\_mass\_plane\_blind & 0.275044417218 & 0.331137518672 \\
+categorization\_alone & combined & background\_efficiency\_at\_signal\_0.585957314769 & categorized\_v1\_features\_mass\_aware\_ablation & global\_v1\_mass\_aware & 0.196387017332 & 0.184305471151 \\
+added\_18\_features & combined & background\_efficiency\_at\_signal\_0.585957314769 & categorized\_cms\_inspired\_mass\_aware & categorized\_v1\_features\_mass\_aware\_ablation & 0.183893493127 & 0.196387017332 \\
+explicit\_mass\_plane\_dependence & combined & background\_efficiency\_at\_signal\_0.585957314769 & categorized\_cms\_inspired\_mass\_aware & categorized\_cms\_inspired\_explicit\_dijet\_mass\_plane\_blind & 0.183893493127 & 0.235698239994 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

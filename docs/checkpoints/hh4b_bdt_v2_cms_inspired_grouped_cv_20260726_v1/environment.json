@@ -1,0 +1,17 @@
+{
+  "controls": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "8",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "cpu_training_only": true,
+  "fits_sequential": true,
+  "matplotlib_version": "3.4.3",
+  "numpy_version": "1.26.4",
+  "python_executable": "/uscms_data/d3/iturkmen/venvs/hh4b-bdt-v1/bin/python",
+  "python_version": "3.9.25",
+  "scipy_version": "1.13.1",
+  "sklearn_version": "1.6.1",
+  "xgboost_version": "2.1.4"
+}

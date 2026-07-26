@@ -1,0 +1,15 @@
+{
+  "next_gate": "freeze_hh4b_bdt_model_choice_after_train_only_comparison",
+  "policy": {
+    "final_full_train_models_fitted": false,
+    "final_model_choice_frozen": false,
+    "physical_significance_authorized": false,
+    "test_access_authorized": false,
+    "train_only_model_comparison_complete": true,
+    "v1_global_reference_preserved": true,
+    "v2_categorized_grouped_cv_complete": true,
+    "validation_evaluation_authorized": false
+  },
+  "source_commit": "f82f8a5b7f440f1e74ccd52ae09fdcf2522bcdb4",
+  "status": "hh4b_bdt_v2_cms_inspired_categorized_grouped_cv_pass"
+}
