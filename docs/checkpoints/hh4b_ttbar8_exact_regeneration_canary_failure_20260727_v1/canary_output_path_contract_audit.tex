@@ -1,0 +1,13 @@
+\begin{tabular}{lllll}
+\toprule
+component & configured & expected & agrees & evidence \\
+\midrule
+wrapper\_working\_directory & SCRATCH=\$\{\_CONDOR\_SCRATCH\_DIR:-\$PWD\}; cd "\$SCRATCH" & execute scratch root & True & /uscms\_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run\_hh4b\_ttbar8\_exact\_regeneration\_member.sh \\
+wrapper\_output\_directories & mkdir -p "\$OUTDIR"/\{lhe,hepmc,root,parquet,logs,receipts,checksums\} & output/parquet parent exists & True & /uscms\_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run\_hh4b\_ttbar8\_exact\_regeneration\_member.sh \\
+reconstruction\_out\_argument & output/parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & output/parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & True & --out "\$CANDIDATE" \\
+submission\_output\_registry & /uscms\_data/d3/iturkmen/hh4b\_delphes/condor\_return/hh4b\_ttbar8\_exact\_regeneration\_20260727\_v1/members/ttbar\_100k\_shard003/parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & /uscms\_data/d3/iturkmen/hh4b\_delphes/condor\_return/hh4b\_ttbar8\_exact\_regeneration\_20260727\_v1/members/ttbar\_100k\_shard003/parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & True & canary\_expected\_output\_registry.tsv \\
+transfer\_output\_files & output/parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & output/parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & True & /uscms\_data/d3/iturkmen/hh4b\_delphes/condor\_submit/hh4b\_ttbar8\_exact\_regeneration\_canary\_submission\_20260727\_v1/hh4b\_ttbar8\_exact\_regeneration\_canary.sub \\
+transfer\_output\_remaps & /uscms\_data/d3/iturkmen/hh4b\_delphes/condor\_return/hh4b\_ttbar8\_exact\_regeneration\_20260727\_v1/members/ttbar\_100k\_shard003/parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & /uscms\_data/d3/iturkmen/hh4b\_delphes/condor\_return/hh4b\_ttbar8\_exact\_regeneration\_20260727\_v1/members/ttbar\_100k\_shard003/parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & True & /uscms\_data/d3/iturkmen/hh4b\_delphes/condor\_submit/hh4b\_ttbar8\_exact\_regeneration\_canary\_submission\_20260727\_v1/hh4b\_ttbar8\_exact\_regeneration\_canary.sub \\
+payload\_builder\_dependency & payload/repo/scripts/delphes/write\_parquet\_from\_pickle.py & present adjacent to packaged builder and manifested & False & builder\_present=True; helper\_present=False; helper\_manifested=False \\
+\bottomrule
+\end{tabular}

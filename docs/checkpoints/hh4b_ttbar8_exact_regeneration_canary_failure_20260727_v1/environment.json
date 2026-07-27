@@ -1,0 +1,11 @@
+{
+  "condor_version": "$CondorVersion: 24.0.7 2025-04-22 BuildID: 803687 PackageID: 24.0.7-1 GitSHA: 51b71b5c $",
+  "diagnosis_timestamp_utc": "2026-07-27T23:48:51Z",
+  "execute_host": "slot1_4@cmswn2224.fnal.gov",
+  "hostname": "cmslpc323.fnal.gov",
+  "platform": "Linux-5.14.0-687.25.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "python": "3.9.25",
+  "root_metadata_validation": "serial uproot.open; Delphes.num_entries only",
+  "scheduler": "lpcschedd4.fnal.gov",
+  "timezone": "America/Chicago"
+}

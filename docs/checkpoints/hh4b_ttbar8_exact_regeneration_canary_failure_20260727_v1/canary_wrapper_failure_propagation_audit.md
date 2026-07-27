@@ -1,0 +1,9 @@
+| check | observed | satisfied | impact | evidence |
+| --- | --- | --- | --- | --- |
+| strict_shell_mode | set -euo pipefail | True | nonzero reconstruction pipeline propagates | /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_ttbar8_exact_regeneration_member.sh |
+| reconstruction_pipeline | python reconstruction 2>&1 \| tee canonical72.log | True | builder exit one became payload exit one | /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/logs/ttbar_100k_shard003_canonical72.log |
+| exit_trap | final status records exit_status=1 | True | original payload status survived transfer hold | /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/receipts/ttbar_100k_shard003_final_status.txt |
+| payload_dependency_closure | builder packaged; required isolated writer absent | False | first causal failure | /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_ttbar8_exact_regeneration_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_inputs.tar.gz |
+| explicit_success_output_checks | post-reconstruction Python reads Parquet; no preflight helper check | False | dependency defect discovered only after upstream production | /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_ttbar8_exact_regeneration_member.sh |
+| payload_vs_transfer_status | ExitCode=1; HoldReasonCode/SubCode=12/2 | True | payload and transfer failures are distinct | live ClassAd and scheduler event log |
+| cleanup | no deletion; EXIT trap archives output locally with \|\| true | True | failure is not premature cleanup | /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_ttbar8_exact_regeneration_member.sh |

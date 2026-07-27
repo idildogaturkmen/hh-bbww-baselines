@@ -1,0 +1,56 @@
+{
+  "candidate_outcome": "b_ran_and_failed",
+  "cluster_id": 3654710,
+  "controls": {
+    "event_level_products_committed": 0,
+    "held_job_released": false,
+    "held_job_removed": false,
+    "held_job_rescheduled": false,
+    "member_changed": false,
+    "physics_configuration_changed": false,
+    "retry_submitted": false,
+    "scaleout_submitted": false,
+    "sealed_candidate_files_opened": 0,
+    "seed_changed": false
+  },
+  "corrected_retry_authorized": false,
+  "first_causal_failure": "ERROR: missing isolated Parquet writer: /srv/payload/repo/scripts/delphes/write_parquet_from_pickle.py",
+  "generated_events": 10000,
+  "held_job_unchanged": true,
+  "integrity": {
+    "head": "b4da1f1c5cd5ab436fb8e675192ddf0e1cb3cc84",
+    "history_rows": 0,
+    "origin": "b4da1f1c5cd5ab436fb8e675192ddf0e1cb3cc84",
+    "principal_tables_have_markdown_and_booktabs_latex": true,
+    "protected_artifacts_verified": 17,
+    "required_starting_commit": "b4da1f1c5cd5ab436fb8e675192ddf0e1cb3cc84"
+  },
+  "job_status": 5,
+  "member": "ttbar_100k_shard003",
+  "member_index": 326,
+  "next_gate": "freeze_hh4b_ttbar8_exact_regeneration_canary_retry_contract",
+  "path_contract_mismatch": false,
+  "payload_exit": {
+    "exit_by_signal": false,
+    "exit_code": 1
+  },
+  "primary_failure_classification": "canonical_reconstruction_failure",
+  "process_id": 0,
+  "retained_artifacts": {
+    "expected_transfer_outputs": 13,
+    "found_transfer_outputs": 10,
+    "lhe_events": 10000,
+    "returned_files": 10,
+    "root_entries_serial_uproot_metadata_check": 10000
+  },
+  "root_cause": "The immutable transfer payload packaged the canonical builder but omitted its required adjacent isolated Parquet writer.",
+  "scheduler": "lpcschedd4.fnal.gov",
+  "schema_version": 1,
+  "seed": 105003,
+  "status": "hh4b_ttbar8_exact_regeneration_canary_failure_diagnosed",
+  "transfer_failure": {
+    "hold_reason_code": 12,
+    "hold_reason_subcode": 2,
+    "missing_declared_outputs": 3
+  }
+}

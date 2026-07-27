@@ -1,0 +1,3 @@
+stream	path	bytes	sha256	key_evidence	interpretation
+stdout	/uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1/canary.3654710.0.out	130459	e69f5e1a30429d20d8dfc015e286cd0926223a1b8e6b5757c077267d51969e8c	ERROR: missing isolated Parquet writer: /srv/payload/repo/scripts/delphes/write_parquet_from_pickle.py	payload error is preserved in stdout
+stderr	/uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1/canary.3654710.0.err	0	e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855	empty	pipeline merged stage stderr into tee/stdout logs

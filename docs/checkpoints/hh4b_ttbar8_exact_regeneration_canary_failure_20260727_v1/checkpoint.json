@@ -1,0 +1,14 @@
+{
+  "authoritative_contract": "docs/checkpoints/hh4b_ttbar8_exact_regeneration_contract_20260727_v1",
+  "authoritative_submission_checkpoint": "docs/checkpoints/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1",
+  "checkpoint": "hh4b_ttbar8_exact_regeneration_canary_failure_20260727_v1",
+  "corrected_retry_authorized": false,
+  "diagnosis_script": "scripts/analysis/diagnose_hh4b_ttbar8_exact_regeneration_canary_failure.py",
+  "job": "3654710.0",
+  "member": "ttbar_100k_shard003",
+  "next_gate": "freeze_hh4b_ttbar8_exact_regeneration_canary_retry_contract",
+  "primary_failure_classification": "canonical_reconstruction_failure",
+  "scheduler": "lpcschedd4.fnal.gov",
+  "seed": 105003,
+  "status": "hh4b_ttbar8_exact_regeneration_canary_failure_diagnosed"
+}
