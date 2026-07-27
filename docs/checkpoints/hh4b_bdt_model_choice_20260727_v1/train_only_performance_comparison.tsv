@@ -1,0 +1,7 @@
+method	decision_class	weighted_oof_auc	low_mhh_weighted_oof_auc	high_mhh_weighted_oof_auc	cut_matched_weighted_signal_efficiency	cut_matched_weighted_background_efficiency	bootstrap_median_difference_vs_global_v1	bootstrap_percentile_2_5_vs_global_v1	bootstrap_percentile_97_5_vs_global_v1	bootstrap_fraction_favoring_method	interpretation	status
+global_v1_mass_aware	primary_nominal	0.7737142628735474			0.586048406198	0.184305471151					frozen primary; substantially better rejection than cut	pass
+categorized_cms_inspired_mass_aware	secondary_categorized		0.753744498261	0.805324916529	0.586061481041	0.183893493127	-0.000479674979924	-0.0134913838606	0.0133359939886	0.533	predeclared secondary; negligible nominal-point gain with bootstrap interval spanning zero	pass
+global_v1_explicit_dijet_mass_plane_blind	diagnostic_ablation	0.7317255338237391			0.585979511964	0.228052621132					non-nominal diagnostic	pass
+categorized_v1_features_mass_aware_ablation	diagnostic_ablation		0.732298600605	0.80113168093	0.586086077713	0.196387017332					non-nominal diagnostic	pass
+categorized_cms_inspired_explicit_dijet_mass_plane_blind	diagnostic_ablation		0.720446872512	0.768686433991	0.586060436882	0.235698239994					non-nominal diagnostic	pass
+optimized_cut	cut_baseline				0.585957314769	0.236726985161					optimized R_HH < 34 cut baseline	pass

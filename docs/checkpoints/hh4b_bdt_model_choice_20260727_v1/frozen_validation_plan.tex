@@ -1,0 +1,19 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Predeclared one-time validation evaluation plan; validation model selection is not authorized.}
+\label{tab:hh4b\_bdt\_validation\_plan}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Order & Candidate type & Model or method & Role & Selection & Fit population & Validation evaluations & Validation selection authorized & Post-validation tuning authorized & Status \\
+\midrule
+1 & model & Global v1 mass-aware BDT & primary\_nominal & frozen model contract & complete\_frozen\_train\_population & exactly\_once & false & false & predeclared \\
+2 & model & Categorized CMS-inspired mass-aware BDT & predeclared\_secondary & frozen model contract & complete\_frozen\_train\_population & exactly\_once & false & false & predeclared \\
+3 & model & Global v1 explicit dijet-mass-plane-blind BDT & diagnostic\_ablation & frozen model contract & complete\_frozen\_train\_population & exactly\_once & false & false & predeclared \\
+4 & cut\_baseline & Optimized $R_{HH}<34$ cut & cut\_baseline & $R_{HH}<34$ & not\_applicable & exactly\_once & false & false & predeclared \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

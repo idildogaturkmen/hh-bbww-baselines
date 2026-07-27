@@ -1,0 +1,21 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Frozen train-only out-of-fold performance comparison at the optimized-cut-matched signal efficiency.}
+\label{tab:hh4b\_bdt\_train\_only\_performance}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model or method & Decision class & Weighted $\mathrm{AUC}_{\mathrm{OOF}}$ & Low-$m_{HH}$ weighted $\mathrm{AUC}_{\mathrm{OOF}}$ & High-$m_{HH}$ weighted $\mathrm{AUC}_{\mathrm{OOF}}$ & Weighted $\epsilon_{S}$ & Weighted $\epsilon_{B}$ & Interpretation \\
+\midrule
+Global v1 mass-aware BDT & primary\_nominal & $0.7737142628735474$ &  &  & $0.586048406198$ & $0.184305471151$ & frozen primary; substantially better rejection than cut \\
+Categorized CMS-inspired mass-aware BDT & secondary\_categorized &  & $0.753744498261$ & $0.805324916529$ & $0.586061481041$ & $0.183893493127$ & predeclared secondary; negligible nominal-point gain with bootstrap interval spanning zero \\
+Global v1 explicit dijet-mass-plane-blind BDT & diagnostic\_ablation & $0.7317255338237391$ &  &  & $0.585979511964$ & $0.228052621132$ & non-nominal diagnostic \\
+Categorized v1-feature mass-aware ablation & diagnostic\_ablation &  & $0.732298600605$ & $0.80113168093$ & $0.586086077713$ & $0.196387017332$ & non-nominal diagnostic \\
+Categorized CMS-inspired explicit dijet-mass-plane-blind BDT & diagnostic\_ablation &  & $0.720446872512$ & $0.768686433991$ & $0.586060436882$ & $0.235698239994$ & non-nominal diagnostic \\
+Optimized $R_{HH}<34$ cut & cut\_baseline &  &  &  & $0.585957314769$ & $0.236726985161$ & optimized R\_HH < 34 cut baseline \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

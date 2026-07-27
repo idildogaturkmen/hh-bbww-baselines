@@ -1,0 +1,22 @@
+condition	expected	observed	passed	evidence
+source_checkpoint_sha256_and_status	4	4	true	source_checkpoint_inventory.tsv
+primary_nominal_model	global_v1_mass_aware	global_v1_mass_aware	true	model_choice.tsv
+secondary_categorized_model	categorized_cms_inspired_mass_aware	categorized_cms_inspired_mass_aware	true	model_choice.tsv
+primary_background_efficiency_improvement_over_cut	>=0.04	0.05242151401	true	train_only_performance_comparison.tsv
+absolute_nominal_v2_background_efficiency_difference	<=0.001	0.000411978023999976	true	train_only_performance_comparison.tsv
+member_bootstrap_interval_includes_zero	true	true	true	member_bootstrap_comparison.tsv in source checkpoint
+simpler_global_model_preferred	true	true	true	frozen decision rule
+validation_candidate_files_opened	0	0	true	aggregate checkpoint inputs only
+test_candidate_files_opened	0	0	true	aggregate checkpoint inputs only
+models_trained	0	0	true	freeze-only gate
+predictions_written	0	0	true	freeze-only gate
+hyperparameter_trials	0	0	true	freeze-only gate
+frozen_working_point_sets	2	2	true	frozen_working_points.tsv
+validation_models_predeclared	3	3	true	frozen_validation_plan.tsv
+validation_cut_baselines_predeclared	1	1	true	frozen_validation_plan.tsv
+physical_event_weights_used	0	0	true	freeze-only aggregate comparison
+physics_yields_calculated	0	0	true	freeze-only aggregate comparison
+significances_calculated	0	0	true	freeze-only aggregate comparison
+validation_model_selection_authorized	false	false	true	authorization contract
+post_validation_hyperparameter_tuning_authorized	false	false	true	authorization contract
+test_access_authorized	false	false	true	authorization contract

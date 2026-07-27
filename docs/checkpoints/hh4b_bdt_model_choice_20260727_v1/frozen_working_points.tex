@@ -1,0 +1,23 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Frozen train-OOF-derived BDT score working points. Categorized thresholds are separate in the low- and high-mHH regions.}
+\label{tab:hh4b\_bdt\_frozen\_working\_points}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Model & Threshold contract & Target weighted $\epsilon_{S}$ & Global $s_{\mathrm{BDT}}$ & Low-$m_{HH}$ $s_{\mathrm{BDT}}$ & High-$m_{HH}$ $s_{\mathrm{BDT}}$ & Status \\
+\midrule
+Global v1 mass-aware BDT & single\_global\_threshold & $0.3$ & $0.8444997072219849$ &  &  & frozen \\
+Global v1 mass-aware BDT & single\_global\_threshold & $0.5$ & $0.7381301522254944$ &  &  & frozen \\
+Global v1 mass-aware BDT & single\_global\_threshold & $0.585957314769$ & $0.677308976650238$ &  &  & frozen \\
+Global v1 mass-aware BDT & single\_global\_threshold & $0.7$ & $0.575282096862793$ &  &  & frozen \\
+Categorized CMS-inspired mass-aware BDT & separate\_low\_and\_high\_mhh\_thresholds & $0.3$ &  & $0.788138508797$ & $0.907636404037$ & frozen \\
+Categorized CMS-inspired mass-aware BDT & separate\_low\_and\_high\_mhh\_thresholds & $0.5$ &  & $0.695231735706$ & $0.781245291233$ & frozen \\
+Categorized CMS-inspired mass-aware BDT & separate\_low\_and\_high\_mhh\_thresholds & $0.585957314769$ &  & $0.645757675171$ & $0.681406855583$ & frozen \\
+Categorized CMS-inspired mass-aware BDT & separate\_low\_and\_high\_mhh\_thresholds & $0.7$ &  & $0.567213177681$ & $0.543218553066$ & frozen \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

@@ -1,0 +1,21 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Frozen train-only HH to four-b model choice.}
+\label{tab:hh4b\_bdt\_model\_choice}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Model or method & Decision class & Role & Nominal & Validation predeclared & Train-only basis & Status \\
+\midrule
+Global v1 mass-aware BDT & primary\_nominal\_bdt & canonical\_nominal\_model & true & true & strong cut-matched rejection; simpler global strategy; v2 gain negligible and bootstrap-unstable & frozen \\
+Categorized CMS-inspired mass-aware BDT & secondary\_categorized\_bdt & advanced CMS-inspired categorized alternative & false & true & predeclared categorized alternative; not validation-selectable & frozen \\
+Global v1 explicit dijet-mass-plane-blind BDT & diagnostic\_ablation & global explicit dijet-mass-plane-blind diagnostic & false & true & diagnostic only & retained\_non\_nominal \\
+Categorized v1-feature mass-aware ablation & diagnostic\_ablation & category-split-only diagnostic & false & false & train-only diagnostic only & retained\_non\_nominal \\
+Categorized CMS-inspired explicit dijet-mass-plane-blind BDT & diagnostic\_ablation & categorized explicit dijet-mass-plane-blind diagnostic & false & false & train-only diagnostic only & retained\_non\_nominal \\
+Optimized $R_{HH}<34$ cut & cut\_baseline & optimized R\_HH cut baseline & false & true & frozen benchmark baseline & retained \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
