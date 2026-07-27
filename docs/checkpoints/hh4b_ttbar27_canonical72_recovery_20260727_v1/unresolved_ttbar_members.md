@@ -1,0 +1,10 @@
+| member index | target tag | dataset split | seed | generated events | legacy candidate rows | original source status | canonical candidate status | required action | next gate |
+|---|---|---|---|---|---|---|---|---|---|
+| 324 | ttbar_100k_shard001 | train | 105001 | 10000 | 46 | root_hepmc_lhe_archive_not_found | missing_independent_canonical72 | exact_deterministic_regeneration_after_canary | prepare_hh4b_ttbar_missing_member_exact_regeneration |
+| 325 | ttbar_100k_shard002 | train | 105002 | 10000 | 36 | root_hepmc_lhe_archive_not_found | missing_independent_canonical72 | exact_deterministic_regeneration_after_canary | prepare_hh4b_ttbar_missing_member_exact_regeneration |
+| 326 | ttbar_100k_shard003 | train | 105003 | 10000 | 39 | root_hepmc_lhe_archive_not_found | missing_independent_canonical72 | exact_deterministic_regeneration_after_canary | prepare_hh4b_ttbar_missing_member_exact_regeneration |
+| 327 | ttbar_100k_shard007 | train | 105007 | 10000 | 39 | root_hepmc_lhe_archive_not_found | missing_independent_canonical72 | exact_deterministic_regeneration_after_canary | prepare_hh4b_ttbar_missing_member_exact_regeneration |
+| 328 | ttbar_100k_shard008 | train | 105008 | 10000 | 33 | root_hepmc_lhe_archive_not_found | missing_independent_canonical72 | exact_deterministic_regeneration_after_canary | prepare_hh4b_ttbar_missing_member_exact_regeneration |
+| 329 | ttbar_100k_shard009 | train | 105009 | 10000 | 44 | root_hepmc_lhe_archive_not_found | missing_independent_canonical72 | exact_deterministic_regeneration_after_canary | prepare_hh4b_ttbar_missing_member_exact_regeneration |
+| 347 | ttbar_100k_shard004 | validation | 105004 | 10000 | 26 | root_hepmc_lhe_archive_not_found | missing_independent_canonical72 | exact_deterministic_regeneration_after_canary | prepare_hh4b_ttbar_missing_member_exact_regeneration |
+| 348 | ttbar_100k_shard005 | validation | 105005 | 10000 | 44 | root_hepmc_lhe_archive_not_found | missing_independent_canonical72 | exact_deterministic_regeneration_after_canary | prepare_hh4b_ttbar_missing_member_exact_regeneration |

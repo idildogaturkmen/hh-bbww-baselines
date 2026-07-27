@@ -1,0 +1,281 @@
+schema_version: 1
+audit_name: recover_hh4b_ttbar27_canonical72_candidates
+required_starting_commit: ac6820e048db2c4ad6524b37a00421420e8aacd9
+
+status_contract:
+  status: hh4b_ttbar27_exact_regeneration_required
+  next_gate: prepare_hh4b_ttbar_missing_member_exact_regeneration
+  expected_hold_members: 27
+  expected_existing_products: 18
+  expected_retained_root_products: 1
+  expected_missing_original_sources: 8
+  expected_missing_legacy_candidate_rows: 307
+
+paths:
+  runtime_directory: outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1
+  checkpoint_directory: docs/checkpoints/hh4b_ttbar27_canonical72_recovery_20260727_v1
+  retained_root: /uscms_data/d3/iturkmen/hh4b_delphes/root/ttbar_100k_shard000_pythia8_delphes.root
+  retained_root_retry_input: /tmp/iturkmen/hh4b_ttbar27_recovery_20260727T220257Z/ttbar_100k_shard000_pythia8_delphes.root
+  retained_root_retry_python_startup: /tmp/iturkmen/hh4b_ttbar27_recovery_20260727T220257Z/python_startup
+  retained_root_product: outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1/runtime_candidates/ttbar_100k_shard000_pythia8_delphes_canonical72.parquet
+  retained_root_validation_rerun: outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1/validation_rerun/ttbar_100k_shard000_pythia8_delphes_canonical72.parquet
+  existing_ttbar200k_product_template: /uscms_data/d3/iturkmen/hh4b_delphes/parquet_v2_nominal/per_root/ttbar_200k__{shard}__{tag}_pythia8_delphes_v2_hh4b_candidates.parquet
+
+frozen_inputs:
+  member_coverage:
+    path: docs/checkpoints/hh4b_full_5m_background_and_signal_coverage_20260727_v1/member_coverage.tsv
+    sha256: b0898a0120f35fdecc176853e806f608eff1378ce139d8c957c06e7bea251175
+  canonical72_columns:
+    path: outputs/agent_runs/hh4b_canonical72_schema_compatibility_audit_20260725_v2/canonical72_columns.tsv
+    sha256: e9a12517772f77e311e37b09bc27df372735fee8dd48b176a0a82ada01913421
+  canonical_ttbar_registry:
+    path: outputs/agent_runs/final_background_canonical_subset_freeze_20260723_v1/canonical_ttbar270k_registry.tsv
+    sha256: 5234cc7363bd0cacb1dc94d7652b8ca6909a54f32aa737cb8e9eb6fd081895a7
+  unified_background_registry:
+    path: outputs/agent_runs/final_background_unified5m_registry_audit_20260723_v2/unified_background_5m_registry.tsv
+    sha256: 6bbb256a326147cd679fbbb512574d845b2310eb5a09a71758a7bb210402353c
+  background_source_manifest:
+    path: outputs/agent_runs/final_background_5m_classifier_source_audit_20260723_v1/background_5m_classifier_source_manifest.tsv
+    sha256: 65bc318444ca29150a314efc6232a533522761d31eb0cc531630285f35d7d582
+  signal_registry:
+    path: outputs/agent_runs/hh4b_canonical_signal200k_registry_audit_20260723_v1/hh4b_canonical_signal200k_registry.tsv
+    sha256: 402b7e377247fb3d7a3a4b8f75df302c3fba7a44a07e9c362824247adc5ab420
+  missing_source_adjudication:
+    path: outputs/agent_runs/background_5m_ttbar100k_missing_source_adjudication_20260723_v1/ttbar100k_missing_source_adjudication.tsv
+    sha256: 555f539ba534e3551fa9492fb7f160f2de5b6be9cc6c0e5bd2c024904aa2e845
+  root_lineage_audit:
+    path: outputs/agent_runs/background_5m_ttbar_final_root_lineage_audit_20260724_v1/ttbar_final_root_lineage_audit.tsv
+    sha256: 765f4f8e1ded711e606398212f9ffc84df35fdb60db421109f672a43e982a064
+  generator_identity_audit:
+    path: outputs/agent_runs/background_5m_ttbar_generator_identity_audit_20260724_v1/ttbar_generator_identity_audit.tsv
+    sha256: fd9bf87ae26b932627fa79f5449379a525197dce27e35537a43daa33b9da9967
+  ttbar100k_release_manifest:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbar_100k_manifest.csv
+    sha256: f2fccae88b69ac1e504503c887aca6cf14cdbac2ce24b6753b59ca8651067bfc
+  ttbar100k_release_timing_log:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbar_100k_storage_safe_timing.log
+    sha256: b5a212c039ca112c7e02e7bc8e04f6c956527d98b43ebe9aec9e2fa5299b7f3d
+  simulation_setup:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/SIMULATION_SETUP.md
+    sha256: 8760e8b3852f58d89a35b3beafee02aedb487770c9472bfcb706321ea87abad8
+
+protected_reconstruction:
+  builder:
+    path: scripts/delphes/reconstruct_hh4b_candidates_v2.py
+    sha256: 4d7eb8e3400ec50c1c254744e6f3a2b11bd033a4525c13ec22e85247ecf59c57
+  policy:
+    path: configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml
+    sha256: 4b2a951dba7ac8bd0e2e982e3447e998e07b86d63390c248600976b3f4912b68
+  canonical_schema_sha256: 4008b937032acad6aac87c2fea1df12a110d19a3876d1f8008496e9ca0c85cf4
+  explicit_arguments:
+    target_mass: 125.0
+    jet_pt_min: 30.0
+    jet_eta_max: 2.5
+    btag_min: 0.0
+    max_bjets_for_pairing: 8
+    higgs_ordering: pt
+  determinism_tolerance:
+    floating_rtol: 0.0
+    floating_atol: 1.0e-12
+
+controlled_retry:
+  source_root_sha256: a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb
+  local_root_sha256: a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb
+  source_local_sha256_equal: true
+  scratch_free_gib_before_copy: 33
+  initial_stall_diagnostics:
+    pid: 3003253
+    elapsed_time_seconds: greater_than_8040
+    cpu_percent: 0.0
+    wait_channel: futex_do_wait
+    io_counters_unchanged_over_seconds: 60
+    open_root_file_descriptor: false
+    open_parquet_file_descriptor: false
+    accepted_output_produced: false
+    termination: external_after_codex_stop_failed_to_terminate_child
+    result_classification: aborted_stalled_no_output
+  smoke_test:
+    tree: Delphes
+    entries: 10000
+    entries_read: [0, 10]
+    required_branches:
+      - Jet.PT
+      - Jet.Eta
+      - Jet.Phi
+      - Jet.Mass
+      - Jet.BTag
+      - Jet.Flavor
+    branch_leaf_dtypes:
+      Jet.PT: float32
+      Jet.Eta: float32
+      Jet.Phi: float32
+      Jet.Mass: float32
+      Jet.BTag: uint32
+      Jet.Flavor: uint32
+    compatible_jagged_shapes: true
+    numeric_leaf_types: true
+    source_handler: MultithreadedFileSource
+    source_workers: 1
+    status: pass
+  io_handler_adjudication:
+    default_handler: FSSpecSource
+    observed_failure: high_level_jagged_read_waited_indefinitely_on_notifications_queue
+    traceback_location: uproot.behaviors.TBranch._ranges_or_baskets_to_arrays
+    technical_override: sitecustomize_sets_MultithreadedFileSource_num_workers_1
+    physics_semantics_changed: false
+  attempts:
+    - attempt_id: shared_filesystem_initial_20260727
+      attempt_stage: production_reconstruction
+      input_path: /uscms_data/d3/iturkmen/hh4b_delphes/root/ttbar_100k_shard000_pythia8_delphes.root
+      input_sha256: a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb
+      local_copy_path: ""
+      local_copy_sha256: ""
+      exact_command: >-
+        python3 scripts/delphes/reconstruct_hh4b_candidates_v2.py
+        --input /uscms_data/d3/iturkmen/hh4b_delphes/root/ttbar_100k_shard000_pythia8_delphes.root
+        --out outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1/runtime_candidates/ttbar_100k_shard000_pythia8_delphes_canonical72.parquet
+        --sample ttbar_100k_shard000_pythia8_delphes
+        --target-mass 125.0 --jet-pt-min 30.0 --jet-eta-max 2.5
+        --btag-min 0.0 --max-bjets-for-pairing 8 --higgs-ordering pt
+      start_time_utc: not_recorded_before_external_termination
+      end_time_utc: not_recorded_before_external_termination
+      exit_status: externally_terminated
+      wall_time_seconds: greater_than_8040
+      output_path: outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1/runtime_candidates/ttbar_100k_shard000_pythia8_delphes_canonical72.parquet
+      output_bytes: 0
+      output_sha256: ""
+      candidate_rows: 0
+      result_classification: aborted_stalled_no_output
+    - attempt_id: local_scratch_20260727T220257Z
+      attempt_stage: production_reconstruction
+      input_path: /uscms_data/d3/iturkmen/hh4b_delphes/root/ttbar_100k_shard000_pythia8_delphes.root
+      input_sha256: a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb
+      local_copy_path: /tmp/iturkmen/hh4b_ttbar27_recovery_20260727T220257Z/ttbar_100k_shard000_pythia8_delphes.root
+      local_copy_sha256: a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb
+      exact_command: >-
+        env PYTHONPATH=/tmp/iturkmen/hh4b_ttbar27_recovery_20260727T220257Z/python_startup
+        OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+        NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 PYTHONUNBUFFERED=1
+        timeout --signal=TERM --kill-after=60s 45m
+        python3 scripts/delphes/reconstruct_hh4b_candidates_v2.py
+        --input /tmp/iturkmen/hh4b_ttbar27_recovery_20260727T220257Z/ttbar_100k_shard000_pythia8_delphes.root
+        --out outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1/runtime_candidates/ttbar_100k_shard000_pythia8_delphes_canonical72.parquet
+        --sample ttbar_100k_shard000_pythia8_delphes
+        --target-mass 125.0 --jet-pt-min 30.0 --jet-eta-max 2.5
+        --btag-min 0.0 --max-bjets-for-pairing 8 --higgs-ordering pt
+      start_time_utc: "2026-07-27T22:17:18Z"
+      end_time_utc: "2026-07-27T22:17:52Z"
+      exit_status: 0
+      wall_time_seconds: 20.1217
+      output_path: outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1/runtime_candidates/ttbar_100k_shard000_pythia8_delphes_canonical72.parquet
+      output_bytes: 52507
+      output_sha256: ff2bed58c9a4a6ce5380b16324f18ff44bbd9a2a0f51f5990e390906086e7d09
+      candidate_rows: 29
+      result_classification: successful_production_reconstruction
+    - attempt_id: determinism_validation_20260727T221806Z
+      attempt_stage: determinism_validation_rerun
+      input_path: /uscms_data/d3/iturkmen/hh4b_delphes/root/ttbar_100k_shard000_pythia8_delphes.root
+      input_sha256: a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb
+      local_copy_path: /tmp/iturkmen/hh4b_ttbar27_recovery_20260727T220257Z/ttbar_100k_shard000_pythia8_delphes.root
+      local_copy_sha256: a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb
+      exact_command: >-
+        env PYTHONPATH=/tmp/iturkmen/hh4b_ttbar27_recovery_20260727T220257Z/python_startup
+        OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+        NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 PYTHONUNBUFFERED=1
+        timeout --signal=TERM --kill-after=60s 45m
+        python3 scripts/delphes/reconstruct_hh4b_candidates_v2.py
+        --input /tmp/iturkmen/hh4b_ttbar27_recovery_20260727T220257Z/ttbar_100k_shard000_pythia8_delphes.root
+        --out outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1/validation_rerun/ttbar_100k_shard000_pythia8_delphes_canonical72.parquet
+        --sample ttbar_100k_shard000_pythia8_delphes
+        --target-mass 125.0 --jet-pt-min 30.0 --jet-eta-max 2.5
+        --btag-min 0.0 --max-bjets-for-pairing 8 --higgs-ordering pt
+      start_time_utc: "2026-07-27T22:18:06Z"
+      end_time_utc: "2026-07-27T22:18:29Z"
+      exit_status: 0
+      wall_time_seconds: 11.4628
+      output_path: outputs/agent_runs/hh4b_ttbar27_canonical72_recovery_20260727_v1/validation_rerun/ttbar_100k_shard000_pythia8_delphes_canonical72.parquet
+      output_bytes: 52507
+      output_sha256: ff2bed58c9a4a6ce5380b16324f18ff44bbd9a2a0f51f5990e390906086e7d09
+      candidate_rows: 29
+      result_classification: successful_determinism_validation_rerun
+
+canonical_v1_protection:
+  directory: docs/checkpoints/hh4b_bdt_validation_selection_20260727_v1
+  sha256sums_sha256: 127d59487078411a15e43e694f2671e900bf9c9a77a4bd8e39610094c22a92dc
+  expected_entries: 88
+
+original_ttbar100k_production:
+  campaign: ttbar_100k
+  campaign_command: scripts/delphes/run_storage_safe_local_campaign.sh ttbar_100k /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke 10 10000 105000 yes 1 yes
+  repository_commit_in_release: e8ba98ac3b17b25cf4aad8e0d58741d4570a48b5
+  generator_process: p p > t t~
+  generator_version: MadGraph5_aMC@NLO_3.5.3
+  generator_process_directory: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke
+  generator_process_card:
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke/Cards/proc_card_mg5.dat
+    sha256: 9c771a8b9c596f02c9a21953936a2bacb2268f04253d38ef974e6ff6bea8bbf8
+  generator_param_card:
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke/Cards/param_card.dat
+    sha256: 5315ff912514491596e9720b0540dbacd61d85d66dec2b4c94eaee0c15a52b41
+  generator_run_card_template:
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke/Cards/run_card.dat
+    observed_sha256: 5b6b7f660badb79d25218fb4920c801794e62861fb8cf53311d75588786ef04d
+    overwritten_settings:
+      nevents: 10000
+      ptb: 25.0
+      etab: 2.7
+      drbb: 0.4
+      drbj: 0.4
+      ptj: 20.0
+      etaj: 5.0
+  generation_script:
+    path: scripts/delphes/run_storage_safe_local_campaign.sh
+    sha256: 3007010e7c2bd188ea3f7fd7ba3a48cc26f88662dd4e9a1f8c86484126a6865e
+  local_sample_script:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/scripts_snapshot/run_local_background_sample.sh
+    sha256: 5cd6e53ede4c98eb29b79983b266edd62119246ca9d3cf4f54fa95b25aa13809
+  shower_pipeline_snapshot:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/scripts_snapshot/run_existing_lhe_pythia_delphes.sh
+    sha256: ea8108151317d14f9a2cc23cd46ec76c7ae2af1430a0f31bdbedaa599f86bf6a
+  shower_converter:
+    path: /uscms_data/d3/iturkmen/software/bin/lhe_to_hepmc3
+    sha256: 98b00f81cf843772ea93ee3ef92f1f4a9f340a26a9c779ddaa161ff8c75797fb
+    pythia_version: 8.312
+    changed_settings: Beams:frameType=4;Beams:LHEF=<member_lhe>;Check:event=off;Next:numberCount=10;Next:numberShowEvent=0;Next:numberShowInfo=0;Next:numberShowProcess=0
+  delphes_executable:
+    path: /uscms_data/d3/iturkmen/software/Delphes/DelphesHepMC3
+    sha256: f957ca1bff3d0449695373ced9a1dc720f2310ea8fa6f97852f7c552bff5e580
+    version: 3.5.2pre01-33-ga3b0385
+    git_commit: a3b0385da3693e578f413d61d87a9514a422b15f
+  delphes_card:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/delphes/delphes_card_CMS_lpc.tcl
+    sha256: 0e14b275c2adbe0fec937b4c6a6d1b0a3ff28d406bf9e327427d1bf87c87f5a9
+  fastjet_version: 3.5.1
+  event_count_per_member: 10000
+  exact_regeneration_assessment: possible_subject_to_shard000_reproduction_canary
+  production_plan:
+    - Copy the retained MG5 process directory to a versioned immutable work area.
+    - Restore the release-era scripts and exact card/binary hashes recorded here.
+    - Regenerate shard000 with seed 105000 and compare its generator-event digest and common candidate columns to the retained original.
+    - Stop if the shard000 canary differs; classify subsequent samples as replacements rather than originals.
+    - If the canary matches, regenerate only seeds 105001, 105002, 105003, 105004, 105005, 105007, 105008, and 105009.
+    - Preserve LHE, HepMC, ROOT, receipts, logs, and checksums until the exact-identity audit passes.
+    - Reconstruct each ROOT with the protected canonical builder and explicit frozen policy.
+    - Do not submit any production jobs from this recovery gate.
+
+source_search:
+  local_roots:
+    - /uscms_data/d3/iturkmen/hh4b_delphes
+    - /uscms_data/d3/iturkmen/repos/hh-bbww-baselines
+  eos_roots:
+    - /store/user/iturkmen/hh4b_delphes
+    - /store/user/iturkmen/hh4b_external_dataset
+  exact_remote_member_matches: 0
+  later_physics_equivalent_ttbar_root: /store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/phase1_reprocess_20260717/root/ttbar
+  search_completed_utc: 2026-07-27T19:49:45Z
+
+test_extension:
+  deterministic_salt: hh4b_v2_test_extension_20260727_seed_271828
+  selection_rule: for_each_missing_process_or_signal_mode_select_min_sha256_of_salt_pipe_sample_class_pipe_stratum_pipe_member_id
+  preserve_existing_sealed_members: true
+  open_candidate_content: false

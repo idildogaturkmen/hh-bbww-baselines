@@ -1,0 +1,11 @@
+{
+  "audit_name": "recover_hh4b_ttbar27_canonical72_candidates",
+  "config_path": "configs/baselines/hh4b_ttbar27_canonical72_recovery_v1.yaml",
+  "config_sha256": "690b1b7242aa1e7407334edfd668bb73fb82f07a037eb94ef06ee82694c7b584",
+  "created_utc": "2026-07-27T22:23:16.674367+00:00",
+  "event_level_products_committed": false,
+  "next_gate": "prepare_hh4b_ttbar_missing_member_exact_regeneration",
+  "runtime_candidate_registry_only": true,
+  "schema_version": 1,
+  "status": "hh4b_ttbar27_exact_regeneration_required"
+}

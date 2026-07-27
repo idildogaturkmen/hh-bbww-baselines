@@ -1,0 +1,13 @@
+| coverage category | required strata | existing members | existing strata | proposed added members | proposed added strata | combined members | combined strata | remaining gaps | representative coverage achievable |
+|---|---|---|---|---|---|---|---|---|---|
+| QCD strata | ["qcd_bbbb_general","qcd_bbbb_iht400to600","qcd_hardqcd"] | 19 | ["qcd_hardqcd"] | 2 | ["qcd_bbbb_general","qcd_bbbb_iht400to600"] | 21 | ["qcd_bbbb_general","qcd_bbbb_iht400to600","qcd_hardqcd"] | [] | True |
+| ttbar | ["ttbar_inclusive"] | 0 | [] | 1 | ["ttbar_inclusive"] | 1 | ["ttbar_inclusive"] | [] | True |
+| single top | ["schannel_single_top","tchannel_antitop","tchannel_top","tw_antitop","tw_top"] | 0 | [] | 5 | ["schannel_single_top","tchannel_antitop","tchannel_top","tw_antitop","tw_top"] | 5 | ["schannel_single_top","tchannel_antitop","tchannel_top","tw_antitop","tw_top"] | [] | True |
+| top-associated | ["tth_hbb","tttt","ttw","ttz_zbb"] | 0 | [] | 4 | ["tth_hbb","tttt","ttw","ttz_zbb"] | 4 | ["tth_hbb","tttt","ttw","ttz_zbb"] | [] | True |
+| single Higgs | ["bbh_hbb_4fs","ggh_hbb","vbf_hbb","wh_hbb"] | 0 | [] | 4 | ["bbh_hbb_4fs","ggh_hbb","vbf_hbb","wh_hbb"] | 4 | ["bbh_hbb_4fs","ggh_hbb","vbf_hbb","wh_hbb"] | [] | True |
+| diboson | ["ww","wz_zbb"] | 0 | [] | 2 | ["ww","wz_zbb"] | 2 | ["ww","wz_zbb"] | [] | True |
+| triboson | ["wwz_zbb","wzz_zbb","zzz_zbb"] | 0 | [] | 3 | ["wwz_zbb","wzz_zbb","zzz_zbb"] | 3 | ["wwz_zbb","wzz_zbb","zzz_zbb"] | [] | True |
+| Z plus heavy flavor | ["zbbbb"] | 0 | [] | 1 | ["zbbbb"] | 1 | ["zbbbb"] | [] | True |
+| ggF HH | ["ggf_hh4b"] | 3 | ["ggf_hh4b"] | 0 | [] | 3 | ["ggf_hh4b"] | [] | True |
+| VBF HH | ["vbf_hh4b"] | 0 | [] | 1 | ["vbf_hh4b"] | 1 | ["vbf_hh4b"] | [] | True |
+| QCD pTHat/phase-space | ["pthat1000toInf","pthat100to200","pthat200to300","pthat300to500","pthat500to700","pthat50to75","pthat700to1000","pthat75to100"] | 19 | ["pthat1000toInf","pthat100to200","pthat200to300","pthat300to500","pthat500to700","pthat50to75","pthat700to1000","pthat75to100"] | 0 | [] | 19 | ["pthat1000toInf","pthat100to200","pthat200to300","pthat300to500","pthat500to700","pthat50to75","pthat700to1000","pthat75to100"] | [] | True |

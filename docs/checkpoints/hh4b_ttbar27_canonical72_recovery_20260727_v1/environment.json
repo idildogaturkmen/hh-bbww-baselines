@@ -1,0 +1,9 @@
+{
+  "matplotlib": "3.4.3",
+  "numpy": "1.23.5",
+  "pandas": "2.3.3",
+  "platform": "Linux-5.14.0-687.25.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "pyarrow": "21.0.0",
+  "python": "3.9.25 (main, Jul 13 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-14)]",
+  "uproot": "5.6.9"
+}

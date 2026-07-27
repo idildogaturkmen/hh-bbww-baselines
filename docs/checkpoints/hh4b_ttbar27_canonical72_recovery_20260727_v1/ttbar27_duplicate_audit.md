@@ -1,0 +1,22 @@
+| scope | target tag | rows checked | duplicate sample event keys | cross member duplicate keys | status |
+|---|---|---|---|---|---|
+| member | ttbar_100k_shard000 | 29 | 0 | 0 | pass |
+| member | ttbar_200k_shard000 | 37 | 0 | 0 | pass |
+| member | ttbar_200k_shard001 | 39 | 0 | 0 | pass |
+| member | ttbar_200k_shard002 | 33 | 0 | 0 | pass |
+| member | ttbar_200k_shard004 | 37 | 0 | 0 | pass |
+| member | ttbar_200k_shard005 | 46 | 0 | 0 | pass |
+| member | ttbar_200k_shard006 | 24 | 0 | 0 | pass |
+| member | ttbar_200k_shard007 | 38 | 0 | 0 | pass |
+| member | ttbar_200k_shard008 | 35 | 0 | 0 | pass |
+| member | ttbar_200k_shard009 | 34 | 0 | 0 | pass |
+| member | ttbar_200k_shard011 | 34 | 0 | 0 | pass |
+| member | ttbar_200k_shard012 | 32 | 0 | 0 | pass |
+| member | ttbar_200k_shard013 | 34 | 0 | 0 | pass |
+| member | ttbar_200k_shard014 | 48 | 0 | 0 | pass |
+| member | ttbar_200k_shard015 | 44 | 0 | 0 | pass |
+| member | ttbar_200k_shard016 | 29 | 0 | 0 | pass |
+| member | ttbar_200k_shard017 | 36 | 0 | 0 | pass |
+| member | ttbar_200k_shard018 | 40 | 0 | 0 | pass |
+| member | ttbar_200k_shard019 | 42 | 0 | 0 | pass |
+| all_canonical_ready_members | all_19 | 691 | 0 | 0 | pass |

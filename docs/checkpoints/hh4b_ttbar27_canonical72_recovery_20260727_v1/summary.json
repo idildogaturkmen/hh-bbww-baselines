@@ -1,0 +1,77 @@
+{
+  "audit_name": "recover_hh4b_ttbar27_canonical72_candidates",
+  "base_commit": "ac6820e048db2c4ad6524b37a00421420e8aacd9",
+  "candidate_recovery": {
+    "aborted_stalled_no_output_attempts": 1,
+    "canonical_ready_candidate_rows": 691,
+    "canonical_ready_members": 19,
+    "canonical_schema_sha256": "4008b937032acad6aac87c2fea1df12a110d19a3876d1f8008496e9ca0c85cf4",
+    "deterministic_row_level_equal": true,
+    "existing_canonical_candidate_rows": 662,
+    "existing_compatible_members_checked": 18,
+    "retained_root_canonical_candidate_rows": 29,
+    "retained_root_members_reconstructed": 1,
+    "successful_determinism_validation_reruns": 1,
+    "successful_production_reconstruction_attempts": 1,
+    "unresolved_legacy_rows_excluded": 307,
+    "unresolved_members": 8
+  },
+  "controls": {
+    "condor_jobs_submitted": 0,
+    "event_level_products_written_to_checkpoint": 0,
+    "limits_calculated": 0,
+    "models_trained": 0,
+    "scores_calculated": 0,
+    "sealed_test_candidate_files_opened": 0,
+    "sealed_test_candidate_rows_read": 0,
+    "significance_calculated": 0,
+    "test_predictions_produced": 0
+  },
+  "hold_inventory": {
+    "generated_events": 270000,
+    "held_members_inventoried": 27,
+    "legacy_candidate_rows": 998
+  },
+  "integrity": {
+    "all_checkpoint_tables_have_markdown_and_booktabs_latex": true,
+    "canonical_v1_artifacts_verified": 88,
+    "canonical_v1_protected_artifacts_unchanged": true,
+    "cross_member_duplicate_keys": 0,
+    "protected_reconstruction_files_unchanged": true
+  },
+  "next_gate": "prepare_hh4b_ttbar_missing_member_exact_regeneration",
+  "normalization": {
+    "metadata_carried_forward": true,
+    "normalization_blockers_recorded_for_members": 27,
+    "normalization_ready_members": 0,
+    "physical_yields_calculated": 0
+  },
+  "plot_style": {
+    "cms_inspired_style_applied": true,
+    "latex_math_labels_applied": true,
+    "mplhep_used": false,
+    "official_cms_status_claimed": false
+  },
+  "proposed_v2_test_extension": {
+    "candidate_content_opened": 0,
+    "combined": 45,
+    "combined_signal_modes": [
+      "ggf_hh4b",
+      "vbf_hh4b"
+    ],
+    "existing": 22,
+    "existing_signal_modes": [
+      "ggf_hh4b"
+    ],
+    "finalized": false,
+    "proposed_added": 23
+  },
+  "schema_version": 1,
+  "source_recovery": {
+    "exact_deterministic_regeneration_possible": 8,
+    "exact_original_sources_found_for_missing_eight": 0,
+    "production_submitted": false,
+    "replacement_events_claimed_identical": false
+  },
+  "status": "hh4b_ttbar27_exact_regeneration_required"
+}

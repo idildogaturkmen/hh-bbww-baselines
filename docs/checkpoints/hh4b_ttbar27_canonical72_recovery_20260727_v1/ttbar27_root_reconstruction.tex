@@ -1,0 +1,13 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabular}{lllllllllllllllllllllllllllllllllllllll}
+\toprule
+member index & target tag & dataset split & source root path & source root sha256 & local root path & local root sha256 & source local sha256 equal & root entries & expected entries & builder path & builder sha256 & policy path & policy sha256 & explicit policy arguments & production builder invocations & stalled production attempts & candidate path & candidate sha256 & candidate rows & schema columns & exact column order & finite required values & unique event keys & zero row schema readable & validation rerun path & validation rerun sha256 & deterministic byte checksum equal & determinism exact schema and column order & exact event ordering & exact integer and string values & matching nonfinite masks & floating values within tolerance & floating rtol & floating atol & maximum absolute float difference & deterministic row level equal & technical io handler override & classification \\
+\midrule
+346 & ttbar\_100k\_shard000 & validation & /uscms\_data/d3/iturkmen/hh4b\_delphes/root/ttbar\_100k\_shard000\_pythia8\_delphes.root & a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb & /tmp/iturkmen/hh4b\_ttbar27\_recovery\_20260727T220257Z/ttbar\_100k\_shard000\_pythia8\_delphes.root & a3b7755440323eb0e5212454046efbdfa443cd3a139ae64cdd0fc0365a9c1deb & True & 10000 & 10000 & scripts/delphes/reconstruct\_hh4b\_candidates\_v2.py & 4d7eb8e3400ec50c1c254744e6f3a2b11bd033a4525c13ec22e85247ecf59c57 & configs/production/hh4b\_rich\_v2\_reconstruction\_policy\_v1.yaml & 4b2a951dba7ac8bd0e2e982e3447e998e07b86d63390c248600976b3f4912b68 & \{"btag\_min":0.0,"higgs\_ordering":"pt","jet\_eta\_max":2.5,"jet\_pt\_min":30.0,"max\_bjets\_for\_pairing":8,"target\_mass":125.0\} & 1 & 1 & /uscms\_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent\_runs/hh4b\_ttbar27\_canonical72\_recovery\_20260727\_v1/runtime\_candidates/ttbar\_100k\_shard000\_pythia8\_delphes\_canonical72.parquet & ff2bed58c9a4a6ce5380b16324f18ff44bbd9a2a0f51f5990e390906086e7d09 & 29 & 72 & True & True & True & True & /uscms\_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent\_runs/hh4b\_ttbar27\_canonical72\_recovery\_20260727\_v1/validation\_rerun/ttbar\_100k\_shard000\_pythia8\_delphes\_canonical72.parquet & ff2bed58c9a4a6ce5380b16324f18ff44bbd9a2a0f51f5990e390906086e7d09 & True & True & True & True & True & True & 0.0 & 1e-12 & 0.0 & True & sitecustomize\_sets\_MultithreadedFileSource\_num\_workers\_1 & canonical72\_reconstructed\_from\_retained\_root \\
+\bottomrule
+\end{tabular}
+\caption{ttbar27 root reconstruction}
+\label{tab:ttbar27-root-reconstruction}
+\end{table}
