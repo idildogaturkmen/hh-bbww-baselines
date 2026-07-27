@@ -1,0 +1,26 @@
+{
+  "audit_status": "immutable_pre_recovery_freeze",
+  "bootstrap_artifacts": {
+    "outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1/bootstrap/primary_member_replicas.parquet": "369ba44b6c203881fe5d4744d745b408cc5eb4a5972e29d080169f96b5bac678"
+  },
+  "core_metric_tables_present_before_recovery": [],
+  "model_artifacts": {
+    "outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1/models/categorized_cms_inspired_mass_aware_high_mhh.json": "5d960b9620cc93e054233549a057141cb2861ab4de0ff1e27d8339eed99a4f23",
+    "outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1/models/categorized_cms_inspired_mass_aware_low_mhh.json": "ddf675f62c11b63541b2226210325e849ddd05b747308c6e3d4659682030cf0a",
+    "outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1/models/global_v1_explicit_dijet_mass_plane_blind.json": "5bc845ddd49cd9c4b6cfc6f340410b914c52906045be79d7f335ef9b663f6dab",
+    "outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1/models/global_v1_mass_aware.json": "3d30754c7c3edad633ef884081958382ed81376803b0cc3c0cc24357ca947b90"
+  },
+  "prediction_artifacts": {
+    "outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1/validation_predictions/categorized_cms_inspired_mass_aware.parquet": "29cb371fe719c5f46bd4577902df841f6fe36a1767610e7c553e679878c1029e",
+    "outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1/validation_predictions/global_v1_explicit_dijet_mass_plane_blind.parquet": "3c2ff24221fa7ad4f2eb4053d59b3c3d0260d75dd5ceb69f619e31629038610a",
+    "outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1/validation_predictions/global_v1_mass_aware.parquet": "95bb61648ae110218141e8d3250369372cee0a7aa92d5d3334557aca2cb641df"
+  },
+  "provisional_final_nominal_model": "global_v1_mass_aware",
+  "provisional_model_selection_output_present_before_recovery": false,
+  "provisional_primary_categorized_v2_equalized_background_efficiency": 0.2516365087088565,
+  "provisional_primary_global_v1_equalized_background_efficiency": 0.21386560218344178,
+  "provisional_primary_paired_bootstrap_fraction_favoring_v2": 0.027,
+  "provisional_values_source": "retained validation prediction Parquets and completed primary member-bootstrap artifact; frozen once after the plotting failure and before the authorized recovery read",
+  "recovery_read_started": false,
+  "source_commit": "ee051137f04f73d5ecb2438b58b22cbdba68363f"
+}

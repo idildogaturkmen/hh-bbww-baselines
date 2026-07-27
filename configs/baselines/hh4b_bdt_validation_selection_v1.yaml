@@ -1,0 +1,156 @@
+schema_version: 1
+analysis_name: hh4b_bdt_validation_selection
+required_interpreter: /uscms_data/d3/iturkmen/venvs/hh4b-bdt-v1/bin/python
+
+inputs:
+  manifest: outputs/agent_runs/hh4b_canonical72_development_manifest_20260725_v2/hh4b_canonical72_development_manifest.tsv
+  manifest_sha256: b3e42a0af56594445e297e2347ccfd3bd799fd107a578af844c9733bfd2ebe6a
+  v1_input_config: configs/baselines/hh4b_bdt_v1_input_contract.yaml
+  v2_contract_config: configs/baselines/hh4b_bdt_v2_cms_inspired_contract.yaml
+  source_checkpoints:
+    v1_input_contract:
+      directory: docs/checkpoints/hh4b_bdt_v1_input_contract_20260725_v1
+      sha256sums_sha256: 355c4c931503efccd55383e4ade0c3f2b9e5ef91662244ea0c6230b3756bc8c2
+      required_status: hh4b_bdt_v1_input_contract_pass
+    v1_grouped_cv:
+      directory: docs/checkpoints/hh4b_bdt_v1_grouped_cv_20260725_v1
+      sha256sums_sha256: 11e3d4d423892086ce9873948ecf6903e74f0abfe63d14bf23ebdb8c39cb63e0
+      required_status: hh4b_bdt_v1_grouped_cross_validation_pass
+    v2_cms_inspired_contract:
+      directory: docs/checkpoints/hh4b_bdt_v2_cms_inspired_contract_20260726_v1
+      sha256sums_sha256: 4f6c74d0aded1a1c026d2c79e0352ea21ad9bde7d2020c1dd5500ad89ed59041
+      required_status: hh4b_bdt_v2_cms_inspired_category_and_feature_contract_pass
+    v2_cms_inspired_grouped_cv:
+      directory: docs/checkpoints/hh4b_bdt_v2_cms_inspired_grouped_cv_20260726_v1
+      sha256sums_sha256: 16a5cb9f936fb555c511c21646d59e140d91dbd23b26980250421e9f3581b56e
+      required_status: hh4b_bdt_v2_cms_inspired_categorized_grouped_cv_pass
+    model_choice:
+      directory: docs/checkpoints/hh4b_bdt_model_choice_20260727_v1
+      sha256sums_sha256: 89ee64e09c988199580be7a1a987f9cbab172d4e5de638296a04577677b92f8c
+      required_status: hh4b_bdt_train_only_model_choice_frozen
+    validation_protocol_amendment:
+      directory: docs/checkpoints/hh4b_bdt_validation_protocol_amendment_20260727_v1
+      sha256sums_sha256: aaa798f126eb42284ea71a11eb209b478e1a8116a1f63ea5c48b4cb74726eb71
+      required_status: hh4b_bdt_validation_model_selection_protocol_frozen
+
+outputs:
+  runtime_directory: outputs/agent_runs/hh4b_bdt_validation_selection_20260727_v1
+  checkpoint_directory: docs/checkpoints/hh4b_bdt_validation_selection_20260727_v1
+
+required_environment:
+  python_version: "3.9.25"
+  numpy_version: "1.26.4"
+  scipy_version: "1.13.1"
+  sklearn_version: "1.6.1"
+  xgboost_version: "2.1.4"
+  controls:
+    OMP_NUM_THREADS: "8"
+    OPENBLAS_NUM_THREADS: "1"
+    MKL_NUM_THREADS: "1"
+    NUMEXPR_NUM_THREADS: "1"
+
+population:
+  train_members: 458
+  train_rows: 57326
+  train_signal_rows: 9975
+  train_background_rows: 47351
+  validation_members: 123
+  validation_signal_members: 19
+  validation_background_members: 104
+  validation_rows: 12745
+  validation_signal_rows: 2246
+  validation_background_rows: 10499
+
+models:
+  estimator_fixed_parameters:
+    objective: binary:logistic
+    booster: gbtree
+    tree_method: hist
+    max_bin: 256
+    eval_metric: logloss
+    n_jobs: 8
+    verbosity: 0
+    scale_pos_weight: 1.0
+  global_random_state: 20260725
+  categorized_random_state: 20260726
+  global_selected_hyperparameters: docs/checkpoints/hh4b_bdt_v1_grouped_cv_20260725_v1/selected_hyperparameters.tsv
+  categorized_selected_hyperparameters: docs/checkpoints/hh4b_bdt_v2_cms_inspired_grouped_cv_20260726_v1/selected_category_hyperparameters.tsv
+  frozen_working_points: docs/checkpoints/hh4b_bdt_model_choice_20260727_v1/frozen_working_points.tsv
+  fitted_models:
+    - global_v1_mass_aware
+    - global_v1_explicit_dijet_mass_plane_blind
+    - categorized_cms_inspired_mass_aware_low_mhh
+    - categorized_cms_inspired_mass_aware_high_mhh
+
+validation:
+  category_boundary_GeV: 450.0
+  target_weighted_signal_efficiencies:
+    - 0.30
+    - 0.50
+    - 0.585957314769
+    - 0.70
+  primary_target_weighted_signal_efficiency: 0.585957314769
+  optimized_cut:
+    variable: r_hh_125_125
+    operator: less_than
+    threshold: 34.0
+  score_comparison: greater_than_or_equal
+  development_weight_tolerance: 1.0e-10
+
+bootstrap:
+  unit: source_member
+  seed: 20260727
+  replicates: 2000
+  interval_percentiles:
+    - 2.5
+    - 16.0
+    - 50.0
+    - 84.0
+    - 97.5
+
+selection_rule:
+  minimum_relative_background_efficiency_reduction: 0.02
+  minimum_fraction_favoring_categorized_v2: 0.84
+  maximum_signal_mode_efficiency_deviation: 0.05
+  fallback_model: global_v1_mass_aware
+  alternative_model: categorized_cms_inspired_mass_aware
+
+plotting:
+  style_helper: scripts/plotting/hh4b_cms_style.py
+  dpi: 300
+  header: Delphes simulation
+  energy_TeV: 13
+  secondary_labels:
+    - Validation
+    - Source-member bootstrap
+    - Development balancing; not physical normalization
+  plots:
+    - validation_fixed_threshold_signal_efficiency
+    - validation_fixed_threshold_background_efficiency
+    - validation_equalized_background_efficiency
+    - validation_primary_model_comparison
+    - validation_bootstrap_delta_background_efficiency
+    - validation_signal_mode_efficiency
+    - validation_background_family_efficiency
+    - validation_global_v1_roc
+    - validation_low_mhh_category_roc
+    - validation_high_mhh_category_roc
+    - validation_global_v1_precision_recall
+    - validation_low_mhh_precision_recall
+    - validation_high_mhh_precision_recall
+    - validation_global_v1_score_distribution
+    - validation_low_mhh_v2_score_distribution
+    - validation_high_mhh_v2_score_distribution
+    - validation_score_mass_correlation
+    - validation_final_nominal_model_summary
+
+authorization:
+  validation_selection_authorized: true
+  validation_access_frequency: exactly_once
+  validation_reoptimization_authorized: false
+  test_access_authorized: false
+  test_selection_authorized: false
+  physical_normalization_authorized: false
+  physical_significance_authorized: false
+  post_validation_reoptimization_authorized: false
+  next_gate: audit_hh4b_full_5m_background_and_signal_coverage

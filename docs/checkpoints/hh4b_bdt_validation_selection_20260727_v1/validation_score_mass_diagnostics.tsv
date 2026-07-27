@@ -1,0 +1,28 @@
+record_type	method	variable	correlation	score_quintile	value	median_r_hh_125_125	mean_r_hh_125_125	fraction_r_hh_lt_34	fraction_r_hh_lt_50	fraction_r_hh_lt_80	status
+correlation	global_v1_mass_aware	r_hh_125_125	Pearson		-0.440867305679						pass
+correlation	global_v1_mass_aware	r_hh_125_125	Spearman		-0.645682029291						pass
+correlation	global_v1_mass_aware	mhh	Pearson		-0.278514062022						pass
+correlation	global_v1_mass_aware	mhh	Spearman		-0.34527006217						pass
+score_quintile	global_v1_mass_aware	r_hh_125_125		1		87.9116652214	128.21841464	0.0305207620041	0.0918977588768	0.525202038616	pass
+score_quintile	global_v1_mass_aware	r_hh_125_125		2		80.727327297	101.726363596	0.0375780490915	0.216276260582	0.580113874189	pass
+score_quintile	global_v1_mass_aware	r_hh_125_125		3		65.3409389904	99.3502318432	0.134218545315	0.359169278158	0.659788268586	pass
+score_quintile	global_v1_mass_aware	r_hh_125_125		4		44.7671065553	76.1326167635	0.212916007019	0.633369667426	0.844844577939	pass
+score_quintile	global_v1_mass_aware	r_hh_125_125		5		24.2974255722	30.9827438202	0.676092838606	0.898878763912	0.98111155439	pass
+correlation	categorized_cms_inspired_mass_aware	r_hh_125_125	Pearson		-0.397525964528						pass
+correlation	categorized_cms_inspired_mass_aware	r_hh_125_125	Spearman		-0.591077738						pass
+correlation	categorized_cms_inspired_mass_aware	mhh	Pearson		-0.195798318069						pass
+correlation	categorized_cms_inspired_mass_aware	mhh	Spearman		-0.245562812641						pass
+score_quintile	categorized_cms_inspired_mass_aware	r_hh_125_125		1		86.1092397413	107.165280397	0.0321903126331	0.0945045784807	0.6160592868	pass
+score_quintile	categorized_cms_inspired_mass_aware	r_hh_125_125		2		78.6288075326	108.064598162	0.0732705771553	0.224404472063	0.601414401846	pass
+score_quintile	categorized_cms_inspired_mass_aware	r_hh_125_125		3		63.1050099149	80.6899921377	0.151602473436	0.427072786299	0.664553292289	pass
+score_quintile	categorized_cms_inspired_mass_aware	r_hh_125_125		4		46.2466834622	81.5023756314	0.228285276438	0.611946591116	0.830020226149	pass
+score_quintile	categorized_cms_inspired_mass_aware	r_hh_125_125		5		25.5856301415	48.3305159109	0.60540451846	0.857557666684	0.925012125027	pass
+correlation	global_v1_explicit_dijet_mass_plane_blind	r_hh_125_125	Pearson		-0.442275584113						pass
+correlation	global_v1_explicit_dijet_mass_plane_blind	r_hh_125_125	Spearman		-0.549188098112						pass
+correlation	global_v1_explicit_dijet_mass_plane_blind	mhh	Pearson		-0.248218837248						pass
+correlation	global_v1_explicit_dijet_mass_plane_blind	mhh	Spearman		-0.307214353811						pass
+score_quintile	global_v1_explicit_dijet_mass_plane_blind	r_hh_125_125		1		98.2998735948	140.544224028	0.0551890820707	0.125313350188	0.360155663421	pass
+score_quintile	global_v1_explicit_dijet_mass_plane_blind	r_hh_125_125		2		78.262439971	103.91495823	0.103332688753	0.30514657625	0.564679338901	pass
+score_quintile	global_v1_explicit_dijet_mass_plane_blind	r_hh_125_125		3		61.2169909929	91.2909183062	0.150486779682	0.388325064683	0.768323393033	pass
+score_quintile	global_v1_explicit_dijet_mass_plane_blind	r_hh_125_125		4		44.516918772	64.7953456021	0.416591129962	0.628057330417	0.863010294754	pass
+score_quintile	global_v1_explicit_dijet_mass_plane_blind	r_hh_125_125		5		34.5929502664	38.4396400111	0.436059048525	0.816663933833	0.979930712397	pass

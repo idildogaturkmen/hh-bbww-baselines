@@ -1,0 +1,2 @@
+comparison	target_weighted_signal_efficiency	seed	replicates	replicates_defined	mean	standard_deviation	percentile_2_5	percentile_16	median	percentile_84	percentile_97_5	fraction_favoring_categorized_v2	bootstrap_unit	status
+categorized_cms_inspired_mass_aware_minus_global_v1_mass_aware	0.585957314769	20260727	2000	2000	0.0425042641367	0.0246750033813	-0.000656972137596	0.0182550090832	0.0406957040324	0.067164375613	0.095376476601	0.027	source_member	pass

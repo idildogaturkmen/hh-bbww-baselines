@@ -1,0 +1,18 @@
+{
+  "documented_recovery_read": true,
+  "final_nominal_bdt_selected": true,
+  "final_nominal_model": "global_v1_mass_aware",
+  "final_secondary_model": "categorized_cms_inspired_mass_aware",
+  "next_gate": "audit_hh4b_full_5m_background_and_signal_coverage",
+  "physical_significance_authorized": false,
+  "post_validation_reoptimization_authorized": false,
+  "recovery_scope_valid": true,
+  "source_commit": "ee051137f04f73d5ecb2438b58b22cbdba68363f",
+  "status": "hh4b_bdt_validation_model_selection_pass",
+  "test_access_authorized": false,
+  "total_validation_read_passes": 2,
+  "validation_access_complete": true,
+  "validation_evaluation_passes": 1,
+  "validation_may_be_reopened": false,
+  "validation_recovery_passes": 1
+}

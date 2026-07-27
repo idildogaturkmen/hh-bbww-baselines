@@ -1,0 +1,36 @@
+| analysis | method | target weighted signal efficiency | signal mode | efficiency | percentile 16 | percentile 84 | percentile 2 5 | percentile 97 5 | bootstrap unit |
+|---|---|---|---|---|---|---|---|---|---|
+| fixed_train_threshold | global_v1_mass_aware | 0.3 | ggf_hh4b | 0.257126165218 | 0.247537603887 | 0.26641529823 | 0.238255523247 | 0.275160282527 | source_member |
+| fixed_train_threshold | global_v1_mass_aware | 0.3 | vbf_hh4b | 0.320980234301 | 0.308089500861 | 0.333870967742 | 0.308089500861 | 0.333870967742 | source_member |
+| fixed_train_threshold | categorized_cms_inspired_mass_aware | 0.3 | ggf_hh4b | 0.26475156452 | 0.254448456497 | 0.274786669221 | 0.24313600994 | 0.283030339019 | source_member |
+| fixed_train_threshold | categorized_cms_inspired_mass_aware | 0.3 | vbf_hh4b | 0.307162289712 | 0.304647160069 | 0.309677419355 | 0.304647160069 | 0.309677419355 | source_member |
+| equalized_validation_efficiency | global_v1_mass_aware | 0.3 | ggf_hh4b | 0.267594787138 | 0.25820150419 | 0.284365389846 | 0.246172782753 | 0.301539515274 | source_member |
+| equalized_validation_efficiency | global_v1_mass_aware | 0.3 | vbf_hh4b | 0.332595358392 | 0.320467492088 | 0.346774193548 | 0.313313160476 | 0.358064516129 | source_member |
+| equalized_validation_efficiency | categorized_cms_inspired_mass_aware | 0.3 | ggf_hh4b | 0.280216911791 | 0.272112325228 | 0.289635053726 | 0.26289077187 | 0.302714493098 | source_member |
+| equalized_validation_efficiency | categorized_cms_inspired_mass_aware | 0.3 | vbf_hh4b | 0.321413302982 | 0.314516129032 | 0.333907056799 | 0.309202431847 | 0.344234079174 | source_member |
+| fixed_train_threshold | global_v1_mass_aware | 0.5 | ggf_hh4b | 0.458550127392 | 0.442803328483 | 0.474681621269 | 0.425544358536 | 0.491258526979 | source_member |
+| fixed_train_threshold | global_v1_mass_aware | 0.5 | vbf_hh4b | 0.513176669813 | 0.504838709677 | 0.521514629948 | 0.504838709677 | 0.521514629948 | source_member |
+| fixed_train_threshold | categorized_cms_inspired_mass_aware | 0.5 | ggf_hh4b | 0.464777425789 | 0.448830849286 | 0.480071737591 | 0.433282995767 | 0.493656054292 | source_member |
+| fixed_train_threshold | categorized_cms_inspired_mass_aware | 0.5 | vbf_hh4b | 0.51656487702 | 0.506451612903 | 0.526678141136 | 0.506451612903 | 0.526678141136 | source_member |
+| equalized_validation_efficiency | global_v1_mass_aware | 0.5 | ggf_hh4b | 0.473497754038 | 0.463423940964 | 0.49053215543 | 0.448428837456 | 0.501656978551 | source_member |
+| equalized_validation_efficiency | global_v1_mass_aware | 0.5 | vbf_hh4b | 0.526567097885 | 0.515704291822 | 0.537005163511 | 0.509007689745 | 0.55421686747 | source_member |
+| equalized_validation_efficiency | categorized_cms_inspired_mass_aware | 0.5 | ggf_hh4b | 0.478236609862 | 0.470848835809 | 0.494364545942 | 0.458532393491 | 0.502764152884 | source_member |
+| equalized_validation_efficiency | categorized_cms_inspired_mass_aware | 0.5 | vbf_hh4b | 0.523287157848 | 0.511427044584 | 0.533870967742 | 0.504838709677 | 0.550774526678 | source_member |
+| fixed_train_threshold | global_v1_mass_aware | 0.585957314769 | ggf_hh4b | 0.559350663433 | 0.542342605551 | 0.576160120275 | 0.525865613125 | 0.591506168493 | source_member |
+| fixed_train_threshold | global_v1_mass_aware | 0.585957314769 | vbf_hh4b | 0.595776192327 | 0.582258064516 | 0.609294320138 | 0.582258064516 | 0.609294320138 | source_member |
+| fixed_train_threshold | categorized_cms_inspired_mass_aware | 0.585957314769 | ggf_hh4b | 0.547223168484 | 0.531687919771 | 0.562572629685 | 0.513138890553 | 0.575416010452 | source_member |
+| fixed_train_threshold | categorized_cms_inspired_mass_aware | 0.585957314769 | vbf_hh4b | 0.605778413192 | 0.591935483871 | 0.619621342513 | 0.591935483871 | 0.619621342513 | source_member |
+| equalized_validation_efficiency | global_v1_mass_aware | 0.585957314769 | ggf_hh4b | 0.571226427599 | 0.561432082274 | 0.586338278211 | 0.546360049108 | 0.588790459963 | source_member |
+| equalized_validation_efficiency | global_v1_mass_aware | 0.585957314769 | vbf_hh4b | 0.600831436344 | 0.591270149723 | 0.614457831325 | 0.582258064516 | 0.628227194492 | source_member |
+| equalized_validation_efficiency | categorized_cms_inspired_mass_aware | 0.585957314769 | ggf_hh4b | 0.55631199799 | 0.547049108939 | 0.575855708987 | 0.531843698129 | 0.588563233003 | source_member |
+| equalized_validation_efficiency | categorized_cms_inspired_mass_aware | 0.585957314769 | vbf_hh4b | 0.616641219255 | 0.603225806452 | 0.628241185942 | 0.596002442952 | 0.652323580034 | source_member |
+| fixed_train_threshold | global_v1_mass_aware | 0.7 | ggf_hh4b | 0.683291999098 | 0.668857588156 | 0.697147812121 | 0.654623959853 | 0.711008102057 | source_member |
+| fixed_train_threshold | global_v1_mass_aware | 0.7 | vbf_hh4b | 0.695690133807 | 0.682258064516 | 0.709122203098 | 0.682258064516 | 0.709122203098 | source_member |
+| fixed_train_threshold | categorized_cms_inspired_mass_aware | 0.7 | ggf_hh4b | 0.677117557389 | 0.663074595817 | 0.690493224707 | 0.649421048181 | 0.704011424202 | source_member |
+| fixed_train_threshold | categorized_cms_inspired_mass_aware | 0.7 | vbf_hh4b | 0.718655266226 | 0.690322580645 | 0.746987951807 | 0.690322580645 | 0.746987951807 | source_member |
+| equalized_validation_efficiency | global_v1_mass_aware | 0.7 | ggf_hh4b | 0.695643137994 | 0.68801280957 | 0.703069618742 | 0.678191090789 | 0.711927667968 | source_member |
+| equalized_validation_efficiency | global_v1_mass_aware | 0.7 | vbf_hh4b | 0.704831769474 | 0.697173949253 | 0.713865137971 | 0.687096774194 | 0.722891566265 | source_member |
+| equalized_validation_efficiency | categorized_cms_inspired_mass_aware | 0.7 | ggf_hh4b | 0.678637753035 | 0.667980653224 | 0.700288374632 | 0.654112483264 | 0.703794173627 | source_member |
+| equalized_validation_efficiency | categorized_cms_inspired_mass_aware | 0.7 | vbf_hh4b | 0.722795791461 | 0.706538744841 | 0.738382099828 | 0.698387096774 | 0.760757314974 | source_member |
+| optimized_cut | r_hh_125_125_lt_34 |  | ggf_hh4b | 0.600452653435 | 0.583631265048 | 0.615993604645 | 0.568829910736 | 0.631729181842 | source_member |
+| optimized_cut | r_hh_125_125_lt_34 |  | vbf_hh4b | 0.57636166787 | 0.570967741935 | 0.581755593804 | 0.570967741935 | 0.581755593804 | source_member |

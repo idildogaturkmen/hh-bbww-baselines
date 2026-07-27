@@ -1,0 +1,21 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Frozen HH$\to4b$ validation model-selection rule.}
+\label{tab:hh4b\_validation\_model\_selection}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+order & condition & observed & operator & required & passed & failure action \\
+\midrule
+1 & lower\_point\_estimate\_background\_efficiency & 0.0377709065254 & < & 0 & false & global\_v1\_mass\_aware \\
+2 & minimum\_relative\_background\_efficiency\_reduction & -0.176610479384 & >= & 0.02 & false & global\_v1\_mass\_aware \\
+3 & bootstrap\_fraction\_favoring\_categorized\_v2 & 0.027 & >= & 0.84 & false & global\_v1\_mass\_aware \\
+4 & signal\_mode\_equalization & 0.0306839044859 & <= & 0.05 & true & global\_v1\_mass\_aware \\
+5 & integrity\_category\_and\_model\_application & 0 & == & 0 & true & global\_v1\_mass\_aware \\
+6 & frozen\_rule\_outcome & global\_v1\_mass\_aware & selected\_by & all\_five\_conditions\_or\_global\_fallback & true & none \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

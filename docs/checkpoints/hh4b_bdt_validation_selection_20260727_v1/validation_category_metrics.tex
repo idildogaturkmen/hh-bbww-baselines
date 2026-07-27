@@ -1,0 +1,19 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Category-specific HH$\to4b$ validation metrics.}
+\label{tab:hh4b\_validation\_category\_metrics}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+category & method & rows & weighted roc auc & raw roc auc & weighted average precision & raw average precision \\
+\midrule
+low\_mhh & global\_v1\_mass\_aware & 6451 & 0.721943558887 & 0.745895834154 & 0.74704018301 & 0.480412849688 \\
+low\_mhh & categorized\_cms\_inspired\_mass\_aware & 6451 & 0.713246232789 & 0.741564919565 & 0.740354765144 & 0.466245875632 \\
+high\_mhh & global\_v1\_mass\_aware & 6294 & 0.773208376303 & 0.814091593109 & 0.76683242874 & 0.500189137332 \\
+high\_mhh & categorized\_cms\_inspired\_mass\_aware & 6294 & 0.76375318864 & 0.809014619292 & 0.755472039816 & 0.498079285891 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

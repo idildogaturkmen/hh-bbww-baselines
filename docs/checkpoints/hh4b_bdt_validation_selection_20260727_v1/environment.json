@@ -1,0 +1,19 @@
+{
+  "controls": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "8",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "cpu_training_only": true,
+  "matplotlib_version": "3.4.3",
+  "numpy_version": "1.26.4",
+  "pandas_version": "2.3.3",
+  "pyarrow_version": "21.0.0",
+  "python_executable": "/usr/bin/python3.9",
+  "python_version": "3.9.25",
+  "scalers_fitted": 0,
+  "scipy_version": "1.13.1",
+  "sklearn_version": "1.6.1",
+  "xgboost_version": "2.1.4"
+}

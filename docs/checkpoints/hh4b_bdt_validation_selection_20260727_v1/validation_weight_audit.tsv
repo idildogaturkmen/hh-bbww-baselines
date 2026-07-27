@@ -1,0 +1,13 @@
+level	category	parent	members_with_rows	candidate_rows	target_fraction	observed_fraction_raw	observed_weight_sum	mean_row_weight	status
+global	all_validation_candidates		71	12745	1	1	12745	1	pass
+class	background	all	52	10499	0.5	0.5	6372.5	0.606962567864	pass
+signal_mode	ggf_hh4b	signal	17	1045	0.25	0.25	3186.25	3.0490430622	pass
+class	signal	all	19	2246	0.5	0.5	6372.5	2.83726625111	pass
+signal_mode	vbf_hh4b	signal	2	1201	0.25	0.25	3186.25	2.65299750208	pass
+background_family	qcd_multijet	background	12	5715	0.0714285714286	0.0714285714286	910.357142857	0.159292588426	pass
+background_family	single_higgs	background	5	360	0.0714285714286	0.0714285714286	910.357142857	2.52876984127	pass
+background_family	single_top	background	9	92	0.0714285714286	0.0714285714286	910.357142857	9.8951863354	pass
+background_family	top_associated	background	3	2359	0.0714285714286	0.0714285714286	910.357142857	0.385908072428	pass
+background_family	triboson	background	3	42	0.0714285714286	0.0714285714286	910.357142857	21.675170068	pass
+background_family	ttbar	background	15	492	0.0714285714286	0.0714285714286	910.357142857	1.85031939605	pass
+background_family	zbbbb	background	5	1439	0.0714285714286	0.0714285714286	910.357142857	0.632631787948	pass

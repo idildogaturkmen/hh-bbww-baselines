@@ -1,0 +1,4 @@
+method	expected_predictions	observed_predictions	missing_predictions	duplicate_predictions	category_mismatch_predictions	status
+global_v1_mass_aware	12745	12745	0	0	0	pass
+global_v1_explicit_dijet_mass_plane_blind	12745	12745	0	0	0	pass
+categorized_cms_inspired_mass_aware	12745	12745	0	0	0	pass

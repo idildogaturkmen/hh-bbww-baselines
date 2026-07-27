@@ -1,0 +1,5 @@
+category	method	rows	weighted_roc_auc	raw_roc_auc	weighted_average_precision	raw_average_precision	pooled_uncalibrated_category_auc	status
+low_mhh	global_v1_mass_aware	6451	0.721943558887	0.745895834154	0.74704018301	0.480412849688	0	pass
+low_mhh	categorized_cms_inspired_mass_aware	6451	0.713246232789	0.741564919565	0.740354765144	0.466245875632	0	pass
+high_mhh	global_v1_mass_aware	6294	0.773208376303	0.814091593109	0.76683242874	0.500189137332	0	pass
+high_mhh	categorized_cms_inspired_mass_aware	6294	0.76375318864	0.809014619292	0.755472039816	0.498079285891	0	pass
