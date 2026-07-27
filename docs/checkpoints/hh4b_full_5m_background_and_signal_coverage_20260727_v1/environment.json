@@ -1,0 +1,13 @@
+{
+  "candidate_data_libraries_imported": false,
+  "config_path": "configs/baselines/hh4b_full_5m_background_and_signal_coverage_v1.json",
+  "config_sha256": "a80a62f0d819ab823841422e4888af627f66a300a8a6f3e0316842da6a102c97",
+  "model_libraries_imported": false,
+  "platform": "Linux-5.14.0-687.25.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "python_executable": "/uscms_data/d3/iturkmen/venvs/hh4b-bdt-v1/bin/python",
+  "python_version": "3.9.25",
+  "required_starting_head": "4b74964be593028adef723ce8da5dab3ecd56723",
+  "required_starting_origin": "4b74964be593028adef723ce8da5dab3ecd56723",
+  "script_path": "scripts/analysis/audit_hh4b_full_5m_background_and_signal_coverage.py",
+  "script_sha256": "72eeaa8fb69bc33b429cd9931f429a34dd29ab8975c27d26bced6a8d0aa04963"
+}

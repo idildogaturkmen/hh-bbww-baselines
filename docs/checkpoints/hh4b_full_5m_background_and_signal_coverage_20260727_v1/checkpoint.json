@@ -1,0 +1,23 @@
+{
+  "audit_name": "audit_hh4b_full_5m_background_and_signal_coverage",
+  "background_5m_source_coverage_complete": true,
+  "background_members": 520,
+  "base_commit": "4b74964be593028adef723ce8da5dab3ecd56723",
+  "candidate_reconstruction_coverage_status": "blocked_on_27_ttbar_schema_holds",
+  "canonical_v1_validation_unchanged": true,
+  "combined_members": 630,
+  "full_5m_development_table_evaluation_authorized": false,
+  "legacy_ttbar_schema_hold_members": 27,
+  "model_operations_performed": 0,
+  "next_gate": "reconstruct_hh4b_ttbar27_canonical72_candidates",
+  "physical_normalization_authorized": false,
+  "physical_normalization_ready": false,
+  "physical_significance_authorized": false,
+  "schema_version": 1,
+  "sealed_test_candidate_content_opened": false,
+  "sealed_test_members": 22,
+  "signal_members": 110,
+  "status": "hh4b_full_5m_background_and_signal_coverage_audit_pass",
+  "unique_signal_source_coverage_complete": true,
+  "unresolved_coverage_count": 27
+}

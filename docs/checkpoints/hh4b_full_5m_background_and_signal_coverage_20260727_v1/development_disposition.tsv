@@ -1,0 +1,5 @@
+disposition	members	generated_events	candidate_rows_metadata	candidate_content_opened_by_this_audit
+development_manifest_member	581	4742457	70071	False
+legacy_ttbar_schema_hold	27	270000	998	False
+sealed_background_test	19	184543	19	False
+sealed_signal_test	3	3000	174	False

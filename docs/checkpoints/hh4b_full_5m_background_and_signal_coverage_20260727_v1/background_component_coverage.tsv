@@ -1,0 +1,9 @@
+component	members	generated_events	candidate_rows_metadata	source_covered_members	development_members	sealed_test_members	legacy_schema_hold_members
+hbb	15	150000	1758	15	15	0	0
+qcd	261	2510000	81	261	242	19	0
+single_top	33	330000	267	33	33	0	0
+triboson	15	50000	201	15	15	0	0
+ttbar	27	270000	998	27	0	0	27
+wavea	130	1300000	38239	130	130	0	0
+waveb	17	170000	16930	17	17	0	0
+wavec1	22	220000	393	22	22	0	0

@@ -1,0 +1,94 @@
+{
+  "audit_name": "audit_hh4b_full_5m_background_and_signal_coverage",
+  "authorization": {
+    "candidate_content_access_authorized": false,
+    "full_5m_development_table_evaluation_authorized": false,
+    "model_evaluation_authorized": false,
+    "model_scoring_authorized": false,
+    "model_training_authorized": false,
+    "physical_normalization_authorized": false,
+    "physical_significance_authorized": false,
+    "sealed_test_candidate_content_access_authorized": false,
+    "source_level_metadata_audit_only": true
+  },
+  "background": {
+    "candidate_rows_metadata": 58867,
+    "generated_events": 5000000,
+    "legacy_ttbar_schema_hold_members": 27,
+    "members": 520,
+    "sealed_test_members": 19,
+    "source_covered_members": 520,
+    "strict493_members": 493
+  },
+  "base_commit": "4b74964be593028adef723ce8da5dab3ecd56723",
+  "candidate_reconstruction_coverage_status": "blocked_on_27_ttbar_schema_holds",
+  "combined": {
+    "candidate_rows_metadata": 71262,
+    "generated_events": 5200000,
+    "members": 630,
+    "sealed_test_candidate_rows_metadata": 193,
+    "sealed_test_generated_events": 187543,
+    "sealed_test_members": 22,
+    "source_covered_members": 630
+  },
+  "config_path": "configs/baselines/hh4b_full_5m_background_and_signal_coverage_v1.json",
+  "config_sha256": "a80a62f0d819ab823841422e4888af627f66a300a8a6f3e0316842da6a102c97",
+  "controls": {
+    "candidate_content_opened": 0,
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "model_files_opened": 0,
+    "models_evaluated": 0,
+    "models_scored": 0,
+    "models_trained": 0,
+    "physical_normalization_performed": false,
+    "physical_significance_calculated": false,
+    "prediction_files_opened": 0,
+    "predictions_produced": 0,
+    "root_files_opened": 0,
+    "scoring_performed": 0,
+    "sealed_test_candidate_content_opened": 0,
+    "sealed_test_candidate_files_opened": 0,
+    "sealed_test_candidate_rows_read": 0,
+    "source_level_metadata_only": true
+  },
+  "development": {
+    "background_members": 474,
+    "candidate_rows": 70071,
+    "coverage_exact": true,
+    "excluded_source_members": 49,
+    "generated_events": 4742457,
+    "members": 581,
+    "signal_members": 107
+  },
+  "next_gate": "reconstruct_hh4b_ttbar27_canonical72_candidates",
+  "pass_conditions": {
+    "background_5m_source_coverage_complete": true,
+    "canonical_v1_validation_unchanged": true,
+    "development_manifest_exactly_reconciled": true,
+    "frozen_input_hashes_match": true,
+    "no_model_operation": true,
+    "sealed_test_content_closed": true,
+    "unique_signal_source_coverage_complete": true
+  },
+  "physical_normalization_ready": false,
+  "schema_version": 1,
+  "signal": {
+    "candidate_rows_metadata": 12395,
+    "generated_events": 200000,
+    "members": 110,
+    "sealed_test_members": 3,
+    "source_covered_members": 110,
+    "unique_candidate_references": 110,
+    "unique_member_ids": 110
+  },
+  "status": "hh4b_full_5m_background_and_signal_coverage_audit_pass",
+  "unresolved_coverage_count": 27,
+  "validation_checkpoint": {
+    "artifacts_verified": 88,
+    "directory": "docs/checkpoints/hh4b_bdt_validation_selection_20260727_v1",
+    "sha256sums_sha256": "127d59487078411a15e43e694f2671e900bf9c9a77a4bd8e39610094c22a92dc",
+    "status": "hh4b_bdt_validation_model_selection_pass",
+    "unchanged": true
+  }
+}
