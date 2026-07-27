@@ -1,0 +1,35 @@
+condition	expected	observed	passed	evidence
+source_checkpoint_sha256_and_status	5	5	true	source_checkpoint_inventory.tsv
+train_members	458	458	true	v1 input summary
+train_rows	57326	57326	true	v1 input summary
+validation_members	123	123	true	frozen manifest metadata
+validation_rows_from_frozen_manifest_metadata	12745	12745	true	v1 input summary
+test_members_considered	0	0	true	v1 input summary
+candidate_bdt_models	2	2	true	candidate_models.tsv
+final_nominal_model_selected	0	0	true	candidate_models.tsv
+validation_models_predeclared	3	3	true	candidate_models.tsv
+validation_cut_baselines_predeclared	1	1	true	validation fitting contract
+validation_candidate_files_opened	0	0	true	aggregate checkpoint metadata only
+test_candidate_files_opened	0	0	true	aggregate checkpoint metadata only
+models_trained	0	0	true	amendment-only gate
+predictions_written	0	0	true	amendment-only gate
+hyperparameter_trials	0	0	true	amendment-only gate
+validation_selection_authorized	true	true	true	authorization amendment
+validation_reoptimization_authorized	false	false	true	authorization amendment
+test_selection_authorized	false	false	true	test policy
+test_access_authorized	false	false	true	test policy
+bootstrap_replicates_predeclared	2000	2000	true	validation metric contract
+bootstrap_seed	20260727	20260727	true	validation metric contract
+fixed_working_point_comparisons	8	8	true	validation_metric_contract.tsv
+equalized_validation_comparisons	8	8	true	validation_metric_contract.tsv
+relative_reduction_threshold	0.02	0.02	true	model_selection_rule.tsv
+bootstrap_fraction_threshold	0.84	0.84	true	model_selection_rule.tsv
+signal_mode_deviation_threshold	0.05	0.05	true	model_selection_rule.tsv
+no_validation_reopening	true	true	true	validation_role.tsv
+pooled_uncalibrated_category_auc_authorized	false	false	true	validation_metric_contract.tsv
+test_policy_rows	7	7	true	test_policy.tsv
+frozen_contract_dimensions	34_global;52_categorized;450_GeV_boundary;8_working_point_rows	34_global;52_categorized;450_GeV_boundary;8_working_point_rows	true	verified source aggregate contracts
+all_unit_tests_pass	true	true	true	standard-library unittest (16 tests)
+table_failures	0	0	true	five table bundles
+physical_normalization_authorized	false	false	true	development balancing; not physical normalization
+presentation_policy	true	true	true	both BDTs, comparisons, plots, final label, secondary benchmark

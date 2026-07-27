@@ -1,0 +1,8 @@
+| order | condition | metric | operator | threshold | all conditions required | failure action | status |
+|---|---|---|---|---|---|---|---|
+| 1 | lower_point_estimate_background_efficiency | epsilon_B_categorized_v2_minus_epsilon_B_global_v1 | < | 0 | true | select_global_v1_mass_aware | predeclared |
+| 2 | minimum_relative_background_efficiency_reduction | (epsilon_B_global_v1_minus_epsilon_B_categorized_v2)_divided_by_epsilon_B_global_v1 | >= | 0.02 | true | select_global_v1_mass_aware | predeclared |
+| 3 | bootstrap_fraction_favoring_categorized_v2 | fraction_delta_epsilon_B_lt_0 | >= | 0.84 | true | select_global_v1_mass_aware | predeclared |
+| 4 | signal_mode_equalization | max_abs_categorized_v2_ggf_or_vbf_epsilon_S_minus_target | <= | 0.05 | true | select_global_v1_mass_aware | predeclared |
+| 5 | integrity_category_and_model_application | failure_count | == | 0 | true | select_global_v1_mass_aware | predeclared |
+| 6 | categorized_v2_selection_outcome | all_five_conditions | == | true | true | select_global_v1_mass_aware | if_true_select_categorized_cms_inspired_mass_aware |

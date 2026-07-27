@@ -1,0 +1,23 @@
+{
+  "classification": "canonical_hh4b_bdt_validation_model_selection_protocol_amendment",
+  "input_checkpoints": {
+    "hh4b_bdt_model_choice_20260727_v1": "89ee64e09c988199580be7a1a987f9cbab172d4e5de638296a04577677b92f8c",
+    "hh4b_bdt_v1_grouped_cv_20260725_v1": "11e3d4d423892086ce9873948ecf6903e74f0abfe63d14bf23ebdb8c39cb63e0",
+    "hh4b_bdt_v1_input_contract_20260725_v1": "355c4c931503efccd55383e4ade0c3f2b9e5ef91662244ea0c6230b3756bc8c2",
+    "hh4b_bdt_v2_cms_inspired_contract_20260726_v1": "4f6c74d0aded1a1c026d2c79e0352ea21ad9bde7d2020c1dd5500ad89ed59041",
+    "hh4b_bdt_v2_cms_inspired_grouped_cv_20260726_v1": "16a5cb9f936fb555c511c21646d59e140d91dbd23b26980250421e9f3581b56e"
+  },
+  "next_gate": "fit_frozen_hh4b_bdt_candidates_and_select_on_validation_once",
+  "policy": {
+    "both_bdt_candidates_retained": true,
+    "final_nominal_model_selected": false,
+    "post_validation_reoptimization_authorized": false,
+    "test_access_authorized": false,
+    "test_selection_authorized": false,
+    "validation_model_selection_authorized": true
+  },
+  "schema_version": 2,
+  "source_commit": "d0ae7e2e154ee8dc618e20ff9489db34546a2194",
+  "status": "hh4b_bdt_validation_model_selection_protocol_frozen",
+  "supersedes_policy_from": "docs/checkpoints/hh4b_bdt_model_choice_20260727_v1/"
+}

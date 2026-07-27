@@ -1,0 +1,200 @@
+schema_version: 2
+protocol_name: hh4b_bdt_validation_model_selection_protocol
+source_commit: d0ae7e2e154ee8dc618e20ff9489db34546a2194
+required_interpreter: /uscms_data/d3/iturkmen/venvs/hh4b-bdt-v1/bin/python
+
+inputs:
+  v1_input_contract:
+    checkpoint_dir: docs/checkpoints/hh4b_bdt_v1_input_contract_20260725_v1
+    sha256sums_sha256: 355c4c931503efccd55383e4ade0c3f2b9e5ef91662244ea0c6230b3756bc8c2
+    required_status: hh4b_bdt_v1_input_contract_pass
+  v1_grouped_cv:
+    checkpoint_dir: docs/checkpoints/hh4b_bdt_v1_grouped_cv_20260725_v1
+    sha256sums_sha256: 11e3d4d423892086ce9873948ecf6903e74f0abfe63d14bf23ebdb8c39cb63e0
+    required_status: hh4b_bdt_v1_grouped_cross_validation_pass
+  v2_cms_inspired_contract:
+    checkpoint_dir: docs/checkpoints/hh4b_bdt_v2_cms_inspired_contract_20260726_v1
+    sha256sums_sha256: 4f6c74d0aded1a1c026d2c79e0352ea21ad9bde7d2020c1dd5500ad89ed59041
+    required_status: hh4b_bdt_v2_cms_inspired_category_and_feature_contract_pass
+  v2_cms_inspired_grouped_cv:
+    checkpoint_dir: docs/checkpoints/hh4b_bdt_v2_cms_inspired_grouped_cv_20260726_v1
+    sha256sums_sha256: 16a5cb9f936fb555c511c21646d59e140d91dbd23b26980250421e9f3581b56e
+    required_status: hh4b_bdt_v2_cms_inspired_categorized_grouped_cv_pass
+  train_only_model_choice:
+    checkpoint_dir: docs/checkpoints/hh4b_bdt_model_choice_20260727_v1
+    sha256sums_sha256: 89ee64e09c988199580be7a1a987f9cbab172d4e5de638296a04577677b92f8c
+    required_status: hh4b_bdt_train_only_model_choice_frozen
+
+outputs:
+  runtime_dir: outputs/agent_runs/hh4b_bdt_validation_protocol_amendment_20260727_v1
+  checkpoint_dir: docs/checkpoints/hh4b_bdt_validation_protocol_amendment_20260727_v1
+
+population:
+  expected:
+    train_members: 458
+    train_rows: 57326
+    validation_members: 123
+    validation_rows_from_frozen_manifest_metadata: 12745
+    test_members_considered: 0
+    validation_candidate_files_opened_previously_by_bdt_gates: 0
+    test_candidate_files_opened_previously_by_bdt_gates: 0
+
+supersession:
+  supersedes_policy_from: docs/checkpoints/hh4b_bdt_model_choice_20260727_v1/
+  preserve_source_checkpoint_unchanged: true
+  scope: validation_selection_policy_only
+  preserve_train_only_benchmark_designation: true
+  previous_validation_model_selection_authorized: false
+  amended_validation_model_selection_authorized: true
+
+candidate_bdt_methods:
+  global_v1_mass_aware:
+    candidate_label: A
+    architecture: one_global_xgboost_classifier
+    feature_contract: frozen_v1_mass_aware
+    features_per_model: 34
+    fitted_models: 1
+    score_contract: one_global_score
+    hyperparameter_source: hh4b_bdt_v1_grouped_cv_20260725_v1/selected_hyperparameters.tsv:mass_aware
+    presentation_role: canonical_global_bdt_benchmark
+  categorized_cms_inspired_mass_aware:
+    candidate_label: B
+    architecture: low_and_high_mhh_xgboost_classifiers
+    feature_contract: frozen_cms_inspired_mass_aware
+    features_per_model: 52
+    fitted_models: 2
+    score_contract: separate_category_specific_scores_and_thresholds
+    category_boundary_GeV: 450.0
+    low_category: mhh < 450 GeV
+    high_category: mhh >= 450 GeV
+    hyperparameter_source: hh4b_bdt_v2_cms_inspired_grouped_cv_20260726_v1/selected_category_hyperparameters.tsv
+    presentation_role: cms_inspired_categorized_bdt
+
+validation_fitting_contract:
+  fit_population: complete_frozen_train_population
+  validation_used_during_fitting: false
+  fitting_weights: frozen_hierarchical_development_balancing
+  physical_normalization: false
+  scalers_fitted: 0
+  strategies:
+    - model: global_v1_mass_aware
+      fitted_models: 1
+      hyperparameters: frozen_v1_mass_aware_selected
+      role: candidate_A
+    - model: categorized_cms_inspired_mass_aware
+      fitted_models: 2
+      hyperparameters: frozen_separate_low_and_high_mhh_selected
+      role: candidate_B
+    - model: global_v1_explicit_dijet_mass_plane_blind
+      fitted_models: 1
+      hyperparameters: frozen_v1_mass_plane_blind_selected
+      role: predeclared_diagnostic
+  cut_baselines:
+    - method: optimized_cut
+      expression: r_hh_125_125 < 34
+
+validation:
+  role: model_selection_and_generalization_split
+  access_frequency: exactly_once_in_next_gate
+  permitted_uses:
+    - compare_global_v1_with_categorized_v2
+    - select_final_nominal_bdt
+    - check_optimized_cut_baseline
+    - evaluate_predeclared_mass_plane_blind_diagnostic
+  prohibited_uses:
+    - new_feature_engineering
+    - changing_450_GeV_boundary
+    - adding_categories
+    - changing_model_hyperparameters
+    - retraining_hyperparameter_searches
+    - changing_training_weights
+    - choosing_new_background_families
+    - changing_reconstruction
+    - reopening_validation_after_inspecting_results
+
+metric_contract:
+  target_weighted_signal_efficiencies:
+    - 0.30
+    - 0.50
+    - 0.585957314769
+    - 0.70
+  fixed_train_oof_working_point_generalization:
+    global_v1_mass_aware: frozen_single_thresholds
+    categorized_cms_inspired_mass_aware: frozen_separate_low_and_high_mhh_thresholds
+    validation_threshold_adjustment_authorized: false
+  equalized_validation_efficiency:
+    global_v1_mass_aware: derive_one_validation_threshold_per_target
+    categorized_cms_inspired_mass_aware: derive_separate_low_and_high_mhh_validation_thresholds_per_target
+    categorized_category_target_contract: same_weighted_signal_efficiency_target_inside_each_category
+    replaces_frozen_train_oof_thresholds: false
+    role: validation_selection_diagnostic
+  primary:
+    target_weighted_signal_efficiency: 0.585957314769
+    metric: combined_development_weighted_validation_background_efficiency
+    direction: lower_is_better
+    normalization: development_balancing_not_physical_normalization
+  pooled_uncalibrated_categorized_roc_auc_authorized: false
+
+bootstrap:
+  unit: source_member
+  seed: 20260727
+  replicates: 2000
+  delta_definition: epsilon_background_categorized_v2_minus_global_v1
+  negative_values_favor: categorized_cms_inspired_mass_aware
+  report:
+    - median
+    - percentile_16
+    - percentile_84
+    - percentile_2_5
+    - percentile_97_5
+    - fraction_favoring_categorized_v2
+
+final_selection_rule:
+  categorized_v2_selected_only_if_all_conditions_hold: true
+  conditions:
+    - order: 1
+      name: lower_point_estimate_background_efficiency
+      requirement: categorized_v2_epsilon_background < global_v1_epsilon_background
+    - order: 2
+      name: minimum_relative_background_efficiency_reduction
+      requirement: relative_reduction >= 0.02
+    - order: 3
+      name: minimum_bootstrap_fraction_favoring_categorized_v2
+      requirement: fraction >= 0.84
+    - order: 4
+      name: signal_mode_equalization
+      requirement: max_abs_ggf_or_vbf_efficiency_minus_target <= 0.05
+    - order: 5
+      name: integrity
+      requirement: integrity_category_and_model_application_failures == 0
+  fallback_model: global_v1_mass_aware
+  simpler_model_preference: categorized_improvement_small_or_unstable
+
+presentation_policy:
+  present_global_v1_as: canonical_global_bdt_benchmark
+  present_categorized_v2_as: cms_inspired_categorized_bdt
+  present_train_only_and_validation_comparisons: true
+  retain_category_specific_roc_plots: true
+  retain_category_specific_feature_importance_plots: true
+  label_final_validation_selected_nominal_bdt: true
+  retain_non_selected_bdt_as_secondary_benchmark: true
+
+test:
+  role: final_unbiased_evaluation_split
+  accessible_during_validation_selection: false
+  later_access_frequency: exactly_once_after_validation_selects_nominal
+  selection_using_test_authorized: false
+  predeclared_reporting:
+    - final_validation_selected_nominal_bdt
+    - non_selected_bdt_as_secondary_comparison
+    - optimized_r_hh_125_125_lt_34_cut_baseline
+
+authorization:
+  both_bdt_candidates_retained: true
+  final_nominal_model_selected_in_this_gate: false
+  validation_model_selection_authorized: true
+  post_validation_reoptimization_authorized: false
+  test_access_authorized: false
+  test_selection_authorized: false
+  physical_normalization_authorized: false
+  next_gate: fit_frozen_hh4b_bdt_candidates_and_select_on_validation_once

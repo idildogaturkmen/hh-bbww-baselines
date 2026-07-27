@@ -1,0 +1,9 @@
+| phase | item | authorization | frequency | policy | status |
+|---|---|---|---|---|---|
+| amendment_gate | test_split_access | prohibited | zero | final_unbiased_evaluation_split | frozen |
+| validation_selection_gate | test_split_access | prohibited | zero | test_inaccessible_while_validation_selects_nominal | frozen |
+| later_final_evaluation_gate | test_split_access | deferred | exactly_once_after_validation_selects_nominal | only_after_validation_selects_final_nominal | predeclared |
+| all_test_reporting | final_nominal_model_selection_or_change | prohibited | never | test_results_must_not_choose_or_change_nominal | frozen |
+| later_final_evaluation_gate | final_validation_selected_nominal_bdt | predeclared_for_reporting | exactly_once | primary_test_report | predeclared |
+| later_final_evaluation_gate | non_selected_bdt_as_secondary_comparison | predeclared_for_reporting | exactly_once | secondary_test_report_not_selection | predeclared |
+| later_final_evaluation_gate | optimized_r_hh_125_125_lt_34_cut_baseline | predeclared_for_reporting | exactly_once | cut_baseline_test_report | predeclared |

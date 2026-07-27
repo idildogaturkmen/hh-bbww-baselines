@@ -1,0 +1,18 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Frozen HH to four-b BDT candidates for one-time validation model selection.}
+\label{tab:hh4b\_bdt\_validation\_candidates}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Method & Candidate & BDT candidate & Architecture & Features per model & Full-train models & $m_{HH}$ category contract & Final nominal now & Presentation role & Status \\
+\midrule
+Global v1 mass-aware BDT & A & true & one\_global\_xgboost\_classifier & 34 & 1 & all\_train\_global & false & canonical\_global\_bdt\_benchmark & predeclared \\
+Categorized CMS-inspired mass-aware BDT & B & true & low\_and\_high\_mhh\_xgboost\_classifiers & 52 & 2 & low\_mhh\_below\_450\_GeV;high\_mhh\_at\_or\_above\_450\_GeV & false & cms\_inspired\_categorized\_bdt & predeclared \\
+Global v1 explicit dijet-mass-plane-blind BDT & diagnostic & false & one\_global\_xgboost\_classifier & 30 & 1 & all\_train\_global & false & diagnostic\_only & predeclared \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

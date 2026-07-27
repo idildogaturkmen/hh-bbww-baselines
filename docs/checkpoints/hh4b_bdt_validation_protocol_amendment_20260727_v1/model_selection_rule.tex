@@ -1,0 +1,21 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Predeclared validation rule for selecting the final nominal BDT at weighted signal efficiency 0.585957314769.}
+\label{tab:hh4b\_bdt\_model\_selection\_rule}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Order & Condition & Validation metric involving $\epsilon_{B}$ & Operator & Threshold & All required & Failure action & Outcome \\
+\midrule
+1 & lower\_point\_estimate\_background\_efficiency & epsilon\_B\_categorized\_v2\_minus\_epsilon\_B\_global\_v1 & < & 0 & true & select\_global\_v1\_mass\_aware & predeclared \\
+2 & minimum\_relative\_background\_efficiency\_reduction & (epsilon\_B\_global\_v1\_minus\_epsilon\_B\_categorized\_v2)\_divided\_by\_epsilon\_B\_global\_v1 & >= & 0.02 & true & select\_global\_v1\_mass\_aware & predeclared \\
+3 & bootstrap\_fraction\_favoring\_categorized\_v2 & fraction\_delta\_epsilon\_B\_lt\_0 & >= & 0.84 & true & select\_global\_v1\_mass\_aware & predeclared \\
+4 & signal\_mode\_equalization & max\_abs\_categorized\_v2\_ggf\_or\_vbf\_epsilon\_S\_minus\_target & <= & 0.05 & true & select\_global\_v1\_mass\_aware & predeclared \\
+5 & integrity\_category\_and\_model\_application & failure\_count & == & 0 & true & select\_global\_v1\_mass\_aware & predeclared \\
+6 & categorized\_v2\_selection\_outcome & all\_five\_conditions & == & true & true & select\_global\_v1\_mass\_aware & if\_true\_select\_categorized\_cms\_inspired\_mass\_aware \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

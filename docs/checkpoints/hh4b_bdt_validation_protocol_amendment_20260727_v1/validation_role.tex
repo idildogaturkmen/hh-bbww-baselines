@@ -1,0 +1,30 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Frozen role and allowed uses of the validation model-selection and generalization split.}
+\label{tab:hh4b\_bdt\_validation\_role}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Scope & Activity & Authorization & Frequency & Constraint & Status \\
+\midrule
+validation\_split & split\_role & frozen & exactly\_once\_in\_next\_gate & model\_selection\_and\_generalization\_split & predeclared \\
+model\_fitting & use\_validation\_during\_fitting & prohibited & never & fit\_only\_on\_complete\_frozen\_train\_population & frozen \\
+validation\_split & compare\_global\_v1\_with\_categorized\_v2 & permitted & exactly\_once\_in\_next\_gate & predeclared\_protocol\_only & frozen \\
+validation\_split & select\_final\_nominal\_bdt & permitted & exactly\_once\_in\_next\_gate & predeclared\_protocol\_only & frozen \\
+validation\_split & check\_optimized\_cut\_baseline & permitted & exactly\_once\_in\_next\_gate & predeclared\_protocol\_only & frozen \\
+validation\_split & evaluate\_predeclared\_mass\_plane\_blind\_diagnostic & permitted & exactly\_once\_in\_next\_gate & predeclared\_protocol\_only & frozen \\
+validation\_split & new\_feature\_engineering & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+validation\_split & changing\_450\_GeV\_boundary & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+validation\_split & adding\_categories & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+validation\_split & changing\_model\_hyperparameters & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+validation\_split & retraining\_hyperparameter\_searches & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+validation\_split & changing\_training\_weights & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+validation\_split & choosing\_new\_background\_families & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+validation\_split & changing\_reconstruction & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+validation\_split & reopening\_validation\_after\_inspecting\_results & prohibited & never & no\_post\_inspection\_reoptimization & frozen \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

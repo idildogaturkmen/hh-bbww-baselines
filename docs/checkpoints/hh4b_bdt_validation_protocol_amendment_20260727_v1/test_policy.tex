@@ -1,0 +1,22 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\caption{Frozen test policy: final unbiased evaluation only, never model selection.}
+\label{tab:hh4b\_bdt\_test\_policy}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Phase & Item & Authorization & Frequency & Policy & Status \\
+\midrule
+amendment\_gate & test\_split\_access & prohibited & zero & final\_unbiased\_evaluation\_split & frozen \\
+validation\_selection\_gate & test\_split\_access & prohibited & zero & test\_inaccessible\_while\_validation\_selects\_nominal & frozen \\
+later\_final\_evaluation\_gate & test\_split\_access & deferred & exactly\_once\_after\_validation\_selects\_nominal & only\_after\_validation\_selects\_final\_nominal & predeclared \\
+all\_test\_reporting & final\_nominal\_model\_selection\_or\_change & prohibited & never & test\_results\_must\_not\_choose\_or\_change\_nominal & frozen \\
+later\_final\_evaluation\_gate & final\_validation\_selected\_nominal\_bdt & predeclared\_for\_reporting & exactly\_once & primary\_test\_report & predeclared \\
+later\_final\_evaluation\_gate & non\_selected\_bdt\_as\_secondary\_comparison & predeclared\_for\_reporting & exactly\_once & secondary\_test\_report\_not\_selection & predeclared \\
+later\_final\_evaluation\_gate & optimized\_r\_hh\_125\_125\_lt\_34\_cut\_baseline & predeclared\_for\_reporting & exactly\_once & cut\_baseline\_test\_report & predeclared \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
