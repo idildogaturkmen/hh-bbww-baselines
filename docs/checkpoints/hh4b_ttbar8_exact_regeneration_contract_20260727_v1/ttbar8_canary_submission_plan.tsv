@@ -1,0 +1,2 @@
+campaign	submission_file	jobs	member_index	original_member_name	seed	request_cpus	request_memory_mb	request_disk_mb	max_runtime_seconds	automatic_retries	initially_held	requirements_guard	submitted	unlock_gate
+hh4b_ttbar8_exact_regeneration_20260727_v1	hh4b_ttbar8_canary.sub	1	326	ttbar_100k_shard003	105003	1	2048	12288	7200	0	True	False_until_explicit_next_gate_authorization	False	submit_hh4b_ttbar8_exact_regeneration_canary

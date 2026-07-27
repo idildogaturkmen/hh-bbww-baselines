@@ -1,0 +1,22 @@
+\begin{tabular}{llllllll}
+\toprule
+level & level\_name & validation & required & comparison & pass\_condition & failure\_action & byte\_identity\_claimed \\
+\midrule
+1 & exact\_configuration\_and\_seed\_reproduction & generated\_event\_count & True & integer\_exact & exactly 10000 & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & requested\_seed & True & integer\_exact & receipt and log equal frozen seed & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & generator\_completion & True & log\_and\_exit & exit zero and completion marker & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & pythia\_completion & True & log\_and\_exit & exit zero and Pythia 8.312 marker & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & delphes\_completion & True & log\_and\_exit & exit zero and Delphes marker & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & root\_entry\_count & True & integer\_exact & Delphes entries exactly 10000 & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & root\_readability & True & structural & ROOT and Delphes tree readable & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & canonical72\_schema & True & schema\_exact & 72 columns in frozen order & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & required\_finite\_values & True & numeric & all required values finite & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & unique\_event\_keys & True & key\_exact & no duplicate sample/event keys & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & source\_member\_identity & True & categorical\_exact & member identity exact & fail\_member\_block\_scaleout\_no\_publish & False \\
+1 & exact\_configuration\_and\_seed\_reproduction & output\_checksums & True & sha256 & all artifacts in receipt & fail\_member\_block\_scaleout\_no\_publish & False \\
+2 & generator\_event\_identity\_where\_stable\_comparison\_available & generator\_event\_identity & conditional\_on\_stable\_comparator & stable\_event\_comparator & event identity where stable comparison is available & fail\_member\_block\_scaleout\_no\_publish & False \\
+3 & delphes\_branch\_level\_event\_identity\_where\_stable\_comparison\_available & delphes\_branch\_event\_identity & conditional\_on\_stable\_comparator & stable\_branch\_comparator & branch identity where stable comparison is available & fail\_member\_block\_scaleout\_no\_publish & False \\
+4 & canonical\_candidate\_agreement\_on\_15\_legacy\_common\_columns & legacy\_common\_columns & True & predeclared\_15\_column\_contract & row/key/exact fields pass and differences are explained & fail\_member\_block\_scaleout\_no\_publish & False \\
+4 & canonical\_candidate\_agreement\_on\_15\_legacy\_common\_columns & cross\_member\_duplicate\_keys & True & aggregate\_key\_exact & zero duplicates across regenerated members & fail\_member\_block\_scaleout\_no\_publish & False \\
+\bottomrule
+\end{tabular}

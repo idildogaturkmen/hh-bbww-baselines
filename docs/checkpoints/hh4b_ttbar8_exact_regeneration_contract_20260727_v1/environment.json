@@ -1,0 +1,24 @@
+{
+  "classification": "validated_equivalent_environment",
+  "equivalence_validation": [
+    "all protected executable and configuration SHA256 values match",
+    "all required dynamic libraries resolve after LCG_106 setup",
+    "versions and relevant environment variables are captured in the receipt",
+    "canary passes level 1 exact configuration and seed reproduction",
+    "canary passes level 2 generator-event identity where stable comparison is available",
+    "canary passes level 3 Delphes branch-level identity where stable comparison is available",
+    "canary passes level 4 canonical/legacy common-column agreement policy",
+    "any unexplained physics disagreement blocks scaleout and exact-regeneration claims"
+  ],
+  "host_type": "Fermilab LPC EL9 x86_64 HTCondor execute node with CVMFS",
+  "lcg_view": {
+    "path": "/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh",
+    "sha256": "c9f6963616ddbaeacf0b3ca6ba42d931ec02207d3102dfbaaaba2f8ce1112bbd"
+  },
+  "operating_system_contract": "EL9-compatible x86_64 userspace",
+  "original_environment_available": false,
+  "runtime_observation": {
+    "platform": "Linux-5.14.0-687.25.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "python": "3.9.25"
+  }
+}

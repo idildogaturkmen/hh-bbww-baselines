@@ -1,0 +1,292 @@
+schema_version: 1
+contract_name: prepare_hh4b_ttbar_missing_member_exact_regeneration
+required_starting_commit: c6fee0ff8f7b7d927d890de5a73a5729e9096461
+
+status_contract:
+  frozen_status: hh4b_ttbar8_exact_regeneration_contract_frozen
+  blocked_status: hh4b_ttbar8_exact_regeneration_contract_blocked
+  frozen_next_gate: submit_hh4b_ttbar8_exact_regeneration_canary
+  blocked_next_gate: resolve_hh4b_ttbar8_exact_regeneration_inputs
+  source_status: hh4b_ttbar27_exact_regeneration_required
+  expected_members: 8
+  expected_legacy_rows: 307
+  sealed_test_members: 0
+
+paths:
+  source_checkpoint: docs/checkpoints/hh4b_ttbar27_canonical72_recovery_20260727_v1
+  source_config: configs/baselines/hh4b_ttbar27_canonical72_recovery_v1.yaml
+  runtime_directory: outputs/agent_runs/hh4b_ttbar8_exact_regeneration_prepare_20260727_v1
+  checkpoint_directory: docs/checkpoints/hh4b_ttbar8_exact_regeneration_contract_20260727_v1
+  canonical_v1_checkpoint: docs/checkpoints/hh4b_bdt_validation_selection_20260727_v1
+  canonical_v1_sha256sums_sha256: 127d59487078411a15e43e694f2671e900bf9c9a77a4bd8e39610094c22a92dc
+  canonical72_schema:
+    path: outputs/agent_runs/hh4b_canonical72_schema_compatibility_audit_20260725_v2/canonical72_columns.tsv
+    sha256: e9a12517772f77e311e37b09bc27df372735fee8dd48b176a0a82ada01913421
+
+campaign:
+  name: hh4b_ttbar8_exact_regeneration_20260727_v1
+  jobs: 8
+  members_per_job: 1
+  automatic_retries: 0
+  changed_seed_retries_allowed: false
+  canary_jobs: 1
+  scaleout_jobs: 7
+  canary_selection_salt: hh4b_ttbar8_exact_regeneration_20260727_v1_canary
+  canary_selection_rule: minimum_sha256_of_salt_pipe_source_member_id
+  submit_in_this_gate: false
+  stageout_base: /store/user/iturkmen/hh4b_delphes/exact_regeneration/hh4b_ttbar8_exact_regeneration_20260727_v1
+  return_base: /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1
+  no_overwrite:
+    existing_target_action: fail_before_generation
+    temporary_suffix: .partial
+    publication: checksum_then_atomic_rename
+    canonical_products_mutated: false
+  transfer_validation:
+    input: sha256_manifest_must_match_before_generation
+    output: size_and_sha256_recorded_in_member_receipt
+    receipt: written_last_after_all_validations
+  held_job_policy: inspect_classad_logs_and_receipt_then_manual_release_or_remove_without_seed_change
+  input_payload: outputs/agent_runs/hh4b_ttbar8_exact_regeneration_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_inputs.tar.gz
+
+generator:
+  process: p p > t t~
+  process_definition_detail: import model sm; define p including b and b~; generate p p > t t~
+  version: MadGraph5_aMC@NLO_3.5.3
+  process_directory: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke
+  process_directory_observed_manifest_sha256: f21d44dea7c6d8614b2f733e5485c5200be6b4e3c9cbb4b07edad106de0cad62
+  process_directory_manifest_excludes:
+    - Events
+    - HTML
+    - "*.log"
+  process_card:
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke/Cards/proc_card_mg5.dat
+    sha256: 9c771a8b9c596f02c9a21953936a2bacb2268f04253d38ef974e6ff6bea8bbf8
+  parameter_card:
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke/Cards/param_card.dat
+    sha256: 5315ff912514491596e9720b0540dbacd61d85d66dec2b4c94eaee0c15a52b41
+  run_card_template:
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke/Cards/run_card.dat
+    sha256: 5b6b7f660badb79d25218fb4920c801794e62861fb8cf53311d75588786ef04d
+  me5_configuration:
+    path: /uscms_data/d3/iturkmen/hh4b_delphes/mg5/TTbar_smoke/Cards/me5_configuration.txt
+    sha256: 07cc81819bf83d436ef55fbb2d8b51cc17a85f73b322ae0566321c6c47b62e30
+  event_count_per_member: 10000
+  run_card_overrides:
+    nevents: 10000
+    iseed: member_specific
+    ptb: 25.0
+    etab: 2.7
+    drbb: 0.4
+    drbj: 0.4
+    ptj: 20.0
+    etaj: 5.0
+  generation_command_template: ./bin/generate_events run_ttbar_100k_{shard} -f
+  completion_evidence:
+    - process_exit_zero
+    - log_contains_results_summary
+    - unweighted_lhe_event_count_exactly_10000
+
+pythia:
+  version: "8.312"
+  converter:
+    path: /uscms_data/d3/iturkmen/software/bin/lhe_to_hepmc3
+    sha256: 98b00f81cf843772ea93ee3ef92f1f4a9f340a26a9c779ddaa161ff8c75797fb
+  settings:
+    Beams:frameType: 4
+    Beams:LHEF: member_uncompressed_lhe_path
+    Check:event: "off"
+    Next:numberCount: 10
+    Next:numberShowEvent: 0
+    Next:numberShowInfo: 0
+    Next:numberShowProcess: 0
+  completion_evidence:
+    - process_exit_zero
+    - log_contains_PYTHIA_8.312
+    - requested_event_count_processed
+    - nonempty_hepmc
+
+delphes:
+  version: 3.5.2pre01-33-ga3b0385
+  git_commit: a3b0385da3693e578f413d61d87a9514a422b15f
+  fastjet_version: 3.5.1
+  executable:
+    path: /uscms_data/d3/iturkmen/software/Delphes/DelphesHepMC3
+    sha256: f957ca1bff3d0449695373ced9a1dc720f2310ea8fa6f97852f7c552bff5e580
+  card:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/cards/delphes/delphes_card_CMS_lpc.tcl
+    sha256: 0e14b275c2adbe0fec937b4c6a6d1b0a3ff28d406bf9e327427d1bf87c87f5a9
+  command_template: DelphesHepMC3 delphes_card_CMS_lpc.tcl {root_output} {hepmc_input}
+  completion_evidence:
+    - process_exit_zero
+    - log_contains_Exiting
+    - root_file_readable
+    - Delphes_tree_entries_exactly_10000
+
+reconstruction:
+  builder:
+    path: scripts/delphes/reconstruct_hh4b_candidates_v2.py
+    sha256: 4d7eb8e3400ec50c1c254744e6f3a2b11bd033a4525c13ec22e85247ecf59c57
+  policy:
+    path: configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml
+    sha256: 4b2a951dba7ac8bd0e2e982e3447e998e07b86d63390c248600976b3f4912b68
+  schema_columns: 72
+  schema_sha256: 4008b937032acad6aac87c2fea1df12a110d19a3876d1f8008496e9ca0c85cf4
+  arguments:
+    target_mass: 125.0
+    jet_pt_min: 30.0
+    jet_eta_max: 2.5
+    btag_min: 0.0
+    max_bjets_for_pairing: 8
+    higgs_ordering: pt
+  required_environment:
+    OMP_NUM_THREADS: "1"
+    OPENBLAS_NUM_THREADS: "1"
+    MKL_NUM_THREADS: "1"
+    NUMEXPR_NUM_THREADS: "1"
+    VECLIB_MAXIMUM_THREADS: "1"
+    PYTHONUNBUFFERED: "1"
+  output_sample_template: "{member_name}_pythia8_delphes"
+
+production_scripts:
+  worker_entrypoint:
+    path: scripts/production/run_hh4b_ttbar8_exact_regeneration_member.sh
+    sha256: 00a1fcdcf862b9672e081f4082a1ceef59a0648a2ad0bf2629beaeaffbac9209
+  campaign_wrapper:
+    path: scripts/delphes/run_storage_safe_local_campaign.sh
+    sha256: 3007010e7c2bd188ea3f7fd7ba3a48cc26f88662dd4e9a1f8c86484126a6865e
+  local_member_wrapper:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/scripts_snapshot/run_local_background_sample.sh
+    sha256: 5cd6e53ede4c98eb29b79983b266edd62119246ca9d3cf4f54fa95b25aa13809
+  shower_delphes_wrapper:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/scripts_snapshot/run_existing_lhe_pythia_delphes.sh
+    sha256: ea8108151317d14f9a2cc23cd46ec76c7ae2af1430a0f31bdbedaa599f86bf6a
+
+environment:
+  original_environment_available: false
+  original_container_image: none_original_production_was_not_containerized
+  required_classification: validated_equivalent_environment
+  host_type: Fermilab LPC EL9 x86_64 HTCondor execute node with CVMFS
+  operating_system_contract: EL9-compatible x86_64 userspace
+  lcg_view:
+    path: /cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+    sha256: c9f6963616ddbaeacf0b3ca6ba42d931ec02207d3102dfbaaaba2f8ce1112bbd
+  madgraph_cvmfs_configuration:
+    path: /cvmfs/sft.cern.ch/lcg/releases/MCGenerators/madgraph5amc/3.5.3.atlas7-2c347/x86_64-el9-gcc13-opt/input/mg5_configuration.txt
+    sha256: e639aae0b998329b4e0e3d5fd23ee7cca80f37a3a9eb0448ddc19857bc87c15b
+  compiler_runtime: GCC 13.1.0 from LCG_106; x86_64-el9
+  root_runtime: ROOT 6.32.02 from LCG_106
+  python_runtime: Python 3.11 from LCG_106 for reconstruction
+  lhapdf:
+    version: 6.5.3
+    config: /cvmfs/sft.cern.ch/lcg/releases/MCGenerators/lhapdf/6.5.3-f90f6/x86_64-el9-gcc13-opt/bin/lhapdf-config
+    data_path: "/cvmfs/sft.cern.ch/lcg/external/lhapdfsets/current/:/cvmfs/sft.cern.ch/lcg/releases/MCGenerators/lhapdf/6.5.3-f90f6/x86_64-el9-gcc13-opt/share/LHAPDF:"
+    pdf_set: NNPDF23_lo_as_0130_qed
+    pdf_id: 247000
+  setup_commands:
+    - source /cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+    - export LD_LIBRARY_PATH="${DELPHES_DIR}:${LD_LIBRARY_PATH:-}"
+  required_variables:
+    HH4B_REPO: transferred immutable repository payload
+    HH4B_STORE: job-local scratch store
+    HH4B_SOFTWARE: transferred software payload root
+    DELPHES_DIR: transferred Delphes runtime directory
+    LHAPDF_DATA_PATH: frozen LCG_106 value
+    LD_LIBRARY_PATH: LCG_106 plus transferred Delphes directory
+  equivalence_validation:
+    - all protected executable and configuration SHA256 values match
+    - all required dynamic libraries resolve after LCG_106 setup
+    - versions and relevant environment variables are captured in the receipt
+    - canary passes level 1 exact configuration and seed reproduction
+    - canary passes level 2 generator-event identity where stable comparison is available
+    - canary passes level 3 Delphes branch-level identity where stable comparison is available
+    - canary passes level 4 canonical/legacy common-column agreement policy
+    - any unexplained physics disagreement blocks scaleout and exact-regeneration claims
+
+resources:
+  request_cpus: 1
+  request_memory_mb: 2048
+  request_disk_mb: 12288
+  max_runtime_seconds: 7200
+  historical_evidence:
+    path: data_release/hh4b_delphes_analysis_v0_2026_07_08/metadata/ttbar_100k_storage_safe_timing.log
+    sha256: b5a212c039ca112c7e02e7bc8e04f6c956527d98b43ebe9aec9e2fa5299b7f3d
+    jobs: 10
+    total_wall_seconds: 3410.48
+    maximum_resident_kb: 539440
+    filesystem_output_blocks: 75357920
+    retained_root_bytes: 915954310
+  rationale: one CPU matches original local workflow; memory is 3.8x observed peak; disk is over 3x mean historical write volume; runtime is over 21x mean member wall time
+
+legacy_validation:
+  joining_keys:
+    - normalized_sample
+    - event
+  sample_normalization: canonical sample must equal legacy sample plus _pythia8_delphes
+  row_count: exact equality required
+  event_key_set: exact equality required
+  integer_exact:
+    - event
+    - n_selected_bjets
+  categorical_exact:
+    - sample_after_suffix_normalization
+  categorical_diagnostic_with_permitted_policy_difference:
+    - pairing
+  floating_columns:
+    - mbb1
+    - mbb2
+    - avg_mbb
+    - delta_mbb
+    - mhh
+    - drbb1
+    - drbb2
+    - j1_pt
+    - j2_pt
+    - j3_pt
+    - j4_pt
+  floating_rtol: 0.0
+  floating_atol: 1.0e-9
+  permitted_differences: pairing and floating feature values may differ only where explained by the frozen canonical pairing and Higgs-ordering policy; differences are diagnostic and must be tabulated
+  failure_policy: row-count, event-key, normalized-sample, or n_selected_bjets disagreement fails; any unexplained categorical or floating physics disagreement fails
+  dataset_policy: the 307 legacy rows are validation-only and never enter canonical dataset v2
+
+exactness_levels:
+  - level: 1
+    name: exact_configuration_and_seed_reproduction
+    required: true
+    byte_identity_claimed: false
+  - level: 2
+    name: generator_event_identity_where_stable_comparison_available
+    required: conditional_on_stable_comparator
+    byte_identity_claimed: false
+  - level: 3
+    name: delphes_branch_level_event_identity_where_stable_comparison_available
+    required: conditional_on_stable_comparator
+    byte_identity_claimed: false
+  - level: 4
+    name: canonical_candidate_agreement_on_15_legacy_common_columns
+    required: true
+    byte_identity_claimed: false
+
+canary_pass_requirements:
+  - correct_member_and_seed
+  - generated_event_count_exact
+  - delphes_entry_count_exact
+  - root_readable
+  - canonical72_schema_and_order_exact
+  - required_values_finite
+  - unique_event_keys
+  - zero_cross_member_duplicate_keys
+  - legacy_common_column_comparison_acceptable
+  - receipts_and_checksums_complete
+  - no_unexplained_physics_disagreement
+
+normalization:
+  physics_weight_status: not_frozen
+  physics_yield_authorized: false
+  calculate_physical_yields: false
+  calculate_significance: false
+  calculate_expected_limits: false
+  candidate_regeneration_blocker: canonical72_candidate_product_missing_until_successful_regeneration
+  physical_normalization_blockers:
+    - physics_weight_status_not_frozen
+    - physics_yield_not_authorized

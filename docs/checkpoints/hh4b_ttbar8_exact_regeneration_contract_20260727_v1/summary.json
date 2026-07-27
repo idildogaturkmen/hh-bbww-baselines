@@ -1,0 +1,66 @@
+{
+  "base_commit": "c6fee0ff8f7b7d927d890de5a73a5729e9096461",
+  "campaign": "hh4b_ttbar8_exact_regeneration_20260727_v1",
+  "canary": {
+    "jobs_described": 1,
+    "jobs_submitted": 0,
+    "member_index": 326,
+    "member_name": "ttbar_100k_shard003",
+    "seed": 105003,
+    "selection_rule": "minimum_sha256_of_salt_pipe_source_member_id"
+  },
+  "contract_name": "prepare_hh4b_ttbar_missing_member_exact_regeneration",
+  "contracts": {
+    "byte_identical_root_claimed": false,
+    "complete_candidate_reconstruction_contracts": 8,
+    "complete_delphes_contracts": 8,
+    "complete_generator_contracts": 8,
+    "complete_pythia_contracts": 8,
+    "original_environment_available": false,
+    "unresolved_exact_regeneration_inputs": 0,
+    "validated_equivalent_environment_required": true
+  },
+  "controls": {
+    "canary_jobs_submitted": 0,
+    "canonical_v1_artifacts_changed": 0,
+    "event_level_products_committed": 0,
+    "expected_limits_calculated": 0,
+    "models_trained": 0,
+    "physical_yields_calculated": 0,
+    "predictions_produced": 0,
+    "protected_artifacts_changed": 0,
+    "scaleout_jobs_submitted": 0,
+    "sealed_candidate_files_opened": 0,
+    "significance_calculated": 0
+  },
+  "integrity": {
+    "canonical_v1_artifacts_verified": 88,
+    "principal_tables_have_markdown_and_booktabs_latex": true,
+    "protected_artifacts_verified": 17,
+    "source_checkpoint_files_verified": 62,
+    "transfer_payload_prepared": true,
+    "transfer_payload_sha256": "2456f3a0bc9d186598ce97226421ebc95b90957b472621ed7bc315e27e0cbf80"
+  },
+  "inventory": {
+    "exact_member_ids_frozen": 8,
+    "exact_unresolved_members": 8,
+    "generated_event_counts_frozen": 8,
+    "legacy_candidate_rows_validation_only": 307,
+    "sealed_test_members": 0,
+    "unique_seeds_frozen": 8
+  },
+  "next_gate": "submit_hh4b_ttbar8_exact_regeneration_canary",
+  "normalization": {
+    "candidate_regeneration_blockers_separate": true,
+    "metadata_carried_forward_for_members": 8,
+    "normalization_ready_members": 0,
+    "physical_normalization_blockers_separate": true
+  },
+  "scaleout": {
+    "jobs_described": 7,
+    "jobs_submitted": 0,
+    "manual_authorization_required_after_canary": true
+  },
+  "schema_version": 1,
+  "status": "hh4b_ttbar8_exact_regeneration_contract_frozen"
+}

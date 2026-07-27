@@ -1,0 +1,17 @@
+\begin{tabular}{lllllll}
+\toprule
+failure\_class & detection & job\_action & retry\_policy & seed\_policy & publication\_policy & scaleout\_effect \\
+\midrule
+input\_checksum\_mismatch & preflight SHA256 & exit before generation & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+existing\_output & exclusive target preflight & exit before generation & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+generator\_failure & nonzero exit or missing completion & hold for review & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+event\_count\_mismatch & LHE event count & hold for review & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+pythia\_failure & nonzero exit or missing marker & hold for review & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+delphes\_failure & nonzero exit or missing marker & hold for review & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+root\_validation\_failure & readability or entries & hold for review & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+reconstruction\_failure & nonzero exit or schema/content check & hold & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+identity\_disagreement & exactness levels 1-4 & hold and adjudicate & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+transfer\_failure & size/SHA256 mismatch & hold and retain partial logs & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+condor\_held\_job & HoldReason/ClassAd & manual inspection only & no\_automatic\_retry & seed\_never\_changes & no\_canonical\_publication\_on\_failure & block\_scaleout\_if\_canary\_or\_unexplained\_physics \\
+\bottomrule
+\end{tabular}

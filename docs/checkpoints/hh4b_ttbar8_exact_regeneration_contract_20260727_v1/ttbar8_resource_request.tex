@@ -1,0 +1,7 @@
+\begin{tabular}{llllllllllllll}
+\toprule
+scope & request\_cpus & request\_memory\_mb & request\_disk\_mb & max\_runtime\_seconds & historical\_jobs & historical\_total\_wall\_seconds & historical\_mean\_wall\_seconds\_per\_member & historical\_maximum\_resident\_mb & historical\_mean\_write\_gib\_per\_member & historical\_retained\_root\_gib & evidence\_path & evidence\_sha256 & rationale \\
+\midrule
+per\_member\_job & 1 & 2048 & 12288 & 7200 & 10 & 3410.48 & 341.048 & 526.797 & 3.593 & 0.853 & data\_release/hh4b\_delphes\_analysis\_v0\_2026\_07\_08/metadata/ttbar\_100k\_storage\_safe\_timing.log & b5a212c039ca112c7e02e7bc8e04f6c956527d98b43ebe9aec9e2fa5299b7f3d & one CPU matches original local workflow; memory is 3.8x observed peak; disk is over 3x mean historical write volume; runtime is over 21x mean member wall time \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,29 @@
+# CONTRACT-ONLY HTCondor description.
+# This gate forbids submission; requirements=False and hold=True are safety locks.
+universe = vanilla
+executable = scripts/production/run_hh4b_ttbar8_exact_regeneration_member.sh
+arguments = $(member_index) $(member_name) $(seed) 10000
+request_cpus = 1
+request_memory = 2048MB
+request_disk = 12288MB
++MaxRuntime = 7200
+max_retries = 0
+requirements = False
+hold = True
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+transfer_input_files = outputs/agent_runs/hh4b_ttbar8_exact_regeneration_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_inputs.tar.gz
+log = condor_logs/hh4b_ttbar8_scaleout.$(Cluster).log
+output = condor_logs/hh4b_ttbar8_scaleout.$(Cluster).$(Process).out
+error = condor_logs/hh4b_ttbar8_scaleout.$(Cluster).$(Process).err
+
+queue member_index, member_name, seed from (
+324 ttbar_100k_shard001 105001
+325 ttbar_100k_shard002 105002
+327 ttbar_100k_shard007 105007
+328 ttbar_100k_shard008 105008
+329 ttbar_100k_shard009 105009
+347 ttbar_100k_shard004 105004
+348 ttbar_100k_shard005 105005
+)
