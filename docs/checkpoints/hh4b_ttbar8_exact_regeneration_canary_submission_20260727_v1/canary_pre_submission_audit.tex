@@ -1,0 +1,20 @@
+\begin{tabular}{lllll}
+\toprule
+check & expected & observed & passed & evidence \\
+\midrule
+starting\_commit & 582ab0a1f15cc8f990ac30aac31b17669975e842 & 582ab0a1f15cc8f990ac30aac31b17669975e842 & True & required four-command starting-state gate \\
+contract\_status & hh4b\_ttbar8\_exact\_regeneration\_contract\_frozen & hh4b\_ttbar8\_exact\_regeneration\_contract\_frozen & True & /uscms\_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b\_ttbar8\_exact\_regeneration\_contract\_20260727\_v1/summary.json \\
+protected\_artifacts\_verified & 17 & 17 & True & fresh contract audit \\
+canary\_member\_seed\_events & ttbar\_100k\_shard003|105003|10000 & ttbar\_100k\_shard003|105003|10000 & True & frozen deterministic selection \\
+canary\_jobs\_prepared & 1 & 1 & True & /uscms\_data/d3/iturkmen/hh4b\_delphes/condor\_submit/hh4b\_ttbar8\_exact\_regeneration\_canary\_submission\_20260727\_v1/hh4b\_ttbar8\_exact\_regeneration\_canary.sub \\
+scaleout\_jobs\_prepared & 7 & 7 & True & /uscms\_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b\_ttbar8\_exact\_regeneration\_contract\_20260727\_v1/hh4b\_ttbar8\_scaleout.sub \\
+previously\_submitted\_canary\_jobs & 0 & 0 & True & queue and bounded history audit on LPC schedds 4, 5, and 6 \\
+previously\_submitted\_scaleout\_jobs & 0 & 0 & True & queue and bounded history audit on LPC schedds 4, 5, and 6 \\
+unique\_output\_receipt\_log\_and\_temporary\_paths & True & True & True & local and EOS no-overwrite checks before directory creation \\
+canary\_submit\_queue\_processes & 1 & 1 & True & /uscms\_data/d3/iturkmen/hh4b\_delphes/condor\_submit/hh4b\_ttbar8\_exact\_regeneration\_canary\_submission\_20260727\_v1/hh4b\_ttbar8\_exact\_regeneration\_canary.sub \\
+scaleout\_submit\_remains\_unsubmitted & True & True & True & /uscms\_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b\_ttbar8\_exact\_regeneration\_contract\_20260727\_v1/hh4b\_ttbar8\_scaleout.sub \\
+condor\_dry\_run\_classads & 1 & 1 & True & /uscms\_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent\_runs/hh4b\_ttbar8\_exact\_regeneration\_canary\_submission\_20260727\_v1/canary.dryrun.ads \\
+focused\_unit\_tests\_passed & 12 & 12 & True & tests/test\_prepare\_hh4b\_ttbar8\_exact\_regeneration.py \\
+git\_diff\_check & pass & pass & True & git diff --check before submission \\
+\bottomrule
+\end{tabular}

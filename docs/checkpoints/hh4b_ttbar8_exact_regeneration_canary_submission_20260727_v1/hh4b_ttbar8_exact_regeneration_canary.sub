@@ -1,0 +1,36 @@
+# Frozen one-member HH4b ttbar8 exact-regeneration canary.
+# The seven-member scaleout submit description is not referenced here.
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_ttbar8_exact_regeneration_member.sh
+arguments = 326 ttbar_100k_shard003 105003 10000
+request_cpus = 1
+request_memory = 2048MB
+request_disk = 12288MB
++MaxRuntime = 7200
+max_retries = 0
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+transfer_input_files = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_ttbar8_exact_regeneration_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_inputs.tar.gz
+transfer_output_files = output/lhe/ttbar_100k_shard003_unweighted_events.lhe.gz,output/hepmc/ttbar_100k_shard003_pythia8.hepmc,output/root/ttbar_100k_shard003_pythia8_delphes.root,output/parquet/ttbar_100k_shard003_pythia8_delphes_canonical72.parquet,output/logs/ttbar_100k_shard003_converter_ldd.log,output/logs/ttbar_100k_shard003_delphes_ldd.log,output/logs/ttbar_100k_shard003_generate_events.log,output/logs/ttbar_100k_shard003_lhe_to_hepmc3.log,output/logs/ttbar_100k_shard003_pythia8_delphes.log,output/logs/ttbar_100k_shard003_canonical72.log,output/receipts/ttbar_100k_shard003_receipt.json,output/receipts/ttbar_100k_shard003_final_status.txt,output/checksums/ttbar_100k_shard003_SHA256SUMS
+transfer_output_remaps = "output/lhe/ttbar_100k_shard003_unweighted_events.lhe.gz=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/lhe/ttbar_100k_shard003_unweighted_events.lhe.gz;output/hepmc/ttbar_100k_shard003_pythia8.hepmc=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/hepmc/ttbar_100k_shard003_pythia8.hepmc;output/root/ttbar_100k_shard003_pythia8_delphes.root=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/root/ttbar_100k_shard003_pythia8_delphes.root;output/parquet/ttbar_100k_shard003_pythia8_delphes_canonical72.parquet=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/parquet/ttbar_100k_shard003_pythia8_delphes_canonical72.parquet;output/logs/ttbar_100k_shard003_converter_ldd.log=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/logs/ttbar_100k_shard003_converter_ldd.log;output/logs/ttbar_100k_shard003_delphes_ldd.log=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/logs/ttbar_100k_shard003_delphes_ldd.log;output/logs/ttbar_100k_shard003_generate_events.log=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/logs/ttbar_100k_shard003_generate_events.log;output/logs/ttbar_100k_shard003_lhe_to_hepmc3.log=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/logs/ttbar_100k_shard003_lhe_to_hepmc3.log;output/logs/ttbar_100k_shard003_pythia8_delphes.log=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/logs/ttbar_100k_shard003_pythia8_delphes.log;output/logs/ttbar_100k_shard003_canonical72.log=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/logs/ttbar_100k_shard003_canonical72.log;output/receipts/ttbar_100k_shard003_receipt.json=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/receipts/ttbar_100k_shard003_receipt.json;output/receipts/ttbar_100k_shard003_final_status.txt=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/receipts/ttbar_100k_shard003_final_status.txt;output/checksums/ttbar_100k_shard003_SHA256SUMS=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/checksums/ttbar_100k_shard003_SHA256SUMS"
+log = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1/canary.$(Cluster).log
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1/canary.$(Cluster).$(Process).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1/canary.$(Cluster).$(Process).err
+notification = Never
+getenv = False
+environment = "LC_ALL=C LANG=C"
++JobBatchName = "hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1"
++Campaign = "hh4b_ttbar8_exact_regeneration_20260727_v1"
++SubmissionGate = "submit_hh4b_ttbar8_exact_regeneration_canary"
++CanaryMember = "ttbar_100k_shard003"
++CanaryMemberIndex = 326
++CanarySeed = 105003
++GeneratedEvents = 10000
++ExactRegenerationCanary = True
++ScaleoutJob = False
++AutomaticRetries = 0
++DesiredOS = "EL9"
+on_exit_hold = (ExitBySignal == True) || (ExitCode != 0)
+
+queue 1

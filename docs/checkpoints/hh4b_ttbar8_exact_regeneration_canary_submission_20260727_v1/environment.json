@@ -1,0 +1,11 @@
+{
+  "environment_contract": "validated_equivalent_environment",
+  "hostname_observed_during_checkpoint_write": "cmslpc323.fnal.gov",
+  "htcondor_version": "24.0.7 build 803687",
+  "platform": "Linux-5.14.0-687.25.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "python": "3.9.25",
+  "scheduler": "lpcschedd4.fnal.gov",
+  "submission_timestamp_utc": "2026-07-27T23:03:49Z",
+  "submit_host": "cmslpc323.fnal.gov",
+  "timezone": "America/Chicago"
+}

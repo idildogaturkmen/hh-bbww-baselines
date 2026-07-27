@@ -1,0 +1,12 @@
+{
+  "authoritative_contract": "docs/checkpoints/hh4b_ttbar8_exact_regeneration_contract_20260727_v1",
+  "checkpoint": "hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1",
+  "cluster_id": 3654710,
+  "config": "configs/production/hh4b_ttbar8_exact_regeneration_v1.yaml",
+  "next_gate": "validate_hh4b_ttbar8_exact_regeneration_canary",
+  "process_id": 0,
+  "scheduler": "lpcschedd4.fnal.gov",
+  "status": "hh4b_ttbar8_exact_regeneration_canary_submitted",
+  "submission_script": "scripts/production/submit_hh4b_ttbar8_exact_regeneration_canary.py",
+  "submit_file": "/uscms_data/d3/iturkmen/hh4b_delphes/condor_submit/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1/hh4b_ttbar8_exact_regeneration_canary.sub"
+}

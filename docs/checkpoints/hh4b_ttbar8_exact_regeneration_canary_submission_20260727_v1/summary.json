@@ -1,0 +1,39 @@
+{
+  "campaign": "hh4b_ttbar8_exact_regeneration_20260727_v1",
+  "canary_generated_events": 10000,
+  "canary_jobs_prepared": 1,
+  "canary_jobs_submitted": 1,
+  "canary_member": "ttbar_100k_shard003",
+  "canary_seed": 105003,
+  "cluster_id": 3654710,
+  "controls": {
+    "automatic_retries": 0,
+    "changed_seed_retries": 0,
+    "event_level_products_committed": 0,
+    "expected_limits_calculated": 0,
+    "models_trained": 0,
+    "physical_yields_calculated": 0,
+    "predictions_produced": 0,
+    "scaleout_submit_description_submitted": false,
+    "sealed_candidate_files_opened": 0,
+    "significance_calculated": 0
+  },
+  "initial_state": "idle",
+  "integrity": {
+    "condor_dry_run_classads": 1,
+    "contract_checkpoint_files_verified": 54,
+    "focused_unit_tests_passed": 12,
+    "principal_tables_have_markdown_and_booktabs_latex": true,
+    "protected_artifacts_verified": 17
+  },
+  "next_gate": "validate_hh4b_ttbar8_exact_regeneration_canary",
+  "previously_submitted_canary_jobs": 0,
+  "previously_submitted_scaleout_jobs": 0,
+  "process_id": 0,
+  "scaleout_jobs_prepared": 7,
+  "scaleout_jobs_submitted": 0,
+  "scheduler": "lpcschedd4.fnal.gov",
+  "schema_version": 1,
+  "status": "hh4b_ttbar8_exact_regeneration_canary_submitted",
+  "submit_host": "cmslpc323.fnal.gov"
+}
