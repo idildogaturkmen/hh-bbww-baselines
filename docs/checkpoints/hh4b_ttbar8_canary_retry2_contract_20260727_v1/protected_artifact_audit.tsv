@@ -1,0 +1,4 @@
+role	path	sha256
+config	/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/configs/production/hh4b_ttbar8_canary_retry2_v1.yaml	344602a687a48918a681654da2a9a65d2a142612db0937457b72730a2e41c04c
+wrapper	/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_ttbar8_canary_retry2.sh	60365da4d85d35cb1cb4bf2048b127854e3ed1d81c78f0591c60e5b3580832c8
+submit	/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_ttbar8_canary_retry2_contract_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry2.sub	d7c43aee759659e1fa313b6523b0945f9a664438c2c09359b10c8a3f02ceb5c4

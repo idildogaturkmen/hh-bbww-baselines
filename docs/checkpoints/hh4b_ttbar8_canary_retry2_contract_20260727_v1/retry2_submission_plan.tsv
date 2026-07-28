@@ -1,0 +1,2 @@
+jobs_described	jobs_submitted	scaleout_submitted	member	seed	mode	submit_file
+1	0	0	ttbar_100k_shard003	105003	canonical72_reconstruction_only_from_returned_root	/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_ttbar8_canary_retry2_contract_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry2.sub

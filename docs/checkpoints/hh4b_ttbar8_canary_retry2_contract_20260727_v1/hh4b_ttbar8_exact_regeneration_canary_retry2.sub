@@ -1,0 +1,45 @@
+# Frozen retry2 contract. Active description, but not submitted in this gate.
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_ttbar8_canary_retry2.sh
+arguments = ttbar_100k_shard003_pythia8_delphes.root 127c87510087d164038b7629ea9d5210008cc4cb1473aa9b069a5cd4b859629e ttbar_100k_shard003 105003
+
+request_cpus = 1
+request_memory = 2048MB
+request_disk = 3072MB
++MaxRuntime = 2700
+max_retries = 0
+
+requirements = (TARGET.Arch == "X86_64") && (TARGET.OpSys == "LINUX") && (TARGET.Disk >= RequestDisk) && (TARGET.Memory >= RequestMemory) && (TARGET.HasFileTransfer && versioncmp(split(TARGET.CondorVersion)[1],"8.9.7") >= 0)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+
+transfer_input_files = /uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry1_payload.tar.gz,/uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/python39_site_packages.tar.gz,/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/root/ttbar_100k_shard003_pythia8_delphes.root
+transfer_output_files = output
+transfer_output_remaps = "output=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/members/ttbar_100k_shard003"
+
+log = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/retry2.$(Cluster).log
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/retry2.$(Cluster).$(Process).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/retry2.$(Cluster).$(Process).err
+
+notification = Never
+getenv = False
+environment = "LC_ALL=C LANG=C"
+
++JobBatchName = "hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1"
++Campaign = "hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1"
++RetryAttempt = 2
++RetryMember = "ttbar_100k_shard003"
++RetrySeedProvenance = 105003
++SourceJob = "3654710.0"
++FailedRetry1Job = "3654939.0"
++RetryMode = "canonical72_reconstruction_only_from_returned_root"
++ReconstructionOnlyRetry = True
++ScaleoutJob = False
++DesiredOS = "EL9"
++ApptainerImage = "/cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel9"
+
+on_exit_hold = (ExitBySignal == True) || (ExitCode != 0)
+
+queue 1

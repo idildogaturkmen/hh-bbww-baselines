@@ -1,0 +1,35 @@
+schema_version: 1
+status: hh4b_ttbar8_exact_regeneration_canary_retry2_contract_frozen
+campaign: hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1
+scheduler: lpcschedd4.fnal.gov
+member: ttbar_100k_shard003
+seed_provenance: 105003
+source_job: "3654710.0"
+failed_retry1_job: "3654939.0"
+retry_mode: canonical72_reconstruction_only_from_returned_root
+generated_event_count: 10000
+madgraph_rerun: false
+pythia_rerun: false
+delphes_rerun: false
+root:
+  path: /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/root/ttbar_100k_shard003_pythia8_delphes.root
+  sha256: 127c87510087d164038b7629ea9d5210008cc4cb1473aa9b069a5cd4b859629e
+  bytes: 913864894
+  entries: 10000
+payload:
+  path: /uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry1_payload.tar.gz
+  sha256: 3cc059b75cb63d27b57c51dfbd6643397fcb794e8e184ce689b4d905f53fad97
+python_environment:
+  path: /uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/python39_site_packages.tar.gz
+  sha256: 6f47dbb493681b424342045f38cd514a56dba056e41ce2cce04790d99ce515cd
+  python: "3.9.25"
+  numpy: "1.26.4"
+  awkward: "2.6.4"
+  uproot: "5.3.7"
+  pandas: "2.2.2"
+  pyarrow: "15.0.0"
+return_directory: /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_canary_retry2_20260727_v1/members/ttbar_100k_shard003
+retry_jobs_described: 1
+retry_jobs_submitted: 0
+scaleout_jobs_submitted: 0
+next_gate: submit_hh4b_ttbar8_exact_regeneration_canary_retry2
