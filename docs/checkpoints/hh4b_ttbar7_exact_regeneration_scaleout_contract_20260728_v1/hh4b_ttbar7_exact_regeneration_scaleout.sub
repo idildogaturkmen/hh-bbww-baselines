@@ -1,0 +1,59 @@
+# Frozen seven-member full-chain scaleout contract.
+# Active but unsubmitted.
+
+universe = vanilla
+
+executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_ttbar7_exact_regeneration_scaleout_member.sh
+arguments = $(MEMBER_INDEX) $(MEMBER_NAME) $(SEED) $(GENERATED_EVENTS)
+
+request_cpus = 1
+request_memory = 2048MB
+request_disk = 12288MB
+
++MaxRuntime = 7200
+max_retries = 0
+
+requirements = (TARGET.Arch == "X86_64") && (TARGET.OpSys == "LINUX") && TARGET.HasFileTransfer
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = False
+
+transfer_input_files = /uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1/hh4b_ttbar7_exact_regeneration_scaleout_inputs.tar.gz,/uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1/python39_site_packages.tar.gz
+transfer_output_files = output
+transfer_output_remaps = "output=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1/members/$(MEMBER_NAME)"
+
+log = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1/scaleout.$(Cluster).log
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1/scaleout.$(Cluster).$(Process).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1/scaleout.$(Cluster).$(Process).err
+
+notification = Never
+getenv = False
+
+environment = "LC_ALL=C LANG=C HH4B_TTBAR7_INPUT_TARBALL=hh4b_ttbar7_exact_regeneration_scaleout_inputs.tar.gz HH4B_TTBAR7_PYENV_TARBALL=python39_site_packages.tar.gz"
+
++JobBatchName = "hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1"
++Campaign = "hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1"
++RetryMember = "$(MEMBER_NAME)"
++RetrySeedProvenance = $(SEED)
++MemberIndex = $(MEMBER_INDEX)
++GeneratedEvents = $(GENERATED_EVENTS)
++ScaleoutJob = True
++FullChainRegeneration = True
++ReconstructionOnlyRetry = False
++ValidatedCanaryMember = "ttbar_100k_shard003"
++ValidatedCanaryJob = "3655099.0"
++DesiredOS = "EL9"
++ApptainerImage = "/cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel9"
+
+on_exit_hold = (ExitBySignal == True) || (ExitCode != 0)
+
+queue MEMBER_INDEX,MEMBER_NAME,SEED,GENERATED_EVENTS from (
+324 ttbar_100k_shard001 105001 10000
+325 ttbar_100k_shard002 105002 10000
+347 ttbar_100k_shard004 105004 10000
+348 ttbar_100k_shard005 105005 10000
+327 ttbar_100k_shard007 105007 10000
+328 ttbar_100k_shard008 105008 10000
+329 ttbar_100k_shard009 105009 10000
+)

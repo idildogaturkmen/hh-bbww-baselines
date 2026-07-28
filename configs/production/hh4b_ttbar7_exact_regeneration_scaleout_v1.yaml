@@ -1,0 +1,59 @@
+schema_version: 1
+status: hh4b_ttbar7_exact_regeneration_scaleout_contract_frozen
+campaign: hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1
+
+validated_canary:
+  member: ttbar_100k_shard003
+  seed: 105003
+  job: "3655099.0"
+  validation_checkpoint: docs/checkpoints/hh4b_ttbar8_canary_retry2_validation_20260728_v1
+
+scaleout:
+  jobs_described: 7
+  jobs_submitted: 0
+  members_per_job: 1
+  events_per_member: 10000
+  total_generated_events: 70000
+  automatic_retries: 0
+  changed_seed_retries_allowed: false
+  full_chain_regeneration: true
+
+members:
+  - {member_index: 324, member: ttbar_100k_shard001, seed: 105001, events: 10000}
+  - {member_index: 325, member: ttbar_100k_shard002, seed: 105002, events: 10000}
+  - {member_index: 347, member: ttbar_100k_shard004, seed: 105004, events: 10000}
+  - {member_index: 348, member: ttbar_100k_shard005, seed: 105005, events: 10000}
+  - {member_index: 327, member: ttbar_100k_shard007, seed: 105007, events: 10000}
+  - {member_index: 328, member: ttbar_100k_shard008, seed: 105008, events: 10000}
+  - {member_index: 329, member: ttbar_100k_shard009, seed: 105009, events: 10000}
+
+payload:
+  corrected_path: /uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1/hh4b_ttbar7_exact_regeneration_scaleout_inputs.tar.gz
+  corrected_sha256: 76b1f09935baa378d9d410607aa81cc56e72e084390a069e3ce434e377a054df
+  isolated_writer_included: true
+  bootstrap_included: true
+  scaleout_worker_included: true
+
+portable_environment:
+  path: /uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1/python39_site_packages.tar.gz
+  sha256: 6f47dbb493681b424342045f38cd514a56dba056e41ce2cce04790d99ce515cd
+  python: "3.9"
+  numpy: "1.26.4"
+  awkward: "2.6.4"
+  uproot: "5.3.7"
+  pandas: "2.2.2"
+  pyarrow: "15.0.0"
+
+worker:
+  path: scripts/production/run_hh4b_ttbar7_exact_regeneration_scaleout_member.sh
+  sha256: 550d1e6aade75b5329885ae803f742ccbef2011f273afd8fbfa65deda4cf13bf
+
+return_base: /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1
+log_base: /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar7_exact_regeneration_scaleout_20260728_v1
+return_directories_precreated: true
+
+scheduler_actions_performed: false
+sealed_test_members_opened: 0
+physical_normalization: false
+
+next_gate: submit_hh4b_ttbar7_exact_regeneration_scaleout
