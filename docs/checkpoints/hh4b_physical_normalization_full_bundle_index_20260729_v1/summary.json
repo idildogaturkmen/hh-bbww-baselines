@@ -1,0 +1,57 @@
+{
+  "controls": {
+    "archive_members_extracted": 0,
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_extracted": 0,
+    "event_payload_files_opened": 0,
+    "models_trained": 0,
+    "physical_yields_calculated": 0,
+    "provenance_files_extracted": 0,
+    "temporary_bundle_copies_remaining": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "indexing": {
+    "all_eos_campaigns_indexed": 53,
+    "archive_members": 1169,
+    "artifact_type_member_counts": {
+      "candidate_or_event_summary_log": 102,
+      "delphes_log_or_configuration": 51,
+      "generation_provenance_metadata": 61,
+      "generator_banner_or_lhe_init": 47,
+      "generator_stdout_or_summary": 153,
+      "importance_sampling_record": 44,
+      "parton_shower_card": 147,
+      "proc_card": 47,
+      "run_card": 47
+    },
+    "campaign_records": 54,
+    "canary_eos_campaigns_reused": 6,
+    "eos_campaigns": 53,
+    "event_payload_members": 206,
+    "legacy_local_campaigns_unresolved": 1,
+    "provenance_extraction_allowlist_candidates": 547,
+    "provenance_named_members": 612,
+    "remaining_eos_campaigns_indexed": 47,
+    "scaleout_transfer_bytes": 38767214181
+  },
+  "next_gate": "freeze_small_nonpayload_provenance_extraction_allowlist_and_recover_legacy_ttbar_generation_artifacts",
+  "plan": "docs/checkpoints/hh4b_physical_normalization_generator_artifact_locations_20260729_v1/representative_bundle_index_plan.tsv",
+  "plan_sha256": "64bcbe4e6ec661be03fae513a9acae7b0495656e8fadcdf3b3b62b6276e34015",
+  "readiness": {
+    "all_eos_archive_headers_indexed": true,
+    "cross_sections_assigned": 0,
+    "physics_normalization_ready": false,
+    "provenance_extraction_allowlist_draft_complete": true,
+    "provenance_file_contents_reviewed": 0,
+    "provenance_file_extraction_authorized": false,
+    "sum_generator_weights_resolved": 0
+  },
+  "schema_version": 1,
+  "source_commit": "074249346eee2eaae5040a20e179893bbbc7985a",
+  "status": "hh4b_physical_normalization_full_bundle_index_pass",
+  "timestamp_utc": "2026-07-28T23:48:29.266309+00:00"
+}

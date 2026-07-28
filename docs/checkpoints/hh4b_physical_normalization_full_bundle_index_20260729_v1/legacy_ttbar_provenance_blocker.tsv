@@ -1,0 +1,2 @@
+sample_class	process_or_mode	campaign	source_type	original_generation_artifacts_recovered	candidate_file_opened	blocking_reason	status
+background	ttbar_inclusive	parquet	local_candidate_reference	False	False	The legacy 270k-event ttbar candidate source lacks its original generator directory, cards, logs, and normalization denominator in the frozen registry.	blocking_legacy_provenance_unresolved
