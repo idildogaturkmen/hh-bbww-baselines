@@ -1,0 +1,209 @@
+schema_version: 1
+contract_name: freeze_hh4b_ttbar8_exact_regeneration_canary_retry_contract
+required_starting_commit: 4038995254c2bcbcad97d778c63e8e6b0b4c7916
+
+status_contract:
+  frozen_status: hh4b_ttbar8_exact_regeneration_canary_retry_contract_frozen
+  blocked_status: hh4b_ttbar8_exact_regeneration_canary_retry_contract_blocked
+  frozen_next_gate: submit_hh4b_ttbar8_exact_regeneration_canary_retry1
+  blocked_next_gate: resolve_hh4b_ttbar8_canary_retry_payload
+
+retry:
+  campaign: hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1
+  member: ttbar_100k_shard003
+  member_index: 326
+  seed_provenance: 105003
+  mode: canonical72_reconstruction_only_from_returned_root
+  jobs_described: 1
+  jobs_submitted: 0
+  scaleout_jobs_submitted: 0
+  source_job: "3654710.0"
+  source_scheduler: lpcschedd4.fnal.gov
+  source_job_must_remain_held: true
+  submit_in_this_gate: false
+  remove_source_job_in_this_gate: false
+  release_source_job: false
+
+paths:
+  authoritative_contract: docs/checkpoints/hh4b_ttbar8_exact_regeneration_contract_20260727_v1
+  authoritative_submission: docs/checkpoints/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1
+  authoritative_failure: docs/checkpoints/hh4b_ttbar8_exact_regeneration_canary_failure_20260727_v1
+  retained_root_reconstruction_evidence: docs/checkpoints/hh4b_ttbar27_canonical72_recovery_20260727_v1/ttbar27_execution_attempt_audit.tsv
+  runtime_directory: outputs/agent_runs/hh4b_ttbar8_canary_retry1_prepare_20260727_v1
+  checkpoint_directory: docs/checkpoints/hh4b_ttbar8_canary_retry1_contract_20260727_v1
+  payload: outputs/agent_runs/hh4b_ttbar8_canary_retry1_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry1_payload.tar.gz
+  submit_description: outputs/agent_runs/hh4b_ttbar8_canary_retry1_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry1.sub
+  return_directory: /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1/members/ttbar_100k_shard003
+  log_directory: /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1
+
+returned_root:
+  path: /uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/root/ttbar_100k_shard003_pythia8_delphes.root
+  basename: ttbar_100k_shard003_pythia8_delphes.root
+  bytes: 913864894
+  sha256: 127c87510087d164038b7629ea9d5210008cc4cb1473aa9b069a5cd4b859629e
+  tree: Delphes
+  entries: 10000
+  required_branches:
+    - Jet.PT
+    - Jet.Eta
+    - Jet.Phi
+    - Jet.Mass
+    - Jet.BTag
+    - Jet.Flavor
+
+payload:
+  archive_root: payload
+  exact_worker_root: /srv/payload
+  required_files:
+    - source: scripts/delphes/reconstruct_hh4b_candidates_v2.py
+      archive_path: payload/repo/scripts/delphes/reconstruct_hh4b_candidates_v2.py
+      exact_worker_path: /srv/payload/repo/scripts/delphes/reconstruct_hh4b_candidates_v2.py
+      sha256: 4d7eb8e3400ec50c1c254744e6f3a2b11bd033a4525c13ec22e85247ecf59c57
+      protected: true
+    - source: scripts/delphes/write_parquet_from_pickle.py
+      archive_path: payload/repo/scripts/delphes/write_parquet_from_pickle.py
+      exact_worker_path: /srv/payload/repo/scripts/delphes/write_parquet_from_pickle.py
+      sha256: abef7e4f5d1b82fe72837834b0b0794b59bb31ff16032b1b5a7f1519a6edbcfb
+      protected: true
+    - source: configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml
+      archive_path: payload/repo/configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml
+      exact_worker_path: /srv/payload/repo/configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml
+      sha256: 4b2a951dba7ac8bd0e2e982e3447e998e07b86d63390c248600976b3f4912b68
+      protected: true
+    - source: outputs/agent_runs/hh4b_canonical72_schema_compatibility_audit_20260725_v2/canonical72_columns.tsv
+      archive_path: payload/repo/schema/canonical72_columns.tsv
+      exact_worker_path: /srv/payload/repo/schema/canonical72_columns.tsv
+      sha256: e9a12517772f77e311e37b09bc27df372735fee8dd48b176a0a82ada01913421
+      protected: true
+    - source: scripts/production/run_hh4b_ttbar8_canary_retry1.sh
+      archive_path: payload/repo/scripts/production/run_hh4b_ttbar8_canary_retry1.sh
+      exact_worker_path: /srv/payload/repo/scripts/production/run_hh4b_ttbar8_canary_retry1.sh
+      sha256: e3e3431cb910bda305958ed9c19cc011e9581326dda8d6c43761dc349a053056
+      protected: true
+  local_python_modules_imported: []
+  bootstrap_archive_path: payload/bootstrap/sitecustomize.py
+  checksum_manifest_archive_path: payload/SHA256SUMS
+
+environment:
+  container_image: none
+  container_note: original Condor contract specifies no container image; use its frozen CVMFS LCG view
+  lcg_setup: /cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+  lcg_setup_sha256: c9f6963616ddbaeacf0b3ca6ba42d931ec02207d3102dfbaaaba2f8ce1112bbd
+  python: "3.11.9"
+  numpy: "1.26.4"
+  awkward: "2.6.4"
+  uproot: "5.3.7"
+  pandas: "2.2.2"
+  parquet_backend: pyarrow
+  pyarrow: "15.0.0"
+  thread_environment:
+    OMP_NUM_THREADS: "1"
+    OPENBLAS_NUM_THREADS: "1"
+    MKL_NUM_THREADS: "1"
+    NUMEXPR_NUM_THREADS: "1"
+    VECLIB_MAXIMUM_THREADS: "1"
+    PYTHONUNBUFFERED: "1"
+  uproot_mechanism: sitecustomize_sets_MultithreadedFileSource_num_workers_1
+  writer_mechanism: isolated_writer_subprocess_from_protected_builder
+
+reconstruction:
+  sample: ttbar_100k_shard003_pythia8_delphes
+  target_mass: 125.0
+  jet_pt_min: 30.0
+  jet_eta_max: 2.5
+  btag_min: 0.0
+  max_bjets_for_pairing: 8
+  higgs_ordering: pt
+  timeout: 45m
+  timeout_kill_after: 60s
+  policy_path: /srv/payload/repo/configs/production/hh4b_rich_v2_reconstruction_policy_v1.yaml
+  policy_sha256: 4b2a951dba7ac8bd0e2e982e3447e998e07b86d63390c248600976b3f4912b68
+  expected_columns: 72
+  schema_contract_sha256: 4008b937032acad6aac87c2fea1df12a110d19a3876d1f8008496e9ca0c85cf4
+
+resources:
+  request_cpus: 1
+  request_memory_mb: 2048
+  request_disk_mb: 3072
+  max_runtime_seconds: 2700
+  successful_reconstruction_wall_seconds: 20.1217
+  successful_determinism_rerun_wall_seconds: 11.4628
+  successful_reconstruction_input_entries: 10000
+  successful_reconstruction_input_bytes: 915954310
+  current_input_bytes: 913864894
+  prior_canary_peak_memory_mb: 1275
+  evidence_path: docs/checkpoints/hh4b_ttbar27_canonical72_recovery_20260727_v1/ttbar27_execution_attempt_audit.tsv
+  evidence_sha256: 89f3aa1333caf1eb53fc2b0705705ab8e143c85641ded82a77da689fa2ed87a0
+  rationale: one CPU and 45 minutes reproduce the validated serial retry; 2048 MB exceeds the observed 1275 MB canary peak; 3072 MB exceeds three times the 0.851 GiB immutable ROOT input
+
+outputs:
+  parquet: parquet/ttbar_100k_shard003_pythia8_delphes_canonical72.parquet
+  reconstruction_stdout: logs/ttbar_100k_shard003_reconstruction.stdout
+  reconstruction_stderr: logs/ttbar_100k_shard003_reconstruction.stderr
+  canonical_log: logs/ttbar_100k_shard003_canonical72.log
+  environment_report: logs/ttbar_100k_shard003_environment.json
+  receipt: receipts/ttbar_100k_shard003_receipt.json
+  final_status: receipts/ttbar_100k_shard003_final_status.txt
+  checksums: checksums/ttbar_100k_shard003_SHA256SUMS
+  schema_audit: audits/schema_audit.json
+  entry_candidate_accounting: audits/entry_candidate_accounting.json
+  forbidden_outputs:
+    - LHE
+    - HepMC
+    - ROOT
+
+transfer_policy:
+  transfer_output_files: output
+  output_is_directory: true
+  absent_parquet_is_not_declared_individually: true
+  placeholder_parquet_forbidden: true
+  wrapper_shell_options: set_-Eeuo_pipefail
+  final_status_trap_required: true
+  failure_receipt_trap_required: true
+
+legacy_validation:
+  product: /uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_100k_shard003_hh4b_candidates.parquet
+  role: validation_only_never_canonical_v2_input
+  expected_rows: 39
+  join_keys:
+    - normalized_sample
+    - event
+  sample_normalization: remove_trailing__pythia8_delphes_from_canonical_sample
+  exact_integer:
+    - event
+    - n_selected_bjets
+  exact_categorical:
+    - sample_after_suffix_normalization
+  diagnostic_categorical:
+    - pairing
+  floating:
+    - mbb1
+    - mbb2
+    - avg_mbb
+    - delta_mbb
+    - mhh
+    - drbb1
+    - drbb2
+    - j1_pt
+    - j2_pt
+    - j3_pt
+    - j4_pt
+  floating_rtol: 0.0
+  floating_atol: 1.0e-9
+  compare_nonfinite_masks: true
+  accounting:
+    - matched_rows
+    - missing_rows
+    - extra_rows
+  tolerance_mutation_after_results: forbidden
+
+held_job_later_gate_policy:
+  ordered_steps:
+    - verify_job_3654710.0_still_held
+    - archive_final_live_classad_and_logs
+    - call_condor_rm_exactly_once
+    - verify_job_leaves_condor_q
+    - record_removal_receipt
+    - submit_exactly_one_reconstruction_only_retry
+  condor_release_forbidden: true
+  execute_in_this_gate: false

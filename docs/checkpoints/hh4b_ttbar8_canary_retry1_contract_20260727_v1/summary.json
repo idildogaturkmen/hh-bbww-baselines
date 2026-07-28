@@ -1,0 +1,72 @@
+{
+  "contract_name": "freeze_hh4b_ttbar8_exact_regeneration_canary_retry_contract",
+  "counts": {
+    "retry_jobs_described": 1,
+    "retry_jobs_submitted": 0,
+    "scaleout_jobs_submitted": 0
+  },
+  "next_gate": "submit_hh4b_ttbar8_exact_regeneration_canary_retry1",
+  "payload": {
+    "bytes": 10522,
+    "file_members": 8,
+    "missing_writer_path_present": true,
+    "path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_ttbar8_canary_retry1_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry1_payload.tar.gz",
+    "sha256": "3cc059b75cb63d27b57c51dfbd6643397fcb794e8e184ce689b4d905f53fad97"
+  },
+  "preflight": {
+    "condor_dry_run_classads": 1,
+    "condor_dump_classads": 1,
+    "environment": {
+      "awkward": "2.6.4",
+      "imported_scripts": [
+        "reconstruct_hh4b_candidates_v2.py",
+        "write_parquet_from_pickle.py"
+      ],
+      "numpy": "1.26.4",
+      "pandas": "2.2.2",
+      "parquet_backend": "pyarrow",
+      "pyarrow": "15.0.0",
+      "python": "3.11.9",
+      "uproot": "5.3.7"
+    },
+    "required_payload_paths_verified": 6,
+    "writer_smoke_passed": true
+  },
+  "prohibitions_observed": {
+    "candidate_content_opened": false,
+    "delphes_rerun": false,
+    "madgraph_rerun": false,
+    "pythia_rerun": false,
+    "retry_submitted": false,
+    "scaleout_submitted": false,
+    "source_job_released": false,
+    "source_job_removed": false
+  },
+  "retry_campaign": "hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1",
+  "retry_member": "ttbar_100k_shard003",
+  "retry_mode": "canonical72_reconstruction_only_from_returned_root",
+  "retry_seed_provenance": 105003,
+  "returned_root": {
+    "branches": {
+      "Jet.BTag": true,
+      "Jet.Eta": true,
+      "Jet.Flavor": true,
+      "Jet.Mass": true,
+      "Jet.PT": true,
+      "Jet.Phi": true
+    },
+    "bytes": 913864894,
+    "entries": 10000,
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/root/ttbar_100k_shard003_pythia8_delphes.root",
+    "readable": true,
+    "sha256": "127c87510087d164038b7629ea9d5210008cc4cb1473aa9b069a5cd4b859629e",
+    "source_job": "3654710.0",
+    "source_member": "ttbar_100k_shard003",
+    "source_seed": 105003,
+    "tree": "Delphes"
+  },
+  "schema_version": 1,
+  "source_job": "3654710.0",
+  "source_job_status": "held",
+  "status": "hh4b_ttbar8_exact_regeneration_canary_retry_contract_frozen"
+}

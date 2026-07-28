@@ -1,0 +1,38 @@
+{
+  "authoritative_checkpoint_files_verified": {
+    "authoritative_contract": 54,
+    "authoritative_failure": 37,
+    "authoritative_submission": 20
+  },
+  "container_image": "none",
+  "created_utc": "2026-07-28T00:10:10Z",
+  "frozen_retry_environment": {
+    "awkward": "2.6.4",
+    "imported_scripts": [
+      "reconstruct_hh4b_candidates_v2.py",
+      "write_parquet_from_pickle.py"
+    ],
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "parquet_backend": "pyarrow",
+    "pyarrow": "15.0.0",
+    "python": "3.11.9",
+    "uproot": "5.3.7"
+  },
+  "git": {
+    "branch": "delphes-hh4b-production",
+    "head": "4038995254c2bcbcad97d778c63e8e6b0b4c7916",
+    "origin": "4038995254c2bcbcad97d778c63e8e6b0b4c7916"
+  },
+  "host": "cmslpc323.fnal.gov",
+  "lcg_setup": "/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh",
+  "live_held_job": {
+    "cluster": 3654710,
+    "hold_reason_code": 12,
+    "hold_reason_subcode": 2,
+    "proc": 0,
+    "status": 5
+  },
+  "platform": "Linux-5.14.0-687.25.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "preparation_python": "3.9.25 (main, Jul 13 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-14)]"
+}

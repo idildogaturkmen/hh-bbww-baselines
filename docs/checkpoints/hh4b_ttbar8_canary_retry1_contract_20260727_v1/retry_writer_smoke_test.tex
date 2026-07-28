@@ -1,0 +1,14 @@
+\begin{tabular}{lllll}
+\toprule
+check & expected & observed & passed & environment \\
+\midrule
+writer\_exit\_zero & True & True & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+synthetic\_parquet\_readable & True & True & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+provided\_schema\_preserved & True & True & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+provided\_column\_order\_preserved & True & True & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+synthetic\_rows & 2 & 2 & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+synthetic\_columns & ["contract\_id","ordinal","measurement"] & ["contract\_id","ordinal","measurement"] & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+synthetic\_types & \{"contract\_id":"string","measurement":"double","ordinal":"int64"\} & \{"contract\_id":"string","measurement":"double","ordinal":"int64"\} & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+physics\_candidate\_data\_used & False & False & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+\bottomrule
+\end{tabular}

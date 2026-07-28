@@ -1,0 +1,38 @@
+# INERT CONTRACT-ONLY reconstruction retry; do not submit in this gate.
+# Exactly one job consumes only the corrected payload and returned ROOT.
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_ttbar8_canary_retry1.sh
+arguments = ttbar_100k_shard003_pythia8_delphes.root 127c87510087d164038b7629ea9d5210008cc4cb1473aa9b069a5cd4b859629e ttbar_100k_shard003 105003
+request_cpus = 1
+request_memory = 2048MB
+request_disk = 3072MB
++MaxRuntime = 2700
+max_retries = 0
+requirements = False
+hold = True
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+preserve_relative_paths = True
+transfer_input_files = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/outputs/agent_runs/hh4b_ttbar8_canary_retry1_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry1_payload.tar.gz,/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_20260727_v1/members/ttbar_100k_shard003/root/ttbar_100k_shard003_pythia8_delphes.root
+transfer_output_files = output
+transfer_output_remaps = "output=/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1/members/ttbar_100k_shard003"
+log = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1/retry1.$(Cluster).log
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1/retry1.$(Cluster).$(Process).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1/retry1.$(Cluster).$(Process).err
+notification = Never
+getenv = False
+environment = "LC_ALL=C LANG=C"
++JobBatchName = "hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1"
++Campaign = "hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1"
++RetryMember = "ttbar_100k_shard003"
++RetrySeedProvenance = 105003
++SourceJob = "3654710.0"
++RetryMode = "canonical72_reconstruction_only_from_returned_root"
++ReconstructionOnlyRetry = True
++ScaleoutJob = False
++RetryJobsSubmittedAtFreeze = 0
++ScaleoutJobsSubmittedAtFreeze = 0
++DesiredOS = "EL9"
+on_exit_hold = (ExitBySignal == True) || (ExitCode != 0)
+
+queue 1

@@ -1,0 +1,17 @@
+| column | role | canonical_column | comparison | rtol | atol | exact_required | nonfinite_mask_compared |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| sample | join_identity | sample | exact_after_remove_trailing__pythia8_delphes | 0 | 0 | True | False |
+| event | join_key | event | integer_exact | 0 | 0 | True | False |
+| n_selected_bjets | acceptance | n_selected_bjets | integer_exact | 0 | 0 | True | False |
+| pairing | diagnostic_categorical | pairing | categorical_exact_with_predeclared_policy_adjudication | 0 | 0 | False | False |
+| mbb1 | diagnostic_float | mbb1 | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| mbb2 | diagnostic_float | mbb2 | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| avg_mbb | diagnostic_float | avg_mbb | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| delta_mbb | diagnostic_float | delta_mbb | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| mhh | diagnostic_float | mhh | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| drbb1 | diagnostic_float | drbb1 | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| drbb2 | diagnostic_float | drbb2 | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| j1_pt | diagnostic_float | j1_pt | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| j2_pt | diagnostic_float | j2_pt | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| j3_pt | diagnostic_float | j3_pt | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |
+| j4_pt | diagnostic_float | j4_pt | float_tolerance_and_nonfinite_mask | 0.0 | 1e-09 | False | True |

@@ -1,0 +1,11 @@
+role	relative_path	required_on_success	preserved_on_failure	placeholder_forbidden
+canonical_parquet	parquet/ttbar_100k_shard003_pythia8_delphes_canonical72.parquet	True	False	True
+reconstruction_stdout	logs/ttbar_100k_shard003_reconstruction.stdout	True	True	False
+reconstruction_stderr	logs/ttbar_100k_shard003_reconstruction.stderr	True	True	False
+canonical_reconstruction_log	logs/ttbar_100k_shard003_canonical72.log	True	True	False
+environment_report	logs/ttbar_100k_shard003_environment.json	True	True	False
+receipt_json	receipts/ttbar_100k_shard003_receipt.json	True	True	False
+final_status	receipts/ttbar_100k_shard003_final_status.txt	True	True	False
+sha256_manifest	checksums/ttbar_100k_shard003_SHA256SUMS	True	True	False
+schema_audit	audits/schema_audit.json	True	True	False
+entry_candidate_accounting	audits/entry_candidate_accounting.json	True	True	False

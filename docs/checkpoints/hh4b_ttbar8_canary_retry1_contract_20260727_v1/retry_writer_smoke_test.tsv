@@ -1,0 +1,9 @@
+check	expected	observed	passed	environment
+writer_exit_zero	True	True	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+synthetic_parquet_readable	True	True	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+provided_schema_preserved	True	True	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+provided_column_order_preserved	True	True	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+synthetic_rows	2	2	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+synthetic_columns	"[""contract_id"",""ordinal"",""measurement""]"	"[""contract_id"",""ordinal"",""measurement""]"	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+synthetic_types	"{""contract_id"":""string"",""measurement"":""double"",""ordinal"":""int64""}"	"{""contract_id"":""string"",""measurement"":""double"",""ordinal"":""int64""}"	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+physics_candidate_data_used	False	False	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh

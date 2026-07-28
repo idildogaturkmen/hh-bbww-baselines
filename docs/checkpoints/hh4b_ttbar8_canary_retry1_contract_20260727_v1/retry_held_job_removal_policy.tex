@@ -1,0 +1,12 @@
+\begin{tabular}{llll}
+\toprule
+order & action & execute\_in\_this\_gate & required\_before\_next\_action \\
+\midrule
+1 & verify\_job\_3654710.0\_still\_held & False & yes \\
+2 & archive\_final\_live\_classad\_and\_logs & False & yes \\
+3 & call\_condor\_rm\_exactly\_once & False & yes \\
+4 & verify\_job\_leaves\_condor\_q & False & yes \\
+5 & record\_removal\_receipt & False & yes \\
+6 & submit\_exactly\_one\_reconstruction\_only\_retry & False & terminal submission step \\
+\bottomrule
+\end{tabular}

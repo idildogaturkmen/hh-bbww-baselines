@@ -1,0 +1,7 @@
+order	action	execute_in_this_gate	required_before_next_action
+1	verify_job_3654710.0_still_held	False	yes
+2	archive_final_live_classad_and_logs	False	yes
+3	call_condor_rm_exactly_once	False	yes
+4	verify_job_leaves_condor_q	False	yes
+5	record_removal_receipt	False	yes
+6	submit_exactly_one_reconstruction_only_retry	False	terminal submission step

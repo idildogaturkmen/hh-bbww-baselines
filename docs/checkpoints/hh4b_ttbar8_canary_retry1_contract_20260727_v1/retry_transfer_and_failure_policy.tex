@@ -1,0 +1,15 @@
+\begin{tabular}{lll}
+\toprule
+requirement & frozen\_value & verification \\
+\midrule
+top\_level\_output\_created\_before\_checks & True & worker mkdir precedes payload/input checks \\
+shell\_failure\_mode & set -Eeuo pipefail & worker line 3 \\
+final\_status\_always\_written & True & EXIT trap \\
+failure\_receipt\_always\_written & True & EXIT trap \\
+transfer\_existing\_directory & output & submit transfer\_output\_files \\
+mandatory\_individual\_parquet\_transfer & False & directory transfer \\
+placeholder\_parquet & forbidden & wrapper never creates placeholder \\
+wrapper\_nonzero\_without\_valid\_parquet & True & EXIT trap and schema audit \\
+LHE\_HepMC\_new\_ROOT\_transfer & forbidden & output registry \\
+\bottomrule
+\end{tabular}

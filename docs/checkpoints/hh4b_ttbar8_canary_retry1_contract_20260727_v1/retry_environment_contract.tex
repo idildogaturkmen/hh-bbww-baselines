@@ -1,0 +1,17 @@
+\begin{tabular}{lllll}
+\toprule
+component & expected & observed & passed & evidence \\
+\midrule
+python & 3.11.9 & 3.11.9 & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+numpy & 1.26.4 & 1.26.4 & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+awkward & 2.6.4 & 2.6.4 & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+uproot & 5.3.7 & 5.3.7 & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+pandas & 2.2.2 & 2.2.2 & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+parquet\_backend & pyarrow & pyarrow & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+pyarrow & 15.0.0 & 15.0.0 & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+container\_image & none & none & True & original Condor contract specifies no container image; use its frozen CVMFS LCG view \\
+serial\_uproot\_bootstrap & num\_workers=1 & num\_workers=1 & True & payload/bootstrap/sitecustomize.py \\
+local\_python\_module\_dependencies & [] & [] & True & static imports of protected builder and writer \\
+payload\_python\_import\_checks & ["reconstruct\_hh4b\_candidates\_v2.py","write\_parquet\_from\_pickle.py"] & ["reconstruct\_hh4b\_candidates\_v2.py","write\_parquet\_from\_pickle.py"] & True & /cvmfs/sft.cern.ch/lcg/views/LCG\_106/x86\_64-el9-gcc13-opt/setup.sh \\
+\bottomrule
+\end{tabular}

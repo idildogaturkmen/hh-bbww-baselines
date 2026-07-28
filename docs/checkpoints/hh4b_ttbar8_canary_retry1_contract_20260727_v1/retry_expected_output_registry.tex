@@ -1,0 +1,16 @@
+\begin{tabular}{lllll}
+\toprule
+role & relative\_path & required\_on\_success & preserved\_on\_failure & placeholder\_forbidden \\
+\midrule
+canonical\_parquet & parquet/ttbar\_100k\_shard003\_pythia8\_delphes\_canonical72.parquet & True & False & True \\
+reconstruction\_stdout & logs/ttbar\_100k\_shard003\_reconstruction.stdout & True & True & False \\
+reconstruction\_stderr & logs/ttbar\_100k\_shard003\_reconstruction.stderr & True & True & False \\
+canonical\_reconstruction\_log & logs/ttbar\_100k\_shard003\_canonical72.log & True & True & False \\
+environment\_report & logs/ttbar\_100k\_shard003\_environment.json & True & True & False \\
+receipt\_json & receipts/ttbar\_100k\_shard003\_receipt.json & True & True & False \\
+final\_status & receipts/ttbar\_100k\_shard003\_final\_status.txt & True & True & False \\
+sha256\_manifest & checksums/ttbar\_100k\_shard003\_SHA256SUMS & True & True & False \\
+schema\_audit & audits/schema\_audit.json & True & True & False \\
+entry\_candidate\_accounting & audits/entry\_candidate\_accounting.json & True & True & False \\
+\bottomrule
+\end{tabular}

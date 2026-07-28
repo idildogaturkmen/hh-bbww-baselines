@@ -1,0 +1,22 @@
+\begin{tabular}{lllll}
+\toprule
+condition & required & contract\_frozen & verification\_stage & failure\_action \\
+\midrule
+returned\_ROOT\_SHA256\_matches\_frozen\_input & True & True & preparation\_and\_worker & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+ROOT\_entries\_exactly\_10000 & True & True & preparation\_and\_worker & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+missing\_writer\_exact\_path\_present & True & True & payload\_dry\_run\_and\_worker & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+writer\_synthetic\_smoke\_passes & True & True & preparation & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+canonical\_reconstruction\_exits\_zero & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+canonical\_Parquet\_exists\_nonempty & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+canonical\_72\_column\_names\_and\_order\_exact & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+Arrow\_logical\_types\_compatible & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+required\_values\_finite & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+source\_member\_identity\_exact & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+candidate\_keys\_unique & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+duplicate\_candidate\_keys\_zero & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+candidate\_row\_count\_recorded & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+receipt\_complete & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+checksum\_manifest\_complete & True & True & retry\_execution & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+legacy\_comparison\_passes\_frozen\_contract & True & True & post\_return\_validation & nonzero\_retry\_or\_block\_scaleout\_no\_publish \\
+\bottomrule
+\end{tabular}

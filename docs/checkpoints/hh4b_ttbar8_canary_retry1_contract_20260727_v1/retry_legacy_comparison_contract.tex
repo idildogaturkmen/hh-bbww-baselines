@@ -1,0 +1,21 @@
+\begin{tabular}{llllllll}
+\toprule
+column & role & canonical\_column & comparison & rtol & atol & exact\_required & nonfinite\_mask\_compared \\
+\midrule
+sample & join\_identity & sample & exact\_after\_remove\_trailing\_\_pythia8\_delphes & 0 & 0 & True & False \\
+event & join\_key & event & integer\_exact & 0 & 0 & True & False \\
+n\_selected\_bjets & acceptance & n\_selected\_bjets & integer\_exact & 0 & 0 & True & False \\
+pairing & diagnostic\_categorical & pairing & categorical\_exact\_with\_predeclared\_policy\_adjudication & 0 & 0 & False & False \\
+mbb1 & diagnostic\_float & mbb1 & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+mbb2 & diagnostic\_float & mbb2 & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+avg\_mbb & diagnostic\_float & avg\_mbb & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+delta\_mbb & diagnostic\_float & delta\_mbb & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+mhh & diagnostic\_float & mhh & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+drbb1 & diagnostic\_float & drbb1 & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+drbb2 & diagnostic\_float & drbb2 & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+j1\_pt & diagnostic\_float & j1\_pt & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+j2\_pt & diagnostic\_float & j2\_pt & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+j3\_pt & diagnostic\_float & j3\_pt & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+j4\_pt & diagnostic\_float & j4\_pt & float\_tolerance\_and\_nonfinite\_mask & 0.0 & 1e-09 & False & True \\
+\bottomrule
+\end{tabular}

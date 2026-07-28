@@ -1,0 +1,23 @@
+{
+  "authoritative_checkpoints": {
+    "authoritative_contract": "docs/checkpoints/hh4b_ttbar8_exact_regeneration_contract_20260727_v1",
+    "authoritative_failure": "docs/checkpoints/hh4b_ttbar8_exact_regeneration_canary_failure_20260727_v1",
+    "authoritative_submission": "docs/checkpoints/hh4b_ttbar8_exact_regeneration_canary_submission_20260727_v1",
+    "checkpoint_directory": "docs/checkpoints/hh4b_ttbar8_canary_retry1_contract_20260727_v1",
+    "log_directory": "/uscms_data/d3/iturkmen/hh4b_delphes/condor_logs/hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1",
+    "payload": "outputs/agent_runs/hh4b_ttbar8_canary_retry1_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry1_payload.tar.gz",
+    "retained_root_reconstruction_evidence": "docs/checkpoints/hh4b_ttbar27_canonical72_recovery_20260727_v1/ttbar27_execution_attempt_audit.tsv",
+    "return_directory": "/uscms_data/d3/iturkmen/hh4b_delphes/condor_return/hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1/members/ttbar_100k_shard003",
+    "runtime_directory": "outputs/agent_runs/hh4b_ttbar8_canary_retry1_prepare_20260727_v1",
+    "submit_description": "outputs/agent_runs/hh4b_ttbar8_canary_retry1_prepare_20260727_v1/hh4b_ttbar8_exact_regeneration_canary_retry1.sub"
+  },
+  "checkpoint": "hh4b_ttbar8_canary_retry1_contract_20260727_v1",
+  "member": "ttbar_100k_shard003",
+  "next_gate": "submit_hh4b_ttbar8_exact_regeneration_canary_retry1",
+  "retry_campaign": "hh4b_ttbar8_exact_regeneration_canary_retry1_20260727_v1",
+  "retry_jobs_submitted": 0,
+  "scaleout_jobs_submitted": 0,
+  "seed": 105003,
+  "source_job": "3654710.0",
+  "status": "hh4b_ttbar8_exact_regeneration_canary_retry_contract_frozen"
+}

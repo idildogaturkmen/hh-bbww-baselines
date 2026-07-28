@@ -1,0 +1,12 @@
+component	expected	observed	passed	evidence
+python	3.11.9	3.11.9	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+numpy	1.26.4	1.26.4	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+awkward	2.6.4	2.6.4	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+uproot	5.3.7	5.3.7	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+pandas	2.2.2	2.2.2	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+parquet_backend	pyarrow	pyarrow	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+pyarrow	15.0.0	15.0.0	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh
+container_image	none	none	True	original Condor contract specifies no container image; use its frozen CVMFS LCG view
+serial_uproot_bootstrap	num_workers=1	num_workers=1	True	payload/bootstrap/sitecustomize.py
+local_python_module_dependencies	[]	[]	True	static imports of protected builder and writer
+payload_python_import_checks	"[""reconstruct_hh4b_candidates_v2.py"",""write_parquet_from_pickle.py""]"	"[""reconstruct_hh4b_candidates_v2.py"",""write_parquet_from_pickle.py""]"	True	/cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el9-gcc13-opt/setup.sh

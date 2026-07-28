@@ -1,0 +1,7 @@
+\begin{tabular}{llllllllllll}
+\toprule
+request\_cpus & request\_memory\_mb & request\_disk\_mb & max\_runtime\_seconds & successful\_wall\_seconds & determinism\_wall\_seconds & successful\_input\_bytes & current\_input\_bytes & prior\_peak\_memory\_mb & evidence\_path & evidence\_sha256 & rationale \\
+\midrule
+1 & 2048 & 3072 & 2700 & 20.1217 & 11.4628 & 915954310 & 913864894 & 1275 & docs/checkpoints/hh4b\_ttbar27\_canonical72\_recovery\_20260727\_v1/ttbar27\_execution\_attempt\_audit.tsv & 89f3aa1333caf1eb53fc2b0705705ab8e143c85641ded82a77da689fa2ed87a0 & one CPU and 45 minutes reproduce the validated serial retry; 2048 MB exceeds the observed 1275 MB canary peak; 3072 MB exceeds three times the 0.851 GiB immutable ROOT input \\
+\bottomrule
+\end{tabular}
