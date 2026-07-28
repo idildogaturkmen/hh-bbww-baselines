@@ -1,0 +1,19 @@
+{
+  "canonical_output_columns": 72,
+  "empty_member_policy": "synthesize a zero-row canonical-72 table inside the cache only",
+  "evaluation_candidate_access_authorized": false,
+  "exact_members": 261,
+  "ggf_columns_removed_in_cache_only": [
+    "analysis_sample",
+    "source_root",
+    "source_root_index"
+  ],
+  "ggf_provenance_projection_members": 97,
+  "physical_normalization_authorized": false,
+  "schema_version": 1,
+  "source_candidate_rewrite_authorized": false,
+  "status": "hh4b_development_cache_repair_overlay_policy_frozen",
+  "vbf_local_recovery_members": 9,
+  "vbf_recovery_policy": "copy authoritative candidate Parquet from EOS; verify frozen SHA and rows; do not reconstruct or resimulate",
+  "zero_candidate_members": 218
+}

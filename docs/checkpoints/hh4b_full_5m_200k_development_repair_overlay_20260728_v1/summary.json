@@ -1,0 +1,40 @@
+{
+  "cache_actions": {
+    "empty_synthesis_members": 218,
+    "empty_synthesis_rows": 0,
+    "exact_members": 261,
+    "exact_rows": 51803,
+    "ggf_provenance_projection_members": 97,
+    "ggf_provenance_projection_rows": 5938,
+    "vbf_recovered_members": 9,
+    "vbf_recovered_rows": 5645
+  },
+  "controls": {
+    "delphes_runs_executed": 0,
+    "evaluation_candidate_files_opened": 0,
+    "evaluation_candidate_rows_read": 0,
+    "generator_runs_executed": 0,
+    "models_trained": 0,
+    "physical_normalization_performed": false,
+    "scheduler_actions_performed": 0,
+    "scores_calculated": 0,
+    "source_candidate_files_modified": 0
+  },
+  "development_members": 585,
+  "development_rows": 63386,
+  "next_gate": "commit_hh4b_development_cache_repair_overlay_and_materialize_common_cache",
+  "repository_head": "c699aa1a28cc49c924c8553f1ea3aa426ff8971d",
+  "schema_version": 1,
+  "status": "hh4b_development_cache_repair_overlay_validation_pass",
+  "timestamp_utc": "2026-07-28T18:46:15.321854+00:00",
+  "validation": {
+    "ggf_canonical_columns_and_types_exact": true,
+    "ggf_extra_columns_exact": true,
+    "ggf_rows_and_sha256_exact": true,
+    "repair_subset_duplicate_keys": 0,
+    "repair_subset_rows_read": 11583,
+    "vbf_canonical_columns_and_types_exact": true,
+    "vbf_remote_files_recovered": 9,
+    "vbf_rows_and_sha256_exact": true
+  }
+}
