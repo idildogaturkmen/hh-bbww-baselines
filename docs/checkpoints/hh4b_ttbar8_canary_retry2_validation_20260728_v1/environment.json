@@ -1,0 +1,10 @@
+{
+  "awkward": "2.6.4",
+  "numpy": "1.26.4",
+  "pandas": "2.2.2",
+  "parquet_backend": "pyarrow",
+  "portable_environment_sha256": "6f47dbb493681b424342045f38cd514a56dba056e41ce2cce04790d99ce515cd",
+  "pyarrow": "15.0.0",
+  "python": "3.9.25",
+  "uproot": "5.3.7"
+}

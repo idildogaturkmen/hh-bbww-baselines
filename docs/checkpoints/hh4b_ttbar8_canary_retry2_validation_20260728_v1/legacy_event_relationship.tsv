@@ -1,0 +1,2 @@
+canonical_rows	legacy_rows	canonical_unique_event_keys	legacy_unique_event_keys	shared_event_keys	canonical_only_event_keys	legacy_only_event_keys	rowwise_comparison_applicable	interpretation
+38	39	38	39	3	35	36	False	non_event_aligned_validation_reference

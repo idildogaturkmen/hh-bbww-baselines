@@ -1,0 +1,4 @@
+| stage | canonical_ready_members | remaining_exact_regeneration_members |
+| --- | --- | --- |
+| before_retry2 | 19 | 8 |
+| after_retry2_validation | 20 | 7 |

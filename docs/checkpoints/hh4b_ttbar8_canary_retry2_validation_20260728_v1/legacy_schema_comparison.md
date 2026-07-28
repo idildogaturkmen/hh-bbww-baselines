@@ -1,0 +1,74 @@
+| column | canonical_type | legacy_type | shared | profiled |
+| --- | --- | --- | --- | --- |
+| avg_mbb | double | double | True | True |
+| delta_mbb | double | double | True | True |
+| drbb1 | double | double | True | True |
+| drbb2 | double | double | True | True |
+| event | int64 | int64 | True | False |
+| h1_eta | double |  | False | False |
+| h1_phi | double |  | False | False |
+| h1_pt | double |  | False | False |
+| h2_eta | double |  | False | False |
+| h2_phi | double |  | False | False |
+| h2_pt | double |  | False | False |
+| h_delta_eta | double |  | False | False |
+| h_delta_phi | double |  | False | False |
+| h_delta_r | double |  | False | False |
+| h_pt_balance | double |  | False | False |
+| hh_eta | double |  | False | False |
+| hh_phi | double |  | False | False |
+| hh_pt | double |  | False | False |
+| higgs_ordering | string |  | False | False |
+| ht_candidate_jets | double |  | False | False |
+| ht_selected_bjets | double |  | False | False |
+| ht_selected_jets | double |  | False | False |
+| j1_bjet_rank | int64 |  | False | False |
+| j1_btag | double |  | False | False |
+| j1_eta | double |  | False | False |
+| j1_flavor | int64 |  | False | False |
+| j1_mass | double |  | False | False |
+| j1_phi | double |  | False | False |
+| j1_pt | double | double | True | True |
+| j1_raw_index | int64 |  | False | False |
+| j1_selected_index | int64 |  | False | False |
+| j2_bjet_rank | int64 |  | False | False |
+| j2_btag | double |  | False | False |
+| j2_eta | double |  | False | False |
+| j2_flavor | int64 |  | False | False |
+| j2_mass | double |  | False | False |
+| j2_phi | double |  | False | False |
+| j2_pt | double | double | True | True |
+| j2_raw_index | int64 |  | False | False |
+| j2_selected_index | int64 |  | False | False |
+| j3_bjet_rank | int64 |  | False | False |
+| j3_btag | double |  | False | False |
+| j3_eta | double |  | False | False |
+| j3_flavor | int64 |  | False | False |
+| j3_mass | double |  | False | False |
+| j3_phi | double |  | False | False |
+| j3_pt | double | double | True | True |
+| j3_raw_index | int64 |  | False | False |
+| j3_selected_index | int64 |  | False | False |
+| j4_bjet_rank | int64 |  | False | False |
+| j4_btag | double |  | False | False |
+| j4_eta | double |  | False | False |
+| j4_flavor | int64 |  | False | False |
+| j4_mass | double |  | False | False |
+| j4_phi | double |  | False | False |
+| j4_pt | double | double | True | True |
+| j4_raw_index | int64 |  | False | False |
+| j4_selected_index | int64 |  | False | False |
+| mbb1 | double | double | True | True |
+| mbb2 | double | double | True | True |
+| mhh | double | double | True | True |
+| n_extra_selected_bjets | int64 |  | False | False |
+| n_extra_selected_jets | int64 |  | False | False |
+| n_selected_bjets | int64 | int64 | True | True |
+| n_selected_jets | int64 |  | False | False |
+| pairing | string | string | True | True |
+| pairing_combo_bjet_ranks | string |  | False | False |
+| pairing_score_125_125 | double |  | False | False |
+| r_hh | double |  | False | False |
+| r_hh_125_120 | double |  | False | False |
+| r_hh_125_125 | double |  | False | False |
+| sample | string | string | True | False |
