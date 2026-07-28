@@ -1,0 +1,48 @@
+{
+  "campaign_inventory": "docs/checkpoints/hh4b_physical_normalization_provenance_inventory_20260729_v1/campaign_inventory.tsv",
+  "campaign_inventory_sha256": "35d9aa17d236375b63480d53df11a97bc62905f1247aa1cc5743e134b139f167",
+  "campaigns": {
+    "local_legacy_rows": 1,
+    "remote_eos_rows": 53,
+    "representative_remote_stat_passes": 53,
+    "rows": 54,
+    "unique_eos_directories_listed": 23
+  },
+  "controls": {
+    "bundle_contents_indexed": 0,
+    "bundles_downloaded": 0,
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_opened": 0,
+    "models_trained": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "located_metadata": {
+    "artifact_type_campaign_counts": {
+      "generator_stdout_or_summary": 11,
+      "importance_sampling_record": 4,
+      "manifest_or_submission_record": 53
+    },
+    "campaigns_requiring_bundle_content_index": 54,
+    "campaigns_with_complete_sidecars": 0,
+    "eos_directory_entries": 630,
+    "local_file_entries": 2925
+  },
+  "next_gate": "index_one_representative_bundle_per_campaign_without_extracting_event_payloads",
+  "readiness": {
+    "cross_sections_assigned": 0,
+    "generator_artifact_contents_reviewed": 0,
+    "physics_normalization_ready": false,
+    "sum_generator_weights_resolved": 0
+  },
+  "schema_version": 1,
+  "source_commit": "ab7cb7503fd748d6a90c743a53194371fd0ab50d",
+  "source_registry": "docs/checkpoints/hh4b_full_5m_200k_expanded_manifest_split_20260728_v1/source_to_candidate_registry.tsv",
+  "source_registry_sha256": "6a9d50b65ec54ed309636e2adc677dc87c1b2dd0803b506ec43db77398f2da01",
+  "status": "hh4b_physical_normalization_generator_artifact_location_audit_pass",
+  "timestamp_utc": "2026-07-28T23:13:18.876680+00:00"
+}
