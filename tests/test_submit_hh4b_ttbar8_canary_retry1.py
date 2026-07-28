@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import errno
 import hashlib
 import importlib.util
+import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 
@@ -78,6 +81,43 @@ class RetrySubmissionToolTests(unittest.TestCase):
             "repo/scripts/delphes/write_parquet_from_pickle.py",
             MODULE.REQUIRED_PAYLOAD_SUFFIXES,
         )
+
+
+    def test_condor_enoexec_retries_through_bash(self) -> None:
+        completed = subprocess.CompletedProcess(
+            args=["/usr/bin/bash", "-c", "condor_q -version"],
+            returncode=0,
+            stdout="CondorVersion\n",
+            stderr="",
+        )
+
+        with patch.object(
+            MODULE.subprocess,
+            "run",
+            side_effect=[
+                OSError(errno.ENOEXEC, "Exec format error"),
+                completed,
+            ],
+        ) as mocked:
+            result = MODULE.run(("condor_q", "-version"))
+
+        self.assertEqual(result.returncode, 0)
+        self.assertEqual(result.stdout, "CondorVersion\n")
+        self.assertEqual(mocked.call_count, 2)
+
+        fallback_argv = mocked.call_args_list[1].args[0]
+        self.assertEqual(fallback_argv[:2], ["/usr/bin/bash", "-c"])
+        self.assertIn("condor_q", fallback_argv[2])
+        self.assertIn("-version", fallback_argv[2])
+
+    def test_noncondor_enoexec_is_not_shell_dispatched(self) -> None:
+        with patch.object(
+            MODULE.subprocess,
+            "run",
+            side_effect=OSError(errno.ENOEXEC, "Exec format error"),
+        ):
+            with self.assertRaises(OSError):
+                MODULE.run(("unrelated_command",))
 
 
 if __name__ == "__main__":

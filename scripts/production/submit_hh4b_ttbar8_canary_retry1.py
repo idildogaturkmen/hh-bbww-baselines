@@ -4,10 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import errno
 import hashlib
 import json
 import os
 import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -107,17 +109,41 @@ def run(
     cwd: Path = REPO,
     check: bool = True,
 ) -> subprocess.CompletedProcess[str]:
-    proc = subprocess.run(
-        list(args),
-        cwd=cwd,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        check=False,
-    )
+    argv = list(args)
+
+    try:
+        proc = subprocess.run(
+            argv,
+            cwd=cwd,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+    except OSError as exc:
+        # The LPC Condor client commands may be shell-readable wrappers
+        # without a kernel-recognized executable header. Interactive Bash
+        # handles ENOEXEC automatically, while Python subprocess does not.
+        # Restrict the fallback exclusively to condor_* commands.
+        command_name = Path(argv[0]).name if argv else ""
+        if (
+            exc.errno != errno.ENOEXEC
+            or not command_name.startswith("condor_")
+        ):
+            raise
+
+        proc = subprocess.run(
+            ["/usr/bin/bash", "-c", shlex.join(argv)],
+            cwd=cwd,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+
     if check and proc.returncode != 0:
         raise GateError(
-            f"Command failed ({proc.returncode}): {' '.join(args)}\n"
+            f"Command failed ({proc.returncode}): {' '.join(argv)}\n"
             f"STDOUT:\n{proc.stdout}\nSTDERR:\n{proc.stderr}"
         )
     return proc
