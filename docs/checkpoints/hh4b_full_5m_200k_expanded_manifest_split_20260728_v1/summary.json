@@ -1,0 +1,72 @@
+{
+  "candidate_row_metadata": {
+    "candidate_content_opened": 0,
+    "combined": 71284,
+    "development": 63386,
+    "test": 7898
+  },
+  "canonical_closure": {
+    "canonical_non_test_members_before_supplement": 608,
+    "original_development_members": 581,
+    "recovered_ttbar_members": 27,
+    "ttbar_candidate_rows": 1020,
+    "ttbar_unresolved_members": 0
+  },
+  "controls": {
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "models_trained": 0,
+    "physical_normalization_performed": false,
+    "scheduler_actions_performed": 0,
+    "scores_calculated": 0,
+    "sealed_test_candidate_files_opened": 0,
+    "sealed_test_candidate_rows_read": 0,
+    "thresholds_selected": 0
+  },
+  "final_grouped_split": {
+    "development_background_members": 479,
+    "development_members": 585,
+    "development_signal_members": 106,
+    "historically_pristine_test_members": 22,
+    "metadata_selected_test_supplement_members": 23,
+    "original_sealed_test_members": 22,
+    "test_background_members": 41,
+    "test_members": 45,
+    "test_signal_members": 4,
+    "test_supplement_historically_pristine": false,
+    "train_members": 464,
+    "validation_members": 121
+  },
+  "generated_event_accounting": {
+    "development_background": 4615457,
+    "development_signal": 187000,
+    "development_total": 4802457,
+    "test_background": 384543,
+    "test_signal": 13000,
+    "test_total": 397543
+  },
+  "integrity": {
+    "candidate_references_unique": true,
+    "canonical72_schema_frozen": true,
+    "group_ids_unique": true,
+    "source_coverage_complete": true,
+    "source_keys_unique": true,
+    "split_assignment_member_grouped": true,
+    "test_selection_metadata_only": true,
+    "ttbar27_patch_complete": true
+  },
+  "next_gate": "commit_hh4b_full_5m_200k_expanded_manifest_grouped_split_freeze",
+  "physical_normalization_ready": false,
+  "repository_head": "fe704bc72ae246dee6905059c57a882f6a26ce28",
+  "schema_version": 1,
+  "source_population": {
+    "background_generated_events": 5000000,
+    "background_members": 520,
+    "combined_generated_events": 5200000,
+    "members": 630,
+    "signal_generated_events": 200000,
+    "signal_members": 110
+  },
+  "status": "hh4b_full_5m_200k_expanded_manifest_grouped_split_freeze_pass",
+  "timestamp_utc": "2026-07-28T18:11:22.986874+00:00"
+}

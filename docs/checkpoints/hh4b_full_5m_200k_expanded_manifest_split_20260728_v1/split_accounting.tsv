@@ -1,0 +1,7 @@
+final_split	sample_class	members	generated_events	candidate_rows_metadata
+train	background	377	3649873	43825
+train	signal	87	150000	9337
+validation	background	102	965584	7978
+validation	signal	19	37000	2246
+test	background	41	384543	7086
+test	signal	4	13000	812

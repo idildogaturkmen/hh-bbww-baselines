@@ -1,0 +1,28 @@
+{
+  "candidate_access_during_this_freeze": false,
+  "development_policy": {
+    "development_members": 585,
+    "final_evaluation_split": "test",
+    "model_fit_split": "train",
+    "model_selection_split": "validation",
+    "train_members": 464,
+    "validation_members": 121
+  },
+  "group_definition": "one immutable group per source member; no source member may cross splits",
+  "group_id_definition": "first 24 hex characters of SHA256(sample_class|source_index|member_id)",
+  "physical_normalization_authorized": false,
+  "schema_version": 1,
+  "sealed_test_predictions_authorized": false,
+  "status": "hh4b_full_5m_200k_expanded_manifest_grouped_split_policy_frozen",
+  "test_policy": {
+    "existing_sealed_members_preserved": 22,
+    "final_test_members": 45,
+    "metadata_selected_supplement_members": 23,
+    "new_expanded_v2_models_must_exclude_all_45": true,
+    "original_test_historically_sealed": true,
+    "supplement_historically_sealed": false,
+    "supplement_selection_source": "docs/checkpoints/hh4b_ttbar27_canonical72_recovery_20260727_v1/proposed_v2_test_extension.tsv",
+    "supplement_selection_uses_candidate_content": false
+  },
+  "train_validation_policy": "preserve original member-level metadata assignment"
+}
