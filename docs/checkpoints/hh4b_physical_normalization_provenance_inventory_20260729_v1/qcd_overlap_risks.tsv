@@ -1,0 +1,4 @@
+process_a	process_b	risk	required_evidence	status	direct_mc_yield_use_authorized
+qcd_bbbb_general	qcd_bbbb_iht400to600	Potential inclusive-versus-IHT-sliced phase-space overlap.	Exact process cards, run-card phase-space cuts, generator cross sections, and an explicit mutually exclusive stitching rule.	blocking_unresolved	False
+qcd_bbbb_general	qcd_hardqcd	Potential heavy-flavor matrix-element versus inclusive hard-QCD overlap.	Exact process cards, run-card phase-space cuts, generator cross sections, and an explicit mutually exclusive stitching rule.	blocking_unresolved	False
+qcd_bbbb_iht400to600	qcd_hardqcd	Potential IHT-sliced versus hard-QCD overlap.	Exact process cards, run-card phase-space cuts, generator cross sections, and an explicit mutually exclusive stitching rule.	blocking_unresolved	False

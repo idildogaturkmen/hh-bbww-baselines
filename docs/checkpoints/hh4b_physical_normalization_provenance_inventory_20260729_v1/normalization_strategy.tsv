@@ -1,0 +1,26 @@
+sample_class	process_or_mode	strategy	rationale	direct_mc_physics_yield_authorized
+background	bbh_hbb_4fs	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	ggh_hbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	qcd_bbbb_general	data_driven_control_region_primary_mc_projection_secondary	CMS-like primary treatment requires a lower-b-tag control-region transfer; direct QCD MC normalization is diagnostic only until stitching and closure pass.	False
+background	qcd_bbbb_iht400to600	data_driven_control_region_primary_mc_projection_secondary	CMS-like primary treatment requires a lower-b-tag control-region transfer; direct QCD MC normalization is diagnostic only until stitching and closure pass.	False
+background	qcd_hardqcd	data_driven_control_region_primary_mc_projection_secondary	CMS-like primary treatment requires a lower-b-tag control-region transfer; direct QCD MC normalization is diagnostic only until stitching and closure pass.	False
+background	schannel_single_top	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	tchannel_antitop	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	tchannel_top	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	ttbar_inclusive	theory_normalized_mc_with_top_pt_model_review	Use reviewed inclusive ttbar reference cross section and document any differential correction.	False
+background	tth_hbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	tttt	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	ttw	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	ttz_zbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	tw_antitop	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	tw_top	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	vbf_hbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	wh_hbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	ww	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	wwz_zbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	wz_zbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	wzz_zbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	zbbbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+background	zzz_zbb	theory_normalized_mc	Normalize to a reviewed process-matched reference cross section after decay/filter conventions are resolved.	False
+signal	ggf_hh4b	theory_normalized_mc	Normalize generated HH signal to reviewed higher-order reference cross section.	False
+signal	vbf_hh4b	theory_normalized_mc	Normalize generated HH signal to reviewed higher-order reference cross section.	False

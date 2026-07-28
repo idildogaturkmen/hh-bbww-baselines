@@ -1,0 +1,541 @@
+sample_class	process_or_mode	campaign	artifact_type	requirement	purpose	recovered	artifact_path	sha256	review_status
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_pilot10k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	bbh_hbb_4fs	bbh_hbb_4fs_scaleout40k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ggh_hbb	ggh_hbb_pilot10k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ggh_hbb	ggh_hbb_scaleout90k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_pilots_20260720_retry1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	qcd_bbbb_general	unified_background_5m_wavea_proven111_20260720_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_pilots_20260720_retry1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	qcd_bbbb_iht400to600	unified_background_5m_wavea_proven111_20260720_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_pilot50k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	schannel_single_top	unified_background_5m_single_top_scaleout280k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tchannel_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tchannel_top	unified_background_5m_single_top_pilot50k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tchannel_top	unified_background_5m_single_top_scaleout280k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ttbar_inclusive	parquet	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ttbar_inclusive	parquet	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ttbar_inclusive	parquet	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ttbar_inclusive	parquet	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ttbar_inclusive	parquet	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ttbar_inclusive	parquet	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ttbar_inclusive	parquet	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ttbar_inclusive	parquet	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ttbar_inclusive	parquet	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ttbar_inclusive	parquet	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_pilots_20260720_retry1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ttbar_inclusive	unified_background_5m_wavea_proven111_20260720_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tth_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tttt	unified_background_5m_waveb_priority_pilots10k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tttt	unified_background_5m_waveb_priority_scale400k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ttw	unified_background_5m_wavec1_pilot40k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ttw	unified_background_5m_wavec1_scaleout180k_20260721_v2	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ttz_zbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tw_antitop	unified_background_5m_single_top_pilot50k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tw_antitop	unified_background_5m_single_top_scaleout280k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tw_top	unified_background_5m_single_top_pilot50k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	tw_top	unified_background_5m_single_top_scaleout280k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_pilots10k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	vbf_hbb	unified_background_5m_waveb_priority_scale400k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_pilot40k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	wh_hbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ww	unified_background_5m_wavec1_pilot40k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	ww	unified_background_5m_wavec1_scaleout180k_20260721_v2	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	wwz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_pilot40k_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	wz_zbb	unified_background_5m_wavec1_scaleout180k_20260721_v2	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	wzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	zbbbb	unified_background_5m_wavea_pilots_20260720_retry1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	zbbbb	unified_background_5m_wavea_proven111_20260720_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	zbbbb	unified_background_5m_wavea_zbbbb_remaining15_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_pilot10k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+background	zzz_zbb	final_background_triboson_zbb_scaleout40k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_pilot10k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	generator_banner_or_lhe_init	Required	Generator-reported cross section, event-weight strategy, and process metadata.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	proc_card	Required	Exact hard-process definition and decay syntax.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	run_card	Required	Beam energy, cuts, matching/merging, event normalization, and generation settings.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	param_card	Required	Masses, widths, couplings, and decay tables used at generation.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	generator_stdout_or_summary	Required	Cross-section integration result, accepted events, and filter information.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	sum_generator_weights_record	Required	Normalization denominator, including signed-weight handling.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	parton_shower_card	Required	Shower version, tune, forced decays, and matching configuration.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	delphes_card_and_version	Required	Detector-response provenance for the projection.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	importance_sampling_record	Conditional	Required for biased-tail or phase-space-enhanced campaigns.	False			pending
+signal	vbf_hh4b	vbf_hh4b_sm_scaleout90k_20260722_v1	stitching_definition	Conditional	Required for overlapping inclusive, sliced, or filtered campaigns.	False			pending

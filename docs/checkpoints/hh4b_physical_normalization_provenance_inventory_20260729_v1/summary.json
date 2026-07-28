@@ -1,0 +1,36 @@
+{
+  "controls": {
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "models_trained": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "recover_generator_artifacts_and_sumweights_for_each_campaign",
+  "population": {
+    "background_generated_events": 5000000,
+    "background_members": 520,
+    "campaigns": 54,
+    "members": 630,
+    "process_labels": 25,
+    "signal_generated_events": 200000,
+    "signal_members": 110
+  },
+  "readiness": {
+    "cross_sections_assigned": 0,
+    "physics_normalization_ready": false,
+    "processes_physics_ready": 0,
+    "processes_total": 25,
+    "qcd_stitching_resolved": false,
+    "sum_generator_weights_resolved": 0
+  },
+  "schema_version": 1,
+  "source_commit": "1f6e63811f88ac67faf67f5ff554ddbc0a1076d3",
+  "source_registry": "docs/checkpoints/hh4b_full_5m_200k_expanded_manifest_split_20260728_v1/source_to_candidate_registry.tsv",
+  "source_registry_sha256": "6a9d50b65ec54ed309636e2adc677dc87c1b2dd0803b506ec43db77398f2da01",
+  "status": "hh4b_physical_normalization_provenance_inventory_pass",
+  "timestamp_utc": "2026-07-28T23:04:59.000923+00:00"
+}
