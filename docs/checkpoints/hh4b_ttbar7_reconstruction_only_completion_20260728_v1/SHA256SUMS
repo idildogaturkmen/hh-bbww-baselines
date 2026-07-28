@@ -1,0 +1,5 @@
+c1b970a9981063b63cafc823d4630ad588ee5ef67b71c6f7a76a0683e6a8c7e1  ./candidate_manifest.tsv
+9df3b75e03508ec761e8c3b65510365c196d06bc6cac73d3700c776c66b1fe39  ./member_validation_audit.tsv
+3c4afc73b6805ce96a26b463832c481e03cd2b2a3d2c7673e6a89947ee5d9556  ./protected_input_audit.tsv
+30040c359c6e9656719c6e57ffef99d00eac16c3ee91b5851ff37521b8ab1017  ./README.md
+e5a10921781eedbc1e9e391a6cb6cf3baf946db6c3d7ba93cabde607342fecc8  ./summary.json
