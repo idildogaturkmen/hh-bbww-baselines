@@ -1,0 +1,61 @@
+{
+  "cache": {
+    "artifacts": 3,
+    "cache_event_products_committed": 0,
+    "canonical_columns": 72,
+    "combined_rows": 63386,
+    "compression": "zstd",
+    "derived_feature_columns": 9,
+    "global_duplicate_sample_event_keys": 0,
+    "registry_columns": 8,
+    "row_order_sha256": "bc94d8fb78ab383ff02dcbb0730498d623f001a98b603f988a44e01e4957a7be",
+    "total_columns": 89,
+    "train_rows": 53162,
+    "validation_rows": 10224
+  },
+  "controls": {
+    "evaluation_candidate_files_opened": 0,
+    "evaluation_candidate_rows_read": 0,
+    "models_trained": 0,
+    "physical_normalization_performed": false,
+    "scheduler_actions_performed": 0,
+    "scores_calculated": 0,
+    "source_candidate_files_modified": 0,
+    "thresholds_selected": 0
+  },
+  "development_population": {
+    "background_rows": 51803,
+    "candidate_rows_read": 63386,
+    "manifest_members": 585,
+    "nonempty_candidate_members": 367,
+    "signal_rows": 11583,
+    "train_members": 464,
+    "train_rows": 53162,
+    "validation_members": 121,
+    "validation_rows": 10224,
+    "zero_candidate_members": 218
+  },
+  "integrity": {
+    "all_candidate_row_counts_exact": true,
+    "all_canonical_projection_names_order_exact": true,
+    "all_canonical_projection_types_exact": true,
+    "all_nonempty_candidate_files_present": true,
+    "all_nonempty_candidate_sha256_exact": true,
+    "all_numeric_values_finite": true,
+    "cache_round_trip_passed": true,
+    "development_evaluation_member_disjoint": true,
+    "global_development_keys_unique": true,
+    "repair_overlay_applied": true
+  },
+  "next_gate": "commit_hh4b_full_5m_200k_development_common_cache_validation",
+  "physical_normalization_ready": false,
+  "repository_head": "ad07cac0dd40ad217c9c9bd45747ab5c99404ddb",
+  "schema_version": 1,
+  "source_population": {
+    "background_generated_events": 5000000,
+    "combined_generated_events": 5200000,
+    "signal_generated_events": 200000
+  },
+  "status": "hh4b_full_5m_200k_development_common_cache_validation_pass",
+  "timestamp_utc": "2026-07-28T20:15:04.685971+00:00"
+}

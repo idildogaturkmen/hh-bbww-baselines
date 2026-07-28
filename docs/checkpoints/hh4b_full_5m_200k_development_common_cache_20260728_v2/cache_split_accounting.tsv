@@ -1,0 +1,5 @@
+final_split	sample_class	manifest_members	nonempty_members	zero_candidate_members	candidate_rows
+train	background	377	211	166	43825
+train	signal	87	87	0	9337
+validation	background	102	50	52	7978
+validation	signal	19	19	0	2246
