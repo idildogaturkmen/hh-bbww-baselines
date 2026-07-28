@@ -1,0 +1,26 @@
+{
+  "controls": {
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "evaluation_candidate_files_opened": 0,
+    "models_trained": 0,
+    "physical_normalization_performed": false,
+    "scores_calculated": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "implementation": {
+    "cms_control_region_upper_GeV": 55.0,
+    "cms_reference_variable": "r_hh_125_120",
+    "cms_signal_region_threshold_GeV": 30.0,
+    "documentation": "docs/analysis/hh4b_expanded_cut_baseline.md",
+    "optimized_nominal_threshold_GeV": 34.0,
+    "protocol_v2": "configs/baselines/hh4b_expanded_cut_bdt_protocol_v2.json",
+    "runner": "scripts/analysis/run_hh4b_expanded_cut_baseline.py",
+    "targeted_tests": "tests/test_hh4b_expanded_cut_baseline.py"
+  },
+  "next_gate": "execute_hh4b_expanded_cut_baseline_train_only",
+  "repository_head": "44278eb2c20e0afc593538687135d57004912f09",
+  "schema_version": 1,
+  "status": "hh4b_expanded_cut_runner_implementation_pass",
+  "timestamp_utc": "2026-07-28T21:36:08.269013+00:00"
+}

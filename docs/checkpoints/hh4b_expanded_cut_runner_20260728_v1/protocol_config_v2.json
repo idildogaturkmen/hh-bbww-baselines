@@ -1,0 +1,438 @@
+{
+  "cache": {
+    "development_all_cache": {
+      "columns": 89,
+      "path": "outputs/agent_runs/hh4b_full_5m_200k_development_common_cache_20260728_v2/cache/development_all_canonical72_plus_features.parquet",
+      "rows": 63386,
+      "sha256": "bc7f574e84f26efd706b09e92071d86ded5699dfa773268849410cd84c42c707"
+    },
+    "development_train_cache": {
+      "columns": 89,
+      "path": "outputs/agent_runs/hh4b_full_5m_200k_development_common_cache_20260728_v2/cache/development_train_canonical72_plus_features.parquet",
+      "rows": 53162,
+      "sha256": "da5ad0750a98986bf1687b66b223a2851a131fbf86aeb05753a71b84ca5cf6b7"
+    },
+    "development_validation_cache": {
+      "columns": 89,
+      "path": "outputs/agent_runs/hh4b_full_5m_200k_development_common_cache_20260728_v2/cache/development_validation_canonical72_plus_features.parquet",
+      "rows": 10224,
+      "sha256": "1f14ffca2d9fdb954bee07c9652414f34df467e8b47680b2b14b254e0fe2e2a0"
+    }
+  },
+  "categorization": {
+    "boundary_GeV": 450.0,
+    "high_category": "mhh_ge_450_GeV",
+    "low_category": "mhh_lt_450_GeV",
+    "variable": "mhh"
+  },
+  "columns": {
+    "group": "registry_group_id",
+    "label": "registry_training_target",
+    "process_or_mode": "registry_process_or_mode",
+    "sample_class": "registry_sample_class",
+    "split": "registry_final_split"
+  },
+  "controls": {
+    "evaluation_access_authorized": false,
+    "evaluation_cache_authorized": false,
+    "physical_normalization_authorized": false,
+    "physical_significance_authorized": false,
+    "post_validation_reoptimization_authorized": false,
+    "validation_cut_metrics_authorized_before_bdt_freeze": false
+  },
+  "cut_baseline": {
+    "cms_reference": {
+      "control_region": {
+        "lower_GeV": 30.0,
+        "lower_operator": "greater_than_or_equal",
+        "upper_GeV": 55.0,
+        "upper_operator": "less_than"
+      },
+      "name": "cms_reference_rhh30",
+      "outside_geometry": {
+        "operator": "greater_than_or_equal",
+        "threshold_GeV": 55.0
+      },
+      "reference": "CMS-HIG-24-010 resolved-topology geometry",
+      "signal_region": {
+        "operator": "less_than",
+        "threshold_GeV": 30.0
+      }
+    },
+    "exact_cms_reconstruction_claimed": false,
+    "formula": "sqrt((mbb1-125_GeV)^2+(mbb2-120_GeV)^2)",
+    "implementation_scope": "CMS-aligned mass-plane geometry applied to the frozen current Delphes candidate reconstruction",
+    "legacy_protocol_v1_diagnostic": {
+      "nominal_status": false,
+      "threshold_GeV": 34.0,
+      "variable": "r_hh_125_125"
+    },
+    "optimized_nominal": {
+      "current_train_threshold_scan": false,
+      "current_validation_threshold_scan": false,
+      "name": "optimized_train_only_rhh125120_lt34",
+      "operator": "less_than",
+      "threshold_GeV": 34.0,
+      "threshold_source": "previous train-only exact observed-transition scan frozen by scripts/analysis/write_hh4b_exact_rhh_checkpoint.py"
+    },
+    "rounded_alternatives": [
+      {
+        "name": "higher_purity_rhh31p5",
+        "operator": "less_than",
+        "threshold_GeV": 31.5
+      },
+      {
+        "name": "higher_efficiency_rhh35p5",
+        "operator": "less_than",
+        "threshold_GeV": 35.5
+      }
+    ],
+    "status": "cms_mass_plane_geometry_corrected_and_frozen",
+    "variable": "r_hh_125_120"
+  },
+  "development_manifest": {
+    "members": 585,
+    "path": "docs/checkpoints/hh4b_full_5m_200k_expanded_manifest_split_20260728_v1/development_manifest.tsv",
+    "sha256": "9714959c0f0427385de9dca66d9437d4a2b9d10f66c89a68e54fd537a1699b54",
+    "train_members": 464,
+    "validation_members": 121
+  },
+  "development_population": {
+    "background_rows": 51803,
+    "combined_rows": 63386,
+    "members": 585,
+    "signal_rows": 11583,
+    "train_members": 464,
+    "train_rows": 53162,
+    "validation_members": 121,
+    "validation_rows": 10224
+  },
+  "estimator_fixed_parameters": {
+    "booster": "gbtree",
+    "eval_metric": "logloss",
+    "max_bin": 256,
+    "n_jobs": 8,
+    "objective": "binary:logistic",
+    "scale_pos_weight": 1.0,
+    "tree_method": "hist",
+    "verbosity": 0
+  },
+  "models": {
+    "categorized_mass_aware_high_mhh": {
+      "category": "mhh_ge_450_GeV",
+      "feature_set": "mass_aware_34",
+      "features": [
+        "n_selected_jets",
+        "n_selected_bjets",
+        "ht_selected_jets",
+        "ht_selected_bjets",
+        "ht_candidate_jets",
+        "mhh",
+        "hh_pt",
+        "abs_hh_eta",
+        "h1_pt",
+        "abs_h1_eta",
+        "h2_pt",
+        "abs_h2_eta",
+        "abs_h_delta_eta",
+        "abs_h_delta_phi",
+        "h_delta_r",
+        "h_pt_balance",
+        "drbb1",
+        "drbb2",
+        "j1_pt",
+        "abs_j1_eta",
+        "j1_mass",
+        "j2_pt",
+        "abs_j2_eta",
+        "j2_mass",
+        "j3_pt",
+        "abs_j3_eta",
+        "j3_mass",
+        "j4_pt",
+        "abs_j4_eta",
+        "j4_mass",
+        "mbb1",
+        "mbb2",
+        "delta_mbb",
+        "r_hh_125_125"
+      ],
+      "parameters": {
+        "colsample_bytree": 0.75,
+        "gamma": 0.1,
+        "learning_rate": 0.03,
+        "max_depth": 5,
+        "min_child_weight": 7.0,
+        "n_estimators": 400,
+        "reg_alpha": 1.0,
+        "reg_lambda": 1.0,
+        "subsample": 0.75
+      },
+      "random_state": 20260726,
+      "role": "categorized_component"
+    },
+    "categorized_mass_aware_low_mhh": {
+      "category": "mhh_lt_450_GeV",
+      "feature_set": "mass_aware_34",
+      "features": [
+        "n_selected_jets",
+        "n_selected_bjets",
+        "ht_selected_jets",
+        "ht_selected_bjets",
+        "ht_candidate_jets",
+        "mhh",
+        "hh_pt",
+        "abs_hh_eta",
+        "h1_pt",
+        "abs_h1_eta",
+        "h2_pt",
+        "abs_h2_eta",
+        "abs_h_delta_eta",
+        "abs_h_delta_phi",
+        "h_delta_r",
+        "h_pt_balance",
+        "drbb1",
+        "drbb2",
+        "j1_pt",
+        "abs_j1_eta",
+        "j1_mass",
+        "j2_pt",
+        "abs_j2_eta",
+        "j2_mass",
+        "j3_pt",
+        "abs_j3_eta",
+        "j3_mass",
+        "j4_pt",
+        "abs_j4_eta",
+        "j4_mass",
+        "mbb1",
+        "mbb2",
+        "delta_mbb",
+        "r_hh_125_125"
+      ],
+      "parameters": {
+        "colsample_bytree": 0.75,
+        "gamma": 0.0,
+        "learning_rate": 0.05,
+        "max_depth": 2,
+        "min_child_weight": 7.0,
+        "n_estimators": 700,
+        "reg_alpha": 0.0,
+        "reg_lambda": 5.0,
+        "subsample": 1.0
+      },
+      "random_state": 20260726,
+      "role": "categorized_component"
+    },
+    "global_mass_aware": {
+      "feature_set": "mass_aware_34",
+      "features": [
+        "n_selected_jets",
+        "n_selected_bjets",
+        "ht_selected_jets",
+        "ht_selected_bjets",
+        "ht_candidate_jets",
+        "mhh",
+        "hh_pt",
+        "abs_hh_eta",
+        "h1_pt",
+        "abs_h1_eta",
+        "h2_pt",
+        "abs_h2_eta",
+        "abs_h_delta_eta",
+        "abs_h_delta_phi",
+        "h_delta_r",
+        "h_pt_balance",
+        "drbb1",
+        "drbb2",
+        "j1_pt",
+        "abs_j1_eta",
+        "j1_mass",
+        "j2_pt",
+        "abs_j2_eta",
+        "j2_mass",
+        "j3_pt",
+        "abs_j3_eta",
+        "j3_mass",
+        "j4_pt",
+        "abs_j4_eta",
+        "j4_mass",
+        "mbb1",
+        "mbb2",
+        "delta_mbb",
+        "r_hh_125_125"
+      ],
+      "parameters": {
+        "colsample_bytree": 0.75,
+        "gamma": 0.1,
+        "learning_rate": 0.03,
+        "max_depth": 5,
+        "min_child_weight": 7.0,
+        "n_estimators": 400,
+        "reg_alpha": 1.0,
+        "reg_lambda": 1.0,
+        "subsample": 0.75
+      },
+      "random_state": 20260725,
+      "role": "a_priori_nominal_baseline"
+    },
+    "global_mass_plane_blind": {
+      "feature_set": "mass_plane_blind_30",
+      "features": [
+        "n_selected_jets",
+        "n_selected_bjets",
+        "ht_selected_jets",
+        "ht_selected_bjets",
+        "ht_candidate_jets",
+        "mhh",
+        "hh_pt",
+        "abs_hh_eta",
+        "h1_pt",
+        "abs_h1_eta",
+        "h2_pt",
+        "abs_h2_eta",
+        "abs_h_delta_eta",
+        "abs_h_delta_phi",
+        "h_delta_r",
+        "h_pt_balance",
+        "drbb1",
+        "drbb2",
+        "j1_pt",
+        "abs_j1_eta",
+        "j1_mass",
+        "j2_pt",
+        "abs_j2_eta",
+        "j2_mass",
+        "j3_pt",
+        "abs_j3_eta",
+        "j3_mass",
+        "j4_pt",
+        "abs_j4_eta",
+        "j4_mass"
+      ],
+      "parameters": {
+        "colsample_bytree": 0.75,
+        "gamma": 0.1,
+        "learning_rate": 0.03,
+        "max_depth": 5,
+        "min_child_weight": 7.0,
+        "n_estimators": 400,
+        "reg_alpha": 1.0,
+        "reg_lambda": 1.0,
+        "subsample": 0.75
+      },
+      "random_state": 20260725,
+      "role": "mass_plane_ablation"
+    }
+  },
+  "next_gate": "execute_hh4b_expanded_cut_baseline_train_only",
+  "protocol_name": "hh4b_expanded_cut_bdt_protocol_v2",
+  "reported_metrics": [
+    "weighted_roc_auc",
+    "weighted_average_precision",
+    "weighted_signal_efficiency",
+    "weighted_background_efficiency",
+    "weighted_background_rejection",
+    "unweighted_roc_auc",
+    "signal_mode_efficiency",
+    "background_family_efficiency",
+    "score_mass_correlations",
+    "cut_and_bdt_row_counts"
+  ],
+  "repository_head": "44278eb2c20e0afc593538687135d57004912f09",
+  "schema_version": 2,
+  "source_population": {
+    "background_generated_events": 5000000,
+    "combined_generated_events": 5200000,
+    "signal_generated_events": 200000
+  },
+  "status": "hh4b_expanded_cut_bdt_protocol_v2_frozen",
+  "supersedes": {
+    "historical_record_modified": false,
+    "legacy_cut_definition": {
+      "current_train_threshold_scan": false,
+      "current_validation_threshold_scan": false,
+      "name": "fixed_external_r_hh_34",
+      "operator": "less_than",
+      "threshold_GeV": 34.0,
+      "threshold_source": "configs/baselines/hh4b_bdt_validation_selection_v1.yaml",
+      "variable": "r_hh_125_125"
+    },
+    "path": "configs/baselines/hh4b_expanded_cut_bdt_protocol_v1.json",
+    "reason": "Protocol v1 assigned the optimized cut to r_hh_125_125, while the prior exact train-only scan and reviewed mass-plane geometry use r_hh_125_120.",
+    "sha256": "55e03bc9687b7837e36b8dc76b51f6928d0c3d8e448b913f9149f64c52497307"
+  },
+  "train_only_threshold_derivation": {
+    "categorized_thresholds": "derive independently from low/high category train OOF scores",
+    "fold_count": 5,
+    "global_model_thresholds": "derive from global train OOF scores",
+    "group_column": "registry_group_id",
+    "method": "five_fold_stratified_group_oof",
+    "primary_target_definition": "weighted train signal efficiency of optimized_train_only_rhh125120_lt34",
+    "random_state": 20260728,
+    "secondary_target_weighted_signal_efficiencies": [
+      0.3,
+      0.5,
+      0.7
+    ],
+    "validation_labels_used_for_threshold_selection": false
+  },
+  "validation_protocol": {
+    "access_frequency": "exactly_once_after_all_models_and_thresholds_are_frozen",
+    "alternative_models": [
+      "global_mass_plane_blind",
+      "categorized_mass_aware"
+    ],
+    "hyperparameter_reoptimization_after_validation": false,
+    "model_refitting_after_validation": false,
+    "nominal_model_selected_a_priori": "global_mass_aware",
+    "threshold_reoptimization_after_validation": false
+  },
+  "weighting": {
+    "applied_independently_to": [
+      "train",
+      "validation"
+    ],
+    "background_family_mapping": {
+      "bbh_hbb_4fs": "single_higgs",
+      "ggh_hbb": "single_higgs",
+      "qcd_bbbb_general": "qcd_multijet",
+      "qcd_bbbb_iht400to600": "qcd_multijet",
+      "qcd_hardqcd": "qcd_multijet",
+      "schannel_single_top": "single_top",
+      "tchannel_antitop": "single_top",
+      "tchannel_top": "single_top",
+      "ttbar_inclusive": "ttbar",
+      "tth_hbb": "top_associated",
+      "tttt": "top_associated",
+      "ttw": "top_associated",
+      "ttz_zbb": "top_associated",
+      "tw_antitop": "single_top",
+      "tw_top": "single_top",
+      "vbf_hbb": "single_higgs",
+      "wh_hbb": "single_higgs",
+      "ww": "diboson",
+      "wwz_zbb": "triboson",
+      "wz_zbb": "diboson",
+      "wzz_zbb": "triboson",
+      "zbbbb": "zbbbb",
+      "zzz_zbb": "triboson"
+    },
+    "class_total_fraction": {
+      "background": 0.5,
+      "signal": 0.5
+    },
+    "equal_background_family_totals": true,
+    "equal_candidate_bearing_member_totals_within_stratum": true,
+    "equal_signal_mode_totals": true,
+    "name": "split_local_hierarchical_development_balancing_v1",
+    "normalized_mean_row_weight": 1.0,
+    "physical_normalization": false,
+    "signal_mode_mapping": {
+      "ggf_hh4b": "ggf_hh4b",
+      "vbf_hh4b": "vbf_hh4b"
+    },
+    "tolerance": 1e-10,
+    "zero_candidate_member_policy": "retained_in_manifest_no_row_weight"
+  }
+}
