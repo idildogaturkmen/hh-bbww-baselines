@@ -1,0 +1,152 @@
+{
+  "cms_geometry": {
+    "control_region": "30 <= r_hh_125_120 < 55",
+    "exact_cms_reconstruction_claimed": false,
+    "formula": "sqrt((mbb1-125)^2+(mbb2-120)^2)",
+    "maximum_formula_difference": 5.684341886080802e-14,
+    "outside_geometry": "r_hh_125_120 >= 55",
+    "signal_region": "r_hh_125_120 < 30",
+    "variable": "r_hh_125_120"
+  },
+  "controls": {
+    "evaluation_candidate_files_opened": 0,
+    "evaluation_candidate_rows_read": 0,
+    "models_trained": 0,
+    "physical_normalization_performed": false,
+    "scores_calculated": 0,
+    "train_candidate_rows_read": 53162,
+    "validation_candidate_files_opened": 0,
+    "validation_candidate_rows_read": 0
+  },
+  "cut_metrics": {
+    "cms_reference_rhh30": {
+      "balanced_efficiency_proxy": 1.222572810522598,
+      "purity_proxy": 2.7377412407186914,
+      "raw_background_efficiency": 0.1854192812321734,
+      "raw_background_rejection_fraction": 0.8145807187678266,
+      "raw_inverse_background_efficiency": 5.393182377553532,
+      "raw_signal_efficiency": 0.5465352897076149,
+      "selected_background_rows": 8126,
+      "selected_signal_rows": 5103,
+      "weighted_background_efficiency": 0.19941814395502427,
+      "weighted_background_family_efficiencies": {
+        "diboson": 0.125,
+        "qcd_multijet": 0.15288782177345495,
+        "single_higgs": 0.15629978814365855,
+        "single_top": 0.21287610738075136,
+        "top_associated": 0.25460466743401533,
+        "triboson": 0.16666666666666666,
+        "ttbar": 0.28659576103096757,
+        "zbbbb": 0.24041433921068003
+      },
+      "weighted_background_rejection_fraction": 0.8005818560449758,
+      "weighted_inverse_background_efficiency": 5.014588844160213,
+      "weighted_signal_efficiency": 0.5459552768532467,
+      "weighted_signal_mode_efficiencies": {
+        "ggf_hh4b": 0.5686096345600306,
+        "vbf_hh4b": 0.5233009191464627
+      }
+    },
+    "higher_efficiency_rhh35p5": {
+      "balanced_efficiency_proxy": 1.2436769151869527,
+      "purity_proxy": 2.420645095385301,
+      "raw_background_efficiency": 0.2433998859098688,
+      "raw_background_rejection_fraction": 0.7566001140901312,
+      "raw_inverse_background_efficiency": 4.108465360457486,
+      "raw_signal_efficiency": 0.6401413730320231,
+      "selected_background_rows": 10667,
+      "selected_signal_rows": 5977,
+      "weighted_background_efficiency": 0.2639689876490516,
+      "weighted_background_family_efficiencies": {
+        "diboson": 0.125,
+        "qcd_multijet": 0.19205106185160223,
+        "single_higgs": 0.27939988731777254,
+        "single_top": 0.27926020487939995,
+        "top_associated": 0.3162004241670653,
+        "triboson": 0.21815523657628924,
+        "ttbar": 0.3720427235166222,
+        "zbbbb": 0.3296423628836616
+      },
+      "weighted_background_rejection_fraction": 0.7360310123509484,
+      "weighted_inverse_background_efficiency": 3.7883238061643296,
+      "weighted_signal_efficiency": 0.6389752352864998,
+      "weighted_signal_mode_efficiencies": {
+        "ggf_hh4b": 0.6636231682338017,
+        "vbf_hh4b": 0.6143273023391979
+      }
+    },
+    "higher_purity_rhh31p5": {
+      "balanced_efficiency_proxy": 1.2370052135836018,
+      "purity_proxy": 2.667127824758156,
+      "raw_background_efficiency": 0.2012093553907587,
+      "raw_background_rejection_fraction": 0.7987906446092413,
+      "raw_inverse_background_efficiency": 4.969947833975958,
+      "raw_signal_efficiency": 0.5747027953304059,
+      "selected_background_rows": 8818,
+      "selected_signal_rows": 5366,
+      "weighted_background_efficiency": 0.2151074241371972,
+      "weighted_background_family_efficiencies": {
+        "diboson": 0.125,
+        "qcd_multijet": 0.1611694862882882,
+        "single_higgs": 0.18493964452048284,
+        "single_top": 0.2298978283498407,
+        "top_associated": 0.27206036839247877,
+        "triboson": 0.17727272727272728,
+        "ttbar": 0.3067347839601888,
+        "zbbbb": 0.26378455431357123
+      },
+      "weighted_background_rejection_fraction": 0.7848925758628028,
+      "weighted_inverse_background_efficiency": 4.648840011036496,
+      "weighted_signal_efficiency": 0.5737189962283727,
+      "weighted_signal_mode_efficiencies": {
+        "ggf_hh4b": 0.5963636750798141,
+        "vbf_hh4b": 0.5510743173769314
+      }
+    },
+    "optimized_nominal_rhh34": {
+      "balanced_efficiency_proxy": 1.2320328194455596,
+      "purity_proxy": 2.4655648385144864,
+      "raw_background_efficiency": 0.2275185396463206,
+      "raw_background_rejection_fraction": 0.7724814603536794,
+      "raw_inverse_background_efficiency": 4.39524621402066,
+      "raw_signal_efficiency": 0.6166863018100032,
+      "selected_background_rows": 9971,
+      "selected_signal_rows": 5758,
+      "weighted_background_efficiency": 0.24969606481203402,
+      "weighted_background_family_efficiencies": {
+        "diboson": 0.125,
+        "qcd_multijet": 0.18506045496585014,
+        "single_higgs": 0.2691073801701384,
+        "single_top": 0.2640456980240262,
+        "top_associated": 0.30161012393760167,
+        "triboson": 0.1992291334396597,
+        "ttbar": 0.3502224560974067,
+        "zbbbb": 0.30329327186158955
+      },
+      "weighted_background_rejection_fraction": 0.750303935187966,
+      "weighted_inverse_background_efficiency": 4.004868882306091,
+      "weighted_signal_efficiency": 0.6156418377159854,
+      "weighted_signal_mode_efficiencies": {
+        "ggf_hh4b": 0.6385429338472695,
+        "vbf_hh4b": 0.5927407415847012
+      }
+    }
+  },
+  "next_gate": "freeze_train_only_cut_baseline_then_derive_bdt_oof_models",
+  "protocol_path": "configs/baselines/hh4b_expanded_cut_bdt_protocol_v2.json",
+  "protocol_sha256": "cc56783a4a5a19619c9dd69c1c82878a47cdf6ee6b3db24c43ca11f3a60fa636",
+  "schema_version": 1,
+  "source_commit": "c3915bc736e8058d39477e8204457f5a2bdf67de",
+  "status": "hh4b_expanded_cut_baseline_train_only_pass",
+  "train_cache": {
+    "candidate_bearing_members": 298,
+    "manifest_members": 464,
+    "path": "outputs/agent_runs/hh4b_full_5m_200k_development_common_cache_20260728_v2/cache/development_train_canonical72_plus_features.parquet",
+    "rows": 53162,
+    "sha256": "da5ad0750a98986bf1687b66b223a2851a131fbf86aeb05753a71b84ca5cf6b7"
+  },
+  "weighting": {
+    "mean_row_weight": 1.0000000000000002,
+    "physical_normalization": false
+  }
+}

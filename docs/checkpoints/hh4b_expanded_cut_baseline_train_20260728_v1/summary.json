@@ -1,0 +1,41 @@
+{
+  "controls": {
+    "candidate_parquet_files_opened": 0,
+    "evaluation_candidate_files_opened": 0,
+    "models_trained": 0,
+    "official_cms_status_claimed": false,
+    "physical_normalization_performed": false,
+    "thresholds_reoptimized": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "figure_files": 16,
+  "figures": 8,
+  "interpretation": {
+    "cms_reference_balanced_proxy": 1.222572810522598,
+    "higher_efficiency_balanced_proxy": 1.2436769151869527,
+    "higher_purity_balanced_proxy": 1.2370052135836018,
+    "largest_predeclared_balanced_proxy_point": "higher_efficiency_rhh35p5",
+    "nominal_balanced_proxy": 1.2320328194455596,
+    "nominal_cut": "r_hh_125_120 < 34",
+    "nominal_inverse_background_efficiency": 4.004868882306091,
+    "nominal_weighted_background_efficiency": 0.24969606481203402,
+    "nominal_weighted_signal_efficiency": 0.6156418377159854,
+    "post_result_retuning_authorized": false
+  },
+  "next_gate": "commit_expanded_cut_tables_figures_then_implement_bdt_runner",
+  "plot_style": {
+    "cms_inspired_style_applied": true,
+    "latex_math_labels_applied": true,
+    "mplhep_used": false,
+    "official_cms_status_claimed": false
+  },
+  "schema_version": 1,
+  "source_background_rows": 43825,
+  "source_commit": "c3915bc736e8058d39477e8204457f5a2bdf67de",
+  "source_result_status": "hh4b_expanded_cut_baseline_train_only_pass",
+  "source_signal_rows": 9337,
+  "source_train_rows": 53162,
+  "status": "hh4b_expanded_cut_baseline_tables_figures_pass",
+  "tables": 6,
+  "working_points": 4
+}

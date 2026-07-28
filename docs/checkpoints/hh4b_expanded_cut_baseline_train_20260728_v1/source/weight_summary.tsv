@@ -1,0 +1,14 @@
+level	category	parent	candidate_rows	members	candidate_bearing_members	target_hierarchical_fraction	raw_weight_sum	rescale_factor	training_weight_sum	mean_training_weight	physical_normalization	status
+global	all_train_candidates		53162	464	298	1.0	0.9999999999999999	53162.00000000001	53162.00000000001	1.0000000000000002	none_development_balancing_only	pass
+class	signal	all	9337	87	87	0.5	0.49999999999999994	53162.00000000001	26581.000000000004	2.846845881974939	none_development_balancing_only	pass
+class	background	all	43825	377	211	0.5	0.49999999999999994	53162.00000000001	26581.000000000007	0.606525955504849	none_development_balancing_only	pass
+signal_mode	ggf_hh4b	signal	4893	80	80	0.25	0.25	53162.00000000001	13290.500000000004	2.7162272634375646	none_development_balancing_only	pass
+signal_mode	vbf_hh4b	signal	4444	7	7	0.25	0.25	53162.00000000001	13290.500000000002	2.990661566156616	none_development_balancing_only	pass
+background_family	diboson	background	7	6	4	0.0625	0.0625	53162.00000000001	3322.6250000000005	474.66071428571433	none_development_balancing_only	pass
+background_family	qcd_multijet	background	22513	209	47	0.0625	0.06250000000000001	53162.00000000001	3322.6250000000014	0.1475869497623596	none_development_balancing_only	pass
+background_family	single_higgs	background	1098	18	18	0.0625	0.0625	53162.00000000001	3322.625	3.026070127504554	none_development_balancing_only	pass
+background_family	single_top	background	157	21	19	0.0625	0.0625	53162.00000000001	3322.625	21.163216560509554	none_development_balancing_only	pass
+background_family	top_associated	background	11615	12	12	0.0625	0.0625	53162.00000000001	3322.625	0.2860632802410676	none_development_balancing_only	pass
+background_family	triboson	background	146	11	11	0.0625	0.0625	53162.00000000001	3322.625	22.757705479452056	none_development_balancing_only	pass
+background_family	ttbar	background	2745	81	81	0.0625	0.0625	53162.00000000001	3322.6250000000005	1.2104280510018217	none_development_balancing_only	pass
+background_family	zbbbb	background	5544	19	19	0.0625	0.06249999999999999	53162.00000000001	3322.625	0.5993190836940837	none_development_balancing_only	pass
