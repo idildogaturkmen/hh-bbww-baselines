@@ -1,0 +1,63 @@
+{
+  "controls": {
+    "delphes_runs_executed": 0,
+    "generator_runs_executed": 0,
+    "models_trained": 0,
+    "physical_normalization_performed": false,
+    "reconstruction_runs_executed": 0,
+    "scheduler_actions_performed": 0,
+    "scores_calculated": 0,
+    "sealed_test_candidate_files_opened": 0,
+    "sealed_test_candidate_rows_read": 0
+  },
+  "full_source_population": {
+    "background_generated_events": 5000000,
+    "background_members": 520,
+    "combined_generated_events": 5200000,
+    "combined_members": 630,
+    "development_members": 581,
+    "sealed_test_members": 22,
+    "signal_generated_events": 200000,
+    "signal_members": 110
+  },
+  "integrity": {
+    "candidate_row_counts_exact": true,
+    "candidate_sha256_exact": true,
+    "numeric_values_finite": true,
+    "sample_identities_unique_per_member": true,
+    "schema_names_order_exact": true,
+    "schema_types_exact": true,
+    "source_checkpoint_checksums_passed": true
+  },
+  "next_gate": "freeze_hh4b_full_5m_200k_expanded_candidate_manifest_and_grouped_split",
+  "physical_normalization_ready": false,
+  "repository_head": "319337e3ae90c62ceb6c5836a32662cd882ca293",
+  "schema_version": 1,
+  "status": "hh4b_ttbar27_canonical72_closure_pass",
+  "timestamp_utc": "2026-07-28T17:56:22.416186+00:00",
+  "ttbar27": {
+    "candidate_rows": 1020,
+    "candidate_rows_by_classification": {
+      "canonical72_existing_verified": 662,
+      "canonical72_reconstructed_from_exact_regeneration_canary": 38,
+      "canonical72_reconstructed_from_exact_regeneration_scaleout": 291,
+      "canonical72_reconstructed_from_retained_root": 29
+    },
+    "canonical_columns": 72,
+    "canonical_ready_members": 27,
+    "classification_counts": {
+      "canonical72_existing_verified": 18,
+      "canonical72_reconstructed_from_exact_regeneration_canary": 1,
+      "canonical72_reconstructed_from_exact_regeneration_scaleout": 7,
+      "canonical72_reconstructed_from_retained_root": 1
+    },
+    "duplicate_keys_across_members": 0,
+    "duplicate_keys_within_members": 0,
+    "generated_events": 270000,
+    "legacy_candidate_files_opened": 0,
+    "legacy_candidate_rows_included": 0,
+    "members_expected": 27,
+    "members_validated": 27,
+    "unresolved_members": 0
+  }
+}
