@@ -1,0 +1,52 @@
+{
+  "canary": {
+    "archive_members": 116,
+    "artifact_type_member_counts": {
+      "generator_banner_or_lhe_init": 4,
+      "generator_stdout_or_summary": 15,
+      "importance_sampling_record": 11,
+      "parton_shower_card": 14,
+      "proc_card": 4,
+      "run_card": 4
+    },
+    "bundles_copied": 6,
+    "bundles_indexed": 6,
+    "bundles_selected": 6,
+    "event_payload_members": 21,
+    "pn_b3_allowlist_candidates": 39,
+    "provenance_named_members": 48,
+    "temporary_bundle_copies_removed": 6,
+    "transfer_bytes": 5446003162
+  },
+  "controls": {
+    "archive_members_extracted": 0,
+    "bundles_downloaded_to_temporary_scratch": 6,
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_extracted": 0,
+    "event_payload_files_opened": 0,
+    "models_trained": 0,
+    "physical_yields_calculated": 0,
+    "provenance_files_extracted": 0,
+    "temporary_bundle_copies_remaining": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "scale_out_representative_bundle_member_index_to_all_remaining_eos_campaigns",
+  "plan": "docs/checkpoints/hh4b_physical_normalization_generator_artifact_locations_20260729_v1/representative_bundle_index_plan.tsv",
+  "plan_sha256": "64bcbe4e6ec661be03fae513a9acae7b0495656e8fadcdf3b3b62b6276e34015",
+  "readiness": {
+    "archive_schema_canary_complete": true,
+    "cross_sections_assigned": 0,
+    "full_campaign_bundle_index_authorized": true,
+    "physics_normalization_ready": false,
+    "provenance_file_extraction_authorized": false,
+    "sum_generator_weights_resolved": 0
+  },
+  "schema_version": 1,
+  "source_commit": "79dd4e3b602f7ac0ac713183f9bc41f6b30167e0",
+  "status": "hh4b_physical_normalization_bundle_index_canary_pass",
+  "timestamp_utc": "2026-07-28T23:35:29.650399+00:00"
+}

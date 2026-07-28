@@ -1,0 +1,2 @@
+sample_class	process_or_mode	campaign	original_generation_artifacts_recovered	candidate_file_opened	blocking_reason	status
+background	ttbar_inclusive	parquet	False	False	Original cards, logs, and normalization denominator for the legacy 270k-event ttbar source are unresolved.	blocking_legacy_provenance_unresolved
