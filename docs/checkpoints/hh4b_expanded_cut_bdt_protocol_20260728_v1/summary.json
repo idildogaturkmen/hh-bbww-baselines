@@ -1,0 +1,50 @@
+{
+  "baselines": {
+    "a_priori_nominal_model": "global_mass_aware",
+    "categorized_bdt_components": 2,
+    "combined_categorized_models": 1,
+    "fixed_cut": 1,
+    "global_bdt_models": 2
+  },
+  "controls": {
+    "evaluation_candidate_files_opened": 0,
+    "evaluation_candidate_rows_read": 0,
+    "models_trained": 0,
+    "physical_normalization_performed": false,
+    "scheduler_actions_performed": 0,
+    "scores_calculated": 0,
+    "thresholds_derived": 0,
+    "validation_predictions_created": 0
+  },
+  "environment": {
+    "numpy": "1.26.4",
+    "pyarrow": "21.0.0",
+    "python": "3.9.25",
+    "scikit_learn": "1.6.1",
+    "xgboost": "2.1.4"
+  },
+  "next_gate": "execute_hh4b_expanded_cut_bdt_baselines_once",
+  "population": {
+    "development_members": 585,
+    "development_rows": 63386,
+    "evaluation_members_closed": 45,
+    "source_generated_events": 5200000,
+    "train_rows": 53162,
+    "validation_rows": 10224
+  },
+  "protocol": {
+    "category_boundary_GeV": 450.0,
+    "cut_threshold_GeV": 34.0,
+    "global_mass_aware_features": 34,
+    "global_mass_plane_blind_features": 30,
+    "physical_normalization": false,
+    "train_oof_folds": 5,
+    "validation_access_frequency": "exactly_once"
+  },
+  "protocol_config_path": "configs/baselines/hh4b_expanded_cut_bdt_protocol_v1.json",
+  "protocol_config_sha256": "55e03bc9687b7837e36b8dc76b51f6928d0c3d8e448b913f9149f64c52497307",
+  "repository_head": "1176380d46e21f10b731d459542c43a1db35ffba",
+  "schema_version": 1,
+  "status": "hh4b_expanded_cut_bdt_protocol_freeze_pass",
+  "timestamp_utc": "2026-07-28T20:25:04.288640+00:00"
+}

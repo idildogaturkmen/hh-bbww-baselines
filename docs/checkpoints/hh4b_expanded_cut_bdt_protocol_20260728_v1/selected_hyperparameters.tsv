@@ -1,0 +1,5 @@
+model	role	category	feature_set	n_estimators	max_depth	learning_rate	min_child_weight	subsample	colsample_bytree	reg_lambda	reg_alpha	gamma	random_state	status
+global_mass_aware	a_priori_nominal_baseline	global	mass_aware_34	400	5	0.03	7.0	0.75	0.75	1.0	1.0	0.1	20260725	frozen
+global_mass_plane_blind	mass_plane_ablation	global	mass_plane_blind_30	400	5	0.03	7.0	0.75	0.75	1.0	1.0	0.1	20260725	frozen
+categorized_mass_aware_low_mhh	categorized_component	mhh_lt_450_GeV	mass_aware_34	700	2	0.05	7.0	1.0	0.75	5.0	0.0	0.0	20260726	frozen
+categorized_mass_aware_high_mhh	categorized_component	mhh_ge_450_GeV	mass_aware_34	400	5	0.03	7.0	0.75	0.75	1.0	1.0	0.1	20260726	frozen
