@@ -1,0 +1,46 @@
+{
+  "audit": {
+    "all_temporary_files_removed": true,
+    "bundles_size_and_sha256_verified": 20,
+    "campaign_denominators_authorized": 41,
+    "root_branches_read": 20,
+    "root_events_audited": 200000,
+    "root_files_opened": 20,
+    "signed_or_variable_groups": 0,
+    "uniform_positive_groups": 20
+  },
+  "controls": {
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "models_trained": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "root_branches_read": 20,
+    "root_files_opened": 20,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "recover_nonstandard_ggf_and_qcd_denominators_then_build_reference_xsec_registry",
+  "readiness": {
+    "external_reference_cross_sections_authorized": 0,
+    "nonstandard_campaign_denominators_authorized": 0,
+    "physical_weight_application_authorized": false,
+    "physics_normalization_ready": false,
+    "remaining_standard_campaign_denominators_authorized": 41,
+    "remaining_standard_group_audit_complete": true,
+    "remaining_standard_groups_authorized": 20,
+    "train_triboson_denominators_already_authorized": 3
+  },
+  "schema_version": 1,
+  "selection": {
+    "existing_train_triboson_denominators": 3,
+    "remaining_standard_campaigns": 41,
+    "remaining_standard_groups": 20,
+    "representative_train_root_files_opened": 20
+  },
+  "source_commit": "2f1563f40ae1a8ec007c628a2bdfaaae3ea2256e",
+  "status": "hh4b_remaining_standard_group_weight_convention_audit_pass",
+  "timestamp_utc": "2026-07-29T16:07:47.968350+00:00"
+}
