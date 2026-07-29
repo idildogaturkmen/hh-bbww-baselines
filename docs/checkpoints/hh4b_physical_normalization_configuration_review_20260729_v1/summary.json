@@ -1,0 +1,60 @@
+{
+  "controls": {
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_extracted": 0,
+    "event_payload_files_opened": 0,
+    "models_trained": 0,
+    "normalization_denominators_authorized": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "inputs": {
+    "campaign_inventory": "docs/checkpoints/hh4b_physical_normalization_provenance_inventory_20260729_v1/campaign_inventory.tsv",
+    "campaign_inventory_sha256": "35d9aa17d236375b63480d53df11a97bc62905f1247aa1cc5743e134b139f167",
+    "pn_c1_campaign_parse": "docs/checkpoints/hh4b_physical_normalization_generator_parse_20260729_v1/campaign_generator_parse.tsv",
+    "pn_c1_campaign_parse_sha256": "6beed7b609709b9bffdc2281b89a75988acd179b94a291a192f4a80266581125",
+    "provenance_archive": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/normalization_provenance_files.tar.gz",
+    "provenance_archive_sha256": "56eb0beaed7aa2a17065252f8ce64dfe8c7344a40ee020c52c47d969d78d82f0",
+    "provenance_manifest": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/provenance_content_manifest.tsv",
+    "provenance_manifest_sha256": "9e89913daebd84d65bf75df0860ab8a89820a86fc58692c6c33016b9f792a317"
+  },
+  "next_gate": "freeze_campaign_equivalence_decay_filter_beam_and_denominator_conventions_fail_closed",
+  "readiness": {
+    "campaign_equivalence_authorized": 0,
+    "decay_conventions_authorized": 0,
+    "external_reference_cross_sections_authorized": 0,
+    "filter_efficiencies_authorized": 0,
+    "normalization_denominators_authorized": 0,
+    "physics_normalization_ready": false,
+    "qcd_stitching_resolved": false,
+    "source_aware_configuration_review_complete": true
+  },
+  "schema_version": 1,
+  "source_aware_parse": {
+    "campaigns_with_beam_energy_candidates": 47,
+    "campaigns_with_forced_decay_candidates": 0,
+    "campaigns_with_pythia_settings": 51,
+    "configuration_equivalence_candidate_groups": 47,
+    "eos_campaigns": 53,
+    "forced_decay_candidates": 0,
+    "nonstandard_or_incomplete_campaigns": 6,
+    "proc_card_files": 47,
+    "process_card_commands": 416,
+    "provenance_files_verified": 547,
+    "pythia_files": 145,
+    "pythia_settings": 1109,
+    "qcd_campaigns_with_sampling_or_overlap_evidence": 8,
+    "qcd_sampling_and_overlap_candidates": 138,
+    "run_card_files": 47,
+    "run_card_settings": 2115,
+    "standard_card_campaigns": 47,
+    "unresolved_review_fields": 242
+  },
+  "source_commit": "d9b7572969aa8b6f44aa9fde93df71191b157309",
+  "status": "hh4b_physical_normalization_configuration_review_pass",
+  "timestamp_utc": "2026-07-29T03:13:51.936968+00:00"
+}
