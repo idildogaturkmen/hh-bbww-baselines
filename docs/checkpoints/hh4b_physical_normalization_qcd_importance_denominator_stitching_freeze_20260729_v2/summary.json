@@ -1,0 +1,54 @@
+{
+  "controls": {
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "evaluation_candidate_files_opened": 0,
+    "external_reference_cross_sections_assigned": 0,
+    "hepmc_files_opened": 0,
+    "lhe_files_opened": 0,
+    "models_trained": 0,
+    "parquet_files_opened": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "root_files_opened": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "inventory": {
+    "campaign_bin_groups": 25,
+    "diagnostic_campaigns": 1,
+    "diagnostic_generated_events": 10000,
+    "diagnostic_source_bundles": 1,
+    "nominal_exclusive_bins": 8,
+    "production_campaigns": 3,
+    "production_generated_events": 2500000,
+    "production_source_bundles": 260,
+    "qcd_campaigns": 4,
+    "qcd_generated_events": 2510000,
+    "qcd_source_bundles": 261
+  },
+  "next_gate": "materialize_qcd_train_generator_weight_sidecars_then_build_process_reference_cross_section_registry",
+  "normalization": {
+    "exclusive_bins_authorized": 8,
+    "per_event_generator_weight_transport_required": true,
+    "production_shard_denominators_authorized": 260,
+    "testfill_shards_excluded": 1,
+    "uniform_positive_production_shards": 88,
+    "unresolved_issue_rows": 0,
+    "unresolved_production_shards": 0,
+    "variable_positive_production_shards": 172
+  },
+  "readiness": {
+    "external_reference_cross_section_registry_complete": false,
+    "physical_weight_application_authorized": false,
+    "physics_normalization_ready": false,
+    "qcd_direct_mc_role": "secondary_closure_and_projection_only",
+    "qcd_exclusive_stitching_authorized": true,
+    "qcd_importance_denominator_gate_complete": true,
+    "qcd_primary_multijet_role": "lower_btag_simulation_pseudodata_transfer"
+  },
+  "schema_version": 1,
+  "source_commit": "6af662689a715bb83a5166f138785b4132822410",
+  "status": "hh4b_qcd_importance_denominator_stitching_freeze_pass",
+  "timestamp_utc": "2026-07-29T20:55:47.427600+00:00"
+}

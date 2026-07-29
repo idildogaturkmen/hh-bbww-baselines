@@ -1,0 +1,11 @@
+{
+  "exclusive_bins_authorized": 8,
+  "next_gate": "materialize_qcd_train_generator_weight_sidecars_then_build_process_reference_cross_section_registry",
+  "physical_weight_application_authorized": false,
+  "production_shard_denominators_authorized": 260,
+  "qcd_stitching_authorized": true,
+  "status": "pn_c4e_postrun_validation_pass",
+  "uniform_positive_production_shards": 88,
+  "unresolved_qcd_issues": 0,
+  "variable_positive_production_shards": 172
+}

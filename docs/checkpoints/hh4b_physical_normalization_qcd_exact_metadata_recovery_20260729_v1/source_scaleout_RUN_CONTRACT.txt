@@ -1,0 +1,14 @@
+schema_version=1
+repository=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines
+branch=delphes-hh4b-production
+expected_head=6af662689a715bb83a5166f138785b4132822410
+targets=/uscms/home/iturkmen/pn_c4f_qcd_exact_metadata_recovery_targets_20260729.tsv
+targets_sha256=7a973697237ba89881d63cff9d3f3ef084d6702413e020ac8c8e173a39036373
+local_audit=/uscms/home/iturkmen/pn_c4f_local_qcd_exact_metadata_recovery_audit_20260729_v1/summary.json
+canary=/uscms/home/iturkmen/pn_c4f_qcd_bundle_metadata_canary_20260729_v3
+source_checkpoint=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_physical_normalization_nonstandard_source_metadata_closure_20260729_v1
+structured_metadata=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_physical_normalization_nonstandard_source_metadata_closure_20260729_v1/structured_nonstandard_metadata_candidates.tsv
+eos_host=root://cmseos.fnal.gov
+required_targets=257
+payload_opening_authorized=false
+normalization_authorized=false

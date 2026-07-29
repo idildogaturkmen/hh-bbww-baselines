@@ -1,0 +1,18 @@
+PN-c4f exact QCD bundle-metadata scale-out
+============================================
+
+Recovery targets: 257
+Complete exact metadata candidates: 257
+Unresolved targets: 0
+Conflicting targets: 0
+Recovered generated events: 2470000
+Variable-positive shards: 169
+Uniform-positive shards: 88
+Event payload files opened: 0
+Normalization denominators authorized: 0
+Physical weights calculated: 0
+Physical yields calculated: 0
+
+NEXT_GATE: merge_recovered_qcd_metadata_and_rerun_pn_c4e_denominator_stitching_freeze
+
+PN_C4F_QCD_BUNDLE_METADATA_SCALEOUT_PASS

@@ -1,0 +1,6 @@
+policy_name	policy_value	authorized	rationale
+exclusive_pthat_intervals	[50,75),[75,100),[100,200),[200,300),[300,500),[500,700),[700,1000),[1000,infinity)	True	Pythia HardQCD samples are generated in explicit nonoverlapping pTHat intervals; boundary ownership is lower-inclusive and upper-exclusive
+production_extension_combination	pool all three nominal production campaigns within each pTHat bin; weight each shard by n_events_shard/N_events_bin and sigmaGen_shard/sumw_shard	True	each campaign is an independent extension of the same physical bin, not an additional process cross section
+testfill_policy	exclude qcd_hardqcd_importance_testfill_bin3_10k_20260717 from nominal production	True	the test-fill sample duplicates the [200,300) production bin
+other_qcd_family_policy	do not sum qcd_hardqcd with qcd_bbbb_general or qcd_bbbb_iht400to600 in one nominal prediction	True	the samples have overlapping phase space and different generator logic
+cms_style_analysis_role	stitched direct hard-QCD MC is secondary closure/projection only; primary multijet estimate uses lower-b-tag simulation pseudo-data transfer	True	preserves the CMS-style data-driven multijet architecture in a Delphes study

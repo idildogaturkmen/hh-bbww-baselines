@@ -1,0 +1,50 @@
+{
+  "controls": {
+    "candidate_files_opened": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_extracted": 0,
+    "event_payload_files_opened": 0,
+    "hepmc_files_opened": 0,
+    "lhe_files_opened": 0,
+    "normalization_denominators_authorized": 0,
+    "parquet_files_opened": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "root_files_opened": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "merge_recovered_qcd_metadata_and_rerun_pn_c4e_denominator_stitching_freeze",
+  "readiness": {
+    "physical_weight_application_authorized": false,
+    "qcd_denominator_stitching_authorized": false,
+    "recovered_metadata_ready_for_registry_merge": true
+  },
+  "recovery": {
+    "bin_counts": {
+      "00": 132,
+      "01": 61,
+      "02": 39,
+      "03": 5,
+      "04": 5,
+      "05": 5,
+      "06": 5,
+      "07": 5
+    },
+    "campaign_counts": {
+      "qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718": 149,
+      "qcd_hardqcd_importance_adaptive500k_phys_20260717_0022": 53,
+      "qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717": 55
+    },
+    "complete_exact_metadata_candidates": 257,
+    "conflicting_targets": 0,
+    "recovered_generated_events": 2470000,
+    "targets": 257,
+    "uniform_positive_shards": 88,
+    "unresolved_targets": 0,
+    "variable_positive_shards": 169
+  },
+  "schema_version": 1,
+  "source_commit": "6af662689a715bb83a5166f138785b4132822410",
+  "status": "qcd_exact_small_bundle_provenance_scaleout_complete",
+  "timestamp_utc": "2026-07-29T20:16:26.333347+00:00"
+}

@@ -1,0 +1,55 @@
+{
+  "controls": {
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "evaluation_candidate_files_opened": 0,
+    "external_reference_cross_sections_assigned": 0,
+    "hepmc_files_opened": 0,
+    "lhe_files_opened": 0,
+    "models_trained": 0,
+    "parquet_files_opened": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "root_files_opened": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "inventory": {
+    "diagnostic_source_bundles": 1,
+    "merged_complete_production_shards": 260,
+    "merged_complete_qcd_shards": 261,
+    "merged_diagnostic_generated_events": 10000,
+    "merged_production_generated_events": 2500000,
+    "merged_qcd_generated_events": 2510000,
+    "preexisting_complete_production_shards": 3,
+    "preexisting_complete_qcd_shards": 4,
+    "production_source_bundles": 260,
+    "qcd_source_bundles": 261,
+    "recovered_generated_events": 2470000,
+    "recovered_production_shards": 257,
+    "recovered_uniform_positive_shards": 88,
+    "recovered_variable_positive_shards": 169,
+    "retained_base_metadata_rows": 1772,
+    "superseded_partial_base_metadata_rows": 1550
+  },
+  "next_gate": "rerun_pn_c4e_qcd_denominator_and_stitching_freeze",
+  "readiness": {
+    "all_260_production_qcd_metadata_records_complete": true,
+    "all_261_qcd_metadata_records_complete": true,
+    "identity_mismatches": 0,
+    "metadata_conflicts": 0,
+    "normalization_denominators_authorized": 0,
+    "physical_weight_application_authorized": false,
+    "qcd_exclusive_stitching_authorized": false
+  },
+  "scaleout_summary_sha256": "fe5c93435fe36aeb73b20e8476870896dae7d7f2176a7a90f5993810d80bde86",
+  "schema_version": 1,
+  "source_commit": "6af662689a715bb83a5166f138785b4132822410",
+  "status": "hh4b_qcd_exact_metadata_recovery_merge_pass",
+  "timestamp_utc": "2026-07-29T20:55:47.106784+00:00"
+}
+ALL_257_RECOVERED_QCD_SHARD_METADATA_RECORDS_MERGED_PASS
+ALL_261_QCD_SOURCE_METADATA_RECORDS_COMPLETE_PASS
+ALL_260_PRODUCTION_QCD_METADATA_RECORDS_COMPLETE_PASS
+NO_NORMALIZATION_DENOMINATOR_OR_PHYSICAL_WEIGHT_AUTHORIZED
+HH4B_QCD_EXACT_METADATA_RECOVERY_MERGE_PASS

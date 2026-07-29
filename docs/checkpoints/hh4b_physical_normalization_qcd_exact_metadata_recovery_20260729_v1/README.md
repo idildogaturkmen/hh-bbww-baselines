@@ -1,0 +1,5 @@
+# HH4b exact hard-QCD metadata recovery merge
+
+This checkpoint merges the exact small-provenance metadata recovered for 257 previously unresolved physical hard-QCD shards with the four QCD shards that already had exact metadata: three nominal production shards and the excluded diagnostic test-fill shard.
+
+For the 257 recovered tags, older partial PN-c4a required-field rows are preserved in `superseded_partial_base_metadata.tsv` but do not participate in duplicate-value resolution. The recovered records independently passed exact campaign, bundle-path, bin, shard, seed, and pTHat identity checks against the frozen ledger. All 261 QCD source identities now have exact `n_events`, `sigma_gen_pb`, generator-weight sums, squared-weight sums, weight ranges, shard/seed identity, and pTHat bounds. All 260 physical production shards are metadata-complete. This merge authorizes no denominator, stitching coefficient, physical weight, yield, candidate read, model, or threshold. Those decisions remain delegated to the PN-c4e denominator-and-stitching freeze.
