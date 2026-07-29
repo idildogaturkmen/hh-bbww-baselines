@@ -1,0 +1,4 @@
+search_root	exists	files_considered	searchable_files	files_read	filename_matches	content_matches	errors	status
+/uscms_data/d3/iturkmen/repos/hh-bbww-baselines	True	12430	4728	4727	179	7462	1	approved_root_search_complete
+/uscms_data/d3/iturkmen/hh4b_delphes	True	43218	9952	9952	1636	1836	0	approved_root_search_complete
+/uscms/homes/i/iturkmen	True	15327	10232	10231	0	6	1	approved_root_search_complete

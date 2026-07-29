@@ -1,0 +1,55 @@
+{
+  "audit": {
+    "approved_search_roots": 3,
+    "approved_search_roots_present": 3,
+    "campaigns_with_negative_weight_text_evidence": 0,
+    "campaigns_with_structured_denominator_candidates": 53,
+    "campaigns_with_unweighted_text_evidence": 47,
+    "eos_campaigns": 53,
+    "local_source_recovery_candidate_rows": 11119,
+    "nonstandard_campaigns": 6,
+    "provenance_files_verified": 547,
+    "standard_campaigns": 47,
+    "structured_candidate_rows": 129,
+    "text_evidence_rows": 569
+  },
+  "controls": {
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_extracted": 0,
+    "event_payload_files_opened": 0,
+    "models_trained": 0,
+    "normalization_denominators_authorized": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "inputs": {
+    "campaign_inventory": "docs/checkpoints/hh4b_physical_normalization_provenance_inventory_20260729_v1/campaign_inventory.tsv",
+    "campaign_inventory_sha256": "35d9aa17d236375b63480d53df11a97bc62905f1247aa1cc5743e134b139f167",
+    "denominator_fail_closed": "docs/checkpoints/hh4b_physical_normalization_card_only_convention_freeze_20260729_v1/normalization_denominator_fail_closed.tsv",
+    "denominator_fail_closed_sha256": "b1b9e84653ff80869bc0f0b657a17f7edd49f05b4e674201521bcc391878494c",
+    "nonstandard_blockers": "docs/checkpoints/hh4b_physical_normalization_card_only_convention_freeze_20260729_v1/nonstandard_campaign_blockers.tsv",
+    "nonstandard_blockers_sha256": "62fd09428a68af30c3b38faf087c53bfcb149f798a29a94839d861a88518e522",
+    "provenance_archive": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/normalization_provenance_files.tar.gz",
+    "provenance_archive_sha256": "56eb0beaed7aa2a17065252f8ce64dfe8c7344a40ee020c52c47d969d78d82f0",
+    "provenance_manifest": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/provenance_content_manifest.tsv",
+    "provenance_manifest_sha256": "9e89913daebd84d65bf75df0860ab8a89820a86fc58692c6c33016b9f792a317"
+  },
+  "next_gate": "review_denominator_evidence_then_run_controlled_standard_weight_canary_and_nonstandard_source_recovery",
+  "readiness": {
+    "denominator_evidence_audit_complete": true,
+    "external_reference_cross_sections_authorized": 0,
+    "generator_payload_access_authorized": 0,
+    "nonstandard_campaign_denominators_authorized": 0,
+    "physics_normalization_ready": false,
+    "qcd_stitching_resolved": false,
+    "standard_campaign_denominators_authorized": 0
+  },
+  "schema_version": 1,
+  "source_commit": "d757144cdb633b0697e007f3520a072aaaf6e8aa",
+  "status": "hh4b_physical_normalization_denominator_evidence_audit_pass",
+  "timestamp_utc": "2026-07-29T03:41:15.720597+00:00"
+}
