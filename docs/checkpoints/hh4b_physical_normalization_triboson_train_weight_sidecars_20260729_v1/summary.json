@@ -1,0 +1,48 @@
+{
+  "controls": {
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "models_trained": 0,
+    "normalization_denominators_authorized": 3,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "root_branches_read": 12,
+    "root_files_opened": 12,
+    "source_candidate_files_modified": 0,
+    "thresholds_selected": 0,
+    "train_candidate_files_opened": 12,
+    "train_candidate_rows_read": 159,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "scale_weight_convention_audit_to_remaining_20_standard_configuration_groups",
+  "readiness": {
+    "external_reference_cross_sections_authorized": 0,
+    "nonstandard_campaign_denominators_authorized": 0,
+    "other_standard_campaign_denominators_authorized": 0,
+    "physical_weight_application_authorized": false,
+    "physics_normalization_ready": false,
+    "train_triboson_denominators_authorized": 3,
+    "train_triboson_event_weight_transport_proven": true,
+    "validation_triboson_denominators_authorized": 0
+  },
+  "schema_version": 1,
+  "selection": {
+    "train_campaigns": 3,
+    "train_candidate_files_opened": 12,
+    "train_candidate_rows_joined": 159,
+    "train_root_events_materialized": 40000,
+    "train_source_files": 12,
+    "validation_source_files_recorded_but_unopened": 3
+  },
+  "source_commit": "42792bb644b000e77be36671a1dcbd5f4f444441",
+  "status": "hh4b_triboson_train_weight_sidecar_and_denominator_freeze_pass",
+  "timestamp_utc": "2026-07-29T05:41:56.172369+00:00",
+  "transport": {
+    "all_temporary_files_removed": true,
+    "candidate_negative_weight_rows": 0,
+    "candidate_to_sidecar_joins_exact": 12,
+    "sidecar_rows": 40000,
+    "sidecars_materialized": 12,
+    "source_candidates_modified": 0
+  }
+}
