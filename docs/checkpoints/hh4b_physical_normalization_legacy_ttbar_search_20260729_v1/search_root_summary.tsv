@@ -1,0 +1,4 @@
+search_root	exists	directories_visited	files_stat_checked	small_text_files_opened	event_payload_files_stat_only	status
+/uscms_data/d3/iturkmen/hh4b_delphes	True	2899	43218	19346	2037	search_root_complete
+/uscms_data/d3/iturkmen/repos/hh-bbww-baselines	True	1471	12356	7000	321	search_root_complete
+/uscms/homes/i/iturkmen	True	3889	15310	10838	5	search_root_complete

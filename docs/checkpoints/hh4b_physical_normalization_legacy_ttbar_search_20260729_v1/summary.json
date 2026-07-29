@@ -1,0 +1,55 @@
+{
+  "controls": {
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_extracted": 0,
+    "event_payload_files_opened": 0,
+    "legacy_artifact_files_copied": 0,
+    "models_trained": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "manually_review_candidates_and_recover_missing_artifacts",
+  "readiness": {
+    "cross_sections_assigned": 0,
+    "eos_provenance_ready_for_parsing": true,
+    "legacy_ttbar_candidate_content_opened": false,
+    "legacy_ttbar_physics_weight_authorized": false,
+    "legacy_ttbar_provenance_review_complete": false,
+    "physics_normalization_ready": false,
+    "sum_generator_weights_resolved": 0
+  },
+  "recovery_plan": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/legacy_ttbar_recovery_plan.tsv",
+  "recovery_plan_sha256": "6f3adb2450a0479dd8e5b89fd3b83b89890090035657e38e1e627cabf339a3bb",
+  "schema_version": 1,
+  "search": {
+    "associated_artifact_candidates": 518,
+    "candidate_required_artifact_types": [
+      "generator_banner",
+      "parton_shower_card",
+      "generator_log_or_summary",
+      "normalization_denominator_evidence"
+    ],
+    "directories_visited": 8259,
+    "event_payload_files_stat_only": 2363,
+    "files_stat_checked": 70884,
+    "legacy_filename_matches": 364,
+    "legacy_named_directories": 115,
+    "legacy_text_reference_matches": 792,
+    "missing_required_artifact_types": [
+      "proc_card",
+      "run_card"
+    ],
+    "outcome": "legacy_provenance_partially_located",
+    "roots": 3,
+    "roots_existing": 3,
+    "small_text_files_opened": 37184,
+    "text_bytes_scanned": 1361000134
+  },
+  "source_commit": "79f14e7a1664adf3e717d73ac39299e49e04fc46",
+  "status": "hh4b_physical_normalization_legacy_ttbar_search_pass",
+  "timestamp_utc": "2026-07-29T00:25:30.191502+00:00"
+}

@@ -1,0 +1,11 @@
+artifact_type	required	associated_candidates	strong_path_associated_candidates	resolved	resolution_reason	status
+generator_banner	True	2	0	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	candidate_evidence_located
+proc_card	True	0	0	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	blocking_not_located
+run_card	True	0	0	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	blocking_not_located
+parton_shower_card	True	18	18	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	candidate_evidence_located
+generator_log_or_summary	True	368	138	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	candidate_evidence_located
+normalization_denominator_evidence	True	72	2	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	candidate_evidence_located
+generation_driver	False	47	3	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	candidate_evidence_located
+delphes_card_or_log	False	26	26	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	candidate_evidence_located
+provenance_metadata	False	10	0	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	candidate_evidence_located
+submission_or_receipt	False	34	10	False	Candidate paths require manual identity and content review; no artifact is accepted automatically.	candidate_evidence_located
