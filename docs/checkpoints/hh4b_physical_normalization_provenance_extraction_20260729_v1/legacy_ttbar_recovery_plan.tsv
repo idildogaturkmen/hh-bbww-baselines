@@ -1,0 +1,2 @@
+process_or_mode	legacy_campaign	candidate_reference	candidate_content_access_authorized	search_roots	required_artifacts	recovery_status
+ttbar_inclusive	parquet	/uscms_data/d3/iturkmen/hh4b_delphes/parquet/ttbar_100k_shard000_hh4b_candidates.parquet	False	/uscms_data/d3/iturkmen/hh4b_delphes,/uscms_data/d3/iturkmen/repos/hh-bbww-baselines,/uscms/home/iturkmen	generator banner, process card, run card, shower card, generator log, generated-event denominator	blocking_separate_pn_b3b_search_required
