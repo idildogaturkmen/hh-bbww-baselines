@@ -1,0 +1,51 @@
+{
+  "controls": {
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "hepmc_files_opened": 0,
+    "lhe_files_opened": 0,
+    "models_trained": 0,
+    "nonstandard_denominators_authorized": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "qcd_stitching_rules_authorized": 0,
+    "root_files_opened": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "inventory": {
+    "eos_bundles_listed": 361,
+    "expected_eos_bundles": 361,
+    "expected_generated_events": 2610000,
+    "ggf_campaigns": 2,
+    "nonstandard_campaigns": 6,
+    "qcd_bin_groups": 25,
+    "qcd_hardqcd_campaigns": 4
+  },
+  "metadata": {
+    "campaigns_with_complete_denominator_metadata": 6,
+    "campaigns_with_configuration_evidence": 4,
+    "configuration_evidence_rows": 523,
+    "duplicate_source_identities": 0,
+    "local_campaign_matched_text_files": 777,
+    "qcd_bins_with_complete_denominator_metadata": 25,
+    "representative_provenance_files_reverified": 30,
+    "structured_metadata_candidate_rows": 3322,
+    "targeted_recovery_rows": 2
+  },
+  "next_gate": "execute_targeted_nonstandard_metadata_recovery_plan",
+  "readiness": {
+    "external_reference_cross_sections_authorized": 0,
+    "nonstandard_denominators_authorized": 0,
+    "nonstandard_source_ledger_complete": true,
+    "physical_weight_application_authorized": false,
+    "physics_normalization_ready": false,
+    "qcd_stitching_authorized": false
+  },
+  "schema_version": 1,
+  "source_commit": "903170d2a34bf21f43cbf7653cf9e93486df73e8",
+  "status": "hh4b_nonstandard_source_metadata_closure_pass",
+  "timestamp_utc": "2026-07-29T16:41:55.969606+00:00"
+}

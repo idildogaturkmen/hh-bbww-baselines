@@ -1,0 +1,4 @@
+search_root	exists	files_considered	text_files_opened	campaign_matched_files	json_files_parsed	errors	status
+/uscms_data/d3/iturkmen/hh4b_delphes	True	43230	691	691	632	0	approved_search_complete
+/uscms_data/d3/iturkmen/repos/hh-bbww-baselines	True	12550	87	86	71	0	approved_search_complete
+/uscms/homes/i/iturkmen	True	15338	0	0	0	0	approved_search_complete

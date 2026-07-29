@@ -1,0 +1,7 @@
+sample_class	process_or_mode	campaign	expected_bundles	eos_bundles_listed	expected_events	bundles_with_structured_metadata	configuration_evidence_rows	denominator_metadata_coverage_complete	configuration_evidence_present	normalization_denominator_authorized	qcd_stitching_authorized	physical_weight_authorized	required_next_action	status
+signal	ggf_hh4b	ggf_hh4b_ml_ext20k_frozen_v2_20260716	20	20	20000	20	0	True	False	False	False	False	recover missing exact shard metadata/configuration	reviewed_fail_closed
+signal	ggf_hh4b	ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1	80	80	80000	80	0	True	False	False	False	False	recover missing exact shard metadata/configuration	reviewed_fail_closed
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718	150	150	1500000	150	205	True	True	False	False	False	freeze nonstandard conventions	reviewed_fail_closed
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_20260717_0022	54	54	500000	54	157	True	True	False	False	False	freeze nonstandard conventions	reviewed_fail_closed
+background	qcd_hardqcd	qcd_hardqcd_importance_adaptive500k_phys_wave2_20260717	56	56	500000	56	108	True	True	False	False	False	freeze nonstandard conventions	reviewed_fail_closed
+background	qcd_hardqcd	qcd_hardqcd_importance_testfill_bin3_10k_20260717	1	1	10000	1	53	True	True	False	False	False	freeze nonstandard conventions	reviewed_fail_closed
