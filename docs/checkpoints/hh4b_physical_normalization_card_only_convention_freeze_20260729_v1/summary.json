@@ -1,0 +1,58 @@
+{
+  "controls": {
+    "branching_fraction_values_assigned": 0,
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_extracted": 0,
+    "event_payload_files_opened": 0,
+    "filter_efficiency_values_assigned": 0,
+    "models_trained": 0,
+    "normalization_denominators_authorized": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "freeze": {
+    "beam_energy_conventions_authorized": 47,
+    "card_only_equivalence_groups": 23,
+    "configuration_equivalence_groups_authorized": 23,
+    "configuration_equivalent_campaigns_authorized": 47,
+    "eos_campaigns": 53,
+    "exact_generator_card_files": 188,
+    "explicit_matrix_element_decay_campaigns": 13,
+    "explicit_pythia_decay_campaigns": 0,
+    "nonstandard_campaigns": 6,
+    "processes_split_across_card_configurations": 0,
+    "qcd_structured_candidate_rows": 40,
+    "standard_card_campaigns": 47,
+    "standard_process_labels": 23,
+    "unresolved_convention_rows": 232
+  },
+  "inputs": {
+    "campaign_inventory": "docs/checkpoints/hh4b_physical_normalization_provenance_inventory_20260729_v1/campaign_inventory.tsv",
+    "campaign_inventory_sha256": "35d9aa17d236375b63480d53df11a97bc62905f1247aa1cc5743e134b139f167",
+    "pn_c2a_fingerprints": "docs/checkpoints/hh4b_physical_normalization_configuration_review_20260729_v1/campaign_configuration_fingerprints.tsv",
+    "pn_c2a_fingerprints_sha256": "7d17b1d3f26174e75a441ad2d95be07d4fb3d1f72e2ae975b71f826d767a5bbf",
+    "provenance_archive": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/normalization_provenance_files.tar.gz",
+    "provenance_archive_sha256": "56eb0beaed7aa2a17065252f8ce64dfe8c7344a40ee020c52c47d969d78d82f0",
+    "provenance_manifest": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/provenance_content_manifest.tsv",
+    "provenance_manifest_sha256": "9e89913daebd84d65bf75df0860ab8a89820a86fc58692c6c33016b9f792a317"
+  },
+  "next_gate": "recover_weight_denominators_and_nonstandard_ggf_qcd_provenance_before_reference_cross_section_registry",
+  "readiness": {
+    "beam_energy_authorized_campaigns": 47,
+    "branching_fractions_authorized": 0,
+    "card_only_configuration_freeze_complete": true,
+    "external_reference_cross_sections_authorized": 0,
+    "filter_efficiencies_authorized": 0,
+    "normalization_denominators_authorized": 0,
+    "physics_normalization_ready": false,
+    "qcd_stitching_resolved": false
+  },
+  "schema_version": 1,
+  "source_commit": "14158a4b4af81c3095e1943ff86bf5ad241c1b15",
+  "status": "hh4b_physical_normalization_card_only_convention_freeze_pass",
+  "timestamp_utc": "2026-07-29T03:28:16.565379+00:00"
+}
