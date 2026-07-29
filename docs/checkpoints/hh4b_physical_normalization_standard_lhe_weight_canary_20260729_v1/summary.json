@@ -1,0 +1,52 @@
+{
+  "audit": {
+    "all_canaries_parsed": true,
+    "all_temporary_bundles_removed": true,
+    "bundles_size_and_sha256_verified": 6,
+    "lhe_events_parsed": 96800,
+    "lhe_members_opened": 6,
+    "nonuniform_or_signed_canaries": 1,
+    "uniform_positive_canaries": 5
+  },
+  "controls": {
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "lhe_members_opened": 6,
+    "models_trained": 0,
+    "normalization_denominators_authorized": 0,
+    "parquet_files_opened": 0,
+    "physical_yields_calculated": 0,
+    "root_files_opened": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "review_nonuniform_or_signed_standard_lhe_weight_canary",
+  "readiness": {
+    "controlled_standard_lhe_weight_canary_complete": true,
+    "denominator_generalization_authorized": 0,
+    "external_reference_cross_sections_authorized": 0,
+    "ngen_denominator_candidates_supported_by_canary": 5,
+    "nonstandard_campaign_denominators_authorized": 0,
+    "physics_normalization_ready": false,
+    "standard_campaign_denominators_authorized": 0
+  },
+  "schema_version": 1,
+  "selection": {
+    "process_strata": [
+      "vbf_hh4b",
+      "ttbar_inclusive",
+      "qcd_bbbb_general",
+      "tchannel_top",
+      "tth_hbb",
+      "wwz_zbb"
+    ],
+    "selected_campaigns": 6,
+    "selected_processes": 6,
+    "selection_rule": "smallest frozen representative bundle with exactly one LHE member"
+  },
+  "source_commit": "3eb2ae972caddf214a90fa11794de72777e47006",
+  "status": "hh4b_standard_lhe_weight_canary_pass",
+  "timestamp_utc": "2026-07-29T03:59:39.809883+00:00"
+}
