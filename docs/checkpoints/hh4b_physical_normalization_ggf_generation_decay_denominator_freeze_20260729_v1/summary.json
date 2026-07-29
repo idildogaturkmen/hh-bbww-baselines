@@ -1,0 +1,42 @@
+{
+  "controls": {
+    "candidate_files_opened": 0,
+    "evaluation_candidate_files_opened": 0,
+    "external_cross_sections_assigned": 0,
+    "hepmc_files_opened": 0,
+    "lhe_files_opened": 0,
+    "models_trained": 0,
+    "numerical_branching_fractions_assigned": 0,
+    "parquet_files_opened": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "root_files_opened": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "ggf": {
+    "branching_fraction_convention_frozen_symbolically": true,
+    "campaign_denominators_authorized": 2,
+    "campaigns": 2,
+    "external_cross_section_authorized": false,
+    "generated_events": 100000,
+    "generation_decay_convention_authorized": true,
+    "modeling_scope": "LO_HEFT_ML_training_approximation_not_precision_ggF_modeling",
+    "numerical_branching_fraction_authorized": false,
+    "physical_weight_application_authorized": false,
+    "source_bundles": 100
+  },
+  "next_gate": "freeze_qcd_importance_denominators_and_exclusive_stitching_policy",
+  "readiness": {
+    "ggf_denominator_gate_complete": true,
+    "ggf_generation_decay_gate_complete": true,
+    "physics_normalization_ready": false,
+    "qcd_importance_denominator_gate_complete": false,
+    "qcd_stitching_authorized": false,
+    "reference_cross_section_registry_complete": false
+  },
+  "schema_version": 1,
+  "source_commit": "f8414e24e9c5287c3274964fc3b00ee9614bee9c",
+  "status": "hh4b_ggf_generation_decay_denominator_freeze_pass",
+  "timestamp_utc": "2026-07-29T17:20:38.506058+00:00"
+}

@@ -1,0 +1,277 @@
+{
+  "configuration": {
+    "classification": {
+      "beam_energy_GeV_runtime": 13000,
+      "branching_fraction_authorized": false,
+      "cut_decays_runtime": false,
+      "explicit_s_channel_resonance_candidate": false,
+      "generator_configuration_authorized": false,
+      "heft_model_candidate": true,
+      "higgs_to_bb_decay_evidence_present": true,
+      "inner_wrapper_matches_current_tracked_copy": true,
+      "nonresonant_pp_to_hh_candidate": true,
+      "normalization_denominator_authorized": false
+    },
+    "decay_evidence": [
+      {
+        "line": 43,
+        "path": "payload/mg5_template/Cards/proc_card_mg5.dat",
+        "text": "generate p p > h h, (h > b b~), (h > b b~)"
+      },
+      {
+        "line": 61,
+        "path": "payload/mg5_template/Cards/param_card.dat",
+        "text": "DECAY 25 6.382339e-03 # WH"
+      }
+    ],
+    "inner_wrapper_path": "payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh",
+    "mg5_version_path": "payload/mg5_template/MGMEVersion.txt",
+    "mg5_version_text": "3.5.3",
+    "model_commands": [
+      {
+        "command": "import model /uscms_data/d3/iturkmen/hh4b_delphes/mg5_models/heft",
+        "line": 36
+      }
+    ],
+    "param_card_path": "payload/mg5_template/Cards/param_card.dat",
+    "proc_card_path": "payload/mg5_template/Cards/proc_card_mg5.dat",
+    "process_commands": [
+      {
+        "command": "generate p p > h h, (h > b b~), (h > b b~)",
+        "line": 43
+      }
+    ],
+    "run_card_path": "payload/mg5_template/Cards/run_card.dat",
+    "runtime_override_checks": {
+      "cut_decays_false": true,
+      "ebeam1_6500": true,
+      "ebeam2_6500": true,
+      "runtime_nevents": true,
+      "runtime_seed": true
+    },
+    "runtime_overrides": [
+      {
+        "line": 146,
+        "text": "if \"= nevents\" in line:"
+      },
+      {
+        "line": 147,
+        "text": "line = \" ${N_EVENTS} = nevents ! Number of unweighted events requested\""
+      },
+      {
+        "line": 148,
+        "text": "elif \"= iseed\" in line:"
+      },
+      {
+        "line": 149,
+        "text": "line = \" ${SEED} = iseed ! rnd seed\""
+      },
+      {
+        "line": 150,
+        "text": "elif \"= ebeam1\" in line:"
+      },
+      {
+        "line": 151,
+        "text": "line = \" 6500.0 = ebeam1 ! beam 1 total energy in GeV\""
+      },
+      {
+        "line": 152,
+        "text": "elif \"= ebeam2\" in line:"
+      },
+      {
+        "line": 153,
+        "text": "line = \" 6500.0 = ebeam2 ! beam 2 total energy in GeV\""
+      },
+      {
+        "line": 154,
+        "text": "elif \"= cut_decays\" in line:"
+      },
+      {
+        "line": 155,
+        "text": "line = \" False = cut_decays ! Cut decay products\""
+      },
+      {
+        "line": 163,
+        "text": "./bin/generate_events \"$RUN_NAME\" -f \\"
+      }
+    ]
+  },
+  "controls": {
+    "branching_fractions_authorized": 0,
+    "candidate_files_opened": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "hepmc_files_opened": 0,
+    "lhe_files_opened": 0,
+    "normalization_denominators_authorized": 0,
+    "parquet_files_opened": 0,
+    "physical_weights_calculated": 0,
+    "repository_files_modified": 0,
+    "root_files_opened": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "freeze_ggf_generation_decay_and_denominator_conventions_then_freeze_qcd_stitching",
+  "payload": {
+    "archive_members": 560,
+    "binary_members_opened": 0,
+    "campaigns": {
+      "ggf_hh4b_ml_ext20k_frozen_v2_20260716": {
+        "coverage_scope": "one checksum-frozen representative provenance JSON for this campaign",
+        "direct_payload_sha_representatives": 1,
+        "expected_campaign_shards": 20,
+        "matches_current_payload": true,
+        "recorded_payload_sha256": "93dc90edd396c5a61d502a0f349fdabcf1f5f167f4553ffd410c0adf818f7923",
+        "representative_archive_path": "signal/ggf_hh4b/ggf_hh4b_ml_ext20k_frozen_v2_20260716/metadata/HH4b_ggf_ggf_hh4b_ml_ext20k_frozen_v2_20260716_shard000_seed86000_provenance.json",
+        "representative_bundle": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/ggf_hh4b_ml_ext20k_frozen_v2_20260716/HH4b_ggf_ggf_hh4b_ml_ext20k_frozen_v2_20260716_shard000_seed86000_bundle.tar.gz",
+        "representative_bundle_sha256": "3a2a7824f40ad0ac0821e5c605f9c0e578e70762308fabd01834b56822c08b36",
+        "representative_inner_shard": 16000,
+        "representative_local_shard": 0,
+        "representative_n_events": 1000,
+        "representative_seed": 86000
+      },
+      "ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1": {
+        "coverage_scope": "one checksum-frozen representative provenance JSON for this campaign",
+        "direct_payload_sha_representatives": 1,
+        "expected_campaign_shards": 80,
+        "matches_current_payload": true,
+        "recorded_payload_sha256": "93dc90edd396c5a61d502a0f349fdabcf1f5f167f4553ffd410c0adf818f7923",
+        "representative_archive_path": "signal/ggf_hh4b/ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1/metadata/HH4b_ggf_ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1_shard020_seed86020_provenance.json",
+        "representative_bundle": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/bundles/ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1/HH4b_ggf_ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1_shard020_seed86020_bundle.tar.gz",
+        "representative_bundle_sha256": "06ad7ac4f8344c79acb3f305cffda565ff419cc0ab423e8c8737b793ffd83606",
+        "representative_inner_shard": 16020,
+        "representative_local_shard": 20,
+        "representative_n_events": 1000,
+        "representative_seed": 86020
+      }
+    },
+    "lineage_scope": "four exact submit descriptions plus one checksum-frozen representative provenance JSON per campaign",
+    "nested_archives_opened": 0,
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ggf_heft_condor_inputs.tar.gz",
+    "per_shard_payload_sha_coverage_available": false,
+    "representative_payload_sha256": "93dc90edd396c5a61d502a0f349fdabcf1f5f167f4553ffd410c0adf818f7923",
+    "representative_payload_sha_verified_for_both_campaigns": true,
+    "selected_text_members_opened": 14,
+    "sha256": "93dc90edd396c5a61d502a0f349fdabcf1f5f167f4553ffd410c0adf818f7923",
+    "size_bytes": 10368061,
+    "submit_descriptions_referencing_exact_payload": 4,
+    "unsafe_archive_paths": 0
+  },
+  "schema_version": 1,
+  "selected_files": [
+    {
+      "basename": "me5_configuration.txt",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/Cards/me5_configuration.txt",
+      "payload_sha256sums_match": null,
+      "sha256": "07cc81819bf83d436ef55fbb2d8b51cc17a85f73b322ae0566321c6c47b62e30",
+      "size_bytes": 9409
+    },
+    {
+      "basename": "param_card.dat",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/Cards/param_card.dat",
+      "payload_sha256sums_match": null,
+      "sha256": "d055c12a17500b811b3f012485f514f2d8d6d7637d3548c0b3cfa0db3247866e",
+      "size_bytes": 3422
+    },
+    {
+      "basename": "param_card_default.dat",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/Cards/param_card_default.dat",
+      "payload_sha256sums_match": null,
+      "sha256": "d055c12a17500b811b3f012485f514f2d8d6d7637d3548c0b3cfa0db3247866e",
+      "size_bytes": 3422
+    },
+    {
+      "basename": "proc_card_mg5.dat",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/Cards/proc_card_mg5.dat",
+      "payload_sha256sums_match": null,
+      "sha256": "79f3af6a8f65acea8f5d9a3bde31275bb41f1e4b6c1c3ea0b6603f2d67ff7f4d",
+      "size_bytes": 2069
+    },
+    {
+      "basename": "pythia8_card_default.dat",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/Cards/pythia8_card_default.dat",
+      "payload_sha256sums_match": null,
+      "sha256": "eae9ab88aed291ccfa93aad879abb00c479fe5e852b50a14f48ee2c4ee25a255",
+      "size_bytes": 4434
+    },
+    {
+      "basename": "pythia_card_default.dat",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/Cards/pythia_card_default.dat",
+      "payload_sha256sums_match": null,
+      "sha256": "392b11bcb52bfabab408edd2ee691e138f9e4f2d5d5c514287a25f4f29d7215b",
+      "size_bytes": 350
+    },
+    {
+      "basename": "run_card.dat",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/Cards/run_card.dat",
+      "payload_sha256sums_match": null,
+      "sha256": "30df4c967bce52b872e399fc7e7259aea74d50d1d76110880d46de73f2f9d662",
+      "size_bytes": 10442
+    },
+    {
+      "basename": "run_card_default.dat",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/Cards/run_card_default.dat",
+      "payload_sha256sums_match": null,
+      "sha256": "30df4c967bce52b872e399fc7e7259aea74d50d1d76110880d46de73f2f9d662",
+      "size_bytes": 10442
+    },
+    {
+      "basename": "MGMEVersion.txt",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/MGMEVersion.txt",
+      "payload_sha256sums_match": null,
+      "sha256": "878103c645ee9a78bccb0be542dca18fd14c37ff9fa7e269250288da0cfb8217",
+      "size_bytes": 5
+    },
+    {
+      "basename": "proc_characteristics",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/SubProcesses/proc_characteristics",
+      "payload_sha256sums_match": null,
+      "sha256": "378b4a34637d9a47a84b1b6530f91902d7ab26edf72e0d8c4a23edf711c9289e",
+      "size_bytes": 537
+    },
+    {
+      "basename": "procdef_mg5.dat",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/SubProcesses/procdef_mg5.dat",
+      "payload_sha256sums_match": null,
+      "sha256": "f6e0f2ea29349454b50dd063210647e0941a17768c3184e532846d78c37c4b00",
+      "size_bytes": 2204
+    },
+    {
+      "basename": "TemplateVersion.txt",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/mg5_template/TemplateVersion.txt",
+      "payload_sha256sums_match": null,
+      "sha256": "732f64d874f90788c0199b0c19bfd9b3b6436e140114e53e462832532d74c61c",
+      "size_bytes": 6
+    },
+    {
+      "basename": "lhe_to_hepmc3.cc",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/repo/scripts/delphes/lhe_to_hepmc3.cc",
+      "payload_sha256sums_match": null,
+      "sha256": "8938cc2265f95cbc8dfcd541b95fb5976c7a83a9940c390723c81ec27744da8b",
+      "size_bytes": 1872
+    },
+    {
+      "basename": "run_ggf_hh4b_shard_transfer.sh",
+      "covered_by_payload_sha256sums": false,
+      "path": "payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh",
+      "payload_sha256sums_match": null,
+      "sha256": "31863027217a067901afc32395e0f4628c1d2f60892dc6726e56586bb2534868",
+      "size_bytes": 7060
+    }
+  ],
+  "source_commit": "f8414e24e9c5287c3274964fc3b00ee9614bee9c",
+  "status": "pn_c4c_ggf_payload_configuration_audit_pass",
+  "timestamp_utc": "2026-07-29T17:10:51.658717+00:00"
+}

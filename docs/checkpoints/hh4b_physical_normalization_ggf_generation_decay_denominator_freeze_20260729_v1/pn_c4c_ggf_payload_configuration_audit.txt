@@ -1,0 +1,92 @@
+PN-c4c ggF exact production-payload configuration audit
+========================================================================
+timestamp_utc: 2026-07-29T17:10:51.658717+00:00
+source_commit: f8414e24e9c5287c3274964fc3b00ee9614bee9c
+payload: /uscms_data/d3/iturkmen/hh4b_delphes/condor_inputs/hh4b_ggf_heft_condor_inputs.tar.gz
+payload_size_bytes: 10368061
+payload_sha256: 93dc90edd396c5a61d502a0f349fdabcf1f5f167f4553ffd410c0adf818f7923
+per_shard_payload_sha_coverage_available: False
+representative_payload_sha_verified_for_both_campaigns: True
+submit_descriptions_referencing_exact_payload: 4
+payload_lineage_scope: four exact submit descriptions plus one checksum-frozen representative provenance JSON per campaign
+campaign_payload_representative: ggf_hh4b_ml_ext20k_frozen_v2_20260716 local_shard=0 seed=86000 sha=93dc90edd396c5a61d502a0f349fdabcf1f5f167f4553ffd410c0adf818f7923
+campaign_payload_representative: ggf_hh4b_ml_ext80k_frozen_v2_20260721_v1 local_shard=20 seed=86020 sha=93dc90edd396c5a61d502a0f349fdabcf1f5f167f4553ffd410c0adf818f7923
+archive_members: 560
+selected_text_members_opened: 14
+binary_members_opened: 0
+nested_archives_opened: 0
+
+MODEL COMMANDS
+------------------------------------------------------------------------
+payload/mg5_template/Cards/proc_card_mg5.dat:L36: import model /uscms_data/d3/iturkmen/hh4b_delphes/mg5_models/heft
+
+PROCESS COMMANDS
+------------------------------------------------------------------------
+payload/mg5_template/Cards/proc_card_mg5.dat:L43: generate p p > h h, (h > b b~), (h > b b~)
+
+DECAY EVIDENCE
+------------------------------------------------------------------------
+payload/mg5_template/Cards/proc_card_mg5.dat:L43: generate p p > h h, (h > b b~), (h > b b~)
+payload/mg5_template/Cards/param_card.dat:L61: DECAY 25 6.382339e-03 # WH
+
+RUNTIME OVERRIDES
+------------------------------------------------------------------------
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L146: if "= nevents" in line:
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L147: line = " ${N_EVENTS} = nevents ! Number of unweighted events requested"
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L148: elif "= iseed" in line:
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L149: line = " ${SEED} = iseed ! rnd seed"
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L150: elif "= ebeam1" in line:
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L151: line = " 6500.0 = ebeam1 ! beam 1 total energy in GeV"
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L152: elif "= ebeam2" in line:
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L153: line = " 6500.0 = ebeam2 ! beam 2 total energy in GeV"
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L154: elif "= cut_decays" in line:
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L155: line = " False = cut_decays ! Cut decay products"
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh:L163: ./bin/generate_events "$RUN_NAME" -f \
+
+CLASSIFICATION CANDIDATES — NOT YET AUTHORIZED
+------------------------------------------------------------------------
+heft_model_candidate: True
+nonresonant_pp_to_hh_candidate: True
+explicit_s_channel_resonance_candidate: False
+higgs_to_bb_decay_evidence_present: True
+beam_energy_GeV_runtime: 13000
+cut_decays_runtime: False
+inner_wrapper_matches_current_tracked_copy: True
+generator_configuration_authorized: False
+branching_fraction_authorized: False
+normalization_denominator_authorized: False
+
+SELECTED CONFIGURATION FILES
+------------------------------------------------------------------------
+payload/mg5_template/Cards/me5_configuration.txt	9409	07cc81819bf83d436ef55fbb2d8b51cc17a85f73b322ae0566321c6c47b62e30	manifest_match=None
+payload/mg5_template/Cards/param_card.dat	3422	d055c12a17500b811b3f012485f514f2d8d6d7637d3548c0b3cfa0db3247866e	manifest_match=None
+payload/mg5_template/Cards/param_card_default.dat	3422	d055c12a17500b811b3f012485f514f2d8d6d7637d3548c0b3cfa0db3247866e	manifest_match=None
+payload/mg5_template/Cards/proc_card_mg5.dat	2069	79f3af6a8f65acea8f5d9a3bde31275bb41f1e4b6c1c3ea0b6603f2d67ff7f4d	manifest_match=None
+payload/mg5_template/Cards/pythia8_card_default.dat	4434	eae9ab88aed291ccfa93aad879abb00c479fe5e852b50a14f48ee2c4ee25a255	manifest_match=None
+payload/mg5_template/Cards/pythia_card_default.dat	350	392b11bcb52bfabab408edd2ee691e138f9e4f2d5d5c514287a25f4f29d7215b	manifest_match=None
+payload/mg5_template/Cards/run_card.dat	10442	30df4c967bce52b872e399fc7e7259aea74d50d1d76110880d46de73f2f9d662	manifest_match=None
+payload/mg5_template/Cards/run_card_default.dat	10442	30df4c967bce52b872e399fc7e7259aea74d50d1d76110880d46de73f2f9d662	manifest_match=None
+payload/mg5_template/MGMEVersion.txt	5	878103c645ee9a78bccb0be542dca18fd14c37ff9fa7e269250288da0cfb8217	manifest_match=None
+payload/mg5_template/SubProcesses/proc_characteristics	537	378b4a34637d9a47a84b1b6530f91902d7ab26edf72e0d8c4a23edf711c9289e	manifest_match=None
+payload/mg5_template/SubProcesses/procdef_mg5.dat	2204	f6e0f2ea29349454b50dd063210647e0941a17768c3184e532846d78c37c4b00	manifest_match=None
+payload/mg5_template/TemplateVersion.txt	6	732f64d874f90788c0199b0c19bfd9b3b6436e140114e53e462832532d74c61c	manifest_match=None
+payload/repo/scripts/delphes/lhe_to_hepmc3.cc	1872	8938cc2265f95cbc8dfcd541b95fb5976c7a83a9940c390723c81ec27744da8b	manifest_match=None
+payload/repo/scripts/delphes/run_ggf_hh4b_shard_transfer.sh	7060	31863027217a067901afc32395e0f4628c1d2f60892dc6726e56586bb2534868	manifest_match=None
+
+CONTROLS
+------------------------------------------------------------------------
+root_files_opened: 0
+hepmc_files_opened: 0
+lhe_files_opened: 0
+parquet_files_opened: 0
+candidate_files_opened: 0
+validation_candidate_files_opened: 0
+evaluation_candidate_files_opened: 0
+repository_files_modified: 0
+normalization_denominators_authorized: 0
+branching_fractions_authorized: 0
+cross_sections_assigned: 0
+physical_weights_calculated: 0
+
+NEXT_GATE: freeze_ggf_generation_decay_and_denominator_conventions_then_freeze_qcd_stitching
+PN_C4C_GGF_PAYLOAD_CONFIGURATION_AUDIT_PASS
