@@ -1,0 +1,61 @@
+{
+  "controls": {
+    "candidate_parquet_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "event_payload_files_extracted": 0,
+    "event_payload_files_opened": 0,
+    "models_trained": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "inputs": {
+    "campaign_inventory": "docs/checkpoints/hh4b_physical_normalization_provenance_inventory_20260729_v1/campaign_inventory.tsv",
+    "campaign_inventory_sha256": "35d9aa17d236375b63480d53df11a97bc62905f1247aa1cc5743e134b139f167",
+    "legacy_decision": "docs/checkpoints/hh4b_physical_normalization_legacy_ttbar_search_20260729_v1/legacy_normalization_decision_gate.tsv",
+    "legacy_decision_sha256": "f3c84b7af0b238f90d46eed311da0ae44046f48e40d3fe8164a3fc438fdeae1f",
+    "provenance_archive": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/normalization_provenance_files.tar.gz",
+    "provenance_archive_sha256": "56eb0beaed7aa2a17065252f8ce64dfe8c7344a40ee020c52c47d969d78d82f0",
+    "provenance_manifest": "docs/checkpoints/hh4b_physical_normalization_provenance_extraction_20260729_v1/provenance_content_manifest.tsv",
+    "provenance_manifest_sha256": "9e89913daebd84d65bf75df0860ab8a89820a86fc58692c6c33016b9f792a317"
+  },
+  "next_gate": "review_generator_parse_and_freeze_campaign_equivalence_decay_filter_and_denominator_conventions",
+  "parsing": {
+    "campaigns_with_beam_energy_candidates": 0,
+    "campaigns_with_process_definition_lines": 47,
+    "campaigns_with_xsec_candidates": 51,
+    "eos_campaigns": 53,
+    "evidence_rows": 347,
+    "generator_cross_section_candidates": 149,
+    "generator_version_candidates": 0,
+    "normalization_denominator_candidates": 151,
+    "process_definition_candidates": 1631,
+    "provenance_files_verified": 547,
+    "pythia_setting_candidates": 0,
+    "qcd_importance_and_phase_space_candidates": 0,
+    "run_card_setting_candidates": 47,
+    "unresolved_field_rows": 330
+  },
+  "readiness": {
+    "external_reference_cross_sections_assigned": 0,
+    "generator_provenance_parsed": true,
+    "legacy_campaign_excluded_from_authoritative_physical_weight": true,
+    "normalization_denominators_authorized": 0,
+    "physics_normalization_ready": false,
+    "qcd_stitching_resolved": false
+  },
+  "schema_version": 1,
+  "source_commit": "56c4e0e6cef719df6bfcf36d76ca196a434bca51",
+  "source_policy": {
+    "campaign_records": 54,
+    "excluded_generated_events": 270000,
+    "excluded_legacy_campaigns": 1,
+    "included_eos_campaigns": 53,
+    "included_generated_events": 4930000,
+    "model_training_membership_changed": false
+  },
+  "status": "hh4b_physical_normalization_generator_provenance_parse_pass",
+  "timestamp_utc": "2026-07-29T00:42:34.174912+00:00"
+}
