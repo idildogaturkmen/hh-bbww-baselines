@@ -1,0 +1,53 @@
+{
+  "audit": {
+    "all_temporary_files_removed": true,
+    "bundles_size_and_sha256_verified": 15,
+    "campaign_denominator_candidates_recovered": 6,
+    "campaign_entry_totals_closed": 6,
+    "campaigns_with_signed_root_weights": 6,
+    "root_branches_read": 15,
+    "root_entries_audited": 50000,
+    "root_files_opened": 15
+  },
+  "controls": {
+    "candidate_files_opened": 0,
+    "candidate_rows_read": 0,
+    "cross_sections_assigned": 0,
+    "evaluation_candidate_files_opened": 0,
+    "models_trained": 0,
+    "normalization_denominators_authorized": 0,
+    "parquet_files_opened": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "root_branches_read": 15,
+    "root_files_opened": 15,
+    "thresholds_selected": 0,
+    "validation_candidate_files_opened": 0
+  },
+  "next_gate": "materialize_triboson_event_sign_then_scale_all_standard_campaign_weight_audit",
+  "readiness": {
+    "candidate_event_sign_transport_proven": 0,
+    "external_reference_cross_sections_authorized": 0,
+    "nonstandard_campaign_denominators_authorized": 0,
+    "physics_normalization_ready": false,
+    "standard_campaign_denominators_authorized": 0,
+    "triboson_campaign_denominator_candidates_recovered": 6,
+    "triboson_denominators_authorized": 0,
+    "triboson_root_weight_transport_audit_complete": true
+  },
+  "schema_version": 1,
+  "selection": {
+    "processes": [
+      "wwz_zbb",
+      "wzz_zbb",
+      "zzz_zbb"
+    ],
+    "root_source_map_rows_used": 15,
+    "selected_campaigns": 6,
+    "selected_processes": 3,
+    "selected_source_bundles": 15
+  },
+  "source_commit": "bdd08e2b6ee0d4662859c6adbe5e4ce4795c83dc",
+  "status": "hh4b_triboson_signed_weight_transport_audit_pass",
+  "timestamp_utc": "2026-07-29T05:29:37.145968+00:00"
+}
