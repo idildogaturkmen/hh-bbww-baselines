@@ -1,0 +1,19 @@
+PN-c6b authoritative-reference source-plan freeze
+==================================================
+
+Ordinary processes: 22
+  backgrounds: 20
+  signals: 2
+Research batches:
+  A Higgs and HH: 7
+  B top: 9
+  C electroweak bosons: 5
+  D exclusive heavy flavor: 1
+Direct hard-QCD processes remain outside the ordinary formula.
+
+No numerical cross section, uncertainty, efficiency,
+branching factor, k-factor, physical weight, or yield was assigned.
+
+NEXT_GATE: research_batch_A_higgs_and_hh_authoritative_13TeV_cross_sections_uncertainties_and_branching_conventions_without_applying_weights
+
+PN_C6B_AUTHORITATIVE_REFERENCE_SOURCE_PLAN_FREEZE_PASS

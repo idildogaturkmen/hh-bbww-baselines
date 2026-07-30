@@ -1,0 +1,5 @@
+research_batch	processes	generated_events	research_status	physical_weight_application_authorized
+A_higgs_and_hh	7	500000	pending	False
+B_top	9	1490000	pending	False
+C_electroweak_bosons	5	150000	pending	False
+D_exclusive_heavy_flavor	1	250000	pending	False

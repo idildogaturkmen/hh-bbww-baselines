@@ -1,0 +1,45 @@
+{
+  "authorization": {
+    "all_branching_conventions_frozen": false,
+    "complete_200k_signal_normalization_authorized": false,
+    "complete_5m_background_normalization_authorized": false,
+    "filter_efficiencies_frozen": false,
+    "k_factor_policies_frozen": false,
+    "matching_efficiencies_frozen": false,
+    "numerical_reference_cross_sections_frozen": false,
+    "perturbative_orders_frozen": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false,
+    "source_plan_frozen": true,
+    "theory_uncertainties_frozen": false
+  },
+  "batch_counts": {
+    "A_higgs_and_hh": 7,
+    "B_top": 9,
+    "C_electroweak_bosons": 5,
+    "D_exclusive_heavy_flavor": 1
+  },
+  "inventory": {
+    "ordinary_background_processes": 20,
+    "ordinary_processes": 22,
+    "research_batches": 4,
+    "signal_processes": 2,
+    "special_direct_QCD_processes_excluded": [
+      "qcd_bbbb_general",
+      "qcd_bbbb_iht400to600"
+    ]
+  },
+  "next_gate": "research_batch_A_higgs_and_hh_authoritative_13TeV_cross_sections_uncertainties_and_branching_conventions_without_applying_weights",
+  "payload_controls": {
+    "archive_payload_files_opened": 0,
+    "hepmc_payload_files_opened": 0,
+    "lhe_payload_files_opened": 0,
+    "only_committed_text_tsv_json_inputs_opened": true,
+    "parquet_payload_files_opened": 0,
+    "root_payload_files_opened": 0
+  },
+  "schema_version": 1,
+  "source_commit": "f2f6844fb05841b4b8f60ec59e654d33541f7787",
+  "status": "authoritative_reference_source_plan_freeze_complete",
+  "timestamp_utc": "2026-07-30T19:30:46.184110+00:00"
+}
