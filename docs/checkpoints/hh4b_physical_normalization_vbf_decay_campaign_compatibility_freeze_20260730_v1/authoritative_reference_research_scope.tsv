@@ -1,0 +1,23 @@
+sample_class	process_or_mode	campaign_count	generated_events	population_scope	authoritative_primary_reference_required	reference_cross_section_pb	perturbative_order	theory_uncertainty	filter_efficiency	k_factor_policy	branching_convention	research_status	physical_weight_application_authorized
+background	bbh_hbb_4fs	2	50000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	ggh_hbb	2	100000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	schannel_single_top	2	30000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	tchannel_antitop	2	80000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	tchannel_top	2	80000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	ttbar_inclusive	4	1020000	bundle_plus_independent_legacy_population	True							pending_authoritative_primary_source_review	False
+background	tth_hbb	2	40000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	tttt	2	40000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	ttw	2	60000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	ttz_zbb	2	40000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	tw_antitop	2	70000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	tw_top	2	70000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	vbf_hbb	2	50000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	wh_hbb	2	60000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	ww	2	40000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	wwz_zbb	2	26000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	wz_zbb	2	60000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	wzz_zbb	2	16500	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	zbbbb	3	250000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+background	zzz_zbb	2	7500	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+signal	ggf_hh4b	2	100000	bundle_backed_population	True							pending_authoritative_primary_source_review	False
+signal	vbf_hh4b	2	100000	bundle_backed_population	True						inclusive_VBF_HH_reference_with_no_explicit_BR_H_to_bb_squared_multiplier_because_Higgs_branching_is_sampled_inside_the_generated_event_population	pending_authoritative_primary_source_review	False

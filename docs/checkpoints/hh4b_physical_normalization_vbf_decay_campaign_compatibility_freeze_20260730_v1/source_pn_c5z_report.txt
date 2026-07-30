@@ -1,0 +1,21 @@
+PN-c5z exact VBF HH decay-control extraction
+================================================
+
+Campaigns audited: 2
+Exact text members retained: 24
+Exact semantic evidence rows: 8
+
+Decision candidate:
+  cross-campaign compatibility: True
+  common decay sampling mode: unforced_standard_model_higgs_decay_sampling
+  hard process: "process_definition": "generate p p > h h j j qcd=0",,generate p p > h h j j qcd=0
+  branching convention: inclusive_VBF_HH_reference_with_no_explicit_BR_H_to_bb_squared_multiplier_because_Higgs_branching_is_sampled_inside_the_generated_event_population
+
+Authorization:
+  numerical BR(H->bb) assigned: False
+  external reference cross sections frozen: False
+  physical weights/yields calculated: False
+
+NEXT_GATE: freeze_VBF_HH_decay_sampling_convention_and_begin_authoritative_external_process_reference_research_without_applying_physical_weights
+
+PN_C5Z_EXACT_VBF_DECAY_CONTROL_EXTRACTION_PASS

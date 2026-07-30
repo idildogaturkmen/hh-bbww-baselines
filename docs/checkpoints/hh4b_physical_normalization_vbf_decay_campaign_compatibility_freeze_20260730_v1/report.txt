@@ -1,0 +1,23 @@
+PN-c6a VBF decay and campaign compatibility freeze
+==================================================
+
+VBF campaigns: 2
+Retained generated events: 100000
+Frozen decay sampling mode: unforced_standard_model_higgs_decay_sampling
+Explicit BR(H->bb)^2 multiplier: not applied
+Operational run-card differences: iseed
+Cross-campaign VBF denominator aggregation: authorized
+
+Authoritative external-reference research scope:
+  ordinary processes: 22
+  ordinary background processes: 20
+  signal processes: 2
+  direct hard-QCD processes: excluded from ordinary formula
+
+Authorization:
+  external reference cross sections frozen: False
+  physical weights/yields calculated: False
+
+NEXT_GATE: research_and_freeze_authoritative_external_reference_cross_sections_orders_uncertainties_filter_efficiencies_k_factor_and_branching_conventions_for_all_22_ordinary_processes_without_applying_weights
+
+PN_C6A_VBF_DECAY_AND_CAMPAIGN_COMPATIBILITY_FREEZE_PASS

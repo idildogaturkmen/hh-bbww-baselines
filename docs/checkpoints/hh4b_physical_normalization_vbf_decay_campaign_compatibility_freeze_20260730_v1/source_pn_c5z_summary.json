@@ -1,0 +1,38 @@
+{
+  "authorization": {
+    "complete_200k_signal_normalization_authorized": false,
+    "complete_5m_background_normalization_authorized": false,
+    "cross_campaign_denominator_aggregation_authorized": false,
+    "external_reference_cross_sections_frozen": false,
+    "filter_efficiencies_frozen": false,
+    "k_factors_frozen": false,
+    "numerical_BR_H_to_bb_assigned": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false
+  },
+  "decision": {
+    "common_decay_sampling_mode_candidate": "unforced_standard_model_higgs_decay_sampling",
+    "common_vbf_hh_process_line": "\"process_definition\": \"generate p p > h h j j qcd=0\",,generate p p > h h j j qcd=0",
+    "cross_campaign_semantic_compatibility_candidate": true,
+    "physical_reference_branching_convention_candidate": "inclusive_VBF_HH_reference_with_no_explicit_BR_H_to_bb_squared_multiplier_because_Higgs_branching_is_sampled_inside_the_generated_event_population"
+  },
+  "inventory": {
+    "archive_member_rows": 46,
+    "campaigns_audited": 2,
+    "evidence_rows": 8,
+    "exact_text_member_rows": 24
+  },
+  "next_gate": "freeze_VBF_HH_decay_sampling_convention_and_begin_authoritative_external_process_reference_research_without_applying_physical_weights",
+  "payload_controls": {
+    "all_bounded_exact_bundle_text_retained": true,
+    "hepmc_payload_files_opened": 0,
+    "lhe_payload_files_opened": 0,
+    "nested_archive_payload_files_opened": 0,
+    "parquet_payload_files_opened": 0,
+    "root_payload_files_opened": 0
+  },
+  "schema_version": 1,
+  "source_commit": "3c772ca595599cf5c23c2b3a8dd7bab3dda89dcd",
+  "status": "exact_vbf_decay_control_extraction_complete",
+  "timestamp_utc": "2026-07-30T19:02:36.031576+00:00"
+}

@@ -1,0 +1,55 @@
+{
+  "authorization": {
+    "all_process_branching_conventions_frozen": false,
+    "complete_200k_signal_normalization_authorized": false,
+    "complete_5m_background_normalization_authorized": false,
+    "external_reference_cross_sections_frozen": false,
+    "filter_efficiencies_frozen": false,
+    "k_factors_frozen": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false,
+    "vbf_campaign_compatibility_frozen": true,
+    "vbf_cross_campaign_denominator_aggregation_authorized": true,
+    "vbf_decay_sampling_convention_frozen": true
+  },
+  "next_gate": "research_and_freeze_authoritative_external_reference_cross_sections_orders_uncertainties_filter_efficiencies_k_factor_and_branching_conventions_for_all_22_ordinary_processes_without_applying_weights",
+  "payload_controls": {
+    "archive_payload_files_opened": 0,
+    "hepmc_payload_files_opened": 0,
+    "lhe_payload_files_opened": 0,
+    "only_existing_frozen_text_tsv_json_inputs_opened": true,
+    "parquet_payload_files_opened": 0,
+    "root_payload_files_opened": 0
+  },
+  "reference_research_scope": {
+    "ordinary_background_processes": 20,
+    "ordinary_processes": 22,
+    "signal_processes": 2,
+    "special_direct_QCD_processes_excluded": [
+      "qcd_bbbb_general",
+      "qcd_bbbb_iht400to600"
+    ]
+  },
+  "schema_version": 1,
+  "source_commit": "3c772ca595599cf5c23c2b3a8dd7bab3dda89dcd",
+  "status": "vbf_decay_sampling_and_campaign_compatibility_freeze_complete",
+  "timestamp_utc": "2026-07-30T19:14:21.953438+00:00",
+  "vbf_decision": {
+    "all_generated_events_retained": true,
+    "apply_explicit_BR_H_to_bb_squared": false,
+    "campaigns": [
+      "vbf_hh4b_sm_pilot10k_20260722_v1",
+      "vbf_hh4b_sm_scaleout90k_20260722_v1"
+    ],
+    "combined_frozen_denominator_sumw": "142.44402525946498",
+    "combined_frozen_denominator_sumw2": "0.202904637375874855",
+    "combined_generated_events": 100000,
+    "cross_campaign_denominator_aggregation_authorized": true,
+    "decay_sampling_mode": "unforced_standard_model_higgs_decay_sampling",
+    "explicit_BR_H_to_bb_squared_multiplier": "1",
+    "hard_process": "generate p p > h h j j QCD=0",
+    "operational_run_card_differences": [
+      "iseed"
+    ]
+  }
+}
