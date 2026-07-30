@@ -1,0 +1,25 @@
+{
+  "bundle_backed_ttbar_campaigns": [
+    "unified_background_5m_wavea_pilots_20260720_retry1",
+    "unified_background_5m_wavea_proven111_20260720_v1"
+  ],
+  "bundle_backed_ttbar_generated_events": 750000,
+  "bundle_backed_ttbar_members": 75,
+  "exact_candidate_path_overlap": [],
+  "exact_candidate_path_overlap_count": 0,
+  "formal_exclusion_authorized": false,
+  "legacy_candidate_rows_metadata": 1020,
+  "legacy_generated_events": 270000,
+  "legacy_members": 27,
+  "legacy_process": "ttbar_inclusive",
+  "legacy_split_counts": {
+    "train": 22,
+    "validation": 5
+  },
+  "member_id_overlap_count": 0,
+  "original_generation_source_resolved": false,
+  "physical_normalization_inclusion_authorized": false,
+  "relationship_to_bundle_backed_ttbar_resolved": false,
+  "required_resolution": "recover_original_generator_or_Delphes_source_and_Event.Weight_denominator_or_formally_exclude_with_documented_physics_impact",
+  "schema_version": 1
+}

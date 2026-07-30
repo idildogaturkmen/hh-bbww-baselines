@@ -1,0 +1,47 @@
+HH4b full bundle-backed denominator freeze
+==========================================
+
+Full generated-event inventory:
+  background: 5000000
+  signal: 200000
+  total: 5200000
+
+Hard-QCD background:
+  members: 261
+  generated events: 2510000
+  denominator checkpoint: frozen previously
+
+Bundle-backed non-hard-QCD:
+  members: 342
+  campaigns: 49
+  generated events: 2420000
+  train / validation / test: 256 / 60 / 26
+  background members/events: 232 / 2220000
+  signal members/events: 110 / 200000
+  signed-weight members: 18
+  uniform-weight members: 324
+  member denominator values frozen: True
+  campaign denominator values frozen: True
+
+Legacy ttbar/Parquet:
+  members: 27
+  generated events: 270000
+  bundle-backed ttbar members: 75
+  bundle-backed ttbar campaigns: 2
+  exact candidate-path overlaps: 0
+  original generation source resolved: False
+  physical role resolved: False
+  physical normalization inclusion authorized: False
+
+Authorization:
+  bundle campaign denominator use: authorized
+  cross-campaign process aggregation: not authorized
+  process reference cross sections: not assigned
+  physical weights: not calculated
+  physical yields: not calculated
+  complete 5M-background normalization: not authorized
+  complete 200k-signal normalization: not authorized
+
+NEXT_GATE: targeted_recover_or_formally_exclude_legacy_ttbar_before_process_reference_cross_section_registry
+
+FULL_BUNDLE_BACKED_DENOMINATOR_FREEZE_PASS

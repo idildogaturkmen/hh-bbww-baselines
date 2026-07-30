@@ -1,0 +1,71 @@
+{
+  "authorization": {
+    "bundle_campaign_denominator_use_authorized": true,
+    "complete_200k_signal_physical_normalization_authorized": false,
+    "complete_5m_background_physical_normalization_authorized": false,
+    "cross_campaign_process_aggregation_authorized": false,
+    "legacy_ttbar_denominator_use_authorized": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false,
+    "process_reference_cross_section_assignment_authorized": false
+  },
+  "bundle_backed_non_qcd": {
+    "background_generated_events": 2220000,
+    "background_members": 232,
+    "campaign_denominator_values_frozen": true,
+    "campaigns": 49,
+    "cross_campaign_process_aggregation_authorized": false,
+    "generated_events": 2420000,
+    "member_denominator_values_frozen": true,
+    "members": 342,
+    "signal_generated_events": 200000,
+    "signal_members": 110,
+    "signed_weight_members": 18,
+    "split_counts": {
+      "test": 26,
+      "train": 256,
+      "validation": 60
+    },
+    "uniform_weight_members": 324
+  },
+  "full_event_inventory": {
+    "background_generated_events": 5000000,
+    "signal_generated_events": 200000,
+    "total_generated_events": 5200000
+  },
+  "hard_qcd_background": {
+    "denominator_checkpoint_preexisting": true,
+    "generated_events": 2510000,
+    "members": 261
+  },
+  "legacy_ttbar": {
+    "bundle_backed_ttbar_campaigns": [
+      "unified_background_5m_wavea_pilots_20260720_retry1",
+      "unified_background_5m_wavea_proven111_20260720_v1"
+    ],
+    "bundle_backed_ttbar_generated_events": 750000,
+    "bundle_backed_ttbar_members": 75,
+    "exact_candidate_path_overlap": [],
+    "exact_candidate_path_overlap_count": 0,
+    "formal_exclusion_authorized": false,
+    "legacy_candidate_rows_metadata": 1020,
+    "legacy_generated_events": 270000,
+    "legacy_members": 27,
+    "legacy_process": "ttbar_inclusive",
+    "legacy_split_counts": {
+      "train": 22,
+      "validation": 5
+    },
+    "member_id_overlap_count": 0,
+    "original_generation_source_resolved": false,
+    "physical_normalization_inclusion_authorized": false,
+    "relationship_to_bundle_backed_ttbar_resolved": false,
+    "required_resolution": "recover_original_generator_or_Delphes_source_and_Event.Weight_denominator_or_formally_exclude_with_documented_physics_impact",
+    "schema_version": 1
+  },
+  "next_gate": "targeted_recover_or_formally_exclude_legacy_ttbar_before_process_reference_cross_section_registry",
+  "schema_version": 1,
+  "source_commit": "84f97050594e0b90525ca57d8ef73e49fe9f3055",
+  "status": "full_bundle_backed_denominator_checkpoint_frozen",
+  "timestamp_utc": "2026-07-30T04:01:31.719107+00:00"
+}
