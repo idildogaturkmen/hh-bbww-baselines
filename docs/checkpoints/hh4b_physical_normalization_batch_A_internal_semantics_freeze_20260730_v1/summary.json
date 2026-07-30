@@ -1,0 +1,50 @@
+{
+  "authorization": {
+    "batch_A_internal_semantics_frozen": true,
+    "bbh_and_ggh_unforced_internal_Pythia_decay_semantics_frozen": true,
+    "branching_conventions_frozen": true,
+    "complete_200k_signal_normalization_authorized": false,
+    "complete_5m_background_normalization_authorized": false,
+    "filter_efficiencies_frozen": true,
+    "final_reference_candidates_selected": false,
+    "five_processes_ready_for_reference_selection": true,
+    "matching_efficiencies_frozen": true,
+    "numerical_reference_cross_sections_frozen": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false,
+    "two_vbf_reference_scope_decisions_pending": true
+  },
+  "inventory": {
+    "blocked_processes": [
+      "vbf_hbb",
+      "vbf_hh4b"
+    ],
+    "generated_events": 500000,
+    "process_campaign_identities": 14,
+    "processes": 7,
+    "processes_blocked_only_by_generator_cut_reference_scope": 2,
+    "processes_ready_for_authoritative_reference_selection": 5,
+    "ready_processes": [
+      "bbh_hbb_4fs",
+      "ggf_hh4b",
+      "ggh_hbb",
+      "tth_hbb",
+      "wh_hbb"
+    ],
+    "remaining_blocker_rows": 2
+  },
+  "next_gate": "select_and_freeze_125GeV_authoritative_references_for_bbh_ggh_tth_wh_and_ggf_HH_then_resolve_vbf_hbb_and_vbf_HH_generator_cut_reference_scope_without_applying_weights",
+  "payload_controls": {
+    "event_archive_payload_files_opened": 0,
+    "generator_configuration_archive_opened": 1,
+    "hepmc_payload_files_opened": 0,
+    "lhe_payload_files_opened": 0,
+    "only_bounded_generator_configuration_text_opened": true,
+    "parquet_payload_files_opened": 0,
+    "root_payload_files_opened": 0
+  },
+  "schema_version": 1,
+  "source_commit": "6e6edf9da9299b8ca9d05e9ddee682ef82d7e5c8",
+  "status": "batch_A_internal_normalization_semantics_freeze_complete",
+  "timestamp_utc": "2026-07-30T21:34:28.502201+00:00"
+}

@@ -1,0 +1,8 @@
+sample_class	process_or_mode	campaigns	generated_events	higgs_mass_GeV	hard_process_compatible	decay_scope	explicit_external_BR_H_to_bb_power	matching_efficiency	filter_efficiency	internal_semantics_compatible_and_frozen	generator_cut_reference_scope_blocker	ready_for_authoritative_reference_selection	final_reference_candidate_selected	physical_weight_application_authorized
+background	bbh_hbb_4fs	2	50000	125.00	True	unforced_internal_Pythia_SM_Higgs_decay_sampling	0	1	1	True	False	True	False	False
+signal	ggf_hh4b	2	100000	125.00	True	matrix_element_forced_Hbb_count_2	2	1	1	True	False	True	False	False
+background	ggh_hbb	2	100000	125.00	True	unforced_internal_Pythia_SM_Higgs_decay_sampling	0	1	1	True	False	True	False	False
+background	tth_hbb	2	40000	125.00	True	matrix_element_forced_Hbb_count_1	1	1	1	True	False	True	False	False
+background	vbf_hbb	2	50000	125.00	True	matrix_element_forced_Hbb_count_1	1	1	1	True	True	False	False	False
+signal	vbf_hh4b	2	100000	125.00	True	unforced_standard_model_higgs_decay_sampling	0	1	1	True	True	False	False	False
+background	wh_hbb	2	60000	125.00	True	matrix_element_forced_Hbb_count_1	1	1	1	True	False	True	False	False

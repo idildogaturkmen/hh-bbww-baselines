@@ -1,0 +1,19 @@
+PN-c6g Batch-A internal normalization semantics freeze
+======================================================
+
+Process-campaign identities: 14
+Generated events covered: 500000
+Internal matching efficiencies frozen: 14/14
+Internal filter efficiencies frozen: 14/14
+Internal branching conventions frozen: 14/14
+Processes ready for authoritative reference selection: 5
+Processes blocked only by generator-cut reference scope: 2
+  vbf_hbb
+  vbf_hh4b
+
+No event payload was opened. No numerical reference,
+physical weight, or physical yield was selected or applied.
+
+NEXT_GATE: select_and_freeze_125GeV_authoritative_references_for_bbh_ggh_tth_wh_and_ggf_HH_then_resolve_vbf_hbb_and_vbf_HH_generator_cut_reference_scope_without_applying_weights
+
+PN_C6G_BATCH_A_INTERNAL_NORMALIZATION_SEMANTICS_FREEZE_PASS
