@@ -1,0 +1,3 @@
+higgs_mass_GeV	BR_H_to_bb	theory_uncertainty_up_percent	theory_uncertainty_down_percent	mb_parametric_up_percent	mb_parametric_down_percent	alphaS_parametric_up_percent	alphaS_parametric_down_percent	source_id	source_table_locator
+125.00	0.5824	0.65	0.65	0.72	0.74	0.78	0.80	LHCHXSWG_YR4_Higgs_BR	H_to_bb_mH_125.00
+125.09	0.5809	0.65	0.65	0.72	0.74	0.77	0.79	LHCHXSWG_YR4_Higgs_BR	H_to_bb_mH_125.09

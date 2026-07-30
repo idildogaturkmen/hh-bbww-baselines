@@ -1,0 +1,16 @@
+PN-c6c Batch-A authoritative reference candidates
+===================================================
+
+Batch-A processes: 7
+Reference candidate rows: 14
+Supported Higgs masses: 125.00 and 125.09 GeV
+Authoritative source families: LHCHXSWG and LHCHWG-HH
+
+Candidate values are frozen as evidence only.
+No final mass point, cross section, branching factor,
+filter efficiency, matching efficiency, physical weight,
+or physical yield was authorized.
+
+NEXT_GATE: recover_and_freeze_exact_batch_A_generated_Higgs_masses_process_decay_filter_and_matching_scopes_then_select_one_authoritative_reference_candidate_per_process_without_applying_weights
+
+PN_C6C_BATCH_A_AUTHORITATIVE_REFERENCE_CANDIDATES_PASS

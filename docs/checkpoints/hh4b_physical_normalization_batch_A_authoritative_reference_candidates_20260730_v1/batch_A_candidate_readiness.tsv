@@ -1,0 +1,8 @@
+sample_class	process_or_mode	campaign_count	generated_events	authoritative_reference_candidates_recovered	supported_mass_points	exact_generated_mass_frozen	exact_decay_scope_frozen_for_reference_matching	filter_efficiency_frozen	matching_efficiency_frozen	final_reference_cross_section_frozen	final_branching_factor_frozen	physical_weight_application_authorized
+background	bbh_hbb_4fs	2	50000	True	125.00,125.09	False	False	False	False	False	False	False
+signal	ggf_hh4b	2	100000	True	125.00,125.09	False	True	False	False	False	False	False
+background	ggh_hbb	2	100000	True	125.00,125.09	False	False	False	False	False	False	False
+background	tth_hbb	2	40000	True	125.00,125.09	False	False	False	False	False	False	False
+background	vbf_hbb	2	50000	True	125.00,125.09	False	False	False	False	False	False	False
+signal	vbf_hh4b	2	100000	True	125.00,125.09	False	True	False	False	False	False	False
+background	wh_hbb	2	60000	True	125.00,125.09	False	False	False	False	False	False	False

@@ -1,0 +1,4 @@
+source_id	organization	document_title	document_url	companion_document	access_date	authoritative_role
+LHCHXSWG_YR4_13TeV_singleH	LHC_Higgs_Cross_Section_Working_Group	SM Higgs production cross sections at 13 TeV	https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV	CERN-2017-002-M; arXiv:1610.07922	2026-07-30	single_Higgs_production_cross_sections_and_uncertainties
+LHCHXSWG_YR4_Higgs_BR	LHC_Higgs_Cross_Section_Working_Group	SM Higgs branching ratios and total decay widths	https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBR	CERN-2017-002-M; arXiv:1610.07922	2026-07-30	Higgs_branching_ratios_and_uncertainties
+LHCHWG_HH_current_13TeV	LHC_Higgs_Cross_Section_Working_Group_HH	Higgs pair production cross-section recommendations	https://twiki.cern.ch/twiki/bin/view/LHCPhysics/LHCHWGHH	current_LHCHWG_HH_recommendations_and_primary_calculations	2026-07-30	ggF_HH_and_VBF_HH_cross_sections_and_uncertainties

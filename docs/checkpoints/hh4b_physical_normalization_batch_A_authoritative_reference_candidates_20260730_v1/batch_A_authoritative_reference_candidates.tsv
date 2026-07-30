@@ -1,0 +1,15 @@
+process_or_mode	higgs_mass_GeV	reference_cross_section_pb	reference_scope	perturbative_order	scale_or_theory_uncertainty_up_percent	scale_or_theory_uncertainty_down_percent	pdf_alphaS_uncertainty_percent	other_uncertainty_label	other_uncertainty_percent	source_id	source_table_locator
+ggh_hbb	125.00	48.58	inclusive_SM_ggF_H	N3LO_QCD_plus_NLO_EW	4.6	6.7	3.2	TH_Gaussian	3.9	LHCHXSWG_YR4_13TeV_singleH	ggF_N3LO_mH_125.00
+ggh_hbb	125.09	48.52	inclusive_SM_ggF_H	N3LO_QCD_plus_NLO_EW	4.6	6.7	3.2	TH_Gaussian	3.9	LHCHXSWG_YR4_13TeV_singleH	ggF_N3LO_mH_125.09
+vbf_hbb	125.00	3.782	inclusive_SM_single_H_VBF	approx_NNLO_QCD_plus_NLO_EW	0.4	0.3	2.1			LHCHXSWG_YR4_13TeV_singleH	VBF_mH_125.00
+vbf_hbb	125.09	3.779	inclusive_SM_single_H_VBF	approx_NNLO_QCD_plus_NLO_EW	0.4	0.3	2.1			LHCHXSWG_YR4_13TeV_singleH	VBF_mH_125.09
+wh_hbb	125.00	1.373	inclusive_SM_WplusH_plus_WminusH	NNLO_QCD_plus_NLO_EW	0.5	0.7	1.9			LHCHXSWG_YR4_13TeV_singleH	WH_total_mH_125.00
+wh_hbb	125.09	1.369	inclusive_SM_WplusH_plus_WminusH	NNLO_QCD_plus_NLO_EW	0.5	0.7	1.9			LHCHXSWG_YR4_13TeV_singleH	WH_total_mH_125.09
+tth_hbb	125.00	0.5071	inclusive_SM_ttH	NLO_QCD_plus_NLO_EW	5.8	9.2	3.6			LHCHXSWG_YR4_13TeV_singleH	ttH_mH_125.00
+tth_hbb	125.09	0.5065	inclusive_SM_ttH	NLO_QCD_plus_NLO_EW	5.8	9.2	3.6			LHCHXSWG_YR4_13TeV_singleH	ttH_mH_125.09
+bbh_hbb_4fs	125.00	0.5277	inclusive_SM_bbH_matched_4FS_5FS	NLO_plus_NNLLpart_ybyt_matched_5FS_NNLO_and_4FS_NLO	9.3	9.3		PDF_alphaS_mb	+3.3/-3.5	LHCHXSWG_YR4_13TeV_singleH	bbH_mH_125.00
+bbh_hbb_4fs	125.09	0.5265	inclusive_SM_bbH_matched_4FS_5FS	NLO_plus_NNLLpart_ybyt_matched_5FS_NNLO_and_4FS_NLO	9.3	9.3		PDF_alphaS_mb	+3.3/-3.5	LHCHXSWG_YR4_13TeV_singleH	bbH_mH_125.09
+ggf_hh4b	125.00	0.03077	inclusive_SM_ggF_HH	NNLO_FTapprox	6	23	2.3	combined_scale_plus_top_mass_scheme	+6/-23	LHCHWG_HH_current_13TeV	ggF_HH_mH_125.00
+ggf_hh4b	125.09	0.03074	inclusive_SM_ggF_HH	NNLO_FTapprox_mass_rescaled	6	23	2.3	combined_scale_plus_top_mass_scheme	+6/-23	LHCHWG_HH_current_13TeV	ggF_HH_mH_125.09
+vbf_hh4b	125.00	0.001687	inclusive_SM_VBF_HHjj	N3LO_QCD_plus_NLO_EW	0.05	0.04	2.7			LHCHWG_HH_current_13TeV	VBF_HH_mH_125.00
+vbf_hh4b	125.09	0.001684	inclusive_SM_VBF_HHjj	N3LO_QCD_plus_NLO_EW	0.05	0.04	2.7			LHCHWG_HH_current_13TeV	VBF_HH_mH_125.09

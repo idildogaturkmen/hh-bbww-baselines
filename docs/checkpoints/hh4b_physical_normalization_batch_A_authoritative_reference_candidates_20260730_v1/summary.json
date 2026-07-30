@@ -1,0 +1,39 @@
+{
+  "authorization": {
+    "authoritative_reference_candidates_frozen": true,
+    "complete_200k_signal_normalization_authorized": false,
+    "complete_5m_background_normalization_authorized": false,
+    "exact_generated_Higgs_masses_frozen": false,
+    "filter_efficiencies_frozen": false,
+    "final_branching_factors_frozen": false,
+    "final_reference_cross_sections_frozen": false,
+    "k_factor_policies_frozen": false,
+    "matching_efficiencies_frozen": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false
+  },
+  "inventory": {
+    "Higgs_BR_candidate_rows": 2,
+    "authoritative_sources": 3,
+    "batch_A_processes": 7,
+    "reference_candidate_rows": 14,
+    "supported_Higgs_mass_points_GeV": [
+      "125.00",
+      "125.09"
+    ],
+    "unresolved_internal_reconciliation_blockers": 25
+  },
+  "next_gate": "recover_and_freeze_exact_batch_A_generated_Higgs_masses_process_decay_filter_and_matching_scopes_then_select_one_authoritative_reference_candidate_per_process_without_applying_weights",
+  "payload_controls": {
+    "archive_payload_files_opened": 0,
+    "hepmc_payload_files_opened": 0,
+    "lhe_payload_files_opened": 0,
+    "only_committed_text_tsv_json_inputs_opened": true,
+    "parquet_payload_files_opened": 0,
+    "root_payload_files_opened": 0
+  },
+  "schema_version": 1,
+  "source_commit": "8b6ac26167e54f33f6c49ad5f0e9c0046e903601",
+  "status": "batch_A_authoritative_reference_candidates_freeze_complete",
+  "timestamp_utc": "2026-07-30T19:38:09.240743+00:00"
+}
