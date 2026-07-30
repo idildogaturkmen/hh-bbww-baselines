@@ -1,0 +1,22 @@
+PN-c4i QCD train generator-weight transport scale-out
+======================================================
+
+Train shards: 186
+Variable train shards: 127
+Uniform train shards: 59
+Variable candidate sidecar rows: 3
+Uniform candidate rows covered by constant registry: 53
+Complete fragments: 186
+Zero-candidate variable train shards: 124
+Variable candidate identity columns opened: 3
+First-transport bundle checksums frozen: 3
+Variable ROOT moment closures: 127/127
+Variable candidate joins: 127/127
+Validation payload files opened: 0
+Final-evaluation payload files opened: 0
+Physical luminosity weights calculated: 0
+Physical yields calculated: 0
+
+NEXT_GATE: freeze_qcd_train_generator_weight_transport_checkpoint_then_build_process_reference_cross_section_registry
+
+PN_C4I_QCD_TRAIN_GENERATOR_WEIGHT_TRANSPORT_SCALEOUT_PASS

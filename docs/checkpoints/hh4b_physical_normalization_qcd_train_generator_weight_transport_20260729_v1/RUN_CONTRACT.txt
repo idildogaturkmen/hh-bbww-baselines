@@ -1,0 +1,16 @@
+schema_version=1
+repository=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines
+branch=delphes-hh4b-production
+expected_head=60fa40399f6205bd2e5d8cda3d243e287d65a5e8
+qcd_freeze=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_physical_normalization_qcd_importance_denominator_stitching_freeze_20260729_v2
+source_registry=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_full_5m_200k_expanded_manifest_split_20260728_v1/source_to_candidate_registry.tsv
+recovered_metadata=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_physical_normalization_qcd_exact_metadata_recovery_20260729_v1/recovered_qcd_shard_metadata.tsv
+coverage=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_physical_normalization_qcd_exact_metadata_recovery_20260729_v1/qcd_exact_metadata_coverage.tsv
+source_canary=/uscms/home/iturkmen/pn_c4h_qcd_train_generator_weight_transport_canary_20260729_v4
+eos_host=root://cmseos.fnal.gov
+train_targets=186
+variable_train_targets=127
+uniform_train_targets=59
+validation_payload_access_authorized=false
+evaluation_payload_access_authorized=false
+physical_weight_application_authorized=false

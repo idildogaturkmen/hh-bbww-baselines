@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "production": 260,
+    "test": 18,
+    "train": 186,
+    "uniform": 88,
+    "uniform_test": 9,
+    "uniform_train": 59,
+    "uniform_validation": 20,
+    "validation": 56,
+    "variable": 172,
+    "variable_test": 9,
+    "variable_train": 127,
+    "variable_validation": 36
+  },
+  "evaluation_payload_access_authorized": false,
+  "physical_weight_application_authorized": false,
+  "preexisting_bundle_checksums_to_freeze": 3,
+  "schema_version": 1,
+  "source_commit": "60fa40399f6205bd2e5d8cda3d243e287d65a5e8",
+  "status": "hh4b_qcd_train_transport_inventory_pass",
+  "validation_payload_access_authorized": false
+}

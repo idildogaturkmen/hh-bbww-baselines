@@ -1,0 +1,26 @@
+PN-c4h QCD train generator-weight transport canary
+===================================================
+
+Source tag: qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718_bin01_pthat75to100_shard1120_seed1211120
+Final split: train
+Generated events: 10000
+Candidate rows: 1
+ROOT weight location: Delphes;1:Event/Event.Weight
+ROOT weight storage dtype: <f4
+Candidate event join column: event
+n_events closure: True
+sum_event_weights closure: True
+sum_squared_event_weights closure: True
+min_event_weight closure: True
+max_event_weight closure: True
+Candidate event join pass: True
+Sidecar rows: 1
+
+Protected controls:
+  train candidate nonidentity columns opened: 0
+  validation payload files opened: 0
+  final-evaluation payload files opened: 0
+  physical luminosity weights calculated: 0
+  physical yields calculated: 0
+
+NEXT_GATE: scale_out_qcd_train_generator_weight_sidecars_and_uniform_weight_registry

@@ -1,0 +1,18 @@
+PN-c4j QCD train generator-weight transport freeze
+====================================================
+
+Train QCD shards frozen: 186
+Variable train sidecars frozen: 127
+Uniform train registry rows frozen: 59
+Variable candidate sidecar rows: 3
+Zero-candidate variable shards: 124
+Variable ROOT moment closures frozen: 127/127
+Variable candidate joins frozen: 127/127
+Validation payload files opened: 0
+Final-evaluation payload files opened: 0
+Physical luminosity weights calculated: 0
+Physical yields calculated: 0
+
+NEXT_GATE: build_process_reference_cross_section_registry
+
+PN_C4J_QCD_TRAIN_GENERATOR_WEIGHT_TRANSPORT_FREEZE_PASS

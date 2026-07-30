@@ -1,0 +1,52 @@
+{
+  "authorization": {
+    "evaluation_generator_weight_transport_authorized": false,
+    "physical_weight_application_authorized": false,
+    "qcd_train_generator_weight_scaleout_authorized": true,
+    "validation_generator_weight_transport_authorized": false
+  },
+  "closure": {
+    "max_event_weight": true,
+    "min_event_weight": true,
+    "n_events": true,
+    "sum_event_weights": true,
+    "sum_squared_event_weights": true
+  },
+  "controls": {
+    "evaluation_candidate_files_opened": 0,
+    "evaluation_root_files_opened": 0,
+    "models_trained": 0,
+    "physical_luminosity_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "train_candidate_columns_opened": 1,
+    "train_candidate_nonidentity_columns_opened": 0,
+    "train_candidate_parquet_files_opened": 1,
+    "train_root_branches_opened": 1,
+    "train_root_files_opened": 1,
+    "validation_candidate_files_opened": 0,
+    "validation_root_files_opened": 0
+  },
+  "next_gate": "scale_out_qcd_train_generator_weight_sidecars_and_uniform_weight_registry",
+  "schema_version": 1,
+  "selected": {
+    "candidate_rows": 1,
+    "event_join_column": "event",
+    "extracted_root_sha256": "307f76f0286b0f8a1e94cf5db8b31cd0187e8ee5ec3afce383d47f146a7e7b66",
+    "final_split": "train",
+    "generated_events": 10000,
+    "root_tree": "Delphes;1",
+    "root_weight_branch": "Event/Event.Weight",
+    "source_bundle_sha256": "513ba20ad3e2246c3b687bb26dcf692e6f267731eabe515463a990d1ba98e712",
+    "source_tag": "qcd_hardqcd_importance_adaptive1500k_phys_wave3_20260718_bin01_pthat75to100_shard1120_seed1211120"
+  },
+  "source_commit": "60fa40399f6205bd2e5d8cda3d243e287d65a5e8",
+  "status": "hh4b_qcd_train_generator_weight_transport_canary_pass",
+  "timestamp_utc": "2026-07-29T21:26:15.581343+00:00",
+  "transport": {
+    "candidate_event_join_pass": true,
+    "generator_coefficient_pb_per_event_weight": 5.1242287813082905,
+    "sidecar_rows": 1,
+    "sidecar_sha256": "06e883237c3661f095ea36ecc5a9428bd4e355dc428d1e7580be50412f4e18a7"
+  }
+}

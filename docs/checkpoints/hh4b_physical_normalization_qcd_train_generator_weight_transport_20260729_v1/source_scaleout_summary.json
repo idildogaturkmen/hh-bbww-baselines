@@ -1,0 +1,41 @@
+{
+  "authorization": {
+    "evaluation_generator_weight_transport_authorized": false,
+    "qcd_train_generator_weight_transport_complete": true,
+    "qcd_train_physical_weight_application_authorized": false,
+    "validation_generator_weight_transport_authorized": false
+  },
+  "controls": {
+    "evaluation_candidate_files_opened": 0,
+    "evaluation_payload_files_opened": 0,
+    "models_trained": 0,
+    "physical_luminosity_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "train_candidate_columns_opened": 3,
+    "train_candidate_nonidentity_columns_opened": 0,
+    "train_candidate_parquet_files_opened": 127,
+    "train_root_branches_opened": 127,
+    "train_root_files_opened": 127,
+    "uniform_train_bundle_payloads_opened": 0,
+    "uniform_train_candidate_content_opened": 0,
+    "validation_candidate_files_opened": 0,
+    "validation_payload_files_opened": 0
+  },
+  "next_gate": "freeze_qcd_train_generator_weight_transport_checkpoint_then_build_process_reference_cross_section_registry",
+  "schema_version": 1,
+  "source_commit": "60fa40399f6205bd2e5d8cda3d243e287d65a5e8",
+  "status": "hh4b_qcd_train_generator_weight_transport_scaleout_pass",
+  "timestamp_utc": "2026-07-29T23:00:14.845799+00:00",
+  "transport": {
+    "complete_fragments": 186,
+    "first_transport_bundle_checksums_frozen": 3,
+    "train_shards": 186,
+    "uniform_candidate_rows_covered_by_constant_registry": 53,
+    "uniform_train_shards": 59,
+    "variable_candidate_columns_opened": 3,
+    "variable_candidate_sidecar_rows": 3,
+    "variable_train_shards": 127,
+    "zero_candidate_variable_train_shards": 124
+  }
+}

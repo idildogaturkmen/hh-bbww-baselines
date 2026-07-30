@@ -1,0 +1,43 @@
+{
+  "controls": {
+    "candidate_rows_read_in_freeze_step": 0,
+    "evaluation_payload_files_opened": 0,
+    "models_trained": 0,
+    "payload_files_opened_in_freeze_step": 0,
+    "physical_luminosity_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "thresholds_selected": 0,
+    "validation_payload_files_opened": 0
+  },
+  "inventory": {
+    "evaluation_qcd_shards_sealed": 18,
+    "first_transport_bundle_checksums_frozen": 3,
+    "fragment_closure_rows": 186,
+    "production_qcd_shards": 260,
+    "train_qcd_shards": 186,
+    "uniform_candidate_rows_covered": 53,
+    "uniform_registry_rows": 59,
+    "uniform_train_shards": 59,
+    "validation_qcd_shards_sealed": 56,
+    "variable_candidate_sidecar_rows": 3,
+    "variable_train_shards": 127,
+    "zero_candidate_variable_train_shards": 124
+  },
+  "next_gate": "build_process_reference_cross_section_registry",
+  "readiness": {
+    "all_127_variable_candidate_joins_frozen": true,
+    "all_127_variable_root_moment_closures_frozen": true,
+    "all_186_train_qcd_transports_frozen": true,
+    "all_59_uniform_constant_weight_records_frozen": true,
+    "evaluation_generator_weight_transport_authorized": false,
+    "qcd_train_generator_weight_transport_complete": true,
+    "qcd_train_physical_weight_application_authorized": false,
+    "validation_generator_weight_transport_authorized": false
+  },
+  "schema_version": 1,
+  "source_commit": "60fa40399f6205bd2e5d8cda3d243e287d65a5e8",
+  "source_scaleout_dir": "/uscms/homes/i/iturkmen/pn_c4i_qcd_train_generator_weight_transport_scaleout_20260729_v1",
+  "source_scaleout_summary_sha256": "7423c2389291426ff651e7e98ab9475be7192f0be2cf3f9c47c164770e4fc0f5",
+  "status": "hh4b_qcd_train_generator_weight_transport_freeze_pass",
+  "timestamp_utc": "2026-07-30T00:28:49.678980+00:00"
+}
