@@ -1,0 +1,2 @@
+higgs_mass_GeV	decay	branching_fraction	theory_uncertainty_up_percent	theory_uncertainty_down_percent	bottom_mass_uncertainty_up_percent	bottom_mass_uncertainty_down_percent	alphaS_uncertainty_up_percent	alphaS_uncertainty_down_percent	source_id	source_table_locator	branching_fraction_selected	physical_weight_application_authorized
+125.00	H_to_bb	0.5824	0.65	0.65	0.72	0.74	0.78	0.80	LHCHXSWG_YR4_Higgs_BR	H_to_2fermions_mH_125.00	True	False

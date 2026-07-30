@@ -1,0 +1,47 @@
+{
+  "authorization": {
+    "H_to_bb_branching_fraction_frozen": true,
+    "all_seven_batch_A_references_complete": false,
+    "campaign_denominator_binding_complete": false,
+    "complete_200k_signal_normalization_authorized": false,
+    "complete_5m_background_normalization_authorized": false,
+    "five_authoritative_reference_cross_sections_frozen": true,
+    "five_effective_reference_factors_before_luminosity_frozen": true,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false,
+    "target_luminosity_frozen": false,
+    "two_vbf_generator_cut_acceptances_pending": true
+  },
+  "inventory": {
+    "authoritative_references_selected": 5,
+    "batch_A_processes": 7,
+    "batch_A_total_generated_events": 500000,
+    "remaining_processes": [
+      "vbf_hbb",
+      "vbf_hh4b"
+    ],
+    "remaining_vbf_generated_events": 150000,
+    "remaining_vbf_reference_scope_processes": 2,
+    "selected_process_generated_events": 350000,
+    "selected_processes": [
+      "bbh_hbb_4fs",
+      "ggf_hh4b",
+      "ggh_hbb",
+      "tth_hbb",
+      "wh_hbb"
+    ]
+  },
+  "next_gate": "derive_and_freeze_vbf_hbb_and_vbf_hh4b_generator_cut_acceptances_with_same_configuration_integration_only_then_complete_all_seven_batch_A_references_without_applying_weights",
+  "payload_controls": {
+    "archive_payload_files_opened": 0,
+    "hepmc_payload_files_opened": 0,
+    "lhe_payload_files_opened": 0,
+    "only_committed_checkpoint_text_opened": true,
+    "parquet_payload_files_opened": 0,
+    "root_payload_files_opened": 0
+  },
+  "schema_version": 1,
+  "source_commit": "c29f8ac2cec62868ad7081c4639faf607c4d0b8c",
+  "status": "batch_A_five_authoritative_reference_selection_complete",
+  "timestamp_utc": "2026-07-30T21:42:47.584121+00:00"
+}
