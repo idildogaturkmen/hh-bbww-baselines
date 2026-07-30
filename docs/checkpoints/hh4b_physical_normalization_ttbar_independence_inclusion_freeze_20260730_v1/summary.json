@@ -1,0 +1,60 @@
+{
+  "authorization": {
+    "complete_200k_signal_normalization_authorized": false,
+    "complete_5m_background_normalization_authorized": false,
+    "cross_campaign_ttbar_aggregation_authorized": false,
+    "legacy_campaign_denominator_use_authorized": true,
+    "legacy_member_denominator_use_authorized": true,
+    "legacy_physical_population_inclusion_authorized": true,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false,
+    "process_reference_cross_section_assignment_authorized": false
+  },
+  "denominator_freeze": {
+    "all_102_member_denominator_values_frozen": true,
+    "bundle_campaign_denominator_use_remains_authorized": true,
+    "bundle_campaign_denominator_values_remain_frozen": true,
+    "cross_campaign_ttbar_aggregation_authorized": false,
+    "cross_campaign_ttbar_denominator_candidate_sumw": "522528495.48339844",
+    "cross_campaign_ttbar_denominator_candidate_sumw2": "267682720973.43274",
+    "legacy_campaign_denominator_use_authorized": true,
+    "legacy_campaign_denominator_values_frozen": true,
+    "legacy_member_denominator_values_frozen": true
+  },
+  "formal_independence_decision": {
+    "all_27_legacy_members_independent_and_included": true,
+    "exact_member_scoped_lhe_hashes_distinct": true,
+    "exact_member_scoped_seed_sets_disjoint": true,
+    "exact_root_hashes_distinct": true,
+    "legacy_members_excluded": 0,
+    "legacy_source_326_independent_of_bundle_target_172": true
+  },
+  "full_inventory": {
+    "background_generated_events": 5000000,
+    "signal_generated_events": 200000,
+    "ttbar_population_resolved": true
+  },
+  "next_gate": "freeze_process_reference_cross_sections_branching_filter_efficiencies_and_campaign_weight_convention_compatibility_for_all_ordinary_background_and_signal_processes",
+  "payload_controls": {
+    "archive_payload_files_opened": 0,
+    "candidate_parquet_files_opened": 0,
+    "hepmc_event_payload_files_opened": 0,
+    "lhe_event_payload_files_opened": 0,
+    "only_frozen_tsv_json_metadata_opened": true,
+    "root_payload_files_opened": 0
+  },
+  "schema_version": 1,
+  "source_commit": "ec3700410f463463404d2a9f031b4e5f31ccbb76",
+  "status": "ttbar_independence_inclusion_denominator_freeze_complete",
+  "timestamp_utc": "2026-07-30T16:04:48.996723+00:00",
+  "ttbar_inventory": {
+    "all_root_sha256_values_unique": true,
+    "bundle_generated_events": 750000,
+    "bundle_members": 75,
+    "campaigns": 4,
+    "legacy_generated_events": 270000,
+    "legacy_members": 27,
+    "unique_generated_events": 1020000,
+    "unique_members": 102
+  }
+}

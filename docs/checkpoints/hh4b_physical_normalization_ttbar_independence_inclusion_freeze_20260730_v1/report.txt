@@ -1,0 +1,42 @@
+PN-c5t ttbar independence and denominator freeze
+=================================================
+
+Formal independence decision:
+  legacy source 326 vs bundle target 172: independent
+  legacy LHE SHA256: bb58ad5878433b641af8eeb475e826ed45da0fbec9580aef2cf427a9128c85ff
+  bundle LHE SHA256: 89d93cf2c3bd53aff5b3ec6adaf147d4ed6b8faa4d0335c386fe6f1173e6cecc
+  exact LHE overlap: 0
+  exact seed overlap: 0
+  exact ROOT overlap: 0
+  all 27 legacy members included: True
+  legacy members excluded: 0
+
+Unique ttbar population:
+  bundle members/events: 75/750000
+  legacy members/events: 27/270000
+  unique members/events: 102/1020000
+  campaign partitions: 4
+
+Denominator freeze:
+  all legacy member denominators frozen: True
+  all legacy campaign denominators frozen: True
+  denominator use within each campaign authorized: True
+  all-campaign ttbar sumw candidate: 522528495.48339844
+  all-campaign ttbar sumw2 candidate: 267682720973.43274
+  cross-campaign ttbar aggregation authorized: False
+
+Why cross-campaign aggregation remains blocked:
+  process definition, reference cross section, and
+  Event.Weight convention compatibility are not yet frozen.
+
+Authorization:
+  legacy physical population inclusion: True
+  process reference cross sections assigned: False
+  physical weights calculated: False
+  physical yields calculated: False
+  complete 5M background normalization authorized: False
+  complete 200k signal normalization authorized: False
+
+NEXT_GATE: freeze_process_reference_cross_sections_branching_filter_efficiencies_and_campaign_weight_convention_compatibility_for_all_ordinary_background_and_signal_processes
+
+PN_C5T_TTBAR_INDEPENDENCE_INCLUSION_DENOMINATOR_FREEZE_PASS
