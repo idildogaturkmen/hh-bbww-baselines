@@ -1,0 +1,47 @@
+{
+  "authorization": {
+    "Batch_A_campaign_denominators_complete": true,
+    "Batch_A_references_complete": true,
+    "full_5M_background_plus_200k_signal_closure_complete": false,
+    "generator_cut_acceptances_frozen": false,
+    "generator_cut_acceptances_required_for_frozen_VBF_policy": false,
+    "global_22_process_registry_complete": false,
+    "hard_QCD_global_binding_complete": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false
+  },
+  "batch": "A",
+  "campaigns": 14,
+  "collision_energy_TeV": 13,
+  "diagnostic_values_not_used_as_weights": {
+    "vbf_hbb_acceptance_candidate": 0.7448601642600247,
+    "vbf_hbb_acceptance_candidate_uncertainty": 0.008436069921931785,
+    "vbf_hh4b_c6n_baseline_relative_uncertainty": 0.02356591994124128,
+    "vbf_hh4b_c6n_exact_relative_uncertainty": 0.01183204316209242,
+    "vbf_hh4b_c6n_exact_reproduction_difference": 0.1037053395245856,
+    "vbf_hh4b_first_acceptance_candidate": 0.7430874286353969,
+    "vbf_hh4b_second_acceptance_candidate": 0.7827763496143959
+  },
+  "generated_events": 500000,
+  "next_gate": "freeze Batch-B top-family process references, then Batch-C electroweak/triboson and Batch-D zbbbb, before luminosity and global weight construction",
+  "processes": 7,
+  "reference_policy": {
+    "acceptance_correction_for_VBF_rows": false,
+    "additional_k_factor_for_VBF_rows": 1.0,
+    "five_processes": "authoritative inclusive 13 TeV reference with the already-frozen branching convention",
+    "production_banner_value_comparison": {
+      "absolute_tolerance_pb": 1e-15,
+      "method": "math.isclose",
+      "purpose": "allow only binary floating-point serialization noise while rejecting scientifically meaningful source-value changes",
+      "relative_tolerance": 1e-12
+    },
+    "vbf_hbb": "LO generator-fiducial production-banner cross section with exact generator cuts embedded; external H->bb factor applied once",
+    "vbf_hh4b": "LO generator-fiducial production-banner cross section with exact generator cuts embedded; no external H->bb factor"
+  },
+  "schema_version": 1,
+  "status": "Batch_A_seven_process_reference_freeze_complete",
+  "vbf_fallback_reason": {
+    "vbf_hbb": "paired acceptance was numerically usable, but a direct production-fiducial reference removes the remaining inclusive process-scope ambiguity and is consistent with both production campaigns",
+    "vbf_hh4b": "two independent fresh paired integrations did not meet the precision/reproduction gates; the exact production banners are campaign-consistent and are therefore frozen as the faithful generator-fiducial normalization instead of forcing an unvalidated inclusive acceptance correction"
+  }
+}

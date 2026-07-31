@@ -1,0 +1,8 @@
+process_or_mode	campaigns	generated_events	reference_class	sigma_reference_pb	external_H_to_bb_power	external_H_to_bb_factor	effective_reference_factor_pb	reference_source_contract	additional_k_factor	filter_efficiency_multiplier	campaign_denominator_frozen	reference_frozen	physical_weight_application_authorized	physical_yield_calculation_authorized
+bbh_hbb_4fs	2	50000	authoritative_inclusive_13TeV	0.5276999999999999	0	1	0.5276999999999999	PN-c6h frozen five-process authoritative reference	1	1	True	True	False	False
+ggh_hbb	2	100000	authoritative_inclusive_13TeV	48.58	0	1	48.58	PN-c6h frozen five-process authoritative reference	1	1	True	True	False	False
+tth_hbb	2	40000	authoritative_inclusive_13TeV	0.5071	1	0.5824	0.29533504	PN-c6h frozen five-process authoritative reference	1	1	True	True	False	False
+wh_hbb	2	60000	authoritative_inclusive_13TeV	1.373	1	0.5824	0.7996352	PN-c6h frozen five-process authoritative reference	1	1	True	True	False	False
+ggf_hh4b	2	100000	authoritative_inclusive_13TeV	0.03077	2	0.33918976	0.0104368689152	PN-c6h frozen five-process authoritative reference	1	1	True	True	False	False
+vbf_hbb	2	50000	generator_fiducial_LO_production_banner	2.7924382	1	0.5824	1.62631600768	mean of two exact production-banner Integrated weight (pb) values	1	1	True	True	False	False
+vbf_hh4b	2	100000	generator_fiducial_LO_production_banner	0.001426874505	0	1	0.001426874505	mean of two exact production-banner Integrated weight (pb) values	1	1	True	True	False	False
