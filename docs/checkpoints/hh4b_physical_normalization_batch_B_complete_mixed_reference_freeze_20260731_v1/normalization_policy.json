@@ -1,0 +1,63 @@
+{
+  "authorization": {
+    "Batch_B_denominator_bindings_complete": true,
+    "Batch_B_references_complete": true,
+    "full_5M_background_plus_200k_signal_closure_complete": false,
+    "global_22_process_registry_complete": false,
+    "hard_QCD_global_binding_complete": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false
+  },
+  "batch": "B",
+  "campaigns": 20,
+  "collision_energy_TeV": 13,
+  "cumulative_progress": {
+    "Batch_A_campaigns": 14,
+    "Batch_A_generated_events": 500000,
+    "Batch_A_plus_B_campaigns": 34,
+    "Batch_A_plus_B_generated_events": 1990000,
+    "Batch_A_plus_B_processes": 16,
+    "Batch_A_processes": 7
+  },
+  "denominator_policy": {
+    "all_20_campaign_denominators_frozen": true,
+    "all_9_cross_campaign_process_aggregations_authorized": true,
+    "signed_generator_weight_sums_used": true,
+    "ttbar_legacy_population_included": true
+  },
+  "generated_events": 1490000,
+  "next_gate": "freeze Batch-C electroweak and triboson references, then Batch-D zbbbb, before luminosity and global sidecar construction",
+  "processes": 9,
+  "reference_policy": {
+    "additional_k_factor_for_generator_fiducial_rows": 1.0,
+    "authoritative_processes": [
+      "schannel_single_top",
+      "tchannel_antitop",
+      "tchannel_top",
+      "ttbar_inclusive",
+      "tttt"
+    ],
+    "filter_efficiency_multiplier_for_generator_fiducial_rows": 1.0,
+    "generator_fiducial_processes": [
+      "ttw",
+      "ttz_zbb",
+      "tw_antitop",
+      "tw_top"
+    ],
+    "tW_charge_policy": {
+      "generator_fiducial_antitop_component_pb": 28.00627994537354,
+      "generator_fiducial_component_sum_pb": 56.04832935333252,
+      "generator_fiducial_top_component_pb": 28.04204940795898,
+      "official_79p3_pb_half_split_applied": false
+    },
+    "ttW_policy": "use the exact generated ttW charge-sum campaign mean; do not apply the legacy inclusive 0.6008 pb candidate",
+    "ttZ_Zbb_policy": "use the exact forced-Zbb generator-fiducial campaign mean with no additional Z-to-bb factor",
+    "ttbar_reference_update": {
+      "frozen_updated_reference_pb": 833.9,
+      "preflight_candidate_pb": 832.0,
+      "reason": "use the updated LHCTopWG Top++ 13 TeV recommendation"
+    }
+  },
+  "schema_version": 1,
+  "status": "Batch_B_nine_process_mixed_reference_and_denominator_freeze_complete"
+}

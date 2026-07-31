@@ -1,0 +1,10 @@
+process_or_mode	campaigns	generated_events	process_denominator_sumw	process_denominator_sumw2	negative_weight_events	zero_weight_events	positive_weight_events	weight_convention_class	denominator_source	all_campaign_denominators_frozen	all_campaign_denominator_use_authorized	cross_campaign_process_aggregation_authorized	physical_weight_application_authorized
+schannel_single_top	2	30000	210001.99794769287	1470034.0042018821	0	0	30000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+tchannel_antitop	2	80000	4651620.0256347656	270470010.39654362	0	0	80000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+tchannel_top	2	80000	8036450.0427246094	807309518.36094022	0	0	80000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+ttbar_inclusive	4	1020000	522528495.48339844	267682720973.43274	0	0	1020000	positive_generator_weights	PN-c5t frozen independent four-campaign ttbar denominator registry	True	True	True	False
+tttt	2	40000	366.36822856962681	3.3556569768539246	0	0	40000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+ttw	2	60000	21181.580424308777	7477.6949067733858	0	0	60000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+ttz_zbb	2	40000	3397.5069969892502	288.57701513454737	0	0	40000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+tw_antitop	2	70000	1961350.0022888184	54955693.988364838	0	0	70000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+tw_top	2	70000	1962216.3009643555	55004200.81896729	0	0	70000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False

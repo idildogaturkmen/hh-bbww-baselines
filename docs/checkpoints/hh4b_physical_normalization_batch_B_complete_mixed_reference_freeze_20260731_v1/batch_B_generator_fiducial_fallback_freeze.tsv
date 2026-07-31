@@ -1,0 +1,5 @@
+process_or_mode	campaign_values_pb	frozen_generator_fiducial_sigma_pb	campaign_half_spread_pb	campaign_relative_half_spread	scope_classification	external_branching_factor	additional_k_factor	filter_efficiency_multiplier	exact_generation_scope_embedded	official_inclusive_reference_applied	physical_weight_application_authorized
+ttw	0.3535720109939575,0.354308009147644	0.3539400100708008	0.0003679990768432617	0.001039721609234425	ttW_charge_sum_candidate	1	1	1	True	False	False
+ttz_zbb	0.08487270027399063,0.08508340269327164	0.08497805148363113	0.0001053512096405029	0.00123974612033551	inclusive_ttZ_times_forced_Zbb_candidate	1	1	1	True	False	False
+tw_antitop	27.99785041809082,28.01470947265625	28.00627994537354	0.008429527282714844	0.0003009870393053523	antitop_tW_component_candidate	1	1	1	True	False	False
+tw_top	28.04928970336914,28.03480911254883	28.04204940795898	0.00724029541015625	0.0002581942319843886	top_tW_component_candidate	1	1	1	True	False	False

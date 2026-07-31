@@ -1,0 +1,6 @@
+process_or_mode	source_family	source_page_identifier	collision_energy_TeV	central_value_pb	perturbative_order	uncertainty_contract	reference_maturity	source_access_date	central_value_frozen	physical_weight_application_authorized
+schannel_single_top	LHC_Top_Working_Group	LHCTopWG SingleTopNNLORef, s-channel top+antitop, 13 TeV	13	11.073	NNLO_QCD	total +0.193/-0.176 pb	published_recommendation	2026-07-31	True	False
+tchannel_antitop	LHC_Top_Working_Group	LHCTopWG SingleTopNNLORef, t-channel antitop component, 13 TeV	13	80	NNLO_QCD	total +1.8/-1.4 pb	published_recommendation	2026-07-31	True	False
+tchannel_top	LHC_Top_Working_Group	LHCTopWG SingleTopNNLORef, t-channel top component, 13 TeV	13	134.2	NNLO_QCD	total +2.6/-1.7 pb	published_recommendation	2026-07-31	True	False
+ttbar_inclusive	LHC_Top_Working_Group	LHCTopWG TtbarNNLO updated 13 TeV Top++ v2.0 recommendation	13	833.9	NNLO_QCD_plus_NNLL	scale +20.5/-30.0 pb; PDF+alphaS +/-21.0 pb	published_updated_recommendation	2026-07-31	True	False
+tttt	LHC_Top_Working_Group	LHCTopWG FourTopReferenceCrossSections, 13 TeV	13	0.01015	NLO_QCD_plus_NLLprime	scale +0.00297/-0.00241 pb; PDF+alphaS pending on source page	central_and_scale_published_PDF_alphaS_pending	2026-07-31	True	False
