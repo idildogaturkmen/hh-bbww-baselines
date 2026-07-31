@@ -1,0 +1,22 @@
+PN-c7i run contract
+
+- Require the exact PN-c7h v2 commit locally and remotely on the production branch.
+- Require a clean repository, d3 below the soft quota, and a write probe.
+- Validate PN-c7g v2, PN-c7h v2, and QCD transport checkpoint checksums.
+- Open exactly 441 train candidate Parquet payloads.
+- Resolve frozen `/store` candidate paths through `/eos/uscms` or XRootD,
+  never by assuming they are local POSIX paths.
+- Copy remote candidates only to node-local `/tmp`, verify their frozen
+  SHA-256, inspect them, and delete each temporary copy immediately.
+- Open exactly 14 ordinary signed generator-weight sidecars.
+- Open zero ROOT payloads and zero QCD transport-fragment payloads.
+- Open zero validation and zero test/evaluation payloads.
+- Require exact candidate file checksums and row-count closures.
+- Require exact `event` columns for every positive-row candidate file.
+- Permit a missing `event` column, including an empty schema, only when the
+  frozen candidate-row count and inspected Parquet row count are both zero.
+- Require source ranges and unique within-source keys for all candidate rows.
+- Require global uniqueness of `(population_kind, transport_id,event)`.
+- Require exact ordinary signed and variable-QCD candidate generator-weight joins.
+- Authorize train-only physical-weight sidecar materialization in the next gate.
+- Do not materialize physical weights or calculate selected yields here.

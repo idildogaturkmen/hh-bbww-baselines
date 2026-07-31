@@ -1,0 +1,32 @@
+{
+  "application_semantics": {
+    "candidate_physical_weight_formula_authorized_next_gate": "run2_yield_coefficient_per_generator_weight * generator_nominal_weight",
+    "multiplicity_division_required": false,
+    "rule": "direct_source_event_weight_on_unique_candidate_row"
+  },
+  "authorization": {
+    "selected_train_physical_yield_calculation_authorized": false,
+    "test_candidate_physical_weight_application_authorized": false,
+    "train_candidate_multiplicity_preflight_complete": true,
+    "train_candidate_physical_weight_application_authorized": true,
+    "train_physical_weight_sidecar_materialization_authorized": true,
+    "validation_candidate_physical_weight_application_authorized": false
+  },
+  "event_identity": {
+    "composite_key": "population_kind,transport_id,event",
+    "event_column": "event",
+    "positive_row_file_event_column_required": true,
+    "source_event_to_candidate_cardinality": "zero_or_one",
+    "within_source_event_key_unique": true,
+    "zero_row_empty_schema_allowed": true,
+    "zero_row_file_event_column_required": false
+  },
+  "schema_version": 1,
+  "sealed": {
+    "selected_train_yield_calculation": false,
+    "test_or_evaluation_payload_access": false,
+    "validation_payload_access": false
+  },
+  "source_commit": "adbf749ae4603402ecf8aa9593a1c0bcf8c0c067",
+  "status": "train_candidate_event_multiplicity_contract_frozen"
+}

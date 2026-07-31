@@ -1,0 +1,60 @@
+{
+  "controls": {
+    "candidate_payload_files_opened": 441,
+    "candidate_physical_weights_materialized": 0,
+    "eos_store_paths_resolved_without_local_path_assumption": true,
+    "models_trained": 0,
+    "ordinary_signed_sidecar_payload_files_opened": 14,
+    "positive_row_event_column_required": true,
+    "qcd_fragment_payload_files_opened": 0,
+    "root_payload_files_opened": 0,
+    "selected_physical_yields_calculated": 0,
+    "source_checkpoint_sha256_validation": true,
+    "test_or_evaluation_payload_files_opened": 0,
+    "thresholds_selected": 0,
+    "validation_payload_files_opened": 0,
+    "zero_row_missing_event_column_allowed": true
+  },
+  "inventory": {
+    "eos_mount_candidate_files_opened": 7,
+    "eos_namespace_candidate_files": 7,
+    "hard_qcd_candidate_rows": 56,
+    "hard_qcd_train_transport_records": 186,
+    "local_filesystem_candidate_files_opened": 434,
+    "ordinary_candidate_rows": 30649,
+    "ordinary_signed_sidecar_payload_files_opened": 14,
+    "ordinary_train_transport_records": 255,
+    "positive_candidate_files": 275,
+    "positive_row_files_with_event_column": 275,
+    "qcd_variable_candidate_generator_weight_rows": 3,
+    "temporary_candidate_payloads_deleted": 0,
+    "unified_candidate_rows": 30705,
+    "unified_train_transport_records": 441,
+    "xrootd_candidate_files_staged": 0,
+    "zero_candidate_files": 166,
+    "zero_row_empty_schema_files": 162,
+    "zero_row_files_with_event_column": 4,
+    "zero_row_files_without_event_column": 162
+  },
+  "multiplicity": {
+    "candidate_application_semantics": "direct_source_event_weight_on_unique_candidate_row",
+    "candidate_event_range_closure": true,
+    "duplicate_candidate_rows": 0,
+    "global_composite_event_identity_closure": true,
+    "identity_key": "population_kind,transport_id,event",
+    "maximum_event_multiplicity": 1,
+    "source_event_to_candidate_cardinality": "zero_or_one"
+  },
+  "next_gate": "materialize immutable train-only candidate physical-weight sidecars from the frozen Run-2 coefficients and generator-weight transports, then prove selected train-yield closure without opening validation or test",
+  "readiness": {
+    "selected_train_physical_yield_calculation_authorized": false,
+    "test_candidate_physical_weight_application_authorized": false,
+    "train_candidate_multiplicity_preflight_complete": true,
+    "train_candidate_physical_weight_application_authorized": true,
+    "train_physical_weight_sidecar_materialization_authorized": true,
+    "validation_candidate_physical_weight_application_authorized": false
+  },
+  "schema_version": 1,
+  "source_commit": "adbf749ae4603402ecf8aa9593a1c0bcf8c0c067",
+  "status": "train_candidate_event_multiplicity_preflight_pass"
+}
