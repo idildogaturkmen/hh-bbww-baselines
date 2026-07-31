@@ -1,0 +1,2 @@
+process_or_mode	campaigns	frozen_hard_process_scope	frozen_decay_mode	external_Z_to_bb_factor	external_Z_to_bb_factor_applied	generator_cross_section_already_matches_exact_generation_scope	reference_frozen	physical_weight_application_authorized
+zbbbb	3	p p > z b b~, z > b b~	forced_Z_to_bb_embedded_in_generation_scope	1	False	True	True	False

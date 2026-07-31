@@ -1,0 +1,47 @@
+{
+  "authorization": {
+    "Batch_D_denominator_binding_complete": true,
+    "Batch_D_reference_complete": true,
+    "all_22_ordinary_process_reference_batches_complete": true,
+    "full_dataset_normalization_closure_complete": false,
+    "global_22_process_registry_complete": false,
+    "hard_QCD_global_binding_complete": false,
+    "integrated_luminosity_contract_frozen": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false
+  },
+  "batch": "D",
+  "campaigns": 3,
+  "collision_energy_TeV": 13,
+  "cumulative_progress": {
+    "ordinary_campaigns_with_frozen_denominators": 47,
+    "ordinary_generated_events": 2390000,
+    "ordinary_process_reference_batches_complete": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "ordinary_processes_with_frozen_references": 22
+  },
+  "denominator_policy": {
+    "all_3_campaign_denominators_frozen": true,
+    "cross_campaign_process_aggregation_authorized": true,
+    "signed_generator_weight_sum_used": true
+  },
+  "generated_events": 250000,
+  "next_gate": "assemble and validate the immutable global 22-process ordinary reference/denominator registry, then freeze the exact integrated-luminosity contract",
+  "processes": 1,
+  "reference_policy": {
+    "additional_k_factor": 1.0,
+    "external_Z_to_bb_factor_applied": false,
+    "filter_efficiency_multiplier": 1.0,
+    "forced_Z_to_bb_embedded": true,
+    "hard_process_scope": "p p > z b b~, z > b b~",
+    "process_or_mode": "zbbbb",
+    "reference_class": "generator_fiducial_LO_three_campaign_mean",
+    "sigma_reference_pb": 6.909267425537109
+  },
+  "schema_version": 1,
+  "status": "Batch_D_zbbbb_generator_fiducial_reference_and_denominator_freeze_complete"
+}
