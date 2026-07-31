@@ -1,0 +1,14 @@
+PN-c7g run contract
+
+- Require exact branch, local HEAD, remote HEAD and clean repository.
+- Require d3 usage below the 200G soft quota and a successful repository
+  write probe.
+- Validate all PN-c7e, PN-c7f, hard-QCD transport and triboson checkpoint
+  checksums.
+- Read metadata registries and checksum ordinary sidecar files only.
+- Do not open candidate Parquet payloads or ROOT event payloads.
+- Freeze exactly 255 ordinary and 186 hard-QCD train transport records.
+- Preserve validation and test/evaluation seals.
+- Authorize physical coefficient construction only.
+- Do not authorize candidate physical-weight application or physical-yield
+  calculation.

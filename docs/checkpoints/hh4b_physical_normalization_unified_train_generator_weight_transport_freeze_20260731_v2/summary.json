@@ -1,0 +1,55 @@
+{
+  "controls": {
+    "candidate_payload_files_opened": 0,
+    "hard_qcd_candidate_row_registry_closure": true,
+    "hard_qcd_generated_event_registry_closure": true,
+    "hard_qcd_train_identity_closure": true,
+    "ordinary_sidecar_file_checksum_validation": true,
+    "ordinary_train_identity_closure": true,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "root_payload_files_opened": 0,
+    "source_checkpoint_sha256_validation": true,
+    "test_or_evaluation_payload_files_opened": 0,
+    "unified_train_identity_closure": true,
+    "validation_payload_files_opened": 0
+  },
+  "inventory": {
+    "hard_qcd_fragment_closure_candidate_rows": 56,
+    "hard_qcd_fragment_closure_generated_events": 1811373,
+    "hard_qcd_generated_event_registry_closure": true,
+    "hard_qcd_train_candidate_rows": 56,
+    "hard_qcd_train_generated_events": 1811373,
+    "hard_qcd_train_shards": 186,
+    "hard_qcd_transport_registry_generated_events": 1811373,
+    "hard_qcd_uniform_records": 59,
+    "hard_qcd_variable_candidate_sidecar_rows": 3,
+    "hard_qcd_variable_records": 127,
+    "hard_qcd_zero_candidate_variable_shards": 124,
+    "ordinary_existing_signed_sidecars": 11,
+    "ordinary_new_signed_sidecars": 3,
+    "ordinary_signed_sidecars": 14,
+    "ordinary_train_candidate_rows": 30649,
+    "ordinary_train_generated_events": 1758500,
+    "ordinary_train_members": 255,
+    "ordinary_uniform_constant_records": 241,
+    "unified_train_transport_records": 441
+  },
+  "next_gate": "construct immutable Run-2 138000 pb^-1 physical coefficient registries for ordinary processes and hard-QCD source shards, then prove analytical closure before candidate application",
+  "readiness": {
+    "candidate_physical_weight_application_authorized": false,
+    "physical_coefficient_construction_authorized": true,
+    "physical_yield_calculation_authorized": false,
+    "unified_train_generator_weight_transport_complete": true
+  },
+  "schema_version": 1,
+  "sealed": {
+    "hard_qcd_test_or_evaluation_shards": 18,
+    "hard_qcd_validation_shards": 56,
+    "ordinary_test_members": 24,
+    "ordinary_validation_members": 60
+  },
+  "source_commit": "86f6cf06c135cab3210dbea8be74733be2129238",
+  "status": "unified_train_generator_weight_transport_freeze_pass",
+  "timestamp_utc": "2026-07-31T21:44:03.116222+00:00"
+}

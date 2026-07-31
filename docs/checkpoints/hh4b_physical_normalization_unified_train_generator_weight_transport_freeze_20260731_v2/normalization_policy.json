@@ -1,0 +1,32 @@
+{
+  "authorization": {
+    "candidate_physical_weight_application_authorized": false,
+    "physical_coefficient_construction_authorized": true,
+    "physical_yield_calculation_authorized": false,
+    "test_generator_weight_transport_authorized": false,
+    "train_generator_weight_transport_complete": true,
+    "validation_generator_weight_transport_authorized": false
+  },
+  "next_gate": "construct immutable Run-2 138000 pb^-1 physical coefficient registries for ordinary processes and hard-QCD source shards, then prove analytical closure before candidate application",
+  "schema_version": 1,
+  "scope": {
+    "hard_qcd_train_shards": 186,
+    "hard_qcd_uniform_shards": 59,
+    "hard_qcd_variable_shards": 127,
+    "ordinary_signed_sidecar_members": 14,
+    "ordinary_train_members": 255,
+    "ordinary_uniform_constant_members": 241,
+    "unified_train_transport_records": 441
+  },
+  "source_commit": "86f6cf06c135cab3210dbea8be74733be2129238",
+  "status": "unified_train_generator_weight_transport_frozen",
+  "transport_contract": {
+    "candidate_join_key": "event where candidate rows exist",
+    "candidate_multiplicity_policy": "event generator weight is transported by source-event identity; physical-yield multiplicity closure remains a later gate",
+    "hard_qcd_event_total_policy": "derive the train generated-event total from the frozen transport registry and require exact independent agreement with the fragment-closure registry; do not infer it as number_of_shards times a nominal shard size",
+    "hard_qcd_uniform": "frozen nominal generator-weight constant plus the separately frozen hard-QCD coefficient contract",
+    "hard_qcd_variable": "frozen root-event transport fragment; zero-candidate shards require no candidate sidecar rows",
+    "ordinary_signed": "immutable event-keyed sidecar with generator_nominal_weight and generator_weight_sign",
+    "ordinary_uniform": "member-level constant Event/Event.Weight value"
+  }
+}
