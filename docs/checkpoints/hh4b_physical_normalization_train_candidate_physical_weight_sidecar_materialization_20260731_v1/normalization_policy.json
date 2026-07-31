@@ -1,0 +1,29 @@
+{
+  "artifact": {
+    "path": "/uscms/home/iturkmen/physical_weight_sidecars/train_candidate_run2_physical_weights_20260731_v1/train_candidate_run2_physical_weights.parquet",
+    "rows": 30705,
+    "sha256": "d5315ed70bb0298b4fc67e6e8c41437a7457b9b28b10fea2982d95b96275e2d3"
+  },
+  "authorization": {
+    "selected_train_physical_yield_calculation_authorized": true,
+    "test_candidate_physical_weight_application_authorized": false,
+    "test_selected_yield_calculation_authorized": false,
+    "train_candidate_physical_weight_sidecar_complete": true,
+    "validation_candidate_physical_weight_application_authorized": false,
+    "validation_selected_yield_calculation_authorized": false
+  },
+  "candidate_application_semantics": "direct_source_event_weight_on_unique_candidate_row",
+  "identity_key": "population_kind,transport_id,event",
+  "luminosity_pb_inverse": 138000,
+  "multiplicity_division_applied": false,
+  "physical_weight_formula": "run2_candidate_physical_weight = run2_yield_coefficient_per_generator_weight * generator_nominal_weight",
+  "schema_version": 1,
+  "sealed": {
+    "test_or_evaluation_payload_access": false,
+    "test_physical_weight_application": false,
+    "validation_payload_access": false,
+    "validation_physical_weight_application": false
+  },
+  "source_commit": "4647ffc50cc5436b73430897680613e76c327d94",
+  "status": "train_candidate_physical_weight_contract_frozen"
+}

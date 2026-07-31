@@ -1,0 +1,68 @@
+{
+  "artifact": {
+    "bytes": 104999,
+    "identity_key": "population_kind,transport_id,event",
+    "path": "/uscms/home/iturkmen/physical_weight_sidecars/train_candidate_run2_physical_weights_20260731_v1/train_candidate_run2_physical_weights.parquet",
+    "physical_weight_column": "run2_candidate_physical_weight",
+    "rows": 30705,
+    "sha256": "d5315ed70bb0298b4fc67e6e8c41437a7457b9b28b10fea2982d95b96275e2d3"
+  },
+  "candidate_access": {
+    "eos_mount_candidate_files_opened": 7,
+    "eos_namespace_candidate_files_opened": 7,
+    "local_filesystem_candidate_files_opened": 268,
+    "temporary_candidate_payloads_deleted": 0,
+    "xrootd_candidate_files_staged": 0
+  },
+  "closures": {
+    "candidate_checksum_validation": true,
+    "candidate_event_identity_closure": true,
+    "coefficient_luminosity_closure": true,
+    "hard_qcd_generator_weight_join_closure": true,
+    "installed_sidecar_identity_closure": true,
+    "installed_sidecar_schema_closure": true,
+    "ordinary_signed_generator_weight_join_closure": true,
+    "physical_weight_sign_closure": true,
+    "row_level_physical_weight_formula_closure": true,
+    "source_checkpoint_sha256_validation": true
+  },
+  "controls": {
+    "candidate_payload_files_opened": 275,
+    "candidate_physical_weights_materialized": 30705,
+    "models_trained": 0,
+    "ordinary_signed_sidecar_payload_files_opened": 14,
+    "qcd_fragment_payload_files_opened": 0,
+    "root_payload_files_opened": 0,
+    "selected_physical_yields_calculated": 0,
+    "test_or_evaluation_payload_files_opened": 0,
+    "thresholds_selected": 0,
+    "validation_payload_files_opened": 0
+  },
+  "inventory": {
+    "hard_qcd_candidate_physical_weight_rows": 56,
+    "hard_qcd_train_transport_records": 186,
+    "negative_physical_weight_rows": 0,
+    "ordinary_candidate_physical_weight_rows": 30649,
+    "ordinary_signed_sidecar_payload_files_opened": 14,
+    "ordinary_train_transport_records": 255,
+    "positive_candidate_files_opened": 275,
+    "positive_physical_weight_rows": 30705,
+    "qcd_variable_candidate_generator_weight_rows_consumed": 3,
+    "unified_candidate_physical_weight_rows": 30705,
+    "unified_train_transport_records": 441,
+    "zero_candidate_files_not_opened": 166,
+    "zero_physical_weight_rows": 0
+  },
+  "next_gate": "join the immutable train physical-weight sidecar to the frozen train candidates and calculate selected train process and region yields, weighted cutflows, effective statistics, S/B and initial Asimov significance; keep validation and test sealed",
+  "readiness": {
+    "selected_train_physical_yield_calculation_authorized": true,
+    "test_candidate_physical_weight_application_authorized": false,
+    "test_selected_yield_calculation_authorized": false,
+    "train_candidate_physical_weight_sidecar_complete": true,
+    "validation_candidate_physical_weight_application_authorized": false,
+    "validation_selected_yield_calculation_authorized": false
+  },
+  "schema_version": 1,
+  "source_commit": "4647ffc50cc5436b73430897680613e76c327d94",
+  "status": "train_candidate_physical_weight_sidecar_materialization_pass"
+}

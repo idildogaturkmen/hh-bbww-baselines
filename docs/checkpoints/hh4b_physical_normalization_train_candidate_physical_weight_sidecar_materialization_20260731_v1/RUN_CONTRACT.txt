@@ -1,0 +1,19 @@
+PN-c7j run contract
+
+- Require exact PN-c7i v4 commit locally and remotely and a clean branch.
+- Require d3 below its soft quota, repository write access, a real 64 MiB
+  home write probe, and same-filesystem atomic sidecar installation.
+- Validate PN-c7g v2, PN-c7h v2, PN-c7i v4, and QCD transport checksums.
+- Read only the 275 positive-row train candidate payloads.
+- Trust the frozen PN-c7i proof for 166 zero-row candidate files and do not
+  reopen those empty payloads.
+- Open exactly 14 ordinary signed generator-weight sidecars.
+- Consume exactly three variable-QCD candidate generator-weight rows.
+- Open zero ROOT and zero QCD transport-fragment payloads.
+- Open zero validation and zero test/evaluation payloads.
+- Materialize exactly 30705 unique train physical-weight rows.
+- Use the exact formula coefficient times generator nominal weight.
+- Apply no multiplicity division.
+- Freeze artifact checksums, schema, identity, row ranges, and sign closure.
+- Calculate no selected yield, cutflow, S/B, significance, score or threshold.
+- Authorize selected train-yield calculation only in the next gate.
