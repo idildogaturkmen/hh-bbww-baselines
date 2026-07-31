@@ -1,0 +1,47 @@
+{
+  "authorization": {
+    "full_exactly_three_b_train_materialization_required": true,
+    "full_run2_selected_yield_prediction_complete": false,
+    "lower_btag_pseudodata_multijet_transfer_complete": false,
+    "systematic_aware_inference_authorized": false,
+    "test_physical_yield_calculation_authorized": false,
+    "train_fourb_direct_qcd_secondary_projection_complete": true,
+    "train_fourb_physical_yield_closure_complete": true,
+    "validation_physical_yield_calculation_authorized": false
+  },
+  "btag_categories": {
+    "exactly4b": "n_selected_bjets == 4",
+    "ge5b": "n_selected_bjets >= 5",
+    "inclusive_ge4b": "n_selected_bjets >= 4"
+  },
+  "full_run2_prediction": false,
+  "mhh_categories": {
+    "high_mhh": "mhh >= 450 GeV",
+    "low_mhh": "mhh < 450 GeV"
+  },
+  "multijet": {
+    "diagnostic_qcd_testfill_nominal_contribution": 0,
+    "direct_stitched_hard_qcd_role": "secondary_closure_and_projection_only",
+    "overlapping_qcd_bbbb_nominal_contribution": 0,
+    "primary_strategy": "lower_btag_simulation_pseudodata_transfer_not_yet_complete"
+  },
+  "regions": {
+    "baseline_all_fourb_candidates": "all frozen four-b candidate rows",
+    "cms_reference_cr_rhh125120_ge30_lt55": "30 <= r_hh_125_120 < 55 GeV",
+    "cms_reference_outside_rhh125120_ge55": "r_hh_125_120 >= 55 GeV",
+    "cms_reference_sr_rhh125120_lt30": "r_hh_125_120 < 30 GeV",
+    "higher_efficiency_sr_rhh125120_lt35p5": "r_hh_125_120 < 35.5 GeV",
+    "higher_purity_sr_rhh125120_lt31p5": "r_hh_125_120 < 31.5 GeV",
+    "optimized_nominal_sr_rhh125120_lt34": "r_hh_125_120 < 34 GeV"
+  },
+  "schema_version": 1,
+  "significance": {
+    "expected_limit_authorized": false,
+    "role": "train_only_supporting_diagnostic",
+    "statistical_only_asimov_formula": "sqrt(2*((S+B)*ln(1+S/B)-S))",
+    "systematic_aware_significance_authorized": false
+  },
+  "source_commit": "57752e4a19d431d731f24fa18635ae638b562fd2",
+  "status": "train_fourb_selected_yield_contract_frozen",
+  "yield_scope": "train_partition_contribution_only"
+}

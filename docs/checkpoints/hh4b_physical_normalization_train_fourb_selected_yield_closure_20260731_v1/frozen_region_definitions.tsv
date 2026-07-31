@@ -1,0 +1,8 @@
+region	definition	variable	geometry_status	threshold_optimized_in_current_step	validation_used	test_used
+baseline_all_fourb_candidates	all frozen four-b candidate rows	none	frozen_candidate_baseline	False	False	False
+cms_reference_sr_rhh125120_lt30	r_hh_125_120 < 30 GeV	r_hh_125_120	frozen_input_geometry	False	False	False
+cms_reference_cr_rhh125120_ge30_lt55	30 <= r_hh_125_120 < 55 GeV	r_hh_125_120	frozen_input_geometry	False	False	False
+cms_reference_outside_rhh125120_ge55	r_hh_125_120 >= 55 GeV	r_hh_125_120	frozen_input_geometry	False	False	False
+optimized_nominal_sr_rhh125120_lt34	r_hh_125_120 < 34 GeV	r_hh_125_120	frozen_input_geometry	False	False	False
+higher_purity_sr_rhh125120_lt31p5	r_hh_125_120 < 31.5 GeV	r_hh_125_120	frozen_input_geometry	False	False	False
+higher_efficiency_sr_rhh125120_lt35p5	r_hh_125_120 < 35.5 GeV	r_hh_125_120	frozen_input_geometry	False	False	False

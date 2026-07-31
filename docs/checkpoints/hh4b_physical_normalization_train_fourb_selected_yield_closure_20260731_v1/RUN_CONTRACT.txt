@@ -1,0 +1,18 @@
+PN-c7k run contract
+
+- Require exact PN-c7j commit locally/remotely and a clean repository.
+- Require d3 below the soft quota and a successful write probe.
+- Validate PN-c7h v2, PN-c7i v4, and PN-c7j checkpoint checksums.
+- Validate the frozen expanded cut protocol and mHH category definitions.
+- Open only 275 positive-row train four-b candidate payloads.
+- Do not reopen the 166 frozen zero-row candidate payloads.
+- Join by the exact PN-c7j source row range and event order.
+- Require n_selected_bjets >= 4 for every joined candidate.
+- Calculate train-partition yields in frozen R_HH, mHH and b-tag regions.
+- Record sumw, sumw2, N_eff, signed-weight and cancellation diagnostics.
+- Separate direct stitched hard QCD as secondary closure/projection.
+- Calculate only statistical-only S/B, S/sqrt(B), and Asimov diagnostics.
+- Do not score a model or select a threshold.
+- Do not calculate systematic-aware significance or expected limits.
+- Do not open validation or test/evaluation payloads.
+- Do not call these train-partition sums a full Run-2 selected prediction.
