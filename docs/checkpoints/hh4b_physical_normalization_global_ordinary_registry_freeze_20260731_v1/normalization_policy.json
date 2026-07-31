@@ -1,0 +1,64 @@
+{
+  "authorization": {
+    "all_22_ordinary_process_references_frozen": true,
+    "all_47_ordinary_campaign_denominators_frozen": true,
+    "batch_A_reconstructed_process_denominator_binding_frozen": true,
+    "cross_campaign_process_aggregation_authorized_for_ordinary_samples": true,
+    "global_22_process_ordinary_registry_complete": true,
+    "hard_QCD_inventory_and_overlap_policy_reconciled": true,
+    "hard_QCD_physical_weight_contract_frozen": false,
+    "immutable_event_weight_sidecars_complete": false,
+    "integrated_luminosity_contract_frozen": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false,
+    "raw_5M_background_inventory_reconciled": true
+  },
+  "collision_energy_TeV": 13,
+  "inventory_contract": {
+    "nominal_nonoverlapping_direct_MC_all_sample_events": 4890000,
+    "nominal_nonoverlapping_direct_MC_background_events": 4690000,
+    "overlapping_qcd_bbbb_events_excluded_from_nominal_addition": 300000,
+    "raw_all_sample_events": 5200000,
+    "raw_background_events": 5000000,
+    "raw_hard_QCD_diagnostic_testfill_events_excluded": 10000,
+    "raw_inventory_is_not_an_additive_physical_prediction": true
+  },
+  "next_gate": "freeze the exact 13 TeV integrated-luminosity contract from an authoritative CMS source; then construct immutable generator-weight sidecars and physical-weight closure canaries",
+  "ordinary_registry": {
+    "background_events": 2190000,
+    "background_processes": 20,
+    "batches": {
+      "A": {
+        "events": 500000,
+        "processes": 7
+      },
+      "B": {
+        "events": 1490000,
+        "processes": 9
+      },
+      "C": {
+        "events": 150000,
+        "processes": 5
+      },
+      "D": {
+        "events": 250000,
+        "processes": 1
+      }
+    },
+    "campaigns": 47,
+    "generated_events": 2390000,
+    "members": 339,
+    "processes": 22,
+    "signal_events": 200000,
+    "signal_processes": 2
+  },
+  "repository_source_head": "a2d14e099b7d37201d4ef957a5543a83f4105d56",
+  "schema_version": 1,
+  "status": "global_22_process_ordinary_reference_and_denominator_registry_frozen",
+  "weight_policy": {
+    "hard_QCD_uses_separate_stitched_importance_sampling_contract": true,
+    "luminosity_or_event_weight_calculated_in_this_checkpoint": false,
+    "ordinary_process_denominator": "complete signed generator-weight sum across every frozen campaign belonging to the process",
+    "split_wise_renormalization_allowed": false
+  }
+}

@@ -1,0 +1,10 @@
+step=PN-c7a
+repository=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines
+branch=delphes-hh4b-production
+source_head=a2d14e099b7d37201d4ef957a5543a83f4105d56
+source_preflight=/uscms/homes/i/iturkmen/pn_c6z_global_ordinary_inventory_reconciliation_preflight_20260731_v2
+event_payload_opened=False
+integrated_luminosity_assigned=False
+physical_weight_calculated=False
+physical_yield_calculated=False
+hard_qcd_weight_contract_modified=False

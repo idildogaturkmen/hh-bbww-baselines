@@ -1,0 +1,2 @@
+registry	processes	campaigns	members	generated_events	background_processes	background_events	signal_processes	signal_events	global_registry_frozen	integrated_luminosity_contract_frozen	physical_weight_application_authorized	physical_yield_calculation_authorized
+global_ordinary_22_process_registry	22	47	339	2390000	20	2190000	2	200000	True	False	False	False

@@ -1,0 +1,5 @@
+comparison	ordinary_count	hard_qcd_count	intersection_count	intersection_values	status
+campaign_identity	21	4	0		disjoint
+member_bundle_basename_identity	339	261	0		disjoint
+physics_phase_space_overlap_policy	2	1	2	qcd_bbbb_general,qcd_bbbb_iht400to600	known_semantic_overlap_excluded_from_nominal_sum
+hard_qcd_testfill	0	1	0	qcd_hardqcd_importance_testfill_bin3_10k_20260717	diagnostic_excluded_from_nominal_production

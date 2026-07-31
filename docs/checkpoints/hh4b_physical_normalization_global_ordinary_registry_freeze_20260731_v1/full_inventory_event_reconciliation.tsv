@@ -1,0 +1,10 @@
+accounting_view	population	sample_class	members	generated_events	nominal_physical_addition_included	reason
+raw_original_630_member_inventory	ordinary_22_process_population_including_recovered_legacy_ttbar	mixed	339	2390000	True	22 frozen ordinary processes; 20 backgrounds plus 2 signals
+raw_original_630_member_inventory	overlapping_qcd_bbbb_families	background	30	300000	False	qcd_bbbb_general and qcd_bbbb_iht400to600 overlap qcd_hardqcd; do not sum
+raw_original_630_member_inventory	hard_qcd_nominal_production	background	260	2500000	True	three production extensions pooled inside eight exclusive pTHat bins
+raw_original_630_member_inventory	hard_qcd_diagnostic_testfill	background	1	10000	False	diagnostic duplicate of nominal [200,300) pTHat bin
+raw_original_inventory_total	all_background	background	520	5000000	False	raw generated inventory count, not an additive physical prediction
+raw_original_inventory_total	all_signal	signal	110	200000	True	two HH4b signals
+raw_original_inventory_total	all_samples	mixed	630	5200000	False	complete raw inventory closure
+nominal_nonoverlapping_direct_MC_inventory	background	background	489	4690000	True	ordinary backgrounds plus 260 hard-QCD production shards; excludes 30 overlap members and 1 testfill
+nominal_nonoverlapping_direct_MC_inventory	all_samples	mixed	599	4890000	True	background plus 200k signal; event count is not a physical yield
