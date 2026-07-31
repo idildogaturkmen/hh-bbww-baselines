@@ -1,0 +1,6 @@
+process_or_mode	campaigns	generated_events	process_denominator_sumw	process_denominator_sumw2	negative_weight_events	zero_weight_events	positive_weight_events	weight_convention_class	denominator_source	all_campaign_denominators_frozen	all_campaign_denominator_use_authorized	cross_campaign_process_aggregation_authorized	physical_weight_application_authorized
+ww	2	40000	2587468.0328369141	167374823.97736922	0	0	40000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+wwz_zbb	2	26000	2477.0847733467817	237.56804538855309	43	0	25957	signed_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+wz_zbb	2	60000	213782.60135650635	761720.38703926431	0	0	60000	positive_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+wzz_zbb	2	16500	502.87738835439086	15.43094142507427	28	0	16472	signed_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False
+zzz_zbb	2	7500	78.765035875141621	0.83430559284795269	16	0	7484	signed_generator_weights	PN-c5l frozen campaign denominator registry	True	True	True	False

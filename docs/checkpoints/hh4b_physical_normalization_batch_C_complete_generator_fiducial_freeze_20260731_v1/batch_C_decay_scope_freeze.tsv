@@ -1,0 +1,6 @@
+process_or_mode	campaigns	frozen_decay_mode	decay_scope_evidence_source	external_Z_to_bb_factor	external_Z_to_bb_factor_applied	generator_cross_section_already_matches_exact_generation_scope	sample_label_zbb_is_not_a_decay_contract	reference_frozen	physical_weight_application_authorized
+ww	2	inclusive_WW_generation_scope	PN-c6t exact metadata semantics	1	False	True	False	True	False
+wwz_zbb	2	inclusive_unforced_Z_decay_sampling	PN-c6v exact raw-card recovery	1	False	True	True	True	False
+wz_zbb	2	forced_Z_to_bb_embedded_in_generation_scope	PN-c6t exact metadata semantics	1	False	True	False	True	False
+wzz_zbb	2	inclusive_unforced_Z_decay_sampling	PN-c6v exact raw-card recovery	1	False	True	True	True	False
+zzz_zbb	2	inclusive_unforced_Z_decay_sampling	PN-c6v exact raw-card recovery	1	False	True	True	True	False

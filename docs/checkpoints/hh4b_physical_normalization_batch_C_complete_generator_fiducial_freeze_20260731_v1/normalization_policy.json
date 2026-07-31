@@ -1,0 +1,43 @@
+{
+  "authorization": {
+    "Batch_C_denominator_bindings_complete": true,
+    "Batch_C_references_complete": true,
+    "full_dataset_normalization_closure_complete": false,
+    "global_22_process_registry_complete": false,
+    "hard_QCD_global_binding_complete": false,
+    "physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false
+  },
+  "batch": "C",
+  "campaigns": 10,
+  "collision_energy_TeV": 13,
+  "cumulative_progress": {
+    "Batch_A_plus_B_plus_C_campaigns": 44,
+    "Batch_A_plus_B_plus_C_generated_events": 2140000,
+    "Batch_A_plus_B_plus_C_processes": 21
+  },
+  "denominator_policy": {
+    "all_10_campaign_denominators_frozen": true,
+    "all_5_cross_campaign_process_aggregations_authorized": true,
+    "signed_generator_weight_sums_used": true
+  },
+  "generated_events": 150000,
+  "next_gate": "resolve and freeze Batch-D zbbbb across three campaigns and 250000 generated events",
+  "processes": 5,
+  "reference_policy": {
+    "additional_k_factor": 1.0,
+    "all_references_generator_fiducial": true,
+    "campaign_mean_used": true,
+    "external_Z_to_bb_factor_applied": false,
+    "filter_efficiency_multiplier": 1.0,
+    "maximum_allowed_campaign_relative_half_spread": 0.02,
+    "unforced_triboson_Z_decay_processes": [
+      "wwz_zbb",
+      "wzz_zbb",
+      "zzz_zbb"
+    ],
+    "zbb_label_warning": "For wwz_zbb, wzz_zbb, and zzz_zbb, the zbb label is not a forced generator decay contract. Exact raw cards show inclusive unforced Z-decay sampling."
+  },
+  "schema_version": 1,
+  "status": "Batch_C_five_process_generator_fiducial_reference_and_denominator_freeze_complete"
+}
