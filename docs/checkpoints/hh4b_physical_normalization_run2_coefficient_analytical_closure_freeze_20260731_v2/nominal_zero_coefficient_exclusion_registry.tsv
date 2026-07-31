@@ -1,0 +1,3 @@
+population	members_or_shards	generated_events	nominal_cross_section_coefficient	nominal_run2_yield_coefficient	nominal_physical_yield_contribution	reason	exclusion_closure_pass
+qcd_bbbb_general_and_qcd_bbbb_iht400to600	30	300000	0	0	0	retain_in_raw_inventory_but_never_add_to_nominal_qcd_hardqcd_prediction	True
+qcd_hardqcd_diagnostic_testfill	1	10000	0	0	0	diagnostic duplicate of nominal [200,300) pTHat bin	True

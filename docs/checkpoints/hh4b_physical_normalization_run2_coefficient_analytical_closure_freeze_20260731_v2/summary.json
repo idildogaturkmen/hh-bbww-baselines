@@ -1,0 +1,82 @@
+{
+  "controls": {
+    "candidate_payload_files_opened": 0,
+    "candidate_physical_weights_materialized": 0,
+    "hard_qcd_source_contract_partition_closure": true,
+    "hard_qcd_testfill_cross_contract_identity_closure": true,
+    "models_trained": 0,
+    "root_payload_files_opened": 0,
+    "selected_candidate_physical_yields_calculated": 0,
+    "sidecar_payload_files_opened": 0,
+    "source_checkpoint_sha256_validation": true,
+    "thresholds_selected": 0
+  },
+  "hard_qcd": {
+    "all_bin_cross_section_closures_pass": true,
+    "all_bin_run2_analytical_yield_closures_pass": true,
+    "all_source_coefficient_formula_closures_pass": true,
+    "analytical_cross_section_sum_pb": "22581739.166054858",
+    "analytical_physical_weight_sum_squared": "5.0880606678665586e+18",
+    "analytical_run2_yield_sum": "3116280004915.5704",
+    "excluded_diagnostic_testfill_shards": 1,
+    "excluded_nominal_coefficient": 0,
+    "exclusive_bins": 8,
+    "generated_events": 2500000,
+    "nominal_production_shards": 260,
+    "overlapping_qcd_bbbb_events_excluded": 300000,
+    "overlapping_qcd_bbbb_members_excluded": 30,
+    "source_shard_contract_rows": 261,
+    "testfill_events_excluded": 10000,
+    "testfill_shards_excluded": 1,
+    "uniform_positive_shards": 88,
+    "variable_weight_shards": 172
+  },
+  "inventory": {
+    "nominal_background_events": 4690000,
+    "nominal_direct_mc_total_events": 4890000,
+    "nominal_signal_events": 200000,
+    "raw_background_events": 5000000,
+    "raw_signal_events": 200000,
+    "raw_total_events": 5200000,
+    "zero_coefficient_excluded_events": 310000
+  },
+  "luminosity": {
+    "collision_energy_TeV": 13,
+    "integrated_luminosity_fb_inverse": 138,
+    "integrated_luminosity_pb_inverse": 138000,
+    "luminosity_uncertainty_application_authorized": false,
+    "luminosity_uncertainty_contract_frozen": false,
+    "scenario": "CMS Run-2-equivalent expected-yield projection"
+  },
+  "next_gate": "inspect and freeze train candidate event multiplicity and event-to-candidate coefficient application semantics, then materialize immutable train-only physical-weight sidecars and prove selected-yield closure without opening validation or test",
+  "ordinary": {
+    "all_campaign_allocation_closures_pass": true,
+    "all_process_denominator_closures_pass": true,
+    "all_run2_analytical_yield_closures_pass": true,
+    "background_analytical_run2_reference_yield": "171507904.23169864",
+    "background_effective_reference_cross_section_pb": "1242.8109002297003",
+    "background_generated_events": 2190000,
+    "background_processes": 20,
+    "campaigns": 47,
+    "generated_events": 2390000,
+    "members": 339,
+    "processes": 22,
+    "signal_analytical_run2_reference_yield": "1637.1965919876000",
+    "signal_effective_reference_cross_section_pb": "0.0118637434202",
+    "signal_generated_events": 200000,
+    "signal_processes": 2
+  },
+  "readiness": {
+    "inclusive_analytical_normalization_closure_complete": true,
+    "run2_physical_coefficient_registries_complete": true,
+    "selected_physical_yield_calculation_authorized": false,
+    "test_candidate_physical_weight_application_authorized": false,
+    "train_candidate_multiplicity_preflight_authorized": true,
+    "train_candidate_physical_weight_application_authorized": false,
+    "validation_candidate_physical_weight_application_authorized": false
+  },
+  "schema_version": 1,
+  "source_commit": "8f2597a0331e952fe986d15d60e6d3e5a03e16c9",
+  "status": "run2_physical_coefficient_analytical_closure_freeze_pass",
+  "timestamp_utc": "2026-07-31T21:56:29.293844+00:00"
+}

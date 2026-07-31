@@ -1,0 +1,27 @@
+{
+  "authorization": {
+    "coefficient_construction_complete": true,
+    "inclusive_analytical_normalization_closure_complete": true,
+    "luminosity_uncertainty_application_authorized": false,
+    "selected_physical_yield_calculation_authorized": false,
+    "test_candidate_physical_weight_application_authorized": false,
+    "train_candidate_multiplicity_preflight_authorized": true,
+    "train_candidate_physical_weight_application_authorized": false,
+    "validation_candidate_physical_weight_application_authorized": false
+  },
+  "candidate_multiplicity_policy": "coefficients are frozen at source-event level; candidate-level application remains unauthorized until event multiplicity and join semantics are explicitly proven",
+  "hard_qcd_formula": "run2_event_yield_weight = 138000_pb_inverse * (N_s / N_bin) * (sigmaGen_s_pb / shard_sumw_s) * generator_nominal_weight",
+  "next_gate": "inspect and freeze train candidate event multiplicity and event-to-candidate coefficient application semantics, then materialize immutable train-only physical-weight sidecars and prove selected-yield closure without opening validation or test",
+  "ordinary_formula": "run2_event_yield_weight = 138000_pb_inverse * (effective_reference_factor_pb / process_denominator_sumw) * generator_nominal_weight",
+  "schema_version": 1,
+  "source_commit": "8f2597a0331e952fe986d15d60e6d3e5a03e16c9",
+  "status": "run2_physical_coefficient_contract_frozen",
+  "zero_coefficient_policy": {
+    "hard_qcd_excluded_testfill_rows": 1,
+    "hard_qcd_nominal_production_rows": 260,
+    "hard_qcd_source_contract_rows": 261,
+    "hard_qcd_testfill_events": 10000,
+    "nominal_contribution": 0,
+    "overlapping_qcd_bbbb_events": 300000
+  }
+}

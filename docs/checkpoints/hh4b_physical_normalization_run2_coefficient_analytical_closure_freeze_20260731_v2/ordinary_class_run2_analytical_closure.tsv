@@ -1,0 +1,3 @@
+sample_class	processes	campaigns	generated_events	effective_reference_cross_section_sum_pb	analytical_run2_reference_yield_sum	reconstructed_run2_denominator_yield_sum	analytical_physical_weight_sum_squared	run2_analytical_yield_closure_pass
+background	20	43	2190000	1242.8109002297003	171507904.23169864	171507904.23169864	21751175550.211652	True
+signal	2	4	200000	0.0118637434202	1637.1965919876000	1637.1965919876000	21.132231247795935	True

@@ -1,0 +1,17 @@
+PN-c7h run contract
+
+- Require exact branch, local HEAD, remote HEAD and a clean repository.
+- Require d3 below the soft quota and a successful repository write probe.
+- Validate the ordinary, luminosity, hard-QCD and unified-transport source
+  checkpoint checksums.
+- Read metadata registries only.
+- Do not open candidate Parquet, ROOT event or sidecar payloads.
+- Freeze 22 ordinary process coefficients and 47 campaign allocations.
+- Partition the 261-row hard-QCD source contract into exactly 260 nominal
+  production shards and one excluded diagnostic testfill.
+- Freeze and revalidate the 260 nominal hard-QCD shard coefficients and
+  eight exclusive-bin analytical closures.
+- Freeze nominal coefficient zero for 300000 overlapping qcd_bbbb events and
+  the 10000-event diagnostic hard-QCD testfill.
+- Do not authorize candidate physical-weight application, validation/test
+  access, selected physical-yield calculation, or luminosity uncertainty.
