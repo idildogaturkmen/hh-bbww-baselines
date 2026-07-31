@@ -32,7 +32,7 @@ Current status:
 - released data layout: audited;
 - representative remote files: inspected;
 - released model contract: audited;
-- released three released model contract: audited;
+- released model contract: audited;
 - released three-model inference: reproduced;
 - resonance-localization canaries: performed;
 - Track A raw-EFlow transfer canary: performed;
@@ -1089,3 +1089,45 @@ externally blocked.
 Released-model studies, raw-EFlow domain characterization,
 documentation, deterministic metric extraction, and later
 matched-statistics design can continue independently.
+
+## 2026-08-01 V4 direct-probability update
+
+The deterministic raw-EFlow transfer characterization was
+completed using the direct normalized ONNX probabilities.
+
+Machine-readable interpretation:
+
+    SECOND_SOFTMAX_APPLIED=0
+    DOMAIN_LABEL=raw-EFlow-to-PUPPI-model
+    NEXT_MILESTONE=frozen-score transfer baseline
+
+V3 applied a second softmax to an output node that was
+already a softmax. All V3 quantitative probability, AUC,
+bootstrap, and localization results are superseded.
+
+Valid V4 headline results:
+
+- signal-QCD direct Psignal AUC: `0.596954`;
+- signal-QCD conditional-discriminant AUC: `0.655045`;
+- conditional-discriminant 95 percent bootstrap interval:
+  `[0.605251,0.703328]`;
+- top-versus-nontop Pttbar AUC: `0.792793`;
+- top 95 percent bootstrap interval:
+  `[0.759590,0.825756]`;
+- conditional posterior in the 115-135 GeV region:
+  `0.023308`;
+- mean conditional posterior masses:
+  `(128.109,172.646)` GeV;
+- signal argmax in the 115-135 GeV region: `3/256`.
+
+The full deterministic receipt is:
+
+`docs/checkpoints/track_b_raw_eflow_transfer_characterization_v4_20260801_v1.md`
+
+Track B SHA before this update:
+
+`85e1a9e1ec95f84466c6a8c91ebc44d6f9555753`
+
+Track A source-repository SHA observed during preparation:
+
+`6835f69a0ef6cb40b82e39f91f7d2f7036c1ee0d`
