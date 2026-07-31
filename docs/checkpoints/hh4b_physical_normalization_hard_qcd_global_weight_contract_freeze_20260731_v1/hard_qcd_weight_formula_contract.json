@@ -1,0 +1,29 @@
+{
+  "coefficient_definition": {
+    "N_b": "total generated events across the three production extensions in the same exclusive pTHat bin",
+    "N_s": "generated events in shard s",
+    "cross_section_coefficient_pb_per_event_weight": "(N_s / N_b) * (sigmaGen_s_pb / sumw_s)",
+    "event_level_run2_yield_weight": "138000_pb_inverse * cross_section_coefficient_pb_per_event_weight * w_gen_i_s",
+    "sigmaGen_s_pb": "generator cross section recorded for shard s",
+    "sumw_s": "frozen shard sum of Pythia event weights",
+    "w_gen_i_s": "original Pythia event weight for event i in shard s"
+  },
+  "combination_policy": {
+    "campaign_extensions": "pooled within each exclusive pTHat bin",
+    "exclusive_bin_addition": true,
+    "independent_full_cross_section_per_campaign_forbidden": true,
+    "overlapping_qcd_bbbb_nominal_contribution": 0,
+    "testfill_nominal_contribution": 0
+  },
+  "roles": {
+    "direct_mc_role": "secondary_closure_and_projection_only",
+    "primary_multijet_role": "lower_btag_simulation_pseudodata_transfer"
+  },
+  "run2_luminosity": {
+    "collision_energy_TeV": 13,
+    "integrated_luminosity_fb_inverse": 138,
+    "integrated_luminosity_pb_inverse": 138000,
+    "scenario": "CMS Run-2-equivalent expected-yield projection"
+  },
+  "schema_version": 1
+}

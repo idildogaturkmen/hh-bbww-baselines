@@ -1,0 +1,38 @@
+{
+  "authorization": {
+    "event_level_physical_weight_application_authorized": false,
+    "global_22_process_ordinary_registry_complete": true,
+    "hard_QCD_260_production_shards_bound": true,
+    "hard_QCD_denominator_and_stitching_gate_complete": true,
+    "hard_QCD_eight_exclusive_bins_bound": true,
+    "hard_QCD_global_physical_weight_contract_frozen": true,
+    "hard_QCD_testfill_excluded": true,
+    "hard_QCD_three_production_extensions_bound": true,
+    "immutable_event_weight_sidecars_complete": false,
+    "nominal_run2_luminosity_contract_frozen": true,
+    "overlapping_qcd_bbbb_nominal_addition_excluded": true,
+    "physical_yield_calculation_authorized": false
+  },
+  "controls": {
+    "event_level_physical_weights_calculated": 0,
+    "event_payloads_opened": 0,
+    "physical_yields_calculated": 0,
+    "repository_source_files_modified": 0
+  },
+  "inventory": {
+    "diagnostic_testfill_events_excluded": 10000,
+    "diagnostic_testfill_shards_excluded": 1,
+    "exclusive_pthat_bins": 8,
+    "nominal_production_campaigns": 3,
+    "nominal_production_events": 2500000,
+    "nominal_production_shards": 260,
+    "overlapping_qcd_bbbb_events_excluded": 300000,
+    "overlapping_qcd_bbbb_members_excluded": 30,
+    "uniform_positive_shards": 88,
+    "variable_weight_shards_requiring_transport": 172
+  },
+  "next_gate": "inspect and freeze the train-event identity and generator-weight transport schema, then materialize immutable train-only event-weight sidecars without modifying original ROOT or Parquet payloads",
+  "repository_source_head": "5d2cb189db2359cb216a3167efbbbc0d585f3bf9",
+  "schema_version": 1,
+  "status": "hard_QCD_global_Run2_physical_weight_contract_frozen"
+}
