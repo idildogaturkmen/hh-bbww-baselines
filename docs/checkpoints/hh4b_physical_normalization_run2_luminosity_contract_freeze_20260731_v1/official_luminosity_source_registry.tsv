@@ -1,0 +1,3 @@
+source_id	source_type	official_title	official_locator	frozen_claim	application	retrieval_date
+CMS-HIG-21-018	official_CMS_Higgs_combination	Combined measurements and interpretations of Higgs boson production and decay in proton-proton collisions at sqrt(s)=13 TeV	CMS public results HIG-21-018; CERN CDS 2955243	CMS 2016-2018 data at 13 TeV correspond to 138 fb^-1	nominal dataset scope and luminosity	2026-07-31
+CMS-LUM-20-001	official_CMS_luminosity_publication	Precision luminosity measurement in proton-proton collisions at 13 TeV with CMS	CMS public results LUM-20-001; CERN-EP-2026-134	current legacy Run-2 luminosity metrology context	context only; complete-Run-2 uncertainty is not silently assigned to this 2016-2018 projection	2026-07-31

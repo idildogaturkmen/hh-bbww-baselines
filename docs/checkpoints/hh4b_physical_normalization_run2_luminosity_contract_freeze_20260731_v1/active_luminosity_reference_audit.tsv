@@ -1,0 +1,4 @@
+source	finding	interpretation	authorized_for_final_weights
+scripts/build_physics_weights.py	legacy --lumi-fb default is 138.0	historically consistent but incomplete implementation	False
+docs/normalization_assumptions.md	historical target is 138 fb^-1	consistent with frozen nominal contract	not_executable
+/uscms/homes/i/iturkmen/pn_c7b_integrated_luminosity_contract_preflight_20260731_v1/tracked_luminosity_references.txt	broad grep contains numerical false positives from result CSV files	raw match counts are not treated as contract conflicts	False

@@ -1,0 +1,12 @@
+step=PN-c7b
+source_head=f31bf5455e4f05e2ca74a427e860ff93b9a5d89a
+collision_energy_TeV=13
+integrated_luminosity_fb_inverse=138
+integrated_luminosity_pb_inverse=138000
+interpretation=CMS_Run2_equivalent_expected_yield_projection
+event_payload_opened=False
+physical_weight_calculated=False
+physical_yield_calculated=False
+luminosity_uncertainty_applied=False
+run2_plus_run3_projection_authorized=False
+hl_lhc_projection_authorized=False

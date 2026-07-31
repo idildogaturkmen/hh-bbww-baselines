@@ -1,0 +1,28 @@
+{
+  "authorization": {
+    "global_22_process_ordinary_registry_complete": true,
+    "hard_QCD_physical_weight_application_authorized": false,
+    "hard_QCD_physical_weight_contract_frozen": false,
+    "hl_lhc_projection_contract_frozen": false,
+    "immutable_event_weight_sidecars_complete": false,
+    "luminosity_uncertainty_application_authorized": false,
+    "luminosity_uncertainty_contract_frozen": false,
+    "nominal_run2_luminosity_contract_frozen": true,
+    "ordinary_physical_weight_application_authorized": false,
+    "physical_yield_calculation_authorized": false,
+    "run2_plus_run3_projection_contract_frozen": false
+  },
+  "collision_energy_TeV": 13,
+  "luminosity_contract": {
+    "data_taking_period": "CMS proton-proton 2016-2018",
+    "integrated_luminosity_fb_inverse": 138.0,
+    "integrated_luminosity_pb_inverse": 138000.0,
+    "interpretation": "CMS Run-2-equivalent expected-yield projection",
+    "nominal_value_source": "CMS-HIG-21-018",
+    "uncertainty_policy": "central exposure frozen; luminosity nuisance and correlations require a later separate contract"
+  },
+  "next_gate": "freeze the hard-QCD physical-weight formula and bin/extension binding, then build immutable event generator-weight sidecars and prove closure",
+  "repository_source_head": "f31bf5455e4f05e2ca74a427e860ff93b9a5d89a",
+  "schema_version": 1,
+  "status": "run2_2016_2018_13tev_138fb_nominal_luminosity_contract_frozen"
+}
