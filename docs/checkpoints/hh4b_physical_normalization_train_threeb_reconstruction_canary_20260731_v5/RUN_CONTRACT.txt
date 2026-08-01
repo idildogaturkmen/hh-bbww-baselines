@@ -1,0 +1,21 @@
+PN-c7o v5 run contract
+
+- Require the exact PN-c7n v5 commit locally and remotely.
+- Process only the five frozen train canary sources.
+- Verify every source's typed live checksum and byte size before opening ROOT.
+- Resolve each frozen archive member uniquely; allow only exact, normalized, unique-suffix, or unique-basename matches.
+- Use the frozen archive-layout evidence for nested ggF reconstruction archives.
+- Require the frozen Delphes branch contract and exact generated event count.
+- Reconstruct exactly-3b candidates with the frozen threeb-control builder.
+- Require exact schema, exactly three selected b-tags, and promoted-jet rules.
+- Verify unique, in-range event IDs and zero overlap with four-b candidates.
+- Require an event column for nonzero four-b references; accept an empty-schema reference only when its Parquet metadata and frozen registry both prove exactly zero rows.
+- Transport generator weights for every selected 3b event.
+- Validate the existing signed member-wide event-weight sidecar against every ROOT `Event.Weight`; separately require the frozen four-b events to be an exact subset of that full event map.
+- Upload five 3b outputs and five generator-weight sidecars to EOS.
+- Verify remote output byte sizes and Adler-32 values.
+- Remove all temporary archives, extracted ROOTs, candidate copies and outputs.
+- Submit zero jobs and create zero persistent d3 outputs.
+- Calculate zero physical weights and zero physical yields.
+- Open zero validation and zero test/evaluation payloads.
+- Authorize full train 3b reconstruction only after all five sources pass.

@@ -1,0 +1,28 @@
+{
+  "authorization": {
+    "bounded_threeb_reconstruction_canary_passed": true,
+    "full_threeb_train_reconstruction_authorized": true,
+    "lower_btag_transfer_factor_calculation_authorized": false,
+    "physical_threeb_weight_application_authorized": false
+  },
+  "canary_sources": 5,
+  "execution_mode": "sequential_local_canary_no_condor",
+  "full_production_execution_contract": {
+    "exact_archive_member_extraction_only": true,
+    "generator_weight_sidecar_required": true,
+    "live_source_checksum_required_before_root_open": true,
+    "one_source_per_job": true,
+    "persistent_d3_output_allowed": false,
+    "persistent_output_location": "EOS",
+    "remote_output_size_and_adler32_verification_required": true,
+    "temporary_payload_cleanup_required": true,
+    "threeb_fourb_disjointness_required": true,
+    "threeb_schema_validation_required": true
+  },
+  "schema_version": 1,
+  "sealed": {
+    "test_or_evaluation_payload_access": false,
+    "validation_payload_access": false
+  },
+  "status": "full_threeb_train_reconstruction_authorized"
+}

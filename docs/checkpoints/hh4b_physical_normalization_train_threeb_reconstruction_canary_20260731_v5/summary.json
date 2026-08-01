@@ -1,0 +1,95 @@
+{
+  "archive_layout_resolution": {
+    "all_root_members_uniquely_resolved": true,
+    "ambiguous_archive_members_accepted": 0,
+    "direct_remote_root_sources": 3,
+    "local_direct_root_sources": 1,
+    "nested_remote_root_sources": 1,
+    "temporary_nested_archives_remaining": 0
+  },
+  "controls": {
+    "candidate_payload_files_deserialized": 5,
+    "jobs_submitted": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "remote_input_bundles_transferred": 4,
+    "root_payload_files_deserialized": 5,
+    "test_or_evaluation_payload_files_opened": 0,
+    "validation_payload_files_opened": 0
+  },
+  "fourb_reference_contract": {
+    "all_nonzero_event_ids_unique": true,
+    "nonzero_reference_sources": 4,
+    "nonzero_references_require_event_column": true,
+    "reference_sources": 5,
+    "schema_mode_counts": {
+      "nonzero_event_schema": 4,
+      "zero_row_empty_schema": 1
+    },
+    "zero_row_empty_schema_accepted_only_with_zero_metadata_rows": true,
+    "zero_row_reference_sources": 1
+  },
+  "generator_weight_transport": {
+    "all_selected_generator_weights_finite": true,
+    "physical_weights_calculated": false,
+    "physical_yields_calculated": false,
+    "signed_sidecar_expected_generated_events": 10000,
+    "signed_sidecar_fourb_subset_closure_sources": 1,
+    "signed_sidecar_full_member_event_coverage_sources": 1,
+    "signed_sidecar_full_member_rows": 10000,
+    "signed_sidecar_root_event_weight_closure_sources": 1,
+    "signed_sidecar_sources": 1,
+    "threeb_candidate_weight_row_closure": true,
+    "threeb_generator_weight_rows_total": 2597
+  },
+  "inventory": {
+    "canary_sources": 5,
+    "local_direct_root_sources": 1,
+    "remote_bundle_sources": 4,
+    "source_checksum_kind_counts": {
+      "bundle_adler32_size": 1,
+      "bundle_sha256": 3,
+      "root_sha256": 1
+    },
+    "transport_class_counts": {
+      "qcd_variable_frozen_fragment": 1,
+      "signed_exact_event_sidecar": 1,
+      "uniform_member_constant": 3
+    }
+  },
+  "next_gate": "construct and submit the full 441-source exactly-three-b train production using the frozen PN-c7n manifest and the proven one-source-per-job checksum, reconstruction, generator-weight transport, output verification, and cleanup contract; keep validation and test sealed",
+  "readiness": {
+    "bounded_threeb_reconstruction_canary_passed": true,
+    "full_threeb_train_reconstruction_authorized": true,
+    "lower_btag_transfer_factor_calculation_authorized": false,
+    "physical_threeb_weight_application_authorized": false
+  },
+  "reconstruction": {
+    "all_promoted_jet_contracts_exact": true,
+    "all_rows_exactly_three_selected_bjets": true,
+    "all_threeb_event_identities_unique_and_in_range": true,
+    "all_threeb_schemas_exact": true,
+    "fourb_candidate_rows_total": 781,
+    "root_events_total": 41000,
+    "threeb_candidate_rows_total": 2597,
+    "threeb_fourb_event_overlap_total": 0
+  },
+  "schema_version": 1,
+  "source_commit": "7f9d7ebc153880843002abd3b4c8815f01abb864",
+  "source_integrity": {
+    "candidate_sha256_values_verified": 5,
+    "live_source_checksums_verified": 5,
+    "live_source_sizes_verified": 5,
+    "remote_output_adler32_values_verified": 10
+  },
+  "status": "five_source_threeb_reconstruction_canary_pass",
+  "storage_and_cleanup": {
+    "persistent_d3_outputs_created": 0,
+    "persistent_eos_output_directory": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/threeb_control/train_canary_20260731_v5",
+    "persistent_output_bytes": 1308019,
+    "persistent_output_files": 10,
+    "temporary_archives_remaining": 0,
+    "temporary_candidate_copies_remaining": 0,
+    "temporary_extracted_roots_remaining": 0
+  }
+}
