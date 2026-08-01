@@ -1,0 +1,109 @@
+{
+  "created_date": "2026-08-01",
+  "event_caps": {
+    "event_indices_frozen": false,
+    "events_opened_in_this_step": false,
+    "raw_event_scan_cap_per_member": 1024,
+    "selected_event_cap_per_member": 256
+  },
+  "next_gate": "pilot_source_access_and_event_key_alignment_canary",
+  "paper_method_cross_check": {
+    "exact_released_model_conventions": [
+      "138 normalized output probabilities",
+      "136 unordered variable-mass signal classes plus QCD and tt",
+      "event discriminant is the sum of the 136 signal probabilities",
+      "three-model ensemble discriminant is the arithmetic mean of the three model discriminants"
+    ],
+    "pilot_sampling_note": "The deterministic member quotas are a Track B transfer-study design and are not claimed to reproduce the authors' training mixture or statistics.",
+    "track_b_transfer_deviations": [
+      "Track A raw EFlow replaces the authors' pileup-mitigated reconstructed-particle inputs",
+      "fixed-mass SM HH replaces the authors' variable-mass signal prior",
+      "exact JetClass-II detector, pileup, SophonAK4 trigger, and 4j3b parity is unavailable",
+      "the authors' event-level mass fitting and correction procedure is not yet applied"
+    ]
+  },
+  "paper_reference": {
+    "arxiv": "2508.15048",
+    "authors": [
+      "Tianyi Yang",
+      "Congqiao Li"
+    ],
+    "title": "Potential of di-Higgs observation via a calibratable jet-free HH to 4b framework",
+    "version": "v2"
+  },
+  "pilot_population": {
+    "root_access_mode_counts": {
+      "archive_or_container": 47,
+      "local_file": 6
+    },
+    "selected_members": 53,
+    "split_class_counts": {
+      "train:background": 27,
+      "train:signal": 6,
+      "validation:background": 17,
+      "validation:signal": 3
+    },
+    "split_family_counts": {
+      "train:background_other_bbh_hbb_4fs": 1,
+      "train:background_other_ggh_hbb": 1,
+      "train:background_other_schannel_single_top": 1,
+      "train:background_other_tchannel_antitop": 1,
+      "train:background_other_tchannel_top": 1,
+      "train:background_other_tth_hbb": 1,
+      "train:background_other_tttt": 1,
+      "train:background_other_ttw": 1,
+      "train:background_other_ttz_zbb": 1,
+      "train:background_other_tw_antitop": 1,
+      "train:background_other_tw_top": 1,
+      "train:background_other_vbf_hbb": 1,
+      "train:background_other_wh_hbb": 1,
+      "train:background_other_wwz_zbb": 1,
+      "train:background_other_wz_zbb": 1,
+      "train:background_other_wzz_zbb": 1,
+      "train:background_other_zzz_zbb": 1,
+      "train:background_qcd": 6,
+      "train:background_ttbar": 4,
+      "train:signal_ggf": 4,
+      "train:signal_vbf": 2,
+      "validation:background_other_bbh_hbb_4fs": 1,
+      "validation:background_other_ggh_hbb": 1,
+      "validation:background_other_schannel_single_top": 1,
+      "validation:background_other_tchannel_antitop": 1,
+      "validation:background_other_tchannel_top": 1,
+      "validation:background_other_tth_hbb": 1,
+      "validation:background_other_ttw": 1,
+      "validation:background_other_tw_antitop": 1,
+      "validation:background_other_tw_top": 1,
+      "validation:background_other_vbf_hbb": 1,
+      "validation:background_other_wh_hbb": 1,
+      "validation:background_other_zzz_zbb": 1,
+      "validation:background_qcd": 3,
+      "validation:background_ttbar": 2,
+      "validation:signal_ggf": 2,
+      "validation:signal_vbf": 1
+    }
+  },
+  "pilot_seed": "track-b-frozen-score-pilot-20260801-v1",
+  "result": "TRACK_B_FROZEN_SCORE_PILOT_MANIFEST_VALID",
+  "schema_version": 1,
+  "source_population": {
+    "development_rows": 585,
+    "primary_root_mappings": 340,
+    "supplemental_ttbar_mappings": 27,
+    "synthesized_empty_members": 218,
+    "unresolved_nonempty_members": 0,
+    "validated_nonempty_members": 367
+  },
+  "source_repository_head": "6835f69a0ef6cb40b82e39f91f7d2f7036c1ee0d",
+  "split_protection": {
+    "allowed_splits": [
+      "train",
+      "validation"
+    ],
+    "sealed_test_members_included": 0,
+    "sealed_test_predictions_authorized": false,
+    "test_members_included": 0,
+    "train_validation_group_overlap": 0
+  },
+  "track_b_base_sha": "4e065a8dba4427b108b841a553962d935e3eb06c"
+}
