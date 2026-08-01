@@ -1,0 +1,51 @@
+{
+  "authorization": {
+    "bounded_threeb_reconstruction_canary_authorized": true,
+    "exact_441_train_root_source_registry_frozen": true,
+    "full_threeb_train_production_manifest_frozen": true,
+    "full_threeb_train_reconstruction_authorized": false,
+    "lower_btag_transfer_factor_calculation_authorized": false,
+    "physical_threeb_weight_application_authorized": false
+  },
+  "candidate_identity_contract": {
+    "authoritative_content_identity": "candidate_sha256_plus_candidate_rows",
+    "authoritative_operational_locator": "unified_train_generator_weight_transport_registry.candidate_path",
+    "checksum_mismatch_allowed": false,
+    "historical_provenance_locators_retained": true,
+    "path_alias_allowed_only_with_exact_content_closure": true,
+    "path_relation_counts": {
+      "content_identical_location_alias": 7,
+      "exact_path_string": 434
+    },
+    "row_count_mismatch_allowed": false
+  },
+  "output": {
+    "d3_full_output_authorized": false,
+    "format": "Parquet",
+    "mode": "threeb-control",
+    "persistent_base": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/threeb_control/train_full_20260731_v1"
+  },
+  "schema_version": 1,
+  "sealed": {
+    "test_or_evaluation_payload_access": false,
+    "validation_payload_access": false
+  },
+  "source_access_modes": {
+    "local_direct_root": {
+      "checksum_contract": "root_sha256",
+      "scratch_policy": "read authoritative ROOT directly; do not make persistent copies",
+      "sources": 22
+    },
+    "remote_bundle_extraction_required": {
+      "checksum_contract": "typed_frozen_bundle_sha256_or_legacy_eos_adler32_plus_exact_reported_size",
+      "checksum_contract_counts": {
+        "bundle_adler32_size": 80,
+        "bundle_sha256": 339
+      },
+      "scratch_policy": "one source per job; delete archive and extracted ROOT after output validation",
+      "sources": 419
+    }
+  },
+  "source_identity": "transport_id",
+  "status": "train_threeb_production_contract_frozen"
+}

@@ -1,0 +1,29 @@
+PN-c7n v5 run contract
+
+- Require exact PN-c7k commit locally/remotely and a clean repository.
+- Validate PN-c7m v6, PN-c7l, unified train transport, and ROOT-map checksums.
+- Freeze exactly 441 unique train transport identities.
+- Bind candidate population identity by exact SHA-256 plus exact row count.
+- Retain both transport and historical provenance candidate locators.
+- Classify exact paths, normalized equivalent locations, and verified
+  content-identical location aliases explicitly.
+- Fail on every candidate checksum or row-count disagreement.
+- Preserve 419 July-25 ROOT-map sources and 22 PN-c5p/PN-c5t ttbar sources.
+- Keep 24 overlapping qcd_bbbb and 15 not-selected ordinary sources excluded.
+- Join every remote source to the authoritative bundle-level
+  `source_access_audit.tsv` by `remote_bundle_path`.
+- Bind every source to one typed expected checksum contract:
+  bundle SHA-256 plus archive-member identity for modern remote sources;
+  EOS Adler-32 plus exact remotely reported byte size and archive-member
+  identity for legacy remote ggF sources; or ROOT SHA-256 plus byte size for
+  direct local roots.
+- Preserve checksum classes explicitly; never label Adler-32 evidence as
+  SHA-256 and never accept a source with neither contract.
+- Do not recompute large source checksums or deserialize payloads here.
+- Use one source per job and bounded node-local scratch.
+- Assign full exactly-3b outputs to EOS, not persistent d3 storage.
+- Freeze a deterministic five-source canary spanning signal, signed ordinary,
+  uniform ordinary, hard QCD, and legacy ttbar.
+- Submit zero jobs and create zero full-three-b outputs.
+- Open zero validation and zero test/evaluation payloads.
+- Authorize only the bounded canary; keep full reconstruction unauthorized.

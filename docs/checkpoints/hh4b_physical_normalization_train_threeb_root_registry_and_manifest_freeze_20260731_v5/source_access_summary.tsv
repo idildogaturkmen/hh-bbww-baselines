@@ -1,0 +1,3 @@
+source_access_mode	sources	source_bytes	maximum_single_source_bytes	checksum_kind_counts_json	payload_contents_opened_in_current_step
+local_direct_root	22	20164788620	921766145	"{""root_sha256"": 22}"	False
+remote_bundle_extraction_required	419	442847266383	2008455630	"{""bundle_adler32_size"": 80, ""bundle_sha256"": 339}"	False

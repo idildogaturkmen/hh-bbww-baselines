@@ -1,0 +1,6 @@
+storage_role	bytes	interpretation
+remote_input_total_upper_bound	442847266383	member-weighted expected remote bundle bytes, preserved for closure with PN-c7l; production must not stage all bundles simultaneously
+unique_remote_bundle_transfer_upper_bound	442847266383	sum of each used remote bundle exactly once; shared bundles must not be downloaded once per member
+local_direct_root_total	20164788620	existing authoritative local ttbar ROOT bytes; no copy authorized in this step
+maximum_single_input	2008455630	largest one-source input; node-local scratch policy is one source per job
+d3_persistent_threeb_output_budget	0	full production output is assigned to EOS; no full-output allocation on d3 is authorized

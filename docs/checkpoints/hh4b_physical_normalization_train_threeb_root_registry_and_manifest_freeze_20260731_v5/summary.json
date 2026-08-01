@@ -1,0 +1,89 @@
+{
+  "candidate_identity_contract": {
+    "all_candidate_identity_contracts_verified": true,
+    "all_candidate_row_counts_match_transport": true,
+    "all_candidate_sha256_values_match_transport": true,
+    "authoritative_operational_locator": "unified_train_generator_weight_transport_registry.candidate_path",
+    "candidate_payload_files_deserialized": 0,
+    "content_identical_location_alias_sources": 7,
+    "exact_path_string_sources": 434,
+    "normalized_same_location_sources": 0,
+    "provenance_locator_role": "historical source-map locator retained for audit; locator string equality is not required when SHA-256 and row count prove identical immutable content",
+    "sources": 441
+  },
+  "checksum_contract": {
+    "all_sources_have_expected_checksum_contract": true,
+    "bundle_adler32_size_sources": 80,
+    "bundle_sha256_sources": 339,
+    "checksum_classes_are_not_conflated": true,
+    "live_payload_checksum_verification_deferred_to_canary": true,
+    "live_payload_checksums_recomputed": 0,
+    "remote_bundle_sources_with_typed_contract": 419,
+    "root_sha256_sources": 22
+  },
+  "controls": {
+    "candidate_payload_files_deserialized": 0,
+    "full_threeb_outputs_created": 0,
+    "jobs_submitted": 0,
+    "physical_weights_calculated": 0,
+    "physical_yields_calculated": 0,
+    "remote_payloads_transferred": 0,
+    "root_payload_files_deserialized": 0,
+    "test_or_evaluation_payload_files_opened": 0,
+    "validation_payload_files_opened": 0
+  },
+  "implementation": {
+    "builder_path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/delphes/reconstruct_hh4b_3b_control_candidates.py",
+    "builder_sha256": "d81a27538437d90878f98d7f7760e5aa574814b9af6da99810642d76c6c2afa8",
+    "reconstruction_mode": "threeb-control",
+    "writer_path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/delphes/write_parquet_from_pickle.py",
+    "writer_sha256": "abef7e4f5d1b82fe72837834b0b0794b59bb31ff16032b1b5a7f1519a6edbcfb"
+  },
+  "inventory": {
+    "authoritative_legacy_ttbar_sources": 22,
+    "bounded_canary_sources": 5,
+    "existing_bounded_threeb_parquets": 13,
+    "july25_root_map_sources": 419,
+    "local_direct_root_sources": 22,
+    "remote_bundle_sources": 419,
+    "train_sources": 441,
+    "unique_remote_bundles": 419
+  },
+  "next_gate": "execute the five-source bounded exactly-three-b reconstruction canary with live source checksum verification, output schema and event-identity closure, 3b/4b disjointness, and complete temporary storage cleanup; keep validation and test sealed",
+  "readiness": {
+    "bounded_threeb_reconstruction_canary_authorized": true,
+    "exact_441_train_root_source_registry_frozen": true,
+    "full_threeb_train_production_manifest_frozen": true,
+    "full_threeb_train_reconstruction_authorized": false,
+    "lower_btag_transfer_factor_calculation_authorized": false,
+    "physical_threeb_weight_application_authorized": false
+  },
+  "reason_for_v5": "PN-c7n v4 correctly preserved heterogeneous bundle-checksum contracts but incorrectly treated candidate locator strings as content identity. The July-25 source map may name a canonical EOS candidate while the later transport registry names a verified repair/cache copy. v5 requires exact candidate SHA-256 and row-count closure, retains both locator sets, and classifies exact paths, normalized equivalent locations, and content-identical location aliases explicitly. Checksum or row-count disagreement remains a hard failure.",
+  "schema_version": 5,
+  "source_access_audit_contract_inventory": {
+    "bundle_rows": 581,
+    "checksum_kind_counts": {
+      "bundle_adler32_size": 97,
+      "bundle_sha256": 484
+    },
+    "member_rows": 581,
+    "size_evidence_counts": {
+      "expected_and_reported_size_match": 484,
+      "reported_stat_size_legacy": 97
+    },
+    "train_members": 458,
+    "validation_members": 123
+  },
+  "source_commit": "6835f69a0ef6cb40b82e39f91f7d2f7036c1ee0d",
+  "status": "train_threeb_root_registry_and_manifest_freeze_pass",
+  "storage": {
+    "local_direct_root_bytes": 20164788620,
+    "maximum_single_source_bytes": 2008455630,
+    "one_source_per_job_required": true,
+    "persistent_d3_full_output_authorized": false,
+    "persistent_full_output_base": "/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/threeb_control/train_full_20260731_v1",
+    "remote_bundle_bytes_member_weighted_upper_bound": 442847266383,
+    "temporary_archive_and_root_cleanup_required": true,
+    "unique_remote_bundle_transfer_upper_bound": 442847266383
+  }
+}
