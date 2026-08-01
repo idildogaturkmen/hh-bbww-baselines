@@ -1,0 +1,130 @@
+{
+  "alignment_canary": {
+    "alignment_rows_checked": 40,
+    "all_reported_jet_differences_zero": true,
+    "canary_members": 8,
+    "ephemeral_report_sha256": "dff91b66574e13ceec011f2148dc80e5652a0ff255b20bdc9007aa6ba6ce2f5d",
+    "log_path": "/uscms/home/iturkmen/track_b_pilot_source_access_event_alignment_canary_v2_20260801.log",
+    "log_sha256": "443ecb4cb4d364cfeba76bc67013cf56802f4133c325ce459650309a356ec067",
+    "member_alignment_pass_count": 8,
+    "onnx_inference_executed": 0,
+    "post_success_wrapper_artifact": {
+      "interpretation": "An extraneous literal BASH command occurred after the scientific success marker and did not invalidate the completed canary.",
+      "observed": true,
+      "wrapper_return_code": 0
+    },
+    "remote_bundle_bytes_read": 5064701876,
+    "result": "TRACK_B_PILOT_SOURCE_ACCESS_EVENT_ALIGNMENT_CANARY_READY",
+    "schema_version": 1,
+    "sealed_test_members_opened": 0,
+    "train_members": 4,
+    "validation_members": 4
+  },
+  "created_date": "2026-08-01",
+  "event_accounting": {
+    "split_class_counts": {
+      "train:background": 2347,
+      "train:signal": 750,
+      "validation:background": 1228,
+      "validation:signal": 386
+    },
+    "split_family_counts": {
+      "train:background_other_bbh_hbb_4fs": 256,
+      "train:background_other_ggh_hbb": 1,
+      "train:background_other_schannel_single_top": 8,
+      "train:background_other_tchannel_antitop": 8,
+      "train:background_other_tchannel_top": 7,
+      "train:background_other_tth_hbb": 256,
+      "train:background_other_tttt": 256,
+      "train:background_other_ttw": 55,
+      "train:background_other_ttz_zbb": 256,
+      "train:background_other_tw_antitop": 14,
+      "train:background_other_tw_top": 10,
+      "train:background_other_vbf_hbb": 5,
+      "train:background_other_wh_hbb": 3,
+      "train:background_other_wwz_zbb": 5,
+      "train:background_other_wz_zbb": 2,
+      "train:background_other_wzz_zbb": 19,
+      "train:background_other_zzz_zbb": 12,
+      "train:background_qcd": 1026,
+      "train:background_ttbar": 148,
+      "train:signal_ggf": 238,
+      "train:signal_vbf": 512,
+      "validation:background_other_bbh_hbb_4fs": 256,
+      "validation:background_other_ggh_hbb": 3,
+      "validation:background_other_schannel_single_top": 9,
+      "validation:background_other_tchannel_antitop": 8,
+      "validation:background_other_tchannel_top": 3,
+      "validation:background_other_tth_hbb": 256,
+      "validation:background_other_ttw": 51,
+      "validation:background_other_tw_antitop": 20,
+      "validation:background_other_tw_top": 13,
+      "validation:background_other_vbf_hbb": 6,
+      "validation:background_other_wh_hbb": 5,
+      "validation:background_other_zzz_zbb": 15,
+      "validation:background_qcd": 513,
+      "validation:background_ttbar": 70,
+      "validation:signal_ggf": 130,
+      "validation:signal_vbf": 256
+    }
+  },
+  "event_selection": {
+    "candidate_metadata_rows_read": "all candidate event identities",
+    "candidate_row_key_recorded": true,
+    "eos_bundles_opened": 0,
+    "event_key": [
+      "member_id",
+      "event"
+    ],
+    "events": 4711,
+    "members": 53,
+    "method": "For each frozen member, rank every validated candidate event by SHA256(seed, member_id, event, candidate_row_index), retain at most the frozen selected_event_cap, then order retained events by ROOT entry number.",
+    "onnx_inference_executed": 0,
+    "physical_weights_used": false,
+    "raw_root_events_opened": 0,
+    "seed": "track-b-frozen-score-event-indices-20260801-v1",
+    "selection_is_physics_blind": true
+  },
+  "next_gate": {
+    "name": "bounded_direct_probability_onnx_score_production_canary",
+    "requirements": [
+      "materialize only frozen member sources and exact frozen ROOT entries",
+      "build raw-EFlow tensors with the already validated adapter",
+      "run all three pinned released ONNX models",
+      "use model outputs directly without an external softmax",
+      "write only temporary score sidecars first",
+      "do not open sealed-test members"
+    ]
+  },
+  "paper_method_boundary": {
+    "authors_method": "A 138-class particle-level classifier ingests all pileup-mitigated reconstructed particles; 136 classes encode unordered variable-mass signal hypotheses and two classes encode QCD and tt backgrounds.",
+    "mass_fit_performed": false,
+    "released_model_inference_performed": false,
+    "this_checkpoint": "Infrastructure-only deterministic event identity freezing for a Track A raw-EFlow domain-transfer pilot. It is not part of the authors' model or training prescription."
+  },
+  "paper_reference": {
+    "arxiv": "2508.15048",
+    "authors": [
+      "Tianyi Yang",
+      "Congqiao Li"
+    ],
+    "version": "v2"
+  },
+  "result": "TRACK_B_FROZEN_SCORE_PILOT_EVENT_INDICES_VALID",
+  "schema_version": 1,
+  "source_pilot": {
+    "manifest_path": "/tmp/iturkmen_trackb_freeze_event_indices_i9xvKq/hh-bbww-baselines/docs/checkpoints/track_b_frozen_score_pilot_manifest_20260801_v1/pilot_member_manifest.tsv",
+    "member_count": 53,
+    "policy_path": "/tmp/iturkmen_trackb_freeze_event_indices_i9xvKq/hh-bbww-baselines/docs/checkpoints/track_b_frozen_score_pilot_manifest_20260801_v1/pilot_policy.json"
+  },
+  "split_protection": {
+    "allowed_splits": [
+      "train",
+      "validation"
+    ],
+    "sealed_test_members_included": 0,
+    "test_members_included": 0,
+    "train_validation_group_overlap": 0
+  },
+  "track_b_base_sha": "8c1c2ccbede1c0c3111de62806b2ea85894bd747"
+}

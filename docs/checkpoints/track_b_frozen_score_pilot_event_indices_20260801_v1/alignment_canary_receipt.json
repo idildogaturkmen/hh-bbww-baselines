@@ -1,0 +1,21 @@
+{
+  "alignment_rows_checked": 40,
+  "all_reported_jet_differences_zero": true,
+  "canary_members": 8,
+  "ephemeral_report_sha256": "dff91b66574e13ceec011f2148dc80e5652a0ff255b20bdc9007aa6ba6ce2f5d",
+  "log_path": "/uscms/home/iturkmen/track_b_pilot_source_access_event_alignment_canary_v2_20260801.log",
+  "log_sha256": "443ecb4cb4d364cfeba76bc67013cf56802f4133c325ce459650309a356ec067",
+  "member_alignment_pass_count": 8,
+  "onnx_inference_executed": 0,
+  "post_success_wrapper_artifact": {
+    "interpretation": "An extraneous literal BASH command occurred after the scientific success marker and did not invalidate the completed canary.",
+    "observed": true,
+    "wrapper_return_code": 0
+  },
+  "remote_bundle_bytes_read": 5064701876,
+  "result": "TRACK_B_PILOT_SOURCE_ACCESS_EVENT_ALIGNMENT_CANARY_READY",
+  "schema_version": 1,
+  "sealed_test_members_opened": 0,
+  "train_members": 4,
+  "validation_members": 4
+}
