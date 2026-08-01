@@ -1,0 +1,7 @@
+category	label	endpoint	path	status	notes
+training	variable_mass_signal	root://cceos.ihep.ac.cn:1094	/eos/ihep/cms/store/user/coli/datasets/hh4b/training	accessible	Broad 136-class mixture; exact signal subdirectory previously audited
+training	QCD	root://cceos.ihep.ac.cn:1094	/eos/ihep/cms/store/user/coli/datasets/hh4b/training/QCD_ntuple	accessible	Released training background
+training	TTbar	root://cceos.ihep.ac.cn:1094	/eos/ihep/cms/store/user/coli/datasets/hh4b/training/TTbar_ntuple	accessible	Released training background
+inference	ZH	root://cceos.ihep.ac.cn:1094	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/ZH_ntuple	accessible	One file; raw localization and official DCB validated
+inference	ZZ	root://cceos.ihep.ac.cn:1094	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/ZZ_ntuple	accessible	Two files; raw localization and official DCB validated
+evaluation	independent_HH	root://cceos.ihep.ac.cn:1094	UNKNOWN	blocked	Awaiting exact ggF or VBF HH file path from dataset contact

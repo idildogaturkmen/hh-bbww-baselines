@@ -1,0 +1,337 @@
+{
+  "background_domain_shift": {
+    "qcd": {
+      "extension_mean_qcd_probability": 0.951289,
+      "inference_mean_qcd_probability": 0.887904,
+      "training_mean_qcd_probability": 0.893333
+    },
+    "ttbar": {
+      "extension_mean_ttbar_probability": 0.733782,
+      "inference_mean_ttbar_probability": 0.771425,
+      "training_mean_ttbar_probability": 0.717601
+    },
+    "zz_initial_canary": {
+      "mean_qcd_probability": 0.505418,
+      "mean_signal_probability": 0.356683,
+      "mean_ttbar_probability": 0.137899
+    }
+  },
+  "checkpoint": {
+    "freeze_utc": "2026-08-01T18:11:57Z",
+    "name": "track_b_phase2_released_model_validation_20260801_v1",
+    "status": "released-model and accessible-control-sample validation complete; independent HH evaluation pending"
+  },
+  "external_dependency": {
+    "communication_status": "Two emails already sent; contact said they would respond. No additional email should be sent yet.",
+    "needed": "Exact XRootD base path or complete test-file path for an independent ggF or VBF HH evaluation sample",
+    "owner": "Congqiao / IHEP dataset contact"
+  },
+  "ihep_namespace_discovery": {
+    "broader_candidate_matches": 0,
+    "endpoint": "root://cceos.ihep.ac.cn:1094",
+    "exact_identifiers_searched": [
+      "ggHH",
+      "ggHHkl0",
+      "ggHHkl5",
+      "qqHH",
+      "sm_incl_derived_4j3bor2b"
+    ],
+    "exact_matches": 0,
+    "recursive_entries_visible": 8833,
+    "result": "No independent HH evaluation sample was found in the visible shared dataset namespace.",
+    "searched_base": "/eos/ihep/cms/store/user/coli/datasets",
+    "top_level_directories": [
+      "JetClassII",
+      "hh4b"
+    ]
+  },
+  "local_repository": {
+    "branch": "delphes-hh4b-production",
+    "head": "6d14d5b6d8244e408a44c0cb4c21e187a535b9d7",
+    "origin": "https://github.com/idildogaturkmen/hh-bbww-baselines.git",
+    "path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines"
+  },
+  "minor_background_response_map": {
+    "events_per_process": 64,
+    "interpretation": "Top-associated processes are predominantly ttbar-like. Most non-top processes are QCD-like. Processes with real H or Z resonances show elevated signal-grid response.",
+    "processes": {
+      "SingleHiggs": {
+        "fraction_signal_gt_0p5": 0.2188,
+        "fraction_signal_gt_0p9": 0.125,
+        "p_qcd": 0.699645,
+        "p_signal": 0.276364,
+        "p_ttbar": 0.023991
+      },
+      "SingleTop": {
+        "fraction_signal_gt_0p5": 0.2031,
+        "fraction_signal_gt_0p9": 0.0625,
+        "p_qcd": 0.457324,
+        "p_signal": 0.245602,
+        "p_ttbar": 0.297073
+      },
+      "TTbarW": {
+        "fraction_signal_gt_0p5": 0.1406,
+        "fraction_signal_gt_0p9": 0.0469,
+        "p_qcd": 0.06271,
+        "p_signal": 0.156495,
+        "p_ttbar": 0.780795
+      },
+      "TTbarZ": {
+        "fraction_signal_gt_0p5": 0.125,
+        "fraction_signal_gt_0p9": 0.0469,
+        "p_qcd": 0.066027,
+        "p_signal": 0.161763,
+        "p_ttbar": 0.77221
+      },
+      "TW": {
+        "fraction_signal_gt_0p5": 0.1406,
+        "fraction_signal_gt_0p9": 0.0312,
+        "p_qcd": 0.305662,
+        "p_signal": 0.195276,
+        "p_ttbar": 0.499062
+      },
+      "VBFH_singleH": {
+        "fraction_signal_gt_0p5": 0.2031,
+        "fraction_signal_gt_0p9": 0.0625,
+        "p_qcd": 0.742131,
+        "p_signal": 0.245162,
+        "p_ttbar": 0.012707
+      },
+      "WW": {
+        "fraction_signal_gt_0p5": 0.0469,
+        "fraction_signal_gt_0p9": 0.0,
+        "p_qcd": 0.613193,
+        "p_signal": 0.092544,
+        "p_ttbar": 0.294263
+      },
+      "WminusH": {
+        "fraction_signal_gt_0p5": 0.3281,
+        "fraction_signal_gt_0p9": 0.1094,
+        "p_qcd": 0.592206,
+        "p_signal": 0.346009,
+        "p_ttbar": 0.061785
+      },
+      "WplusH": {
+        "fraction_signal_gt_0p5": 0.2656,
+        "fraction_signal_gt_0p9": 0.125,
+        "p_qcd": 0.611708,
+        "p_signal": 0.300275,
+        "p_ttbar": 0.088016
+      },
+      "ZH": {
+        "fraction_signal_gt_0p5": 0.5,
+        "fraction_signal_gt_0p9": 0.3125,
+        "p_qcd": 0.434981,
+        "p_signal": 0.507585,
+        "p_ttbar": 0.057434
+      },
+      "ZJetsToQQ": {
+        "fraction_signal_gt_0p5": 0.1719,
+        "fraction_signal_gt_0p9": 0.0625,
+        "p_qcd": 0.728162,
+        "p_signal": 0.214851,
+        "p_ttbar": 0.056988
+      },
+      "ZW": {
+        "fraction_signal_gt_0p5": 0.1875,
+        "fraction_signal_gt_0p9": 0.0469,
+        "p_qcd": 0.608526,
+        "p_signal": 0.225539,
+        "p_ttbar": 0.165935
+      },
+      "ZZ": {
+        "fraction_signal_gt_0p5": 0.3594,
+        "fraction_signal_gt_0p9": 0.2031,
+        "p_qcd": 0.48565,
+        "p_signal": 0.389287,
+        "p_ttbar": 0.125063
+      },
+      "ttH": {
+        "fraction_signal_gt_0p5": 0.2969,
+        "fraction_signal_gt_0p9": 0.1406,
+        "p_qcd": 0.114238,
+        "p_signal": 0.284231,
+        "p_ttbar": 0.601531
+      }
+    },
+    "values_are_unweighted": true
+  },
+  "official_dcb_validation": {
+    "ZH": {
+      "coarse_region": "sorted fitted masses within 15 GeV of mZ and mH",
+      "either_peak_in_coarse_region_among_successful": 24,
+      "events_4j3b": 253,
+      "events_4j3b_signal_gt_0p997": 35,
+      "physical_primary_among_successful": 31,
+      "physical_secondary_among_valid_secondary": 24,
+      "primary_fit_success": 33,
+      "primary_peak_in_coarse_region_among_successful": 21,
+      "uniformly_sampled_events": 512,
+      "valid_secondary_raw": 28
+    },
+    "ZZ": {
+      "coarse_region": "both fitted masses within 15 GeV of mZ",
+      "dominant_primary": 29,
+      "either_peak_in_coarse_region": 21,
+      "events_4j3b": 539,
+      "events_4j3b_signal_gt_0p5": 247,
+      "events_4j3b_signal_gt_0p9": 144,
+      "events_4j3b_signal_gt_0p997": 41,
+      "files": 2,
+      "particle_truncation_events": 4,
+      "physical_primary": 36,
+      "physical_secondary": 27,
+      "primary_fit_success": 41,
+      "primary_peak_in_coarse_region": 15,
+      "uniformly_sampled_events": 1024,
+      "valid_secondary_raw": 29
+    }
+  },
+  "public_release": {
+    "commit": "e8387f7e49a7f27c65b2f4a1f75cacf01cd45392",
+    "models": [
+      "delphes/models/HH4b/model0.onnx",
+      "delphes/models/HH4b/model1.onnx",
+      "delphes/models/HH4b/model2.onnx"
+    ],
+    "onnx_inputs": {
+      "pf_features": "[N, 19, 256]",
+      "pf_mask": "[N, 1, 256]",
+      "pf_vectors": "[N, 4, 256]"
+    },
+    "onnx_output": {
+      "qcd_class": 136,
+      "signal_classes": "indices 0 through 135",
+      "softmax": "[N, 138]",
+      "ttbar_class": 137
+    },
+    "repository": "https://github.com/pku-hep-group/jetfree-hh4b.git"
+  },
+  "raw_resonance_localization": {
+    "ZH": {
+      "events": 256,
+      "fraction_signal_ge_0p5": 0.40234,
+      "fraction_signal_ge_0p9": 0.25391,
+      "leading_cells_gev": [
+        [
+          85,
+          125
+        ],
+        [
+          95,
+          125
+        ],
+        [
+          95,
+          135
+        ],
+        [
+          95,
+          115
+        ]
+      ],
+      "mean_qcd_probability": 0.454313,
+      "mean_signal_probability": 0.426713,
+      "mean_ttbar_probability": 0.118974,
+      "signal_ge_0p9_argmax_expected_fraction": 0.46154,
+      "signal_ge_0p9_expected_region_fraction": 0.263253
+    },
+    "ZZ": {
+      "events": 512,
+      "fraction_signal_ge_0p5": 0.32227,
+      "fraction_signal_ge_0p9": 0.17578,
+      "leading_cells_gev": [
+        [
+          85,
+          95
+        ],
+        [
+          95,
+          105
+        ],
+        [
+          85,
+          105
+        ],
+        [
+          95,
+          95
+        ],
+        [
+          85,
+          85
+        ]
+      ],
+      "mean_qcd_probability": 0.528058,
+      "mean_signal_probability": 0.34552,
+      "mean_ttbar_probability": 0.126422,
+      "signal_ge_0p9_argmax_expected_fraction": 0.28889,
+      "signal_ge_0p9_expected_region_fraction": 0.153535
+    }
+  },
+  "released_model_canary": {
+    "qcd": {
+      "events": 64,
+      "mean_qcd_probability": 0.931263,
+      "mean_signal_probability": 0.065271,
+      "qcd_top1_fraction": 1.0,
+      "qcd_top5_fraction": 1.0
+    },
+    "signal": {
+      "events": 64,
+      "events_total": 64,
+      "mean_mass_bin_distance": 2.852,
+      "mean_qcd_probability": 0.006109,
+      "mean_signal_probability": 0.970627,
+      "mean_ttbar_probability": 0.023265,
+      "target_probability_mean": 0.143284,
+      "target_top1_fraction": 0.10938,
+      "target_top5_fraction": 0.51562,
+      "three_model_top1_agreement": 0.625,
+      "valid_grid_targets": 61,
+      "within_one_grid_step_fraction": 0.52459
+    },
+    "ttbar": {
+      "events": 64,
+      "mean_qcd_probability": 0.189205,
+      "mean_signal_probability": 0.145498,
+      "mean_ttbar_probability": 0.665297,
+      "three_model_top1_agreement": 0.875,
+      "ttbar_top1_fraction": 0.79688
+    }
+  },
+  "signal_mass_grid_audit": {
+    "conclusion": "Signal ROOT files contain broad class mixtures. Future sampling must be spread or randomized rather than taking the first N events.",
+    "events": 36864,
+    "events_per_file": 3072,
+    "files": 12,
+    "particle_truncation_fraction_range": [
+      0.00065,
+      0.00326
+    ],
+    "per_file_dominant_class_fraction_range": [
+      0.0374,
+      0.1055
+    ],
+    "per_file_unique_class_range": [
+      96,
+      106
+    ],
+    "signal_classes_observed": 136,
+    "signal_classes_total": 136
+  },
+  "storage_guardrails": {
+    "current_full_transfer_status": "blocked",
+    "full_persistent_transfer_condition": "Only after eosquota visibly reports 5 TB",
+    "temporary_processing_location": "/tmp",
+    "track_a_must_remain_intact": true,
+    "track_a_path": "/uscms_data/d3/iturkmen/hh4b_delphes"
+  },
+  "weight_audit": {
+    "observed_gen_weight_vector_length": 2,
+    "observed_relation": "slot 1 was consistently slot 0 multiplied by 1e-4 in the audited minor-background files",
+    "producer_behavior": "stores Delphes Weight values in their original order without labels",
+    "rule": "Do not use gen_weight for physical normalization until the two entries are authoritatively defined.",
+    "status": "unresolved"
+  }
+}
