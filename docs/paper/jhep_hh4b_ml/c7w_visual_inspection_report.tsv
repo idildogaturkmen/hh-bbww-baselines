@@ -1,0 +1,14 @@
+asset	status	inspection_basis	clipping	missing_glyphs	legend_overlap	scales	source_consistency	notes
+fig_c7w_01_selected_score_plane	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Five independently selected outer-fold boundaries and score-plane density are legible
+fig_c7w_02_population_score_densities	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	All four population panels and the sparse direct-4b closure population are visible
+fig_c7w_03_selected_and_benchmark_boundaries	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Outer-fold markers and the fixed five-category benchmark are distinguishable
+fig_c7w_04_category_yields	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Numeric category ticks and asymmetric signal and total-background intervals are legible
+fig_c7w_05_category_signal_over_background	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	All categories carry asymmetric source-member bootstrap intervals
+fig_c7w_06_category_background_neff	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	All categories carry asymmetric source-member bootstrap intervals
+fig_c7w_07_category_nominal_za	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	All categories carry asymmetric source-member bootstrap intervals
+fig_c7w_08_category_systematic_za	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Shared-nuisance category values and asymmetric intervals are visible
+fig_c7w_09_inclusive_categorized_comparison	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Inclusive and both categorized central values and asymmetric intervals are legible
+fig_c7w_09b_paired_differences	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Zero reference and asymmetric paired-difference intervals are visible in both panels
+fig_c7w_10_category_count_scan	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Two-through-six category scans carry asymmetric intervals for both variants
+fig_c7w_11_category_support	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Sparse direct-4b category support remains explicit with asymmetric intervals
+fig_c7w_12_mass_sculpting	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Mass-aware and mass-plane-blind shapes and source-member bootstrap bands are visible in all panels

@@ -1,0 +1,7 @@
+table_id	path	placement
+c7w_tab01	tables/tab_c7w_01_selected_configurations.tex	main_text
+c7w_tab02	tables/tab_c7w_02_selected_categories.tex	main_text
+c7w_tab03	tables/tab_c7w_03_category_count_scan.tex	appendix
+c7w_tab04	tables/tab_c7w_04_paired_differences.tex	main_text
+c7w_tab05	tables/tab_c7w_05_selection_stability.tex	appendix
+c7w_tab06	tables/tab_c7w_06_support_sensitivity.tex	appendix

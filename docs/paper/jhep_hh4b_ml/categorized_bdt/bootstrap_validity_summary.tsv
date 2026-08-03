@@ -1,0 +1,65 @@
+scope	configuration	category	replicas	valid_replicas	invalid_replicas	valid_fraction	selection_support_pass_fraction	zero_direct_qcd_support_fraction	invalid_reason_counts_json	selection_support_failure_counts_json
+combined	mass_aware_scan_n2_n2	all	1000	1000	0	1.0	1.0	0.0	{}	{}
+combined	mass_aware_scan_n3_n3	all	1000	1000	0	1.0	1.0	0.0	{}	{}
+combined	mass_aware_scan_n4_n4	all	1000	1000	0	1.0	1.0	0.0	{}	{}
+combined	mass_aware_fixed5_n5	all	1000	1000	0	1.0	1.0	0.0	{}	{}
+combined	mass_aware_scan_n6_n6	all	1000	1000	0	1.0	0.983	0.0	{}	"{""transferred-QCD rows below 5"":9,""transferred-QCD rows below 5; transferred-QCD sources below 3"":5,""transferred-QCD sources below 3"":3}"
+combined	mass_aware_outer_selected	all	1000	1000	0	1.0	0.983	0.0	{}	"{""transferred-QCD rows below 5"":9,""transferred-QCD rows below 5; transferred-QCD sources below 3"":5,""transferred-QCD sources below 3"":3}"
+combined	mass_plane_blind_scan_n2_n2	all	1000	1000	0	1.0	1.0	0.0	{}	{}
+combined	mass_plane_blind_scan_n3_n3	all	1000	1000	0	1.0	0.999	0.0	{}	"{""transferred-QCD rows below 5; transferred-QCD sources below 3"":1}"
+combined	mass_plane_blind_scan_n4_n4	all	1000	1000	0	1.0	0.997	0.0	{}	"{""transferred-QCD rows below 5; transferred-QCD sources below 3"":2,""transferred-QCD sources below 3"":1}"
+combined	mass_plane_blind_fixed5_n5	all	1000	1000	0	1.0	0.725	0.0	{}	"{""transferred-QCD rows below 5"":150,""transferred-QCD rows below 5; transferred-QCD sources below 3"":118,""transferred-QCD sources below 3"":32}"
+combined	mass_plane_blind_scan_n6_n6	all	1000	1000	0	1.0	0.44	0.0	{}	"{""transferred-QCD rows below 5"":323,""transferred-QCD rows below 5; transferred-QCD sources below 3"":315,""transferred-QCD sources below 3"":90}"
+combined	mass_plane_blind_outer_selected	all	1000	1000	0	1.0	0.44	0.0	{}	"{""transferred-QCD rows below 5"":323,""transferred-QCD rows below 5; transferred-QCD sources below 3"":315,""transferred-QCD sources below 3"":90}"
+category	mass_aware_scan_n2_n2	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_scan_n2_n2	1	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_scan_n3_n3	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_scan_n3_n3	1	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_scan_n3_n3	2	1000	1000	0	1.0	1.0	0.004	{}	{}
+category	mass_aware_scan_n4_n4	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_scan_n4_n4	1	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_scan_n4_n4	2	1000	1000	0	1.0	1.0	0.044	{}	{}
+category	mass_aware_scan_n4_n4	3	1000	1000	0	1.0	1.0	0.014	{}	{}
+category	mass_aware_fixed5_n5	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_fixed5_n5	1	1000	1000	0	1.0	1.0	0.022	{}	{}
+category	mass_aware_fixed5_n5	2	1000	1000	0	1.0	1.0	0.016	{}	{}
+category	mass_aware_fixed5_n5	3	1000	1000	0	1.0	1.0	0.105	{}	{}
+category	mass_aware_fixed5_n5	4	1000	1000	0	1.0	1.0	0.014	{}	{}
+category	mass_aware_scan_n6_n6	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_scan_n6_n6	1	1000	1000	0	1.0	1.0	0.009	{}	{}
+category	mass_aware_scan_n6_n6	2	1000	1000	0	1.0	0.999	0.12	{}	"{""transferred-QCD rows below 5"":1}"
+category	mass_aware_scan_n6_n6	3	1000	1000	0	1.0	1.0	0.035	{}	{}
+category	mass_aware_scan_n6_n6	4	1000	1000	0	1.0	0.984	0.379	{}	"{""transferred-QCD rows below 5"":8,""transferred-QCD rows below 5; transferred-QCD sources below 3"":5,""transferred-QCD sources below 3"":3}"
+category	mass_aware_scan_n6_n6	5	1000	1000	0	1.0	1.0	0.014	{}	{}
+category	mass_aware_outer_selected	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_aware_outer_selected	1	1000	1000	0	1.0	1.0	0.009	{}	{}
+category	mass_aware_outer_selected	2	1000	1000	0	1.0	0.999	0.12	{}	"{""transferred-QCD rows below 5"":1}"
+category	mass_aware_outer_selected	3	1000	1000	0	1.0	1.0	0.035	{}	{}
+category	mass_aware_outer_selected	4	1000	1000	0	1.0	0.984	0.379	{}	"{""transferred-QCD rows below 5"":8,""transferred-QCD rows below 5; transferred-QCD sources below 3"":5,""transferred-QCD sources below 3"":3}"
+category	mass_aware_outer_selected	5	1000	1000	0	1.0	1.0	0.014	{}	{}
+category	mass_plane_blind_scan_n2_n2	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_plane_blind_scan_n2_n2	1	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_plane_blind_scan_n3_n3	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_plane_blind_scan_n3_n3	1	1000	1000	0	1.0	0.999	0.048	{}	"{""transferred-QCD rows below 5; transferred-QCD sources below 3"":1}"
+category	mass_plane_blind_scan_n3_n3	2	1000	1000	0	1.0	1.0	0.014	{}	{}
+category	mass_plane_blind_scan_n4_n4	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_plane_blind_scan_n4_n4	1	1000	1000	0	1.0	1.0	0.048	{}	{}
+category	mass_plane_blind_scan_n4_n4	2	1000	1000	0	1.0	0.997	0.383	{}	"{""transferred-QCD rows below 5; transferred-QCD sources below 3"":2,""transferred-QCD sources below 3"":1}"
+category	mass_plane_blind_scan_n4_n4	3	1000	1000	0	1.0	1.0	0.014	{}	{}
+category	mass_plane_blind_fixed5_n5	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_plane_blind_fixed5_n5	1	1000	1000	0	1.0	0.768	0.352	{}	"{""transferred-QCD rows below 5"":111,""transferred-QCD rows below 5; transferred-QCD sources below 3"":97,""transferred-QCD sources below 3"":24}"
+category	mass_plane_blind_fixed5_n5	2	1000	1000	0	1.0	0.939	1.0	{}	"{""transferred-QCD rows below 5"":36,""transferred-QCD rows below 5; transferred-QCD sources below 3"":19,""transferred-QCD sources below 3"":6}"
+category	mass_plane_blind_fixed5_n5	3	1000	1000	0	1.0	0.993	0.115	{}	"{""transferred-QCD rows below 5"":3,""transferred-QCD rows below 5; transferred-QCD sources below 3"":2,""transferred-QCD sources below 3"":2}"
+category	mass_plane_blind_fixed5_n5	4	1000	1000	0	1.0	1.0	0.014	{}	{}
+category	mass_plane_blind_scan_n6_n6	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_plane_blind_scan_n6_n6	1	1000	1000	0	1.0	0.552	0.352	{}	"{""transferred-QCD rows below 5"":223,""transferred-QCD rows below 5; transferred-QCD sources below 3"":204,""transferred-QCD sources below 3"":21}"
+category	mass_plane_blind_scan_n6_n6	2	1000	1000	0	1.0	0.822	0.321	{}	"{""transferred-QCD rows below 5"":67,""transferred-QCD rows below 5; transferred-QCD sources below 3"":77,""transferred-QCD sources below 3"":34}"
+category	mass_plane_blind_scan_n6_n6	3	1000	1000	0	1.0	0.902	0.14	{}	"{""transferred-QCD rows below 5"":31,""transferred-QCD rows below 5; transferred-QCD sources below 3"":33,""transferred-QCD sources below 3"":34}"
+category	mass_plane_blind_scan_n6_n6	4	1000	1000	0	1.0	0.996	1.0	{}	"{""transferred-QCD rows below 5"":2,""transferred-QCD rows below 5; transferred-QCD sources below 3"":1,""transferred-QCD sources below 3"":1}"
+category	mass_plane_blind_scan_n6_n6	5	1000	1000	0	1.0	1.0	0.014	{}	{}
+category	mass_plane_blind_outer_selected	0	1000	1000	0	1.0	1.0	0.0	{}	{}
+category	mass_plane_blind_outer_selected	1	1000	1000	0	1.0	0.552	0.352	{}	"{""transferred-QCD rows below 5"":223,""transferred-QCD rows below 5; transferred-QCD sources below 3"":204,""transferred-QCD sources below 3"":21}"
+category	mass_plane_blind_outer_selected	2	1000	1000	0	1.0	0.822	0.321	{}	"{""transferred-QCD rows below 5"":67,""transferred-QCD rows below 5; transferred-QCD sources below 3"":77,""transferred-QCD sources below 3"":34}"
+category	mass_plane_blind_outer_selected	3	1000	1000	0	1.0	0.902	0.14	{}	"{""transferred-QCD rows below 5"":31,""transferred-QCD rows below 5; transferred-QCD sources below 3"":33,""transferred-QCD sources below 3"":34}"
+category	mass_plane_blind_outer_selected	4	1000	1000	0	1.0	0.996	1.0	{}	"{""transferred-QCD rows below 5"":2,""transferred-QCD rows below 5; transferred-QCD sources below 3"":1,""transferred-QCD sources below 3"":1}"
+category	mass_plane_blind_outer_selected	5	1000	1000	0	1.0	1.0	0.014	{}	{}

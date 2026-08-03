@@ -1,0 +1,37 @@
+variant	category_count	configuration	contract_name	support_pass	support_failure_reason	minimum_support_margin	categories_passing	categories_total	used_for_primary_selection	selection_role
+mass_aware	2	mass_aware_scan_n2_n2	nominal	True		12.0	2	2	True	nan
+mass_aware	2	mass_aware_scan_n2_n2	strict_a	True		8.571428571428571	2	2	False	nan
+mass_aware	2	mass_aware_scan_n2_n2	strict_b	True		6.0	2	2	False	nan
+mass_aware	3	mass_aware_scan_n3_n3	nominal	True		8.0	3	3	True	nan
+mass_aware	3	mass_aware_scan_n3_n3	strict_a	True		5.69746803977926	3	3	False	nan
+mass_aware	3	mass_aware_scan_n3_n3	strict_b	True		4.2	3	3	False	nan
+mass_aware	4	mass_aware_scan_n4_n4	nominal	True		5.9009586202089706	4	4	True	nan
+mass_aware	4	mass_aware_scan_n4_n4	strict_a	True		3.933972413472647	4	4	False	nan
+mass_aware	4	mass_aware_scan_n4_n4	strict_b	True		2.9504793101044853	4	4	False	nan
+mass_aware	5	mass_aware_fixed5_n5	nominal	True		4.666666666666667	5	5	True	nan
+mass_aware	5	mass_aware_fixed5_n5	strict_a	True		3.3144161559182628	5	5	False	nan
+mass_aware	5	mass_aware_fixed5_n5	strict_b	True		2.485812116938697	5	5	False	nan
+mass_aware	6	mass_aware_scan_n6_n6	nominal	True		2.3218939551356215	6	6	True	nan
+mass_aware	6	mass_aware_scan_n6_n6	strict_a	True		1.5479293034237476	6	6	False	nan
+mass_aware	6	mass_aware_scan_n6_n6	strict_b	True		1.1609469775678107	6	6	False	nan
+mass_aware	6	mass_aware_outer_selected	nominal	True		2.3218939551356215	6	6	True	outer_selected
+mass_aware	6	mass_aware_outer_selected	strict_a	True		1.5479293034237476	6	6	False	outer_selected
+mass_aware	6	mass_aware_outer_selected	strict_b	True		1.1609469775678107	6	6	False	outer_selected
+mass_plane_blind	2	mass_plane_blind_scan_n2_n2	nominal	True		13.0	2	2	True	nan
+mass_plane_blind	2	mass_plane_blind_scan_n2_n2	strict_a	True		9.75	2	2	False	nan
+mass_plane_blind	2	mass_plane_blind_scan_n2_n2	strict_b	True		7.8	2	2	False	nan
+mass_plane_blind	3	mass_plane_blind_scan_n3_n3	nominal	True		5.0	3	3	True	nan
+mass_plane_blind	3	mass_plane_blind_scan_n3_n3	strict_a	True		3.75	3	3	False	nan
+mass_plane_blind	3	mass_plane_blind_scan_n3_n3	strict_b	True		2.9	3	3	False	nan
+mass_plane_blind	4	mass_plane_blind_scan_n4_n4	nominal	True		3.2	4	4	True	nan
+mass_plane_blind	4	mass_plane_blind_scan_n4_n4	strict_a	True		2.2857142857142856	4	4	False	nan
+mass_plane_blind	4	mass_plane_blind_scan_n4_n4	strict_b	True		1.6	4	4	False	nan
+mass_plane_blind	5	mass_plane_blind_fixed5_n5	nominal	True		1.4	5	5	True	nan
+mass_plane_blind	5	mass_plane_blind_fixed5_n5	strict_a	True		1.0	5	5	False	nan
+mass_plane_blind	5	mass_plane_blind_fixed5_n5	strict_b	False	category 1: transferred-QCD rows below 10; category 2: transferred-QCD rows below 10	0.7	3	5	False	nan
+mass_plane_blind	6	mass_plane_blind_scan_n6_n6	nominal	True		1.0	6	6	True	nan
+mass_plane_blind	6	mass_plane_blind_scan_n6_n6	strict_a	False	category 1: transferred-QCD rows below 7	0.7142857142857143	5	6	False	nan
+mass_plane_blind	6	mass_plane_blind_scan_n6_n6	strict_b	False	category 1: transferred-QCD rows below 10; category 2: transferred-QCD rows below 10	0.5	4	6	False	nan
+mass_plane_blind	6	mass_plane_blind_outer_selected	nominal	True		1.0	6	6	True	outer_selected
+mass_plane_blind	6	mass_plane_blind_outer_selected	strict_a	False	category 1: transferred-QCD rows below 7	0.7142857142857143	5	6	False	outer_selected
+mass_plane_blind	6	mass_plane_blind_outer_selected	strict_b	False	category 1: transferred-QCD rows below 10; category 2: transferred-QCD rows below 10	0.5	4	6	False	outer_selected

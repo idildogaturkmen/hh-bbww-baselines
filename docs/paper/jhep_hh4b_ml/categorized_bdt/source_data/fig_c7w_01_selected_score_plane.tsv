@@ -1,0 +1,6 @@
+outer_fold	stage1_threshold	stage2_boundaries_json	category_count	uncertainty_kind	uncertainty_central	uncertainty_lower_68	uncertainty_upper_68	uncertainty_valid_replicas	uncertainty_support_flag
+0	0.636249840259552	[0.7688276363685155,0.8409707682119085,0.8800800685333822,0.925209219033834]	6	selection_stability_not_source_bootstrap				0	not_applicable
+1	0.6635502576828003	[0.7795555118459572,0.8434681737650263,0.9094457193863736,0.9289800876534141]	6	selection_stability_not_source_bootstrap				0	not_applicable
+2	0.38165003061294556	[0.8454724937512363,0.8820373459471741,0.9097910422203893,0.9320877757638086]	6	selection_stability_not_source_bootstrap				0	not_applicable
+3	0.5665678381919861	[0.8154283490170915,0.863121120988761,0.9184313253738103,0.951592025780292]	6	selection_stability_not_source_bootstrap				0	not_applicable
+4	0.6566517353057861	[0.9155208171643,0.9345681305817444,0.9484914954877405,0.9597481894173477]	6	selection_stability_not_source_bootstrap				0	not_applicable

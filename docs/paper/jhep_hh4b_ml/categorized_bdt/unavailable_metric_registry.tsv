@@ -1,0 +1,2 @@
+comparison	metric	status	reason
+categorized_BDT_minus_inclusive_BDT	weighted_auc	not_applicable	categorized result has no documented scalar category-rank score; inclusive-classifier AUC is not assigned to categories
