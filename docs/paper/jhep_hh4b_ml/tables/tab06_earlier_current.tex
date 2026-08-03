@@ -1,26 +1,22 @@
 \begin{table}[tb]
   \centering
-  \caption{Earlier approximate snapshot versus current results.}
+  \footnotesize
+  \caption{Historical aggregate provenance diagnostic. Current values include source-member bootstrap 68\% intervals; the earlier artifact has no source-member predictions, so no paired improvement is claimed.}
   \label{tab:earlier-current}
-  \resizebox{\linewidth}{!}{%
-  \begin{tabular}{lrrrr}
-    \hline
-    Model & Metric & Earlier & Current & Relative change \\
-    \hline
-    cut & asimov\_ZA & 0.0334 & 0.051682 & 0.547 \\
-    cut & signal\_over\_background & 5.8e-05 & 5.3233e-05 & -0.082 \\
-    cut & background\_effective\_events & 17.25 & 45.795 & 1.655 \\
-    bdt & weighted\_auc & 0.665 & 0.77147 & 0.160 \\
-    bdt & asimov\_ZA & 0.0386 & 0.063554 & 0.646 \\
-    bdt & bootstrap\_median\_ZA & 0.0391 & 0.063698 & 0.629 \\
-    bdt & signal\_over\_background & 0.0001 & 8.3985e-05 & -0.160 \\
-    bdt & background\_effective\_events & 6.51 & 28.116 & 3.319 \\
-    dense\_dnn & weighted\_auc & 0.648 & 0.72146 & 0.113 \\
-    dense\_dnn & asimov\_ZA & 0.0369 & 0.057385 & 0.555 \\
-    dense\_dnn & bootstrap\_median\_ZA & 0.0377 & 0.057721 & 0.531 \\
-    lbn\_dnn & asimov\_ZA & 0.0372 & 0.052106 & 0.401 \\
-    lbn\_dnn & bootstrap\_median\_ZA & 0.0382 & 0.052221 & 0.367 \\
-    \hline
-  \end{tabular}%
-  }
+  \begin{tabular}{llll}
+    \toprule
+    Model & Metric & Earlier aggregate & Current nominal; bootstrap 68\% \\
+    \midrule
+    $R_{HH}(125,120)$ cut & Nominal $Z_A$ & $0.0334$ & $0.051682$; $0.05195^{+0.00407}_{-0.00410}$ \\
+    $R_{HH}(125,120)$ cut & $S/B$ & $5.80\times10^{-5}$ & $5.32\times10^{-5}$; $(5.37^{+0.85}_{-0.80})\times10^{-5}$ \\
+    $R_{HH}(125,120)$ cut & Background $N_{\rm eff}$ & $17.25$ & $45.795$; $46.0^{+7.3}_{-6.0}$ \\
+    BDT & Weighted AUC & $0.665$ & $0.77147$; $0.77098^{+0.01024}_{-0.00909}$ \\
+    BDT & Nominal $Z_A$ & $0.0386$ & $0.063554$; $0.06370^{+0.00658}_{-0.00557}$ \\
+    BDT & $S/B$ & $1.00\times10^{-4}$ & $8.40\times10^{-5}$; $(8.49^{+1.72}_{-1.46})\times10^{-5}$ \\
+    BDT & Background $N_{\rm eff}$ & $6.51$ & $28.116$; $28.7^{+5.5}_{-4.2}$ \\
+    Dense DNN & Weighted AUC & $0.648$ & $0.72146$; $0.72199^{+0.01025}_{-0.01105}$ \\
+    Dense DNN & Nominal $Z_A$ & $0.0369$ & $0.057385$; $0.05772^{+0.00484}_{-0.00436}$ \\
+    LBN-DNN & Nominal $Z_A$ & $0.0372$ & $0.052106$; $0.05222^{+0.00405}_{-0.00348}$ \\
+    \bottomrule
+  \end{tabular}
 \end{table}

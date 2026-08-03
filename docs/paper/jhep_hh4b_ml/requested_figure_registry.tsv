@@ -15,7 +15,7 @@ REQ-FIG-13	Earlier-snapshot versus authoritative-result comparison	supported	fig
 REQ-FIG-14	Signal, non-QCD, and direct-QCD population changes	supported	fig09_population_change		supported by the checksum-verified frozen c7q--c7u artifacts
 REQ-FIG-15	Selected process composition	supported	fig10_selected_process_composition		supported by the checksum-verified frozen c7q--c7u artifacts
 REQ-FIG-16	Three-b-to-four-b transfer-factor results	supported	fig11_transfer_factors		supported by the checksum-verified frozen c7q--c7u artifacts
-REQ-FIG-17	Transfer closure against secondary direct four-b QCD	supported	fig12_transfer_closure		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-17	Transfer closure against secondary direct $\geq4b$ QCD	supported	fig12_transfer_closure		supported by the checksum-verified frozen c7q--c7u artifacts
 REQ-FIG-18	Multijet systematic and nonclosure comparison	supported	fig17_multijet_systematic_nonclosure		supported by the checksum-verified frozen c7q--c7u artifacts
 REQ-FIG-19	R_HH distributions	supported	fig13_rhh_distributions		supported by the checksum-verified frozen c7q--c7u artifacts
 REQ-FIG-20	m(H1)-m(H2) mass planes	supported	fig14_higgs_mass_planes		supported by the checksum-verified frozen c7q--c7u artifacts

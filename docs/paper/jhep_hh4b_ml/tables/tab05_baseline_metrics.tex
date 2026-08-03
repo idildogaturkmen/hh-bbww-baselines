@@ -1,17 +1,16 @@
 \begin{table}[tb]
   \centering
-  \caption{Train-only source-group OOF baseline metrics at frozen operating points.}
+  \footnotesize
+  \caption{Unified train-only frozen-model comparison. The nominal full-OOF point is accompanied by the common paired source-member bootstrap 68\% interval.}
   \label{tab:baseline-metrics}
-  \resizebox{\linewidth}{!}{%
-  \begin{tabular}{lrrrrr}
-    \hline
-    Model & Weighted AUC & $Z_A$ & Sys.-aware $Z_A$ & $S/B$ & Bkg. $N_{\rm eff}$ \\
-    \hline
-    $R\_{HH}(125,120)$ cut & 0.7383 & 0.05168 & 2.04e-05 & 5.32e-05 & 45.8 \\
-    BDT & 0.7715 & 0.06355 & 3.84e-05 & 8.40e-05 & 28.1 \\
-    Dense DNN & 0.7215 & 0.05739 & 2.85e-05 & 6.91e-05 & 40.0 \\
-    LBN-DNN & 0.6602 & 0.05211 & 2.75e-05 & 5.69e-05 & 55.9 \\
-    \hline
-  \end{tabular}%
-  }
+  \begin{tabular}{lrrrr}
+    \toprule
+    Model & Nominal full-OOF $Z_A$ & Bootstrap $Z_A$ & Weighted AUC & Systematics-aware $Z_A$ \\
+    \midrule
+    $R_{HH}(125,120)$ cut & $0.05168$ & $0.05195^{+0.00407}_{-0.00410}$ & $0.7383^{+0.0127}_{-0.0144}$ & $(2.35^{+0.44}_{-0.47})\times10^{-5}$ \\
+    BDT & $0.06355$ & $0.06370^{+0.00658}_{-0.00557}$ & $0.7710^{+0.0102}_{-0.0091}$ & $(3.78^{+0.94}_{-0.75})\times10^{-5}$ \\
+    Dense DNN & $0.05739$ & $0.05772^{+0.00484}_{-0.00436}$ & $0.7220^{+0.0102}_{-0.0111}$ & $(3.06^{+0.62}_{-0.54})\times10^{-5}$ \\
+    LBN-DNN & $0.05211$ & $0.05222^{+0.00405}_{-0.00348}$ & $0.6600^{+0.0162}_{-0.0155}$ & $(2.55^{+0.47}_{-0.35})\times10^{-5}$ \\
+    \bottomrule
+  \end{tabular}
 \end{table}

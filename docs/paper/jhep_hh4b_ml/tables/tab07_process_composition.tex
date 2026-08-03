@@ -1,21 +1,20 @@
 \begin{table}[tb]
   \centering
+  \footnotesize
   \caption{Selected background composition grouped by frozen population kind.}
   \label{tab:process-composition}
-  \resizebox{\linewidth}{!}{%
-  \begin{tabular}{lrrr}
-    \hline
+  \begin{tabular}{llll}
+    \toprule
     Model & Population & Rows & Physical yield \\
-    \hline
-    bdt & hard\_qcd & 52 & 4.8918e+05 \\
-    bdt & ordinary & 9645 & 83520 \\
-    cut & hard\_qcd & 55 & 8.2205e+05 \\
-    cut & ordinary & 12166 & 1.206e+05 \\
-    dense\_dnn & hard\_qcd & 146 & 5.9676e+05 \\
-    dense\_dnn & ordinary & 10231 & 93296 \\
-    lbn\_dnn & hard\_qcd & 187 & 7.1175e+05 \\
-    lbn\_dnn & ordinary & 12168 & 1.2785e+05 \\
-    \hline
-  \end{tabular}%
-  }
+    \midrule
+    BDT & Transferred QCD & 52 & $4.89\times10^{5}$ \\
+    BDT & Non-QCD background & 9645 & $8.35\times10^{4}$ \\
+    $R_{HH}(125,120)$ cut & Transferred QCD & 55 & $8.22\times10^{5}$ \\
+    $R_{HH}(125,120)$ cut & Non-QCD background & 12166 & $1.21\times10^{5}$ \\
+    Dense DNN & Transferred QCD & 146 & $5.97\times10^{5}$ \\
+    Dense DNN & Non-QCD background & 10231 & $9.33\times10^{4}$ \\
+    LBN-DNN & Transferred QCD & 187 & $7.12\times10^{5}$ \\
+    LBN-DNN & Non-QCD background & 12168 & $1.28\times10^{5}$ \\
+    \bottomrule
+  \end{tabular}
 \end{table}

@@ -1,0 +1,42 @@
+\begin{table}[tb]
+  \centering
+  \footnotesize
+  \caption{Paired source-member bootstrap model differences. A larger point estimate is not called an improvement when the 68\% interval includes zero.}
+  \label{tab:paired-model-differences}
+  \begin{tabular}{llll}
+    \toprule
+    Comparison & Metric & Median difference (68\%) & Includes zero \\
+    \midrule
+    BDT minus Frozen cut & Weighted AUC & $0.03329^{+0.00808}_{-0.00802}$ & No \\
+    BDT minus Frozen cut & $S/B$ & $(3.06^{+1.50}_{-1.21})\times10^{-5}$ & No \\
+    BDT minus Frozen cut & Background $N_{\rm eff}$ & $-17.23^{+5.65}_{-5.70}$ & No \\
+    BDT minus Frozen cut & Nominal $Z_A$ & $0.01185^{+0.00539}_{-0.00464}$ & No \\
+    BDT minus Frozen cut & Systematics-aware $Z_A$ & $(1.38^{+0.86}_{-0.59})\times10^{-5}$ & No \\
+    Dense DNN minus Frozen cut & Weighted AUC & $-0.01533^{+0.01625}_{-0.01789}$ & Yes \\
+    Dense DNN minus Frozen cut & $S/B$ & $(1.54^{+1.05}_{-0.82})\times10^{-5}$ & No \\
+    Dense DNN minus Frozen cut & Background $N_{\rm eff}$ & $-5.36^{+6.25}_{-6.06}$ & Yes \\
+    Dense DNN minus Frozen cut & Nominal $Z_A$ & $0.00573^{+0.00418}_{-0.00377}$ & No \\
+    Dense DNN minus Frozen cut & Systematics-aware $Z_A$ & $(7.14^{+5.77}_{-4.43})\times10^{-6}$ & No \\
+    LBN-DNN minus Frozen cut & Weighted AUC & $-0.07688^{+0.01316}_{-0.01428}$ & No \\
+    LBN-DNN minus Frozen cut & $S/B$ & $(0.33^{+1.06}_{-0.93})\times10^{-5}$ & Yes \\
+    LBN-DNN minus Frozen cut & Background $N_{\rm eff}$ & $10.78^{+11.48}_{-9.76}$ & No \\
+    LBN-DNN minus Frozen cut & Nominal $Z_A$ & $0.00035^{+0.00494}_{-0.00458}$ & Yes \\
+    LBN-DNN minus Frozen cut & Systematics-aware $Z_A$ & $(2.11^{+6.32}_{-5.07})\times10^{-6}$ & Yes \\
+    Dense DNN minus BDT & Weighted AUC & $-0.04912^{+0.01270}_{-0.01312}$ & No \\
+    Dense DNN minus BDT & $S/B$ & $(-1.42^{+1.17}_{-1.45})\times10^{-5}$ & No \\
+    Dense DNN minus BDT & Background $N_{\rm eff}$ & $11.78^{+5.33}_{-4.85}$ & No \\
+    Dense DNN minus BDT & Nominal $Z_A$ & $-0.00606^{+0.00469}_{-0.00531}$ & No \\
+    Dense DNN minus BDT & Systematics-aware $Z_A$ & $(-6.57^{+6.07}_{-7.57})\times10^{-6}$ & No \\
+    LBN-DNN minus BDT & Weighted AUC & $-0.11087^{+0.01241}_{-0.01287}$ & No \\
+    LBN-DNN minus BDT & $S/B$ & $(-2.71^{+1.43}_{-1.65})\times10^{-5}$ & No \\
+    LBN-DNN minus BDT & Background $N_{\rm eff}$ & $27.72^{+10.72}_{-8.01}$ & No \\
+    LBN-DNN minus BDT & Nominal $Z_A$ & $-0.01150^{+0.00603}_{-0.00600}$ & No \\
+    LBN-DNN minus BDT & Systematics-aware $Z_A$ & $(-1.18^{+0.71}_{-0.89})\times10^{-5}$ & No \\
+    LBN-DNN minus Dense DNN & Weighted AUC & $-0.06277^{+0.02108}_{-0.01753}$ & No \\
+    LBN-DNN minus Dense DNN & $S/B$ & $(-1.17^{+0.99}_{-1.31})\times10^{-5}$ & No \\
+    LBN-DNN minus Dense DNN & Background $N_{\rm eff}$ & $15.73^{+10.25}_{-8.11}$ & No \\
+    LBN-DNN minus Dense DNN & Nominal $Z_A$ & $-0.00508^{+0.00443}_{-0.00540}$ & No \\
+    LBN-DNN minus Dense DNN & Systematics-aware $Z_A$ & $(-4.59^{+5.09}_{-6.67})\times10^{-6}$ & Yes \\
+    \bottomrule
+  \end{tabular}
+\end{table}

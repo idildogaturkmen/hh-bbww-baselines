@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import csv
+from decimal import Decimal, localcontext
 import hashlib
 import json
 import math
@@ -193,19 +194,163 @@ def asimov_za(signal: float, background: float) -> float:
 
 
 def asimov_za_with_uncertainty(signal: float, background: float, sigma_background: float) -> float:
+    """Cowan Asimov significance with stable extended-precision arithmetic.
+
+    The frozen multijet uncertainty can be orders of magnitude larger than the
+    signal.  Evaluating the two logarithmic terms as binary64 scalars then
+    subtracting them produced spurious exact zeros in the c7v scan.  NumPy's
+    long-double evaluation retains the same formula and nuisance contract while
+    avoiding that cancellation on the supported LPC platform.
+    """
+
     if signal <= 0.0 or background <= 0.0:
         return 0.0
     if sigma_background <= 0.0:
         return asimov_za(signal, background)
-    variance = sigma_background * sigma_background
-    first = (signal + background) * math.log(
-        ((signal + background) * (background + variance))
-        / (background * background + (signal + background) * variance)
-    )
-    second = (background * background / variance) * math.log(
-        1.0 + variance * signal / (background * (background + variance))
-    )
-    return math.sqrt(max(0.0, 2.0 * (first - second)))
+    s = np.longdouble(signal)
+    b = np.longdouble(background)
+    variance = np.longdouble(sigma_background) ** 2
+    first = (s + b) * np.log(((s + b) * (b + variance)) / (b * b + (s + b) * variance))
+    second = (b * b / variance) * np.log1p(variance * s / (b * (b + variance)))
+    q0 = np.longdouble(2.0) * (first - second)
+    require(bool(np.isfinite(q0)), "nonfinite Asimov background-uncertainty calculation")
+    # Extremely small q0 values need more than the platform's 80-bit mantissa.
+    # Decimal is used only in this cancellation-dominated tail.
+    if q0 < np.longdouble("1e-11"):
+        with localcontext() as context:
+            context.prec = 60
+            ds = Decimal(str(signal))
+            db = Decimal(str(background))
+            dv = Decimal(str(sigma_background)) ** 2
+            dfirst = (ds + db) * (((ds + db) * (db + dv)) / (db * db + (ds + db) * dv)).ln()
+            dsecond = (db * db / dv) * (Decimal(1) + dv * ds / (db * (db + dv))).ln()
+            dq0 = Decimal(2) * (dfirst - dsecond)
+            require(dq0 >= 0, f"negative high-precision Asimov test statistic: {dq0}")
+            return float(dq0.sqrt())
+    return float(np.sqrt(max(np.longdouble(0.0), q0)))
+
+
+def source_member_bootstrap_draws(
+    members: pd.DataFrame,
+    *,
+    replicates: int = 1000,
+    seed: int = 20260802,
+) -> tuple[np.ndarray, list[dict[str, Any]]]:
+    """Build the exact c7t stratified source-member bootstrap draw stream.
+
+    Columns in the returned matrix follow the input member-table row order.
+    Each entry is a source-member multiplicity.  Event rows are never sampled
+    independently.  The RNG loop deliberately matches c7t: replica outer loop,
+    insertion-ordered ``(sample_class, stratum)`` inner loop, and one continuous
+    NumPy generator seeded once.
+    """
+
+    require(replicates > 0, "bootstrap replicate count must be positive")
+    required = ["member_index", "sample_class", "stratum", "transport_id"]
+    require_columns(members, required, "source-member bootstrap registry")
+    require(not members[required].isna().any().any(), "null source-member bootstrap field")
+    require(not members["member_index"].duplicated().any(), "duplicate bootstrap member index")
+    require(not members["transport_id"].duplicated().any(), "duplicate bootstrap transport ID")
+
+    strata: dict[tuple[str, str], list[int]] = {}
+    for position, member in enumerate(members.itertuples(index=False)):
+        key = (str(member.sample_class), str(member.stratum))
+        strata.setdefault(key, []).append(position)
+    require({key[0] for key in strata} == {"signal", "background"}, "bootstrap class contract drift")
+
+    rng = np.random.default_rng(seed)
+    draws = np.zeros((replicates, len(members)), dtype=np.int16)
+    registry_rows: list[dict[str, Any]] = []
+    sample_class = members["sample_class"].astype(str).to_numpy()
+    member_ids = members["member_index"].astype(int).to_numpy()
+    for replica in range(replicates):
+        for positions in strata.values():
+            selected_local = rng.integers(0, len(positions), size=len(positions))
+            selected_positions = np.asarray(positions, dtype=int)[selected_local]
+            np.add.at(draws[replica], selected_positions, 1)
+        multiplicities = draws[replica]
+        signal_counts = multiplicities[sample_class == "signal"].astype(np.float64)
+        background_counts = multiplicities[sample_class == "background"].astype(np.float64)
+        signal_unique = int(np.count_nonzero(signal_counts))
+        background_unique = int(np.count_nonzero(background_counts))
+        stratum_counts = {
+            f"{klass}:{stratum}": {
+                "drawn": int(multiplicities[positions].sum()),
+                "unique": int(np.count_nonzero(multiplicities[positions])),
+            }
+            for (klass, stratum), positions in strata.items()
+        }
+        nonzero = np.flatnonzero(multiplicities)
+        selected = {str(member_ids[pos]): int(multiplicities[pos]) for pos in nonzero}
+
+        def source_neff(counts: np.ndarray) -> float:
+            sum2 = float(np.square(counts).sum())
+            return float(counts.sum() ** 2 / sum2) if sum2 > 0.0 else 0.0
+
+        valid = signal_unique > 0 and background_unique > 0
+        registry_rows.append({
+            "replica_id": replica,
+            "random_seed": seed,
+            "rng_contract": "numpy_default_rng_continuous_stream_replica_outer_stratum_inner",
+            "selected_source_member_multiplicities_json": json.dumps(selected, sort_keys=True, separators=(",", ":")),
+            "selected_source_members": len(selected),
+            "number_signal_sources": signal_unique,
+            "number_background_sources": background_unique,
+            "process_stratum_counts_json": json.dumps(stratum_counts, sort_keys=True, separators=(",", ":")),
+            "effective_signal_source_statistics": source_neff(signal_counts),
+            "effective_background_source_statistics": source_neff(background_counts),
+            "draw_sha256": hashlib.sha256(multiplicities.tobytes()).hexdigest(),
+            "validity_status": "valid" if valid else "invalid",
+            "failure_reason": "" if valid else "missing resampled signal or background source",
+        })
+    validate_source_member_bootstrap_draws(members, draws)
+    return draws, registry_rows
+
+
+def validate_source_member_bootstrap_draws(members: pd.DataFrame, draws: np.ndarray) -> None:
+    """Fail closed if a draw matrix violates the frozen stratified contract."""
+
+    require(draws.ndim == 2 and draws.shape[1] == len(members), "bootstrap draw shape mismatch")
+    require(np.issubdtype(draws.dtype, np.integer), "bootstrap multiplicities must be integers")
+    require(bool((draws >= 0).all()), "negative bootstrap multiplicity")
+    strata: dict[tuple[str, str], list[int]] = {}
+    for position, member in enumerate(members.itertuples(index=False)):
+        strata.setdefault((str(member.sample_class), str(member.stratum)), []).append(position)
+    for key, positions in strata.items():
+        observed = draws[:, positions].sum(axis=1)
+        require(bool((observed == len(positions)).all()), f"bootstrap stratum-size drift: {key}")
+
+
+def bootstrap_quantile_summary(
+    values: Sequence[float] | np.ndarray,
+    *,
+    invalid_reasons: Sequence[str] | None = None,
+) -> dict[str, Any]:
+    """Return the frozen asymmetric percentile summary without filling invalids."""
+
+    array = np.asarray(values, dtype=np.float64)
+    finite = np.isfinite(array)
+    valid = array[finite]
+    require(len(valid) > 0, "no valid bootstrap replicas")
+    reasons: dict[str, int] = {}
+    if invalid_reasons is not None:
+        require(len(invalid_reasons) == len(array), "bootstrap invalid-reason alignment drift")
+        for is_valid, reason in zip(finite, invalid_reasons):
+            if not is_valid:
+                key = str(reason) or "nonfinite metric"
+                reasons[key] = reasons.get(key, 0) + 1
+    return {
+        "bootstrap_mean": float(np.mean(valid)),
+        "bootstrap_median": float(np.median(valid)),
+        "bootstrap_standard_deviation": float(np.std(valid, ddof=1)) if len(valid) > 1 else 0.0,
+        "bootstrap_p16": float(np.quantile(valid, 0.16)),
+        "bootstrap_p84": float(np.quantile(valid, 0.84)),
+        "bootstrap_p2p5": float(np.quantile(valid, 0.025)),
+        "bootstrap_p97p5": float(np.quantile(valid, 0.975)),
+        "valid_replicas": int(finite.sum()),
+        "invalid_replicas": int((~finite).sum()),
+        "invalid_reason_counts_json": json.dumps(reasons, sort_keys=True, separators=(",", ":")),
+    }
 
 
 def correlated_multijet_profile_za(

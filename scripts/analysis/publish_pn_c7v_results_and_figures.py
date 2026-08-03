@@ -63,6 +63,39 @@ DISPLAY = {
     "dense_dnn": "Dense DNN",
     "lbn_dnn": "LBN-DNN",
 }
+PAPER_LABELS = {
+    "inclusive_mhh": r"Inclusive $m_{HH}$",
+    "low_mhh": r"Low-$m_{HH}$ region",
+    "high_mhh": r"High-$m_{HH}$ region",
+    "cms_cr_nominal": "Nominal control-region transfer",
+    "baseline_global_alternative": "Global baseline alternative",
+    "outside_ge55_alternative": r"$R_{HH}(125,120)\geq55\,\mathrm{GeV}$ alternative",
+    "nominal_transfer_factor_statistical": "Transfer-factor statistical uncertainty",
+    "normalization_region_factor_envelope": "Normalization-region factor envelope",
+    "cms_sr_direct_qcd_nonclosure": r"Direct $\geq4b$ QCD nonclosure",
+    "multijet_normalization": "Multijet normalization",
+    "multijet_normalization_and_shape": "Multijet normalization and shape",
+    "cms_reference_signal_region_multijet": "Reference signal-region multijet",
+    "hard_qcd": "Transferred QCD",
+    "ordinary": "Non-QCD background",
+    "signal": "Signal",
+    "baseline_all_candidates": "Inclusive baseline",
+    "cms_reference_sr_rhh125120_lt30": r"Reference $R_{HH}(125,120)<30\,\mathrm{GeV}$ region",
+    "cms_reference_cr_rhh125120_ge30_lt55": r"Nominal $30\leq R_{HH}(125,120)<55\,\mathrm{GeV}$ control region",
+    "cms_reference_outside_rhh125120_ge55": r"$R_{HH}(125,120)\geq55\,\mathrm{GeV}$ region",
+    "optimized_nominal_sr_rhh125120_lt34": r"Frozen $R_{HH}(125,120)<34\,\mathrm{GeV}$ region",
+    "higher_purity_sr_rhh125120_lt31p5": r"$R_{HH}(125,120)<31.5\,\mathrm{GeV}$ diagnostic",
+    "higher_efficiency_sr_rhh125120_lt35p5": r"$R_{HH}(125,120)<35.5\,\mathrm{GeV}$ diagnostic",
+}
+TABLE_REGION_LABELS = {
+    "baseline_all_candidates": "Inclusive baseline",
+    "cms_reference_sr_rhh125120_lt30": r"$R_{HH}<30\,\mathrm{GeV}$",
+    "cms_reference_cr_rhh125120_ge30_lt55": "Nominal control region",
+    "cms_reference_outside_rhh125120_ge55": r"$R_{HH}\geq55\,\mathrm{GeV}$",
+    "optimized_nominal_sr_rhh125120_lt34": r"Frozen $R_{HH}<34\,\mathrm{GeV}$",
+    "higher_purity_sr_rhh125120_lt31p5": r"$R_{HH}<31.5\,\mathrm{GeV}$",
+    "higher_efficiency_sr_rhh125120_lt35p5": r"$R_{HH}<35.5\,\mathrm{GeV}$",
+}
 BOOTSTRAP_SEED = 20260802
 BOOTSTRAP_REPLICATES = 1000
 TORCH_RUNTIME = Path("/tmp/hh4b_pn_c7t_baseline_env_20260802_v1/bin/python")
@@ -83,7 +116,7 @@ REQUESTED_FIGURES = (
     ("REQ-FIG-14", "Signal, non-QCD, and direct-QCD population changes", "fig09_population_change"),
     ("REQ-FIG-15", "Selected process composition", "fig10_selected_process_composition"),
     ("REQ-FIG-16", "Three-b-to-four-b transfer-factor results", "fig11_transfer_factors"),
-    ("REQ-FIG-17", "Transfer closure against secondary direct four-b QCD", "fig12_transfer_closure"),
+    ("REQ-FIG-17", r"Transfer closure against secondary direct $\geq4b$ QCD", "fig12_transfer_closure"),
     ("REQ-FIG-18", "Multijet systematic and nonclosure comparison", "fig17_multijet_systematic_nonclosure"),
     ("REQ-FIG-19", "R_HH distributions", "fig13_rhh_distributions"),
     ("REQ-FIG-20", "m(H1)-m(H2) mass planes", "fig14_higgs_mass_planes"),
@@ -178,6 +211,33 @@ def save_plot(
     provenance: list[dict[str, Any]],
 ) -> None:
     require(bool(source_rows), f"empty source data for {stem}")
+    standardized = []
+    for source_row in source_rows:
+        row = dict(source_row)
+        central = row.get("uncertainty_central", row.get("central_value", row.get("value", "")))
+        lower = row.get("uncertainty_lower_68", "")
+        upper = row.get("uncertainty_upper_68", "")
+        kind = row.get("uncertainty_kind", "not_applicable_non_model_diagnostic")
+        if central != "" and lower == "" and "statistical_uncertainty" in row:
+            uncertainty = float(row["statistical_uncertainty"])
+            lower = max(0.0, float(central) - uncertainty)
+            upper = float(central) + uncertainty
+            kind = "weighted_statistical"
+        if central != "" and lower == "" and "transfer_factor_statistical_uncertainty" in row:
+            uncertainty = float(row["transfer_factor_statistical_uncertainty"])
+            lower = max(0.0, float(central) - uncertainty)
+            upper = float(central) + uncertainty
+            kind = "propagated_transfer_statistical"
+        row.update({
+            "uncertainty_central": central,
+            "uncertainty_lower_68": lower,
+            "uncertainty_upper_68": upper,
+            "uncertainty_valid_replicas": row.get("uncertainty_valid_replicas", 0),
+            "uncertainty_support_flag": row.get("uncertainty_support_flag", "not_applicable"),
+            "uncertainty_kind": kind,
+        })
+        standardized.append(row)
+    source_rows = standardized
     data_path = figures / f"{stem}.tsv"
     write_tsv(data_path, source_rows)
     for suffix in ("pdf", "png"):
@@ -492,9 +552,11 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
     fig, axes = plt.subplots(1, 2, figsize=(11.0, 4.5))
     for series, color in (("signal", COLORS["signal"]), ("background", COLORS["ordinary"])):
         x, y = step_xy(rows, series, "unit_shape"); axes[0].step(x, y, where="post", lw=2, color=color, label=series.title())
+    score_labels = {"signal": "Signal", "ordinary": "Non-QCD background", "transferred": "Transferred QCD",
+                    "direct_closure": r"Direct $\geq4b$ QCD closure"}
     for series, color, ls in (("signal", COLORS["signal"], "-"), ("ordinary", COLORS["ordinary"], "-"),
                               ("transferred", COLORS["transferred"], "-"), ("direct_closure", COLORS["direct"], "--")):
-        x, y = step_xy(rows, series, "physical_yield"); axes[1].step(x, y, where="post", lw=2, color=color, ls=ls, label=series.replace("_", " ").title())
+        x, y = step_xy(rows, series, "physical_yield"); axes[1].step(x, y, where="post", lw=2, color=color, ls=ls, label=score_labels[series])
     axes[0].set(xlabel="BDT OOF score", ylabel="Unit-normalized weighted events")
     axes[1].set(xlabel="BDT OOF score", ylabel="Train-partition physical yield", yscale="log")
     axes[1].set_ylim(bottom=max(1e-2, axes[1].get_ylim()[0]))
@@ -502,7 +564,7 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
     axes[0].legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2)
     axes[1].legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2)
     fig.subplots_adjust(bottom=0.23)
-    save_plot(fig, figures, paper_figures, "fig02_oof_score_distributions", "BDT OOF score distributions. Direct four-b QCD is shown only as a dashed secondary closure and is not added to the primary transferred-QCD prediction.", rows, provenance)
+    save_plot(fig, figures, paper_figures, "fig02_oof_score_distributions", r"BDT OOF score distributions. Direct $\geq4b$ QCD is shown only as a dashed secondary closure and is not added to the primary $3b\rightarrow{\geq4b}$ transferred-QCD prediction.", rows, provenance)
 
     scans = scan_rows(inputs, points=13 if smoke else 91)
     # 03 efficiency versus rejection.
@@ -575,9 +637,11 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
     fig, ax = plt.subplots(figsize=(7.2, 5.0)); x = np.arange(len(chosen)); width = 0.36
     ax.bar(x - width/2, chosen.earlier_frozen_train_population.to_numpy(), width, label="Earlier frozen", color="#999999")
     ax.bar(x + width/2, chosen.current_441_source_population.to_numpy(), width, label="Authoritative 441-source", color="#0072B2")
-    ax.set_yscale("log"); ax.set_xticks(x); ax.set_xticklabels(chosen.quantity.str.replace("_", " "), rotation=15, ha="right")
+    population_labels = {"signal_rows": "Signal", "non_qcd_background_rows": "Non-QCD background",
+                         "direct_qcd_fourb_rows": r"Direct $\geq4b$ QCD closure"}
+    ax.set_yscale("log"); ax.set_xticks(x); ax.set_xticklabels([population_labels[value] for value in chosen.quantity], rotation=15, ha="right")
     ax.set_ylabel("Candidate rows"); ax.legend(); ax.grid(axis="y", alpha=0.18); paper_label(ax, subtitle="Population audit")
-    save_plot(fig, figures, paper_figures, "fig09_population_change", "Earlier versus authoritative candidate populations. The material population change is confined to direct four-b QCD.", chosen.to_dict("records"), provenance)
+    save_plot(fig, figures, paper_figures, "fig09_population_change", r"Earlier versus authoritative candidate populations. The material population change is confined to direct $\geq4b$ QCD closure.", chosen.to_dict("records"), provenance)
 
     # 10 selected physical process composition.
     comp = inputs["composition"].copy()
@@ -603,22 +667,22 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
         sub = factor.set_index(["mhh_category", "factor_scheme"])
         values = [sub.loc[(cat, scheme), "transfer_factor"] for cat in categories]
         errors = [sub.loc[(cat, scheme), "transfer_factor_statistical_uncertainty"] for cat in categories]
-        ax.errorbar(x + (i-1)*width, values, yerr=errors, fmt="o", capsize=3, label=scheme.replace("_", " "))
-    ax.set_xticks(x); ax.set_xticklabels(["Inclusive", r"Low $m_{HH}$", r"High $m_{HH}$"]); ax.set_ylabel(r"Three-b to four-b transfer factor")
+        ax.errorbar(x + (i-1)*width, values, yerr=errors, fmt="o", capsize=3, label=PAPER_LABELS[scheme])
+    ax.set_xticks(x); ax.set_xticklabels(["Inclusive", r"Low $m_{HH}$", r"High $m_{HH}$"]); ax.set_ylabel(r"Exactly $3b$ to $\geq4b$ transfer factor")
     ax.set_yscale("log"); ax.grid(axis="y", alpha=0.18); ax.legend(fontsize=8); paper_label(ax, subtitle="Frozen train transfer")
-    save_plot(fig, figures, paper_figures, "fig11_transfer_factors", r"Frozen three-b to four-b QCD transfer factors by normalization region and $m_{HH}$ category. Error bars show propagated statistical uncertainty.", factor.to_dict("records"), provenance)
+    save_plot(fig, figures, paper_figures, "fig11_transfer_factors", r"Frozen exactly-$3b$ to $\geq4b$ QCD transfer factors by normalization region and $m_{HH}$ category. Error bars show propagated statistical uncertainty.", factor.to_dict("records"), provenance)
 
     # 12 closure.
     closure = inputs["closure"]; chosen = closure[(closure.mhh_category == "inclusive_mhh")].copy()
     fig, axes = plt.subplots(2, 1, figsize=(9.0, 6.6), sharex=True, gridspec_kw={"height_ratios": [3, 1]})
     x = np.arange(len(chosen)); axes[0].bar(x-0.18, chosen.transferred_qcd_prediction.to_numpy(), 0.36, label="Transferred prediction", color=COLORS["transferred"])
-    axes[0].bar(x+0.18, chosen.direct_fourb_qcd_truth.to_numpy(), 0.36, label="Direct QCD closure", color="#777777")
+    axes[0].bar(x+0.18, chosen.direct_fourb_qcd_truth.to_numpy(), 0.36, label=r"Direct $\geq4b$ QCD closure", color="#777777")
     axes[0].set_yscale("log"); axes[0].set_ylabel("QCD physical yield"); axes[0].legend(); axes[0].grid(axis="y", alpha=0.18); paper_label(axes[0], subtitle="Direct QCD is secondary")
     axes[1].axhline(1, color="0.3", lw=1); axes[1].plot(x, chosen.prediction_over_truth.to_numpy(), "o", color="#0072B2")
     region_labels = ["Baseline", r"SR $<30$", r"CR $30$--$55$", r"Outside $\geq55$", r"SR $<34$", r"SR $<31.5$", r"SR $<35.5$"]
     require(len(region_labels) == len(chosen), "inclusive transfer-closure region count drift")
     axes[1].set_ylabel("Pred./truth"); axes[1].set_xticks(x); axes[1].set_xticklabels(region_labels, rotation=15, ha="right", fontsize=8); axes[1].grid(axis="y", alpha=0.18)
-    save_plot(fig, figures, paper_figures, "fig12_transfer_closure", "Frozen transferred-QCD prediction compared with the secondary direct four-b QCD closure. The lower panel is prediction divided by direct closure truth.", chosen.to_dict("records"), provenance)
+    save_plot(fig, figures, paper_figures, "fig12_transfer_closure", r"Frozen $3b\rightarrow{\geq4b}$ transferred-QCD prediction compared with the secondary direct $\geq4b$ QCD closure. The lower panel is prediction divided by direct closure truth.", chosen.to_dict("records"), provenance)
 
     # 13 R_HH population shapes.
     q3 = pd.read_parquet(CHECKPOINTS["c7q"] / "tables/train_exactly3b_promoted_run2_physical.parquet",
@@ -634,12 +698,15 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
         rows += histogram_rows(frame.loc[mask, "r_hh_125_120"].to_numpy(dtype=float), frame.loc[mask, weight_col].to_numpy(dtype=float), bins_rhh,
                                figure="fig13", panel="unit_shape", series=series, normalize=True)
     fig, ax = plt.subplots(figsize=(7.0, 5.2))
+    rhh_labels = {"fourb_signal": r"Signal $\geq4b$", "fourb_ordinary": "Non-QCD background",
+                  "threeb_qcd_template": r"Exactly $3b$ QCD template",
+                  "fourb_direct_qcd": r"Direct $\geq4b$ QCD closure"}
     for series, color, ls in (("fourb_signal", COLORS["signal"], "-"), ("fourb_ordinary", COLORS["ordinary"], "-"),
                               ("threeb_qcd_template", COLORS["transferred"], "-"), ("fourb_direct_qcd", COLORS["direct"], "--")):
-        xh, yh = step_xy(rows, series, "unit_shape"); ax.step(xh, yh, where="post", lw=2, color=color, ls=ls, label=series.replace("_", " ").title())
+        xh, yh = step_xy(rows, series, "unit_shape"); ax.step(xh, yh, where="post", lw=2, color=color, ls=ls, label=rhh_labels[series])
     ax.axvline(34, color="0.35", ls=":", label="Frozen cut"); ax.set(xlabel=r"$R_{HH}(125,120)$ [GeV]", ylabel="Unit-normalized weighted events", xlim=(0.25,2000), xscale="log")
     ax.legend(fontsize=8); ax.grid(alpha=0.18); paper_label(ax)
-    save_plot(fig, figures, paper_figures, "fig13_rhh_distributions", r"Full-range weighted $R_{HH}(125,120)$ shapes for signal, ordinary background, the exactly-three-b QCD template, and secondary direct four-b QCD closure. Logarithmic binning includes every observed event.", rows, provenance)
+    save_plot(fig, figures, paper_figures, "fig13_rhh_distributions", r"Full-range weighted $R_{HH}(125,120)$ shapes for signal, non-QCD background, the exactly-$3b$ QCD template, and secondary direct $\geq4b$ QCD closure. Logarithmic binning includes every simulated event.", rows, provenance)
 
     # 14 mass planes.
     mass_bins = np.geomspace(15.0, 2000.0, 41); rows = []
@@ -713,7 +780,7 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
             "transferred_qcd_fraction_of_background": row.transferred_qcd_prediction / row.background_yield,
             "direct_qcd_relative_nonclosure": row.score_domain_qcd_relative_nonclosure,
             "multijet_systematic_relative_to_total_background": row.multijet_systematic_relative_to_total_background,
-            "projection_status": "primary transfer; direct four-b QCD is secondary closure only",
+            "projection_status": "primary transfer; direct >=4b QCD is secondary closure only",
         })
     diagnostic = pd.DataFrame(rows).set_index("model").reindex(MODEL_ORDER)
     x = np.arange(len(MODEL_ORDER)); width = 0.36
@@ -733,26 +800,37 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
         ax.grid(axis="y", alpha=0.18)
     paper_label(axes[0], subtitle="Train-only frozen transfer")
     save_plot(fig, figures, paper_figures, "fig17_multijet_systematic_nonclosure",
-              "Selected transferred-QCD fraction, score-domain direct-QCD nonclosure, and frozen multijet nuisance. Direct four-b QCD is secondary closure only.",
+              r"Selected transferred-QCD fraction, score-domain direct-$\geq4b$ QCD nonclosure, and frozen multijet nuisance. Direct $\geq4b$ QCD is secondary closure only.",
               rows, provenance)
     return provenance
 
 
 def latex_escape(value: Any) -> str:
     text = str(value)
-    for old, new in (("\\", r"\textbackslash{}"), ("_", r"\_"), ("%", r"\%"), ("&", r"\&"), ("#", r"\#")):
+    if "$" in text or "\\" in text:
+        return text
+    for old, new in (("_", r"\_"), ("%", r"\%"), ("&", r"\&"), ("#", r"\#")):
         text = text.replace(old, new)
     return text
 
 
-def write_latex_table(path: Path, caption: str, label: str, headers: list[str], rows: Iterable[Iterable[Any]]) -> None:
-    align = "l" + "r" * (len(headers) - 1)
-    lines = [r"\begin{table}[tb]", r"  \centering", f"  \\caption{{{caption}}}", f"  \\label{{{label}}}",
-             r"  \resizebox{\linewidth}{!}{%", f"  \\begin{{tabular}}{{{align}}}", r"    \hline", "    " + " & ".join(headers) + r" \\", r"    \hline"]
+def write_latex_table(path: Path, caption: str, label: str, headers: list[str], rows: Iterable[Iterable[Any]], *, align: str | None = None) -> None:
+    alignment = align or "l" * len(headers)
+    require(len(alignment) == len(headers), f"LaTeX table alignment drift: {path}")
+    lines = [r"\begin{table}[tb]", r"  \centering", r"  \footnotesize", f"  \\caption{{{caption}}}", f"  \\label{{{label}}}",
+             f"  \\begin{{tabular}}{{{alignment}}}", r"    \toprule", "    " + " & ".join(headers) + r" \\", r"    \midrule"]
     for row in rows:
         lines.append("    " + " & ".join(latex_escape(value) for value in row) + r" \\")
-    lines += [r"    \hline", r"  \end{tabular}%", r"  }", r"\end{table}"]
+    lines += [r"    \bottomrule", r"  \end{tabular}", r"\end{table}"]
     path.write_text("\n".join(lines) + "\n")
+
+
+def scientific_latex(value: float, digits: int = 2) -> str:
+    if value == 0.0:
+        return "$0$"
+    exponent = int(math.floor(math.log10(abs(value))))
+    coefficient = value / (10.0 ** exponent)
+    return rf"${coefficient:.{digits}f}\times10^{{{exponent}}}$"
 
 
 def make_paper_material(inputs: dict[str, Any], paper: Path, provenance: list[dict[str, Any]], assets: list[dict[str, Any]], head: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -765,41 +843,44 @@ def make_paper_material(inputs: dict[str, Any], paper: Path, provenance: list[di
 
     table_specs: list[tuple[str, str, str, list[str], list[list[Any]], str]] = []
     table_specs.append(("tab01_train_source_inventory.tex", "Frozen train-source and candidate inventory.", "tab:train-inventory",
-                        ["Quantity", "Value"], [["Train source members", 441], ["Exactly-three-b candidates", c7q_summary["threeb_rows"]],
-                        ["At-least-four-b candidates", c7q_summary["fourb_rows"]], ["Composite identity overlap", c7q_summary["threeb_fourb_composite_identity_overlap"]]], "main_text"))
-    table_specs.append(("tab02_fourb_population.tex", "Authoritative at-least-four-b development population.", "tab:fourb-population",
-                        ["Population", "Rows"], [["Signal", 9337], ["Non-QCD background", 21312], ["Direct QCD closure", 56], ["Total", 30705]], "main_text"))
+                        ["Quantity", "Value"], [["Train source members", 441], [r"Exactly $3b$ candidates", c7q_summary["threeb_rows"]],
+                        [r"$\geq4b$ candidates", c7q_summary["fourb_rows"]], ["Composite identity overlap", c7q_summary["threeb_fourb_composite_identity_overlap"]]], "main_text"))
+    table_specs.append(("tab02_fourb_population.tex", r"Authoritative $\geq4b$ development population.", "tab:fourb-population",
+                        ["Population", "Rows"], [["Signal", 9337], ["Non-QCD background", 21312], [r"Direct $\geq4b$ QCD closure", 56], ["Total", 30705]], "main_text"))
     factor = inputs["factor"]
     table_specs.append(("tab03_transfer_factors.tex", "Frozen multijet transfer factors.", "tab:transfer-factors",
                         [r"$m_{HH}$ category", "Scheme", "Factor", "Stat. rel. unc."],
-                        [[r.mhh_category, r.factor_scheme, f"{r.transfer_factor:.6g}", f"{r.transfer_factor_relative_statistical_uncertainty:.3f}"] for r in factor.itertuples()], "main_text"))
+                        [[PAPER_LABELS[r.mhh_category], PAPER_LABELS[r.factor_scheme], scientific_latex(r.transfer_factor), f"{r.transfer_factor_relative_statistical_uncertainty:.3f}"] for r in factor.itertuples()], "main_text"))
     systematic = inputs["systematic"]
     table_specs.append(("tab04_multijet_nuisances.tex", "Frozen multijet systematic components.", "tab:multijet-nuisances",
                         ["Nuisance", "Scope", "Relative down", "Relative up"],
-                        [[r.nuisance, r.scope, f"{r.relative_down:.3f}", f"{r.relative_up:.3f}"] for r in systematic.itertuples()], "main_text"))
+                        [[PAPER_LABELS[r.nuisance], PAPER_LABELS[r.scope], f"{r.relative_down:.3f}", f"{r.relative_up:.3f}"] for r in systematic.itertuples()], "main_text"))
     table_specs.append(("tab05_baseline_metrics.tex", "Train-only source-group OOF baseline metrics at frozen operating points.", "tab:baseline-metrics",
                         ["Model", "Weighted AUC", r"$Z_A$", r"Sys.-aware $Z_A$", r"$S/B$", r"Bkg. $N_{\rm eff}$"],
-                        [[DISPLAY[r.baseline], f"{r.weighted_auc:.4f}", f"{r.asimov_ZA:.5f}", f"{r.systematic_aware_asimov_ZA:.2e}", f"{r.signal_over_background:.2e}", f"{r.background_effective_events:.1f}"] for r in metrics.itertuples()], "main_text"))
+                        [[DISPLAY[r.baseline], f"{r.weighted_auc:.4f}", f"{r.asimov_ZA:.5f}", scientific_latex(r.systematic_aware_asimov_ZA), scientific_latex(r.signal_over_background), f"{r.background_effective_events:.1f}"] for r in metrics.itertuples()], "main_text"))
     earlier = inputs["earlier"]
     table_specs.append(("tab06_earlier_current.tex", "Earlier approximate snapshot versus current results.", "tab:earlier-current",
                         ["Model", "Metric", "Earlier", "Current", "Relative change"],
-                        [[r.baseline, r.metric, f"{r.earlier_snapshot:.5g}", f"{r.current_reestablished:.5g}", f"{r.relative_change:.3f}"] for r in earlier.itertuples()], "appendix"))
+                        [[DISPLAY[r.baseline], r.metric.replace("_", " ").title(), f"{r.earlier_snapshot:.5g}", f"{r.current_reestablished:.5g}", f"{r.relative_change:.3f}"] for r in earlier.itertuples()], "appendix"))
     comp = inputs["composition"]
     grouped = comp.groupby(["baseline", "population_kind"], as_index=False).agg(selected_rows=("selected_rows", "sum"), physical_yield=("physical_yield", "sum"))
     table_specs.append(("tab07_process_composition.tex", "Selected background composition grouped by frozen population kind.", "tab:process-composition",
                         ["Model", "Population", "Rows", "Physical yield"],
-                        [[r.baseline, r.population_kind, int(r.selected_rows), f"{r.physical_yield:.5g}"] for r in grouped.itertuples()], "appendix"))
+                        [[DISPLAY[r.baseline], PAPER_LABELS.get(r.population_kind, str(r.population_kind).replace("_", " ").title()), int(r.selected_rows), scientific_latex(r.physical_yield)] for r in grouped.itertuples()], "appendix"))
     model_manifest = pd.read_csv(CHECKPOINTS["c7t"] / "model_artifact_manifest.tsv", sep="\t")
     table_specs.append(("tab08_model_artifacts.tex", "Frozen model artifact identities.", "tab:model-artifacts",
                         ["Model", "Fold", "File", "SHA-256 prefix"],
-                        [[r.model, int(r.fold), r.path, str(r.sha256)[:12]] for r in model_manifest.itertuples()], "appendix"))
+                        [[DISPLAY.get(r.model, str(r.model).replace("_", " ").upper()), int(r.fold), r.path, str(r.sha256)[:12]] for r in model_manifest.itertuples()], "appendix"))
     closure = inputs["closure"]
     closure = closure[closure.mhh_category == "inclusive_mhh"]
-    table_specs.append(("tab09_transfer_closure.tex", "Inclusive frozen multijet-transfer closure against secondary direct four-b QCD.", "tab:transfer-closure",
-                        ["Target region", "3b rows", "Direct 4b rows", "Prediction", "Direct closure", "Pred./closure", "Abs. nonclosure"],
-                        [[r.target_region, int(r.threeb_qcd_rows), int(r.fourb_direct_qcd_rows),
-                          f"{r.transferred_qcd_prediction:.5g}", f"{r.direct_fourb_qcd_truth:.5g}",
-                          f"{r.prediction_over_truth:.3f}", f"{r.relative_absolute_nonclosure:.3f}"]
+    table_specs.append(("tab09_transfer_closure.tex", r"Inclusive frozen multijet-transfer yields and secondary direct $\geq4b$ QCD closure.", "tab:transfer-closure-yields",
+                        ["Target region", r"$3b$ rows", r"Direct $\geq4b$ rows", "Transferred yield", "Direct closure"],
+                        [[TABLE_REGION_LABELS[r.target_region], int(r.threeb_qcd_rows), int(r.fourb_direct_qcd_rows),
+                          scientific_latex(r.transferred_qcd_prediction), scientific_latex(r.direct_fourb_qcd_truth)]
+                         for r in closure.itertuples()], "appendix"))
+    table_specs.append(("tab09b_transfer_closure_ratios.tex", r"Inclusive frozen $3b\rightarrow{\geq4b}$ closure ratios.", "tab:transfer-closure-ratios",
+                        ["Target region", "Prediction / closure", "Absolute nonclosure"],
+                        [[TABLE_REGION_LABELS[r.target_region], f"{r.prediction_over_truth:.3f}", f"{r.relative_absolute_nonclosure:.3f}"]
                          for r in closure.itertuples()], "appendix"))
     table_manifest = []
     for filename, caption, label, headers, rows, placement in table_specs:
@@ -809,14 +890,14 @@ def make_paper_material(inputs: dict[str, Any], paper: Path, provenance: list[di
 
     prominent = (
         "This is a Delphes-based simulation study evaluated only with train-source-group OOF predictions. "
-        "No validation/test result, observed data, or CMS approval is claimed. Direct four-b QCD is secondary "
+        r"No validation/test result, observed data, or CMS approval is claimed. Direct $\geq4b$ QCD is secondary "
         "closure only; the primary multijet prediction is the frozen lower-b-tag transfer, whose uncertainty "
         "currently dominates the sensitivity."
     )
     section_text = {
-        "analysis_strategy.tex": prominent + " The analysis uses 441 frozen train sources and disjoint exactly-three-b and at-least-four-b candidate populations.\n",
+        "analysis_strategy.tex": prominent + r" The analysis uses 441 frozen train sources and disjoint exactly $3b$ and $\geq4b$ candidate populations." + "\n",
         "event_reconstruction.tex": "Four selected candidate jets are paired geometrically into two Higgs candidates. The frozen baseline uses $R_{HH}(125,120)<34\\,\\mathrm{GeV}$.\n",
-        "multijet_transfer.tex": f"The primary multijet prediction transfers the exactly-three-b QCD template with nominal inclusive factor {c7r_summary['nominal_transfer_factor']:.6g}. Direct QCD is shown only as secondary closure.\n",
+        "multijet_transfer.tex": rf"The primary multijet prediction uses the exactly $3b\rightarrow{{\geq4b}}$ QCD transfer with nominal inclusive factor {scientific_latex(c7r_summary['nominal_transfer_factor'])}. Direct $\geq4b$ QCD is shown only as secondary closure." + "\n",
         "machine_learning_methods.tex": "The BDT, dense DNN, and LBN-DNN use the same deterministic five source-group folds. Learned operating points reproduce the frozen cut's development-weighted signal efficiency.\n",
         "train_only_results.tex": "The strongest nominal baseline is the BDT, but nominal ordering must not be interpreted as a publication-model choice because the frozen multijet uncertainty reduces all systematic-aware sensitivities to approximately zero.\n",
         "systematic_limitations.tex": prominent + " The result is not a full Run-2 prediction.\n",
@@ -834,7 +915,7 @@ def make_paper_material(inputs: dict[str, Any], paper: Path, provenance: list[di
     includes = "\n".join(f"\\input{{sections/{name}}}" for name in section_text)
     table_inputs = "\n".join(f"\\input{{tables/{spec[0]}}}" for spec in table_specs)
     (paper / "compile_fragments.tex").write_text(
-        "\\documentclass[11pt]{article}\n\\usepackage[margin=1in]{geometry}\n\\usepackage{graphicx}\n\\usepackage{amsmath}\n"
+        "\\documentclass[11pt]{article}\n\\usepackage[margin=1in]{geometry}\n\\usepackage{graphicx}\n\\usepackage{amsmath}\n\\usepackage{booktabs}\n"
         "\\begin{document}\n\\section*{HH to four-b ML train-only fragments}\n" + includes + "\n" + table_inputs + "\n\\end{document}\n"
     )
 

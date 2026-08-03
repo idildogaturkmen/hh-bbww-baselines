@@ -1,0 +1,16 @@
+\begin{table}[tb]
+  \centering
+  \footnotesize
+  \caption{Train-only frozen-model results with paired source-member bootstrap 68\% intervals.}
+  \label{tab:baseline-uncertainty-summary}
+  \begin{tabular}{lrrr}
+    \toprule
+    Model & Weighted AUC & Nominal $Z_A$ & Systematics-aware $Z_A$ \\
+    \midrule
+    $R_{HH}(125,120)$ cut & $0.7383^{+0.0127}_{-0.0144}$ & $0.05195^{+0.00407}_{-0.00410}$ & $(2.35^{+0.44}_{-0.47})\times10^{-5}$ \\
+    BDT & $0.7710^{+0.0102}_{-0.0091}$ & $0.06370^{+0.00658}_{-0.00557}$ & $(3.78^{+0.94}_{-0.75})\times10^{-5}$ \\
+    Dense DNN & $0.7220^{+0.0102}_{-0.0111}$ & $0.05772^{+0.00484}_{-0.00436}$ & $(3.06^{+0.62}_{-0.54})\times10^{-5}$ \\
+    LBN-DNN & $0.6600^{+0.0162}_{-0.0155}$ & $0.05222^{+0.00405}_{-0.00348}$ & $(2.55^{+0.47}_{-0.35})\times10^{-5}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}

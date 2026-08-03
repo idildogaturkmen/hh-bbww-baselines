@@ -1,12 +1,9 @@
-baseline	metric	earlier_snapshot	current_reestablished	absolute_change	relative_change	material_absolute_or_relative_change	label
-cut	asimov_ZA	0.0334	0.0516823312277458	0.0182823312277458	0.5473751864594553	True	cut: asimov_ZA
-cut	background_effective_events	17.25	45.79522835444936	28.545228354449364	1.6547958466347457	True	cut: background_effective_events
-bdt	weighted_auc	0.665	0.7714696516085886	0.1064696516085885	0.1601047392610354	True	bdt: weighted_auc
-bdt	asimov_ZA	0.0386	0.0635540927812224	0.0249540927812223	0.6464790875964351	True	bdt: asimov_ZA
-bdt	bootstrap_median_ZA	0.0391	0.0636984150036077	0.0245984150036077	0.6291154732380493	True	bdt: bootstrap_median_ZA
-bdt	background_effective_events	6.51	28.1164350596006	21.6064350596006	3.3189608386483256	True	bdt: background_effective_events
-dense_dnn	weighted_auc	0.648	0.7214607574655768	0.0734607574655767	0.1133653664592234	True	dense_dnn: weighted_auc
-dense_dnn	asimov_ZA	0.0369	0.0573852118641375	0.0204852118641375	0.5551547930660573	True	dense_dnn: asimov_ZA
-dense_dnn	bootstrap_median_ZA	0.0377	0.0577205713136103	0.0200205713136103	0.531049636965791	True	dense_dnn: bootstrap_median_ZA
-lbn_dnn	asimov_ZA	0.0372	0.0521061724545665	0.0149061724545665	0.4007035606066267	True	lbn_dnn: asimov_ZA
-lbn_dnn	bootstrap_median_ZA	0.0382	0.0522211168670256	0.0140211168670256	0.3670449441629758	True	lbn_dnn: bootstrap_median_ZA
+model	metric	display_label	earlier_aggregate_snapshot	current_nominal_full_oof	nominal_relative_change	uncertainty_central	uncertainty_lower_68	uncertainty_upper_68	uncertainty_valid_replicas	uncertainty_support_flag	uncertainty_kind	paired_difference_available	paired_difference_unavailable_reason
+cut	asimov_ZA	$R_{HH}(125,120)$ cut: Nominal $Z_A$	0.0334	0.05168233122760832	0.5473751864553389	0.5552718095127038	0.43265004174596	0.6771988815690251	1000	True	current_source_member_bootstrap_relative_to_fixed_historical_aggregate	False	earlier artifact contains aggregate values only, not source-member predictions
+cut	background_effective_events	$R_{HH}(125,120)$ cut: Background $N_{\rm eff}$	17.25	45.79522835444936	1.6547958466347454	1.6651435952668168	1.3151388640971469	2.0873524938676393	1000	True	current_source_member_bootstrap_relative_to_fixed_historical_aggregate	False	earlier artifact contains aggregate values only, not source-member predictions
+bdt	weighted_auc	BDT: Weighted AUC	0.665	0.7714696516085886	0.16010473926103552	0.1593732977935356	0.1457061210044035	0.17476597386345571	1000	True	current_source_member_bootstrap_relative_to_fixed_historical_aggregate	False	earlier artifact contains aggregate values only, not source-member predictions
+bdt	asimov_ZA	BDT: Nominal $Z_A$	0.0386	0.0635540927813342	0.6464790875993314	0.6502180052733666	0.5060007808989679	0.8205924195903656	1000	True	current_source_member_bootstrap_relative_to_fixed_historical_aggregate	False	earlier artifact contains aggregate values only, not source-member predictions
+bdt	background_effective_events	BDT: Background $N_{\rm eff}$	6.51	28.11643505960061	3.3189608386483274	3.404780103831955	2.752082320600292	4.24397679934971	1000	True	current_source_member_bootstrap_relative_to_fixed_historical_aggregate	False	earlier artifact contains aggregate values only, not source-member predictions
+dense_dnn	weighted_auc	Dense DNN: Weighted AUC	0.648	0.7214607574655768	0.11336536645922335	0.1141790875883184	0.0971194090016756	0.12999415026086658	1000	True	current_source_member_bootstrap_relative_to_fixed_historical_aggregate	False	earlier artifact contains aggregate values only, not source-member predictions
+dense_dnn	asimov_ZA	Dense DNN: Nominal $Z_A$	0.0369	0.057385211864261335	0.5551547930694127	0.5642431250300899	0.44619552485551384	0.6954714717048873	1000	True	current_source_member_bootstrap_relative_to_fixed_historical_aggregate	False	earlier artifact contains aggregate values only, not source-member predictions
+lbn_dnn	asimov_ZA	LBN-DNN: Nominal $Z_A$	0.0372	0.05210617245456651	0.4007035606066267	0.40379346416735684	0.31017533966930966	0.5127787870838205	1000	True	current_source_member_bootstrap_relative_to_fixed_historical_aggregate	False	earlier artifact contains aggregate values only, not source-member predictions

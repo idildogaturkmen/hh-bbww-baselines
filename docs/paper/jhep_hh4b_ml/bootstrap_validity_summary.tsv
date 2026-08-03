@@ -1,0 +1,5 @@
+model	replicas	valid_systematics_replicas	invalid_systematics_replicas	valid_fraction	zero_direct_support_fraction	failure_reason_counts_json
+cut	1000	937	63	0.937	0.0	"{""fewer than 3 direct-QCD source groups"":63}"
+bdt	1000	865	135	0.865	0.0	"{""fewer than 3 direct-QCD source groups"":135}"
+dense_dnn	1000	986	14	0.986	0.0	"{""fewer than 3 direct-QCD source groups"":14}"
+lbn_dnn	1000	986	14	0.986	0.0	"{""fewer than 3 direct-QCD source groups"":14}"

@@ -1,0 +1,21 @@
+model	fold	target_signal_efficiency	fold_diagnostic_threshold	status	validation_used	test_used
+cut	0	0.6156418377159854	-34.040810638860535	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+cut	1	0.6156418377159854	-33.30770877872482	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+cut	2	0.6156418377159854	-34.364775889606015	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+cut	3	0.6156418377159854	-34.59825614709961	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+cut	4	0.6156418377159854	-33.83896324459629	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+bdt	0	0.6156418377159854	0.6521745324134827	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+bdt	1	0.6156418377159854	0.6978732347488403	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+bdt	2	0.6156418377159854	0.6751605868339539	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+bdt	3	0.6156418377159854	0.6735016107559204	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+bdt	4	0.6156418377159854	0.6863133907318115	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+dense_dnn	0	0.6156418377159854	0.7525209188461304	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+dense_dnn	1	0.6156418377159854	0.7618209719657898	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+dense_dnn	2	0.6156418377159854	0.7424319982528687	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+dense_dnn	3	0.6156418377159854	0.7133933305740356	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+dense_dnn	4	0.6156418377159854	0.7911040782928467	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+lbn_dnn	0	0.6156418377159854	0.7606433629989624	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+lbn_dnn	1	0.6156418377159854	0.7952867150306702	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+lbn_dnn	2	0.6156418377159854	0.7484722137451172	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+lbn_dnn	3	0.6156418377159854	0.8045204877853394	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
+lbn_dnn	4	0.6156418377159854	0.8156667947769165	selection-stability diagnostic; frozen c7t operating point remains primary	False	False
