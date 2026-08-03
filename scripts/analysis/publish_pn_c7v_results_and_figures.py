@@ -66,6 +66,29 @@ DISPLAY = {
 BOOTSTRAP_SEED = 20260802
 BOOTSTRAP_REPLICATES = 1000
 TORCH_RUNTIME = Path("/tmp/hh4b_pn_c7t_baseline_env_20260802_v1/bin/python")
+REQUESTED_FIGURES = (
+    ("REQ-FIG-01", "Weighted source-group OOF ROC curves", "fig01_weighted_roc"),
+    ("REQ-FIG-02", "Unweighted ROC curves as appendix diagnostics", "fig16_unweighted_roc_appendix"),
+    ("REQ-FIG-03", "Signal efficiency versus background rejection", "fig03_efficiency_background_rejection"),
+    ("REQ-FIG-04", "OOF classifier-score distributions", "fig02_oof_score_distributions"),
+    ("REQ-FIG-05", "Physical-yield score distributions", "fig02_oof_score_distributions"),
+    ("REQ-FIG-06", "Nominal Asimov ZA versus threshold", "fig04_nominal_za_scan"),
+    ("REQ-FIG-07", "Systematic-aware Asimov ZA versus threshold", "fig05_systematic_za_scan"),
+    ("REQ-FIG-08", "Weighted AUC comparison", "fig07_nominal_baseline_comparison"),
+    ("REQ-FIG-09", "Nominal ZA comparison", "fig07_nominal_baseline_comparison"),
+    ("REQ-FIG-10", "Bootstrap median and 16--84% ZA comparison", "fig06_bootstrap_za"),
+    ("REQ-FIG-11", "Signal-to-background comparison", "fig07_nominal_baseline_comparison"),
+    ("REQ-FIG-12", "Background effective-event comparison", "fig07_nominal_baseline_comparison"),
+    ("REQ-FIG-13", "Earlier-snapshot versus authoritative-result comparison", "fig08_earlier_current_metrics"),
+    ("REQ-FIG-14", "Signal, non-QCD, and direct-QCD population changes", "fig09_population_change"),
+    ("REQ-FIG-15", "Selected process composition", "fig10_selected_process_composition"),
+    ("REQ-FIG-16", "Three-b-to-four-b transfer-factor results", "fig11_transfer_factors"),
+    ("REQ-FIG-17", "Transfer closure against secondary direct four-b QCD", "fig12_transfer_closure"),
+    ("REQ-FIG-18", "Multijet systematic and nonclosure comparison", "fig17_multijet_systematic_nonclosure"),
+    ("REQ-FIG-19", "R_HH distributions", "fig13_rhh_distributions"),
+    ("REQ-FIG-20", "m(H1)-m(H2) mass planes", "fig14_higgs_mass_planes"),
+    ("REQ-FIG-21", "mHH and promoted-jet diagnostics", "fig15_mhh_promoted_jet_quality"),
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -176,10 +199,31 @@ def save_plot(
         "png_companion": f"figures/{stem}.png",
         "source_data": f"figures/{stem}.tsv",
         "caption": f"figures/{stem}_caption.tex",
+        "paper_source_data": f"source_data/{stem}.tsv",
+        "paper_caption": f"captions/{stem}_caption.tex",
         "split": "train",
         "evaluation": "source_group_oof_or_frozen_projection",
         "branding": "Delphes simulation; no CMS approval implied",
     })
+
+
+def requested_figure_registry(provenance: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Map every requested publication plot to a supported artifact or fail closed."""
+
+    available = {str(row["stem"]) for row in provenance}
+    rows = []
+    for request_id, requested_plot, stem in REQUESTED_FIGURES:
+        require(stem in available, f"requested figure is unsupported without a recorded reason: {request_id}")
+        rows.append({
+            "request_id": request_id,
+            "requested_plot": requested_plot,
+            "status": "supported",
+            "figure_stem": stem,
+            "missing_column_or_artifact": "",
+            "reason": "supported by the checksum-verified frozen c7q--c7u artifacts",
+        })
+    require(len(rows) == 21, "requested figure registry count drift")
+    return rows
 
 
 def inspect_torch_checkpoint(path: Path) -> str:
@@ -454,7 +498,10 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
     axes[0].set(xlabel="BDT OOF score", ylabel="Unit-normalized weighted events")
     axes[1].set(xlabel="BDT OOF score", ylabel="Train-partition physical yield", yscale="log")
     axes[1].set_ylim(bottom=max(1e-2, axes[1].get_ylim()[0]))
-    for ax in axes: ax.grid(alpha=0.18); ax.legend(); paper_label(ax, subtitle="Train-only OOF")
+    for ax in axes: ax.grid(alpha=0.18); paper_label(ax, subtitle="Train-only OOF")
+    axes[0].legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2)
+    axes[1].legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2)
+    fig.subplots_adjust(bottom=0.23)
     save_plot(fig, figures, paper_figures, "fig02_oof_score_distributions", "BDT OOF score distributions. Direct four-b QCD is shown only as a dashed secondary closure and is not added to the primary transferred-QCD prediction.", rows, provenance)
 
     scans = scan_rows(inputs, points=13 if smoke else 91)
@@ -471,19 +518,21 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
     # 04/05 ZA scans.
     for number, column, ylabel, suffix in (
         (4, "nominal_asimov_ZA", r"Nominal $Z_A$", "nominal"),
-        (5, "systematic_aware_asimov_ZA", r"Systematic-aware $Z_A$ [$10^{-5}$]", "systematic"),
+        (5, "systematic_aware_asimov_ZA", r"Systematic-aware $Z_A$", "systematic"),
     ):
         fig, ax = plt.subplots(figsize=(6.4, 5.2))
         for model in MODEL_ORDER:
             sub = pd.DataFrame(scans); sub = sub[sub.model == model]
             values = sub[column].to_numpy(dtype=float)
             if suffix == "systematic":
-                values = values * 1.0e5
+                values = np.where(values > 0.0, values, np.nan)
             ax.plot(sub.target_signal_efficiency.to_numpy(), values, color=COLORS[model], lw=2, label=DISPLAY[model])
         ax.set(xlabel="Target signal efficiency", ylabel=ylabel, xlim=(0.1, 1.0))
+        if suffix == "systematic":
+            ax.set_yscale("log")
         ax.grid(alpha=0.18); ax.legend(); paper_label(ax)
         caption = ("Nominal statistical-only Asimov sensitivity scan." if suffix == "nominal" else
-                   "Systematic-aware Asimov sensitivity scan using the frozen transfer-factor statistics, normalization-region envelope, and direct-QCD nonclosure.")
+                   "Systematic-aware Asimov sensitivity scan on a logarithmic axis using the frozen transfer-factor statistics, normalization-region envelope, and direct-QCD nonclosure. The isolated high dense-DNN point demonstrates transfer instability rather than robust sensitivity; exact support diagnostics accompany every point in the source data.")
         save_plot(fig, figures, paper_figures, f"fig{number:02d}_{suffix}_za_scan", caption, scans, provenance)
 
     # 06 exact c7t member-bootstrap reconstruction.
@@ -574,7 +623,7 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
     # 13 R_HH population shapes.
     q3 = pd.read_parquet(CHECKPOINTS["c7q"] / "tables/train_exactly3b_promoted_run2_physical.parquet",
                          columns=["r_hh_125_120", "sample_class", "population_kind", "run2_candidate_physical_weight"])
-    bins_rhh = np.linspace(0, 120, 49); rows = []
+    bins_rhh = np.geomspace(0.25, 2000.0, 61); rows = []
     definitions = [
         ("fourb_signal", projection["analysis_population_role"].to_numpy() == "fourb_signal", projection, "primary_projection_physical_weight_inclusive"),
         ("fourb_ordinary", projection["analysis_population_role"].to_numpy() == "fourb_ordinary_background", projection, "primary_projection_physical_weight_inclusive"),
@@ -588,12 +637,12 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
     for series, color, ls in (("fourb_signal", COLORS["signal"], "-"), ("fourb_ordinary", COLORS["ordinary"], "-"),
                               ("threeb_qcd_template", COLORS["transferred"], "-"), ("fourb_direct_qcd", COLORS["direct"], "--")):
         xh, yh = step_xy(rows, series, "unit_shape"); ax.step(xh, yh, where="post", lw=2, color=color, ls=ls, label=series.replace("_", " ").title())
-    ax.axvline(34, color="0.35", ls=":", label="Frozen cut"); ax.set(xlabel=r"$R_{HH}(125,120)$ [GeV]", ylabel="Unit-normalized weighted events", xlim=(0,120))
+    ax.axvline(34, color="0.35", ls=":", label="Frozen cut"); ax.set(xlabel=r"$R_{HH}(125,120)$ [GeV]", ylabel="Unit-normalized weighted events", xlim=(0.25,2000), xscale="log")
     ax.legend(fontsize=8); ax.grid(alpha=0.18); paper_label(ax)
-    save_plot(fig, figures, paper_figures, "fig13_rhh_distributions", r"Weighted $R_{HH}(125,120)$ shapes for signal, ordinary background, the exactly-three-b QCD template, and secondary direct four-b QCD closure.", rows, provenance)
+    save_plot(fig, figures, paper_figures, "fig13_rhh_distributions", r"Full-range weighted $R_{HH}(125,120)$ shapes for signal, ordinary background, the exactly-three-b QCD template, and secondary direct four-b QCD closure. Logarithmic binning includes every observed event.", rows, provenance)
 
     # 14 mass planes.
-    mass_bins = np.linspace(0, 250, 41); rows = []
+    mass_bins = np.geomspace(15.0, 2000.0, 41); rows = []
     plane_defs = [("signal", roles == "fourb_signal"), ("ordinary_background", roles == "fourb_ordinary_background"),
                   ("transferred_qcd", roles == "primary_transferred_multijet_template")]
     fig, axes = plt.subplots(1, 3, figsize=(13.2, 4.3), sharex=True, sharey=True)
@@ -605,14 +654,15 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
                 rows.append({"series": series, "mbb1_low_GeV": xedges[i], "mbb1_high_GeV": xedges[i+1],
                              "mbb2_low_GeV": yedges[j], "mbb2_high_GeV": yedges[j+1], "unit_normalized_weight": hist[i,j]})
         mesh = ax.pcolormesh(xedges, yedges, hist.T, shading="auto", cmap="cividis"); fig.colorbar(mesh, ax=ax, label="Weighted fraction/bin")
-        ax.set_title(series.replace("_", " ").title()); ax.set_xlabel(r"$m(H_1)$ [GeV]"); ax.grid(alpha=0.08)
+        title = {"signal": "Signal", "ordinary_background": "Ordinary background", "transferred_qcd": "Transferred QCD"}[series]
+        ax.set_title(title); ax.set_xlabel(r"$m(H_1)$ [GeV]"); ax.set_xscale("log"); ax.set_yscale("log"); ax.grid(alpha=0.08)
     axes[0].set_ylabel(r"$m(H_2)$ [GeV]")
     fig.text(0.01, 1.01, "Delphes simulation", ha="left", va="bottom", fontsize=12, fontweight="bold")
     fig.text(0.99, 1.01, "Train-only source-group OOF", ha="right", va="bottom", fontsize=9)
-    save_plot(fig, figures, paper_figures, "fig14_higgs_mass_planes", r"Reconstructed Higgs-candidate mass planes for signal, ordinary background, and the primary transferred-QCD template. Each panel is unit normalized.", rows, provenance)
+    save_plot(fig, figures, paper_figures, "fig14_higgs_mass_planes", r"Full-range reconstructed Higgs-candidate mass planes for signal, ordinary background, and the primary transferred-QCD template. Each panel is unit normalized with logarithmic mass binning and includes every observed event.", rows, provenance)
 
     # 15 mHH and promoted-jet quality.
-    bins_mhh = np.linspace(200, 1500, 53); bins_btag = np.linspace(0, 1, 41); bins_pt = np.linspace(0, 300, 49); rows = []
+    bins_mhh = np.geomspace(100.0, 6000.0, 55); bins_btag = np.linspace(0, 1, 41); bins_pt = np.geomspace(30.0, 2000.0, 49); rows = []
     for series, mask in (("signal", roles == "fourb_signal"), ("ordinary", roles == "fourb_ordinary_background"), ("transferred", roles == "primary_transferred_multijet_template")):
         rows += histogram_rows(projection.loc[mask, "mhh"].to_numpy(dtype=float), projection_weight[mask], bins_mhh,
                                figure="fig15", panel="mhh", series=series, normalize=True)
@@ -626,13 +676,65 @@ def make_figures(inputs: dict[str, Any], figures: Path, paper_figures: Path, *, 
         xh,yh=step_xy(rows,series,"mhh"); axes[0].step(xh,yh,where="post",lw=2,color=color,label=series.title())
     xh,yh=step_xy(rows,"transferred","promoted_btag"); axes[1].step(xh,yh,where="post",lw=2,color=COLORS["transferred"])
     xh,yh=step_xy(rows,"transferred","promoted_pt"); axes[2].step(xh,yh,where="post",lw=2,color=COLORS["transferred"])
-    axes[0].set(xlabel=r"$m_{HH}$ [GeV]", ylabel="Unit-normalized weighted events", xlim=(200,1500)); axes[0].legend(fontsize=8)
+    axes[0].set(xlabel=r"$m_{HH}$ [GeV]", ylabel="Unit-normalized weighted events", xlim=(100,6000), xscale="log"); axes[0].legend(fontsize=8)
     axes[1].set(xlabel="Promoted-jet b-tag discriminator", ylabel="Unit-normalized transferred QCD", xlim=(0,1))
-    axes[2].set(xlabel="Promoted-jet $p_T$ [GeV]", ylabel="Unit-normalized transferred QCD", xlim=(0,300))
+    axes[2].set(xlabel="Promoted-jet $p_T$ [GeV]", ylabel="Unit-normalized transferred QCD", xlim=(30,2000), xscale="log")
     for ax in axes: ax.grid(alpha=0.18)
     fig.text(0.01, 1.01, "Delphes simulation", ha="left", va="bottom", fontsize=12, fontweight="bold")
     fig.text(0.99, 1.01, "Train-only source-group OOF", ha="right", va="bottom", fontsize=9)
-    save_plot(fig, figures, paper_figures, "fig15_mhh_promoted_jet_quality", r"Frozen $m_{HH}$ shapes and promoted-jet quality diagnostics supporting the lower-b-tag multijet transfer.", rows, provenance)
+    save_plot(fig, figures, paper_figures, "fig15_mhh_promoted_jet_quality", r"Full-range frozen $m_{HH}$ shapes and promoted-jet quality diagnostics supporting the lower-b-tag multijet transfer. The promoted-jet b-tag input is identically zero for all 576 transferred-template rows; this degenerate panel is retained as an explicit data-quality diagnostic. Logarithmic kinematic binning includes every observed event.", rows, provenance)
+
+    # 16 unweighted ROC appendix diagnostic.
+    fig, ax = plt.subplots(figsize=(6.4, 5.2)); rows = []
+    for model in LEARNED_MODELS:
+        fpr, tpr, thresholds = roc_curve(labels, train_scores[f"{model}_score"])
+        keep = np.unique(np.linspace(0, len(fpr) - 1, min(500, len(fpr))).astype(int))
+        for index in keep:
+            rows.append({"model": model, "false_positive_rate": fpr[index], "true_positive_rate": tpr[index],
+                         "threshold": thresholds[index], "weighting": "unweighted_appendix_diagnostic"})
+        auc = float(inputs["metrics"].set_index("baseline").loc[model, "unweighted_auc"])
+        ax.plot(fpr, tpr, lw=2, color=COLORS[model], label=f"{DISPLAY[model]} (AUC={auc:.3f})")
+    cut_tpr = float(np.mean(cut_selected[labels == 1])); cut_fpr = float(np.mean(cut_selected[labels == 0]))
+    rows.append({"model": "cut_operating_point", "false_positive_rate": cut_fpr, "true_positive_rate": cut_tpr,
+                 "threshold": -34.0, "weighting": "unweighted_appendix_diagnostic"})
+    ax.scatter([cut_fpr], [cut_tpr], marker="*", s=110, color=COLORS["cut"], label=DISPLAY["cut"], zorder=5)
+    ax.plot([0, 1], [0, 1], ls="--", color="0.65", lw=1)
+    ax.set(xlabel="Background efficiency", ylabel="Signal efficiency", xlim=(0, 1), ylim=(0, 1))
+    ax.grid(alpha=0.18); ax.legend(loc="lower right"); paper_label(ax, subtitle="Unweighted appendix diagnostic")
+    save_plot(fig, figures, paper_figures, "fig16_unweighted_roc_appendix",
+              "Unweighted train-only source-group OOF ROC curves, provided only as an appendix diagnostic. The weighted ROC is authoritative.",
+              rows, provenance)
+
+    # 17 selected multijet fraction, nonclosure, and frozen nuisance.
+    rows = []
+    for row in metrics.itertuples():
+        rows.append({
+            "model": row.baseline,
+            "transferred_qcd_fraction_of_background": row.transferred_qcd_prediction / row.background_yield,
+            "direct_qcd_relative_nonclosure": row.score_domain_qcd_relative_nonclosure,
+            "multijet_systematic_relative_to_total_background": row.multijet_systematic_relative_to_total_background,
+            "projection_status": "primary transfer; direct four-b QCD is secondary closure only",
+        })
+    diagnostic = pd.DataFrame(rows).set_index("model").reindex(MODEL_ORDER)
+    x = np.arange(len(MODEL_ORDER)); width = 0.36
+    fig, axes = plt.subplots(1, 2, figsize=(10.5, 4.7))
+    axes[0].bar(x, 100.0 * diagnostic.transferred_qcd_fraction_of_background.to_numpy(),
+                color=COLORS["transferred"])
+    axes[0].set_ylabel("Transferred-QCD fraction of background [%]")
+    axes[0].set_ylim(0, 100)
+    axes[1].bar(x - width / 2, 100.0 * diagnostic.direct_qcd_relative_nonclosure.to_numpy(), width,
+                color="#E69F00", label="Direct-QCD nonclosure")
+    axes[1].bar(x + width / 2, 100.0 * diagnostic.multijet_systematic_relative_to_total_background.to_numpy(), width,
+                color="#CC79A7", label="Frozen multijet nuisance / background")
+    axes[1].set_ylabel("Relative size [%]")
+    axes[1].legend(fontsize=8, loc="lower right", bbox_to_anchor=(1.0, 1.01))
+    for ax in axes:
+        ax.set_xticks(x); ax.set_xticklabels([DISPLAY[model] for model in MODEL_ORDER], rotation=15, ha="right")
+        ax.grid(axis="y", alpha=0.18)
+    paper_label(axes[0], subtitle="Train-only frozen transfer")
+    save_plot(fig, figures, paper_figures, "fig17_multijet_systematic_nonclosure",
+              "Selected transferred-QCD fraction, score-domain direct-QCD nonclosure, and frozen multijet nuisance. Direct four-b QCD is secondary closure only.",
+              rows, provenance)
     return provenance
 
 
@@ -691,6 +793,14 @@ def make_paper_material(inputs: dict[str, Any], paper: Path, provenance: list[di
     table_specs.append(("tab08_model_artifacts.tex", "Frozen model artifact identities.", "tab:model-artifacts",
                         ["Model", "Fold", "File", "SHA-256 prefix"],
                         [[r.model, int(r.fold), r.path, str(r.sha256)[:12]] for r in model_manifest.itertuples()], "appendix"))
+    closure = inputs["closure"]
+    closure = closure[closure.mhh_category == "inclusive_mhh"]
+    table_specs.append(("tab09_transfer_closure.tex", "Inclusive frozen multijet-transfer closure against secondary direct four-b QCD.", "tab:transfer-closure",
+                        ["Target region", "3b rows", "Direct 4b rows", "Prediction", "Direct closure", "Pred./closure", "Abs. nonclosure"],
+                        [[r.target_region, int(r.threeb_qcd_rows), int(r.fourb_direct_qcd_rows),
+                          f"{r.transferred_qcd_prediction:.5g}", f"{r.direct_fourb_qcd_truth:.5g}",
+                          f"{r.prediction_over_truth:.3f}", f"{r.relative_absolute_nonclosure:.3f}"]
+                         for r in closure.itertuples()], "appendix"))
     table_manifest = []
     for filename, caption, label, headers, rows, placement in table_specs:
         write_latex_table(tables / filename, caption, label, headers, rows)
@@ -715,6 +825,9 @@ def make_paper_material(inputs: dict[str, Any], paper: Path, provenance: list[di
         "conclusions_and_next_steps.tex": "The immediate publication blockers are a stable multijet estimate, validation/test authorization, full systematic treatment, and collaboration review.\n",
     }
     for filename, text in section_text.items(): (sections / filename).write_text(text)
+    for source in sorted((paper / "figures").glob("*_caption.tex")):
+        shutil.copy2(source, captions / source.name)
+    require(len(list(captions.glob("*_caption.tex"))) == len(provenance), "paper caption export count drift")
     (paper / "references_hig_24_015.bib").write_text(
         "@techreport{CMS-PAS-HIG-24-015,\n  author = {{CMS Collaboration}},\n  title = {Search for Higgs boson pair production in final states with two photons and two bottom quarks},\n  institution = {CERN},\n  type = {CMS Physics Analysis Summary},\n  number = {CMS-PAS-HIG-24-015},\n  note = {Public PAS; bibliographic metadata to be verified before submission}\n}\n"
     )
@@ -726,35 +839,45 @@ def make_paper_material(inputs: dict[str, Any], paper: Path, provenance: list[di
     )
 
     claim_specs = [
-        ("CLAIM-001", "441", "source members", "c7q", "summary.json", "source_rows", "main_text", "nominal"),
-        ("CLAIM-002", str(c7q_summary["threeb_rows"]), "candidate rows", "c7q", "summary.json", "threeb_rows", "main_text", "nominal"),
-        ("CLAIM-003", str(c7q_summary["fourb_rows"]), "candidate rows", "c7q", "summary.json", "fourb_rows", "main_text", "nominal"),
-        ("CLAIM-004", str(c7r_summary["nominal_transfer_factor"]), "dimensionless", "c7r", "summary.json", "nominal_transfer_factor", "main_text", "nominal"),
-        ("CLAIM-005", str(c7r_summary["nominal_transfer_factor_relative_statistical_uncertainty"]), "relative", "c7r", "summary.json", "nominal_transfer_factor_relative_statistical_uncertainty", "main_text", "systematic-aware"),
+        ("CLAIM-001", "441", "source members", "c7q", "summary.json", "source_rows", "main_text", "nominal", "train_population_inventory"),
+        ("CLAIM-002", str(c7q_summary["threeb_rows"]), "candidate rows", "c7q", "summary.json", "threeb_rows", "main_text", "nominal", "primary_lower_b_tag_population"),
+        ("CLAIM-003", str(c7q_summary["fourb_rows"]), "candidate rows", "c7q", "summary.json", "fourb_rows", "main_text", "nominal", "four_b_tag_development_population"),
+        ("CLAIM-004", str(c7r_summary["nominal_transfer_factor"]), "dimensionless", "c7r", "summary.json", "nominal_transfer_factor", "main_text", "nominal", "primary_transferred_qcd_projection"),
+        ("CLAIM-005", str(c7r_summary["nominal_transfer_factor_relative_statistical_uncertainty"]), "relative", "c7r", "summary.json", "nominal_transfer_factor_relative_statistical_uncertainty", "main_text", "systematic-aware", "primary_transferred_qcd_projection"),
     ]
     for row in metrics.itertuples():
-        for field, unit, placement, status in (("weighted_auc", "dimensionless", "main_text", "nominal"), ("asimov_ZA", "sigma", "main_text", "nominal"),
-                                                ("systematic_aware_asimov_ZA", "sigma", "main_text", "systematic-aware"),
-                                                ("signal_over_background", "dimensionless", "main_text", "nominal"),
-                                                ("background_effective_events", "effective events", "appendix", "nominal")):
+        for field, unit, placement, status, projection_status in (
+            ("weighted_auc", "dimensionless", "main_text", "nominal", "train_oof_development"),
+            ("unweighted_auc", "dimensionless", "appendix", "nominal", "train_oof_development"),
+            ("asimov_ZA", "sigma", "main_text", "nominal", "primary_transferred_qcd_projection"),
+            ("systematic_aware_asimov_ZA", "sigma", "main_text", "systematic-aware", "primary_projection_with_secondary_direct_qcd_closure"),
+            ("signal_over_background", "dimensionless", "main_text", "nominal", "primary_transferred_qcd_projection"),
+            ("background_effective_events", "effective events", "appendix", "nominal", "primary_transferred_qcd_projection"),
+            ("bootstrap_median_ZA", "sigma", "main_text", "nominal", "primary_projection_source_bootstrap"),
+            ("bootstrap_p16_ZA", "sigma", "main_text", "nominal", "primary_projection_source_bootstrap"),
+            ("bootstrap_p84_ZA", "sigma", "main_text", "nominal", "primary_projection_source_bootstrap"),
+            ("score_domain_qcd_relative_nonclosure", "relative", "diagnostic", "systematic-aware", "secondary_direct_qcd_closure"),
+            ("multijet_systematic_relative_to_total_background", "relative", "main_text", "systematic-aware", "primary_projection_with_secondary_direct_qcd_closure"),
+        ):
             claim_specs.append((f"CLAIM-{len(claim_specs)+1:03d}", str(getattr(row, field)), unit, "c7t", "baseline_metrics.tsv",
-                                f"baseline={row.baseline}; column={field}", placement, status))
+                                f"row: baseline={row.baseline}; column: {field}", placement, status, projection_status))
     asset_lookup = {(row["checkpoint"], row["relative_path"]): row for row in assets}
     claims = []
-    for claim_id, value, unit, checkpoint, source_file, field, placement, metric_status in claim_specs:
+    for claim_id, value, unit, checkpoint, source_file, field, placement, metric_status, projection_status in claim_specs:
         source = asset_lookup[(checkpoint, source_file)]
         claims.append({"claim_id": claim_id, "value": value, "units": unit, "source_checkpoint": checkpoint,
                        "source_file": str(Path(source["checkpoint_root"]) / source_file), "field_row_column": field,
                        "source_file_sha256": source["sha256"], "generating_script": "scripts/analysis/publish_pn_c7v_results_and_figures.py",
-                       "current_commit": head, "data_status": "train-only projection" if checkpoint in {"c7r", "c7t"} else "train-only",
-                       "metric_status": metric_status, "publication_placement": placement})
+                       "current_commit": head, "data_status": "train-only",
+                       "metric_status": metric_status, "projection_or_closure_status": projection_status,
+                       "publication_placement": placement})
     write_tsv(paper / "numerical_claim_registry.tsv", claims)
     write_tsv(paper / "paper_table_manifest.tsv", table_manifest)
     write_tsv(paper / "paper_figure_manifest.tsv", provenance)
     write_tsv(paper / "results_asset_manifest.tsv", assets)
     (paper / "README.md").write_text(
         "# HH to four-b train-only paper assets\n\n" + prominent +
-        "\n\nAll tables are machine generated from checksum-verified c7q--c7u inputs. Figure PDFs are authoritative; PNGs are review companions. `compile_fragments.tex` is a lightweight syntax wrapper, not a JHEP template.\n"
+        "\n\nAll tables are machine generated from checksum-verified c7q--c7u inputs. Figure PDFs are authoritative; PNGs are review companions. Exact plotting inputs are in `source_data/`, caption fragments are in `captions/`, and `compile_fragments.tex` is a lightweight syntax wrapper, not a JHEP template.\n"
     )
     (paper / "limitations_and_publication_status.md").write_text(
         "# Limitations and publication status\n\n" + prominent +
@@ -768,6 +891,8 @@ def make_paper_material(inputs: dict[str, Any], paper: Path, provenance: list[di
         "- Numerical claims: `numerical_claim_registry.tsv`.\n"
         "- Paper tables: `tables/` and `paper_table_manifest.tsv`.\n"
         "- Paper figures: `figures/` and `paper_figure_manifest.tsv`.\n"
+        "- Exact plotting data: `source_data/`; LaTeX captions: `captions/`.\n"
+        "- Requested plot support and any unsupported-item reasons: `requested_figure_registry.tsv`.\n"
         "- Frozen c7t model weights and predictions remain in c7t; their exact identities are in the asset and model tables.\n"
         "- Categorized-BDT and SPA-Net sections are explicit method/status placeholders until their separate sealed checkpoints exist.\n"
     )
@@ -785,13 +910,20 @@ def run(output: Path, paper_output: Path, *, smoke: bool) -> None:
         inputs = load_inputs()
         figures = staging / "figures"; figures.mkdir()
         paper_output.mkdir(); paper_figures = paper_output / "figures"; paper_figures.mkdir()
+        paper_source_data = paper_output / "source_data"; paper_source_data.mkdir()
         provenance = make_figures(inputs, figures, paper_figures, smoke=smoke)
+        for source in sorted(figures.glob("*.tsv")):
+            shutil.copy2(source, paper_source_data / source.name)
+        require(len(list(paper_source_data.glob("*.tsv"))) == len(provenance), "paper source-data export count drift")
+        figure_requests = requested_figure_registry(provenance)
         tables, claims = make_paper_material(inputs, paper_output, provenance, assets, head)
+        write_tsv(paper_output / "requested_figure_registry.tsv", figure_requests)
         write_tsv(staging / "results_asset_manifest.tsv", assets)
         write_tsv(staging / "paper_figure_manifest.tsv", provenance)
         write_tsv(staging / "paper_table_manifest.tsv", tables)
         write_tsv(staging / "numerical_claim_registry.tsv", claims)
         write_tsv(staging / "source_evidence_manifest.tsv", evidence)
+        write_tsv(staging / "requested_figure_registry.tsv", figure_requests)
         (staging / "README.md").write_text(
             "# pn-c7v publication inventory and baseline figures\n\nChecksum-verified, train-only publication inventory and reproducible plot package for c7q--c7u.\n"
         )
@@ -806,6 +938,9 @@ def run(output: Path, paper_output: Path, *, smoke: bool) -> None:
             "input_checkpoints": {tag: str(path) for tag, path in CHECKPOINTS.items()},
             "inspected_input_artifacts": len(assets),
             "figures": len(provenance),
+            "requested_figures": len(figure_requests),
+            "supported_requested_figures": sum(row["status"] == "supported" for row in figure_requests),
+            "unsupported_requested_figures": sum(row["status"] != "supported" for row in figure_requests),
             "paper_tables": len(tables),
             "numerical_claims": len(claims),
             "validation_payload_files_opened": 0,

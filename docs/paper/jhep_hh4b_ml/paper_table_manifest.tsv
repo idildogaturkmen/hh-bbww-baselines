@@ -1,0 +1,10 @@
+table_id	path	caption	source_checkpoint	generation	placement
+tab01	tables/tab01_train_source_inventory.tex	Frozen train-source and candidate inventory.	c7q-c7u	machine_generated	main_text
+tab02	tables/tab02_fourb_population.tex	Authoritative at-least-four-b development population.	c7q-c7u	machine_generated	main_text
+tab03	tables/tab03_transfer_factors.tex	Frozen multijet transfer factors.	c7q-c7u	machine_generated	main_text
+tab04	tables/tab04_multijet_nuisances.tex	Frozen multijet systematic components.	c7q-c7u	machine_generated	main_text
+tab05	tables/tab05_baseline_metrics.tex	Train-only source-group OOF baseline metrics at frozen operating points.	c7q-c7u	machine_generated	main_text
+tab06	tables/tab06_earlier_current.tex	Earlier approximate snapshot versus current results.	c7q-c7u	machine_generated	appendix
+tab07	tables/tab07_process_composition.tex	Selected background composition grouped by frozen population kind.	c7q-c7u	machine_generated	appendix
+tab08	tables/tab08_model_artifacts.tex	Frozen model artifact identities.	c7q-c7u	machine_generated	appendix
+tab09	tables/tab09_transfer_closure.tex	Inclusive frozen multijet-transfer closure against secondary direct four-b QCD.	c7q-c7u	machine_generated	appendix

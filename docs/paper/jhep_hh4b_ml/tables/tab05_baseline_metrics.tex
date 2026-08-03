@@ -1,0 +1,17 @@
+\begin{table}[tb]
+  \centering
+  \caption{Train-only source-group OOF baseline metrics at frozen operating points.}
+  \label{tab:baseline-metrics}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{lrrrrr}
+    \hline
+    Model & Weighted AUC & $Z_A$ & Sys.-aware $Z_A$ & $S/B$ & Bkg. $N_{\rm eff}$ \\
+    \hline
+    $R\_{HH}(125,120)$ cut & 0.7383 & 0.05168 & 2.04e-05 & 5.32e-05 & 45.8 \\
+    BDT & 0.7715 & 0.06355 & 3.84e-05 & 8.40e-05 & 28.1 \\
+    Dense DNN & 0.7215 & 0.05739 & 2.85e-05 & 6.91e-05 & 40.0 \\
+    LBN-DNN & 0.6602 & 0.05211 & 2.75e-05 & 5.69e-05 & 55.9 \\
+    \hline
+  \end{tabular}%
+  }
+\end{table}

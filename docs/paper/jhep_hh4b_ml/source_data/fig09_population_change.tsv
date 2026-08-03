@@ -1,0 +1,4 @@
+category	quantity	earlier_frozen_train_population	current_441_source_population	absolute_change	relative_change	unit	interpretation
+population	signal_rows	9337.0	9337.0	0.0	0.0	rows	signal population is exactly preserved
+population	direct_qcd_fourb_rows	22513.0	56.0	-22457.0	-0.9975125483054236	rows	dominant population change
+population	non_qcd_background_rows	21312.0	21312.0	0.0	0.0	rows	all non-QCD background rows are exactly preserved

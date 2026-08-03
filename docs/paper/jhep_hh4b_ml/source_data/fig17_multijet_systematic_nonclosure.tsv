@@ -1,0 +1,5 @@
+model	transferred_qcd_fraction_of_background	direct_qcd_relative_nonclosure	multijet_systematic_relative_to_total_background	projection_status
+cut	0.8721103114306239	0.4054328757159729	2.2536792864082447	primary transfer; direct four-b QCD is secondary closure only
+bdt	0.8542372564148291	0.7041830151241519	2.261619640509085	primary transfer; direct four-b QCD is secondary closure only
+dense_dnn	0.8648597437850051	0.6036120967862452	2.268158677101068	primary transfer; direct four-b QCD is secondary closure only
+lbn_dnn	0.8477764481484051	0.6681527785230229	2.236583855965235	primary transfer; direct four-b QCD is secondary closure only

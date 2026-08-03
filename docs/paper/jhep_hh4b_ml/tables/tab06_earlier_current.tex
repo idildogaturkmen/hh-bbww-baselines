@@ -1,0 +1,26 @@
+\begin{table}[tb]
+  \centering
+  \caption{Earlier approximate snapshot versus current results.}
+  \label{tab:earlier-current}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{lrrrr}
+    \hline
+    Model & Metric & Earlier & Current & Relative change \\
+    \hline
+    cut & asimov\_ZA & 0.0334 & 0.051682 & 0.547 \\
+    cut & signal\_over\_background & 5.8e-05 & 5.3233e-05 & -0.082 \\
+    cut & background\_effective\_events & 17.25 & 45.795 & 1.655 \\
+    bdt & weighted\_auc & 0.665 & 0.77147 & 0.160 \\
+    bdt & asimov\_ZA & 0.0386 & 0.063554 & 0.646 \\
+    bdt & bootstrap\_median\_ZA & 0.0391 & 0.063698 & 0.629 \\
+    bdt & signal\_over\_background & 0.0001 & 8.3985e-05 & -0.160 \\
+    bdt & background\_effective\_events & 6.51 & 28.116 & 3.319 \\
+    dense\_dnn & weighted\_auc & 0.648 & 0.72146 & 0.113 \\
+    dense\_dnn & asimov\_ZA & 0.0369 & 0.057385 & 0.555 \\
+    dense\_dnn & bootstrap\_median\_ZA & 0.0377 & 0.057721 & 0.531 \\
+    lbn\_dnn & asimov\_ZA & 0.0372 & 0.052106 & 0.401 \\
+    lbn\_dnn & bootstrap\_median\_ZA & 0.0382 & 0.052221 & 0.367 \\
+    \hline
+  \end{tabular}%
+  }
+\end{table}

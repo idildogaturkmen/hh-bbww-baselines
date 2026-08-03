@@ -14,9 +14,11 @@ SCRIPT_DIR = Path(__file__).resolve().parents[1] / "scripts" / "analysis"
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from publish_pn_c7v_results_and_figures import (  # noqa: E402
+    REQUESTED_FIGURES,
     histogram_rows,
     inspect_torch_checkpoint,
     load_inputs,
+    requested_figure_registry,
     require_fresh_directory,
     require_prediction_alignment,
 )
@@ -127,3 +129,12 @@ def test_repository_contains_no_hig_reference_pdf_and_script_contains_no_push_co
     candidates = tracked + [line[3:] for line in status]
     assert not any("HIG-24-015" in path and path.lower().endswith(".pdf") for path in candidates)
     assert "git push" not in PUBLICATION_SCRIPT.read_text().lower()
+
+
+def test_requested_figure_registry_covers_all_21_requested_plots() -> None:
+    provenance = [{"stem": stem} for _, _, stem in dict.fromkeys(REQUESTED_FIGURES)]
+    registry = requested_figure_registry(provenance)
+    assert len(registry) == 21
+    assert {row["status"] for row in registry} == {"supported"}
+    assert all(row["figure_stem"] for row in registry)
+    assert all(row["reason"] for row in registry)

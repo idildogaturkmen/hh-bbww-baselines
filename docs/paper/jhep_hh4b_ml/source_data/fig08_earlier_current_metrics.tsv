@@ -1,0 +1,12 @@
+baseline	metric	earlier_snapshot	current_reestablished	absolute_change	relative_change	material_absolute_or_relative_change	label
+cut	asimov_ZA	0.0334	0.0516823312277458	0.0182823312277458	0.5473751864594553	True	cut: asimov_ZA
+cut	background_effective_events	17.25	45.79522835444936	28.545228354449364	1.6547958466347457	True	cut: background_effective_events
+bdt	weighted_auc	0.665	0.7714696516085886	0.1064696516085885	0.1601047392610354	True	bdt: weighted_auc
+bdt	asimov_ZA	0.0386	0.0635540927812224	0.0249540927812223	0.6464790875964351	True	bdt: asimov_ZA
+bdt	bootstrap_median_ZA	0.0391	0.0636984150036077	0.0245984150036077	0.6291154732380493	True	bdt: bootstrap_median_ZA
+bdt	background_effective_events	6.51	28.1164350596006	21.6064350596006	3.3189608386483256	True	bdt: background_effective_events
+dense_dnn	weighted_auc	0.648	0.7214607574655768	0.0734607574655767	0.1133653664592234	True	dense_dnn: weighted_auc
+dense_dnn	asimov_ZA	0.0369	0.0573852118641375	0.0204852118641375	0.5551547930660573	True	dense_dnn: asimov_ZA
+dense_dnn	bootstrap_median_ZA	0.0377	0.0577205713136103	0.0200205713136103	0.531049636965791	True	dense_dnn: bootstrap_median_ZA
+lbn_dnn	asimov_ZA	0.0372	0.0521061724545665	0.0149061724545665	0.4007035606066267	True	lbn_dnn: asimov_ZA
+lbn_dnn	bootstrap_median_ZA	0.0382	0.0522211168670256	0.0140211168670256	0.3670449441629758	True	lbn_dnn: bootstrap_median_ZA

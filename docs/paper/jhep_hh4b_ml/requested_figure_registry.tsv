@@ -1,0 +1,22 @@
+request_id	requested_plot	status	figure_stem	missing_column_or_artifact	reason
+REQ-FIG-01	Weighted source-group OOF ROC curves	supported	fig01_weighted_roc		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-02	Unweighted ROC curves as appendix diagnostics	supported	fig16_unweighted_roc_appendix		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-03	Signal efficiency versus background rejection	supported	fig03_efficiency_background_rejection		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-04	OOF classifier-score distributions	supported	fig02_oof_score_distributions		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-05	Physical-yield score distributions	supported	fig02_oof_score_distributions		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-06	Nominal Asimov ZA versus threshold	supported	fig04_nominal_za_scan		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-07	Systematic-aware Asimov ZA versus threshold	supported	fig05_systematic_za_scan		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-08	Weighted AUC comparison	supported	fig07_nominal_baseline_comparison		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-09	Nominal ZA comparison	supported	fig07_nominal_baseline_comparison		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-10	Bootstrap median and 16--84% ZA comparison	supported	fig06_bootstrap_za		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-11	Signal-to-background comparison	supported	fig07_nominal_baseline_comparison		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-12	Background effective-event comparison	supported	fig07_nominal_baseline_comparison		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-13	Earlier-snapshot versus authoritative-result comparison	supported	fig08_earlier_current_metrics		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-14	Signal, non-QCD, and direct-QCD population changes	supported	fig09_population_change		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-15	Selected process composition	supported	fig10_selected_process_composition		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-16	Three-b-to-four-b transfer-factor results	supported	fig11_transfer_factors		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-17	Transfer closure against secondary direct four-b QCD	supported	fig12_transfer_closure		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-18	Multijet systematic and nonclosure comparison	supported	fig17_multijet_systematic_nonclosure		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-19	R_HH distributions	supported	fig13_rhh_distributions		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-20	m(H1)-m(H2) mass planes	supported	fig14_higgs_mass_planes		supported by the checksum-verified frozen c7q--c7u artifacts
+REQ-FIG-21	mHH and promoted-jet diagnostics	supported	fig15_mhh_promoted_jet_quality		supported by the checksum-verified frozen c7q--c7u artifacts
