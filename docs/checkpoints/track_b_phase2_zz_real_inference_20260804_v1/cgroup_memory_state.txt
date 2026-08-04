@@ -1,0 +1,33 @@
+DATE_UTC=2026-08-04T18:01:49Z
+HOSTNAME=cmslpc312.fnal.gov
+PID=3491477
+
+PROC_SELF_CGROUP:
+0::/user.slice/user-17821.slice/session-1199.scope
+
+CGROUP_DIR=/sys/fs/cgroup/user.slice/user-17821.slice/session-1199.scope
+
+===== memory.current =====
+1555701760
+
+===== memory.peak =====
+7688445952
+
+===== memory.max =====
+max
+
+===== memory.events =====
+low 0
+high 0
+max 0
+oom 0
+oom_kill 1
+oom_group_kill 0
+
+===== memory.events.local =====
+low 0
+high 0
+max 0
+oom 0
+oom_kill 1
+oom_group_kill 0

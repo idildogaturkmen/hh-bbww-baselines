@@ -1,0 +1,512 @@
+{
+  "artifacts": {
+    "events_tree": {
+      "copied_to_repository": false,
+      "sha256": "1a7c266854f8c2be490667d4f70233013d94ee6e10d8706622feba583278f6b9",
+      "size_bytes": 139565,
+      "stable_path": "/tmp/iturkmen_track_b_zz_64_inference_20260804_v1/zz_64_ensemble_events.root"
+    },
+    "inference_receipt": {
+      "copied_to_repository": true,
+      "path_note": "Internal output paths refer to the pre-move build directory; hashes and sizes are valid. Current stable paths are recorded here and in artifact_manifest.tsv.",
+      "sha256": "5aecb8a1837a7e4eef3cf1d0686e4f529eb3add660d7c4b47ce866b1abc8e6fb",
+      "stable_path": "/tmp/iturkmen_track_b_zz_64_inference_20260804_v1/zz_64_real_inference_receipt.json"
+    },
+    "original_source": {
+      "copied_to_repository": false,
+      "sha256": "c312e7adbc2652e91bd7556325565f2b638da8bcde69ef304a94501603d42d8f",
+      "size_bytes": 1122900950,
+      "stable_path": "/tmp/iturkmen_track_b_zz_input_20260804_v1/zz_selected_ntuples_0000.root"
+    },
+    "score_archive": {
+      "copied_to_repository": false,
+      "sha256": "a600bfdc6d2ebd7f58ac58d7f5cc014caa5ede85fa636f549d6f2699af17c88d",
+      "size_bytes": 134609,
+      "stable_path": "/tmp/iturkmen_track_b_zz_64_inference_20260804_v1/zz_64_model_scores.npz"
+    },
+    "source_skim": {
+      "copied_to_repository": false,
+      "sha256": "d08df3e4e9b446fdc4e9f138570030f050a0dd719f85bc9855cc15810d61389e",
+      "size_bytes": 355587,
+      "stable_path": "/tmp/iturkmen_track_b_zz_64_source_skim_20260804_v1/zz_64_source_skim.root"
+    },
+    "source_skim_receipt": {
+      "copied_to_repository": true,
+      "sha256": "307fe8f9bc62bf7722979d3df805209d0ea56157ce06578d491f69f491658df5",
+      "stable_path": "/tmp/iturkmen_track_b_zz_64_source_skim_20260804_v1/zz_64_source_skim_receipt.json"
+    }
+  },
+  "checkpoint_name": "track_b_phase2_zz_real_inference_20260804_v1",
+  "ensemble": {
+    "leading_mass_grid_cells": [
+      {
+        "class_index": 59,
+        "first_mass_bin": [
+          80.0,
+          90.0
+        ],
+        "mean_probability": 0.02497372390250207,
+        "second_mass_bin": [
+          90.0,
+          100.0
+        ]
+      },
+      {
+        "class_index": 60,
+        "first_mass_bin": [
+          80.0,
+          90.0
+        ],
+        "mean_probability": 0.016825307340718576,
+        "second_mass_bin": [
+          100.0,
+          110.0
+        ]
+      },
+      {
+        "class_index": 71,
+        "first_mass_bin": [
+          90.0,
+          100.0
+        ],
+        "mean_probability": 0.015039931622989474,
+        "second_mass_bin": [
+          100.0,
+          110.0
+        ]
+      },
+      {
+        "class_index": 58,
+        "first_mass_bin": [
+          80.0,
+          90.0
+        ],
+        "mean_probability": 0.013127062003231372,
+        "second_mass_bin": [
+          80.0,
+          90.0
+        ]
+      },
+      {
+        "class_index": 70,
+        "first_mass_bin": [
+          90.0,
+          100.0
+        ],
+        "mean_probability": 0.012710643075499463,
+        "second_mass_bin": [
+          90.0,
+          100.0
+        ]
+      },
+      {
+        "class_index": 46,
+        "first_mass_bin": [
+          70.0,
+          80.0
+        ],
+        "mean_probability": 0.012590816732951073,
+        "second_mass_bin": [
+          80.0,
+          90.0
+        ]
+      },
+      {
+        "class_index": 47,
+        "first_mass_bin": [
+          70.0,
+          80.0
+        ],
+        "mean_probability": 0.01066293534750981,
+        "second_mass_bin": [
+          90.0,
+          100.0
+        ]
+      },
+      {
+        "class_index": 72,
+        "first_mass_bin": [
+          90.0,
+          100.0
+        ],
+        "mean_probability": 0.010654349854649288,
+        "second_mass_bin": [
+          110.0,
+          120.0
+        ]
+      },
+      {
+        "class_index": 61,
+        "first_mass_bin": [
+          80.0,
+          90.0
+        ],
+        "mean_probability": 0.010440248229714106,
+        "second_mass_bin": [
+          110.0,
+          120.0
+        ]
+      },
+      {
+        "class_index": 67,
+        "first_mass_bin": [
+          80.0,
+          90.0
+        ],
+        "mean_probability": 0.009523544627101315,
+        "second_mass_bin": [
+          170.0,
+          180.0
+        ]
+      }
+    ],
+    "mean_qcd_probability": 0.3906304872885838,
+    "mean_signal_probability": 0.5334414760735954,
+    "mean_ttbar_probability": 0.0759280359606489,
+    "model_top1_agreement_fraction": 0.734375,
+    "signal_probability_quantiles": {
+      "median": 0.5765341040554024,
+      "q10": 0.0021759556932758914,
+      "q90": 0.9970232233003117
+    },
+    "signal_thresholds_strict_greater_than": {
+      "0.5": {
+        "count": 34,
+        "fraction": 0.53125
+      },
+      "0.9": {
+        "count": 24,
+        "fraction": 0.375
+      },
+      "0.997": {
+        "count": 7,
+        "fraction": 0.109375
+      }
+    },
+    "strict_gt_0_997_mass_grid": {
+      "minimum_signal_probability_strict_greater_than": 0.997,
+      "n_selected_events": 7,
+      "top_cells_by_mean_raw_probability": [
+        {
+          "class_index": 59,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.10263126986406168,
+          "second_mass_bin": [
+            90.0,
+            100.0
+          ]
+        },
+        {
+          "class_index": 70,
+          "first_mass_bin": [
+            90.0,
+            100.0
+          ],
+          "mean_probability": 0.06822078271181367,
+          "second_mass_bin": [
+            90.0,
+            100.0
+          ]
+        },
+        {
+          "class_index": 71,
+          "first_mass_bin": [
+            90.0,
+            100.0
+          ],
+          "mean_probability": 0.05969601978445315,
+          "second_mass_bin": [
+            100.0,
+            110.0
+          ]
+        },
+        {
+          "class_index": 58,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.05479438372467051,
+          "second_mass_bin": [
+            80.0,
+            90.0
+          ]
+        },
+        {
+          "class_index": 60,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.036071915844721456,
+          "second_mass_bin": [
+            100.0,
+            110.0
+          ]
+        },
+        {
+          "class_index": 46,
+          "first_mass_bin": [
+            70.0,
+            80.0
+          ],
+          "mean_probability": 0.034101376759367884,
+          "second_mass_bin": [
+            80.0,
+            90.0
+          ]
+        },
+        {
+          "class_index": 66,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.02132334718148091,
+          "second_mass_bin": [
+            160.0,
+            170.0
+          ]
+        },
+        {
+          "class_index": 65,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.021120675695350484,
+          "second_mass_bin": [
+            150.0,
+            160.0
+          ]
+        },
+        {
+          "class_index": 47,
+          "first_mass_bin": [
+            70.0,
+            80.0
+          ],
+          "mean_probability": 0.019994141265799823,
+          "second_mass_bin": [
+            90.0,
+            100.0
+          ]
+        },
+        {
+          "class_index": 72,
+          "first_mass_bin": [
+            90.0,
+            100.0
+          ],
+          "mean_probability": 0.0180836438091882,
+          "second_mass_bin": [
+            110.0,
+            120.0
+          ]
+        }
+      ],
+      "top_cells_by_mean_signal_normalized_probability": [
+        {
+          "class_index": 59,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.10272021091974805,
+          "second_mass_bin": [
+            90.0,
+            100.0
+          ]
+        },
+        {
+          "class_index": 70,
+          "first_mass_bin": [
+            90.0,
+            100.0
+          ],
+          "mean_probability": 0.0682752922708653,
+          "second_mass_bin": [
+            90.0,
+            100.0
+          ]
+        },
+        {
+          "class_index": 71,
+          "first_mass_bin": [
+            90.0,
+            100.0
+          ],
+          "mean_probability": 0.05974570763138865,
+          "second_mass_bin": [
+            100.0,
+            110.0
+          ]
+        },
+        {
+          "class_index": 58,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.05484283178803924,
+          "second_mass_bin": [
+            80.0,
+            90.0
+          ]
+        },
+        {
+          "class_index": 60,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.03610892597496336,
+          "second_mass_bin": [
+            100.0,
+            110.0
+          ]
+        },
+        {
+          "class_index": 46,
+          "first_mass_bin": [
+            70.0,
+            80.0
+          ],
+          "mean_probability": 0.034141036355062174,
+          "second_mass_bin": [
+            80.0,
+            90.0
+          ]
+        },
+        {
+          "class_index": 66,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.021353638885619947,
+          "second_mass_bin": [
+            160.0,
+            170.0
+          ]
+        },
+        {
+          "class_index": 65,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.021149390847263607,
+          "second_mass_bin": [
+            150.0,
+            160.0
+          ]
+        },
+        {
+          "class_index": 47,
+          "first_mass_bin": [
+            70.0,
+            80.0
+          ],
+          "mean_probability": 0.02001669169540496,
+          "second_mass_bin": [
+            90.0,
+            100.0
+          ]
+        },
+        {
+          "class_index": 72,
+          "first_mass_bin": [
+            90.0,
+            100.0
+          ],
+          "mean_probability": 0.01810115577755788,
+          "second_mass_bin": [
+            110.0,
+            120.0
+          ]
+        }
+      ]
+    },
+    "top1_class_counts": {
+      "134": 1,
+      "136": 38,
+      "137": 6,
+      "26": 1,
+      "30": 1,
+      "34": 1,
+      "46": 3,
+      "57": 1,
+      "59": 4,
+      "60": 1,
+      "65": 1,
+      "66": 1,
+      "67": 1,
+      "68": 2,
+      "71": 1,
+      "73": 1
+    }
+  },
+  "interpretation": [
+    "The dominant signal-grid response is localized in the expected ZZ mass region.",
+    "Cumulative signal probability sums 136 grid cells; therefore it can exceed QCD probability even when class 136 is the individual top-1 class.",
+    "This is an unweighted 64-event control canary, not a full-statistics discrimination measurement."
+  ],
+  "memory_strategy": {
+    "max_rss_kib_after_preprocessing": 72120,
+    "max_rss_kib_final": 2827544,
+    "models_loaded_concurrently": 1,
+    "models_run_sequentially": true,
+    "new_oom_during_step27e": false,
+    "prior_oom_confirmed": true,
+    "session_cpu_memory_arena_enabled": false,
+    "session_memory_pattern_enabled": false
+  },
+  "particle_representation": {
+    "particle_count": {
+      "maximum": 248,
+      "median": 125.5,
+      "minimum": 77
+    },
+    "truncated_event_count": 0,
+    "truncated_event_fraction": 0.0,
+    "used_particle_count": {
+      "maximum": 248,
+      "median": 125.5,
+      "minimum": 77
+    }
+  },
+  "phase": "Track B Phase 2",
+  "provenance": {
+    "checkpoint_parent_commit": "ab3e5604bc922569d151c7c718b3c0376b5452cc",
+    "execution_backend_sha256": "91df61ffb13cab62fbd3755ed1dd55db535ed5f8cfa960322f1d0096a4067bd8",
+    "minimum_published_ancestor": "ab3e5604bc922569d151c7c718b3c0376b5452cc"
+  },
+  "remaining_phase2_gates": [
+    "QCD released-model control",
+    "inclusive TTbar_forInfer2 released-model control",
+    "combined control comparison",
+    "larger spread control pilots",
+    "official ZH and ZZ DCB validation",
+    "authoritative independent-HH sample",
+    "independent-HH ROC and bootstrap comparison"
+  ],
+  "sample": {
+    "eligible_entries": 8674,
+    "first_source_entry": 3,
+    "last_source_entry": 199990,
+    "name": "ZZ",
+    "original_tree_entries": 200000,
+    "process_index_counts": {
+      "12": 64
+    },
+    "role": "control",
+    "selected_events": 64,
+    "weighted": false
+  },
+  "schema_version": 1,
+  "status": "real released-model ZZ control canary complete"
+}
