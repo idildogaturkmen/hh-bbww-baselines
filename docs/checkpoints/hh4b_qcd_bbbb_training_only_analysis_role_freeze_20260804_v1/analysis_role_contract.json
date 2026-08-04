@@ -1,0 +1,75 @@
+{
+  "analysis_role": {
+    "allowed_role": "auxiliary_train_only_qcd_enrichment",
+    "allowed_split": "train",
+    "likelihood_contribution_authorized": false,
+    "physical_yield_authorized": false,
+    "primary_qcd_prediction": "exactly3b_to_at_least4b_transfer_from_authorized_qcd_hardqcd",
+    "sum_general_and_iht400to600_authorized": false,
+    "sum_with_qcd_hardqcd_authorized": false,
+    "test_role": "excluded",
+    "validation_role": "excluded"
+  },
+  "auxiliary_weight_contract": {
+    "auxiliary_loss_strength_grid": [
+      0.0,
+      0.1,
+      0.25,
+      0.5
+    ],
+    "event_weight_formula": "1 / (2 * number_of_sources_in_family * candidate_rows_in_source)",
+    "family_total_weight": {
+      "qcd_bbbb_general": 0.5,
+      "qcd_bbbb_iht400to600": 0.5
+    },
+    "model_selection_metrics": [
+      "physical_weighted_auc",
+      "selected_signal_yield",
+      "selected_background_yield",
+      "asimov_significance",
+      "paired_source_bootstrap"
+    ],
+    "model_selection_population": "physically_authorized_source_group_OOF_rows_only",
+    "physical_weight_authorized": false,
+    "physical_weight_column": null,
+    "source_grouping": "group_id"
+  },
+  "checkpoint": "hh4b_qcd_bbbb_training_only_analysis_role_freeze_20260804_v1",
+  "date": "2026-08-04",
+  "generator_evidence": {
+    "overlap_conclusion": "qcd_bbbb_iht400to600 is a strict phase-space subset of qcd_bbbb_general",
+    "qcd_bbbb_general": {
+      "ihtmax_gev": -1.0,
+      "ihtmin_gev": 0.0,
+      "representative_generator_xsec_pb": 347.012401
+    },
+    "qcd_bbbb_iht400to600": {
+      "ihtmax_gev": 600.0,
+      "ihtmin_gev": 400.0,
+      "representative_generator_xsec_pb": 9.7152351
+    },
+    "same_hard_process": "p p > b b~ b b~ QED=0"
+  },
+  "model_policy": {
+    "assignment_loss": "qcd_bbbb rows never enter assignment loss",
+    "categorized_bdt": "compare no-enrichment and auxiliary-enrichment variants on common physical OOF predictions",
+    "spanet": "use a separate auxiliary background classification term or auxiliary pretraining, followed by physical fine-tuning",
+    "yield_evaluation": "qcd_bbbb rows never enter physical yields, categories, significance, or likelihood"
+  },
+  "scope": "Delphes train-only analysis role",
+  "sealed_split_controls": {
+    "test_candidate_payloads_opened": 0,
+    "validation_candidate_payloads_opened": 0
+  },
+  "source_population": {
+    "candidate_integrity_exact": true,
+    "candidate_rows": 22457,
+    "generated_events": 230000,
+    "members": 23,
+    "processes": [
+      "qcd_bbbb_general",
+      "qcd_bbbb_iht400to600"
+    ],
+    "remote_bundles_present": 23
+  }
+}

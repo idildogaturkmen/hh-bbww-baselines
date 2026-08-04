@@ -1,0 +1,22 @@
+{
+  "candidate_integrity_exact": true,
+  "candidate_rows": 22457,
+  "general_iht_range_gev": [
+    0.0,
+    -1.0
+  ],
+  "general_representative_xsec_pb": 347.012401,
+  "generated_events": 230000,
+  "iht400to600_range_gev": [
+    400.0,
+    600.0
+  ],
+  "iht400to600_representative_xsec_pb": 9.7152351,
+  "physical_yield_authorized": false,
+  "qcd_bbbb_members": 23,
+  "representative_metadata_receipts": 2,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "training_only_role_authorized": true,
+  "validation_payloads_opened": 0
+}
