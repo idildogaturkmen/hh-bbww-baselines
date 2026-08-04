@@ -1,0 +1,42 @@
+{
+  "local": {
+    "build_path": "/tmp/iturkmen_track_b_qcd_input_build_kWPU8Z/qcd_forinfer2_mergeid0.root",
+    "sha256": "c16330dd72aa7e056b6ef7f2052adbd47c75f748926b9165425d22019891cba2",
+    "size_bytes": 971610279,
+    "stable_path": "/tmp/iturkmen_track_b_qcd_input_20260804_v1/qcd_forinfer2_mergeid0.root"
+  },
+  "operations": {
+    "ihep_network_accessed": true,
+    "input_contract_validated": true,
+    "persistent_storage_written": false,
+    "remote_opened_read_only": true,
+    "repository_modified": false,
+    "root_opened_read_only": true,
+    "temporary_local_copy_written": true
+  },
+  "remote": {
+    "path": "/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/QCD_DelphesHH4JTrig_forInfer2_merged_ntuple/QCD_DelphesHH4JTrig_forInfer2_ntuple_mergeid0.root",
+    "size_bytes": 971610279,
+    "url": "root://cceos.ihep.ac.cn:1094//eos/ihep/cms/store/user/coli/datasets/hh4b/inference/QCD_DelphesHH4JTrig_forInfer2_merged_ntuple/QCD_DelphesHH4JTrig_forInfer2_ntuple_mergeid0.root"
+  },
+  "repository": {
+    "head": "e768f27c72d7135b0d2d984d1992217ccd90b6bc"
+  },
+  "root_tree": {
+    "branches": 87,
+    "classname": "TTree",
+    "entries": 157503,
+    "keys": [
+      "tree;1"
+    ],
+    "required_input_contract": {
+      "entries": 157503,
+      "required_branch_count": 21,
+      "tree_class": "TTree",
+      "tree_name": "tree"
+    },
+    "selected_tree": "tree;1"
+  },
+  "schema_version": 1,
+  "status": "qcd_forinfer2_source_copy_validated"
+}
