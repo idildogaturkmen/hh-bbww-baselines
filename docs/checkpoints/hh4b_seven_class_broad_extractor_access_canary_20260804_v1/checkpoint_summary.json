@@ -1,0 +1,53 @@
+{
+  "artifacts": [
+    {
+      "artifact": "canary.log",
+      "bytes": 4317,
+      "sha256": "743e44df3af0a363fcc6471eb455e64b46ac5cb388a81da6647cfcb33210478e"
+    },
+    {
+      "artifact": "seven_class_broad_cutflow_v2.tsv",
+      "bytes": 1816,
+      "sha256": "7062f2061044dc5ee116c18681e381552f040814ca790fa3f1297fb187175340"
+    },
+    {
+      "artifact": "seven_class_canary_plan_v2.tsv",
+      "bytes": 10323,
+      "sha256": "fbefba352cdbd14ba80b87c365b16e9c930f5650e9d7d184944ef997986cee52"
+    },
+    {
+      "artifact": "seven_class_canary_receipts_v2.tsv",
+      "bytes": 3618,
+      "sha256": "fef143bd1a8a667ebfee8c38cd6922761da8d352225d9f6af76c5453f3e61a4c"
+    },
+    {
+      "artifact": "summary.json",
+      "bytes": 401,
+      "sha256": "545566613b41214dcf9a8e9807e86adad0dc642f300bc23c4c817aeaf3814d6f"
+    },
+    {
+      "artifact": "broad_ml_extractor_access_contract_v1.json",
+      "bytes": 3096,
+      "sha256": "991127ebae70772c14636291e04c1217bb5bfb28c7638572bee11db03667c42b"
+    },
+    {
+      "artifact": "README.md",
+      "bytes": 1302,
+      "sha256": "711e4eff7e85608e651ae098e9757b62f9e366659556c736276a032a572315d5"
+    }
+  ],
+  "auxiliary_qcd_classes_passed": 2,
+  "canary_sources": 7,
+  "canary_sources_passed": 7,
+  "ggf_nested_archive_resolver_passed": 1,
+  "models_trained": 0,
+  "next_gate": "run_seven_class_feature_materialization_canary",
+  "primary_classes_passed": 5,
+  "production_extractor_ready": false,
+  "schema_version": 1,
+  "signal_truth_schemas_passed": 2,
+  "source_commit": "308a5e10350619617015b136c8e0487d2e4bd3d0",
+  "status": "seven_class_broad_extractor_access_canary_pass",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

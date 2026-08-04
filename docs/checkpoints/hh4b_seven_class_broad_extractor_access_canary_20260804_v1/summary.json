@@ -1,0 +1,14 @@
+{
+  "auxiliary_passed": 2,
+  "current_head": "308a5e10350619617015b136c8e0487d2e4bd3d0",
+  "ggf_nested_resolver_passed": 1,
+  "models_trained": 0,
+  "next": "FREEZE_BROAD_EXTRACTOR_CONTRACT",
+  "passed": 7,
+  "primary_passed": 5,
+  "result": "SEVEN_CLASS_BROAD_EXTRACTOR_CANARY_V2_PASS",
+  "signal_truth_passed": 2,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

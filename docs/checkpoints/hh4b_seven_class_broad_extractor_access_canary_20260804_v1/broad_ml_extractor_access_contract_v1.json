@@ -1,0 +1,79 @@
+{
+  "contract_status": "access_and_basic_schema_verified",
+  "data_separation": {
+    "models_trained": 0,
+    "test_payloads_opened": 0,
+    "train_root_arrays_opened_in_canary": true,
+    "validation_payloads_opened": 0
+  },
+  "frozen_train_manifest": "docs/checkpoints/hh4b_train_464_authoritative_broad_ml_access_manifest_20260804_v1/train_464_authoritative_broad_ml_access_manifest_v5.tsv",
+  "next_gate": "run_seven_class_feature_materialization_canary",
+  "production_extractor_ready": false,
+  "representative_classes_verified": [
+    "ordinary_background_bundle",
+    "hard_qcd_bundle",
+    "qcd_bbbb_general_bundle",
+    "qcd_bbbb_iht400to600_bundle",
+    "direct_ttbar_root",
+    "ggf_signal_bundle",
+    "vbf_signal_bundle"
+  ],
+  "schema_version": 1,
+  "source_commit": "308a5e10350619617015b136c8e0487d2e4bd3d0",
+  "source_output_directory": "/uscms_data/d3/iturkmen/hh4b_delphes/harvest_checkpoints/hh4b_seven_class_broad_extractor_canary_v2_20260804T233303Z",
+  "still_required_before_464_source_production": [
+    "materialize a reusable extractor implementation in the repository",
+    "freeze the output feature and metadata schema",
+    "freeze maximum stored jet multiplicity and deterministic truncation/order rule",
+    "implement and verify stable event_uid construction",
+    "implement and verify generator-weight or signed-sidecar joins",
+    "implement and verify signal truth-matching and assignment labels",
+    "write compact output Parquet plus source receipt and cutflow",
+    "read back and validate materialized outputs for the same seven classes",
+    "verify resumability and idempotent per-source output behavior"
+  ],
+  "train_population": {
+    "generated_events": 3799873,
+    "local_direct_root_sources": 22,
+    "remote_bundle_sources": 442,
+    "source_members": 464
+  },
+  "verified_access_rules": {
+    "frozen_root_member_or_basename_resolution": true,
+    "local_direct_root": true,
+    "maximum_nested_tar_depth_in_canary": 4,
+    "nested_reconstruction_tar_root_member": true,
+    "outer_tar_root_member": true,
+    "source_checksum_validation_when_available": true,
+    "source_size_validation_when_available": true,
+    "temporary_payload_cleanup_after_each_source": true
+  },
+  "verified_broad_selection": {
+    "diagnostic_btag_definition": "selected jet with BTag/BTagPhys > 0",
+    "pre_model_btag_requirement": "none",
+    "pre_model_higgs_mass_requirement": "none",
+    "resolved_event_eligibility": "at least 4 selected AK4 jets",
+    "selected_ak4_jet": "Jet.PT > 30 GeV and abs(Jet.Eta) < 2.5"
+  },
+  "verified_root_contract": {
+    "entry_count_matches_generated_events": true,
+    "required_jet_branches": [
+      "Jet.PT or Jet.Pt",
+      "Jet.Eta",
+      "Jet.Phi",
+      "Jet.Mass",
+      "Jet.BTag or Jet.BTagPhys"
+    ],
+    "required_signal_truth_branches": [
+      "Particle.PID",
+      "Particle.Status",
+      "Particle.M1",
+      "Particle.M2",
+      "Particle.PT or Particle.Pt",
+      "Particle.Eta",
+      "Particle.Phi",
+      "Particle.Mass"
+    ],
+    "tree_preference": "Delphes, otherwise unique/first TTree"
+  }
+}
