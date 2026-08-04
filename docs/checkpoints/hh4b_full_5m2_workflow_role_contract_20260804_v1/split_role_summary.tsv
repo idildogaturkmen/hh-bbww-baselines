@@ -1,0 +1,10 @@
+final_split	sample_class	is_auxiliary_overlapping_qcd	workflow_role	source_members	generated_events	candidate_rows_metadata	nonzero_candidate_sources
+test	background	False	primary_test_once_after_full_analysis_lock	39	364543	5180	25
+test	background	True	secondary_test_qcd_stress_test_after_full_analysis_lock	2	20000	1906	2
+test	signal	False	primary_test_once_after_full_analysis_lock	4	13000	812	4
+train	background	False	primary_train_fit_and_source_group_oof	354	3419873	21368	188
+train	background	True	auxiliary_train_fit_only	23	230000	22457	23
+train	signal	False	primary_train_fit_and_source_group_oof	87	150000	9337	87
+validation	background	False	primary_validation_once_after_development_lock	97	915584	3825	45
+validation	background	True	secondary_validation_qcd_stress_test_after_primary_development_lock	5	50000	4153	5
+validation	signal	False	primary_validation_once_after_development_lock	19	37000	2246	19

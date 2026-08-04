@@ -1,0 +1,97 @@
+{
+  "auxiliary_qcd_by_split": {
+    "test": {
+      "candidate_rows_metadata": 1906,
+      "generated_events": 20000,
+      "nonzero_candidate_sources": 2,
+      "primary_physical_metric_role": "excluded",
+      "secondary_stress_role": "eligible_only_after_split_gate",
+      "source_members": 2
+    },
+    "train": {
+      "candidate_rows_metadata": 22457,
+      "generated_events": 230000,
+      "nonzero_candidate_sources": 23,
+      "primary_physical_metric_role": "excluded",
+      "secondary_stress_role": "train_fit_only",
+      "source_members": 23
+    },
+    "validation": {
+      "candidate_rows_metadata": 4153,
+      "generated_events": 50000,
+      "nonzero_candidate_sources": 5,
+      "primary_physical_metric_role": "excluded",
+      "secondary_stress_role": "eligible_only_after_split_gate",
+      "source_members": 5
+    }
+  },
+  "generated_event_universe": {
+    "all_generated_events_accounted": true,
+    "all_sources_have_exactly_one_split": true,
+    "background": 5000000,
+    "signal": 200000,
+    "source_members": 630,
+    "total": 5200000
+  },
+  "repository_head": "463e34e5b06da33193bec3c1572a712681e73130",
+  "sealed_payload_controls": {
+    "test_candidate_payloads_opened": 0,
+    "validation_candidate_payloads_opened": 0
+  },
+  "split_event_totals": {
+    "test": {
+      "background": 384543,
+      "signal": 13000,
+      "total": 397543
+    },
+    "train": {
+      "background": 3649873,
+      "signal": 150000,
+      "total": 3799873
+    },
+    "validation": {
+      "background": 965584,
+      "signal": 37000,
+      "total": 1002584
+    }
+  },
+  "split_manifest": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_full_5m_200k_expanded_manifest_split_20260728_v1/grouped_split_assignments.tsv",
+  "split_manifest_sha256": "5c517dbea1a7932d3bca56be0c9afd87a4988c4bead06d5a1043eddec7e77ea1",
+  "split_member_totals": {
+    "test": {
+      "background": 41,
+      "signal": 4,
+      "total": 45
+    },
+    "train": {
+      "background": 377,
+      "signal": 87,
+      "total": 464
+    },
+    "validation": {
+      "background": 102,
+      "signal": 19,
+      "total": 121
+    }
+  },
+  "status": "pass",
+  "train_projection": {
+    "auxiliary_qcd_candidate_rows": 22457,
+    "direct_qcd_closure_rows": 56,
+    "direct_secondary_projection_rows": 30705,
+    "manifest_candidate_rows_all_processes": 53162,
+    "manifest_nonauxiliary_direct_candidate_rows": 30705,
+    "planned_fit_formula": "31225 primary physical rows + 22457 auxiliary QCD rows = 53682 fit rows",
+    "planned_full_train_fit_rows": 53682,
+    "primary_physical_projection_rows": 31225,
+    "primary_transferred_qcd_rows": 576
+  },
+  "usage_contract": {
+    "all_5p2m_generated_events": "included in source, split, acceptance, and normalization accounting",
+    "auxiliary_validation_test": "separately reported QCD stress tests only; never used for tuning, yields, significance, categories, or likelihood",
+    "ml_row_eligibility": "requires passing frozen reconstruction and candidate selection",
+    "primary_test": "physically authorized test candidates opened once after full analysis lock",
+    "primary_train": "physical train projection plus auxiliary qcd_bbbb train overlay",
+    "primary_validation": "physically authorized validation candidates opened once after development lock"
+  }
+}
