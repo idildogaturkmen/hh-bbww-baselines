@@ -14,3 +14,6 @@ The c7v errata package was generated from `b684bc4436252bfd789bcb64c3d2cacfa23a0
 - Frozen c7t model weights and predictions remain in c7t; their exact identities are in the asset and model tables.
 - Reviewed categorized-BDT checkpoint: `pn_c7w_nested_categorized_bdt_20260803_v1`; compact paper assets, exact plotting data, uncertainty tables, and visual-review records are in `categorized_bdt/`.
 - SPA-Net remains an explicit method/status placeholder until its separate fail-closed truth-contract audit and sealed checkpoint exist.
+
+
+- Full 5.2M split, physical-normalization formulas, current aggregate yields, and validation/test gates: `FULL_5M2_SPLIT_AND_PHYSICAL_WEIGHTING_NOTE.md`.
