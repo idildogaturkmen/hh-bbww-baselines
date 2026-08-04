@@ -1,0 +1,24 @@
+{
+  "active_branch": "delphes-hh4b-production",
+  "auxiliary_sources": 23,
+  "current_head": "8c5bc84d59a860ebca6896cae62c3e7df8f59cf3",
+  "direct_root_sources": 22,
+  "models_trained": 0,
+  "primary_registry_match_methods": {
+    "candidate_path_exact": 441
+  },
+  "primary_sources": 441,
+  "remote_bundle_sources": 442,
+  "remote_bundles_downloaded": 0,
+  "repository_modified": false,
+  "root_event_arrays_read": 0,
+  "root_files_opened": 0,
+  "signal_remote_bundle_sources": 87,
+  "source_locators_assigned": 464,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "train_generated_events": 3799873,
+  "train_sources": 464,
+  "validation_payloads_opened": 0,
+  "vbf_remote_bundle_sources": 7
+}

@@ -1,0 +1,60 @@
+CURRENT_HEAD=8c5bc84d59a860ebca6896cae62c3e7df8f59cf3
+
+==============================================================================
+A. LOAD AND VALIDATE SOURCE POPULATIONS
+==============================================================================
+TRAIN_SOURCE_MEMBERS=464
+TRAIN_GENERATED_EVENTS=3799873
+PRIMARY_SOURCE_MEMBERS=441
+PRIMARY_GENERATED_EVENTS=3569873
+AUXILIARY_SOURCE_MEMBERS=23
+AUXILIARY_GENERATED_EVENTS=230000
+
+==============================================================================
+B. BUILD A ONE-TO-ONE ROLE/REGISTRY CROSSWALK
+==============================================================================
+PRIMARY_REGISTRY_MATCHED_ROLE_ROWS=441/441
+PRIMARY_REGISTRY_MATCHED_REGISTRY_ROWS=441/441
+MATCH_METHOD_SUMMARY:
+        match_method  source_members
+candidate_path_exact             441
+
+==============================================================================
+C. VALIDATE EVERY MAPPED PRIMARY SOURCE
+==============================================================================
+PRIMARY_ROLE_TO_REGISTRY_CROSSWALK=441/441
+
+==============================================================================
+D. APPEND THE 23 TRAIN-ONLY AUXILIARY QCD SOURCES
+==============================================================================
+
+==============================================================================
+E. CLOSE THE 464-SOURCE AUTHORITATIVE MANIFEST
+==============================================================================
+ACCESS_SUMMARY:
+              workflow_population                       access_mode                                   extraction_contract_status  source_members  generated_events
+auxiliary_qcd_classification_only remote_bundle_extraction_required auxiliary_root_member_checksum_pending_representative_canary              23            230000
+      primary_physical_background                 local_direct_root                        authoritative_primary_contract_closed              22            220000
+      primary_physical_background remote_bundle_extraction_required                        authoritative_primary_contract_closed             332           3199873
+          primary_physical_signal remote_bundle_extraction_required                        authoritative_primary_contract_closed              87            150000
+AUTHORITATIVE_MANIFEST_ROWS=464/464
+AUTHORITATIVE_MANIFEST_EVENTS=3799873/3799873
+ALL_REMOTE_BUNDLE_SOURCE_ROWS=442/442
+ALL_DIRECT_ROOT_SOURCE_ROWS=22/22
+PRIMARY_SIGNAL_REMOTE_BUNDLE_SOURCES=87/87
+VBF_SIGNAL_REMOTE_BUNDLE_SOURCES=7/7
+PRIMARY_EXTRACTION_CONTRACTS_CLOSED=441/441
+AUXILIARY_EXTRACTION_CONTRACTS_PENDING_CANARY=23/23
+SOURCE_LOCATORS_ASSIGNED=464/464
+EVENTS_WITH_SOURCE_LOCATOR=3799873/3799873
+MANIFEST_ACCESS_CLOSED=True
+RESULT=TRAIN_464_AUTHORITATIVE_BROAD_ML_ACCESS_MANIFEST_V5_PASS
+NEXT=RUN_SEVEN_CLASS_REPRESENTATIVE_BROAD_EXTRACTOR_CANARY
+ACTIVE_BRANCH=delphes-hh4b-production
+REPOSITORY_MODIFIED=NO
+ROOT_FILES_OPENED=0
+ROOT_EVENT_ARRAYS_READ=0
+REMOTE_BUNDLES_DOWNLOADED=0
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+MODELS_TRAINED=0
