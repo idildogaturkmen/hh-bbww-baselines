@@ -1,0 +1,269 @@
+{
+  "artifacts": {
+    "events_tree": {
+      "copied_to_repository": false,
+      "sha256": "af2d9e35926a70ec1c192f8b54b32e2a69f539c9ee65deee05d56df999bb92c1",
+      "size_bytes": 139577,
+      "stable_path": "/tmp/iturkmen_track_b_ttbar_64_inference_20260804_v1/ttbar_64_ensemble_events.root"
+    },
+    "original_source": {
+      "copied_to_repository": false,
+      "sha256": "5d03b5078c35bb8ef555eed03bad7cbcfb73f1d7a82ec8fbf41792ce3949d172",
+      "size_bytes": 1584222050,
+      "stable_path": "/tmp/iturkmen_track_b_ttbar_input_20260804_v1/ttbar_forinfer2_selected_ntuples_0000.root"
+    },
+    "score_archive": {
+      "copied_to_repository": false,
+      "sha256": "07fc8683dc1d336f359b14e2ade6a95d12a41b4d839366d076703c9d9dc3586b",
+      "size_bytes": 135410,
+      "stable_path": "/tmp/iturkmen_track_b_ttbar_64_inference_20260804_v1/ttbar_64_model_scores.npz"
+    },
+    "source_skim": {
+      "copied_to_repository": false,
+      "sha256": "ee58fd5fb9c3acd163d898c7e660e76568e844f88a9d27f47885877ba6d9bc9a",
+      "size_bytes": 369928,
+      "stable_path": "/tmp/iturkmen_track_b_ttbar_64_source_skim_20260804_v1/ttbar_64_source_skim.root"
+    }
+  },
+  "checkpoint_name": "track_b_phase2_ttbar_real_inference_20260804_v1",
+  "ensemble": {
+    "leading_signal_grid_cells": [
+      {
+        "class_index": 110,
+        "first_mass_bin": [
+          130.0,
+          140.0
+        ],
+        "mean_probability": 0.003599641411510804,
+        "second_mass_bin": [
+          150.0,
+          160.0
+        ]
+      },
+      {
+        "class_index": 109,
+        "first_mass_bin": [
+          130.0,
+          140.0
+        ],
+        "mean_probability": 0.0034963474269892212,
+        "second_mass_bin": [
+          140.0,
+          150.0
+        ]
+      },
+      {
+        "class_index": 116,
+        "first_mass_bin": [
+          140.0,
+          150.0
+        ],
+        "mean_probability": 0.0032837464076692683,
+        "second_mass_bin": [
+          150.0,
+          160.0
+        ]
+      },
+      {
+        "class_index": 111,
+        "first_mass_bin": [
+          130.0,
+          140.0
+        ],
+        "mean_probability": 0.003073515728860407,
+        "second_mass_bin": [
+          160.0,
+          170.0
+        ]
+      },
+      {
+        "class_index": 117,
+        "first_mass_bin": [
+          140.0,
+          150.0
+        ],
+        "mean_probability": 0.003054684549736763,
+        "second_mass_bin": [
+          160.0,
+          170.0
+        ]
+      },
+      {
+        "class_index": 118,
+        "first_mass_bin": [
+          140.0,
+          150.0
+        ],
+        "mean_probability": 0.0027154707799202605,
+        "second_mass_bin": [
+          170.0,
+          180.0
+        ]
+      },
+      {
+        "class_index": 102,
+        "first_mass_bin": [
+          120.0,
+          130.0
+        ],
+        "mean_probability": 0.002670588148827155,
+        "second_mass_bin": [
+          140.0,
+          150.0
+        ]
+      },
+      {
+        "class_index": 122,
+        "first_mass_bin": [
+          150.0,
+          160.0
+        ],
+        "mean_probability": 0.0026179105055968853,
+        "second_mass_bin": [
+          160.0,
+          170.0
+        ]
+      },
+      {
+        "class_index": 103,
+        "first_mass_bin": [
+          120.0,
+          130.0
+        ],
+        "mean_probability": 0.002597168771162016,
+        "second_mass_bin": [
+          150.0,
+          160.0
+        ]
+      },
+      {
+        "class_index": 69,
+        "first_mass_bin": [
+          80.0,
+          90.0
+        ],
+        "mean_probability": 0.0025304220556846765,
+        "second_mass_bin": [
+          190.0,
+          200.0
+        ]
+      }
+    ],
+    "mean_qcd_probability": 0.16874271216549314,
+    "mean_signal_probability": 0.1740699879360582,
+    "mean_ttbar_probability": 0.657187305293822,
+    "model_top1_agreement_fraction": 0.9375,
+    "qcd_probability_quantiles": {
+      "median": 0.039544654389222465,
+      "q10": 1.5924455510685222e-06,
+      "q90": 0.620297342538834
+    },
+    "signal_false_positive_thresholds": {
+      "0.5": {
+        "count": 9,
+        "fraction": 0.140625
+      },
+      "0.9": {
+        "count": 1,
+        "fraction": 0.015625
+      },
+      "0.997": {
+        "count": 0,
+        "fraction": 0.0
+      }
+    },
+    "signal_probability_quantiles": {
+      "median": 0.04182724745488642,
+      "q10": 0.0001921015815506708,
+      "q90": 0.5991873683713305
+    },
+    "strict_gt_0_997_signal_grid": {
+      "minimum_signal_probability_strict_greater_than": 0.997,
+      "n_selected_events": 0,
+      "top_cells_by_mean_raw_probability": [],
+      "top_cells_by_mean_signal_normalized_probability": []
+    },
+    "top1": {
+      "qcd_count": 13,
+      "qcd_fraction": 0.203125,
+      "signal_grid_count": 1,
+      "signal_grid_fraction": 0.015625,
+      "ttbar_count": 50,
+      "ttbar_fraction": 0.78125
+    },
+    "ttbar_probability_quantiles": {
+      "median": 0.8107165992259979,
+      "q10": 0.08124029909571012,
+      "q90": 0.9997851053873698
+    },
+    "ttbar_probability_thresholds": {
+      "0.5": {
+        "count": 46,
+        "fraction": 0.71875
+      },
+      "0.9": {
+        "count": 26,
+        "fraction": 0.40625
+      },
+      "0.997": {
+        "count": 12,
+        "fraction": 0.1875
+      }
+    }
+  },
+  "interpretation": [
+    "The dedicated ttbar class is top-1 for 50 of 64 inclusive-ttbar events.",
+    "Thirteen events are QCD top-1 and one event has a signal-grid class as top-1.",
+    "Nine events exceed cumulative signal probability 0.5, one exceeds 0.9, and none exceeds 0.997.",
+    "This is an unweighted 64-event control canary, not a precise ttbar rejection or mistag measurement."
+  ],
+  "memory_strategy": {
+    "max_rss_kib_after_preprocessing": 72664,
+    "max_rss_kib_final": 2865096,
+    "models_loaded_concurrently": 1,
+    "models_run_sequentially": true,
+    "new_oom_during_inference": false
+  },
+  "particle_representation": {
+    "particle_count": {
+      "maximum": 237,
+      "median": 139.5,
+      "minimum": 77
+    },
+    "truncated_event_count": 0,
+    "truncated_event_fraction": 0.0
+  },
+  "phase": "Track B Phase 2",
+  "provenance": {
+    "checkpoint_parent_commit": "21c3b6ba4d33afa9059d189ad14b4f47fea308f6",
+    "execution_backend_sha256": "91df61ffb13cab62fbd3755ed1dd55db535ed5f8cfa960322f1d0096a4067bd8",
+    "inference_commit_is_ancestor_of_checkpoint_parent": true,
+    "inference_execution_commit": "21c3b6ba4d33afa9059d189ad14b4f47fea308f6",
+    "intervening_commit_count": 0,
+    "minimum_published_qcd_checkpoint": "21c3b6ba4d33afa9059d189ad14b4f47fea308f6"
+  },
+  "remaining_phase2_gates": [
+    "publish this inclusive-ttbar control checkpoint",
+    "combined ZH/ZZ/QCD/ttbar control comparison",
+    "larger spread control pilots",
+    "official ZH and ZZ DCB validation",
+    "authoritative independent-HH sample",
+    "independent-HH ROC and bootstrap comparison"
+  ],
+  "sample": {
+    "dedicated_model_output_class": 137,
+    "eligible_entries": 89948,
+    "first_source_entry": 0,
+    "last_source_entry": 199999,
+    "name": "TTbar_forInfer2",
+    "original_tree_entries": 200000,
+    "role": "inclusive ttbar control",
+    "selected_events": 64,
+    "source_process_index_counts": {
+      "-1": 64
+    },
+    "weighted": false
+  },
+  "schema_version": 1,
+  "status": "real released-model inclusive-ttbar control canary complete"
+}

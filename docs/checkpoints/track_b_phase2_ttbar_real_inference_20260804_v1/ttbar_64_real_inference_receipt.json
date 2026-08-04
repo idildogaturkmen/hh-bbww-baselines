@@ -1,0 +1,999 @@
+{
+  "inference": {
+    "ensemble": "arithmetic mean of three released models",
+    "ensemble_signal_grid_all": {
+      "minimum_signal_probability_strict_greater_than": null,
+      "n_selected_events": 64,
+      "top_cells_by_mean_raw_probability": [
+        {
+          "class_index": 110,
+          "first_mass_bin": [
+            130.0,
+            140.0
+          ],
+          "mean_probability": 0.003599641411510804,
+          "second_mass_bin": [
+            150.0,
+            160.0
+          ]
+        },
+        {
+          "class_index": 109,
+          "first_mass_bin": [
+            130.0,
+            140.0
+          ],
+          "mean_probability": 0.0034963474269892212,
+          "second_mass_bin": [
+            140.0,
+            150.0
+          ]
+        },
+        {
+          "class_index": 116,
+          "first_mass_bin": [
+            140.0,
+            150.0
+          ],
+          "mean_probability": 0.0032837464076692683,
+          "second_mass_bin": [
+            150.0,
+            160.0
+          ]
+        },
+        {
+          "class_index": 111,
+          "first_mass_bin": [
+            130.0,
+            140.0
+          ],
+          "mean_probability": 0.003073515728860407,
+          "second_mass_bin": [
+            160.0,
+            170.0
+          ]
+        },
+        {
+          "class_index": 117,
+          "first_mass_bin": [
+            140.0,
+            150.0
+          ],
+          "mean_probability": 0.003054684549736763,
+          "second_mass_bin": [
+            160.0,
+            170.0
+          ]
+        },
+        {
+          "class_index": 118,
+          "first_mass_bin": [
+            140.0,
+            150.0
+          ],
+          "mean_probability": 0.0027154707799202605,
+          "second_mass_bin": [
+            170.0,
+            180.0
+          ]
+        },
+        {
+          "class_index": 102,
+          "first_mass_bin": [
+            120.0,
+            130.0
+          ],
+          "mean_probability": 0.002670588148827155,
+          "second_mass_bin": [
+            140.0,
+            150.0
+          ]
+        },
+        {
+          "class_index": 122,
+          "first_mass_bin": [
+            150.0,
+            160.0
+          ],
+          "mean_probability": 0.0026179105055968853,
+          "second_mass_bin": [
+            160.0,
+            170.0
+          ]
+        },
+        {
+          "class_index": 103,
+          "first_mass_bin": [
+            120.0,
+            130.0
+          ],
+          "mean_probability": 0.002597168771162016,
+          "second_mass_bin": [
+            150.0,
+            160.0
+          ]
+        },
+        {
+          "class_index": 69,
+          "first_mass_bin": [
+            80.0,
+            90.0
+          ],
+          "mean_probability": 0.0025304220556846765,
+          "second_mass_bin": [
+            190.0,
+            200.0
+          ]
+        }
+      ],
+      "top_cells_by_mean_signal_normalized_probability": [
+        {
+          "class_index": 134,
+          "first_mass_bin": [
+            180.0,
+            190.0
+          ],
+          "mean_probability": 0.01744909616102862,
+          "second_mass_bin": [
+            190.0,
+            200.0
+          ]
+        },
+        {
+          "class_index": 132,
+          "first_mass_bin": [
+            170.0,
+            180.0
+          ],
+          "mean_probability": 0.017414231468392886,
+          "second_mass_bin": [
+            190.0,
+            200.0
+          ]
+        },
+        {
+          "class_index": 131,
+          "first_mass_bin": [
+            170.0,
+            180.0
+          ],
+          "mean_probability": 0.0173365698293461,
+          "second_mass_bin": [
+            180.0,
+            190.0
+          ]
+        },
+        {
+          "class_index": 128,
+          "first_mass_bin": [
+            160.0,
+            170.0
+          ],
+          "mean_probability": 0.016666343972249812,
+          "second_mass_bin": [
+            180.0,
+            190.0
+          ]
+        },
+        {
+          "class_index": 129,
+          "first_mass_bin": [
+            160.0,
+            170.0
+          ],
+          "mean_probability": 0.01652799592693987,
+          "second_mass_bin": [
+            190.0,
+            200.0
+          ]
+        },
+        {
+          "class_index": 125,
+          "first_mass_bin": [
+            150.0,
+            160.0
+          ],
+          "mean_probability": 0.015125143356886231,
+          "second_mass_bin": [
+            190.0,
+            200.0
+          ]
+        },
+        {
+          "class_index": 127,
+          "first_mass_bin": [
+            160.0,
+            170.0
+          ],
+          "mean_probability": 0.014962591220822394,
+          "second_mass_bin": [
+            170.0,
+            180.0
+          ]
+        },
+        {
+          "class_index": 124,
+          "first_mass_bin": [
+            150.0,
+            160.0
+          ],
+          "mean_probability": 0.014822912482805116,
+          "second_mass_bin": [
+            180.0,
+            190.0
+          ]
+        },
+        {
+          "class_index": 123,
+          "first_mass_bin": [
+            150.0,
+            160.0
+          ],
+          "mean_probability": 0.014755192587559618,
+          "second_mass_bin": [
+            170.0,
+            180.0
+          ]
+        },
+        {
+          "class_index": 111,
+          "first_mass_bin": [
+            130.0,
+            140.0
+          ],
+          "mean_probability": 0.01442551384690958,
+          "second_mass_bin": [
+            160.0,
+            170.0
+          ]
+        }
+      ]
+    },
+    "ensemble_signal_grid_gt_0_997": {
+      "minimum_signal_probability_strict_greater_than": 0.997,
+      "n_selected_events": 0,
+      "top_cells_by_mean_raw_probability": [],
+      "top_cells_by_mean_signal_normalized_probability": []
+    },
+    "ensemble_summary": {
+      "mean_qcd_probability": 0.16874271216549314,
+      "mean_signal_probability": 0.1740699879360582,
+      "mean_ttbar_probability": 0.657187305293822,
+      "n_events": 64,
+      "signal_probability_quantiles": {
+        "median": 0.04182724745488642,
+        "q10": 0.0001921015815506708,
+        "q90": 0.5991873683713305
+      },
+      "signal_thresholds_strict_greater_than": {
+        "0.5": {
+          "count": 9,
+          "fraction": 0.140625
+        },
+        "0.9": {
+          "count": 1,
+          "fraction": 0.015625
+        },
+        "0.997": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "top1_class_counts": {
+        "109": 1,
+        "136": 13,
+        "137": 50
+      }
+    },
+    "model_top1_agreement_fraction": 0.9375,
+    "released_model_count": 3,
+    "ttbar_diagnostics": {
+      "mean_qcd_probability": 0.16874271216549314,
+      "mean_signal_probability": 0.1740699879360582,
+      "mean_ttbar_probability": 0.657187305293822,
+      "qcd_probability_quantiles": {
+        "median": 0.039544654389222465,
+        "q10": 1.5924455510685222e-06,
+        "q90": 0.620297342538834
+      },
+      "signal_false_positive_thresholds": {
+        "0.5": {
+          "count": 9,
+          "fraction": 0.140625
+        },
+        "0.9": {
+          "count": 1,
+          "fraction": 0.015625
+        },
+        "0.997": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "signal_probability_quantiles": {
+        "median": 0.04182724745488642,
+        "q10": 0.0001921015815506708,
+        "q90": 0.5991873683713305
+      },
+      "top1": {
+        "qcd_count": 13,
+        "qcd_fraction": 0.203125,
+        "signal_grid_count": 1,
+        "signal_grid_fraction": 0.015625,
+        "ttbar_count": 50,
+        "ttbar_fraction": 0.78125
+      },
+      "ttbar_probability_quantiles": {
+        "median": 0.8107165992259979,
+        "q10": 0.08124029909571012,
+        "q90": 0.9997851053873698
+      },
+      "ttbar_probability_thresholds": {
+        "0.5": {
+          "count": 46,
+          "fraction": 0.71875
+        },
+        "0.9": {
+          "count": 26,
+          "fraction": 0.40625
+        },
+        "0.997": {
+          "count": 12,
+          "fraction": 0.1875
+        }
+      }
+    }
+  },
+  "memory": {
+    "max_rss_kib_after_preprocessing": 72664,
+    "max_rss_kib_final": 2865096,
+    "models_loaded_concurrently": 1
+  },
+  "models": [
+    {
+      "interface": {
+        "inputs": [
+          {
+            "name": "pf_features",
+            "shape": [
+              "N",
+              19,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          },
+          {
+            "name": "pf_vectors",
+            "shape": [
+              "N",
+              4,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          },
+          {
+            "name": "pf_mask",
+            "shape": [
+              "N",
+              1,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          }
+        ],
+        "model_index": 0,
+        "output": {
+          "name": "softmax",
+          "shape": [
+            "N",
+            138
+          ],
+          "type": "tensor(float)"
+        }
+      },
+      "max_rss_kib_after_run": 2799292,
+      "model_index": 0,
+      "path": "/tmp/iturkmen_track_b_sophon_runtime_f647854_v1/jetfree-hh4b/delphes/models/HH4b/model0.onnx",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "score_summary": {
+        "mean_qcd_probability": 0.16625241864631812,
+        "mean_signal_probability": 0.17412110257311897,
+        "mean_ttbar_probability": 0.6596264756408345,
+        "n_events": 64,
+        "signal_probability_quantiles": {
+          "median": 0.037292349243330136,
+          "q10": 8.132374128174003e-05,
+          "q90": 0.6197280542008006
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 9,
+            "fraction": 0.140625
+          },
+          "0.9": {
+            "count": 2,
+            "fraction": 0.03125
+          },
+          "0.997": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        },
+        "top1_class_counts": {
+          "109": 1,
+          "136": 12,
+          "137": 51
+        }
+      },
+      "sha256": "7b7de7ba1bfbbf00117b251661320afabe166c74c8687e3673d97590a3745786",
+      "size_bytes": 35810954
+    },
+    {
+      "interface": {
+        "inputs": [
+          {
+            "name": "pf_features",
+            "shape": [
+              "N",
+              19,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          },
+          {
+            "name": "pf_vectors",
+            "shape": [
+              "N",
+              4,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          },
+          {
+            "name": "pf_mask",
+            "shape": [
+              "N",
+              1,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          }
+        ],
+        "model_index": 1,
+        "output": {
+          "name": "softmax",
+          "shape": [
+            "N",
+            138
+          ],
+          "type": "tensor(float)"
+        }
+      },
+      "max_rss_kib_after_run": 2832332,
+      "model_index": 1,
+      "path": "/tmp/iturkmen_track_b_sophon_runtime_f647854_v1/jetfree-hh4b/delphes/models/HH4b/model1.onnx",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "score_summary": {
+        "mean_qcd_probability": 0.16460739887582826,
+        "mean_signal_probability": 0.17967416668644773,
+        "mean_ttbar_probability": 0.6557184577941371,
+        "n_events": 64,
+        "signal_probability_quantiles": {
+          "median": 0.03762233896224032,
+          "q10": 0.00012775967690342732,
+          "q90": 0.6304359653049005
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 10,
+            "fraction": 0.15625
+          },
+          "0.9": {
+            "count": 2,
+            "fraction": 0.03125
+          },
+          "0.997": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        },
+        "top1_class_counts": {
+          "109": 1,
+          "136": 14,
+          "137": 48,
+          "57": 1
+        }
+      },
+      "sha256": "5514875d359fd4d6516e3367eb3264e6b4fea21f82755fc45851d06f788d429f",
+      "size_bytes": 35810954
+    },
+    {
+      "interface": {
+        "inputs": [
+          {
+            "name": "pf_features",
+            "shape": [
+              "N",
+              19,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          },
+          {
+            "name": "pf_vectors",
+            "shape": [
+              "N",
+              4,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          },
+          {
+            "name": "pf_mask",
+            "shape": [
+              "N",
+              1,
+              "n_pf"
+            ],
+            "type": "tensor(float)"
+          }
+        ],
+        "model_index": 2,
+        "output": {
+          "name": "softmax",
+          "shape": [
+            "N",
+            138
+          ],
+          "type": "tensor(float)"
+        }
+      },
+      "max_rss_kib_after_run": 2865096,
+      "model_index": 2,
+      "path": "/tmp/iturkmen_track_b_sophon_runtime_f647854_v1/jetfree-hh4b/delphes/models/HH4b/model2.onnx",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "score_summary": {
+        "mean_qcd_probability": 0.17536831897433305,
+        "mean_signal_probability": 0.1684146945486079,
+        "mean_ttbar_probability": 0.6562169824464945,
+        "n_events": 64,
+        "signal_probability_quantiles": {
+          "median": 0.04030651493712867,
+          "q10": 0.0002947346969867912,
+          "q90": 0.570493830262126
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 9,
+            "fraction": 0.140625
+          },
+          "0.9": {
+            "count": 1,
+            "fraction": 0.015625
+          },
+          "0.997": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        },
+        "top1_class_counts": {
+          "109": 1,
+          "136": 13,
+          "137": 50
+        }
+      },
+      "sha256": "2d02df9702bfa13f8c20b467087121abab2556fa654e12084b73cee968f3566e",
+      "size_bytes": 35810954
+    }
+  ],
+  "operations": {
+    "models_run_sequentially": true,
+    "network_accessed": false,
+    "original_1p5gb_source_opened": false,
+    "persistent_storage_written": false,
+    "real_event_preprocessing_run": true,
+    "real_onnx_inference_run": true,
+    "repository_modified": false,
+    "small_skim_opened_read_only": true,
+    "temporary_events_tree_written": true,
+    "temporary_score_archive_written": true,
+    "three_model_ensemble_computed": true
+  },
+  "outputs": {
+    "events_tree": {
+      "branches": 140,
+      "build_path": "/tmp/iturkmen_track_b_ttbar_64_inference_build_nOhRjH/ttbar_64_ensemble_events.root",
+      "entries": 64,
+      "sha256": "af2d9e35926a70ec1c192f8b54b32e2a69f539c9ee65deee05d56df999bb92c1",
+      "size_bytes": 139577,
+      "stable_path": "/tmp/iturkmen_track_b_ttbar_64_inference_20260804_v1/ttbar_64_ensemble_events.root"
+    },
+    "inference_receipt": {
+      "build_path": "/tmp/iturkmen_track_b_ttbar_64_inference_build_nOhRjH/ttbar_64_real_inference_receipt.json",
+      "stable_path": "/tmp/iturkmen_track_b_ttbar_64_inference_20260804_v1/ttbar_64_real_inference_receipt.json"
+    },
+    "score_archive": {
+      "arrays": [
+        "selected_skim_entries",
+        "selected_source_entries",
+        "model0_scores",
+        "model1_scores",
+        "model2_scores",
+        "ensemble_scores"
+      ],
+      "build_path": "/tmp/iturkmen_track_b_ttbar_64_inference_build_nOhRjH/ttbar_64_model_scores.npz",
+      "sha256": "07fc8683dc1d336f359b14e2ade6a95d12a41b4d839366d076703c9d9dc3586b",
+      "size_bytes": 135410,
+      "stable_path": "/tmp/iturkmen_track_b_ttbar_64_inference_20260804_v1/ttbar_64_model_scores.npz"
+    }
+  },
+  "repository": {
+    "backend_sha256": "91df61ffb13cab62fbd3755ed1dd55db535ed5f8cfa960322f1d0096a4067bd8",
+    "head": "21c3b6ba4d33afa9059d189ad14b4f47fea308f6"
+  },
+  "runtime": {
+    "available_providers": [
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "cpu_memory_arena_enabled": false,
+    "inter_op_threads": 1,
+    "intra_op_threads": 1,
+    "memory_pattern_enabled": false,
+    "onnxruntime": "1.19.2",
+    "platform": "Linux-5.14.0-687.25.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "python": "3.9.25",
+    "python_executable": "/tmp/iturkmen_track_b_sophon_runtime_f647854_v1/venv/bin/python",
+    "selected_provider": "CPUExecutionProvider",
+    "session_execution_mode": "ORT_SEQUENTIAL"
+  },
+  "schema_version": 1,
+  "selection_and_preprocessing": {
+    "eligible_entries": 64,
+    "input_dtype": "float32",
+    "input_shapes": {
+      "pf_features": [
+        64,
+        19,
+        256
+      ],
+      "pf_mask": [
+        64,
+        1,
+        256
+      ],
+      "pf_vectors": [
+        64,
+        4,
+        256
+      ]
+    },
+    "particle_count": {
+      "maximum": 237,
+      "median": 139.5,
+      "minimum": 77
+    },
+    "process_index_counts": {
+      "-1": 64
+    },
+    "requested_events": 64,
+    "selected_entries": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "selected_event_count": 64,
+    "selected_skim_entries": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "selected_source_entries": [
+      0,
+      3244,
+      6292,
+      9488,
+      12643,
+      15867,
+      19136,
+      22400,
+      25621,
+      28784,
+      31969,
+      35036,
+      38249,
+      41436,
+      44594,
+      47723,
+      50902,
+      54087,
+      57232,
+      60429,
+      63672,
+      66821,
+      70072,
+      73253,
+      76396,
+      79547,
+      82700,
+      85965,
+      89151,
+      92272,
+      95420,
+      98567,
+      101703,
+      104897,
+      108067,
+      111199,
+      114326,
+      117493,
+      120698,
+      123841,
+      126956,
+      130054,
+      133254,
+      136440,
+      139633,
+      142877,
+      146020,
+      149205,
+      152300,
+      155481,
+      158740,
+      161979,
+      165210,
+      168431,
+      171572,
+      174781,
+      177931,
+      181013,
+      184191,
+      187338,
+      190401,
+      193668,
+      196887,
+      199999
+    ],
+    "total_entries": 64,
+    "tree": {
+      "entries": 64,
+      "required_branch_count": 21,
+      "tree_class": "TTree",
+      "tree_name": "tree"
+    },
+    "truncated_event_count": 0,
+    "truncated_event_fraction": 0.0,
+    "used_particle_count": {
+      "maximum": 237,
+      "median": 139.5,
+      "minimum": 77
+    }
+  },
+  "skim": {
+    "entries": 64,
+    "path": "/tmp/iturkmen_track_b_ttbar_64_source_skim_20260804_v1/ttbar_64_source_skim.root",
+    "receipt_path": "/tmp/iturkmen_track_b_ttbar_64_source_skim_20260804_v1/ttbar_64_source_skim_receipt.json",
+    "receipt_sha256": "fd2dff8a7eb26dfaefcfcd04fec288fbe12fb8942c1b095321f2bc85349c9370",
+    "sha256": "ee58fd5fb9c3acd163d898c7e660e76568e844f88a9d27f47885877ba6d9bc9a",
+    "size_bytes": 369928
+  },
+  "source": {
+    "original_eligible_entries": 89948,
+    "original_path": "/tmp/iturkmen_track_b_ttbar_input_20260804_v1/ttbar_forinfer2_selected_ntuples_0000.root",
+    "original_sha256": "5d03b5078c35bb8ef555eed03bad7cbcfb73f1d7a82ec8fbf41792ce3949d172",
+    "original_size_bytes": 1584222050,
+    "original_tree_entries": 200000,
+    "selected_source_entries": [
+      0,
+      3244,
+      6292,
+      9488,
+      12643,
+      15867,
+      19136,
+      22400,
+      25621,
+      28784,
+      31969,
+      35036,
+      38249,
+      41436,
+      44594,
+      47723,
+      50902,
+      54087,
+      57232,
+      60429,
+      63672,
+      66821,
+      70072,
+      73253,
+      76396,
+      79547,
+      82700,
+      85965,
+      89151,
+      92272,
+      95420,
+      98567,
+      101703,
+      104897,
+      108067,
+      111199,
+      114326,
+      117493,
+      120698,
+      123841,
+      126956,
+      130054,
+      133254,
+      136440,
+      139633,
+      142877,
+      146020,
+      149205,
+      152300,
+      155481,
+      158740,
+      161979,
+      165210,
+      168431,
+      171572,
+      174781,
+      177931,
+      181013,
+      184191,
+      187338,
+      190401,
+      193668,
+      196887,
+      199999
+    ]
+  },
+  "status": "real_ttbar_control_inference_validated_memory_bounded",
+  "validation": {
+    "all_model_scores_finite": true,
+    "all_model_scores_normalized": true,
+    "all_skim_entries_eligible": true,
+    "ensemble_scores_finite": true,
+    "ensemble_scores_normalized": true,
+    "events_tree_roundtrip_matches": true,
+    "official_events_tree_has_140_branches": true,
+    "particle_truncation_count_is_zero": true,
+    "score_archive_roundtrip_matches": true,
+    "selected_skim_entries_are_zero_through_63": true,
+    "skim_has_64_entries": true,
+    "skim_sha256_matches_step33c": true,
+    "source_mapping_has_64_entries": true,
+    "source_mapping_strictly_increasing": true,
+    "source_process_index_is_minus_one_for_all_events": true
+  }
+}

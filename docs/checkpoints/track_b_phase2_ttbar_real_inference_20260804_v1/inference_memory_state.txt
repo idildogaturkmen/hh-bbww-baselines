@@ -1,0 +1,58 @@
+DATE_UTC=2026-08-04T19:41:31Z
+HOSTNAME=cmslpc312.fnal.gov
+PID=3578318
+CGROUP_DIR=/sys/fs/cgroup/user.slice/user-17821.slice/session-1199.scope
+INITIAL_OOM_KILL=1
+
+===== INITIAL memory.current =====
+4615401472
+
+===== INITIAL memory.peak =====
+7688445952
+
+===== INITIAL memory.max =====
+max
+
+===== INITIAL memory.events =====
+low 0
+high 0
+max 0
+oom 0
+oom_kill 1
+oom_group_kill 0
+
+===== INITIAL memory.events.local =====
+low 0
+high 0
+max 0
+oom 0
+oom_kill 1
+oom_group_kill 0
+
+FINAL_DATE_UTC=2026-08-04T19:42:08Z
+FINAL_OOM_KILL=1
+
+===== FINAL memory.current =====
+3710517248
+
+===== FINAL memory.peak =====
+7688445952
+
+===== FINAL memory.max =====
+max
+
+===== FINAL memory.events =====
+low 0
+high 0
+max 0
+oom 0
+oom_kill 1
+oom_group_kill 0
+
+===== FINAL memory.events.local =====
+low 0
+high 0
+max 0
+oom 0
+oom_kill 1
+oom_group_kill 0
