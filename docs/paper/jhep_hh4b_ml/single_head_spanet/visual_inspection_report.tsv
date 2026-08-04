@@ -1,0 +1,13 @@
+asset	status	inspection_basis	clipping	missing_glyphs	legend_overlap	scales	source_consistency	notes
+fig_c7x_01_weighted_roc	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	ROC central curves and paired 68 percent bands are legible in PNG and vector-PDF raster.
+fig_c7x_02_unweighted_roc	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	ROC central curves and paired 68 percent bands are legible in PNG and vector-PDF raster.
+fig_c7x_03_efficiency_rejection	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Rejection curves and paired 68 percent bands are visible without clipping.
+fig_c7x_04_weighted_auc	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Asymmetric bootstrap bars and nominal full-OOF crosses are visible and the legend is clear.
+fig_c7x_05_sensitivity	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Nominal and systematics-aware panels have separated headers and visible asymmetric bars.
+fig_c7x_06_sb_neff	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	S-over-B and effective-background panels have visible asymmetric bars and separated labels.
+fig_c7x_07_background_absolute	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Linear axis starts at zero, million-yield units are explicit, stack and total asymmetric bars are visible.
+fig_c7x_08_background_fraction	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Fractional composition uses a zero-to-one axis with visible asymmetric bars.
+fig_c7x_09_pairing_accuracy	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Both pairing methods and their asymmetric complete-source-member bars are legible.
+fig_c7x_10_pairing_binned	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	All four binned panels have separated labels, legible legends, and asymmetric bars.
+fig_c7x_11_mass_resolution	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Both methods and their asymmetric mass-resolution bars are legible.
+fig_c7x_12_selection_stability	full_review_pass	full_1000_replica_png_and_pdf_raster	none	none	none	pass	pass	Threshold and inner-versus-outer stability panels are separated and fully legible.

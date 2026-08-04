@@ -1,0 +1,3 @@
+model	replicas	valid_systematics_replicas	invalid_systematics_replicas	valid_fraction	zero_direct_support_fraction	failure_reason_counts_json
+bdt	1000	865	135	0.865	0.0	"{""fewer than 3 direct-QCD source groups"":135}"
+single_head	1000	1000	0	1.0	0.0	{}

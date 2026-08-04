@@ -146,6 +146,7 @@ def evaluate_frozen_baselines(
     nominal_factor = float(nominal_row["transfer_factor"])
     factor_stat = float(nominal_row["transfer_factor_relative_statistical_uncertainty"])
     factor_values = inclusive["transfer_factor"].astype(float).to_numpy()
+    selection_masks = inputs.get("selection_masks", {})
 
     replica_rows: list[dict[str, Any]] = []
     nominal_rows: list[dict[str, Any]] = []
@@ -153,15 +154,25 @@ def evaluate_frozen_baselines(
     for model in model_order:
         train_score = training_scores[f"{model}_score"].to_numpy(dtype=np.float64)
         projection_score = projection_scores[f"{model}_score"].to_numpy(dtype=np.float64)
-        if model == "cut":
+        if model in selection_masks:
+            frozen = selection_masks[model]
+            selection = np.asarray(frozen["training"], dtype=bool)
+            projection_selection = np.asarray(frozen["projection"], dtype=bool)
+            direct_selection = np.asarray(frozen.get("direct", selection), dtype=bool)
+            require(selection.shape == (len(training),), f"{model} training selection shape drift")
+            require(projection_selection.shape == (len(projection),), f"{model} projection selection shape drift")
+            require(direct_selection.shape == (len(direct),), f"{model} direct selection shape drift")
+            threshold = str(frozen["threshold"])
+        elif model == "cut":
             selection = training["r_hh_125_120"].to_numpy(dtype=np.float64) < 34.0
             projection_selection = projection["r_hh_125_120"].to_numpy(dtype=np.float64) < 34.0
             threshold: float | str = r"R_HH(125,120) < 34 GeV"
+            direct_selection = selection
         else:
             threshold = float(metrics.loc[model, "operating_threshold"])
             selection = train_score >= threshold
             projection_selection = projection_score >= threshold
-        direct_selection = selection
+            direct_selection = selection
 
         train_signal_total = group_sum(development_weight, signal_train, train_pos, n_members)
         train_background_total = group_sum(development_weight, ~signal_train, train_pos, n_members)
