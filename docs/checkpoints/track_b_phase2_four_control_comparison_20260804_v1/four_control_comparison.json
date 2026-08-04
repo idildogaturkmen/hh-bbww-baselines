@@ -1,0 +1,396 @@
+{
+  "contract": {
+    "events_per_sample": 64,
+    "interpretation": "qualitative released-model control-canary comparison; not a cross-section-weighted performance measurement",
+    "models_rerun": false,
+    "qcd_class": 136,
+    "samples": [
+      "zh",
+      "zz",
+      "qcd",
+      "ttbar"
+    ],
+    "score_classes": 138,
+    "signal_class_count": 136,
+    "ttbar_class": 137,
+    "weighted": false
+  },
+  "controls": [
+    {
+      "control_role": "ZH resonant signal-like control",
+      "display_name": "ZH",
+      "events": 64,
+      "mean_probabilities": {
+        "qcd": 0.15964379027815845,
+        "signal": 0.7492179485104496,
+        "ttbar": 0.09113825794225949
+      },
+      "median_probabilities": {
+        "qcd": 0.01211791718378663,
+        "signal": 0.9524200657799184,
+        "ttbar": 0.0005669566453434527
+      },
+      "model_top1_agreement_fraction": 0.703125,
+      "probability_quantiles": {
+        "qcd": {
+          "median": 0.01211791718378663,
+          "q10": 0.0004145587503444404,
+          "q25": 0.0016774618125054985,
+          "q75": 0.13419979810714722,
+          "q90": 0.6066870212554932
+        },
+        "signal": {
+          "median": 0.9524200657799184,
+          "q10": 0.03709351192918575,
+          "q25": 0.6518466497843747,
+          "q75": 0.9957288249529732,
+          "q90": 0.9995141748714998
+        },
+        "ttbar": {
+          "median": 0.0005669566453434527,
+          "q10": 9.091722949960969e-06,
+          "q25": 6.32002793281572e-05,
+          "q75": 0.008932237280532718,
+          "q90": 0.36082291305065195
+        }
+      },
+      "sample": "zh",
+      "score_archive": {
+        "path": "/tmp/iturkmen_track_b_zh_real_inference_eH7wst/zh_64_model_scores.npz",
+        "sha256": "d64aee9ce72d7d5cff1965914cddcad83db6dd5eabae68c0485b9151d305a595",
+        "size_bytes": 133886
+      },
+      "signal_probability_threshold_counts": {
+        "0.5": 50,
+        "0.9": 38,
+        "0.997": 15
+      },
+      "target_mean_probability": 0.7492179485104496,
+      "target_median_probability": 0.9524200657799184,
+      "target_output_group": "signal_grid",
+      "target_probability_key": "signal",
+      "target_probability_threshold_counts": {
+        "0.5": 50,
+        "0.9": 38,
+        "0.997": 15
+      },
+      "target_top1_count": 34,
+      "target_top1_fraction": 0.53125,
+      "top1_group_counts": {
+        "qcd": 22,
+        "signal_grid": 34,
+        "ttbar": 8
+      },
+      "top1_group_fractions": {
+        "qcd": 0.34375,
+        "signal_grid": 0.53125,
+        "ttbar": 0.125
+      }
+    },
+    {
+      "control_role": "ZZ resonant signal-like control",
+      "display_name": "ZZ",
+      "events": 64,
+      "mean_probabilities": {
+        "qcd": 0.39063048683050905,
+        "signal": 0.5334414762827849,
+        "ttbar": 0.07592803644527901
+      },
+      "median_probabilities": {
+        "qcd": 0.2775128334760666,
+        "signal": 0.5765341073310992,
+        "ttbar": 0.0010793536494020373
+      },
+      "model_top1_agreement_fraction": 0.734375,
+      "probability_quantiles": {
+        "qcd": {
+          "median": 0.2775128334760666,
+          "q10": 0.0017073833150789144,
+          "q25": 0.02157124411314726,
+          "q75": 0.7996446788311005,
+          "q90": 0.9788200795650482
+        },
+        "signal": {
+          "median": 0.5765341073310992,
+          "q10": 0.0021759556962265975,
+          "q25": 0.0680999613233837,
+          "q75": 0.9567748726506693,
+          "q90": 0.9970232240960172
+        },
+        "ttbar": {
+          "median": 0.0010793536494020373,
+          "q10": 3.755152829398867e-05,
+          "q25": 0.00013048194159637205,
+          "q75": 0.011132917366921902,
+          "q90": 0.11511245816946042
+        }
+      },
+      "sample": "zz",
+      "score_archive": {
+        "path": "/tmp/iturkmen_track_b_zz_64_inference_20260804_v1/zz_64_model_scores.npz",
+        "sha256": "a600bfdc6d2ebd7f58ac58d7f5cc014caa5ede85fa636f549d6f2699af17c88d",
+        "size_bytes": 134609
+      },
+      "signal_probability_threshold_counts": {
+        "0.5": 34,
+        "0.9": 24,
+        "0.997": 7
+      },
+      "target_mean_probability": 0.5334414762827849,
+      "target_median_probability": 0.5765341073310992,
+      "target_output_group": "signal_grid",
+      "target_probability_key": "signal",
+      "target_probability_threshold_counts": {
+        "0.5": 34,
+        "0.9": 24,
+        "0.997": 7
+      },
+      "target_top1_count": 20,
+      "target_top1_fraction": 0.3125,
+      "top1_group_counts": {
+        "qcd": 38,
+        "signal_grid": 20,
+        "ttbar": 6
+      },
+      "top1_group_fractions": {
+        "qcd": 0.59375,
+        "signal_grid": 0.3125,
+        "ttbar": 0.09375
+      }
+    },
+    {
+      "control_role": "QCD background control",
+      "display_name": "QCD",
+      "events": 64,
+      "mean_probabilities": {
+        "qcd": 0.8885440368903801,
+        "signal": 0.08949530907174058,
+        "ttbar": 0.021960646178420973
+      },
+      "median_probabilities": {
+        "qcd": 0.9830515384674072,
+        "signal": 0.01675335481604634,
+        "ttbar": 0.0002031140829785727
+      },
+      "model_top1_agreement_fraction": 0.96875,
+      "probability_quantiles": {
+        "qcd": {
+          "median": 0.9830515384674072,
+          "q10": 0.7015355050563812,
+          "q25": 0.9173142910003662,
+          "q75": 0.9992797821760178,
+          "q90": 0.9998033821582795
+        },
+        "signal": {
+          "median": 0.01675335481604634,
+          "q10": 0.00015754291012370916,
+          "q25": 0.0005449417644118881,
+          "q75": 0.07586714275157647,
+          "q90": 0.26663657491551623
+        },
+        "ttbar": {
+          "median": 0.0002031140829785727,
+          "q10": 5.631565500152648e-06,
+          "q25": 4.016951970697846e-05,
+          "q75": 0.003494366188533604,
+          "q90": 0.017222871072590358
+        }
+      },
+      "sample": "qcd",
+      "score_archive": {
+        "path": "/tmp/iturkmen_track_b_qcd_64_inference_20260804_v1/qcd_64_model_scores.npz",
+        "sha256": "db33458a8f46f6da71357bc55521d08350e61badc90dc79dbec95304426056e6",
+        "size_bytes": 134979
+      },
+      "signal_probability_threshold_counts": {
+        "0.5": 3,
+        "0.9": 1,
+        "0.997": 0
+      },
+      "target_mean_probability": 0.8885440368903801,
+      "target_median_probability": 0.9830515384674072,
+      "target_output_group": "qcd",
+      "target_probability_key": "qcd",
+      "target_probability_threshold_counts": {
+        "0.5": 58,
+        "0.9": 49,
+        "0.997": 22
+      },
+      "target_top1_count": 62,
+      "target_top1_fraction": 0.96875,
+      "top1_group_counts": {
+        "qcd": 62,
+        "signal_grid": 0,
+        "ttbar": 2
+      },
+      "top1_group_fractions": {
+        "qcd": 0.96875,
+        "signal_grid": 0.0,
+        "ttbar": 0.03125
+      }
+    },
+    {
+      "control_role": "inclusive ttbar background control",
+      "display_name": "Inclusive ttbar",
+      "events": 64,
+      "mean_probabilities": {
+        "qcd": 0.16874271295115656,
+        "signal": 0.17406998769329546,
+        "ttbar": 0.6571873067041452
+      },
+      "median_probabilities": {
+        "qcd": 0.03954465501010418,
+        "signal": 0.04182724740415722,
+        "ttbar": 0.8107165992259979
+      },
+      "model_top1_agreement_fraction": 0.9375,
+      "probability_quantiles": {
+        "qcd": {
+          "median": 0.03954465501010418,
+          "q10": 1.5924455624372059e-06,
+          "q25": 0.0005973356746835634,
+          "q75": 0.2278040535748005,
+          "q90": 0.6202973484992984
+        },
+        "signal": {
+          "median": 0.04182724740415722,
+          "q10": 0.0001921015824137313,
+          "q25": 0.007627936694093833,
+          "q75": 0.2394167971947354,
+          "q90": 0.5991873679532774
+        },
+        "ttbar": {
+          "median": 0.8107165992259979,
+          "q10": 0.08124030008912086,
+          "q25": 0.38661619275808334,
+          "q75": 0.9875359833240509,
+          "q90": 0.9997851192951203
+        }
+      },
+      "sample": "ttbar",
+      "score_archive": {
+        "path": "/tmp/iturkmen_track_b_ttbar_64_inference_20260804_v1/ttbar_64_model_scores.npz",
+        "sha256": "07fc8683dc1d336f359b14e2ade6a95d12a41b4d839366d076703c9d9dc3586b",
+        "size_bytes": 135410
+      },
+      "signal_probability_threshold_counts": {
+        "0.5": 9,
+        "0.9": 1,
+        "0.997": 0
+      },
+      "target_mean_probability": 0.6571873067041452,
+      "target_median_probability": 0.8107165992259979,
+      "target_output_group": "ttbar",
+      "target_probability_key": "ttbar",
+      "target_probability_threshold_counts": {
+        "0.5": 46,
+        "0.9": 26,
+        "0.997": 12
+      },
+      "target_top1_count": 50,
+      "target_top1_fraction": 0.78125,
+      "top1_group_counts": {
+        "qcd": 13,
+        "signal_grid": 1,
+        "ttbar": 50
+      },
+      "top1_group_fractions": {
+        "qcd": 0.203125,
+        "signal_grid": 0.015625,
+        "ttbar": 0.78125
+      }
+    }
+  ],
+  "input_inventory": {
+    "json_path": "/tmp/iturkmen_track_b_four_control_preflight_20260804_v1/four_control_input_inventory.json",
+    "json_sha256": "ac503233a2e414aa38ad745d50c117676b804f36ae60350a81d9d4e9d1f443bd",
+    "tsv_path": "/tmp/iturkmen_track_b_four_control_preflight_20260804_v1/four_control_input_inventory.tsv",
+    "tsv_sha256": "113441facfe152958647e2f0bdbd126f1d4b094e1a58817321eed2b05d50ba8e"
+  },
+  "limitations": [
+    "No cross-section or generator-event weighting is applied.",
+    "No independent HH sample is included.",
+    "No ROC, significance, or calibrated mistag claim is made.",
+    "The controls are deterministic canaries rather than statistically independent full samples."
+  ],
+  "next_step": "freeze and publish this combined four-control comparison, then proceed to larger spread control pilots and official ZH/ZZ resonance-shape validation",
+  "observations": [
+    "QCD has the strongest target-group top-1 concentration at 62 of 64 events.",
+    "Inclusive ttbar has dedicated-ttbar top-1 response for 50 of 64 events.",
+    "ZH and ZZ exhibit substantial cumulative signal response, but individual QCD can remain the highest single class because signal probability is distributed across 136 mass-grid classes.",
+    "The four samples contain only 64 unweighted events each, so differences are diagnostic rather than precision estimates."
+  ],
+  "outputs": {
+    "mean_probabilities_svg": "four_control_mean_probabilities.svg",
+    "probability_quantiles_tsv": "four_control_probability_quantiles.tsv",
+    "readme": "README.md",
+    "signal_probability_ecdf_svg": "four_control_signal_probability_ecdf.svg",
+    "summary_tsv": "four_control_summary.tsv",
+    "threshold_counts_tsv": "four_control_threshold_counts.tsv",
+    "top1_response_svg": "four_control_top1_response.svg",
+    "top1_response_tsv": "four_control_top1_response.tsv"
+  },
+  "phase": "Track B Phase 2",
+  "repository": {
+    "current_head": "4f9aa283aab5ba61f3f3416992be1466880c9bd6",
+    "input_inventory_head": "4f9aa283aab5ba61f3f3416992be1466880c9bd6"
+  },
+  "schema_version": 1,
+  "status": "four_control_64_event_comparison_validated",
+  "top1_response_matrix_counts": {
+    "qcd": {
+      "qcd": 62,
+      "signal_grid": 0,
+      "ttbar": 2
+    },
+    "ttbar": {
+      "qcd": 13,
+      "signal_grid": 1,
+      "ttbar": 50
+    },
+    "zh": {
+      "qcd": 22,
+      "signal_grid": 34,
+      "ttbar": 8
+    },
+    "zz": {
+      "qcd": 38,
+      "signal_grid": 20,
+      "ttbar": 6
+    }
+  },
+  "top1_response_matrix_fractions": {
+    "qcd": {
+      "qcd": 0.96875,
+      "signal_grid": 0.0,
+      "ttbar": 0.03125
+    },
+    "ttbar": {
+      "qcd": 0.203125,
+      "signal_grid": 0.015625,
+      "ttbar": 0.78125
+    },
+    "zh": {
+      "qcd": 0.34375,
+      "signal_grid": 0.53125,
+      "ttbar": 0.125
+    },
+    "zz": {
+      "qcd": 0.59375,
+      "signal_grid": 0.3125,
+      "ttbar": 0.09375
+    }
+  },
+  "validation": {
+    "all_ensemble_matrices_are_64_by_138": true,
+    "all_ensemble_rows_are_finite_and_normalized": true,
+    "all_svg_files_parse_as_xml": true,
+    "four_score_archives_hash_and_size_match": true,
+    "input_inventory_hashes_match": true,
+    "no_model_or_inference_execution": true,
+    "recomputed_means_match_inventory": true,
+    "recomputed_medians_match_inventory": true,
+    "recomputed_signal_thresholds_match_inventory": true,
+    "recomputed_top1_groups_match_inventory": true
+  }
+}

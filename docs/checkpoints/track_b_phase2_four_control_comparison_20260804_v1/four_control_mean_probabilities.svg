@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490.0" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold">Mean SophonHH output-group probabilities</text>
+<text x="490.0" y="60" text-anchor="middle" font-family="sans-serif" font-size="13">Unweighted 64-event control canaries; each bar sums to one</text>
+<line x1="140" y1="465.00" x2="935" y2="465.00" stroke="#dddddd" stroke-width="1"/>
+<text x="128" y="469.00" text-anchor="end" font-family="sans-serif" font-size="12">0.0</text>
+<line x1="140" y1="393.00" x2="935" y2="393.00" stroke="#dddddd" stroke-width="1"/>
+<text x="128" y="397.00" text-anchor="end" font-family="sans-serif" font-size="12">0.2</text>
+<line x1="140" y1="321.00" x2="935" y2="321.00" stroke="#dddddd" stroke-width="1"/>
+<text x="128" y="325.00" text-anchor="end" font-family="sans-serif" font-size="12">0.4</text>
+<line x1="140" y1="249.00" x2="935" y2="249.00" stroke="#dddddd" stroke-width="1"/>
+<text x="128" y="253.00" text-anchor="end" font-family="sans-serif" font-size="12">0.6</text>
+<line x1="140" y1="177.00" x2="935" y2="177.00" stroke="#dddddd" stroke-width="1"/>
+<text x="128" y="181.00" text-anchor="end" font-family="sans-serif" font-size="12">0.8</text>
+<line x1="140" y1="105.00" x2="935" y2="105.00" stroke="#dddddd" stroke-width="1"/>
+<text x="128" y="109.00" text-anchor="end" font-family="sans-serif" font-size="12">1.0</text>
+<line x1="140" y1="105" x2="140" y2="465" stroke="black" stroke-width="1.2"/>
+<line x1="140" y1="465" x2="935" y2="465" stroke="black" stroke-width="1.2"/>
+<text x="28" y="285.0" transform="rotate(-90 28 285.0)" text-anchor="middle" font-family="sans-serif" font-size="14">Mean probability</text>
+<rect x="207.00" y="195.28" width="115" height="269.72" fill="#4c78a8" stroke="white" stroke-width="1"/>
+<text x="264.50" y="334.14" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.749</text>
+<rect x="207.00" y="137.81" width="115" height="57.47" fill="#f58518" stroke="white" stroke-width="1"/>
+<text x="264.50" y="170.55" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.160</text>
+<rect x="207.00" y="105.00" width="115" height="32.81" fill="#54a24b" stroke="white" stroke-width="1"/>
+<text x="264.50" y="125.40" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.091</text>
+<text x="264.50" y="490" text-anchor="middle" font-family="sans-serif" font-size="13">ZH</text>
+<text x="264.50" y="510" text-anchor="middle" font-family="sans-serif" font-size="11">n=64</text>
+<rect x="389.00" y="272.96" width="115" height="192.04" fill="#4c78a8" stroke="white" stroke-width="1"/>
+<text x="446.50" y="372.98" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.533</text>
+<rect x="389.00" y="132.33" width="115" height="140.63" fill="#f58518" stroke="white" stroke-width="1"/>
+<text x="446.50" y="206.65" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.391</text>
+<rect x="389.00" y="105.00" width="115" height="27.33" fill="#54a24b" stroke="white" stroke-width="1"/>
+<text x="446.50" y="122.67" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.076</text>
+<text x="446.50" y="490" text-anchor="middle" font-family="sans-serif" font-size="13">ZZ</text>
+<text x="446.50" y="510" text-anchor="middle" font-family="sans-serif" font-size="11">n=64</text>
+<rect x="571.00" y="432.78" width="115" height="32.22" fill="#4c78a8" stroke="white" stroke-width="1"/>
+<text x="628.50" y="452.89" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.089</text>
+<rect x="571.00" y="112.91" width="115" height="319.88" fill="#f58518" stroke="white" stroke-width="1"/>
+<text x="628.50" y="276.84" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.889</text>
+<rect x="571.00" y="105.00" width="115" height="7.91" fill="#54a24b" stroke="white" stroke-width="1"/>
+<text x="628.50" y="490" text-anchor="middle" font-family="sans-serif" font-size="13">QCD</text>
+<text x="628.50" y="510" text-anchor="middle" font-family="sans-serif" font-size="11">n=64</text>
+<rect x="753.00" y="402.33" width="115" height="62.67" fill="#4c78a8" stroke="white" stroke-width="1"/>
+<text x="810.50" y="437.67" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.174</text>
+<rect x="753.00" y="341.59" width="115" height="60.75" fill="#f58518" stroke="white" stroke-width="1"/>
+<text x="810.50" y="375.96" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.169</text>
+<rect x="753.00" y="105.00" width="115" height="236.59" fill="#54a24b" stroke="white" stroke-width="1"/>
+<text x="810.50" y="227.29" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">0.657</text>
+<text x="810.50" y="490" text-anchor="middle" font-family="sans-serif" font-size="13">Inclusive ttbar</text>
+<text x="810.50" y="510" text-anchor="middle" font-family="sans-serif" font-size="11">n=64</text>
+<rect x="150" y="520" width="16" height="12" fill="#4c78a8"/>
+<text x="172" y="530" font-family="sans-serif" font-size="12">Signal sum</text>
+<rect x="330" y="520" width="16" height="12" fill="#f58518"/>
+<text x="352" y="530" font-family="sans-serif" font-size="12">QCD</text>
+<rect x="510" y="520" width="16" height="12" fill="#54a24b"/>
+<text x="532" y="530" font-family="sans-serif" font-size="12">ttbar</text>
+</svg>

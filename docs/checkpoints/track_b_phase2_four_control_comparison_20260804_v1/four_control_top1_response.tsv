@@ -1,0 +1,13 @@
+sample	display_name	output_group	count	fraction
+zh	ZH	signal_grid	34	0.53125
+zh	ZH	qcd	22	0.34375
+zh	ZH	ttbar	8	0.125
+zz	ZZ	signal_grid	20	0.3125
+zz	ZZ	qcd	38	0.59375
+zz	ZZ	ttbar	6	0.09375
+qcd	QCD	signal_grid	0	0
+qcd	QCD	qcd	62	0.96875
+qcd	QCD	ttbar	2	0.03125
+ttbar	Inclusive ttbar	signal_grid	1	0.015625
+ttbar	Inclusive ttbar	qcd	13	0.203125
+ttbar	Inclusive ttbar	ttbar	50	0.78125

@@ -1,0 +1,309 @@
+{
+  "common_contract": {
+    "events_per_sample": 64,
+    "execution_backend_sha256": "91df61ffb13cab62fbd3755ed1dd55db535ed5f8cfa960322f1d0096a4067bd8",
+    "interpretation": "control-canary comparison only; not a cross-section-weighted performance result",
+    "qcd_class": 136,
+    "released_model_count": 3,
+    "released_model_sha256": [
+      "7b7de7ba1bfbbf00117b251661320afabe166c74c8687e3673d97590a3745786",
+      "5514875d359fd4d6516e3367eb3264e6b4fea21f82755fc45851d06f788d429f",
+      "2d02df9702bfa13f8c20b467087121abab2556fa654e12084b73cee968f3566e"
+    ],
+    "samples": [
+      "zh",
+      "zz",
+      "qcd",
+      "ttbar"
+    ],
+    "score_classes": 138,
+    "signal_class_count": 136,
+    "ttbar_class": 137,
+    "weighted": false
+  },
+  "controls": [
+    {
+      "control_role": "ZH resonant signal-like control",
+      "events": 64,
+      "manifest": {
+        "archive_artifact_type": "score_archive",
+        "archive_path_field": "original_path",
+        "path": "docs/checkpoints/track_b_phase2_zh_real_inference_20260801_v1/artifact_manifest.tsv",
+        "recorded_archive_path": "/tmp/iturkmen_track_b_zh_real_inference_eH7wst/zh_64_model_scores.npz",
+        "sha256": "45ef6cfbea84269223a61ce1fcf6989d84728aec0110bc447c3b381a92fd8239"
+      },
+      "mean_probabilities": {
+        "qcd": 0.15964379027815845,
+        "signal": 0.7492179485104496,
+        "ttbar": 0.09113825794225949
+      },
+      "median_probabilities": {
+        "qcd": 0.01211791718378663,
+        "signal": 0.9524200657799184,
+        "ttbar": 0.0005669566453434527
+      },
+      "model_top1_agreement_fraction": 0.703125,
+      "receipt": {
+        "backend_sha256": "91df61ffb13cab62fbd3755ed1dd55db535ed5f8cfa960322f1d0096a4067bd8",
+        "execution_commit": "9a666d62fab9dd4dee4f1d18edb59bcf3bf967b6",
+        "execution_commit_is_ancestor": true,
+        "path": "docs/checkpoints/track_b_phase2_zh_real_inference_20260801_v1/zh_64_real_inference_receipt.json",
+        "schema_adapter": "zh_wrapped_execution_backend",
+        "sha256": "573ebc21384da52186b9a53378cc6567313a48c7c27ad90e42a9fd4385056f3a",
+        "status": "real_zh_control_inference_validated"
+      },
+      "sample": "zh",
+      "score_archive": {
+        "arrays": [
+          "ensemble_scores",
+          "model0_scores",
+          "model1_scores",
+          "model2_scores",
+          "selected_entries"
+        ],
+        "checked_path_count": 1,
+        "mapping_array": "selected_entries",
+        "resolution": "manifest_path",
+        "resolved_path": "/tmp/iturkmen_track_b_zh_real_inference_eH7wst/zh_64_model_scores.npz",
+        "sha256": "d64aee9ce72d7d5cff1965914cddcad83db6dd5eabae68c0485b9151d305a595",
+        "size_bytes": 133886
+      },
+      "signal_probability_threshold_counts": {
+        "0.5": 50,
+        "0.9": 38,
+        "0.997": 15
+      },
+      "source_entry_span": {
+        "first": 13,
+        "last": 51273
+      },
+      "target_output_group": "signal_grid",
+      "target_top1_count": 34,
+      "target_top1_fraction": 0.53125,
+      "top1_group_counts": {
+        "qcd": 22,
+        "signal_grid": 34,
+        "ttbar": 8
+      }
+    },
+    {
+      "control_role": "ZZ resonant signal-like control",
+      "events": 64,
+      "manifest": {
+        "archive_artifact_type": "model_score_archive",
+        "archive_path_field": "stable_path",
+        "path": "docs/checkpoints/track_b_phase2_zz_real_inference_20260804_v1/artifact_manifest.tsv",
+        "recorded_archive_path": "/tmp/iturkmen_track_b_zz_64_inference_20260804_v1/zz_64_model_scores.npz",
+        "sha256": "1b5e16c1e7b703489e06b123d37edd4c13ee99f5cd3e0621ad7f4708a2bd3076"
+      },
+      "mean_probabilities": {
+        "qcd": 0.39063048683050905,
+        "signal": 0.5334414762827849,
+        "ttbar": 0.07592803644527901
+      },
+      "median_probabilities": {
+        "qcd": 0.2775128334760666,
+        "signal": 0.5765341073310992,
+        "ttbar": 0.0010793536494020373
+      },
+      "model_top1_agreement_fraction": 0.734375,
+      "receipt": {
+        "backend_sha256": "91df61ffb13cab62fbd3755ed1dd55db535ed5f8cfa960322f1d0096a4067bd8",
+        "execution_commit": "ab3e5604bc922569d151c7c718b3c0376b5452cc",
+        "execution_commit_is_ancestor": true,
+        "path": "docs/checkpoints/track_b_phase2_zz_real_inference_20260804_v1/zz_64_real_inference_receipt.json",
+        "schema_adapter": "standard",
+        "sha256": "5aecb8a1837a7e4eef3cf1d0686e4f529eb3add660d7c4b47ce866b1abc8e6fb",
+        "status": "real_zz_control_inference_validated_memory_bounded"
+      },
+      "sample": "zz",
+      "score_archive": {
+        "arrays": [
+          "ensemble_scores",
+          "model0_scores",
+          "model1_scores",
+          "model2_scores",
+          "selected_skim_entries",
+          "selected_source_entries"
+        ],
+        "checked_path_count": 1,
+        "mapping_array": "selected_source_entries",
+        "resolution": "manifest_path",
+        "resolved_path": "/tmp/iturkmen_track_b_zz_64_inference_20260804_v1/zz_64_model_scores.npz",
+        "sha256": "a600bfdc6d2ebd7f58ac58d7f5cc014caa5ede85fa636f549d6f2699af17c88d",
+        "size_bytes": 134609
+      },
+      "signal_probability_threshold_counts": {
+        "0.5": 34,
+        "0.9": 24,
+        "0.997": 7
+      },
+      "source_entry_span": {
+        "first": 3,
+        "last": 199990
+      },
+      "target_output_group": "signal_grid",
+      "target_top1_count": 20,
+      "target_top1_fraction": 0.3125,
+      "top1_group_counts": {
+        "qcd": 38,
+        "signal_grid": 20,
+        "ttbar": 6
+      }
+    },
+    {
+      "control_role": "QCD background control",
+      "events": 64,
+      "manifest": {
+        "archive_artifact_type": "model_score_archive",
+        "archive_path_field": "stable_path",
+        "path": "docs/checkpoints/track_b_phase2_qcd_real_inference_20260804_v1/artifact_manifest.tsv",
+        "recorded_archive_path": "/tmp/iturkmen_track_b_qcd_64_inference_20260804_v1/qcd_64_model_scores.npz",
+        "sha256": "a14131239bd68970936264493c379e0d0ddefe9791def7e391305bf529dada4d"
+      },
+      "mean_probabilities": {
+        "qcd": 0.8885440368903801,
+        "signal": 0.08949530907174058,
+        "ttbar": 0.021960646178420973
+      },
+      "median_probabilities": {
+        "qcd": 0.9830515384674072,
+        "signal": 0.01675335481604634,
+        "ttbar": 0.0002031140829785727
+      },
+      "model_top1_agreement_fraction": 0.96875,
+      "receipt": {
+        "backend_sha256": "91df61ffb13cab62fbd3755ed1dd55db535ed5f8cfa960322f1d0096a4067bd8",
+        "execution_commit": "463e34e5b06da33193bec3c1572a712681e73130",
+        "execution_commit_is_ancestor": true,
+        "path": "docs/checkpoints/track_b_phase2_qcd_real_inference_20260804_v1/qcd_64_real_inference_receipt.json",
+        "schema_adapter": "standard",
+        "sha256": "fa6d292d387f3559b4fff5550156d8c5537b83af562f3bb39997a1e88118b590",
+        "status": "real_qcd_control_inference_validated_memory_bounded"
+      },
+      "sample": "qcd",
+      "score_archive": {
+        "arrays": [
+          "ensemble_scores",
+          "model0_scores",
+          "model1_scores",
+          "model2_scores",
+          "selected_skim_entries",
+          "selected_source_entries"
+        ],
+        "checked_path_count": 1,
+        "mapping_array": "selected_source_entries",
+        "resolution": "manifest_path",
+        "resolved_path": "/tmp/iturkmen_track_b_qcd_64_inference_20260804_v1/qcd_64_model_scores.npz",
+        "sha256": "db33458a8f46f6da71357bc55521d08350e61badc90dc79dbec95304426056e6",
+        "size_bytes": 134979
+      },
+      "signal_probability_threshold_counts": {
+        "0.5": 3,
+        "0.9": 1,
+        "0.997": 0
+      },
+      "source_entry_span": {
+        "first": 2,
+        "last": 157502
+      },
+      "target_output_group": "qcd",
+      "target_top1_count": 62,
+      "target_top1_fraction": 0.96875,
+      "top1_group_counts": {
+        "qcd": 62,
+        "signal_grid": 0,
+        "ttbar": 2
+      }
+    },
+    {
+      "control_role": "inclusive ttbar background control",
+      "events": 64,
+      "manifest": {
+        "archive_artifact_type": "model_score_archive",
+        "archive_path_field": "stable_path",
+        "path": "docs/checkpoints/track_b_phase2_ttbar_real_inference_20260804_v1/artifact_manifest.tsv",
+        "recorded_archive_path": "/tmp/iturkmen_track_b_ttbar_64_inference_20260804_v1/ttbar_64_model_scores.npz",
+        "sha256": "9b0d5ff643fbf8de0b785658be89f09324da4f00527cacbbf1bd85fa3d6c4d41"
+      },
+      "mean_probabilities": {
+        "qcd": 0.16874271295115656,
+        "signal": 0.17406998769329546,
+        "ttbar": 0.6571873067041452
+      },
+      "median_probabilities": {
+        "qcd": 0.03954465501010418,
+        "signal": 0.04182724740415722,
+        "ttbar": 0.8107165992259979
+      },
+      "model_top1_agreement_fraction": 0.9375,
+      "receipt": {
+        "backend_sha256": "91df61ffb13cab62fbd3755ed1dd55db535ed5f8cfa960322f1d0096a4067bd8",
+        "execution_commit": "21c3b6ba4d33afa9059d189ad14b4f47fea308f6",
+        "execution_commit_is_ancestor": true,
+        "path": "docs/checkpoints/track_b_phase2_ttbar_real_inference_20260804_v1/ttbar_64_real_inference_receipt.json",
+        "schema_adapter": "standard",
+        "sha256": "c7818028cc8646844fb52d59748bb4e54a439248d8f50fe39d6294e8c66f12e8",
+        "status": "real_ttbar_control_inference_validated_memory_bounded"
+      },
+      "sample": "ttbar",
+      "score_archive": {
+        "arrays": [
+          "ensemble_scores",
+          "model0_scores",
+          "model1_scores",
+          "model2_scores",
+          "selected_skim_entries",
+          "selected_source_entries"
+        ],
+        "checked_path_count": 1,
+        "mapping_array": "selected_source_entries",
+        "resolution": "manifest_path",
+        "resolved_path": "/tmp/iturkmen_track_b_ttbar_64_inference_20260804_v1/ttbar_64_model_scores.npz",
+        "sha256": "07fc8683dc1d336f359b14e2ade6a95d12a41b4d839366d076703c9d9dc3586b",
+        "size_bytes": 135410
+      },
+      "signal_probability_threshold_counts": {
+        "0.5": 9,
+        "0.9": 1,
+        "0.997": 0
+      },
+      "source_entry_span": {
+        "first": 0,
+        "last": 199999
+      },
+      "target_output_group": "ttbar",
+      "target_top1_count": 50,
+      "target_top1_fraction": 0.78125,
+      "top1_group_counts": {
+        "qcd": 13,
+        "signal_grid": 1,
+        "ttbar": 50
+      }
+    }
+  ],
+  "next_step": "construct combined four-control tables and diagnostic plots from the resolved frozen score archives",
+  "phase": "Track B Phase 2",
+  "repository": {
+    "head": "4f9aa283aab5ba61f3f3416992be1466880c9bd6"
+  },
+  "schema_version": 2,
+  "status": "four_frozen_64_event_control_inputs_validated",
+  "validation": {
+    "all_archives_have_64_by_138_ensemble_scores": true,
+    "all_backend_hashes_match": true,
+    "all_ensemble_scores_are_finite_and_normalized": true,
+    "all_ensembles_match_three_model_arithmetic_means": true,
+    "all_execution_commits_are_ancestors": true,
+    "all_model_agreements_match_receipts": true,
+    "all_model_scores_are_finite_and_normalized": true,
+    "all_model_triplets_match": true,
+    "all_recomputed_summaries_match_receipts": true,
+    "all_score_archive_hashes_and_sizes_match": true,
+    "all_score_archives_resolved_by_frozen_sha256": true,
+    "all_source_entry_mappings_have_64_increasing_entries": true,
+    "four_explicit_checkpoint_contracts_used": true,
+    "manifest_path_schema_differences_supported": true,
+    "zh_wrapped_receipt_schema_supported": true
+  }
+}

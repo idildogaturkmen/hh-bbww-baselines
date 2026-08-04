@@ -1,0 +1,13 @@
+sample	display_name	threshold	signal_count	signal_fraction	target_probability	target_count	target_fraction
+zh	ZH	0.5	50	0.78125	signal	50	0.78125
+zh	ZH	0.9	38	0.59375	signal	38	0.59375
+zh	ZH	0.997	15	0.234375	signal	15	0.234375
+zz	ZZ	0.5	34	0.53125	signal	34	0.53125
+zz	ZZ	0.9	24	0.375	signal	24	0.375
+zz	ZZ	0.997	7	0.109375	signal	7	0.109375
+qcd	QCD	0.5	3	0.046875	qcd	58	0.90625
+qcd	QCD	0.9	1	0.015625	qcd	49	0.765625
+qcd	QCD	0.997	0	0	qcd	22	0.34375
+ttbar	Inclusive ttbar	0.5	9	0.140625	ttbar	46	0.71875
+ttbar	Inclusive ttbar	0.9	1	0.015625	ttbar	26	0.40625
+ttbar	Inclusive ttbar	0.997	0	0	ttbar	12	0.1875

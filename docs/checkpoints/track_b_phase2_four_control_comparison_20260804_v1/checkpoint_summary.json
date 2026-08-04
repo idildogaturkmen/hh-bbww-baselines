@@ -1,0 +1,112 @@
+{
+  "binary_artifacts_committed": false,
+  "checkpoint_name": "track_b_phase2_four_control_comparison_20260804_v1",
+  "contract": {
+    "events_per_sample": 64,
+    "interpretation": "qualitative released-model control-canary comparison; not a cross-section-weighted performance measurement",
+    "models_rerun": false,
+    "qcd_class": 136,
+    "samples": [
+      "zh",
+      "zz",
+      "qcd",
+      "ttbar"
+    ],
+    "score_classes": 138,
+    "signal_class_count": 136,
+    "ttbar_class": 137,
+    "weighted": false
+  },
+  "interpretation": [
+    "QCD is QCD top-1 for 62 of 64 events with mean QCD probability approximately 0.889.",
+    "Inclusive ttbar is ttbar top-1 for 50 of 64 events with mean ttbar probability approximately 0.657.",
+    "ZH and ZZ have substantial cumulative signal response, distributed over 136 signal-grid classes.",
+    "This is an unweighted 64-event control-canary comparison, not a precision performance result."
+  ],
+  "mean_probabilities": {
+    "qcd": {
+      "qcd": 0.8885440368903801,
+      "signal": 0.08949530907174058,
+      "ttbar": 0.021960646178420973
+    },
+    "ttbar": {
+      "qcd": 0.16874271295115656,
+      "signal": 0.17406998769329546,
+      "ttbar": 0.6571873067041452
+    },
+    "zh": {
+      "qcd": 0.15964379027815845,
+      "signal": 0.7492179485104496,
+      "ttbar": 0.09113825794225949
+    },
+    "zz": {
+      "qcd": 0.39063048683050905,
+      "signal": 0.5334414762827849,
+      "ttbar": 0.07592803644527901
+    }
+  },
+  "model_inference_rerun": false,
+  "phase": "Track B Phase 2",
+  "provenance": {
+    "checkpoint_parent_commit": "4f9aa283aab5ba61f3f3416992be1466880c9bd6",
+    "comparison_commit_is_ancestor_of_checkpoint_parent": true,
+    "comparison_execution_commit": "4f9aa283aab5ba61f3f3416992be1466880c9bd6",
+    "comparison_receipt_sha256": "a052a91c587b8e493333c46988763937af0669b9f9663a54baad916d8def843b",
+    "input_inventory_sha256": "ac503233a2e414aa38ad745d50c117676b804f36ae60350a81d9d4e9d1f443bd",
+    "intervening_commit_count": 0
+  },
+  "remaining_phase2_gates": [
+    "publish this four-control comparison checkpoint",
+    "larger deterministic spread pilots for all four controls",
+    "official ZH resonance-shape and DCB validation",
+    "official ZZ resonance-shape and DCB validation",
+    "document authoritative independent-HH evaluation as externally blocked",
+    "publish Phase-2 closure checkpoint"
+  ],
+  "schema_version": 1,
+  "status": "combined four-control released-model comparison complete",
+  "target_top1": {
+    "qcd": {
+      "count": 62,
+      "fraction": 0.96875,
+      "group": "qcd"
+    },
+    "ttbar": {
+      "count": 50,
+      "fraction": 0.78125,
+      "group": "ttbar"
+    },
+    "zh": {
+      "count": 34,
+      "fraction": 0.53125,
+      "group": "signal_grid"
+    },
+    "zz": {
+      "count": 20,
+      "fraction": 0.3125,
+      "group": "signal_grid"
+    }
+  },
+  "top1_response_matrix_counts": {
+    "qcd": {
+      "qcd": 62,
+      "signal_grid": 0,
+      "ttbar": 2
+    },
+    "ttbar": {
+      "qcd": 13,
+      "signal_grid": 1,
+      "ttbar": 50
+    },
+    "zh": {
+      "qcd": 22,
+      "signal_grid": 34,
+      "ttbar": 8
+    },
+    "zz": {
+      "qcd": 38,
+      "signal_grid": 20,
+      "ttbar": 6
+    }
+  }
+}

@@ -1,0 +1,5 @@
+sample	display_name	control_role	target_output_group	events	mean_signal_probability	mean_qcd_probability	mean_ttbar_probability	median_signal_probability	target_mean_probability	target_median_probability	signal_top1_count	qcd_top1_count	ttbar_top1_count	target_top1_count	target_top1_fraction	signal_gt_0p5_count	signal_gt_0p9_count	signal_gt_0p997_count	model_top1_agreement_fraction
+zh	ZH	ZH resonant signal-like control	signal_grid	64	0.74921794851	0.159643790278	0.0911382579423	0.95242006578	0.74921794851	0.95242006578	34	22	8	34	0.53125	50	38	15	0.703125
+zz	ZZ	ZZ resonant signal-like control	signal_grid	64	0.533441476283	0.390630486831	0.0759280364453	0.576534107331	0.533441476283	0.576534107331	20	38	6	20	0.3125	34	24	7	0.734375
+qcd	QCD	QCD background control	qcd	64	0.0894953090717	0.88854403689	0.0219606461784	0.016753354816	0.88854403689	0.983051538467	0	62	2	62	0.96875	3	1	0	0.96875
+ttbar	Inclusive ttbar	inclusive ttbar background control	ttbar	64	0.174069987693	0.168742712951	0.657187306704	0.0418272474042	0.657187306704	0.810716599226	1	13	50	50	0.78125	9	1	0	0.9375
