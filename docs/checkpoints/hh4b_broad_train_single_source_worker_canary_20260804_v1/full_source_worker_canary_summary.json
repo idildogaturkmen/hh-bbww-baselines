@@ -1,0 +1,20 @@
+{
+  "auxiliary_qcd_exclusion_exercised": true,
+  "full_source_canaries": 5,
+  "full_source_canaries_passed": 5,
+  "generated_events_expected": 25309,
+  "generated_events_materialized": 25309,
+  "models_trained": 0,
+  "next": "commit_worker_and_prepare_464_source_condor_release",
+  "qcd_variable_fragment_exercised": true,
+  "signed_sidecar_exercised": true,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "transport_classes": [
+    "not_applicable_auxiliary_qcd",
+    "qcd_variable_frozen_fragment",
+    "signed_exact_event_sidecar",
+    "uniform_member_constant"
+  ],
+  "validation_payloads_opened": 0
+}
