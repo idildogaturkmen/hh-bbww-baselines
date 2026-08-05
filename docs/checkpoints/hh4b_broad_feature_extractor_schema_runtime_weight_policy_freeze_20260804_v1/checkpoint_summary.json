@@ -1,0 +1,23 @@
+{
+  "auxiliary_qcd_events": 230000,
+  "auxiliary_qcd_sources": 23,
+  "models_trained": 0,
+  "next": "build_single_source_production_worker_and_release_464_source_train_extraction",
+  "primary_events": 3569873,
+  "primary_sources": 441,
+  "source_commit": "190cb01153d6280a002b6490ab4b1f3775d65b93",
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "train_events": 3799873,
+  "train_sources": 464,
+  "transport_class_counts": {
+    "not_applicable_auxiliary_qcd": 23,
+    "qcd_uniform_constant": 59,
+    "qcd_variable_frozen_fragment": 127,
+    "signed_exact_event_sidecar": 14,
+    "uniform_member_constant": 241
+  },
+  "tsv_normalization_applied": true,
+  "tsv_normalization_record": "tsv_normalization_record.json",
+  "validation_payloads_opened": 0
+}

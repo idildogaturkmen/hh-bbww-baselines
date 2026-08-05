@@ -1,0 +1,22 @@
+{
+  "assignment_matchable_rows": 227,
+  "broad_eligible_rows": 1853,
+  "canary_sources": 7,
+  "canary_sources_passed": 7,
+  "current_head": "190cb01153d6280a002b6490ab4b1f3775d65b93",
+  "event_uid_contract_sources_passed": 7,
+  "materialized_rows": 3584,
+  "models_trained": 0,
+  "next": "RUN_TRAIN_GENERATOR_WEIGHT_JOIN_CANARY_AND_FREEZE_EXTRACTOR",
+  "output_schema": "/uscms_data/d3/iturkmen/hh4b_delphes/harvest_checkpoints/hh4b_seven_class_feature_materialization_canary_v1_20260804T234939Z/feature_schema_v1.json",
+  "parquet_byte_identical_sources": 7,
+  "physical_weights_calculated": 0,
+  "physical_yields_calculated": 0,
+  "raw_generator_weight_transport_joined": false,
+  "repository_modified": false,
+  "result": "SEVEN_CLASS_FEATURE_MATERIALIZATION_CANARY_V1_PASS",
+  "signal_sources_with_matchable_assignments": 2,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

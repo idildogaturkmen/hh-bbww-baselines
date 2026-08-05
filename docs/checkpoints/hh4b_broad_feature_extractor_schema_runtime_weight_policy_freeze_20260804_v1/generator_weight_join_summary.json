@@ -1,0 +1,23 @@
+{
+  "auxiliary_qcd_rows_excluded_from_physical_transport": 1024,
+  "auxiliary_qcd_sources_excluded_from_physical_transport": 2,
+  "byte_identical_sources": 7,
+  "current_head": "190cb01153d6280a002b6490ab4b1f3775d65b93",
+  "generator_weight_transport_joined": true,
+  "models_trained": 0,
+  "next": "FREEZE_BROAD_FEATURE_EXTRACTOR_SCHEMA_RUNTIME_AND_WEIGHT_POLICY",
+  "physical_weights_calculated": 0,
+  "physical_yields_calculated": 0,
+  "primary_rows_generator_weight_joined": 2560,
+  "primary_rows_with_raw_root_weight": 2560,
+  "primary_sources_generator_weight_joined": 5,
+  "qcd_variable_candidate_overlap_rows": 0,
+  "qcd_variable_fragment_sources_validated": 0,
+  "repository_modified": false,
+  "result": "SEVEN_CLASS_TRAIN_GENERATOR_WEIGHT_JOIN_CANARY_V1_PASS",
+  "signed_sidecar_sources_validated": 1,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "uniform_constant_sources_validated": 4,
+  "validation_payloads_opened": 0
+}

@@ -1,0 +1,21 @@
+{
+  "artifacts": [
+    {
+      "artifact": "feature_materialization_receipts.tsv",
+      "columns": 28,
+      "rows": 7,
+      "sha256_after_normalization": "c89fef2ea1d12f4cb9221119333c9c17e463f04d4f642a23d3dcadb6fd7e36cd",
+      "terminal_empty_fields_replaced_with_NA": 7
+    },
+    {
+      "artifact": "generator_weight_join_receipts.tsv",
+      "columns": 14,
+      "rows": 7,
+      "sha256_after_normalization": "062334388b768878768637536614506fdbd4951736ffcd96bb9a3c6b147889ff",
+      "terminal_empty_fields_replaced_with_NA": 0
+    }
+  ],
+  "normalization": "Only an empty terminal field is replaced by NA. Internal fields and row ordering are preserved.",
+  "reason": "Preserve TSV field counts while removing Git blank-at-end-of-line errors.",
+  "schema_version": 1
+}

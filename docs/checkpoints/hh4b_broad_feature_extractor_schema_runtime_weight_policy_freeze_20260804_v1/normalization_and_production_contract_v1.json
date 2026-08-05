@@ -1,0 +1,59 @@
+{
+  "canary_evidence": {
+    "access_and_schema_sources_passed": 7,
+    "auxiliary_qcd_exclusion_sources_passed": 2,
+    "deterministic_parquet_sources_passed": 7,
+    "feature_materialization_sources_passed": 7,
+    "generator_weight_join_primary_sources_passed": 5,
+    "qcd_variable_transport_prior_registry_and_candidate_join_evidence": true,
+    "qcd_variable_transport_registry_sources": 127,
+    "qcd_variable_transport_representative_in_latest_canary": false
+  },
+  "data_separation": {
+    "models_trained": 0,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "next_gate": "build_single_source_production_worker_and_release_464_source_train_extraction",
+  "normalization_interpretation": {
+    "broad_feature_extraction_does_not_rederive_normalization": true,
+    "full_generated_universe_accounted": true,
+    "generated_universe_events": 5200000,
+    "generator_weight_transport_is_carried_into_new_feature_tables": true,
+    "normalization_denominators_and_coefficients_preserved": true,
+    "run2_physical_weight_formula": "generator_nominal_weight * run2_yield_coefficient_per_generator_weight",
+    "source_group_split_frozen": true,
+    "test_events": 397543,
+    "train_events": 3799873,
+    "validation_events": 1002584
+  },
+  "production_state": {
+    "extractor_library_frozen": true,
+    "feature_schema_frozen": true,
+    "full_train_jobs_submitted": false,
+    "generator_weight_policy_frozen": true,
+    "runtime_evidence_frozen": true,
+    "single_source_production_worker_built": false,
+    "train_464_readiness_manifest_frozen": true
+  },
+  "schema_version": 1,
+  "source_commit": "190cb01153d6280a002b6490ab4b1f3775d65b93",
+  "status": "pass",
+  "train_production_accounting": {
+    "all_train_events": 3799873,
+    "all_train_sources": 464,
+    "auxiliary_qcd_events": 230000,
+    "auxiliary_qcd_sources": 23,
+    "local_direct_root_sources": 22,
+    "primary_physical_events": 3569873,
+    "primary_physical_sources": 441,
+    "remote_bundle_sources": 442,
+    "transport_class_counts": {
+      "not_applicable_auxiliary_qcd": 23,
+      "qcd_uniform_constant": 59,
+      "qcd_variable_frozen_fragment": 127,
+      "signed_exact_event_sidecar": 14,
+      "uniform_member_constant": 241
+    }
+  }
+}
