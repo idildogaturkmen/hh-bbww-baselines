@@ -1,0 +1,9 @@
+{
+  "duplicate_event_uid": "",
+  "rows_inserted": 3799873,
+  "schema_version": 1,
+  "status": "pass",
+  "storage_method": "temporary SQLite primary-key registry",
+  "temporary_database_preserved": false,
+  "unique_event_uids": 3799873
+}

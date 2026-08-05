@@ -1,0 +1,30 @@
+{
+  "checkpoint_relative_path": "docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1",
+  "created_at_utc": "2026-08-05T23:48:54.438705+00:00",
+  "diagnosis": {
+    "affected_file_count": 1,
+    "affected_line_count": 457,
+    "cause": "the frozen TSV preserves terminal empty fields as trailing tab bytes",
+    "error_class": "trailing whitespace",
+    "git_check": "git diff --cached --check",
+    "repair_v2_failure": "the LPC awk implementation does not support the GNU awk three-argument match function with a capture array",
+    "repair_v3_parser": "Python regular-expression parser for Git diagnostic headers"
+  },
+  "immutable_evidence": {
+    "byte_identical": true,
+    "checkpoint_path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_production_plan.tsv",
+    "checkpoint_sha256": "039d3d4227be8ccc597e79d71f86df78b02045ec78ad93131f91874efd73f0b2",
+    "content_modified_for_git": false,
+    "source_path": "/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/manifest/full_464_production_plan.tsv",
+    "source_sha256": "039d3d4227be8ccc597e79d71f86df78b02045ec78ad93131f91874efd73f0b2"
+  },
+  "policy": {
+    "exact_pattern": "evidence/production_manifest/full_464_production_plan.tsv",
+    "gitattributes_path": ".gitattributes",
+    "other_whitespace_checks_remain_enabled": true,
+    "scope": "one immutable copied TSV only",
+    "whitespace_attribute": "-trailing-space"
+  },
+  "schema_version": 1,
+  "status": "pass_scoped_git_whitespace_policy"
+}

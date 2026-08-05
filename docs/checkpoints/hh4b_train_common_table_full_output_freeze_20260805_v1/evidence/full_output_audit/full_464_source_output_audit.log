@@ -1,0 +1,106 @@
+============================================================
+FULL 464-SOURCE COMMON-TABLE OUTPUT AUDIT
+============================================================
+REPO=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines
+CAMPAIGN_ROOT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z
+AUDIT_ROOT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/audit/full_464_source_output_audit_v1_20260805T232714Z
+CLUSTER_ID=85043573
+SCHEDD=lpcschedd6.fnal.gov
+BATCH_NAME=hh4b_train_common_table_scaleout_457_v1_20260805T224500Z
+From https://github.com/idildogaturkmen/hh-bbww-baselines
+ * branch            delphes-hh4b-production -> FETCH_HEAD
+CURRENT_BRANCH=delphes-hh4b-production
+CURRENT_HEAD=4d0b6616cf4ee03279f9d204b8ec45d1f944f13c
+REMOTE_HEAD=4d0b6616cf4ee03279f9d204b8ec45d1f944f13c
+PREFLIGHT_HEAD=025eff23be0d214aa88a616c2ab8b57b3f4e6e06
+EXPECTED_CURRENT_HEAD=4d0b6616cf4ee03279f9d204b8ec45d1f944f13c
+EXPECTED_WORKER_SHA256=4ceeeaed6e05a1dfaee16926a8ebb297110945ca32b18c16da49b3f162e3a21e
+ACTUAL_WORKER_SHA256=4ceeeaed6e05a1dfaee16926a8ebb297110945ca32b18c16da49b3f162e3a21e
+PREFLIGHT_HEAD_IS_ANCESTOR=PASS
+ADVANCE_SCOPE=TRACK_B_CHECKPOINT_ONLY
+WORKTREE_CLEAN=PASS
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/SHA256SUMS
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/manifest/full_464_source_worker_manifest.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/manifest/full_464_production_plan.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/manifest/pilot_reuse_checksum_audit_7.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/manifest/full_manifest_preflight_summary.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/SHA256SUMS
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/pre_submission_contract.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/submission_receipt.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/hh4b_train_common_table_single_source_worker_v1.py
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/full_464_source_worker_manifest.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/source_physical_coefficient_registry_canary.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/fold_local_source_comparison_weight_registry_canary.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/common_feature_schema_canary.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/submit/approved_common_train_table_contract.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/runtime/hh4b_broad_ml_py39_v1/bin/python
+./audit/full_manifest_preflight.log: OK
+./manifest/fold_accounting_summary.tsv: OK
+./manifest/full_464_production_plan.tsv: OK
+./manifest/full_464_source_worker_manifest.tsv: OK
+./manifest/full_manifest_preflight_summary.json: OK
+./manifest/pilot_reuse_checksum_audit_7.tsv: OK
+./manifest/process_accounting_summary.tsv: OK
+./manifest/remaining_457_source_worker_manifest.tsv: OK
+./manifest/reusable_pilot_7_source_manifest.tsv: OK
+./manifest/source_artifact_manifest.tsv: OK
+./manifest/source_input_checksum_audit_464.tsv: OK
+./manifest/transport_accounting_summary.tsv: OK
+./approved_common_train_table_contract.json: OK
+./common_feature_schema_canary.tsv: OK
+./common_table_scaleout_457.sub: OK
+./fold_local_source_comparison_weight_registry_canary.tsv: OK
+./full_464_source_worker_manifest.tsv: OK
+./hh4b_train_common_table_single_source_worker_v1.py: OK
+./jobs_457.tsv: OK
+./jobs_457_headerless.queue: OK
+./pre_submission_contract.json: OK
+./run_common_table_worker.sh: OK
+./source_physical_coefficient_registry_canary.tsv: OK
+PREFLIGHT_OUTPUT_CHECKSUMS=PASS
+STATIC_SUBMISSION_CONTROL_CHECKSUMS=PASS
+QUEUE_QUERY_RC=0
+HISTORY_QUERY_RC=0
+LIVE_QUEUE_COUNT=0
+HISTORY_COUNT=457
+COMPLETED_EXIT0=457
+UNIQUE_COMPLETED_PROCS=457
+FAILED_HISTORY_COUNT=0
+MIN_PROC=0
+MAX_PROC=456
+WRONG_BATCH_COUNT=0
+CONDOR_457_JOB_CLOSURE=PASS
+CONDOR_JOBS=457/457
+SOURCE_OUTPUT_TRIPLETS=464/464
+ACCOUNTING_ROWS=3799873/3799873
+RESOLVED_ROWS=1171072/1171072
+NON_BROAD_ROWS=2628801/2628801
+ASSIGNMENT_MATCHABLE_ROWS=30397/30397
+PRIMARY_SOURCES=441/441
+AUXILIARY_SOURCES=23/23
+PRIMARY_EVENTS=3569873/3569873
+AUXILIARY_EVENTS=230000/230000
+GLOBAL_EVENT_UID_UNIQUENESS=PASS
+RESOLVED_EXACT_BROAD_SUBSET=PASS
+ACCOUNTING_SCHEMA_CONSISTENCY=PASS
+RESOLVED_SCHEMA_CONSISTENCY=PASS
+MASS_AWARE_FEATURES=34/34
+MASS_PLANE_BLIND_FEATURES=30/30
+COMPARISON_WEIGHT_FOLD_LOCAL_CLOSURE=PASS
+DIAGNOSTIC_PHYSICAL_WEIGHT_CLOSURE=PASS
+HISTORICAL_RECONSTRUCTION_PARITY=PASS
+TRANSPORT_SOURCE_COUNTS=PASS
+PHYSICAL_WEIGHT_APPLICATION_AUTHORIZED=FALSE
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+MODELS_TRAINED=0
+REPOSITORY_MODIFIED=FALSE
+RESULT=FULL_464_SOURCE_COMMON_TABLE_OUTPUT_AUDIT_PASS
+NEXT=FREEZE_COMPLETE_COMMON_TABLE_AND_RUN_PHYSICAL_NORMALIZATION_AUTHORIZATION
+SOURCE_AUDIT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/audit/full_464_source_output_audit_v1_20260805T232714Z/source_output_audit_464.tsv
+PROCESS_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/audit/full_464_source_output_audit_v1_20260805T232714Z/process_output_summary.tsv
+FOLD_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/audit/full_464_source_output_audit_v1_20260805T232714Z/fold_output_summary.tsv
+TRANSPORT_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/audit/full_464_source_output_audit_v1_20260805T232714Z/transport_output_summary.tsv
+SCHEMA_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/audit/full_464_source_output_audit_v1_20260805T232714Z/output_schema_summary.tsv
+GLOBAL_UID_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/audit/full_464_source_output_audit_v1_20260805T232714Z/global_event_uid_audit.json
+SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z/audit/full_464_source_output_audit_v1_20260805T232714Z/full_464_source_output_audit_summary.json
