@@ -1,0 +1,69 @@
+============================================================
+DETERMINISTIC TRAIN-GROUP FOLD OPTIMIZATION K=5
+============================================================
+REPO=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines
+FREEZE_COMMIT=5a09925bc6498d78cccc812d65864466f8bde6c7
+PREFLIGHT=/uscms_data/d3/iturkmen/hh4b_delphes/analysis_preflight/hh4b_train_only_common_table_preflight_v1_20260805T182817Z
+OUT=/uscms_data/d3/iturkmen/hh4b_delphes/analysis_preflight/hh4b_train_group_fold_optimization_k5_v1_20260805T183729Z
+From https://github.com/idildogaturkmen/hh-bbww-baselines
+ * branch            delphes-hh4b-production -> FETCH_HEAD
+CURRENT_BRANCH=delphes-hh4b-production
+CURRENT_HEAD=5a09925bc6498d78cccc812d65864466f8bde6c7
+REMOTE_HEAD=5a09925bc6498d78cccc812d65864466f8bde6c7
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_broad_train_materialization_freeze_20260805_v1/SHA256SUMS
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_broad_train_materialization_freeze_20260805_v1/full_train_materialization_inventory.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/analysis_preflight/hh4b_train_only_common_table_preflight_v1_20260805T182817Z/SHA256SUMS
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/analysis_preflight/hh4b_train_only_common_table_preflight_v1_20260805T182817Z/source_summary.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/runtime/hh4b_broad_ml_py39_v1/bin/python
+./README.md: OK
+./audit_evidence/audit.log: OK
+./audit_evidence/full_train_sources.tsv: OK
+./audit_evidence/full_train_summary.json: OK
+./audit_evidence/history.json: OK
+./full_train_materialization_contract.json: OK
+./full_train_materialization_inventory.tsv: OK
+./README.md: OK
+./candidate_k5_fold_summary.tsv: OK
+./checksum_repair_receipt.json: OK
+./classification_stratum_summary.tsv: OK
+./generator_weight_sign_summary.tsv: OK
+./group_fold_map_candidate_k5.tsv: OK
+./group_summary.tsv: OK
+./materialized_schema.tsv: OK
+./preflight.log: OK
+./preflight_summary.json: OK
+./source_summary.tsv: OK
+MATERIALIZATION_CHECKPOINT_CHECKSUMS=PASS
+COMMON_TABLE_PREFLIGHT_CHECKSUMS=PASS
+TRAIN_GROUPS=464/464
+TRAIN_SOURCES=464/464
+TRAIN_EVENTS=3799873/3799873
+CLASSIFICATION_ROWS=1171072/1171072
+ASSIGNMENT_MATCHABLE_ROWS=30397/30397
+OPTIMIZER_FEATURES=79
+OPTIMIZER_RESTARTS=24
+OPTIMIZER_BEST_OBJECTIVE=30.1380675509
+
+OPTIMIZED_K5_FOLD_SUMMARY
+ fold  sources  groups  generated_events  broad_rows  signal_broad  background_broad  primary_background_broad  auxiliary_qcd_broad  assignment_matchable  negative_weight_broad  zero_weight_broad  positive_weight_broad  signal_0b  signal_1b  signal_2b  signal_3b  signal_4plusb  primary_background_0b  primary_background_1b  primary_background_2b  primary_background_3b  primary_background_4plusb  auxiliary_qcd_0b  auxiliary_qcd_1b  auxiliary_qcd_2b  auxiliary_qcd_3b  auxiliary_qcd_4plusb  assignment_0b  assignment_1b  assignment_2b  assignment_3b  assignment_4plusb
+    0       93      93            743384      236021         17502            218519                    188734                29785                  6051                      2                  0                 206234        630       3274       6359       5405           1834                  44533                  68941                  54894                  16005                       4361               493              3642              9611             10755                  5284             78            576           1704           2321               1372
+    1       93      93            801197      234702         18857            215845                    190976                24869                  6101                      4                  0                 209829        657       3564       6975       5750           1911                  44945                  70337                  55627                  15827                       4240               475              3319              8080              8817                  4178             78            577           1728           2350               1368
+    2       93      93            796053      233135         18937            214198                    192212                21986                  6111                      3                  0                 211146        659       3649       7005       5715           1909                  45417                  69857                  55919                  16759                       4260               428              2842              7119              7854                  3743             78            568           1727           2353               1385
+    3       93      93            743300      230914         17776            213138                    191021                22117                  6075                      5                  0                 208792        631       3338       6528       5433           1846                  44875                  69941                  55829                  16110                       4266               421              2855              7006              7928                  3907             78            575           1720           2347               1355
+    4       92      92            715939      236300         17566            218734                    188816                29918                  6059                      3                  0                 206379        622       3288       6446       5373           1837                  44783                  68467                  55024                  16301                       4241               491              3698              9622             10762                  5345             78            572           1704           2342               1363
+
+OPTIMIZED_K5_BROAD_ROWS_MAX_TO_MIN=1.023325;threshold=1.100000;pass=TRUE
+OPTIMIZED_K5_SIGNAL_BROAD_MAX_TO_MIN=1.081991;threshold=1.150000;pass=TRUE
+OPTIMIZED_K5_BACKGROUND_BROAD_MAX_TO_MIN=1.026255;threshold=1.100000;pass=TRUE
+OPTIMIZED_K5_ASSIGNMENT_MATCHABLE_MAX_TO_MIN=1.009916;threshold=1.150000;pass=TRUE
+OPTIMIZED_K5_AUXILIARY_QCD_BROAD_MAX_TO_MIN=1.360775;threshold=1.200000;pass=FALSE
+
+PROCESS_COVERAGE_FOR_PROCESSES_WITH_AT_LEAST_5_GROUPS=PASS
+PROCESS_COVERAGE_FAILURE_COUNT=0
+GROUP_LEAKAGE=0
+PHYSICAL_WEIGHT_APPLICATION_AUTHORIZED=FALSE
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+MODELS_TRAINED=0
+RESULT=TRAIN_GROUP_FOLD_OPTIMIZATION_K5_REVIEW_REQUIRED
+NEXT=REVIEW_AND_REFINE_GROUP_FOLD_OPTIMIZER

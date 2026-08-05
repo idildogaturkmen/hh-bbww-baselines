@@ -1,0 +1,132 @@
+{
+  "baseline_program": [
+    {
+      "definition": "Preserve the legacy resolved R_HH < 34 baseline.",
+      "model": "fixed_geometric_cut",
+      "order": 1,
+      "tuning": "none"
+    },
+    {
+      "definition": "Predeclared bounded cut search using nested source-group OOF optimization on train only.",
+      "model": "optimized_cut",
+      "order": 2,
+      "tuning": "inner OOF only"
+    },
+    {
+      "definition": "Preserve the historical 34-feature baseline.",
+      "model": "global_mass_aware_bdt",
+      "order": 3,
+      "tuning": "bounded inner-OOF budget"
+    },
+    {
+      "definition": "Preserve the historical 30-feature diagnostic.",
+      "model": "mass_plane_blind_bdt",
+      "order": 4,
+      "tuning": "same BDT budget"
+    },
+    {
+      "definition": "Preserve the historical two-model 52-feature baseline below and above m_HH = 450 GeV.",
+      "model": "categorized_bdt_mhh450",
+      "order": 5,
+      "tuning": "bounded inner-OOF budget"
+    },
+    {
+      "definition": "Separate exploratory extension: BDT_nonres and BDT_res_top with exclusive score-plane categories. Do not replace or rename the historical m_HH categorized result.",
+      "model": "dual_specialist_categorized_bdt",
+      "order": 6,
+      "tuning": "nested inner source-group OOF"
+    },
+    {
+      "definition": "Dense event classifier on the same frozen tabular feature contract as the global BDT.",
+      "model": "dense_dnn",
+      "order": 7,
+      "tuning": "bounded inner-OOF budget and frozen seeds"
+    },
+    {
+      "definition": "Lorentz-boost-network classifier using the same event universe, folds, training weights, and evaluation gates.",
+      "model": "lbn_dnn",
+      "order": 8,
+      "tuning": "bounded inner-OOF budget and frozen seeds"
+    },
+    {
+      "definition": "Only after all conventional baselines are frozen: resolved SPA-Net ablations with symmetric assignment, partial-target detection, target-mass reweighting, and an event classification head.",
+      "model": "spanet",
+      "order": 9,
+      "tuning": "same frozen folds and train-only governance"
+    }
+  ],
+  "data_accounting": {
+    "full_generated_events": 5200000,
+    "test_events_sealed": 397543,
+    "train_assignment_matchable_rows_current_full_event_definition": 30397,
+    "train_auxiliary_qcd_sources": 23,
+    "train_broad_classification_rows": 1171072,
+    "train_events": 3799873,
+    "train_primary_sources": 441,
+    "train_sources": 464,
+    "validation_events_sealed": 1002584
+  },
+  "evaluation_contract": {
+    "bootstrap": {
+      "paired_across_models": true,
+      "replicas": 2000,
+      "seed": 20260727,
+      "unit": "source group"
+    },
+    "physical_metrics_after_authorization": [
+      "Run-2 138 fb^-1 expected yields",
+      "S over B",
+      "Asimov significance",
+      "systematics-aware profile-likelihood significance"
+    ],
+    "primary_development_metric": "paired source-group OOF background efficiency at signal efficiency 0.585957",
+    "secondary_development_metrics": [
+      "comparison-weighted ROC AUC",
+      "signal and background efficiency curves",
+      "score-mass correlation",
+      "background mass sculpting",
+      "effective background count"
+    ],
+    "test_policy": "Test is opened exactly once after final model-family and analysis choices are locked. Post-test retuning is prohibited.",
+    "validation_policy": "Validation remains sealed until folds, event universe, reconstruction, features, model budgets, score operating points, and weighting policies are frozen."
+  },
+  "fold_contract": {
+    "accepted_map": "fold_optimization_evidence/optimized_group_fold_map_k5.tsv",
+    "auxiliary_qcd_balance_waiver": {
+      "accepted": true,
+      "mitigation": "Use the same frozen hierarchical comparison-weight or sampler contract for every trainable classifier; fix the total auxiliary-QCD loss budget per training fold; exclude auxiliary QCD from physical yields and significance; report auxiliary-domain performance separately.",
+      "observed_max_to_min_ratio": 1.360775,
+      "predeclared_threshold": 1.2,
+      "reason": "Only the train-only, classification-only auxiliary-QCD population missed the predeclared row-balance threshold. Primary signal, primary background, total broad rows, assignment supervision, and process coverage all passed. The 23 auxiliary source groups are indivisible and are not authorized for physical-yield evaluation."
+    },
+    "group_key": "group_id",
+    "group_leakage": 0,
+    "groups": 464,
+    "k": 5,
+    "max_to_min_ratios": {
+      "assignment_matchable": 1.009916,
+      "auxiliary_qcd_broad": 1.360775,
+      "background_broad": 1.026255,
+      "broad_rows": 1.023325,
+      "signal_broad": 1.081991
+    },
+    "physics_critical_balance_pass": {
+      "assignment_matchable": true,
+      "background_broad": true,
+      "broad_rows": true,
+      "signal_broad": true
+    },
+    "process_coverage_for_processes_with_at_least_five_groups": true
+  },
+  "next": "freeze exact common geometric reconstruction, candidate feature schema, comparison-weight table, and physical-weight authorization before running the baseline ladder",
+  "repository_head_before_contract_commit": "5a09925bc6498d78cccc812d65864466f8bde6c7",
+  "schema_version": 1,
+  "scope": "common train-only source-group folds and benchmark governance for resolved HH to 4b baseline and SPA-Net comparisons",
+  "status": "pass_with_documented_auxiliary_qcd_balance_waiver",
+  "weight_contract": {
+    "auxiliary_qcd_physical_weight": null,
+    "comparison_training_weights": "To be materialized and frozen before training. Equalize total signal and background; ggF and VBF within signal; frozen background families within background; source groups within families; and broad rows within source groups. These weights are for learning and comparison only.",
+    "physical_weights": "Separate CMS Run-2 138 fb^-1 expected-yield weights for the 441 primary sources only. They remain unauthorized until the cross-section, sum-of-weights, QCD stitching, and luminosity registry passes its dedicated freeze gate.",
+    "spanet_target_mass_weights": "Separate target-wise assignment/detection loss weights, to be derived from train-only Higgs-target mass spectra after the partial-target overlay is frozen. Never substitute them for classification or physical weights."
+  }
+}
