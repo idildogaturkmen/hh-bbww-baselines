@@ -1,0 +1,23 @@
+{
+  "canary_root": "/uscms_data/d3/iturkmen/hh4b_delphes/analysis_canary/hh4b_train_common_table_canary_v2_20260805T202509Z",
+  "candidate_reconstruction_policy_frozen": false,
+  "comparison_weight_policy_frozen": false,
+  "coverage_gate_count": 7,
+  "coverage_gate_failures": 3,
+  "decision": "targeted_canary_augmentation_required",
+  "failed_coverage_gates": [
+    "signed_transport_negative_weight_coverage",
+    "variable_qcd_weight_variation",
+    "uniform_member_constant_constant_weight_behavior"
+  ],
+  "hard_gate_count": 70,
+  "hard_gate_failures": 0,
+  "models_trained": 0,
+  "next": "run a targeted event-row augmentation for the missing coverage gates",
+  "physical_weight_application_authorized": false,
+  "repository_head": "96f4e2893a31df80f81ada4851ed23a658bf046b",
+  "schema_version": 1,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

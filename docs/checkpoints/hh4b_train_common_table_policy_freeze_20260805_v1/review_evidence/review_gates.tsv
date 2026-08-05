@@ -1,0 +1,78 @@
+gate_class	gate	observed	expected	status	interpretation
+hard	summary::status	pass	pass	pass	frozen canary summary contract
+hard	summary::repository_head	96f4e2893a31df80f81ada4851ed23a658bf046b	96f4e2893a31df80f81ada4851ed23a658bf046b	pass	frozen canary summary contract
+hard	summary::train_generated_events_accounted	3799873	3799873	pass	frozen canary summary contract
+hard	summary::primary_physical_train_events_accounted	3569873	3569873	pass	frozen canary summary contract
+hard	summary::auxiliary_qcd_train_events_accounted	230000	230000	pass	frozen canary summary contract
+hard	summary::resolved_model_rows_full_train	1171072	1171072	pass	frozen canary summary contract
+hard	summary::non_broad_accounting_rows_full_train	2628801	2628801	pass	frozen canary summary contract
+hard	summary::selected_canary_sources	7	7	pass	frozen canary summary contract
+hard	summary::source_physical_coefficient_primary_matches	441	441	pass	frozen canary summary contract
+hard	summary::source_physical_coefficient_auxiliary_nulls	23	23	pass	frozen canary summary contract
+hard	summary::fold_local_source_weight_registry_rows	2320	2320	pass	frozen canary summary contract
+hard	summary::mass_aware_features	34	34	pass	frozen canary summary contract
+hard	summary::mass_plane_blind_features	30	30	pass	frozen canary summary contract
+hard	summary::canary_accounting_rows	320	320	pass	frozen canary summary contract
+hard	summary::canary_resolved_rows	264	264	pass	frozen canary summary contract
+hard	summary::canary_historical_parity_rows	48	48	pass	frozen canary summary contract
+hard	summary::byte_identical_rerun	True	True	pass	frozen canary summary contract
+hard	summary::physical_weight_application_authorized	False	False	pass	frozen canary summary contract
+hard	summary::comparison_weight_policy_frozen	False	False	pass	frozen canary summary contract
+hard	summary::candidate_reconstruction_policy_frozen	False	False	pass	frozen canary summary contract
+hard	summary::old_rhh34_status	historical_reference_only	historical_reference_only	pass	frozen canary summary contract
+hard	summary::new_full_train_cut_optimization_required	True	True	pass	frozen canary summary contract
+hard	summary::validation_payloads_opened	0	0	pass	frozen canary summary contract
+hard	summary::test_payloads_opened	0	0	pass	frozen canary summary contract
+hard	summary::models_trained	0	0	pass	frozen canary summary contract
+hard	selected_source_count	7	7	pass	representative source cardinality
+hard	selected_source_uid_uniqueness	7	7	pass	no duplicate selected source
+hard	fold_coverage	0,1,2,3,4	0,1,2,3,4	pass	all outer folds represented
+hard	transport_coverage	not_applicable_auxiliary_qcd,qcd_uniform_constant,qcd_variable_frozen_fragment,signed_exact_event_sidecar,uniform_member_constant	not_applicable_auxiliary_qcd,qcd_uniform_constant,qcd_variable_frozen_fragment,signed_exact_event_sidecar,uniform_member_constant	pass	all generator-weight transport branches represented
+hard	coefficient_registry_rows	464	464	pass	one source coefficient record per train source
+hard	primary_coefficients_finite_positive	441	441	pass	all primary sources receive one positive coefficient
+hard	auxiliary_coefficients_null	23	23	pass	auxiliary QCD remains excluded from physical yields
+hard	physical_authorization_false_source_registry	0	0	pass	coefficient join is diagnostic only
+hard	source_weight_registry_rows	2320	2320	pass	five records for each of 464 sources
+hard	source_weight_rows_per_fold	464,464,464,464,464	464,464,464,464,464	pass	complete source registry in every outer fold
+hard	outer_training_flag_exact	2320	2320	pass	held-out groups never receive a training weight
+hard	training_weights_finite_positive	1856	1856	pass	all outer-training rows receive positive weights
+hard	heldout_weights_null	464	464	pass	held-out and zero-row sources have no training weight
+hard	weight_summary_status	65	65	pass	all predeclared aggregate weight targets close
+hard	weight_summary_max_abs_difference	1.2212453270876722e-15	<=1e-12	pass	numerical closure of fold-local comparison weights
+hard	class_balance_fold_0	"{""background"": 0.4999999999999988, ""signal"": 0.5000000000000002}"	"{""background"": 0.5, ""signal"": 0.5} within abs_tol=1e-12"	pass	equal total signal and background loss budget; floating-point closure evaluated with the same 1e-12 absolute tolerance as the aggregate weight gate
+hard	class_balance_fold_1	"{""background"": 0.4999999999999998, ""signal"": 0.4999999999999996}"	"{""background"": 0.5, ""signal"": 0.5} within abs_tol=1e-12"	pass	equal total signal and background loss budget; floating-point closure evaluated with the same 1e-12 absolute tolerance as the aggregate weight gate
+hard	class_balance_fold_2	"{""background"": 0.4999999999999996, ""signal"": 0.4999999999999996}"	"{""background"": 0.5, ""signal"": 0.5} within abs_tol=1e-12"	pass	equal total signal and background loss budget; floating-point closure evaluated with the same 1e-12 absolute tolerance as the aggregate weight gate
+hard	class_balance_fold_3	"{""background"": 0.4999999999999996, ""signal"": 0.5000000000000004}"	"{""background"": 0.5, ""signal"": 0.5} within abs_tol=1e-12"	pass	equal total signal and background loss budget; floating-point closure evaluated with the same 1e-12 absolute tolerance as the aggregate weight gate
+hard	class_balance_fold_4	"{""background"": 0.4999999999999995, ""signal"": 0.5000000000000002}"	"{""background"": 0.5, ""signal"": 0.5} within abs_tol=1e-12"	pass	equal total signal and background loss budget; floating-point closure evaluated with the same 1e-12 absolute tolerance as the aggregate weight gate
+hard	fixed_auxiliary_qcd_budget_across_folds	0.00687799043062,0.00687799043062,0.00687799043062,0.00687799043062,0.00687799043062	one identical positive value across 5 folds	pass	auxiliary-QCD loss contribution is fixed across folds
+hard	qcd_family_total_equals_other_background_family_budget	0.0625,0.0625,0.0625,0.0625,0.0625	0.0625	pass	auxiliary QCD shares rather than enlarges the QCD family budget
+hard	accounting_rows	320	320	pass	deterministic sampled accounting population
+hard	resolved_rows	264	264	pass	deterministic sampled resolved population
+hard	non_broad_sample_rows	56	56	pass	non-broad events remain represented
+hard	accounting_event_uid_unique	320	320	pass	one accounting row per sampled event
+hard	resolved_event_uid_unique	264	264	pass	one resolved row per sampled broad event
+hard	resolved_subset_of_accounting	0	0	pass	resolved model view is a strict accounting-table view
+hard	primary_event_weight_inputs_finite	272	272	pass	sampled primary events have complete signed-weight inputs
+hard	auxiliary_event_weights_null	48	48	pass	auxiliary QCD has no physical weight at event level
+hard	primary_diagnostic_weight_formula	0.0	<=1e-12 relative/absolute numerical precision	pass	diagnostic Run-2 event weight preserves generator-weight sign
+hard	non_broad_primary_selection_weight_zero	48	48	pass	non-broad events contribute zero after resolved preselection
+hard	broad_primary_selection_weight_equals_event_weight	0.0	<=1e-12	pass	broad selected yield uses the diagnostic event weight
+hard	event_physical_authorization_false	0	0	pass	diagnostic computation has not authorized physical use
+hard	mass_aware_schema_rows	34	34	pass	exact conventional mass-aware feature cardinality
+hard	mass_blind_schema_rows	30	30	pass	exact conventional mass-plane-blind feature cardinality
+hard	mass_aware_features_present_finite	missing=[]; finite=True	missing=[]; finite=True	pass	all sampled resolved features are usable
+hard	mass_blind_features_present_finite	missing=[]; finite=True	missing=[]; finite=True	pass	all sampled resolved features are usable
+hard	four_comparison_weights_per_resolved_row	[4]	[4]	pass	each row has weights for four outer-training uses
+hard	own_holdout_fold_weight_null	264	264	pass	source-group held-out fold cannot enter training
+hard	comparison_weights_positive	1056	1056	pass	learning weights are nonnegative and finite
+hard	historical_parity_rows	48	48	pass	sampled events with at least four tags
+hard	historical_parity_status	48	48	pass	generalized reconstruction reproduces frozen rich-v2 behavior
+hard	historical_parity_max_difference	0.0	<=1e-9	pass	numerical parity tolerance
+hard	deterministic_artifacts	5	5	pass	independent reruns are byte-identical
+coverage	btag_category_coverage	0,1,2,3,4plus	0,1,2,3,4plus	pass	broad reconstruction exercised from zero to four-plus tags
+coverage	signed_transport_negative_weight_coverage	0	>=1	fail	signed event-weight path exercised with a negative event
+coverage	signed_transport_positive_weight_coverage	48	>=1	pass	signed event-weight path exercised with a positive event
+coverage	variable_qcd_weight_variation	1	>=2	fail	variable hard-QCD event weights genuinely vary
+coverage	qcd_uniform_constant_constant_weight_behavior	1	1	pass	constant transport remains constant in sampled events
+coverage	uniform_member_constant_constant_weight_behavior	3	1	fail	constant transport remains constant in sampled events
+coverage	auxiliary_transport_all_weights_null	48	48	pass	classification-only auxiliary path has no physical weights

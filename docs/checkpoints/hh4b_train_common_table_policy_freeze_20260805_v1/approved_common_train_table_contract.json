@@ -1,0 +1,92 @@
+{
+  "candidate_reconstruction": {
+    "candidate_jet_feature_order": "descending candidate-jet pT",
+    "four_jet_candidate_objective": "maximize the number of tagged jets among the candidate four",
+    "higgs_ordering": "descending dijet pT",
+    "historical_parity_rows_canary": 48,
+    "historical_rich_v2_parity_for_at_least_four_tags": true,
+    "pairing_objectives_in_order": [
+      "minimize abs(mbb_a-125)+abs(mbb_b-125)",
+      "minimize abs(mbb_a-mbb_b)",
+      "maximize pT_a+pT_b",
+      "deterministic combination and pairing order"
+    ],
+    "pool": "up to eight selected jets ordered by b-tag flag descending, pT descending, then selected-jet index ascending"
+  },
+  "comparison_weight_contract": {
+    "auxiliary_qcd_policy": "share a fixed fraction of the qcd_multijet family budget across every outer fold; never enlarge the total QCD-family or background-class budget",
+    "class_total_raw_fractions": {
+      "background": 0.5,
+      "signal": 0.5
+    },
+    "equal_background_families": true,
+    "equal_rows_within_source": true,
+    "equal_signal_modes": true,
+    "equal_sources_within_weight_stratum": true,
+    "folds": 5,
+    "frozen": true,
+    "group_key": "group_id",
+    "normalization": "mean outer-training-row weight equals one",
+    "physical_normalization": false,
+    "source_registry_rows": 2320
+  },
+  "cut_contract": {
+    "new_nominal_threshold": null,
+    "optimization_dataset": "new full-production train resolved view only",
+    "optimization_method": "nested five-fold source-group OOF after full common-table materialization and physical-weight authorization",
+    "r_hh_125_120_lt_34": "previous small-sample optimized reference only",
+    "r_hh_125_125_lt_34": "historical fixed comparator only",
+    "test_used_for_optimization": false,
+    "validation_used_for_optimization": false
+  },
+  "data_accounting": {
+    "all_train_events_retained_in_accounting": true,
+    "test_events_sealed": 397543,
+    "train_auxiliary_qcd_events": 230000,
+    "train_generated_events": 3799873,
+    "train_non_broad_accounting_rows": 2628801,
+    "train_primary_physical_events": 3569873,
+    "train_resolved_model_rows": 1171072,
+    "validation_events_sealed": 1002584
+  },
+  "evidence": {
+    "augmentation_byte_identical_rerun": true,
+    "canary_byte_identical_rerun": true,
+    "canary_hard_behavior_passed": true,
+    "combined_coverage_failures": 0,
+    "review_hard_failures": 0,
+    "review_hard_gates": 70
+  },
+  "feature_contract": {
+    "feature_schema_path": "canary_evidence/common_feature_schema_canary.tsv",
+    "mass_aware_features": 34,
+    "mass_plane_blind_features": 30
+  },
+  "next": "implement and pilot full train-only common-table scale-out, then audit 3799873 accounting rows and 1171072 resolved rows",
+  "physical_coefficient_join_contract": {
+    "application_authorized": false,
+    "authorization_next_gate": "full train-table scale-out and source/event-level physical weight closure audit",
+    "auxiliary_null_weight_coverage": true,
+    "auxiliary_qcd_sources_with_null_coefficient": 23,
+    "event_weight_formula": "run2_yield_coefficient_per_generator_weight times signed generator_nominal_weight",
+    "negative_signed_weight_coverage": true,
+    "primary_sources_joined": 441,
+    "uniform_transport_coverage": true,
+    "variable_qcd_weight_coverage": true
+  },
+  "repository_head_before_contract_commit": "96f4e2893a31df80f81ada4851ed23a658bf046b",
+  "resolved_event_preselection": {
+    "btag_requirement_before_model": null,
+    "minimum_selected_jets": 4,
+    "selected_ak4_abs_eta_max": 2.5,
+    "selected_ak4_jet_pt_min_gev": 30.0
+  },
+  "schema_version": 1,
+  "scope": "common train-only accounting and resolved feature-table policy for fixed cut, optimized cut, BDT, dense DNN, LBN-DNN and resolved SPA-Net comparisons",
+  "sealed_data_and_training": {
+    "models_trained": 0,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "status": "pass_frozen"
+}

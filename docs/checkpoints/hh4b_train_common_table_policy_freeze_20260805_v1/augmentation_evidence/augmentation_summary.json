@@ -1,0 +1,32 @@
+{
+  "auxiliary_weights_all_null_verified": true,
+  "byte_identical_rerun": true,
+  "candidate_reconstruction_policy_frozen": false,
+  "combined_decision": "approve_canary_for_freeze_and_scale",
+  "comparison_weight_policy_frozen": false,
+  "models_trained": 0,
+  "next": "freeze canary policy and scale common train tables",
+  "ordinary_uniform_constant_verified": true,
+  "original_coverage_gate_failures": 3,
+  "original_failed_coverage_gates": [
+    "signed_transport_negative_weight_coverage",
+    "variable_qcd_weight_variation",
+    "uniform_member_constant_constant_weight_behavior"
+  ],
+  "original_hard_gate_failures": 0,
+  "physical_weight_application_authorized": false,
+  "qcd_uniform_constant_verified": true,
+  "remaining_coverage_gate_failures": 0,
+  "remaining_hard_gate_failures": 0,
+  "repository_head": "96f4e2893a31df80f81ada4851ed23a658bf046b",
+  "scanned_sources": 5,
+  "schema_version": 1,
+  "scope": "targeted train-only event-row augmentation for missing weight-transport coverage gates",
+  "signed_negative_weight_found": true,
+  "signed_positive_weight_found": true,
+  "status": "pass",
+  "targeted_rows": 7,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0,
+  "variable_qcd_weight_variation_found": true
+}

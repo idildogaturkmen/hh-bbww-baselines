@@ -1,0 +1,6 @@
+generator_weight_transport_class	sampled_rows	finite_nominal_weight_rows	null_nominal_weight_rows	negative_nominal_weight_rows	positive_nominal_weight_rows	zero_nominal_weight_rows	unique_finite_nominal_weights	minimum_nominal_weight	maximum_nominal_weight	checkpoint_serialization_status
+not_applicable_auxiliary_qcd	48	0	48	0	0	0	0			source_fields_preserved
+qcd_uniform_constant	48	48	0	0	48	0	1	1.0	1.0	source_fields_preserved
+qcd_variable_frozen_fragment	32	32	0	0	32	0	1	1.0	1.0	source_fields_preserved
+signed_exact_event_sidecar	48	48	0	0	48	0	1	0.02875025011599064	0.02875025011599064	source_fields_preserved
+uniform_member_constant	144	144	0	0	144	0	3	0.0009916999842971563	0.00918534118682146	source_fields_preserved

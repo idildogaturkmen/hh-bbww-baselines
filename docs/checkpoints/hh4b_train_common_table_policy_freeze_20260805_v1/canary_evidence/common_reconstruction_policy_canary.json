@@ -1,0 +1,58 @@
+{
+  "candidate_reconstruction": {
+    "candidate_jet_feature_order": "descending candidate-jet pT",
+    "combination_primary": "maximize the number of tagged jets among the four candidates",
+    "higgs_ordering": "descending dijet pT",
+    "historical_parity": "for events with at least four tagged jets, exactly reproduce the frozen rich-v2 up-to-eight-b-jet reconstruction",
+    "pairing_objectives": [
+      "minimize |mbb_a-125|+|mbb_b-125|",
+      "minimize |mbb_a-mbb_b|",
+      "maximize pT_a+pT_b",
+      "frozen combination and pairing order"
+    ],
+    "pool": "up to eight selected jets ordered by b-tag flag descending, pT descending, selected-jet index ascending"
+  },
+  "comparison_weights": {
+    "auxiliary_qcd_budget": "within the qcd_multijet family, fix the auxiliary share in every outer fold to its full-train candidate-bearing source fraction",
+    "background_families_equal": true,
+    "class_totals": {
+      "background": 0.5,
+      "signal": 0.5
+    },
+    "global_auxiliary_fraction_within_qcd_family": 0.11004784688995216,
+    "normalization": "mean training-row weight equals one",
+    "physical_normalization": false,
+    "rows_equal_within_source_group": true,
+    "signal_modes_equal": true,
+    "source_groups_equal_within_weight_stratum": true,
+    "status": "canary_proposal_not_yet_frozen"
+  },
+  "cut_policy": {
+    "new_nominal_threshold": null,
+    "new_optimization": "nested five-fold source-group OOF on the full-production train resolved view after common-table scale-out",
+    "r_hh_125_120_lt_34": "previous small-sample optimized reference only",
+    "r_hh_125_125_lt_34": "historical fixed comparator only"
+  },
+  "event_accounting": {
+    "all_train_events_retained": true,
+    "auxiliary_qcd_events": 230000,
+    "primary_physical_events": 3569873,
+    "train_generated_events": 3799873
+  },
+  "models_trained": 0,
+  "physical_weights": {
+    "application_authorized": false,
+    "auxiliary_source_coefficients_null": 23,
+    "formula": "run2 coefficient per generator weight times signed generator_nominal_weight",
+    "primary_source_coefficients_joined": 441,
+    "status": "diagnostic_canary_not_authorized"
+  },
+  "resolved_model_view": {
+    "rows": 1171072,
+    "selection": "n_selected_jets >= 4"
+  },
+  "schema_version": 1,
+  "status": "canary_proposal_not_yet_frozen",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
