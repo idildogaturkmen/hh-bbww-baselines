@@ -1,0 +1,79 @@
+{
+  "interpretation_boundary": "This is an exhaustive unweighted DCB control validation on the exact deterministic 1,000-event ZH and ZZ products at the released 0.997 threshold. It is not a cross-section-weighted efficiency, calibrated mistag rate, signal mass resolution, or expected sensitivity.",
+  "region_definition": {
+    "ZH": "sort each fitted pair; low coordinate within half-width of mZ and high coordinate within half-width of mH",
+    "ZZ": "both fitted coordinates within half-width of mZ",
+    "half_width_gev": 15.0,
+    "mH_gev": 125.0,
+    "mZ_gev": 91.1876
+  },
+  "samples": {
+    "ZH": {
+      "dominant_raw_upstream": 114,
+      "dominant_with_valid_secondary": 85,
+      "either_physical_peak_in_target_region": 122,
+      "either_region_fraction_of_successes": 0.6666666666666666,
+      "event_table": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1/zh_official_full_dcb_events.tsv",
+      "event_table_sha256": "34a9b69b40c96cc2b2559479eae775f1ee25bd7d41cbe0777f68a85e3be31c29",
+      "events_attempted": 187,
+      "fit_npz": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1/zh_fit/cut0p997_zh_1000_events_idx3-999_job40J3A_ZH_FULL_fit_results.npz",
+      "fit_npz_sha256": "773e775fb738fdfb9695dd717dca4798f7c7e1f97d6a27281bae5fa955298c20",
+      "input_root": "/tmp/iturkmen_track_b_zh_1000_ensemble_20260804_v1/zh_1000_events.root",
+      "p_signal_quantiles": {
+        "max": 0.9999935030937195,
+        "median": 0.9993372559547424,
+        "min": 0.9970213770866394,
+        "q25": 0.998553454875946,
+        "q75": 0.9997197389602661
+      },
+      "physical_primary_fraction_of_successes": 0.9617486338797814,
+      "physical_primary_peak_40_200": 176,
+      "physical_secondary_fraction_of_valid": 0.930379746835443,
+      "physical_secondary_peak_40_200": 147,
+      "primary_fit_failure": 4,
+      "primary_fit_success": 183,
+      "primary_fit_success_fraction": 0.9786096256684492,
+      "primary_peak_in_target_region": 109,
+      "primary_region_fraction_of_successes": 0.5956284153005464,
+      "valid_secondary_fraction": 0.8449197860962567,
+      "valid_secondary_peak": 158
+    },
+    "ZZ": {
+      "dominant_raw_upstream": 39,
+      "dominant_with_valid_secondary": 28,
+      "either_physical_peak_in_target_region": 40,
+      "either_region_fraction_of_successes": 0.6153846153846154,
+      "event_table": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1/zz_official_full_dcb_events.tsv",
+      "event_table_sha256": "d8c537a2b92f433ecb5b070748bbe5651c87567ae393dda59ccf9fe7e7fb321b",
+      "events_attempted": 67,
+      "fit_npz": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1/zz_fit/cut0p997_zz_1000_events_idx4-998_job40J3A_ZZ_FULL_fit_results.npz",
+      "fit_npz_sha256": "96c08ec153c20bd4cfa72ed42388a583433a1fd7f8769956627184f578c13649",
+      "input_root": "/tmp/iturkmen_track_b_zz_1000_ensemble_20260805_v1/zz_1000_events.root",
+      "p_signal_quantiles": {
+        "max": 0.9999663829803467,
+        "median": 0.9987552165985107,
+        "min": 0.9970289468765259,
+        "q25": 0.9979355931282043,
+        "q75": 0.9994730353355408
+      },
+      "physical_primary_fraction_of_successes": 0.9384615384615385,
+      "physical_primary_peak_40_200": 61,
+      "physical_secondary_fraction_of_valid": 0.8392857142857143,
+      "physical_secondary_peak_40_200": 47,
+      "primary_fit_failure": 2,
+      "primary_fit_success": 65,
+      "primary_fit_success_fraction": 0.9701492537313433,
+      "primary_peak_in_target_region": 30,
+      "primary_region_fraction_of_successes": 0.46153846153846156,
+      "valid_secondary_fraction": 0.835820895522388,
+      "valid_secondary_peak": 56
+    }
+  },
+  "schema_version": 1,
+  "selection": {
+    "p_signal_strictly_greater_than": 0.997,
+    "pass_4j3b_selection": 1,
+    "pass_selection": 1
+  },
+  "status": "complete_official_threshold_dcb_control_validation"
+}

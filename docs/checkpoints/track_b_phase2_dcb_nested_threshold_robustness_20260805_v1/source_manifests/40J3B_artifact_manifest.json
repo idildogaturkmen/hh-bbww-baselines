@@ -1,0 +1,37 @@
+{
+  "artifact_count": 6,
+  "artifacts": [
+    {
+      "relative_path": "40J3B_dcb_pathology_threshold_preflight.json",
+      "sha256": "633e790f135588a542189f30953c0527a7fdf39da0ca99bc221949eb049f9b5d",
+      "size_bytes": 36878
+    },
+    {
+      "relative_path": "dcb_issue_events.tsv",
+      "sha256": "145d2d079ad867e192578aaa4ceec422c80e906eb0d93126f67c4397eb97dee6",
+      "size_bytes": 30929
+    },
+    {
+      "relative_path": "dcb_parameter_statistics.tsv",
+      "sha256": "b6ed057f2e15733ebc8b4fb110e0147bca04ff9112c5de01cf04935bb7f7964b",
+      "size_bytes": 11901
+    },
+    {
+      "relative_path": "dcb_top_background_amplitudes.tsv",
+      "sha256": "17c4f23963cae16c30422560ba5c3ce27f74533ff6e9535d3f3395be96b2f610",
+      "size_bytes": 8162
+    },
+    {
+      "relative_path": "proposed_bounded_spread_plan.tsv",
+      "sha256": "cd3c07fd1076ab7b8a442ec34598c24deb96b8a2e79a26a75150cfe4dc225e41",
+      "size_bytes": 89999
+    },
+    {
+      "relative_path": "threshold_population_census.tsv",
+      "sha256": "e75bd65b9fedfad9ce08b766256947f3ac52cc0148414e62a631a9828b52506a",
+      "size_bytes": 1248
+    }
+  ],
+  "output_root": "/tmp/iturkmen_track_b_40J3B_dcb_audit_threshold_preflight_20260805_v1_BBeaMC",
+  "schema_version": 1
+}

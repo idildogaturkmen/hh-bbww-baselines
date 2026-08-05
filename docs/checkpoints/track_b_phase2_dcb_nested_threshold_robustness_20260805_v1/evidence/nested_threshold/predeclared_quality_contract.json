@@ -1,0 +1,52 @@
+{
+  "fit_quality_policy": {
+    "background_amplitude_gt_1": "Catastrophic-background diagnostic flag only. Headline metrics are reported both with all fits and in a sensitivity view excluding this flag; no post-hoc replacement fit is performed.",
+    "parameter_at_bound": "Diagnostic nuisance flag only. It is not a headline-event exclusion because the aggregate flag mixes peak-shape, tail, rotation, and background nuisance boundaries.",
+    "primary_nonphysical": "Successful optimizer result outside 40-200 GeV; reported separately and excluded only from physical-localization numerators.",
+    "primary_optimizer_failure": "Reported separately; never silently removed from denominators.",
+    "secondary_invalid_or_sentinel": "Reported separately; never interpreted as a measured second peak.",
+    "secondary_nonphysical": "Valid non-sentinel solution outside 40-200 GeV; reported separately."
+  },
+  "headline_metrics": [
+    "primary_fit_success",
+    "physical_primary_peak_40_200",
+    "primary_peak_in_target_region",
+    "valid_secondary_peak",
+    "physical_secondary_peak_40_200",
+    "either_physical_peak_in_target_region"
+  ],
+  "interpretation_boundary": "This is an unweighted control-sample robustness study. It is not a cross-section-weighted efficiency, calibrated mistag estimate, mass-resolution measurement, or expected sensitivity.",
+  "schema_version": 1,
+  "scientific_design": {
+    "accepted_high_tail": "p_signal > 0.997",
+    "combined_population": "p_signal > 0.8",
+    "duplicate_fit_policy": "No event already present in the accepted p_signal > 0.997 products is refitted.",
+    "nested_thresholds": [
+      0.8,
+      0.9,
+      0.95,
+      0.99,
+      0.997
+    ],
+    "new_incremental_band": "0.8 < p_signal <= 0.997",
+    "sampling_policy": "Exhaustive within the deterministic 1,000-event ZH and ZZ released-model products; no first-N cap and no spread-sample cap.",
+    "selection": {
+      "pass_4j3b_selection": 1,
+      "pass_selection": 1
+    }
+  },
+  "status": "predeclared_before_incremental_fitting",
+  "target_regions": {
+    "ZH": {
+      "definition": "Sort the two fitted coordinates; lower within 15 GeV of mZ and higher within 15 GeV of mH.",
+      "half_width_gev": 15.0,
+      "mH_gev": 125.0,
+      "mZ_gev": 91.1876
+    },
+    "ZZ": {
+      "definition": "Both fitted coordinates within 15 GeV of mZ.",
+      "half_width_gev": 15.0,
+      "mZ_gev": 91.1876
+    }
+  }
+}

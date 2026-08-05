@@ -1,0 +1,40 @@
+{
+  "accepted_current_head": "96f4e2893a31df80f81ada4851ed23a658bf046b",
+  "interpretation_boundary": "This is an exhaustive unweighted DCB control validation on the exact deterministic 1,000-event ZH and ZZ products at the released 0.997 threshold. It is not a cross-section-weighted efficiency, calibrated mistag rate, signal mass resolution, or expected sensitivity.",
+  "repository_advance": {
+    "allowed_prefix": "docs/checkpoints/hh4b_common_table_join_key_selection_20260805_v1/",
+    "commit_count": 1,
+    "commit_subject": "docs: freeze common-table join-key selection"
+  },
+  "samples": {
+    "ZH": {
+      "dominant_raw_upstream": 114,
+      "dominant_with_valid_secondary": 85,
+      "either_physical_peak_in_target_region": 122,
+      "events_attempted": 187,
+      "physical_primary_peak_40_200": 176,
+      "physical_secondary_peak_40_200": 147,
+      "primary_fit_failure": 4,
+      "primary_fit_success": 183,
+      "primary_peak_in_target_region": 109,
+      "valid_secondary_peak": 158
+    },
+    "ZZ": {
+      "dominant_raw_upstream": 39,
+      "dominant_with_valid_secondary": 28,
+      "either_physical_peak_in_target_region": 40,
+      "events_attempted": 67,
+      "physical_primary_peak_40_200": 61,
+      "physical_secondary_peak_40_200": 47,
+      "primary_fit_failure": 2,
+      "primary_fit_success": 65,
+      "primary_peak_in_target_region": 30,
+      "valid_secondary_peak": 56
+    }
+  },
+  "schema_version": 1,
+  "scientific_scope": "Exhaustive unweighted DCB control validation for the exact deterministic ZH and ZZ 1,000-event products at p_signal > 0.997.",
+  "source_output_root": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1",
+  "start_head": "6d0ec4b04e2b1174a53a4dc9c4a4869c808de575",
+  "status": "accepted_without_refit_after_unrelated_repository_advance"
+}

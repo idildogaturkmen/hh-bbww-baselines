@@ -1,0 +1,290 @@
+{
+  "combined_event_table": "/tmp/iturkmen_track_b_40J3C_nested_threshold_dcb_20260805_v1_N6wQ2w/combined_p_signal_gt_0p8_dcb_events.tsv",
+  "combined_event_table_sha256": "c07443494b6e66ce3d3a17a77fdb29e4bf7bd9fc14869dfb45f905084e1b96c8",
+  "quality_contract": "/tmp/iturkmen_track_b_40J3C_nested_threshold_dcb_20260805_v1_N6wQ2w/predeclared_nested_threshold_quality_contract.json",
+  "reuse_policy": {
+    "accepted_high_tail": "p_signal > 0.997 reused from 40J3A",
+    "duplicate_fits": 0,
+    "new_fits": "0.8 < p_signal <= 0.997 only"
+  },
+  "samples": {
+    "ZH": {
+      "accepted_high_npz": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1/zh_fit/cut0p997_zh_1000_events_idx3-999_job40J3A_ZH_FULL_fit_results.npz",
+      "accepted_high_npz_sha256": "773e775fb738fdfb9695dd717dca4798f7c7e1f97d6a27281bae5fa955298c20",
+      "accepted_high_tail_count_reused": 187,
+      "combined_unique_count": 545,
+      "incremental_count_newly_fitted": 358,
+      "incremental_npz": "/tmp/iturkmen_track_b_40J3C_nested_threshold_dcb_20260805_v1_N6wQ2w/zh_increment_fit/cut0p8_zh_increment_0p8_to_0p997_idx0-357_job40J3C_ZH_INCREMENT_fit_results.npz",
+      "incremental_npz_sha256": "82f47805208b8f8e9e44161da980c216a086abe51905f25939d097262ac13c46",
+      "threshold_results": {
+        "0.8": {
+          "catastrophic_bg_amp_gt_1": 0,
+          "either_physical_peak_in_target_region": 247,
+          "either_region_fraction_of_successes": 0.4686907020872865,
+          "events": 545,
+          "events_with_any_parameter_at_bound": 281,
+          "physical_primary_fraction_of_successes": 0.8861480075901328,
+          "physical_primary_peak_40_200": 467,
+          "physical_secondary_fraction_of_valid": 0.8131868131868132,
+          "physical_secondary_peak_40_200": 370,
+          "primary_fit_failure": 18,
+          "primary_fit_success": 527,
+          "primary_fit_success_fraction": 0.9669724770642202,
+          "primary_peak_in_target_region": 207,
+          "primary_region_fraction_of_successes": 0.3927893738140417,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 247,
+            "either_region_fraction_of_successes": 0.4686907020872865,
+            "events": 545,
+            "primary_fit_success": 527
+          },
+          "valid_secondary_fraction": 0.8348623853211009,
+          "valid_secondary_peak": 455
+        },
+        "0.9": {
+          "catastrophic_bg_amp_gt_1": 0,
+          "either_physical_peak_in_target_region": 220,
+          "either_region_fraction_of_successes": 0.4835164835164835,
+          "events": 470,
+          "events_with_any_parameter_at_bound": 231,
+          "physical_primary_fraction_of_successes": 0.9032967032967033,
+          "physical_primary_peak_40_200": 411,
+          "physical_secondary_fraction_of_valid": 0.8269720101781171,
+          "physical_secondary_peak_40_200": 325,
+          "primary_fit_failure": 15,
+          "primary_fit_success": 455,
+          "primary_fit_success_fraction": 0.9680851063829787,
+          "primary_peak_in_target_region": 187,
+          "primary_region_fraction_of_successes": 0.41098901098901097,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 220,
+            "either_region_fraction_of_successes": 0.4835164835164835,
+            "events": 470,
+            "primary_fit_success": 455
+          },
+          "valid_secondary_fraction": 0.8361702127659575,
+          "valid_secondary_peak": 393
+        },
+        "0.95": {
+          "catastrophic_bg_amp_gt_1": 0,
+          "either_physical_peak_in_target_region": 204,
+          "either_region_fraction_of_successes": 0.5037037037037037,
+          "events": 419,
+          "events_with_any_parameter_at_bound": 209,
+          "physical_primary_fraction_of_successes": 0.9061728395061729,
+          "physical_primary_peak_40_200": 367,
+          "physical_secondary_fraction_of_valid": 0.8401162790697675,
+          "physical_secondary_peak_40_200": 289,
+          "primary_fit_failure": 14,
+          "primary_fit_success": 405,
+          "primary_fit_success_fraction": 0.9665871121718377,
+          "primary_peak_in_target_region": 174,
+          "primary_region_fraction_of_successes": 0.42962962962962964,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 204,
+            "either_region_fraction_of_successes": 0.5037037037037037,
+            "events": 419,
+            "primary_fit_success": 405
+          },
+          "valid_secondary_fraction": 0.8210023866348448,
+          "valid_secondary_peak": 344
+        },
+        "0.99": {
+          "catastrophic_bg_amp_gt_1": 0,
+          "either_physical_peak_in_target_region": 160,
+          "either_region_fraction_of_successes": 0.5860805860805861,
+          "events": 279,
+          "events_with_any_parameter_at_bound": 131,
+          "physical_primary_fraction_of_successes": 0.9377289377289377,
+          "physical_primary_peak_40_200": 256,
+          "physical_secondary_fraction_of_valid": 0.8833333333333333,
+          "physical_secondary_peak_40_200": 212,
+          "primary_fit_failure": 6,
+          "primary_fit_success": 273,
+          "primary_fit_success_fraction": 0.978494623655914,
+          "primary_peak_in_target_region": 138,
+          "primary_region_fraction_of_successes": 0.5054945054945055,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 160,
+            "either_region_fraction_of_successes": 0.5860805860805861,
+            "events": 279,
+            "primary_fit_success": 273
+          },
+          "valid_secondary_fraction": 0.8602150537634409,
+          "valid_secondary_peak": 240
+        },
+        "0.997": {
+          "catastrophic_bg_amp_gt_1": 0,
+          "either_physical_peak_in_target_region": 122,
+          "either_region_fraction_of_successes": 0.6666666666666666,
+          "events": 187,
+          "events_with_any_parameter_at_bound": 77,
+          "physical_primary_fraction_of_successes": 0.9617486338797814,
+          "physical_primary_peak_40_200": 176,
+          "physical_secondary_fraction_of_valid": 0.930379746835443,
+          "physical_secondary_peak_40_200": 147,
+          "primary_fit_failure": 4,
+          "primary_fit_success": 183,
+          "primary_fit_success_fraction": 0.9786096256684492,
+          "primary_peak_in_target_region": 109,
+          "primary_region_fraction_of_successes": 0.5956284153005464,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 122,
+            "either_region_fraction_of_successes": 0.6666666666666666,
+            "events": 187,
+            "primary_fit_success": 183
+          },
+          "valid_secondary_fraction": 0.8449197860962567,
+          "valid_secondary_peak": 158
+        }
+      }
+    },
+    "ZZ": {
+      "accepted_high_npz": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1/zz_fit/cut0p997_zz_1000_events_idx4-998_job40J3A_ZZ_FULL_fit_results.npz",
+      "accepted_high_npz_sha256": "96c08ec153c20bd4cfa72ed42388a583433a1fd7f8769956627184f578c13649",
+      "accepted_high_tail_count_reused": 67,
+      "combined_unique_count": 305,
+      "incremental_count_newly_fitted": 238,
+      "incremental_npz": "/tmp/iturkmen_track_b_40J3C_nested_threshold_dcb_20260805_v1_N6wQ2w/zz_increment_fit/cut0p8_zz_increment_0p8_to_0p997_idx0-237_job40J3C_ZZ_INCREMENT_fit_results.npz",
+      "incremental_npz_sha256": "f4ef338830cd0807473ddbd2ed0361c50ebd399ef784ea2d8d1f9baf9e9bb0bc",
+      "threshold_results": {
+        "0.8": {
+          "catastrophic_bg_amp_gt_1": 2,
+          "either_physical_peak_in_target_region": 120,
+          "either_region_fraction_of_successes": 0.4013377926421405,
+          "events": 305,
+          "events_with_any_parameter_at_bound": 203,
+          "physical_primary_fraction_of_successes": 0.8294314381270903,
+          "physical_primary_peak_40_200": 248,
+          "physical_secondary_fraction_of_valid": 0.765625,
+          "physical_secondary_peak_40_200": 196,
+          "primary_fit_failure": 6,
+          "primary_fit_success": 299,
+          "primary_fit_success_fraction": 0.980327868852459,
+          "primary_peak_in_target_region": 98,
+          "primary_region_fraction_of_successes": 0.3277591973244147,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 120,
+            "either_region_fraction_of_successes": 0.40404040404040403,
+            "events": 303,
+            "primary_fit_success": 297
+          },
+          "valid_secondary_fraction": 0.839344262295082,
+          "valid_secondary_peak": 256
+        },
+        "0.9": {
+          "catastrophic_bg_amp_gt_1": 1,
+          "either_physical_peak_in_target_region": 104,
+          "either_region_fraction_of_successes": 0.45021645021645024,
+          "events": 236,
+          "events_with_any_parameter_at_bound": 155,
+          "physical_primary_fraction_of_successes": 0.8398268398268398,
+          "physical_primary_peak_40_200": 194,
+          "physical_secondary_fraction_of_valid": 0.7474226804123711,
+          "physical_secondary_peak_40_200": 145,
+          "primary_fit_failure": 5,
+          "primary_fit_success": 231,
+          "primary_fit_success_fraction": 0.9788135593220338,
+          "primary_peak_in_target_region": 87,
+          "primary_region_fraction_of_successes": 0.37662337662337664,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 104,
+            "either_region_fraction_of_successes": 0.45217391304347826,
+            "events": 235,
+            "primary_fit_success": 230
+          },
+          "valid_secondary_fraction": 0.8220338983050848,
+          "valid_secondary_peak": 194
+        },
+        "0.95": {
+          "catastrophic_bg_amp_gt_1": 1,
+          "either_physical_peak_in_target_region": 93,
+          "either_region_fraction_of_successes": 0.484375,
+          "events": 196,
+          "events_with_any_parameter_at_bound": 127,
+          "physical_primary_fraction_of_successes": 0.8489583333333334,
+          "physical_primary_peak_40_200": 163,
+          "physical_secondary_fraction_of_valid": 0.7560975609756098,
+          "physical_secondary_peak_40_200": 124,
+          "primary_fit_failure": 4,
+          "primary_fit_success": 192,
+          "primary_fit_success_fraction": 0.9795918367346939,
+          "primary_peak_in_target_region": 77,
+          "primary_region_fraction_of_successes": 0.4010416666666667,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 93,
+            "either_region_fraction_of_successes": 0.4869109947643979,
+            "events": 195,
+            "primary_fit_success": 191
+          },
+          "valid_secondary_fraction": 0.8367346938775511,
+          "valid_secondary_peak": 164
+        },
+        "0.99": {
+          "catastrophic_bg_amp_gt_1": 1,
+          "either_physical_peak_in_target_region": 59,
+          "either_region_fraction_of_successes": 0.5462962962962963,
+          "events": 110,
+          "events_with_any_parameter_at_bound": 70,
+          "physical_primary_fraction_of_successes": 0.9074074074074074,
+          "physical_primary_peak_40_200": 98,
+          "physical_secondary_fraction_of_valid": 0.8111111111111111,
+          "physical_secondary_peak_40_200": 73,
+          "primary_fit_failure": 2,
+          "primary_fit_success": 108,
+          "primary_fit_success_fraction": 0.9818181818181818,
+          "primary_peak_in_target_region": 47,
+          "primary_region_fraction_of_successes": 0.4351851851851852,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 59,
+            "either_region_fraction_of_successes": 0.5514018691588785,
+            "events": 109,
+            "primary_fit_success": 107
+          },
+          "valid_secondary_fraction": 0.8181818181818182,
+          "valid_secondary_peak": 90
+        },
+        "0.997": {
+          "catastrophic_bg_amp_gt_1": 1,
+          "either_physical_peak_in_target_region": 40,
+          "either_region_fraction_of_successes": 0.6153846153846154,
+          "events": 67,
+          "events_with_any_parameter_at_bound": 42,
+          "physical_primary_fraction_of_successes": 0.9384615384615385,
+          "physical_primary_peak_40_200": 61,
+          "physical_secondary_fraction_of_valid": 0.8392857142857143,
+          "physical_secondary_peak_40_200": 47,
+          "primary_fit_failure": 2,
+          "primary_fit_success": 65,
+          "primary_fit_success_fraction": 0.9701492537313433,
+          "primary_peak_in_target_region": 30,
+          "primary_region_fraction_of_successes": 0.46153846153846156,
+          "sensitivity_excluding_catastrophic_bg": {
+            "either_physical_peak_in_target_region": 40,
+            "either_region_fraction_of_successes": 0.625,
+            "events": 66,
+            "primary_fit_success": 64
+          },
+          "valid_secondary_fraction": 0.835820895522388,
+          "valid_secondary_peak": 56
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "selection": {
+    "minimum_p_signal_strictly_greater_than": 0.8,
+    "pass_4j3b_selection": 1,
+    "pass_selection": 1
+  },
+  "status": "complete_exhaustive_nested_threshold_dcb_robustness",
+  "threshold_table": "/tmp/iturkmen_track_b_40J3C_nested_threshold_dcb_20260805_v1_N6wQ2w/nested_threshold_dcb_summary.tsv",
+  "threshold_table_sha256": "839a46734312c53e23e2fd979cb82aa07468ac42d769bf4c5cb02b659e3e1342",
+  "thresholds": [
+    0.8,
+    0.9,
+    0.95,
+    0.99,
+    0.997
+  ]
+}

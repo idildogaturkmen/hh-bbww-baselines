@@ -1,0 +1,92 @@
+{
+  "artifact_count": 17,
+  "artifacts": [
+    {
+      "relative_path": "40J3C_nested_threshold_dcb_summary.json",
+      "sha256": "4307c5fbd5938c5799ba91476acefe050dc8d0ef97f3f8a067aa16726bd241f6",
+      "size_bytes": 13729
+    },
+    {
+      "relative_path": "combined_p_signal_gt_0p8_dcb_events.tsv",
+      "sha256": "c07443494b6e66ce3d3a17a77fdb29e4bf7bd9fc14869dfb45f905084e1b96c8",
+      "size_bytes": 170463
+    },
+    {
+      "relative_path": "incremental_band_materialization_receipt.json",
+      "sha256": "d08122b29564238ec594b71e7dd52a9cef553016295348de6f669e9502e79a10",
+      "size_bytes": 1909
+    },
+    {
+      "relative_path": "memory_after.txt",
+      "sha256": "a6d4659e4da9c357a5a9a01cb8220ed3474b1ac65bf3909a2de03e9e0e0a7929",
+      "size_bytes": 251
+    },
+    {
+      "relative_path": "memory_before.txt",
+      "sha256": "9da0bacf25dd4f01a78fb6628fddcdd8aeaaa4066c127524793dba9c4f36c88f",
+      "size_bytes": 251
+    },
+    {
+      "relative_path": "nested_threshold_dcb_summary.tsv",
+      "sha256": "839a46734312c53e23e2fd979cb82aa07468ac42d769bf4c5cb02b659e3e1342",
+      "size_bytes": 2448
+    },
+    {
+      "relative_path": "predeclared_nested_threshold_quality_contract.json",
+      "sha256": "5c8a6042f1da0829534ecbce4b80076df917350ca4b27d3ac9650002eda0ac53",
+      "size_bytes": 2429
+    },
+    {
+      "relative_path": "zh_increment_0p8_to_0p997.root",
+      "sha256": "dfd6aba27db3c4c836259ebd9f1264a35c89d96a2d0087b3c74022a026ed0ae2",
+      "size_bytes": 297917
+    },
+    {
+      "relative_path": "zh_increment_count.log",
+      "sha256": "f9af44094fa23678fe2ffe93282cb1935639d772166244d97cae530b055ba90a",
+      "size_bytes": 120
+    },
+    {
+      "relative_path": "zh_increment_entry_map.tsv",
+      "sha256": "1dab1e72648da588204e90ac5a7108478874ef4a77b426e30cd86c9dc747860c",
+      "size_bytes": 9871
+    },
+    {
+      "relative_path": "zh_increment_fit/cut0p8_zh_increment_0p8_to_0p997_idx0-357_job40J3C_ZH_INCREMENT_fit_results.npz",
+      "sha256": "82f47805208b8f8e9e44161da980c216a086abe51905f25939d097262ac13c46",
+      "size_bytes": 96918
+    },
+    {
+      "relative_path": "zh_increment_fit.log",
+      "sha256": "c128a92a9c0fc196517b2f617523e1f2ef0ae2e8b2a6330c46eca5e69a36338b",
+      "size_bytes": 2886
+    },
+    {
+      "relative_path": "zz_increment_0p8_to_0p997.root",
+      "sha256": "24b3464416405ed3ee6b28473f1425ace0a90150f2db762eaadb994c9c1fe8ff",
+      "size_bytes": 237578
+    },
+    {
+      "relative_path": "zz_increment_count.log",
+      "sha256": "e7fcb3a8cebbdf55e312bda1bbcb1542818f04d9ce5d0e5f98705b91c39a1e66",
+      "size_bytes": 120
+    },
+    {
+      "relative_path": "zz_increment_entry_map.tsv",
+      "sha256": "b4e57ddc5144cee470ebffe2343990211b7604df6d23ff744071f91e35ef37f6",
+      "size_bytes": 6535
+    },
+    {
+      "relative_path": "zz_increment_fit/cut0p8_zz_increment_0p8_to_0p997_idx0-237_job40J3C_ZZ_INCREMENT_fit_results.npz",
+      "sha256": "f4ef338830cd0807473ddbd2ed0361c50ebd399ef784ea2d8d1f9baf9e9bb0bc",
+      "size_bytes": 67398
+    },
+    {
+      "relative_path": "zz_increment_fit.log",
+      "sha256": "d1f3827304e3425805a92d6ad0f9da1449b79cdb24a977208f0a1bf575bddd8b",
+      "size_bytes": 2303
+    }
+  ],
+  "output_root": "/tmp/iturkmen_track_b_40J3C_nested_threshold_dcb_20260805_v1_N6wQ2w",
+  "schema_version": 1
+}

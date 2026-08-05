@@ -1,0 +1,22 @@
+{
+  "checkpoint_relative_path": "docs/checkpoints/track_b_phase2_dcb_nested_threshold_robustness_20260805_v1",
+  "copied_root_or_npz_binaries": false,
+  "git_serialization": {
+    "all_field_values_identical": true,
+    "checkpoint_generated_tsv_count": 1,
+    "receipt": "tsv_git_serialization_receipt.json",
+    "scientific_content_changed": false,
+    "source_mapped_tsv_count": 8,
+    "status": "checkpoint_wide_tsv_git_serialization_normalized_with_semantic_identity"
+  },
+  "repository_head_at_staging_start": "3be9b921c117e60c9c68e1c6002423aaa07ce79b",
+  "schema_version": 1,
+  "scientific_decision": "ZH/ZZ DCB control and exhaustive nested-threshold robustness validation complete; proceed to output-index mass-grid provenance.",
+  "source_roots": {
+    "40J3A": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1",
+    "40J3A_R1": "/tmp/iturkmen_track_b_40J3A_R1_posthoc_acceptance_20260805_v1_qo1h45",
+    "40J3B": "/tmp/iturkmen_track_b_40J3B_dcb_audit_threshold_preflight_20260805_v1_BBeaMC",
+    "40J3C": "/tmp/iturkmen_track_b_40J3C_nested_threshold_dcb_20260805_v1_N6wQ2w"
+  },
+  "status": "checkpoint_staged_not_committed"
+}

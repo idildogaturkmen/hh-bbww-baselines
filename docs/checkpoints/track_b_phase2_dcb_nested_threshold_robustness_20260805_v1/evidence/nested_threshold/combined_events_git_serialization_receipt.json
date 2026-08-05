@@ -1,0 +1,25 @@
+{
+  "checkpoint_lf_sha256": "6fa6872269d480b6bc4e6ff10a6f5851f4f75cb3e32bd93f53d1360f8dc163da",
+  "checkpoint_line_endings": "LF",
+  "checkpoint_relative_path": "evidence/nested_threshold/combined_events.tsv",
+  "checkpoint_size_bytes": 169612,
+  "field_values_identical": true,
+  "header_identical": true,
+  "normalization": "Each CRLF record terminator in the source artifact was replaced by one LF record terminator in the Git checkpoint copy. No tab, field, header, row, value, or ordering change was made.",
+  "row_count": 850,
+  "row_order_identical": true,
+  "sample_counts": {
+    "ZH": 545,
+    "ZZ": 305
+  },
+  "schema_version": 1,
+  "scientific_content_changed": false,
+  "source_bare_cr_count": 0,
+  "source_crlf_record_count": 851,
+  "source_line_endings": "CRLF",
+  "source_path": "/tmp/iturkmen_track_b_40J3C_nested_threshold_dcb_20260805_v1_N6wQ2w/combined_p_signal_gt_0p8_dcb_events.tsv",
+  "source_sha256": "c07443494b6e66ce3d3a17a77fdb29e4bf7bd9fc14869dfb45f905084e1b96c8",
+  "source_size_bytes": 170463,
+  "status": "git_serialization_normalized_with_semantic_identity",
+  "unique_event_identity_count": 850
+}

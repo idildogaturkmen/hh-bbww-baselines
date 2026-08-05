@@ -1,0 +1,67 @@
+{
+  "artifact_count": 12,
+  "artifacts": [
+    {
+      "relative_path": "dcb_official_threshold_full_summary.json",
+      "sha256": "44be06cf722421aac7c7b0031211b62a7908bda02927fa95a9aaeb2cdf07aea1",
+      "size_bytes": 3936
+    },
+    {
+      "relative_path": "memory_after.txt",
+      "sha256": "828c3a26939af1c647b6ed0c8b6fda5797f23ed341d8a7fedab909cf4ecbf571",
+      "size_bytes": 251
+    },
+    {
+      "relative_path": "memory_before.txt",
+      "sha256": "c53958abf8970edda7ad2eb459c7495cce8c9b340dc2fec0dc4f6c951949b250",
+      "size_bytes": 251
+    },
+    {
+      "relative_path": "official_threshold_preflight.json",
+      "sha256": "8a9b21a326446d015c86d57a29f7149048385a2fd430a0b2df07e5e467081fa8",
+      "size_bytes": 1046
+    },
+    {
+      "relative_path": "zh_fit/cut0p997_zh_1000_events_idx3-999_job40J3A_ZH_FULL_fit_results.npz",
+      "sha256": "773e775fb738fdfb9695dd717dca4798f7c7e1f97d6a27281bae5fa955298c20",
+      "size_bytes": 54852
+    },
+    {
+      "relative_path": "zh_fit.log",
+      "sha256": "2c385db25c5f14f760baa7043086e57f05d42358b5acc20765ac8ccdeae93b25",
+      "size_bytes": 1940
+    },
+    {
+      "relative_path": "zh_official_full_dcb_events.tsv",
+      "sha256": "34a9b69b40c96cc2b2559479eae775f1ee25bd7d41cbe0777f68a85e3be31c29",
+      "size_bytes": 54019
+    },
+    {
+      "relative_path": "zh_selected_root_entries.tsv",
+      "sha256": "f9d3123aac5354bd2c4ad955f1cf13fd80ff883533d69fbc5c5db127e7dfd83b",
+      "size_bytes": 739
+    },
+    {
+      "relative_path": "zz_fit/cut0p997_zz_1000_events_idx4-998_job40J3A_ZZ_FULL_fit_results.npz",
+      "sha256": "96c08ec153c20bd4cfa72ed42388a583433a1fd7f8769956627184f578c13649",
+      "size_bytes": 25332
+    },
+    {
+      "relative_path": "zz_fit.log",
+      "sha256": "1c74c5d6c4b8e18a02d9ee77370829c21c5d25329961af499c313bc61c4a36f2",
+      "size_bytes": 1366
+    },
+    {
+      "relative_path": "zz_official_full_dcb_events.tsv",
+      "sha256": "d8c537a2b92f433ecb5b070748bbe5651c87567ae393dda59ccf9fe7e7fb321b",
+      "size_bytes": 19480
+    },
+    {
+      "relative_path": "zz_selected_root_entries.tsv",
+      "sha256": "8be29e18e5b24fab7c6447a3effffa6b78c2c7e6620f1975f652e21a73c99c0b",
+      "size_bytes": 276
+    }
+  ],
+  "output_root": "/tmp/iturkmen_track_b_40J3A_dcb_official_full_20260805_v1_wd4LS1",
+  "schema_version": 1
+}
