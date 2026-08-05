@@ -1,0 +1,18 @@
+{
+  "assignment_matchable_rows": 30397,
+  "auxiliary_sources": 23,
+  "broad_eligible_rows": 1171072,
+  "events_audited": 3799873,
+  "globally_unique_event_uids": 3799873,
+  "models_trained": 0,
+  "next": "freeze complete train materialization and build common baseline training tables",
+  "physical_weight_application_authorized": false,
+  "pilot_sources_reused": 5,
+  "primary_sources": 441,
+  "scaleout_condor_jobs_successful": 459,
+  "schema_version": 1,
+  "sources_audited": 464,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

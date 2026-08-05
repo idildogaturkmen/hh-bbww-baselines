@@ -1,0 +1,42 @@
+{
+  "access_mode_counts": {
+    "local_direct_root": 22,
+    "remote_bundle_extraction_required": 442
+  },
+  "assignment_matchable_rows": 30397,
+  "audited_worker_head": "1d552cd51b8285f7df277ab77fd7e966f25ce3db",
+  "auxiliary_events": 230000,
+  "auxiliary_sources": 23,
+  "broad_eligible_rows": 1171072,
+  "checkpoint_scope": "complete broad-ML training materialization only",
+  "events": 3799873,
+  "final_output_root": "/eos/uscms/store/user/iturkmen/hh4b_delphes/run2_13tev/frozen_v2/broad_ml/train/hh4b_broad_train_portable_htcondor_pilot_v2_20260805T165522Z",
+  "globally_unique_event_uids": 3799873,
+  "implementation_head_before_freeze_commit": "306d6fe33be54add161e72adba7bc9bcc5298e90",
+  "models_trained": 0,
+  "next": "build train-only common baseline tables from broad_event_eligible rows while preserving source-group identity",
+  "parquet_files": 464,
+  "physical_weight_application_authorized": false,
+  "pilot_campaign": "hh4b_broad_train_portable_htcondor_pilot_v2_20260805T165522Z",
+  "pilot_cluster_id": 3741162,
+  "primary_events": 3569873,
+  "primary_sources": 441,
+  "receipt_files": 464,
+  "scaleout_campaign": "hh4b_broad_train_portable_scaleout_459_v1_20260805T172945Z",
+  "scaleout_cluster_id": 59984835,
+  "scaleout_schedd": "lpcschedd5.fnal.gov",
+  "schema_version": 1,
+  "sources": 464,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "total_parquet_bytes": 320579745,
+  "total_receipt_bytes": 1600518,
+  "transport_class_counts": {
+    "not_applicable_auxiliary_qcd": 23,
+    "qcd_uniform_constant": 59,
+    "qcd_variable_frozen_fragment": 127,
+    "signed_exact_event_sidecar": 14,
+    "uniform_member_constant": 241
+  },
+  "validation_payloads_opened": 0
+}

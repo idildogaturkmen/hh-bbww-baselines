@@ -1,0 +1,31 @@
+EOS_VISIBILITY_ATTEMPT=1; parquet=464; receipts=464
+SCALEOUT_CONDOR_JOBS_SUCCESSFUL=459/459
+FULL_TRAIN_SOURCES=464/464
+FULL_TRAIN_EVENTS=3799873/3799873
+PRIMARY_SOURCES=441/441
+AUXILIARY_SOURCES=23/23
+GLOBAL_EVENT_UID_UNIQUENESS=PASS
+PHYSICAL_WEIGHT_APPLICATION_AUTHORIZED=FALSE
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+MODELS_TRAINED=0
+RESULT=FULL_BROAD_TRAIN_MATERIALIZATION_PASS
+NEXT=FREEZE_TRAIN_MATERIALIZATION_AND_BUILD_BASELINE_TABLES
+{
+  "assignment_matchable_rows": 30397,
+  "auxiliary_sources": 23,
+  "broad_eligible_rows": 1171072,
+  "events_audited": 3799873,
+  "globally_unique_event_uids": 3799873,
+  "models_trained": 0,
+  "next": "freeze complete train materialization and build common baseline training tables",
+  "physical_weight_application_authorized": false,
+  "pilot_sources_reused": 5,
+  "primary_sources": 441,
+  "scaleout_condor_jobs_successful": 459,
+  "schema_version": 1,
+  "sources_audited": 464,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
