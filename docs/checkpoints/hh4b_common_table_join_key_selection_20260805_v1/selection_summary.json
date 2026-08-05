@@ -1,0 +1,140 @@
+{
+  "all_train_rows_retained_in_accounting": true,
+  "candidate_table_count": 27,
+  "join_evidence_rows": 1048,
+  "models_trained": 0,
+  "next": "select exact ordinary and hard-QCD coefficient tables and implement the small train-only common-table canary",
+  "non_broad_accounting_rows": 2628801,
+  "payload_rows_read": 0,
+  "positive_score_candidate_table_count": 26,
+  "repository_head": "6d0ec4b04e2b1174a53a4dc9c4a4869c808de575",
+  "resolved_model_rows": 1171072,
+  "schema_version": 1,
+  "source_count": 464,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "top_candidate_tables": [
+    {
+      "checkpoint": "hh4b_physical_normalization_run2_coefficient_analytical_closure_freeze_20260731_v2",
+      "matched_terms": "run2_yield_coefficient,cross_section_coefficient,effective_reference_factor_pb,campaign_sumw",
+      "relative_path": "ordinary_campaign_run2_allocation_registry.tsv",
+      "score": 36
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_run2_coefficient_analytical_closure_freeze_20260731_v2",
+      "matched_terms": "run2_yield_coefficient,cross_section_coefficient,pthat,shard",
+      "relative_path": "hard_qcd_shard_run2_coefficient_registry.tsv",
+      "score": 32
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_run2_coefficient_analytical_closure_freeze_20260731_v2",
+      "matched_terms": "run2_yield_coefficient,cross_section_coefficient,effective_reference_factor_pb",
+      "relative_path": "ordinary_process_run2_coefficient_registry.tsv",
+      "score": 29
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_run2_coefficient_analytical_closure_freeze_20260731_v2",
+      "matched_terms": "run2_yield_coefficient,cross_section_coefficient,shard",
+      "relative_path": "nominal_zero_coefficient_exclusion_registry.tsv",
+      "score": 26
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_hard_qcd_global_weight_contract_freeze_20260731_v1",
+      "matched_terms": "run2_yield_coefficient,pthat,shard",
+      "relative_path": "hard_qcd_shard_weight_contract.tsv",
+      "score": 23
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_hard_qcd_global_weight_contract_freeze_20260731_v1",
+      "matched_terms": "run2_yield_coefficient,pthat,shard",
+      "relative_path": "hard_qcd_testfill_exclusion_contract.tsv",
+      "score": 23
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_hard_qcd_global_weight_contract_freeze_20260731_v1",
+      "matched_terms": "pthat,shard",
+      "relative_path": "hard_qcd_exclusive_bin_weight_contract.tsv",
+      "score": 13
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_run2_coefficient_analytical_closure_freeze_20260731_v2",
+      "matched_terms": "pthat,shard",
+      "relative_path": "hard_qcd_bin_run2_analytical_closure.tsv",
+      "score": 13
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_train_candidate_physical_weight_sidecar_materialization_20260731_v1",
+      "matched_terms": "transport_id,population_kind",
+      "relative_path": "train_candidate_physical_weight_sidecar_registry.tsv",
+      "score": 13
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_global_ordinary_registry_freeze_20260731_v1",
+      "matched_terms": "effective_reference_factor_pb",
+      "relative_path": "global_ordinary_process_registry.tsv",
+      "score": 10
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_train_candidate_physical_weight_sidecar_materialization_20260731_v1",
+      "matched_terms": "population_kind",
+      "relative_path": "train_candidate_physical_weight_sign_closure.tsv",
+      "score": 6
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_global_ordinary_registry_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "batch_A_reconstructed_process_denominator_binding.tsv",
+      "score": 2
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_global_ordinary_registry_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "full_inventory_event_reconciliation.tsv",
+      "score": 2
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_global_ordinary_registry_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "global_ordinary_campaign_denominator_binding.tsv",
+      "score": 2
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_global_ordinary_registry_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "ordinary_process_classification.tsv",
+      "score": 2
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_global_ordinary_registry_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "ordinary_vs_hard_qcd_disjointness.tsv",
+      "score": 2
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_global_ordinary_registry_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "source_evidence_manifest.tsv",
+      "score": 2
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_global_ordinary_registry_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "unresolved_inventory_discrepancy.tsv",
+      "score": 2
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_hard_qcd_global_weight_contract_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "hard_qcd_campaign_extension_binding.tsv",
+      "score": 2
+    },
+    {
+      "checkpoint": "hh4b_physical_normalization_hard_qcd_global_weight_contract_freeze_20260731_v1",
+      "matched_terms": "",
+      "relative_path": "hard_qcd_overlap_exclusion_policy.tsv",
+      "score": 2
+    }
+  ],
+  "train_generated_event_rows": 3799873,
+  "validation_payloads_opened": 0
+}

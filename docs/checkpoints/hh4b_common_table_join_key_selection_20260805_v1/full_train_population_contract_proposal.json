@@ -1,0 +1,49 @@
+{
+  "assignment_supervision_view": {
+    "not_classification_denominator": true,
+    "purpose": "current full-event signal assignment supervision",
+    "rows": 30397
+  },
+  "cut_optimization": {
+    "method": "nested five-fold source-group OOF; validation and test excluded",
+    "new_nominal_threshold": null,
+    "new_optimization_population": "resolved_model_view train OOF rows only",
+    "old_34_GeV_thresholds": "historical references only"
+  },
+  "non_broad_train_rows": {
+    "model_feature_policy": "candidate-dependent features are null; rows are not used to fit the resolved classifier",
+    "reason": "fewer than four selected jets means a resolved HH->4b candidate cannot be constructed",
+    "retained_in_accounting_table": true,
+    "rows": 2628801
+  },
+  "resolved_model_view": {
+    "interpretation": "This is a model-input preselection, not a reduction of the train partition.",
+    "purpose": [
+      "resolved cut optimization",
+      "BDT classification",
+      "dense DNN classification",
+      "LBN-DNN classification",
+      "resolved SPA-Net event classification"
+    ],
+    "rows": 1171072,
+    "selection": "broad_event_eligible == true, equivalent to at least four selected AK4 jets with pT > 30 GeV and |eta| < 2.5"
+  },
+  "schema_version": 1,
+  "status": "proposal_not_yet_frozen",
+  "train_partition": {
+    "all_generated_event_rows": 3799873,
+    "all_rows_retained_in_accounting_table": true,
+    "purpose": [
+      "generated-event accounting",
+      "acceptance and cutflow denominators",
+      "source and physical-weight provenance",
+      "preselection failure accounting"
+    ]
+  },
+  "validation_and_test": {
+    "opened_now": false,
+    "status": "sealed",
+    "test_generated_events": 397543,
+    "validation_generated_events": 1002584
+  }
+}
