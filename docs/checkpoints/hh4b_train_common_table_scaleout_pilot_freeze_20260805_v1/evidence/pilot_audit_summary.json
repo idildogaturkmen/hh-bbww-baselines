@@ -1,0 +1,27 @@
+{
+  "byte_identical_internal_reruns": 7,
+  "cluster_id": 85042207,
+  "historical_maximum_absolute_difference": 0.0,
+  "historical_parity_rows": 4704,
+  "models_trained": 0,
+  "next": "freeze the passed production worker and submit the remaining 457 train sources for full common-table scale-out",
+  "physical_weight_application_authorized": false,
+  "pilot_auxiliary_rows": 10000,
+  "pilot_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "pilot_generated_event_rows": 61000,
+  "pilot_non_broad_rows": 26021,
+  "pilot_primary_rows": 51000,
+  "pilot_resolved_rows": 34979,
+  "pilot_sources": 7,
+  "repository_head": "3be9b921c117e60c9c68e1c6002423aaa07ce79b",
+  "schema_version": 1,
+  "status": "pass",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

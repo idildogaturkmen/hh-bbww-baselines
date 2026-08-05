@@ -1,0 +1,11 @@
+{
+  "campaign": "hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z",
+  "cluster_id": 85042207,
+  "jobs": 7,
+  "models_trained": 0,
+  "schema_version": 1,
+  "status": "submitted",
+  "submitted_at_utc": "2026-08-05T21:31:55Z",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

@@ -1,0 +1,24 @@
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/hh4b_delphes/common_table_pilot/hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z/submit/run_common_table_worker.sh
+
+arguments = $(production_row_index) $(input_basename) $(input_sha256) 3be9b921c117e60c9c68e1c6002423aaa07ce79b hh4b_broad_ml_py39_v1_portable_v1.tar.gz hh4b_broad_ml_py39_v1
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_executable = TRUE
+
+transfer_input_files = /uscms_data/d3/iturkmen/hh4b_delphes/runtime_archives/hh4b_broad_ml_py39_v1_portable_v1.tar.gz,/uscms_data/d3/iturkmen/hh4b_delphes/common_table_pilot/hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z/submit/hh4b_common_table_single_source_worker_pilot_v1.py,/uscms_data/d3/iturkmen/hh4b_delphes/common_table_pilot/hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z/submit/pilot_sources.tsv,/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_policy_freeze_20260805_v1/canary_evidence/source_physical_coefficient_registry_canary.tsv,/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_policy_freeze_20260805_v1/canary_evidence/fold_local_source_comparison_weight_registry_canary.tsv,/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_policy_freeze_20260805_v1/canary_evidence/common_feature_schema_canary.tsv,/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_policy_freeze_20260805_v1/approved_common_train_table_contract.json,$(input_parquet)
+transfer_output_files = accounting.parquet,resolved.parquet,receipt.json
+transfer_output_remaps = "accounting.parquet=$(accounting_dest);resolved.parquet=$(resolved_dest);receipt.json=$(receipt_dest)"
+
+output = /uscms_data/d3/iturkmen/hh4b_delphes/common_table_pilot/hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z/logs/$(stem).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/common_table_pilot/hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z/logs/$(stem).err
+log = /uscms_data/d3/iturkmen/hh4b_delphes/common_table_pilot/hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z/logs/cluster.log
+
+request_cpus = 1
+request_memory = 6000MB
+request_disk = 6000MB
+
++JobBatchName = "hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z"
+
+queue production_row_index,stem,input_parquet,input_basename,input_sha256,accounting_dest,resolved_dest,receipt_dest from /uscms_data/d3/iturkmen/hh4b_delphes/common_table_pilot/hh4b_train_common_table_scaleout_pilot_v2_20260805T213031Z/submit/pilot_jobs_headerless.queue
