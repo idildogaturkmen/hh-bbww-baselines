@@ -1,0 +1,11 @@
+branch=delphes-hh4b-production
+local_head=025eff23be0d214aa88a616c2ab8b57b3f4e6e06
+remote_head=025eff23be0d214aa88a616c2ab8b57b3f4e6e06
+published_checkpoint_head=8858a43d9bc25d5e873ae42dc849bb59a41616ea
+ahead_count=0
+behind_count=0
+status_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+===== LOCAL-AHEAD COMMITS =====
+
+===== LOCAL-AHEAD CHANGED PATHS =====

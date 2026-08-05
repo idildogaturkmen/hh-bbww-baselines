@@ -1,0 +1,78 @@
+{
+  "next_decision": "Request exact producer confirmation of the 136-node output ordering and background-node ordering. Optionally perform an empirical training-signal argmax-versus-generator-mass audit as a supporting cross-check, but do not treat that empirical correlation as a substitute for the authoritative label configuration.",
+  "not_yet_proven": {
+    "exact_zero_based_background_output_names": "Paper numbering is one-based classes 137 and 138, while stored branches are expected to be zero-based score_136 and score_137; this should be explicitly confirmed with the producer.",
+    "independent_training_head_output_index_order": true,
+    "lower_vs_upper_triangle_wording_equivalence": "Paper v2 describes lower-triangular population; released code fills H[i,j] for i<=j. Exchange symmetry makes the physical cell set equivalent, but exact index sequencing still requires the training-label ordering."
+  },
+  "onnx_explicit_label_metadata_found": false,
+  "proven": {
+    "official_public_source_commit_frozen": true,
+    "official_readme_says_weaver_framework_not_included": true,
+    "paper_v2_geometry_online_supported": true,
+    "released_analysis_cell_edges_gev": [
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      110,
+      120,
+      130,
+      140,
+      150,
+      160,
+      170,
+      180,
+      190,
+      200
+    ],
+    "released_analysis_dcb_centers_gev": [
+      45,
+      55,
+      65,
+      75,
+      85,
+      95,
+      105,
+      115,
+      125,
+      135,
+      145,
+      155,
+      165,
+      175,
+      185,
+      195
+    ],
+    "released_analysis_exchange_symmetry": true,
+    "released_analysis_index_traversal": "outer i=0..15, inner j=i..15",
+    "released_analysis_mapping_tsv": "/tmp/iturkmen_track_b_40J4A_R4_mass_grid_provenance_20260805_v1_ukpzjV/released_output_index_to_mass_cell_mapping.tsv",
+    "released_analysis_matrix_shape": [
+      16,
+      16
+    ],
+    "released_analysis_signal_outputs": 136,
+    "released_analysis_triangle": "mathematical upper triangle i<=j before symmetrization",
+    "released_dcb_source_hash_frozen": true
+  },
+  "public_repository_training_candidates": [],
+  "schema_version": 1,
+  "status": "released_analysis_mapping_proven_training_output_order_requires_author_confirmation",
+  "terminology_policy": {
+    "avoid_until_order_and_calibration_are_closed": [
+      "independently verified training-label index mapping",
+      "calibrated reconstructed Higgs-boson masses",
+      "unbiased mass resolution",
+      "event-by-event true-mass reconstruction"
+    ],
+    "cell_center_statement": "45,55,...,195 GeV are DCB histogram cell centers associated with 10 GeV cells bounded by 40,50,...,200 GeV.",
+    "permitted_now": [
+      "released-model 136-cell signal-grid response in the (m_h1,m_h2) plane",
+      "DCB-fitted continuous mass-coordinate estimate derived from the released score grid",
+      "localization near the ZH or ZZ target region in the released mass-cell coordinate system"
+    ]
+  }
+}

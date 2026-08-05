@@ -1,0 +1,18 @@
+{
+  "http_sha256": "3d5a335f68e630b7b3bbe184dc5f8abd05e7a2f0af2e593ba78f417626f1188f",
+  "note": "Online paper retrieval is supplementary. The audit remains valid if the compute node cannot reach arXiv because the official source-code commit is independently frozen.",
+  "online_fetch_success": true,
+  "pattern_matches": {
+    "136_signal_classes": true,
+    "138_class_head": true,
+    "generator_5gev_sampling": false,
+    "lower_triangular_wording": true,
+    "range_40_200_10gev": true,
+    "sixteen_by_sixteen": true,
+    "symmetrization": true,
+    "ten_by_ten_cells": true
+  },
+  "schema_version": 1,
+  "size_bytes": 683620,
+  "url": "https://arxiv.org/html/2508.15048v2"
+}

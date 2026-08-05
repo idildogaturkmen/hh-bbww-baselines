@@ -1,0 +1,50 @@
+{
+  "checkpoint_relative_path": "docs/checkpoints/track_b_phase2_mass_grid_provenance_20260805_v1",
+  "copied_decisive_artifacts": 13,
+  "fit_performed": false,
+  "git_serialization": {
+    "ast_equivalent": true,
+    "changed_line_numbers_one_based": [
+      7,
+      10,
+      17,
+      20
+    ],
+    "checkpoint_git_safe_sha256": "1b141eb94a74ff93467b90da4d0fc789366dc3dc494e867824cdb8d903f1cebf",
+    "execution_equivalent": true,
+    "path": "evidence/extract_full_histogram_data_source.py",
+    "receipt": "evidence/extract_full_histogram_data_git_serialization_receipt.json",
+    "removed_trailing_whitespace_bytes": 16,
+    "source_run_original_sha256": "229b4bcf13a7af05a6a54920a364c98b5835bd9eb3ae1b96aea8913dcac2f067"
+  },
+  "inference_performed": false,
+  "omitted_reproducible_or_superseded_artifacts": [
+    {
+      "reason_not_copied": "Bulky external paper HTML; URL and verified HTTP hash are preserved in evidence/paper_online_verification.json.",
+      "source_path": "/tmp/iturkmen_track_b_40J4A_R4_mass_grid_provenance_20260805_v1_ukpzjV/arxiv_2508_15048v2.html",
+      "source_sha256": "3d5a335f68e630b7b3bbe184dc5f8abd05e7a2f0af2e593ba78f417626f1188f",
+      "source_size_bytes": 683620
+    },
+    {
+      "reason_not_copied": "Large reproducible raw grep output; query-level census, exact upstream commit, tree inventory, and source manifest are preserved.",
+      "source_path": "/tmp/iturkmen_track_b_40J4A_R4_mass_grid_provenance_20260805_v1_ukpzjV/relevant_source_hits.tsv",
+      "source_sha256": "0d91d5bbf91ac44fe7e7f42be5c063c4527f1b92c72164f3e60cdbca68a91edc",
+      "source_size_bytes": 1647311
+    },
+    {
+      "reason_not_copied": "Source-run README is superseded by the checkpoint README.",
+      "source_path": "/tmp/iturkmen_track_b_40J4A_R4_mass_grid_provenance_20260805_v1_ukpzjV/README.md",
+      "source_sha256": "9748b2e7c8cddc425e4ae4ed844d71be2358935fbead6229547cd599931ce562",
+      "source_size_bytes": 2253
+    }
+  ],
+  "remote_head_at_staging": "025eff23be0d214aa88a616c2ab8b57b3f4e6e06",
+  "repository_commit_performed": false,
+  "repository_head_at_staging": "025eff23be0d214aa88a616c2ab8b57b3f4e6e06",
+  "repository_push_performed": false,
+  "schema_version": 1,
+  "scientific_status": "released_analysis_mapping_proven_training_output_order_requires_author_confirmation",
+  "source_artifact_manifest": "source_40J4A_R4_artifact_manifest.json",
+  "source_output_root": "/tmp/iturkmen_track_b_40J4A_R4_mass_grid_provenance_20260805_v1_ukpzjV",
+  "status": "mass_grid_provenance_checkpoint_staged_not_committed"
+}

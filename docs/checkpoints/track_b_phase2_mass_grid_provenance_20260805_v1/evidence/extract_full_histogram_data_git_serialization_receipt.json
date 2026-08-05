@@ -1,0 +1,80 @@
+{
+  "ast_equivalent": true,
+  "changed_line_numbers_one_based": [
+    7,
+    10,
+    17,
+    20
+  ],
+  "checkpoint_git_safe_sha256": "1b141eb94a74ff93467b90da4d0fc789366dc3dc494e867824cdb8d903f1cebf",
+  "checkpoint_git_safe_size_bytes": 529,
+  "checkpoint_relative_path": "evidence/extract_full_histogram_data_source.py",
+  "execution_equivalent": true,
+  "execution_probe": {
+    "bin_centers_exactly_equal": true,
+    "bin_centers_gev": [
+      45,
+      55,
+      65,
+      75,
+      85,
+      95,
+      105,
+      115,
+      125,
+      135,
+      145,
+      155,
+      165,
+      175,
+      185,
+      195
+    ],
+    "bins_gev": [
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      110,
+      120,
+      130,
+      140,
+      150,
+      160,
+      170,
+      180,
+      190,
+      200
+    ],
+    "histogram_shape": [
+      16,
+      16
+    ],
+    "histograms_exactly_equal": true,
+    "scores": "float64 values 1..136"
+  },
+  "normalized_final_lf": true,
+  "normalized_line_count": 21,
+  "original_final_lf": true,
+  "original_line_count": 21,
+  "original_trailing_whitespace_per_changed_line_bytes": [
+    4,
+    4,
+    4,
+    4
+  ],
+  "removed_trailing_whitespace_bytes": 16,
+  "schema_version": 1,
+  "source_provenance_preserved_in": [
+    "source_40J4A_R4_artifact_manifest.json",
+    "evidence/extract_full_histogram_data_git_serialization_receipt.json"
+  ],
+  "source_run_artifact_relative_path": "extract_full_histogram_data_source.py",
+  "source_run_original_sha256": "229b4bcf13a7af05a6a54920a364c98b5835bd9eb3ae1b96aea8913dcac2f067",
+  "source_run_original_size_bytes": 545,
+  "status": "git_safe_whitespace_normalization_proven",
+  "transformation": "Removed ASCII space/tab bytes only from line endings; no other byte positions or line endings changed."
+}

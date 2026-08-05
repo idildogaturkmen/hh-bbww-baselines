@@ -1,0 +1,87 @@
+{
+  "artifact_count": 16,
+  "artifacts": [
+    {
+      "relative_path": "40J4A_mass_grid_provenance_summary.json",
+      "sha256": "d215fe077b7055622a275a3a3c382b22ddb5172edf1ae33b1a8e8e9ea9b733f2",
+      "size_bytes": 3021
+    },
+    {
+      "relative_path": "README.md",
+      "sha256": "9748b2e7c8cddc425e4ae4ed844d71be2358935fbead6229547cd599931ce562",
+      "size_bytes": 2253
+    },
+    {
+      "relative_path": "arxiv_2508_15048v2.html",
+      "sha256": "3d5a335f68e630b7b3bbe184dc5f8abd05e7a2f0af2e593ba78f417626f1188f",
+      "size_bytes": 683620
+    },
+    {
+      "relative_path": "author_clarification_draft.txt",
+      "sha256": "92b6e292cddffe1370ec2ccbc9bc9c7fd9e633b1a684efb18d1b20092ccca999",
+      "size_bytes": 1349
+    },
+    {
+      "relative_path": "committed_snapshot_manifest.tsv",
+      "sha256": "0b8d50aa80941e346370f423e65e20852cade64c4ff62f725c1f8f22c3fa5de0",
+      "size_bytes": 2436
+    },
+    {
+      "relative_path": "extract_full_histogram_data_source.py",
+      "sha256": "229b4bcf13a7af05a6a54920a364c98b5835bd9eb3ae1b96aea8913dcac2f067",
+      "size_bytes": 545
+    },
+    {
+      "relative_path": "hh4b_model_file_inventory.tsv",
+      "sha256": "398786b12ee62f18ace61ed1226f57e2adc99abd6a82dcb7cc0fead335fdc287",
+      "size_bytes": 63
+    },
+    {
+      "relative_path": "onnx_model_metadata.json",
+      "sha256": "ca9367b533b0312d61d88be3fbcb7a24d15c10c28cf08ec87571df4d557cb63f",
+      "size_bytes": 4081
+    },
+    {
+      "relative_path": "paper_online_verification.json",
+      "sha256": "e3d5dff8ec9084743d33caa69fbbca0f4eb0df9bb6213ae41d350ba63fcf64f8",
+      "size_bytes": 682
+    },
+    {
+      "relative_path": "released_mapping_proof.json",
+      "sha256": "47c17fe072b0c1da5aad4db5675bb516cf4be42fcff731f3b390b83b2897fd59",
+      "size_bytes": 4812
+    },
+    {
+      "relative_path": "released_output_index_to_mass_cell_mapping.tsv",
+      "sha256": "de5017e582fdfcb180e713f1b9971533ff5eba514044f8e360ff1d9d8e02bb0d",
+      "size_bytes": 12595
+    },
+    {
+      "relative_path": "relevant_source_hits.tsv",
+      "sha256": "0d91d5bbf91ac44fe7e7f42be5c063c4527f1b92c72164f3e60cdbca68a91edc",
+      "size_bytes": 1647311
+    },
+    {
+      "relative_path": "relevant_source_query_summary.tsv",
+      "sha256": "319fa1fb34d2efbf95c889a9d54b064f780bc76ba00301068cdf75a9440cc0fb",
+      "size_bytes": 467
+    },
+    {
+      "relative_path": "repository_state_at_start.txt",
+      "sha256": "e3c1b314944603219b613761fd9225d78ce45f3aa024d9ce3eaf97310fec24ac",
+      "size_bytes": 383
+    },
+    {
+      "relative_path": "upstream_tree_inventory.tsv",
+      "sha256": "25631b62327760cd73c05ccb8e83d6e0199e1a02a82b7084b6582fa958b2110d",
+      "size_bytes": 10020
+    },
+    {
+      "relative_path": "upstream_worktree_status_at_start.txt",
+      "sha256": "8203b7bef1578af8df5cec85f7f959c40ddc695c043c45cc1bd9d40b7ab8196a",
+      "size_bytes": 68
+    }
+  ],
+  "output_root": "/tmp/iturkmen_track_b_40J4A_R4_mass_grid_provenance_20260805_v1_ukpzjV",
+  "schema_version": 1
+}

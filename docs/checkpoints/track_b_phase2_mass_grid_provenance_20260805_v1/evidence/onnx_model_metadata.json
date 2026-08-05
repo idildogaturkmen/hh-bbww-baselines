@@ -1,0 +1,170 @@
+{
+  "any_explicit_136_label_order_metadata": false,
+  "model_root": "/tmp/iturkmen_track_b_40J4A_R4_upstream_snapshot_20260805_v1_q1RGb3/delphes/models/HH4b",
+  "models": [
+    {
+      "explicit_label_order_metadata_detected": false,
+      "inputs": [
+        {
+          "name": "pf_features",
+          "shape": [
+            "N",
+            19,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        },
+        {
+          "name": "pf_vectors",
+          "shape": [
+            "N",
+            4,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        },
+        {
+          "name": "pf_mask",
+          "shape": [
+            "N",
+            1,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "model_metadata": {
+        "custom_metadata_map": {},
+        "description": "",
+        "domain": "",
+        "graph_name": "main_graph",
+        "producer_name": "pytorch",
+        "version": 9223372036854775807
+      },
+      "outputs": [
+        {
+          "name": "softmax",
+          "shape": [
+            "N",
+            138
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "path": "/tmp/iturkmen_track_b_40J4A_R4_upstream_snapshot_20260805_v1_q1RGb3/delphes/models/HH4b/model0.onnx",
+      "relative_path": "model0.onnx",
+      "sha256": "7b7de7ba1bfbbf00117b251661320afabe166c74c8687e3673d97590a3745786",
+      "size_bytes": 35810954
+    },
+    {
+      "explicit_label_order_metadata_detected": false,
+      "inputs": [
+        {
+          "name": "pf_features",
+          "shape": [
+            "N",
+            19,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        },
+        {
+          "name": "pf_vectors",
+          "shape": [
+            "N",
+            4,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        },
+        {
+          "name": "pf_mask",
+          "shape": [
+            "N",
+            1,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "model_metadata": {
+        "custom_metadata_map": {},
+        "description": "",
+        "domain": "",
+        "graph_name": "main_graph",
+        "producer_name": "pytorch",
+        "version": 9223372036854775807
+      },
+      "outputs": [
+        {
+          "name": "softmax",
+          "shape": [
+            "N",
+            138
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "path": "/tmp/iturkmen_track_b_40J4A_R4_upstream_snapshot_20260805_v1_q1RGb3/delphes/models/HH4b/model1.onnx",
+      "relative_path": "model1.onnx",
+      "sha256": "5514875d359fd4d6516e3367eb3264e6b4fea21f82755fc45851d06f788d429f",
+      "size_bytes": 35810954
+    },
+    {
+      "explicit_label_order_metadata_detected": false,
+      "inputs": [
+        {
+          "name": "pf_features",
+          "shape": [
+            "N",
+            19,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        },
+        {
+          "name": "pf_vectors",
+          "shape": [
+            "N",
+            4,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        },
+        {
+          "name": "pf_mask",
+          "shape": [
+            "N",
+            1,
+            "n_pf"
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "model_metadata": {
+        "custom_metadata_map": {},
+        "description": "",
+        "domain": "",
+        "graph_name": "main_graph",
+        "producer_name": "pytorch",
+        "version": 9223372036854775807
+      },
+      "outputs": [
+        {
+          "name": "softmax",
+          "shape": [
+            "N",
+            138
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "path": "/tmp/iturkmen_track_b_40J4A_R4_upstream_snapshot_20260805_v1_q1RGb3/delphes/models/HH4b/model2.onnx",
+      "relative_path": "model2.onnx",
+      "sha256": "2d02df9702bfa13f8c20b467087121abab2556fa654e12084b73cee968f3566e",
+      "size_bytes": 35810954
+    }
+  ],
+  "onnx_model_count": 3,
+  "schema_version": 1
+}

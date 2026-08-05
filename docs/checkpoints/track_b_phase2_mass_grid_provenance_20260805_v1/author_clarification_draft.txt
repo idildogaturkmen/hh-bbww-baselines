@@ -1,0 +1,23 @@
+Subject: Clarification on the 136-class mass-grid output ordering
+
+Dear Congqiao,
+
+I have now reproduced the released jet-free model inference and the DCB mass-grid fitting on the accessible ZH and ZZ control samples. I am freezing the exact provenance of the 136 signal outputs before interpreting the fitted coordinates more quantitatively.
+
+Could you please confirm the exact zero-based ordering used for the 136 signal nodes in the trained model?
+
+The released DCB code fills the triangular grid in this order:
+
+- output 0 -> the [40,50) x [40,50) GeV cell;
+- output 1 -> the [40,50) x [50,60) GeV cell;
+- continuing with outer index i = 0,...,15 and inner index j = i,...,15;
+- the DCB histogram coordinates are the corresponding cell centers 45,55,...,195 GeV.
+
+Could you confirm that this is also the exact output-node ordering used by the training-label configuration? The paper describes populating the lower-triangular entries, while the released code uses H[i,j] with i <= j, so I would also appreciate confirmation that this is only an axis/convention difference.
+
+Finally, could you confirm that the two background outputs are zero-based outputs 136 and 137, corresponding respectively to QCD and ttbar?
+
+A copy of the original Weaver data configuration or the explicit ordered 138-label list would be ideal for provenance.
+
+Best,
+Idil
