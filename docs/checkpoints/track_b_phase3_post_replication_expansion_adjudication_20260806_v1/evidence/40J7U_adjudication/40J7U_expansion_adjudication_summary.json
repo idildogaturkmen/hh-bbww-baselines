@@ -1,0 +1,17 @@
+{
+  "balanced_execution_authorized": false,
+  "balanced_file_count": 44,
+  "balanced_target_event_count": 11264,
+  "current_event_row_count": 1152,
+  "current_file_count": 11,
+  "full_90_selection_execution_authorized": false,
+  "future_targeted_design_only_allowed": true,
+  "next_gate": "40J7V_freeze_track_b_expansion_adjudication",
+  "primary_recommendation": "pause_broad_track_b_expansion_and_prioritize_track_a",
+  "schema_version": 1,
+  "status": "track_b_expansion_adjudication_summary_complete",
+  "tail_execution_authorized": false,
+  "tail_file_count": 46,
+  "tail_target_event_count": 23552,
+  "track_b_physical_weighting_authorized": false
+}

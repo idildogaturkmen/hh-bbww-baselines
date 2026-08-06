@@ -1,0 +1,107 @@
+{
+  "adjudicated_decision": {
+    "allow_future_targeted_track_b_design_only": true,
+    "authorize_44_file_balanced_execution_now": false,
+    "authorize_46_file_tail_execution_now": false,
+    "authorize_90_selection_row_execution_now": false,
+    "authorize_track_b_physical_weighting_now": false,
+    "future_track_b_revisit_conditions": [
+      "authoritative_physical_weight_semantics_frozen",
+      "authoritative_signal_class_label_order_or_equivalent_provenance_frozen",
+      "track_a_physics_baseline_and_native_spanet_result_frozen",
+      "a_specific_remaining_scientific_question_requires_additional_track_b_events"
+    ],
+    "preserve_published_track_b_result": true,
+    "primary_recommendation": "pause_broad_track_b_expansion_and_prioritize_track_a",
+    "recommended_track_a_sequence": [
+      "complete_physical_normalization_and_run2_yield_closure",
+      "freeze_common_dataset_splits_labels_metrics_and_weights",
+      "complete_bdt_dnn_lbn_comparison",
+      "complete_native_spanet_baseline",
+      "then_consider_part_and_jpjepa_ablations"
+    ],
+    "stop_track_b_entirely": false,
+    "targeted_design_execution_authorized_now": false
+  },
+  "authorization": {
+    "allow_future_targeted_track_b_design_only": true,
+    "authorize_44_file_balanced_execution_now": false,
+    "authorize_46_file_tail_execution_now": false,
+    "authorize_90_selection_row_execution_now": false,
+    "authorize_track_b_physical_weighting_now": false,
+    "pause_broad_track_b_expansion": true,
+    "preserve_published_track_b_result": true,
+    "prioritize_track_a_now": true,
+    "stop_track_b_entirely": false,
+    "targeted_track_b_execution_authorized_now": false
+  },
+  "checkpoint_name": "track_b_phase3_post_replication_expansion_adjudication_20260806_v1",
+  "frozen_unexecuted_options": {
+    "balanced_control_multifile_v1": {
+      "execution_authorized": false,
+      "sample_group_count": 18,
+      "selected_file_count": 44,
+      "target_valid_event_count": 11264
+    },
+    "combined_selection_row_count": 90,
+    "full_90_selection_row_execution_authorized": false,
+    "high_score_tail_stability_v1": {
+      "execution_authorized": false,
+      "sample_group_count": 8,
+      "selected_file_count": 46,
+      "target_valid_event_count": 23552
+    }
+  },
+  "next_gate": "40J7W_review_and_commit_track_b_expansion_adjudication",
+  "post_publication_gate": "return_to_track_a_physical_normalization_and_native_model_sequence",
+  "repository_provenance": {
+    "ahead_count_at_install_start": 0,
+    "behind_count_at_install_start": 0,
+    "local_head_at_install_start": "35bcb8a10fda6684bfac54a92b15c2776476f437",
+    "published_replication_result_head": "35bcb8a10fda6684bfac54a92b15c2776476f437",
+    "remote_head_at_install_start": "35bcb8a10fda6684bfac54a92b15c2776476f437",
+    "repository_mode_at_install_start": "synchronized"
+  },
+  "review_findings": {
+    "broad_expansion_authorized": false,
+    "execution_scope_changed": false,
+    "future_targeted_design_only_allowed": true,
+    "physical_weighting_authorized": false,
+    "primary_recommendation_validated": true,
+    "published_track_b_result_preserved": true,
+    "scientific_scope_changed": false,
+    "track_a_prioritized": true,
+    "track_b_abandoned": false
+  },
+  "schema_version": 1,
+  "scientific_interpretation": "The published 11-file, 1,152-event Track-B result is preserved as a reproducible released-Sophon external response replication. Broad balanced and high-score-tail expansions are retained as future options but are not authorized because they would not resolve physical weighting, authoritative signal-label provenance, or publication-grade efficiency, yield, AUC, significance, or sensitivity claims. Track-A physical normalization and native-model comparison are therefore prioritized.",
+  "source_adjudication": {
+    "source_file_count": 8,
+    "source_manifest_row_count": 6,
+    "source_output_root": "/tmp/iturkmen_track_b_40J7U_expansion_adjudication_20260806_v1_OSV73D",
+    "source_sha256_row_count": 7
+  },
+  "status": "track_b_post_replication_expansion_adjudication_ready",
+  "validated_current_evidence": {
+    "combined_event_row_count": 1152,
+    "combined_file_count": 11,
+    "descriptive_stability_threshold_defined": false,
+    "event_uid_overlap_count": 0,
+    "lane_event_counts": {
+      "qcd": 320,
+      "ttbar": 320,
+      "zjets": 320,
+      "zz": 192
+    },
+    "lane_file_counts": {
+      "qcd": 3,
+      "ttbar": 3,
+      "zjets": 3,
+      "zz": 2
+    },
+    "physical_track_b_weights_used": false,
+    "preprocessing_failure_count": 0,
+    "remote_path_overlap_count": 0,
+    "stability_pass_fail_claim_made": false
+  }
+}

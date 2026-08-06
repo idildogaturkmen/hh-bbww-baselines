@@ -1,0 +1,4 @@
+dependency_id	status	required_for	current_evidence	recommended_action
+track_b_physical_weight_semantics	blocked	physical_yields_efficiency_significance_and_weighted_comparison	published result explicitly records physical weighting unauthorized	obtain and freeze authoritative interpretation of gen_weight payloads
+authoritative_signal_class_label_order	unresolved_external_dependency	independent physical interpretation of the released 136-cell signal grid	current published result is limited to released-model response diagnostics	preserve the open author query and do not infer labels from response alone
+track_a_physical_normalization_and_common_comparison_contract	higher_priority	publication-grade comparison of cuts_bdt_dnn_lbn_spanet_and_future_embeddings	Track B expansion cannot substitute for the Track-A physics baseline	prioritize Track-A normalization then native SPA-Net before ParT or JP-JEPA
