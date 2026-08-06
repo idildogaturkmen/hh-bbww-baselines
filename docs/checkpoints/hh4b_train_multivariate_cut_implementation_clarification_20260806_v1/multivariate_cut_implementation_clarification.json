@@ -1,0 +1,142 @@
+{
+  "base_contract_checkpoint": "hh4b_train_multivariate_cut_and_figure_contract_20260806_v1",
+  "canary_acceptance_gates": {
+    "all_cut_operators_match_contract": true,
+    "all_four_inner_folds_present": true,
+    "all_six_sentinel_families_exercised": true,
+    "all_tie_breaks_deterministic": true,
+    "comparison_weight_closure_finite": true,
+    "identical_rerun_output_checksum": true,
+    "no_group_id_crosses_a_fold": true,
+    "outer_fold_zero_excluded_from_all_selection": true,
+    "physical_yield_and_sumw2_finite": true,
+    "repository_modified": false,
+    "selected_row_masks_recomputed_from_raw_columns": true,
+    "test_payloads_opened": 0,
+    "threshold_training_excludes_inner_held_out_rows": true,
+    "validation_payloads_opened": 0
+  },
+  "canary_scope": {
+    "beam_width_per_family": 16,
+    "canary_results_may_not_be_used_as_paper_performance": true,
+    "canary_settings_are_bounded_overrides": true,
+    "canary_winner_may_not_modify_full_scan_contract": true,
+    "maximum_coordinate_passes": 2,
+    "outer_folds": [
+      0
+    ],
+    "production_settings_changed": false,
+    "refinement_starting_configurations_per_family": 4,
+    "role": "implementation validation only; not a physics result",
+    "sentinel_family_ids": [
+      "radial_mass__nbtag3__mass_only",
+      "radial_mass__nbtag4__plus_ht_candidate_jets_and_max_drbb",
+      "symmetric_rectangular_mass__nbtag3__plus_h2_pt",
+      "symmetric_rectangular_mass__nbtag4__plus_mhh_and_abs_h_delta_eta",
+      "asymmetric_rectangular_mass__nbtag3__mass_only",
+      "asymmetric_rectangular_mass__nbtag4__plus_ht_candidate_jets"
+    ],
+    "stage_1_quantile_probabilities": [
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875
+    ]
+  },
+  "checkpoint_relative_path": "docs/checkpoints/hh4b_train_multivariate_cut_implementation_clarification_20260806_v1",
+  "created_at_utc": "2026-08-06T17:02:28.395229+00:00",
+  "interpretation_limits": [
+    "The 54-family cut search is CMS-inspired, not a reproduction of a CMS analysis.",
+    "The nominal fixed-efficiency endpoint is a fair benchmark operating point, not the final nuisance-aware sensitivity criterion.",
+    "Final paper sensitivity requires a separately frozen background and nuisance-parameter likelihood model.",
+    "Plots must say Delphes simulation and train-source-group OOF; they must not claim CMS approval or observed data."
+  ],
+  "literature_alignment": {
+    "cms_hig_20_005": {
+      "alignment": [
+        "at least three b-tagged jets among four selected jets",
+        "Higgs-candidate masses, mHH, Higgs pT, deltaRbb, and absolute deltaEtaHH are analysis observables",
+        "3b and 4b regions are treated separately",
+        "low- and high-mHH categorization is used"
+      ],
+      "arxiv": "2202.09617",
+      "identifier": "CMS-HIG-20-005"
+    },
+    "cms_hig_24_010": {
+      "alignment": [
+        "resolved HH to 4b uses AK4 jets and b-tag multiplicity",
+        "signal and control regions are defined in the two-Higgs-candidate mass plane",
+        "a multivariate signal-versus-background classifier is used for final extraction"
+      ],
+      "arxiv": "2604.27044",
+      "identifier": "CMS-HIG-24-010"
+    },
+    "hep_hyperparameter_optimization": {
+      "alignment": "automated bounded optimization is preferable to manual post-hoc threshold choice",
+      "arxiv": "2011.04434"
+    },
+    "particle_transformer": {
+      "alignment": "particle-level attention models motivate a separate high-capacity benchmark rather than expanding the hand-cut family without bound",
+      "arxiv": "2202.03772"
+    },
+    "spanet_multi_higgs": {
+      "alignment": "high-capacity symmetry-aware assignment is a later model baseline; the rectangular cut study remains an interpretable reconstruction-and-selection comparator",
+      "arxiv": "2412.03819"
+    }
+  },
+  "next": "implement and run the bounded deterministic canary under this clarified true-nested protocol",
+  "purpose": "remove ambiguity in the phrase pooled inner-OOF selection before implementing or evaluating the optimizer",
+  "repository_head_before_clarification_commit": "e99d0a09e038cc2699c777036c8540d57555ab6f",
+  "schema_version": 1,
+  "selection_stability_policy": {
+    "escalate_before_paper_export_if_any": [
+      "modal family frequency is below 0.70",
+      "difference between the two most frequent families is below 0.15",
+      "any optional variable inclusion frequency lies between 0.30 and 0.70",
+      "the five outer folds do not have a unique modal family"
+    ],
+    "escalation_changes_uncertainty_precision_not_nominal_selection": true,
+    "initial_full_reoptimization_replicas": 200,
+    "predeclared_escalation_to_total_replicas": 1000
+  },
+  "state_at_freeze": {
+    "candidate_thresholds_evaluated": 0,
+    "models_trained": 0,
+    "multivariate_scan_performed": false,
+    "new_cut_selected": false,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "status": "pass_frozen_before_canary",
+  "true_nested_protocol": {
+    "family_selection_uses_cross_fitted_predictions": true,
+    "for_each_outer_fold_k": [
+      "Hold source_fold == k completely untouched for the outer performance evaluation.",
+      "For every predeclared family f and every inner-held-out fold j among the four outer-development folds, optimize thresholds theta[k,j,f] using only the other three inner-training folds.",
+      "Apply theta[k,j,f] once to inner-held-out fold j and store its comparison-weighted and support metrics.",
+      "Pool the four inner-held-out predictions for family f. Choose the family f_star[k] using only these pooled cross-fitted predictions and the frozen primary endpoint and tie-breaking.",
+      "After choosing f_star[k], refit its thresholds once on all four outer-development folds with the same frozen search, objective, constraints, and tie-breaking. Call the result theta_star[k].",
+      "Apply theta_star[k] once to the untouched outer fold k. Do not use the outer-fold result to change the family, thresholds, variables, or search settings."
+    ],
+    "forbidden_shortcut": "Do not optimize one threshold vector on all four outer-development folds and call its evaluation on those same rows inner OOF.",
+    "outer_fold_used_for_selection": false,
+    "outer_folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "outer_threshold_refit_after_family_selection": true,
+    "pooled_inner_oof_definition": "concatenation of the four predictions produced when each inner fold was held out from threshold optimization"
+  },
+  "weight_roles": {
+    "auxiliary_qcd_used_for_physical_selection_or_yields": false,
+    "inner_selection_and_efficiency": "frozen nonnegative comparison_weight_outer_fold_k",
+    "negative_physical_weights_used_for_selection": false,
+    "outer_physical_yields": "resolved_selection_contribution_weight"
+  }
+}
