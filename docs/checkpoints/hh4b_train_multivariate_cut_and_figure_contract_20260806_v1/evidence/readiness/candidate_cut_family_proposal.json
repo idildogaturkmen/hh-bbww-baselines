@@ -1,0 +1,66 @@
+{
+  "candidate_thresholds_evaluated": 0,
+  "common_discrete_requirement": {
+    "candidate_lower_thresholds": [
+      3,
+      4
+    ],
+    "variable": "candidate_tagged_jet_count"
+  },
+  "complexity_cap": {
+    "maximum_continuous_thresholds": 4,
+    "maximum_discrete_requirements": 1
+  },
+  "labels_or_performance_used": false,
+  "mutually_exclusive_mass_families": [
+    {
+      "cuts": [
+        {
+          "direction": "upper",
+          "variable": "r_hh_125_125"
+        }
+      ],
+      "name": "radial_mass_plane"
+    },
+    {
+      "cuts": [
+        {
+          "direction": "upper",
+          "variable": "abs_mbb1_minus_125"
+        },
+        {
+          "direction": "upper",
+          "variable": "abs_mbb2_minus_125"
+        }
+      ],
+      "name": "rectangular_mass_windows"
+    }
+  ],
+  "new_cut_selected": false,
+  "optional_kinematic_pool": [
+    {
+      "direction": "lower",
+      "variable": "ht_candidate_jets"
+    },
+    {
+      "direction": "lower",
+      "variable": "h2_pt"
+    },
+    {
+      "direction": "upper",
+      "variable": "max_drbb"
+    },
+    {
+      "direction": "lower",
+      "variable": "mhh"
+    },
+    {
+      "direction": "upper",
+      "variable": "abs_h_delta_eta"
+    }
+  ],
+  "repository_head": "b95231971ddbf12b2eb6934946bea3f24e6cae20",
+  "required_protocol": "true nested source-group inner/outer OOF selection",
+  "schema_version": 1,
+  "status": "proposal_not_frozen"
+}

@@ -1,0 +1,1108 @@
+{
+  "candidate_space": {
+    "families": [
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__mass_only",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__plus_ht_candidate_jets",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__plus_h2_pt",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__plus_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__plus_mhh",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__plus_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__plus_ht_candidate_jets_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__plus_h2_pt_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "radial_mass__nbtag3__plus_mhh_and_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__mass_only",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__plus_ht_candidate_jets",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__plus_h2_pt",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__plus_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__plus_mhh",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__plus_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__plus_ht_candidate_jets_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__plus_h2_pt_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "radial_mass__nbtag4__plus_mhh_and_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__mass_only",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__plus_ht_candidate_jets",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__plus_h2_pt",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__plus_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__plus_mhh",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__plus_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__plus_ht_candidate_jets_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__plus_h2_pt_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag3__plus_mhh_and_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__mass_only",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__plus_ht_candidate_jets",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__plus_h2_pt",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__plus_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__plus_mhh",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__plus_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__plus_ht_candidate_jets_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__plus_h2_pt_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "symmetric_rectangular_mass__nbtag4__plus_mhh_and_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__mass_only",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__plus_ht_candidate_jets",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__plus_h2_pt",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__plus_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__plus_mhh",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__plus_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__plus_ht_candidate_jets_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__plus_h2_pt_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 3,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag3__plus_mhh_and_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__mass_only",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__plus_ht_candidate_jets",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__plus_h2_pt",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__plus_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__plus_mhh",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__plus_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__plus_ht_candidate_jets_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__plus_h2_pt_and_max_drbb",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ]
+      },
+      {
+        "candidate_tagged_jet_count_minimum": 4,
+        "configuration_family_id": "asymmetric_rectangular_mass__nbtag4__plus_mhh_and_abs_h_delta_eta",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ]
+      }
+    ],
+    "mass_families_are_mutually_exclusive": true,
+    "maximum_continuous_thresholds": 4,
+    "maximum_discrete_requirements": 1,
+    "number_of_predeclared_configuration_families": 54,
+    "reason_for_exclusions": "avoid redundant correlated thresholds and limit the cut baseline's look-elsewhere and overfitting burden",
+    "variables_not_in_candidate_space": [
+      "ht_selected_jets",
+      "ht_selected_bjets",
+      "h1_pt",
+      "drbb1",
+      "drbb2",
+      "h_delta_r",
+      "h_pt_balance",
+      "n_selected_jets",
+      "n_selected_bjets",
+      "r_hh_125_120"
+    ]
+  },
+  "checkpoint_relative_path": "docs/checkpoints/hh4b_train_multivariate_cut_and_figure_contract_20260806_v1",
+  "continuous_search": {
+    "post_hoc_manual_tuning_allowed": false,
+    "random_search_used": false,
+    "stage_1": {
+      "labels_used_to_construct_grid": false,
+      "method": "development-set unlabeled empirical quantile grid",
+      "quantile_probabilities": [
+        0.015625,
+        0.03125,
+        0.046875,
+        0.0625,
+        0.078125,
+        0.09375,
+        0.109375,
+        0.125,
+        0.140625,
+        0.15625,
+        0.171875,
+        0.1875,
+        0.203125,
+        0.21875,
+        0.234375,
+        0.25,
+        0.265625,
+        0.28125,
+        0.296875,
+        0.3125,
+        0.328125,
+        0.34375,
+        0.359375,
+        0.375,
+        0.390625,
+        0.40625,
+        0.421875,
+        0.4375,
+        0.453125,
+        0.46875,
+        0.484375,
+        0.5,
+        0.515625,
+        0.53125,
+        0.546875,
+        0.5625,
+        0.578125,
+        0.59375,
+        0.609375,
+        0.625,
+        0.640625,
+        0.65625,
+        0.671875,
+        0.6875,
+        0.703125,
+        0.71875,
+        0.734375,
+        0.75,
+        0.765625,
+        0.78125,
+        0.796875,
+        0.8125,
+        0.828125,
+        0.84375,
+        0.859375,
+        0.875,
+        0.890625,
+        0.90625,
+        0.921875,
+        0.9375,
+        0.953125,
+        0.96875,
+        0.984375
+      ],
+      "validation_or_test_used": false
+    },
+    "stage_2": {
+      "beam_width_per_family": 128,
+      "method": "deterministic bounded beam search",
+      "ranking": [
+        "primary objective feasibility",
+        "smaller inner-OOF background efficiency",
+        "smaller signal-efficiency excess",
+        "fewer continuous thresholds",
+        "lexicographically smaller configuration identifier"
+      ]
+    },
+    "stage_3": {
+      "finite_sample_boundary_exactness_claimed_per_coordinate": true,
+      "global_optimum_claimed": false,
+      "maximum_coordinate_passes": 8,
+      "method": "exact empirical event-boundary coordinate refinement",
+      "starting_configurations_per_family": 16,
+      "stopping_rule": "no lexicographic objective improvement in a complete coordinate pass"
+    }
+  },
+  "created_at_utc": "2026-08-06T16:44:48.830540+00:00",
+  "data_scope": {
+    "authorized_primary_resolved_train_rows": 1042397,
+    "auxiliary_qcd_resolved_rows_excluded": 128675,
+    "full_generated_event_accounting": 5200000,
+    "test_payloads_opened": 0,
+    "train_generated_events": 3799873,
+    "validation_payloads_opened": 0
+  },
+  "deployment_candidate": {
+    "construction": "modal family across five outer folds, then coordinate-wise median thresholds among folds selecting that family; if there is no unique modal family, use the deterministic primary-endpoint ranking evaluated by inner OOF frequency, then lexicographic family ID",
+    "role": "train-only candidate for a later validation gate",
+    "test_application_before_final_lock": false,
+    "validation_application_before_freeze": false
+  },
+  "fold_protocol": {
+    "for_outer_fold_k": {
+      "inner_folds": "the four original source_fold values present in the outer development set",
+      "inner_oof_selection": "candidate family and thresholds selected only from the pooled four-fold inner-OOF metrics",
+      "outer_development_rows": "source_fold != k",
+      "outer_rows_used_for_selection": false,
+      "outer_test_rows": "source_fold == k"
+    },
+    "group_key": "group_id",
+    "group_leakage_allowed": 0,
+    "outer_folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "next": "run a pilot-gated implementation of the frozen nested multivariate cut scan",
+  "outer_oof_evaluation": {
+    "physical_weight_column": "resolved_selection_contribution_weight",
+    "pooled_outer_oof_result_is_primary_train_only_estimate": true,
+    "reported_metrics": [
+      "raw signal and background rows",
+      "comparison-weighted signal and background efficiencies",
+      "Run-2 physical signal and background yields",
+      "physical signal and background efficiencies",
+      "S/B",
+      "statistical-only Asimov significance",
+      "sumw2",
+      "effective event counts",
+      "finite-MC relative uncertainties",
+      "per-process and per-fold yields"
+    ],
+    "selected_configuration_applied_once_per_outer_fold": true
+  },
+  "preserved_substudies": [
+    "historical fixed r_hh_125_125 < 34 comparator",
+    "exact one-dimensional RHH threshold scan"
+  ],
+  "primary_endpoint": {
+    "name": "fixed_signal_efficiency_background_rejection",
+    "objective": "minimize pooled inner-OOF background efficiency subject to pooled inner-OOF signal efficiency >= 0.585957",
+    "selection_weights": "frozen nonnegative comparison_weight_outer_fold_k",
+    "target_signal_efficiency": 0.585957,
+    "tie_breaking": [
+      "smaller background efficiency",
+      "smaller signal-efficiency excess",
+      "fewer continuous thresholds",
+      "smaller candidate_tagged_jet_count threshold",
+      "lexicographically smaller configuration identifier"
+    ]
+  },
+  "prohibitions": [
+    "do not use validation or test in family or threshold selection",
+    "do not include auxiliary QCD in physical optimization",
+    "do not select the nominal cut by the outer held-out folds",
+    "do not manually add variables after inspecting performance",
+    "do not claim a globally exhaustive multivariate continuous scan",
+    "do not replace the fixed RHH34 historical comparator",
+    "do not claim final sensitivity before nuisance-model freeze"
+  ],
+  "repository_head_before_contract_commit": "b95231971ddbf12b2eb6934946bea3f24e6cae20",
+  "resampling": {
+    "historical_draw_sha256": "3ac59a86fefc9e21275df73c945cd08e2b24642f02acc2b6459cf3c0f62c929b",
+    "metric_bootstrap_replicas": 2000,
+    "metric_bootstrap_seed": 20260727,
+    "metric_bootstrap_unit": "source group",
+    "reuse_historical_paired_draw_plan": true,
+    "selection_reoptimization_replicas": 200,
+    "selection_reoptimization_role": "separate stability diagnostic; not substituted for the paired metric bootstrap",
+    "selection_reoptimization_seed": 20260806
+  },
+  "schema_version": 1,
+  "secondary_endpoint": {
+    "name": "statistical_only_asimov_diagnostic",
+    "nominal_cut_status": false,
+    "objective": "maximize pooled inner-OOF statistical-only Asimov Z",
+    "reason": "systematic nuisances and correlations are not yet frozen"
+  },
+  "state_at_freeze": {
+    "candidate_thresholds_evaluated": 0,
+    "models_trained": 0,
+    "multivariate_scan_performed": false,
+    "new_cut_selected": false,
+    "signal_background_performance_evaluated": false,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "status": "pass_frozen_before_multivariate_scan",
+  "supersedes_for_nominal_optimized_cut": "hh4b_train_nested_oof_cut_search_contract_20260806_v1",
+  "support_and_stability_gates": {
+    "all_five_outer_folds_must_pass": true,
+    "all_selected_physical_yields_finite": true,
+    "all_selected_sumw2_values_finite_nonnegative": true,
+    "each_inner_fold_selected_background_rows_minimum": 50,
+    "each_inner_fold_selected_signal_rows_minimum": 25,
+    "pooled_inner_effective_background_events_minimum": 100.0,
+    "pooled_inner_selected_background_rows_minimum": 500
+  }
+}

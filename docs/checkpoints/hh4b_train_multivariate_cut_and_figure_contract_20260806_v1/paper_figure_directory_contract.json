@@ -1,0 +1,74 @@
+{
+  "created_at_utc": "2026-08-06T16:44:48.831735+00:00",
+  "existing_figure_files_inventoried": 87,
+  "existing_figure_references_inventoried": 108,
+  "format_policy": {
+    "cms_approval_claim_allowed": false,
+    "cms_style_typography_allowed": true,
+    "latex_labels": true,
+    "observed_data_claim_allowed": false,
+    "pdf_authoritative": true,
+    "png_review_companion": true,
+    "required_qualifiers": [
+      "Delphes simulation",
+      "138 fb^-1 (13 TeV)",
+      "train-source-group OOF"
+    ]
+  },
+  "legacy_manifest_required_fields": [
+    "generated event universe",
+    "resolved or selected row universe",
+    "train validation test policy",
+    "weight definition",
+    "resampling registry and replica count",
+    "source checkpoint",
+    "figure file checksums"
+  ],
+  "migration_policy": {
+    "all_latex_markdown_python_references_must_be_updated": true,
+    "git_mv_required_for_tracked_files": true,
+    "move_existing_figures_now": false,
+    "post_migration_reference_audit_required": true,
+    "reason": "existing references must be migrated atomically only after the inventory is reviewed and new frozen results exist"
+  },
+  "new_cut_figure_gate": {
+    "paper_figures_before_result_freeze": false,
+    "required_before_paper_export": [
+      "all five outer folds pass",
+      "frozen 2000-replica paired bootstrap passes",
+      "200-replica reoptimization stability diagnostic passes",
+      "result-root checksums pass",
+      "cut result freeze checkpoint passes"
+    ],
+    "review_figures_before_result_freeze": "external result-root review_figures only"
+  },
+  "paper_root": "docs/paper/jhep_hh4b_ml",
+  "planned_cut_figures": [
+    "historical RHH34 versus optimized-cut summary",
+    "individual-variable inner-OOF scan diagnostics",
+    "cut-family efficiency frontier",
+    "outer-fold selected-family and threshold stability",
+    "mass-plane before and after optimized selection",
+    "OOF signal and background efficiency comparison",
+    "Run-2 yield and S-over-B comparison",
+    "paired-bootstrap improvement distributions",
+    "selection-reoptimization stability distributions"
+  ],
+  "schema_version": 1,
+  "status": "pass_layout_policy_frozen_before_new_figures",
+  "target_figure_layout": {
+    "caption_mirror": "captions/<model_family>/",
+    "cross_model_comparisons": "figures/",
+    "legacy": "figures/legacy/<campaign_or_event_universe_slug>",
+    "model_specific": [
+      "figures/cut/historical_rhh34",
+      "figures/cut/multivariate_nested_oof",
+      "figures/bdt",
+      "figures/categorized_bdt",
+      "figures/dnn",
+      "figures/lbn",
+      "figures/spanet"
+    ],
+    "source_data_mirror": "source_data/<model_family>/"
+  }
+}
