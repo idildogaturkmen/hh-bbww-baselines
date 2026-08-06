@@ -1,0 +1,155 @@
+============================================================
+MULTIVARIATE CUT CATEGORY-CONDITIONAL DIAGNOSTIC V2
+============================================================
+EXPECTED_HEAD=91d8c03d63fcece89b51fd44179df11fdc1d675a
+OUT=/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_category_conditional_diagnostic_v2_20260806T181344Z
+From https://github.com/idildogaturkmen/hh-bbww-baselines
+ * branch            delphes-hh4b-production -> FETCH_HEAD
+CURRENT_BRANCH=delphes-hh4b-production
+LOCAL_HEAD=91d8c03d63fcece89b51fd44179df11fdc1d675a
+REMOTE_HEAD=91d8c03d63fcece89b51fd44179df11fdc1d675a
+AHEAD_COUNT=0
+BEHIND_COUNT=0
+CUT_AMENDMENT_HEAD=1cd21990ae07eeb503b858c1e57e7121b6a0e875
+HEAD_PARENT=1cd21990ae07eeb503b858c1e57e7121b6a0e875
+EXPECTED_HEAD_PARENT=1cd21990ae07eeb503b858c1e57e7121b6a0e875
+HEAD_SUBJECT=docs: freeze Track B Phase 2 inference namespace closure
+EXPECTED_HEAD_SUBJECT=docs: freeze Track B Phase 2 inference namespace closure
+DESCENDANT_FILE_COUNT=82
+EXPECTED_DESCENDANT_FILE_COUNT=82
+./.gitattributes: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./common_table_full_freeze_contract.json: OK
+./evidence/full_output_audit/condor_history_final.tsv: OK
+./evidence/full_output_audit/condor_queue_final.tsv: OK
+./evidence/full_output_audit/fold_output_summary.tsv: OK
+./evidence/full_output_audit/full_464_source_output_audit.log: OK
+./evidence/full_output_audit/full_464_source_output_audit_summary.json: OK
+./evidence/full_output_audit/global_event_uid_audit.json: OK
+./evidence/full_output_audit/output_schema_summary.tsv: OK
+./evidence/full_output_audit/process_output_summary.tsv: OK
+./evidence/full_output_audit/source_output_audit_464.tsv: OK
+./evidence/full_output_audit/transport_output_summary.tsv: OK
+./evidence/git_whitespace_diagnostic_lines.tsv: OK
+./evidence/git_whitespace_policy_receipt.json: OK
+./evidence/production_manifest/fold_accounting_summary.tsv: OK
+./evidence/production_manifest/full_464_production_plan.tsv: OK
+./evidence/production_manifest/full_464_source_worker_manifest.tsv: OK
+./evidence/production_manifest/full_manifest_preflight_summary.json: OK
+./evidence/production_manifest/pilot_reuse_checksum_audit_7.tsv: OK
+./evidence/production_manifest/process_accounting_summary.tsv: OK
+./evidence/production_manifest/source_input_checksum_audit_464.tsv: OK
+./evidence/production_manifest/transport_accounting_summary.tsv: OK
+./evidence/submission/common_table_scaleout_457.sub: OK
+./evidence/submission/jobs_457.tsv: OK
+./evidence/submission/jobs_457_headerless.queue: OK
+./evidence/submission/pre_submission_contract.json: OK
+./evidence/submission/run_common_table_worker.sh: OK
+./evidence/submission/submission_receipt.json: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./evidence/authorization/authorized_physical_weight_column_aliases.json: OK
+./evidence/authorization/coefficient_campaign_yield_summary.tsv: OK
+./evidence/authorization/fold_physical_yield_summary.tsv: OK
+./evidence/authorization/physical_normalization_authorization.log: OK
+./evidence/authorization/physical_normalization_authorization_summary.json: OK
+./evidence/authorization/physical_weight_authorization_registry_464.tsv: OK
+./evidence/authorization/process_physical_yield_summary.tsv: OK
+./evidence/authorization/sample_class_physical_yield_summary.tsv: OK
+./evidence/authorization/source_physical_yield_summary_464.tsv: OK
+./evidence/authorization/transport_physical_yield_summary.tsv: OK
+./run2_physical_authorization_freeze_contract.json: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./evidence/paper_inventory/existing_figure_file_inventory.tsv: OK
+./evidence/paper_inventory/existing_figure_reference_inventory.tsv: OK
+./evidence/readiness/candidate_cut_family_proposal.json: OK
+./evidence/readiness/candidate_variable_fold_support.tsv: OK
+./evidence/readiness/candidate_variable_pooled_support.tsv: OK
+./evidence/readiness/discrete_candidate_support.tsv: OK
+./evidence/readiness/multivariate_cut_space_readiness_summary.json: OK
+./multivariate_nested_oof_cut_contract.json: OK
+./paper_figure_directory_contract.json: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./multivariate_cut_implementation_clarification.json: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./evidence/target_feasibility/canary_v2_btag_signal_efficiency_ceiling.tsv: OK
+./evidence/target_feasibility/full_population_btag_signal_efficiency_ceiling.tsv: OK
+./evidence/target_feasibility/full_population_outer_fold_feasibility_summary.tsv: OK
+./evidence/target_feasibility/multivariate_cut_target_feasibility_audit_summary.json: OK
+./multivariate_cut_category_endpoint_amendment.json: OK
+./comparison_weight_null_pattern_audit.log: OK
+./comparison_weight_null_pattern_audit_summary.json: OK
+./fold_class_comparison_weight_null_summary.tsv: OK
+./source_comparison_weight_null_summary_441.tsv: OK
+./canary_v2_btag_signal_efficiency_ceiling.tsv: OK
+./canary_v2_exact_source_sample_manifest.tsv: OK
+./full_population_btag_signal_efficiency_ceiling.tsv: OK
+./full_population_outer_fold_feasibility_summary.tsv: OK
+./multivariate_cut_target_feasibility_audit.log: OK
+./multivariate_cut_target_feasibility_audit_summary.json: OK
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_production_plan.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_source_worker_manifest.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_run2_138fb_physical_authorization_freeze_20260806_v1/evidence/authorization/physical_weight_authorization_registry_464.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_and_figure_contract_20260806_v1/multivariate_nested_oof_cut_contract.json
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_implementation_clarification_20260806_v1/multivariate_cut_implementation_clarification.json
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_category_endpoint_amendment_20260806_v1/multivariate_cut_category_endpoint_amendment.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/baselines/comparison_weight_null_pattern_audit_v1_20260806T172806Z/comparison_weight_null_pattern_audit_summary.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_target_feasibility_audit_v1_20260806T173911Z/multivariate_cut_target_feasibility_audit_summary.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/runtime/hh4b_broad_ml_py39_v1/bin/python
+DESCENDANT_TRACK_B_ONLY_SCOPE=PASS
+PROTECTED_CUT_CONTRACT_PATHS_UNCHANGED=PASS
+ALL_INPUT_CHECKSUMS=PASS
+CATEGORY_ENDPOINT_AMENDMENT=PASS
+WORKTREE_CLEAN=PASS
+<stdin>:745: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+CATEGORY_CONDITIONAL_DIAGNOSTIC_V2_STATUS=PASS
+CATEGORY_ENDPOINT_AMENDMENT=PASS
+DESCENDANT_TRACK_B_ONLY_SCOPE=PASS
+PROTECTED_CUT_CONTRACT_PATHS_UNCHANGED=PASS
+AUTHORIZED_PRIMARY_SOURCES_CONSIDERED=441/441
+SAMPLED_SOURCES=351
+SAMPLED_GROUPS=351
+SAMPLED_ROWS=26936
+SAMPLED_DEVELOPMENT_ROWS=21536
+SAMPLED_OUTER_ROWS=5400
+PRODUCTION_FULL_SCAN_ROWS=1042397
+PRODUCTION_CATEGORY_FAMILY_CONFIGURATIONS=54
+OUTER_FOLD=0
+INNER_HELD_OUT_FOLDS=1,2,3,4
+INNER_TRAINING_FOLDS_PER_FIT=3
+CATEGORIES=exact3tag,ge4tag
+CATEGORIES_MUTUALLY_EXCLUSIVE=TRUE
+CATEGORY_CONDITIONAL_TARGET=0.585957
+SENTINEL_CONFIGURATIONS_EXERCISED=6/6
+MASS_FAMILIES_PER_CATEGORY=3/3
+EXACT3TAG_OPEN_CONTROL_SIGNAL_EFFICIENCY=1
+EXACT3TAG_MAX_POOLED_INNER_OOF_SIGNAL_EFFICIENCY=0.58594095229
+EXACT3TAG_MIN_POOLED_INNER_OOF_SIGNAL_EFFICIENCY=0.584903814474
+EXACT3TAG_ANY_SENTINEL_TARGET_REACHED=FALSE
+EXACT3TAG_DIAGNOSTIC_FALLBACK_USED=TRUE
+EXACT3TAG_DIAGNOSTIC_FAMILY=exact3tag::symmetric_rectangular_mass__category__plus_h2_pt
+GE4TAG_OPEN_CONTROL_SIGNAL_EFFICIENCY=1
+GE4TAG_MAX_POOLED_INNER_OOF_SIGNAL_EFFICIENCY=0.585252113872
+GE4TAG_MIN_POOLED_INNER_OOF_SIGNAL_EFFICIENCY=0.578465559377
+GE4TAG_ANY_SENTINEL_TARGET_REACHED=FALSE
+GE4TAG_DIAGNOSTIC_FALLBACK_USED=TRUE
+GE4TAG_DIAGNOSTIC_FAMILY=ge4tag::symmetric_rectangular_mass__category__plus_h2_pt
+FAMILY_SELECTED_FROM_CROSS_FITTED_INNER_PREDICTIONS=TRUE
+OUTER_FOLD_USED_FOR_SELECTION=FALSE
+DETERMINISTIC_PAYLOAD_SHA256=c2d12703de042e99a8bcfb4cafeefecaf6913e4515838eaaa688400b2bd0a6e9
+DETERMINISTIC_RERUN=PASS
+SELECTED_ROW_MASK_RECOMPUTATION=PASS
+COMPARISON_WEIGHT_SELECTION_NONNEGATIVE=PASS
+OUTER_COMPARISON_WEIGHT_NULL_SENTINEL=PASS
+PHYSICAL_YIELD_AND_SUMW2_FINITE=PASS
+SELECTED_CATEGORY_EVENT_SETS_DISJOINT=PASS
+DIAGNOSTIC_PHYSICS_RESULT=FALSE
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+REPOSITORY_MODIFIED=FALSE
+RESULT=MULTIVARIATE_CUT_CATEGORY_CONDITIONAL_DIAGNOSTIC_V2_PASS
+NEXT=SELECT_EVIDENCE_BASED_CANARY_ACCEPTANCE_REPAIR

@@ -1,0 +1,198 @@
+{
+  "acceptance_gates": {
+    "all_cut_operators_match_contract": true,
+    "all_four_inner_folds_present_in_both_categories": true,
+    "all_six_sentinel_configurations_exercised": true,
+    "all_three_mass_families_exercised_in_each_category": true,
+    "all_tie_breaks_deterministic": true,
+    "category_conditional_target_reached_exact3tag": false,
+    "category_conditional_target_reached_ge4tag": false,
+    "comparison_weight_closure_finite": true,
+    "identical_rerun_output_checksum": true,
+    "no_group_id_crosses_a_fold": true,
+    "outer_comparison_weight_null_sentinel": true,
+    "outer_fold_zero_excluded_from_all_selection": true,
+    "physical_yield_and_sumw2_finite": true,
+    "repository_modified": false,
+    "selected_category_event_sets_disjoint": true,
+    "selected_row_masks_recomputed_from_raw_columns": true,
+    "test_payloads_opened": 0,
+    "threshold_training_excludes_inner_held_out_rows": true,
+    "validation_payloads_opened": 0
+  },
+  "canary_scope": {
+    "all_authorized_primary_sources_considered": 441,
+    "outer_fold": 0,
+    "production_category_family_configurations": 54,
+    "production_full_scan_rows": 1042397,
+    "rows_per_source_category_cap": 64,
+    "sampled_development_rows": 21536,
+    "sampled_groups": 351,
+    "sampled_outer_rows": 5400,
+    "sampled_rows": 26936,
+    "sampled_sources": 351,
+    "sentinel_category_family_configurations": [
+      "exact3tag::radial_mass__category__mass_only",
+      "exact3tag::symmetric_rectangular_mass__category__plus_h2_pt",
+      "exact3tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+      "ge4tag::radial_mass__category__mass_only",
+      "ge4tag::symmetric_rectangular_mass__category__plus_h2_pt",
+      "ge4tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets"
+    ]
+  },
+  "category_protocol": {
+    "categories": [
+      "exact3tag",
+      "ge4tag"
+    ],
+    "categories_mutually_exclusive": true,
+    "conditional_target": 0.585957,
+    "family_selected_separately_per_category": true,
+    "retain_both_categories": true,
+    "selected_outer_event_sets_disjoint": true
+  },
+  "category_results": {
+    "exact3tag": {
+      "background_sumw2_post": 7687717595926.28,
+      "background_yield_post": 9738209.323275844,
+      "background_yield_pre": 29202076.630681314,
+      "category_id": "exact3tag",
+      "category_target_reached_by_any_sentinel": false,
+      "chosen_category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_h2_pt",
+      "chosen_structure_id": "symmetric_rectangular_mass__category__plus_h2_pt",
+      "diagnostic_fallback_used": true,
+      "maximum_pooled_inner_oof_signal_efficiency": 0.5859409522899954,
+      "minimum_pooled_inner_oof_signal_efficiency": 0.5849038144743506,
+      "open_control_metric": {
+        "background_efficiency": 1.0,
+        "feasible": true,
+        "selected_background_rows": 8785,
+        "selected_background_weight": 9535.841438831923,
+        "selected_signal_rows": 4288,
+        "selected_signal_weight": 28320.719562954684,
+        "signal_efficiency": 1.0
+      },
+      "outer_background_rows": 2057,
+      "outer_rows": 3337,
+      "outer_selected_background_rows": 927,
+      "outer_selected_rows": 1674,
+      "outer_selected_signal_rows": 747,
+      "outer_signal_rows": 1280,
+      "refit_development_metric": {
+        "background_efficiency": 0.3781484908127533,
+        "feasible": true,
+        "selected_background_rows": 3933,
+        "selected_background_weight": 3605.964048724006,
+        "selected_signal_rows": 2514,
+        "selected_signal_weight": 16600.525628087325,
+        "signal_efficiency": 0.5861618590299477
+      },
+      "refit_optimizer_audit": {
+        "beam_width_used": 16,
+        "coarse_candidates": 64,
+        "coordinate_passes_completed": 2,
+        "grid_sizes": {
+          "h2_pt": 8,
+          "max_abs_mbb_minus_125": 8
+        },
+        "open_boundary_seed_included": true,
+        "refinement_starts_used": 4
+      },
+      "refit_thresholds": {
+        "h2_pt": 1.8406657943106222,
+        "max_abs_mbb_minus_125": 30.678458922312533
+      },
+      "signal_sumw2_post": 0.14876053536125372,
+      "signal_yield_post": 10.377435238006564,
+      "signal_yield_pre": 17.646206173746613
+    },
+    "ge4tag": {
+      "background_sumw2_post": 6117290.300022832,
+      "background_yield_post": 17415.772661193445,
+      "background_yield_pre": 522077.21868359967,
+      "category_id": "ge4tag",
+      "category_target_reached_by_any_sentinel": false,
+      "chosen_category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_h2_pt",
+      "chosen_structure_id": "symmetric_rectangular_mass__category__plus_h2_pt",
+      "diagnostic_fallback_used": true,
+      "maximum_pooled_inner_oof_signal_efficiency": 0.5852521138723843,
+      "minimum_pooled_inner_oof_signal_efficiency": 0.5784655593774727,
+      "open_control_metric": {
+        "background_efficiency": 1.0,
+        "feasible": true,
+        "selected_background_rows": 4470,
+        "selected_background_weight": 3267.949278806339,
+        "selected_signal_rows": 3993,
+        "selected_signal_weight": 26342.77405815199,
+        "signal_efficiency": 1.0
+      },
+      "outer_background_rows": 873,
+      "outer_rows": 2063,
+      "outer_selected_background_rows": 245,
+      "outer_selected_rows": 928,
+      "outer_selected_signal_rows": 683,
+      "outer_signal_rows": 1190,
+      "refit_development_metric": {
+        "background_efficiency": 0.25712592152441477,
+        "feasible": true,
+        "selected_background_rows": 1326,
+        "selected_background_weight": 840.2744698081266,
+        "selected_signal_rows": 2341,
+        "selected_signal_weight": 15437.26043819165,
+        "signal_efficiency": 0.586014988554877
+      },
+      "refit_optimizer_audit": {
+        "beam_width_used": 16,
+        "coarse_candidates": 64,
+        "coordinate_passes_completed": 2,
+        "grid_sizes": {
+          "h2_pt": 8,
+          "max_abs_mbb_minus_125": 8
+        },
+        "open_boundary_seed_included": true,
+        "refinement_starts_used": 4
+      },
+      "refit_thresholds": {
+        "h2_pt": 1.4241866561746042,
+        "max_abs_mbb_minus_125": 29.81747259018076
+      },
+      "signal_sumw2_post": 0.13465551676719584,
+      "signal_yield_post": 9.405432750940463,
+      "signal_yield_pre": 16.350219392841268
+    }
+  },
+  "combined_outer_result": {
+    "background_physical_efficiency_within_ge3tag": 0.3282053089005081,
+    "background_sumw2_post": 7687723713216.58,
+    "background_yield_post": 9755625.095937038,
+    "background_yield_pre": 29724153.849364914,
+    "selected_event_sets_disjoint": true,
+    "signal_physical_efficiency_within_ge3tag": 0.5819102349509908,
+    "signal_sumw2_post": 0.28341605212844956,
+    "signal_yield_post": 19.782867988947025,
+    "signal_yield_pre": 33.99642556658788
+  },
+  "determinism": {
+    "first_payload_sha256": "c2d12703de042e99a8bcfb4cafeefecaf6913e4515838eaaa688400b2bd0a6e9",
+    "identical": true,
+    "reruns": 2,
+    "second_payload_sha256": "c2d12703de042e99a8bcfb4cafeefecaf6913e4515838eaaa688400b2bd0a6e9"
+  },
+  "interpretation": "Diagnostic evidence only. This run records whether the bounded cross-fitted sentinel configurations reach the category-conditional target, while proving that the open-control endpoint is feasible. Diagnostic winners, thresholds, yields, and efficiencies may not be used as physics results, may not alter the 54-configuration production contract, and may not enter paper figures.",
+  "next": "use the recorded pooled cross-fitted efficiencies to choose a predeclared canary-only acceptance repair or a production operating-point calibration; do not rerun v3 blindly",
+  "repository_head": "91d8c03d63fcece89b51fd44179df11fdc1d675a",
+  "schema_version": 1,
+  "status": "pass_category_conditional_target_diagnostic_v2_not_physics_result",
+  "true_nested_protocol": {
+    "chosen_family_refit_on_all_outer_development_folds": true,
+    "family_selected_from_cross_fitted_inner_predictions": true,
+    "inner_held_out_folds": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "inner_training_folds_per_fit": 3,
+    "outer_fold_used_for_selection": false
+  }
+}
