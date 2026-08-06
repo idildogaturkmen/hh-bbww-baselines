@@ -1,0 +1,68 @@
+{
+  "bounded_canary_v2": {
+    "btag3_signal_efficiency_ceiling": 0.4135551508550988,
+    "btag4_signal_efficiency_ceiling": 0.10316986994515027,
+    "development_rows": 68801,
+    "outer_rows": 16567,
+    "sampled_groups": 120,
+    "sampled_rows": 85368,
+    "sampled_sources": 120,
+    "target_feasible": false,
+    "v2_failure_class": "bounded_canary_target_infeasible_before_any_continuous_cut"
+  },
+  "cut_families_ranked": 0,
+  "full_population": {
+    "all_five_outer_splits_target_feasible": false,
+    "any_outer_split_target_feasible": false,
+    "authorized_primary_resolved_rows": 1042397,
+    "contract_status": "target_infeasible_in_all_outer_splits_for_every_54_family",
+    "outer_fold_summaries": [
+      {
+        "any_54_family_can_reach_target": false,
+        "btag3_ceiling": 0.40734650735063654,
+        "btag4_ceiling": 0.1026571646714027,
+        "outer_fold": 0,
+        "target": 0.585957
+      },
+      {
+        "any_54_family_can_reach_target": false,
+        "btag3_ceiling": 0.4078374505932672,
+        "btag4_ceiling": 0.10300514572240228,
+        "outer_fold": 1,
+        "target": 0.585957
+      },
+      {
+        "any_54_family_can_reach_target": false,
+        "btag3_ceiling": 0.4090724568690088,
+        "btag4_ceiling": 0.1033279675309455,
+        "outer_fold": 2,
+        "target": 0.585957
+      },
+      {
+        "any_54_family_can_reach_target": false,
+        "btag3_ceiling": 0.40843399959183674,
+        "btag4_ceiling": 0.10281204519310282,
+        "outer_fold": 3,
+        "target": 0.585957
+      },
+      {
+        "any_54_family_can_reach_target": false,
+        "btag3_ceiling": 0.40808754230700817,
+        "btag4_ceiling": 0.10273328728966186,
+        "outer_fold": 4,
+        "target": 0.585957
+      }
+    ]
+  },
+  "mathematical_fact": "Because every frozen family requires candidate_tagged_jet_count of at least 3 or 4 and all continuous cuts can be opened, the btag-only efficiency is the exact upper bound on attainable signal efficiency for that btag branch.",
+  "new_cut_selected": false,
+  "next": "choose the repair branch from the audited full-population and bounded-canary feasibility results; do not rerun v2 blindly",
+  "repository_head": "d830a84fdb94dc5c0c34c5c28978cbdc453dc9e9",
+  "repository_modified": false,
+  "schema_version": 1,
+  "status": "pass_target_feasibility_diagnosed",
+  "target_signal_efficiency": 0.585957,
+  "test_payloads_opened": 0,
+  "thresholds_scanned": 0,
+  "validation_payloads_opened": 0
+}

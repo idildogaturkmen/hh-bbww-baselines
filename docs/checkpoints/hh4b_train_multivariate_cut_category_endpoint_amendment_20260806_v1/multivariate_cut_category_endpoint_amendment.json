@@ -1,0 +1,1500 @@
+{
+  "base_contract_checkpoint": "hh4b_train_multivariate_cut_and_figure_contract_20260806_v1",
+  "canary_v3_contract": {
+    "all_three_mass_families_exercised_in_each_category": true,
+    "conditional_target": 0.585957,
+    "metrics_may_enter_paper_figures": false,
+    "outer_fold": 0,
+    "outer_fold_used_for_selection": false,
+    "role": "implementation evidence only, not a physics result",
+    "sentinel_category_family_configurations": [
+      "exact3tag::radial_mass__category__mass_only",
+      "exact3tag::symmetric_rectangular_mass__category__plus_h2_pt",
+      "exact3tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+      "ge4tag::radial_mass__category__mass_only",
+      "ge4tag::symmetric_rectangular_mass__category__plus_h2_pt",
+      "ge4tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets"
+    ],
+    "sentinel_configurations": 6,
+    "winner_may_modify_production_contract": false
+  },
+  "category_program": {
+    "categories": [
+      {
+        "category_id": "exact3tag",
+        "definition": "candidate_tagged_jet_count == 3",
+        "operator": "equal",
+        "threshold": 3
+      },
+      {
+        "category_id": "ge4tag",
+        "definition": "candidate_tagged_jet_count >= 4",
+        "operator": "greater_than_or_equal",
+        "threshold": 4
+      }
+    ],
+    "categories_are_mutually_exclusive": true,
+    "category_family_configurations": [
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__mass_only",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__mass_only"
+      },
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__plus_abs_h_delta_eta",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__plus_h2_pt",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_h2_pt"
+      },
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__plus_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__plus_mhh",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_mhh"
+      },
+      {
+        "category_family_id": "exact3tag::asymmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__mass_only",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          }
+        ],
+        "structure_id": "radial_mass__category__mass_only"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__plus_abs_h_delta_eta",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__plus_h2_pt",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_h2_pt"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__plus_h2_pt_and_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__plus_ht_candidate_jets",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__plus_ht_candidate_jets_and_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__plus_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__plus_mhh",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_mhh"
+      },
+      {
+        "category_family_id": "exact3tag::radial_mass__category__plus_mhh_and_abs_h_delta_eta",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_mhh_and_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__mass_only",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__mass_only"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_abs_h_delta_eta",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_h2_pt",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_h2_pt"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_ht_candidate_jets",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_max_drbb",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_max_drbb"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_mhh",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_mhh"
+      },
+      {
+        "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta",
+        "category_id": "exact3tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__mass_only",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__mass_only"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_abs_h_delta_eta",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_h2_pt",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_h2_pt"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_mhh",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_mhh"
+      },
+      {
+        "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__mass_only",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          }
+        ],
+        "structure_id": "radial_mass__category__mass_only"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__plus_abs_h_delta_eta",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__plus_h2_pt",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_h2_pt"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__plus_h2_pt_and_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__plus_ht_candidate_jets",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__plus_ht_candidate_jets_and_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__plus_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__plus_mhh",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_mhh"
+      },
+      {
+        "category_family_id": "ge4tag::radial_mass__category__plus_mhh_and_abs_h_delta_eta",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_mhh_and_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__mass_only",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__mass_only"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_abs_h_delta_eta",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_h2_pt",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_h2_pt"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_ht_candidate_jets",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_max_drbb",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_max_drbb"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_mhh",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_mhh"
+      },
+      {
+        "category_family_id": "ge4tag::symmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta",
+        "category_id": "ge4tag",
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta"
+      }
+    ],
+    "choose_one_category_over_the_other": false,
+    "continuous_structures_per_category": 27,
+    "reason": "An exactly-3-tag category and a >=4-tag category match the analysis logic of treating b-tag multiplicities as separate channels and remove the overlap of >=3 and >=4.",
+    "retain_both_selected_categories": true,
+    "structures": [
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__mass_only"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_h2_pt"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_mhh"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "abs_mbb1_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_mbb2_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "asymmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          }
+        ],
+        "structure_id": "radial_mass__category__mass_only"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_h2_pt"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_mhh"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "r_hh_125_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "radial_mass__category__plus_mhh_and_abs_h_delta_eta"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__mass_only"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_abs_h_delta_eta"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_h2_pt"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "h2_pt"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_ht_candidate_jets"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "ht_candidate_jets"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": "<",
+            "variable": "max_drbb"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_max_drbb"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_mhh"
+      },
+      {
+        "continuous_cuts": [
+          {
+            "operator": "<",
+            "variable": "max_abs_mbb_minus_125"
+          },
+          {
+            "operator": ">",
+            "variable": "mhh"
+          },
+          {
+            "operator": "<",
+            "variable": "abs_h_delta_eta"
+          }
+        ],
+        "structure_id": "symmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta"
+      }
+    ],
+    "total_category_family_configurations": 54
+  },
+  "checkpoint_relative_path": "docs/checkpoints/hh4b_train_multivariate_cut_category_endpoint_amendment_20260806_v1",
+  "combined_result": {
+    "category_conditional_efficiencies_not_misreported_as_absolute": true,
+    "combined_absolute_efficiencies_reported": true,
+    "combined_background_yield": "sum of signed physical background yields in the two categories",
+    "combined_signal_yield": "sum of signed physical signal yields in the two categories",
+    "combined_sumw2": "sum of category sumw2 values",
+    "definition": "union of the selected exact3tag and ge4tag event sets",
+    "double_counting_allowed": false
+  },
+  "created_at_utc": "2026-08-06T17:46:00.737047+00:00",
+  "evidence_basis": {
+    "authorized_primary_resolved_rows": 1042397,
+    "cut_selected_before_amendment": false,
+    "families_ranked_before_amendment": 0,
+    "old_absolute_target": 0.585957,
+    "old_target_feasible_in_any_outer_split": false,
+    "outer_fold_btag3_absolute_efficiency_ceilings": {
+      "0": 0.4073465073506365,
+      "1": 0.4078374505932672,
+      "2": 0.4090724568690088,
+      "3": 0.4084339995918367,
+      "4": 0.4080875423070081
+    },
+    "outer_fold_btag4_absolute_efficiency_ceilings": {
+      "0": 0.1026571646714027,
+      "1": 0.1030051457224022,
+      "2": 0.1033279675309455,
+      "3": 0.1028120451931028,
+      "4": 0.1027332872896618
+    },
+    "target_feasibility_audit_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_target_feasibility_audit_v1_20260806T173911Z",
+    "thresholds_scanned_before_amendment": 0
+  },
+  "implementation_clarification_checkpoint": "hh4b_train_multivariate_cut_implementation_clarification_20260806_v1",
+  "literature_and_paper_documentation": {
+    "cms_approval_claim_allowed": false,
+    "literature_source_map": "hh4b_train_multivariate_cut_implementation_clarification_20260806_v1/multivariate_cut_implementation_clarification.json",
+    "paper_method_note_after_result_freeze": "docs/paper/jhep_hh4b_ml/sections/cut_optimization.tex",
+    "required_plot_qualifiers": [
+      "Delphes simulation",
+      "138 fb^-1 (13 TeV)",
+      "train-source-group OOF"
+    ]
+  },
+  "next": "run category-conditional optimizer canary v3 under the amended disjoint exact3tag and ge4tag protocol",
+  "preserved_elements": [
+    "all 27 continuous cut structures",
+    "three mutually exclusive mass-family definitions",
+    "all predeclared optional kinematic cuts",
+    "maximum four continuous thresholds",
+    "five outer source-group folds",
+    "true four-way inner cross-fitting",
+    "deterministic quantile, beam, and coordinate refinement",
+    "comparison weights for selection",
+    "signed physical weights for yields only",
+    "historical fixed RHH34 comparator",
+    "sealed validation and test roles",
+    "paper-figure provenance policy"
+  ],
+  "primary_endpoint": {
+    "absolute_full_resolved_efficiencies_also_reported": true,
+    "background_efficiency_definition": "Within the same category and split, selected background comparison weight after continuous cuts divided by the background comparison weight in that category before continuous cuts.",
+    "family_selected_separately_per_category": true,
+    "generated-event_acceptance_also_reported": true,
+    "objective_per_category": "minimize pooled true-inner-OOF category-conditional background efficiency subject to category-conditional signal efficiency >= 0.585957",
+    "same_numeric_target_in_both_categories": true,
+    "signal_efficiency_definition": "Within a given category and evaluation split, selected signal comparison weight after continuous cuts divided by the signal comparison weight in that category before continuous cuts.",
+    "target_category_conditional_signal_efficiency": 0.585957
+  },
+  "prohibitions": [
+    "do not mix exact3tag and ge4tag denominators",
+    "do not compare category-conditional efficiencies as if absolute",
+    "do not select one b-tag category and discard the other",
+    "do not use validation or test in optimization",
+    "do not add cut variables after inspecting performance",
+    "do not use signed physical weights for threshold selection",
+    "do not reinterpret the failed v1 or v2 canaries as physics"
+  ],
+  "repository_head_before_amendment_commit": "d830a84fdb94dc5c0c34c5c28978cbdc453dc9e9",
+  "resampling_and_reporting": {
+    "category_selection_stability_reported_separately": true,
+    "combined_yield_uncertainty_reported": true,
+    "paired_metric_bootstrap_replicas": 2000,
+    "predeclared_instability_escalation_replicas": 1000,
+    "selection_reoptimization_replicas_initial": 200
+  },
+  "schema_version": 1,
+  "scientific_reason": "The old endpoint compared an absolute resolved-sample signal efficiency target of 0.585957 against families that imposed an inclusive >=3-tag or >=4-tag requirement. The exact b-tag-only ceilings are approximately 0.407-0.409 and 0.103 in every outer-development split, making the target mathematically unreachable before any continuous cut. The endpoint must therefore be repaired before optimization.",
+  "state_at_amendment_freeze": {
+    "category_families_ranked": 0,
+    "continuous_thresholds_scanned": 0,
+    "models_trained": 0,
+    "new_cut_selected": false,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "status": "pass_frozen_before_category_conditional_canary",
+  "superseded_elements": [
+    "candidate_tagged_jet_count >= 3 and >=4 treated as overlapping alternative full selections",
+    "absolute full-resolved signal-efficiency target 0.585957 applied after the b-tag requirement",
+    "selection of one family across overlapping 3-tag and 4-tag branches"
+  ],
+  "true_nested_protocol_per_outer_fold": [
+    "Seal the outer source-group fold before any category or threshold selection.",
+    "For each category, structure, and inner-held-out fold, optimize thresholds using only the other three inner folds.",
+    "Apply those thresholds once to the corresponding inner-held-out fold and pool genuine cross-fitted predictions within that category.",
+    "Choose one continuous cut structure separately for the exact3tag and ge4tag categories using only their pooled inner-OOF category-conditional endpoint.",
+    "Refit the chosen structure separately in each category on all four outer-development folds.",
+    "Apply both category selections once to the untouched outer fold. The two selected event sets are disjoint.",
+    "Sum signed physical yields and sumw2 across the two categories for the combined cut-baseline result while also reporting each category separately."
+  ]
+}
