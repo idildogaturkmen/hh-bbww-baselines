@@ -1,0 +1,150 @@
+============================================================
+NESTED OOF CUT SEARCH CONTRACT READINESS PREFLIGHT
+============================================================
+REPO=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines
+EXPECTED_HEAD=e715af2b1a976f8b5af6b76251e0998f42787ae1
+OUT=/uscms_data/d3/iturkmen/hh4b_delphes/baselines/nested_oof_cut_contract_readiness_v1_20260806T061049Z
+From https://github.com/idildogaturkmen/hh-bbww-baselines
+ * branch            delphes-hh4b-production -> FETCH_HEAD
+CURRENT_BRANCH=delphes-hh4b-production
+LOCAL_HEAD=e715af2b1a976f8b5af6b76251e0998f42787ae1
+REMOTE_HEAD=e715af2b1a976f8b5af6b76251e0998f42787ae1
+./.gitattributes: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./common_table_full_freeze_contract.json: OK
+./evidence/full_output_audit/condor_history_final.tsv: OK
+./evidence/full_output_audit/condor_queue_final.tsv: OK
+./evidence/full_output_audit/fold_output_summary.tsv: OK
+./evidence/full_output_audit/full_464_source_output_audit.log: OK
+./evidence/full_output_audit/full_464_source_output_audit_summary.json: OK
+./evidence/full_output_audit/global_event_uid_audit.json: OK
+./evidence/full_output_audit/output_schema_summary.tsv: OK
+./evidence/full_output_audit/process_output_summary.tsv: OK
+./evidence/full_output_audit/source_output_audit_464.tsv: OK
+./evidence/full_output_audit/transport_output_summary.tsv: OK
+./evidence/git_whitespace_diagnostic_lines.tsv: OK
+./evidence/git_whitespace_policy_receipt.json: OK
+./evidence/production_manifest/fold_accounting_summary.tsv: OK
+./evidence/production_manifest/full_464_production_plan.tsv: OK
+./evidence/production_manifest/full_464_source_worker_manifest.tsv: OK
+./evidence/production_manifest/full_manifest_preflight_summary.json: OK
+./evidence/production_manifest/pilot_reuse_checksum_audit_7.tsv: OK
+./evidence/production_manifest/process_accounting_summary.tsv: OK
+./evidence/production_manifest/source_input_checksum_audit_464.tsv: OK
+./evidence/production_manifest/transport_accounting_summary.tsv: OK
+./evidence/submission/common_table_scaleout_457.sub: OK
+./evidence/submission/jobs_457.tsv: OK
+./evidence/submission/jobs_457_headerless.queue: OK
+./evidence/submission/pre_submission_contract.json: OK
+./evidence/submission/run_common_table_worker.sh: OK
+./evidence/submission/submission_receipt.json: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./evidence/authorization/authorized_physical_weight_column_aliases.json: OK
+./evidence/authorization/coefficient_campaign_yield_summary.tsv: OK
+./evidence/authorization/fold_physical_yield_summary.tsv: OK
+./evidence/authorization/physical_normalization_authorization.log: OK
+./evidence/authorization/physical_normalization_authorization_summary.json: OK
+./evidence/authorization/physical_weight_authorization_registry_464.tsv: OK
+./evidence/authorization/process_physical_yield_summary.tsv: OK
+./evidence/authorization/sample_class_physical_yield_summary.tsv: OK
+./evidence/authorization/source_physical_yield_summary_464.tsv: OK
+./evidence/authorization/transport_physical_yield_summary.tsv: OK
+./run2_physical_authorization_freeze_contract.json: OK
+./README.md: OK
+./auxiliary_qcd_fold_balance.tsv: OK
+./benchmark_contract.json: OK
+./fold_optimization_evidence/README.md: OK
+./fold_optimization_evidence/optimization.log: OK
+./fold_optimization_evidence/optimization_summary.json: OK
+./fold_optimization_evidence/optimization_trace.tsv: OK
+./fold_optimization_evidence/optimized_fold_stratum_summary.tsv: OK
+./fold_optimization_evidence/optimized_fold_summary.tsv: OK
+./fold_optimization_evidence/optimized_group_fold_map_k5.tsv: OK
+./fold_optimization_evidence/process_fold_coverage.tsv: OK
+./fold_optimization_evidence/source_fold_features.tsv: OK
+./README.md: OK
+./approved_common_train_table_contract.json: OK
+./augmentation_evidence/AUGMENTATION_REPORT.md: OK
+./augmentation_evidence/augmentation_determinism.tsv: OK
+./augmentation_evidence/augmentation_summary.json: OK
+./augmentation_evidence/combined_coverage_gates.tsv: OK
+./augmentation_evidence/scanned_source_weight_diagnostics.tsv: OK
+./augmentation_evidence/targeted_weight_transport_coverage_rows.tsv: OK
+./canary_evidence/CANARY_REPORT.md: OK
+./canary_evidence/canary_btag_category_summary.tsv: OK
+./canary_evidence/canary_summary.json: OK
+./canary_evidence/common_feature_schema_canary.tsv: OK
+./canary_evidence/common_reconstruction_policy_canary.json: OK
+./canary_evidence/determinism_audit.tsv: OK
+./canary_evidence/fold_local_comparison_weight_summary_canary.tsv: OK
+./canary_evidence/fold_local_source_comparison_weight_registry_canary.tsv: OK
+./canary_evidence/historical_reconstruction_parity.tsv: OK
+./canary_evidence/selected_canary_sources.tsv: OK
+./canary_evidence/source_physical_coefficient_registry_canary.tsv: OK
+./review_evidence/REVIEW_REPORT.md: OK
+./review_evidence/comparison_weight_closure.tsv: OK
+./review_evidence/physical_coefficient_join_summary.tsv: OK
+./review_evidence/reconstruction_parity_summary.tsv: OK
+./review_evidence/review_gates.tsv: OK
+./review_evidence/review_summary.json: OK
+./review_evidence/weight_transport_diagnostics.tsv: OK
+./review_evidence/weight_transport_diagnostics_git_serialization_receipt.json: OK
+./source_artifact_manifest.tsv: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./evidence/class_metrics.tsv: OK
+./evidence/fold_metrics.tsv: OK
+./evidence/historical_rhh34_evaluation.log: OK
+./evidence/historical_rhh34_evaluation_contract.json: OK
+./evidence/historical_rhh34_nominal_metrics.json: OK
+./evidence/process_metrics.tsv: OK
+./evidence/source_group_bootstrap_replica_metrics_2000.tsv: OK
+./evidence/source_group_bootstrap_summary.json: OK
+./evidence/source_metrics_441.tsv: OK
+./external_artifact_manifest.json: OK
+./historical_rhh34_freeze_contract.json: OK
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_production_plan.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_source_worker_manifest.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_run2_138fb_physical_authorization_freeze_20260806_v1/evidence/authorization/physical_weight_authorization_registry_464.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_fold_and_baseline_benchmark_contract_20260805_v1/benchmark_contract.json
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_policy_freeze_20260805_v1/approved_common_train_table_contract.json
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_historical_rhh125125_lt34_freeze_20260806_v1/historical_rhh34_freeze_contract.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/runtime/hh4b_broad_ml_py39_v1/bin/python
+ALL_CHECKPOINT_CHECKSUMS=PASS
+WORKTREE_CLEAN=PASS
+READINESS_STATUS=PASS
+PRIMARY_SOURCES=441/441
+AUXILIARY_SOURCES_EXCLUDED=23/23
+PRIMARY_RESOLVED_ROWS=1042397
+AUXILIARY_RESOLVED_ROWS_EXCLUDED=128675
+FOLDS=5
+GROUP_KEY=group_id
+GROUP_LEAKAGE=0
+CANDIDATE_VARIABLE=r_hh_125_125
+HISTORICAL_FIXED_THRESHOLD=34.0
+POOLED_UNLABELED_RHH_Q0_0=0.017831239483490403
+POOLED_UNLABELED_RHH_Q0_001=0.84505114008222559
+POOLED_UNLABELED_RHH_Q0_01=2.7939655866167281
+POOLED_UNLABELED_RHH_Q0_05=6.6337194904059578
+POOLED_UNLABELED_RHH_Q0_1=9.9553182262897639
+POOLED_UNLABELED_RHH_Q0_25=18.260364263741952
+POOLED_UNLABELED_RHH_Q0_5=33.030315736680613
+POOLED_UNLABELED_RHH_Q0_75=55.748495034813139
+POOLED_UNLABELED_RHH_Q0_9=99.994061483570974
+POOLED_UNLABELED_RHH_Q0_95=168.86443717110788
+POOLED_UNLABELED_RHH_Q0_99=443.59686105880405
+POOLED_UNLABELED_RHH_Q0_999=1063.2703756157346
+POOLED_UNLABELED_RHH_Q1_0=2742.4999537193398
+OPTIMIZATION_METRIC_EVALUATED=FALSE
+SIGNAL_BACKGROUND_EFFICIENCY_EVALUATED=FALSE
+CANDIDATE_THRESHOLDS_EVALUATED=0
+THRESHOLD_SCAN_PERFORMED=FALSE
+NEW_THRESHOLD_SELECTED=FALSE
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+MODELS_TRAINED=0
+REPOSITORY_MODIFIED=FALSE
+RESULT=NESTED_OOF_CUT_CONTRACT_READINESS_PASS
+NEXT=DEFINE_AND_FREEZE_NESTED_OOF_CUT_SEARCH_CONTRACT

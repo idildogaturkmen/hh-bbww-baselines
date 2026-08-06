@@ -1,0 +1,139 @@
+{
+  "acceptance_gates": {
+    "aggregate_effective_background_events_positive": true,
+    "aggregate_signal_and_background_yields_positive": true,
+    "aggregate_sumw2_finite_nonnegative": true,
+    "all_five_outer_folds_have_positive_signal_and_background_yields": true,
+    "all_five_outer_thresholds_finite": true,
+    "repository_payload_mutation": false,
+    "source_group_bootstrap_replicas_complete": 2000,
+    "threshold_scan_uses_train_only": true
+  },
+  "bootstrap": {
+    "historical_draw_sha256": "3ac59a86fefc9e21275df73c945cd08e2b24642f02acc2b6459cf3c0f62c929b",
+    "paired_across_models": true,
+    "replicas": 2000,
+    "require_exact_reuse_of_historical_draw_plan": true,
+    "seed": 20260727,
+    "unit": "source group"
+  },
+  "checkpoint_relative_path": "docs/checkpoints/hh4b_train_nested_oof_cut_search_contract_20260806_v1",
+  "created_at_utc": "2026-08-06T16:13:19.854927+00:00",
+  "cut_definition": {
+    "historical_comparator_remains_immutable": true,
+    "historical_fixed_comparator_threshold": 34.0,
+    "operator": "strict_less_than",
+    "variable": "r_hh_125_125"
+  },
+  "data_roles": {
+    "full_generated_events_all_roles": 5200000,
+    "test_generated_events_sealed": 397543,
+    "train_auxiliary_qcd_resolved_rows_excluded": 128675,
+    "train_generated_events": 3799873,
+    "train_primary_physical_resolved_rows": 1042397,
+    "train_resolved_rows_all_populations": 1171072,
+    "validation_generated_events_sealed": 1002584
+  },
+  "deployment_threshold_after_oof": {
+    "definition": "median of the five independently selected outer-fold thresholds",
+    "role": "train-only deployment candidate; not the OOF performance estimate",
+    "test_application_allowed_before_final_lock": false,
+    "validation_application_allowed_before_separate_freeze": false
+  },
+  "exact_scan": {
+    "candidate_construction_per_outer_fold": "Use only the four development folds. Take sorted unique finite r_hh_125_125 values from authorized primary rows; construct strict-cut candidates with numpy.nextafter(value, +infinity), plus a zero-selection lower sentinel.",
+    "candidate_count_limit": "at most one plus the number of unique development-set r_hh_125_125 values",
+    "candidate_values_may_use_labels": false,
+    "candidate_values_may_use_validation_or_test": false,
+    "coarse_grid_used": false,
+    "continuous_scan_interpretation": "For a strict one-dimensional threshold, empirical selection changes only when the threshold crosses an observed value. Scanning all observed event boundaries is therefore exact on the finite train sample and avoids an arbitrary coarse grid.",
+    "kind": "exact_empirical_event_boundary_scan"
+  },
+  "nested_oof_protocol": {
+    "for_outer_fold_k": {
+      "auxiliary_qcd_used": false,
+      "comparison_weight_column": "comparison_weight_outer_fold_k",
+      "development_rows": "source_fold != k",
+      "held_out_evaluation_rows": "authorized primary signal/background outer-fold rows",
+      "held_out_rows": "source_fold == k",
+      "threshold_candidate_source": "unlabeled r_hh_125_125 values in development rows only",
+      "threshold_selection_rows": "authorized primary signal/background development rows"
+    },
+    "outer_fold_held_out_rows_used_for_selection": false,
+    "outer_fold_thresholds_selected_independently": true,
+    "outer_folds": 5,
+    "test_used": false,
+    "validation_used": false
+  },
+  "next": "run the exact train-only nested five-fold source-group OOF cut scan under this immutable contract",
+  "physical_evaluation": {
+    "luminosity_fb_inverse": 138.0,
+    "metrics": [
+      "signal and background physical efficiencies",
+      "Run-2 expected signal and background yields",
+      "S/B",
+      "statistical-only Asimov significance",
+      "sumw2",
+      "effective signal and background event counts",
+      "finite-MC relative uncertainties"
+    ],
+    "outer_oof_aggregate_is_primary_performance_estimate": true,
+    "systematics_aware_profile_likelihood": "not optimized or evaluated in this gate",
+    "weight_column": "resolved_selection_contribution_weight"
+  },
+  "primary_operating_point": {
+    "deterministic_tie_breaking": [
+      "smaller background efficiency",
+      "smaller signal-efficiency excess above 0.585957",
+      "smaller threshold"
+    ],
+    "efficiency_weight_type": "frozen nonnegative fold-local comparison weight",
+    "name": "fixed_signal_efficiency_background_rejection",
+    "objective": "Among candidates with development comparison-weighted signal efficiency >= 0.585957, minimize development comparison-weighted background efficiency.",
+    "reason": "This is the frozen primary development metric and avoids choosing the nominal cut by a statistical-only significance before the nuisance-parameter model is frozen.",
+    "target_signal_efficiency": 0.585957
+  },
+  "prohibitions": [
+    "do not use any validation row",
+    "do not use any test row",
+    "do not include auxiliary QCD in physical optimization or yields",
+    "do not overwrite the historical RHH34 comparator",
+    "do not select the nominal threshold by the outer held-out folds",
+    "do not retune after observing validation or test",
+    "do not optimize a systematics-aware claim before freezing nuisances"
+  ],
+  "repository_head_before_contract_commit": "e715af2b1a976f8b5af6b76251e0998f42787ae1",
+  "schema_version": 1,
+  "scope": "train-only nested five-fold source-group OOF optimization of the one-dimensional resolved geometric cut",
+  "secondary_diagnostics": {
+    "full_efficiency_curve_reported": true,
+    "historical_signal_efficiency_matched_point_reported": true,
+    "historical_signal_efficiency_target": 0.5530883058821991,
+    "significance_maximizing_threshold_is_nominal": false,
+    "statistical_only_significance_curve_reported": true
+  },
+  "source_scope": {
+    "auxiliary_qcd_sources_excluded": 23,
+    "group_key": "group_id",
+    "group_leakage_allowed": 0,
+    "outer_fold_column": "source_fold",
+    "outer_folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "primary_physical_sources": 441
+  },
+  "state_at_contract_freeze": {
+    "candidate_thresholds_evaluated": 0,
+    "models_trained": 0,
+    "new_threshold_selected": false,
+    "repository_modified_before_checkpoint_creation": false,
+    "test_payloads_opened": 0,
+    "threshold_scan_performed": false,
+    "validation_payloads_opened": 0
+  },
+  "status": "pass_frozen_before_scan"
+}
