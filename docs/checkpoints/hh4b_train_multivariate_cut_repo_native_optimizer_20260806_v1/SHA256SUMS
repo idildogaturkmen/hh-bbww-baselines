@@ -1,0 +1,4 @@
+ac899aa075f21b6a9c6bc05e8d891a1ca65dd39f7789c9cb39ea797cc27dcbb9  ./README.md
+a256838e2f3c5da607ecf967603cc58e8a164ff8040efcc31b62acec5ef335eb  ./artifact_manifest.tsv
+04dc88e2c0b3cfd0738bbe93935da877f5b2ab369e96fa04aa3f1a1097f052b9  ./implementation_source_registry.tsv
+c5bda309be95ae6fa8498678de4e1490f66124a38bccc06f2f1ef35c544cafb2  ./repo_native_optimizer_contract.json

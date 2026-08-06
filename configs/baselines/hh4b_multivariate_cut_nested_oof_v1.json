@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_committed_code_canary",
+  "repository": {
+    "branch": "delphes-hh4b-production",
+    "path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines",
+    "required_cut_repair_ancestor": "5b96183b489e206b0d22b75da370d71610de55ab"
+  },
+  "inputs": {
+    "production_plan": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_production_plan.tsv",
+    "source_worker_manifest": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_source_worker_manifest.tsv",
+    "physical_authorization_registry": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_run2_138fb_physical_authorization_freeze_20260806_v1/evidence/authorization/physical_weight_authorization_registry_464.tsv",
+    "base_cut_contract": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_and_figure_contract_20260806_v1/multivariate_nested_oof_cut_contract.json",
+    "implementation_clarification": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_implementation_clarification_20260806_v1/multivariate_cut_implementation_clarification.json",
+    "category_endpoint_amendment": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_category_endpoint_amendment_20260806_v1/multivariate_cut_category_endpoint_amendment.json",
+    "canary_acceptance_repair": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_canary_acceptance_repair_20260806_v1/multivariate_cut_canary_acceptance_repair.json"
+  },
+  "runtime": {
+    "python": "/uscms_data/d3/iturkmen/hh4b_delphes/runtime/hh4b_broad_ml_py39_v1/bin/python"
+  },
+  "dataset": {
+    "authorized_primary_sources": 441,
+    "authorized_primary_resolved_rows": 1042397,
+    "source_group_folds": 5,
+    "auxiliary_qcd_allowed": false,
+    "validation_payloads_allowed": false,
+    "test_payloads_allowed": false
+  },
+  "weights": {
+    "selection_columns": [
+      "comparison_weight_outer_fold_0",
+      "comparison_weight_outer_fold_1",
+      "comparison_weight_outer_fold_2",
+      "comparison_weight_outer_fold_3",
+      "comparison_weight_outer_fold_4"
+    ],
+    "physical_column": "resolved_selection_contribution_weight",
+    "signed_physical_weights_allowed": true,
+    "signed_weights_allowed_for_selection": false
+  },
+  "categories": [
+    {
+      "category_id": "exact3tag",
+      "definition": "candidate_tagged_jet_count == 3"
+    },
+    {
+      "category_id": "ge4tag",
+      "definition": "candidate_tagged_jet_count >= 4"
+    }
+  ],
+  "optimization": {
+    "target_signal_efficiency": 0.585957,
+    "quantile_count": 63,
+    "beam_width": 128,
+    "refinement_starts": 16,
+    "max_coordinate_passes": 8,
+    "minimum_inner_selected_signal_rows": 25,
+    "minimum_inner_selected_background_rows": 50,
+    "minimum_pooled_background_rows": 500,
+    "minimum_pooled_background_neff": 100.0
+  },
+  "search_algorithm": {
+    "name": "deterministic bounded quantile-product beam seeds plus exact empirical coordinate refinement",
+    "exhaustive_cartesian_claim": false,
+    "fully_open_seed_required": true,
+    "strict_inequalities_via_nextafter": true,
+    "family_selection_uses_pooled_true_inner_oof_only": true,
+    "outer_fold_used_for_selection": false
+  },
+  "production": {
+    "category_family_configurations": 54,
+    "structures_per_category": 27,
+    "structure_jobs": 270,
+    "target_tolerance": 0.0,
+    "canary_only_absolute_oof_tolerance": 0.001,
+    "retain_both_categories": true
+  },
+  "resampling_after_full_scan": {
+    "paired_metric_bootstrap_replicas": 2000,
+    "selection_reoptimization_replicas_initial": 200,
+    "selection_reoptimization_replicas_escalated": 1000
+  }
+}

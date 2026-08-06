@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "pass_frozen_before_committed_code_canary",
+  "repository_parent_head": "5b96183b489e206b0d22b75da370d71610de55ab",
+  "branch": "delphes-hh4b-production",
+  "implementation_files": [
+    "scripts/analysis/hh4b_multivariate_cut_optimizer.py",
+    "scripts/analysis/hh4b_multivariate_cut_prepare_fold_tables.py",
+    "scripts/analysis/hh4b_multivariate_cut_structure_worker.py",
+    "scripts/analysis/hh4b_multivariate_cut_make_jobs.py",
+    "scripts/analysis/hh4b_multivariate_cut_merge_and_audit.py",
+    "scripts/analysis/hh4b_multivariate_cut_committed_canary.py",
+    "scripts/analysis/hh4b_multivariate_cut_optimizer_selftest.py",
+    "scripts/condor/run_hh4b_multivariate_cut_structure_job.sh",
+    "scripts/condor/hh4b_multivariate_cut_structure_jobs.sub",
+    "configs/baselines/hh4b_multivariate_cut_nested_oof_v1.json"
+  ],
+  "production_decomposition": {
+    "outer_folds": 5,
+    "categories": 2,
+    "structures_per_category": 27,
+    "category_family_configurations": 54,
+    "structure_jobs": 270
+  },
+  "search": {
+    "target_category_conditional_signal_efficiency": 0.585957,
+    "production_target_tolerance": 0.0,
+    "quantile_count": 63,
+    "beam_width": 128,
+    "refinement_starts": 16,
+    "max_coordinate_passes": 8,
+    "fully_open_seed_included": true,
+    "exact_empirical_coordinate_refinement": true,
+    "exhaustive_cartesian_claim": false
+  },
+  "support_gates": {
+    "minimum_inner_selected_signal_rows": 25,
+    "minimum_inner_selected_background_rows": 50,
+    "minimum_pooled_background_rows": 500,
+    "minimum_pooled_background_neff": 100.0
+  },
+  "selection_protocol": {
+    "family_selection_uses_only_pooled_true_inner_oof": true,
+    "outer_fold_used_for_selection": false,
+    "family_selected_separately_per_category": true,
+    "retain_both_categories": true,
+    "outer_physical_yields_use_signed_weights": true
+  },
+  "dataset": {
+    "authorized_primary_sources": 441,
+    "authorized_primary_resolved_rows": 1042397,
+    "auxiliary_qcd_allowed": false
+  },
+  "state_at_freeze": {
+    "production_thresholds_scanned": 0,
+    "production_families_ranked": 0,
+    "production_cut_selected": false,
+    "validation_payloads_opened": 0,
+    "test_payloads_opened": 0
+  },
+  "next": "run committed-code fold-table canary and six-configuration deterministic canary before any HTCondor pilot"
+}
