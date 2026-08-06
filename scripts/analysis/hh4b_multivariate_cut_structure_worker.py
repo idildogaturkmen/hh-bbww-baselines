@@ -56,6 +56,15 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--structure-id", required=True)
     parser.add_argument("--expected-repository-head", required=True)
+    parser.add_argument(
+        "--execution-provenance",
+        default=None,
+        help=(
+            "Optional frozen transfer-execution provenance JSON. "
+            "When supplied, repository identity is validated from this "
+            "manifest instead of requiring a Git checkout in the sandbox."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -98,13 +107,112 @@ def main() -> None:
     input_root = Path(args.input_root).resolve()
     output_root = Path(args.output_root).resolve()
     config = json.loads(config_path.read_text())
-    repo = Path(config["repository"]["path"]).resolve()
 
-    actual_head = subprocess.check_output(
-        ["git", "-C", str(repo), "rev-parse", "HEAD"], text=True
-    ).strip()
-    require(actual_head == args.expected_repository_head,
-            "repository head mismatch")
+    worker_path = Path(__file__).resolve()
+    optimizer_path = worker_path.with_name(
+        "hh4b_multivariate_cut_optimizer.py"
+    )
+    require(
+        optimizer_path.is_file(),
+        f"missing optimizer beside worker: {optimizer_path}",
+    )
+
+    execution_worker_sha256 = sha256(worker_path)
+    execution_optimizer_sha256 = sha256(optimizer_path)
+
+    execution_provenance_mode = "git_checkout"
+    execution_provenance_sha256 = None
+
+    if args.execution_provenance is not None:
+        provenance_path = Path(args.execution_provenance).resolve()
+        require(
+            provenance_path.is_file(),
+            f"missing execution provenance: {provenance_path}",
+        )
+
+        provenance = json.loads(provenance_path.read_text())
+
+        require(
+            provenance.get("schema_version") == 1,
+            "execution provenance schema mismatch",
+        )
+        require(
+            str(provenance.get("status", "")).startswith(
+                "transfer_package_"
+            ),
+            "execution provenance status mismatch",
+        )
+        require(
+            provenance.get("repository_branch")
+            == config["repository"]["branch"],
+            "execution provenance branch mismatch",
+        )
+        require(
+            int(provenance.get("full_generated_event_accounting", -1))
+            == 5_200_000,
+            "execution provenance generated-event accounting mismatch",
+        )
+        require(
+            int(provenance.get("training_generated_events", -1))
+            == 3_799_873,
+            "execution provenance training-event accounting mismatch",
+        )
+        require(
+            int(provenance.get("fold_table_count", -1)) == 10,
+            "execution provenance fold-table count mismatch",
+        )
+        require(
+            provenance.get("production_search_budget")
+            == "63_128_16_8",
+            "execution provenance search-budget mismatch",
+        )
+        require(
+            float(provenance.get("target_signal_efficiency", -1.0))
+            == float(
+                config["optimization"]["target_signal_efficiency"]
+            ),
+            "execution provenance target-efficiency mismatch",
+        )
+        require(
+            int(provenance.get("validation_payloads_opened", -1)) == 0,
+            "execution provenance indicates validation access",
+        )
+        require(
+            int(provenance.get("test_payloads_opened", -1)) == 0,
+            "execution provenance indicates test access",
+        )
+        require(
+            provenance.get("worker_sha256")
+            == execution_worker_sha256,
+            "execution provenance worker hash mismatch",
+        )
+        require(
+            provenance.get("optimizer_sha256")
+            == execution_optimizer_sha256,
+            "execution provenance optimizer hash mismatch",
+        )
+
+        actual_head = str(provenance.get("repository_head", ""))
+        require(actual_head, "execution provenance lacks repository head")
+        require(
+            actual_head == args.expected_repository_head,
+            "execution provenance repository-head mismatch",
+        )
+
+        execution_provenance_mode = "transferred_manifest"
+        execution_provenance_sha256 = sha256(provenance_path)
+    else:
+        repo = Path(config["repository"]["path"]).resolve()
+
+        actual_head = subprocess.check_output(
+            ["git", "-C", str(repo), "rev-parse", "HEAD"],
+            text=True,
+        ).strip()
+
+        require(
+            actual_head == args.expected_repository_head,
+            "repository head mismatch",
+        )
 
     settings = OptimizationSettings(**config["optimization"])
     amendment_path = Path(config["inputs"]["category_endpoint_amendment"])
@@ -269,6 +377,10 @@ def main() -> None:
         "status": "pass_structure_job_complete",
         "job_id": job_id,
         "repository_head": actual_head,
+        "execution_provenance_mode": execution_provenance_mode,
+        "execution_provenance_sha256": execution_provenance_sha256,
+        "execution_worker_sha256": execution_worker_sha256,
+        "execution_optimizer_sha256": execution_optimizer_sha256,
         "input_root": str(input_root),
         "outer_fold": args.outer_fold,
         "development_folds": development_folds,
