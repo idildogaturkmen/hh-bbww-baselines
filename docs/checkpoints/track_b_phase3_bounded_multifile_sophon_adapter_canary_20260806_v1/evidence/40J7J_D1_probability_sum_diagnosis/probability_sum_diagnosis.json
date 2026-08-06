@@ -1,0 +1,97 @@
+{
+  "event_row_count": 256,
+  "interpretation": "The event table stores three aggregate probabilities serialized from float32 ONNX outputs. Exact decimal row sums can therefore differ from one by float32-scale rounding. The frozen score contract remains the authoritative score-matrix validator.",
+  "prefixes": {
+    "ensemble": {
+      "bound_violation_row_count": 0,
+      "lane_maximum_absolute_deviation": {
+        "qcd": "1.207495377355E-7",
+        "ttbar": "8.4847714643745E-8",
+        "zjets": "9.783222291814E-8",
+        "zz": "6.7261080928E-8"
+      },
+      "maximum_absolute_deviation_from_one": "1.207495377355E-7",
+      "maximum_decimal_sum": "1.0000001207495377355",
+      "maximum_deviation_event_uid": "2bf316dc6123ef9a3a94a65d8b94d2d71c7f749b8ccf92602d12289f7a0e57c3",
+      "maximum_deviation_lane": "qcd",
+      "minimum_decimal_sum": "0.9999998871187471495",
+      "nonfinite_row_count": 0,
+      "row_count": 256,
+      "rows_exceeding_tolerance": {
+        "0.000001": 0,
+        "1E-7": 2,
+        "1E-8": 153,
+        "5E-8": 37
+      }
+    },
+    "model0": {
+      "bound_violation_row_count": 0,
+      "lane_maximum_absolute_deviation": {
+        "qcd": "1.767666617666E-7",
+        "ttbar": "1.1904967325E-7",
+        "zjets": "1.540865923521E-7",
+        "zz": "1.771538329603E-7"
+      },
+      "maximum_absolute_deviation_from_one": "1.771538329603E-7",
+      "maximum_decimal_sum": "1.0000001771538329603",
+      "maximum_deviation_event_uid": "7492716098e3ef26917b1a749c552820811380b0295312b5308c47a0c7a94a34",
+      "maximum_deviation_lane": "zz",
+      "minimum_decimal_sum": "0.999999851049096846",
+      "nonfinite_row_count": 0,
+      "row_count": 256,
+      "rows_exceeding_tolerance": {
+        "0.000001": 0,
+        "1E-7": 32,
+        "1E-8": 168,
+        "5E-8": 84
+      }
+    },
+    "model1": {
+      "bound_violation_row_count": 0,
+      "lane_maximum_absolute_deviation": {
+        "qcd": "2.0622746889826E-7",
+        "ttbar": "1.67429021779E-7",
+        "zjets": "1.4516626829327E-7",
+        "zz": "1.318258000067E-7"
+      },
+      "maximum_absolute_deviation_from_one": "2.0622746889826E-7",
+      "maximum_decimal_sum": "1.00000020622746889826",
+      "maximum_deviation_event_uid": "6287736de34afdeccc77b9c6db274d1b2375aac5ea25bbc9039b6dee11f4c411",
+      "maximum_deviation_lane": "qcd",
+      "minimum_decimal_sum": "0.999999832570978221",
+      "nonfinite_row_count": 0,
+      "row_count": 256,
+      "rows_exceeding_tolerance": {
+        "0.000001": 0,
+        "1E-7": 27,
+        "1E-8": 165,
+        "5E-8": 78
+      }
+    },
+    "model2": {
+      "bound_violation_row_count": 0,
+      "lane_maximum_absolute_deviation": {
+        "qcd": "1.4701390686022E-7",
+        "ttbar": "1.3685530569E-7",
+        "zjets": "1.320000819216E-7",
+        "zz": "1.12678097164816E-7"
+      },
+      "maximum_absolute_deviation_from_one": "1.4701390686022E-7",
+      "maximum_decimal_sum": "1.000000134157477081293",
+      "maximum_deviation_event_uid": "b68702899393b2ad4fc328493b76209e82fde8c80df345a7ae6346840bd81e36",
+      "maximum_deviation_lane": "qcd",
+      "minimum_decimal_sum": "0.99999985298609313978",
+      "nonfinite_row_count": 0,
+      "row_count": 256,
+      "rows_exceeding_tolerance": {
+        "0.000001": 0,
+        "1E-7": 24,
+        "1E-8": 158,
+        "5E-8": 81
+      }
+    }
+  },
+  "schema_version": 1,
+  "source_output_root": "/tmp/iturkmen_track_b_40J7I_R1_memory_bounded_sophon_canary_20260806_v1_eAktH8",
+  "status": "probability_sum_tolerance_diagnosis_complete"
+}

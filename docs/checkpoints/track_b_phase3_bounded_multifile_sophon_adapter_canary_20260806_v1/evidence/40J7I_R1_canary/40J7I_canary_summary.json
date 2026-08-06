@@ -1,0 +1,63 @@
+{
+  "adapter": {
+    "ensemble_model_checkpoint_sha256": "43c7fb9b0860c0f37953a1636b1f1b73fcc320da585d4a446cb45a31a14fdec0",
+    "name": "released_sophon_ensemble",
+    "preprocessing_contract_sha256": "ff90137a4c919f0a07d47cbfb21ead3688ee49856d98a0ff16bbbaa7058eb735",
+    "runtime_environment_id": "1de0398cb1116200e1ead26886dfc0d6f1c15579dab82ad689c68690509dc449",
+    "score_contract_sha256": "9b0412c8cce16f4684910207ed3b82a1bfb6b74891c554bba1f1c3b4f9347b86",
+    "version": "40J7I_R1_v1"
+  },
+  "execution": {
+    "all_download_identities_verified": true,
+    "all_files_processed_sequentially": true,
+    "all_target_event_counts_reached": true,
+    "event_uids_unique": true,
+    "preprocessing_failure_count": 0,
+    "score_matrices_validated": true,
+    "temporary_root_files_removed": true
+  },
+  "next_gate": "40J7J_freeze_bounded_multifile_sophon_adapter_canary",
+  "repair_provenance": {
+    "leading_diagnosis": "memory_pressure_during_simultaneous_onnx_session_initialization",
+    "original_step": "40J7I",
+    "original_wrapper_rc": 137,
+    "prior_attempt_directory_count": 1,
+    "repair_strategy": "one_model_per_short_lived_subprocess",
+    "scientific_scope_changed": false
+  },
+  "repository_provenance": {
+    "local_head_at_start": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+    "remote_head_at_start": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+    "repository_mode_at_start": "synchronized",
+    "sampling_contract_published_head": "e39e8a68f556e13a2b66357eb92c173333bb5e41"
+  },
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "calibrated_mass_or_resolution_computed": false,
+    "efficiency_or_auc_computed": false,
+    "expected_yields_computed": false,
+    "full_multifile_production_authorized": false,
+    "jpjepa_inference_or_training_performed": false,
+    "part_inference_or_training_performed": false,
+    "physical_track_b_weights_used": false,
+    "significance_or_sensitivity_computed": false,
+    "spanet_inference_or_training_performed": false,
+    "unweighted_released_model_response_canary_only": true
+  },
+  "scope": {
+    "canary_lanes": [
+      "qcd",
+      "ttbar",
+      "zjets",
+      "zz"
+    ],
+    "maximum_file_bytes": 2500000000,
+    "sampling_mode": "high_score_tail_stability_v1",
+    "scan_limit_per_file": 2048,
+    "selected_file_count": 4,
+    "selection_policy": "one frozen high-score-tail file per representative lane; minimum remote size, then frozen rank SHA, then remote path",
+    "target_valid_events_per_file": 64,
+    "unified_event_row_count": 256
+  },
+  "status": "bounded_multifile_sophon_adapter_canary_memory_bounded_repair_complete"
+}

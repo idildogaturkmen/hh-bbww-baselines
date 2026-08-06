@@ -1,0 +1,1 @@
+use_absolute_sum_tolerance_1e-6_for_serialized_float32_aggregates

@@ -1,0 +1,32 @@
+timestamp_utc=2026-08-06T19:14:36Z
+original_failed_step=40J7I
+original_wrapper_rc=137
+repair_strategy=one_onnx_model_per_short_lived_subprocess
+read_chunk=32
+onnx_batch=16
+
+===== ulimit =====
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) unlimited
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 46535
+max locked memory           (kbytes, -l) 8192
+max memory size             (kbytes, -m) unlimited
+open files                          (-n) 524288
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 46535
+virtual memory              (kbytes, -v) 16777216
+file locks                          (-x) unlimited
+
+===== free =====
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       2.0Gi       7.9Gi       0.0Ki       1.9Gi       9.4Gi
+Swap:          4.0Gi       3.3Gi       695Mi
+
+===== cgroup memory files =====

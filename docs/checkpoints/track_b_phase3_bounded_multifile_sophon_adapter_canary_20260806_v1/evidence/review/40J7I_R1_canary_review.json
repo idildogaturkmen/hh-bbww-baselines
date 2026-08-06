@@ -1,0 +1,90 @@
+{
+  "execution_validation": {
+    "download_identities_verified": true,
+    "event_uids_recomputed_and_unique": true,
+    "memory_diagnostics_verified": true,
+    "probabilities_finite_normalized_and_bounded": true,
+    "target_event_counts_reached": true,
+    "temporary_root_files_removed": true
+  },
+  "incomplete_prior_attempt_count": 1,
+  "lane_event_counts": {
+    "qcd": 64,
+    "ttbar": 64,
+    "zjets": 64,
+    "zz": 64
+  },
+  "next_gate": "40J7K_review_and_commit_bounded_multifile_sophon_adapter_canary",
+  "preprocessing_failure_count": 0,
+  "prior_attempt_count": 1,
+  "probability_sum_tolerance_adjudication": {
+    "all_prefixes_bound_violation_row_count_zero": true,
+    "all_prefixes_nonfinite_row_count_zero": true,
+    "all_prefixes_rows_exceeding_1e_6_zero": true,
+    "authoritative_matrix_validation": "frozen_hh4b_sophon_score_contract",
+    "diagnostic_output_root": "/tmp/iturkmen_track_b_40J7J_D1_probability_sum_diagnosis_20260806_v1_zLEppX",
+    "diagnostic_recommendation": "use_absolute_sum_tolerance_1e-6_for_serialized_float32_aggregates",
+    "diagnostic_status": "probability_sum_tolerance_diagnosis_complete",
+    "interpretation": "The three stored aggregate probabilities are serialized from float32 ONNX outputs. Their decimal sums are checked with an explicit 1e-6 absolute tolerance, while the frozen score contract remains the authoritative matrix validator.",
+    "measured_global_maximum_absolute_deviation": 2.0622746889826e-07,
+    "serialized_probability_sum_absolute_tolerance": 1e-06
+  },
+  "recomputed_lane_metrics": {
+    "qcd": {
+      "event_count": 64,
+      "gt_0p5_fraction": 0.03125,
+      "gt_0p997_fraction": 0.0,
+      "gt_0p9_fraction": 0.0,
+      "mean_signal_probability": 0.05708568404221396
+    },
+    "ttbar": {
+      "event_count": 64,
+      "gt_0p5_fraction": 0.015625,
+      "gt_0p997_fraction": 0.0,
+      "gt_0p9_fraction": 0.0,
+      "mean_signal_probability": 0.0370047541100226
+    },
+    "zjets": {
+      "event_count": 64,
+      "gt_0p5_fraction": 0.21875,
+      "gt_0p997_fraction": 0.0,
+      "gt_0p9_fraction": 0.078125,
+      "mean_signal_probability": 0.23727273373178592
+    },
+    "zz": {
+      "event_count": 64,
+      "gt_0p5_fraction": 0.109375,
+      "gt_0p997_fraction": 0.0,
+      "gt_0p9_fraction": 0.046875,
+      "mean_signal_probability": 0.10072816192773071
+    }
+  },
+  "repair_provenance": {
+    "leading_diagnosis": "memory_pressure_during_simultaneous_onnx_session_initialization",
+    "original_step": "40J7I",
+    "original_wrapper_rc": 137,
+    "prior_attempt_directory_count": 1,
+    "repair_strategy": "one_model_per_short_lived_subprocess",
+    "scientific_scope_changed": false
+  },
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "calibrated_mass_or_resolution_computed": false,
+    "efficiency_or_auc_computed": false,
+    "expected_yields_computed": false,
+    "full_multifile_production_authorized": false,
+    "jpjepa_inference_or_training_performed": false,
+    "part_inference_or_training_performed": false,
+    "physical_track_b_weights_used": false,
+    "significance_or_sensitivity_computed": false,
+    "spanet_inference_or_training_performed": false,
+    "unweighted_released_model_response_canary_only": true
+  },
+  "scientific_interpretation": "The four lane means and threshold fractions are unweighted released-model response diagnostics from a bounded canary. They are not efficiencies, AUC values, yields, significance, sensitivity, calibrated masses, or mass resolutions.",
+  "selected_file_count": 4,
+  "source_file_count": 29,
+  "source_manifest_row_count": 25,
+  "source_output_root": "/tmp/iturkmen_track_b_40J7I_R1_memory_bounded_sophon_canary_20260806_v1_eAktH8",
+  "status": "40J7I_R1_memory_bounded_canary_review_complete",
+  "unified_event_row_count": 256
+}

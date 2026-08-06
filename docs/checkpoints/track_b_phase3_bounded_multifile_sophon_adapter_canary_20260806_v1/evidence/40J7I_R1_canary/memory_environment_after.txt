@@ -1,0 +1,8 @@
+timestamp_utc=2026-08-06T19:21:37Z
+
+===== free =====
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       2.4Gi       7.4Gi       0.0Ki       1.9Gi       9.0Gi
+Swap:          4.0Gi       3.3Gi       738Mi
+
+===== cgroup memory files =====

@@ -1,0 +1,23 @@
+{
+  "adapter_name": "released_sophon_ensemble",
+  "adapter_version": "40J7I_R1_v1",
+  "ensemble_model_checkpoint_sha256": "43c7fb9b0860c0f37953a1636b1f1b73fcc320da585d4a446cb45a31a14fdec0",
+  "model_id": "HH4b_released_three_model_ensemble",
+  "ordered_model_sha256": [
+    "7b7de7ba1bfbbf00117b251661320afabe166c74c8687e3673d97590a3745786",
+    "5514875d359fd4d6516e3367eb3264e6b4fea21f82755fc45851d06f788d429f",
+    "2d02df9702bfa13f8c20b467087121abab2556fa654e12084b73cee968f3566e"
+  ],
+  "package_versions": {
+    "awkward": "2.8.12",
+    "numpy": "1.23.5",
+    "onnxruntime": "1.19.2",
+    "uproot": "5.6.9"
+  },
+  "platform": "Linux-5.14.0-687.25.1.el9_8.x86_64-x86_64-with-glibc2.34",
+  "preprocessing_contract_sha256": "ff90137a4c919f0a07d47cbfb21ead3688ee49856d98a0ff16bbbaa7058eb735",
+  "python_version": "3.9.25 (main, Jul 13 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-14)]",
+  "runtime_environment_id": "1de0398cb1116200e1ead26886dfc0d6f1c15579dab82ad689c68690509dc449",
+  "schema_version": 1,
+  "score_contract_sha256": "9b0412c8cce16f4684910207ed3b82a1bfb6b74891c554bba1f1c3b4f9347b86"
+}

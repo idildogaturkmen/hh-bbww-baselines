@@ -1,0 +1,9 @@
+{
+  "contains_allclose": true,
+  "contains_isclose": false,
+  "contains_score_components": true,
+  "contains_sum_check_text": true,
+  "contains_validate_score_matrix": true,
+  "schema_version": 1,
+  "score_contract_sha256": "9b0412c8cce16f4684910207ed3b82a1bfb6b74891c554bba1f1c3b4f9347b86"
+}
