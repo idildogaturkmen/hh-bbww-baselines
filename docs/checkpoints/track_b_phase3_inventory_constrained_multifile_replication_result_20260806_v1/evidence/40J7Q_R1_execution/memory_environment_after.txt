@@ -1,0 +1,12 @@
+timestamp_utc=2026-08-06T21:48:25Z
+
+===== free =====
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       2.3Gi       5.6Gi       0.0Ki       3.8Gi       9.1Gi
+Swap:          4.0Gi       1.6Gi       2.4Gi
+
+===== df /tmp =====
+Filesystem                     Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-system_tmp   40G  4.9G   33G  14% /tmp
+
+===== cgroup memory files =====

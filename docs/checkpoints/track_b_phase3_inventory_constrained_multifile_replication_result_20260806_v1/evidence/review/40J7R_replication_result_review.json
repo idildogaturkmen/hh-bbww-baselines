@@ -1,0 +1,68 @@
+{
+  "authorization": {
+    "full_44_file_balanced_study_authorized": false,
+    "full_46_file_tail_study_authorized": false,
+    "full_90_selection_row_execution_authorized": false,
+    "replication_result_ready_for_freeze": true,
+    "seven_file_replication_execution_validated": true,
+    "track_b_physical_weighting_authorized": false
+  },
+  "combined_evidence": {
+    "canary_event_row_count": 256,
+    "canary_file_count": 4,
+    "combined_event_row_count": 1152,
+    "combined_file_count": 11,
+    "event_uid_overlap_count": 0,
+    "lane_event_counts": {
+      "qcd": 320,
+      "ttbar": 320,
+      "zjets": 320,
+      "zz": 192
+    },
+    "lane_file_counts": {
+      "qcd": 3,
+      "ttbar": 3,
+      "zjets": 3,
+      "zz": 2
+    },
+    "maximum_serialized_probability_sum_deviation": 2.062274688796606e-07,
+    "remote_path_overlap_count": 0,
+    "replication_event_row_count": 896,
+    "replication_file_count": 7,
+    "serialized_probability_sum_absolute_tolerance": 1e-06
+  },
+  "diagnostics": {
+    "canary_vs_replication_response_comparison_complete": true,
+    "combined_file_response_summary_complete": true,
+    "combined_lane_file_variation_summary_complete": true,
+    "descriptive_stability_threshold_defined": false,
+    "file_metrics_recomputed_from_event_rows": true,
+    "published_file_summaries_reproduced": true,
+    "stability_pass_fail_claim_made": false
+  },
+  "execution_source": {
+    "preprocessing_failure_count": 0,
+    "prior_attempt_inventory_row_count": 1,
+    "replication_event_row_count": 896,
+    "replication_selected_file_count": 7,
+    "source_manifest_row_count": 39,
+    "source_memory_sha256_row_count": 2,
+    "source_output_root": "/tmp/iturkmen_track_b_40J7Q_R1_inventory_constrained_replication_20260806_v1_066bd3",
+    "source_sha256_row_count": 40,
+    "source_total_file_count": 43
+  },
+  "next_gate": "40J7S_review_and_commit_inventory_constrained_replication_result",
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "calibrated_mass_or_resolution_computed": false,
+    "efficiency_or_auc_computed": false,
+    "expected_yields_computed": false,
+    "jpjepa_inference_or_training_performed": false,
+    "part_inference_or_training_performed": false,
+    "physical_track_b_weights_used": false,
+    "significance_or_sensitivity_computed": false,
+    "spanet_inference_or_training_performed": false,
+    "unweighted_released_model_response_diagnostics_only": true
+  },
+  "status": "40J7R_inventory_constrained_replication_review_complete"
+}

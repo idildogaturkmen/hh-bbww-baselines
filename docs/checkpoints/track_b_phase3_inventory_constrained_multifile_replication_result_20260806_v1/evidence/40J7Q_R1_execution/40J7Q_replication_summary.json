@@ -1,0 +1,89 @@
+{
+  "adapter": {
+    "ensemble_model_checkpoint_sha256": "43c7fb9b0860c0f37953a1636b1f1b73fcc320da585d4a446cb45a31a14fdec0",
+    "name": "released_sophon_ensemble",
+    "preprocessing_contract_sha256": "ff90137a4c919f0a07d47cbfb21ead3688ee49856d98a0ff16bbbaa7058eb735",
+    "runtime_environment_id": "1de0398cb1116200e1ead26886dfc0d6f1c15579dab82ad689c68690509dc449",
+    "score_contract_sha256": "9b0412c8cce16f4684910207ed3b82a1bfb6b74891c554bba1f1c3b4f9347b86",
+    "version": "40J7Q_R1_v1"
+  },
+  "authorization": {
+    "full_44_file_balanced_study_authorized": false,
+    "full_46_file_tail_study_authorized": false,
+    "full_90_selection_row_execution_authorized": false,
+    "seven_file_replication_executed_under_40J7Q_R1": true,
+    "track_b_physical_weighting_authorized": false
+  },
+  "execution": {
+    "all_files_processed_sequentially": true,
+    "all_seven_download_identities_verified": true,
+    "all_seven_files_reached_128_valid_events": true,
+    "all_target_event_counts_reached": true,
+    "candidate_audit_lane_column": "canary_lane",
+    "candidate_audit_lane_schema_adjudicated": true,
+    "event_uids_unique": true,
+    "execution_scope_changed": false,
+    "preprocessing_failure_count": 0,
+    "scientific_scope_changed": false,
+    "score_matrices_validated": true,
+    "selected_table_lane_column": "replication_lane",
+    "serialized_probability_triplets_within_1e_6": true,
+    "temporary_root_files_removed": true
+  },
+  "execution_provenance": {
+    "execution_step": "40J7Q-R1",
+    "execution_strategy": "one_model_per_short_lived_subprocess",
+    "prior_attempt_directory_count": 1,
+    "published_contract_head": "d00a01989ecd208aa6a5f0813b4a8dd3042ba017",
+    "scientific_scope_changed": false
+  },
+  "lane_stability_summary_row_count": 4,
+  "next_gate": "40J7R_review_and_freeze_inventory_constrained_multifile_replication",
+  "repository_provenance": {
+    "local_head_at_start": "8aac74a38649e81e8cc0061a11aac8baed188e60",
+    "remote_head_at_start": "8aac74a38649e81e8cc0061a11aac8baed188e60",
+    "replication_contract_published_head": "d00a01989ecd208aa6a5f0813b4a8dd3042ba017",
+    "repository_mode_at_start": "synchronized",
+    "sampling_contract_published_head": "e39e8a68f556e13a2b66357eb92c173333bb5e41"
+  },
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "calibrated_mass_or_resolution_computed": false,
+    "efficiency_or_auc_computed": false,
+    "expected_yields_computed": false,
+    "full_44_file_balanced_study_authorized": false,
+    "full_46_file_tail_study_authorized": false,
+    "full_90_selection_row_execution_authorized": false,
+    "jpjepa_inference_or_training_performed": false,
+    "part_inference_or_training_performed": false,
+    "physical_track_b_weights_used": false,
+    "significance_or_sensitivity_computed": false,
+    "spanet_inference_or_training_performed": false,
+    "unweighted_released_model_response_replication_only": true
+  },
+  "scope": {
+    "lane_file_counts": {
+      "qcd": 2,
+      "ttbar": 2,
+      "zjets": 2,
+      "zz": 1
+    },
+    "largest_selected_file_bytes": 1763435733,
+    "maximum_file_bytes": 2500000000,
+    "published_canary_overlap_count": 0,
+    "replication_lanes": [
+      "qcd",
+      "ttbar",
+      "zjets",
+      "zz"
+    ],
+    "sampling_mode": "high_score_tail_stability_v1",
+    "scan_limit_per_file": 4096,
+    "selected_new_file_count": 7,
+    "selected_total_remote_bytes": 9297311797,
+    "selection_policy": "published inventory-constrained contract: two new files each for qcd, ttbar, and zjets, and one new ZZ_ntuple file; all published canary paths excluded",
+    "target_valid_events_per_file": 128,
+    "unified_event_row_count": 896
+  },
+  "status": "inventory_constrained_multifile_sophon_replication_complete"
+}
