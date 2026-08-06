@@ -1,0 +1,175 @@
+{
+  "asset_inventory": {
+    "category_counts": {
+      "embedding": 21,
+      "jpjepa": 4,
+      "part": 328,
+      "spanet": 381
+    },
+    "inventory_file": "representation_asset_inventory.tsv",
+    "total_candidate_files": 698
+  },
+  "next_gate": "40J7B_freeze_phase3_evaluation_and_representation_bridge_contract",
+  "repository_provenance": {
+    "local_head": "91d8c03d63fcece89b51fd44179df11fdc1d675a",
+    "phase2_published_head": "91d8c03d63fcece89b51fd44179df11fdc1d675a",
+    "remote_head": "91d8c03d63fcece89b51fd44179df11fdc1d675a",
+    "repository_mode": "synchronized"
+  },
+  "required_ablation_controls": [
+    "identical Track-A train/validation/test or fold partitions",
+    "identical SPA-Net decoder and loss terms",
+    "identical hyperparameter-search budget",
+    "frozen versus fine-tuned encoder variants recorded separately",
+    "same random seeds or paired repeated seeds",
+    "parameter count, throughput, memory, and training-time reporting",
+    "assignment, classification, calibration, and physics metrics separated"
+  ],
+  "schema_version": 1,
+  "scientific_design": {
+    "comparison_matrix": [
+      {
+        "direct_metrics": [
+          "signal/QCD/ttbar response",
+          "model agreement",
+          "mass-cell localization where generator masses exist",
+          "file-to-file stability"
+        ],
+        "lane": "A",
+        "model": "Released three-model Sophon ensemble",
+        "not_claimed": [
+          "independent signal performance until official samples are identified",
+          "physical weighting until gen_weight semantics are clarified"
+        ],
+        "primary_dataset": "Track B external IHEP dataset",
+        "task": "Released 138-output response and 136-cell localization"
+      },
+      {
+        "direct_metrics": [
+          "assignment accuracy",
+          "classification ROC/AUC",
+          "mass reconstruction",
+          "physically weighted yields after Track A normalization closure"
+        ],
+        "lane": "B",
+        "model": "SPA-Net with native jet/event inputs",
+        "primary_dataset": "Track A",
+        "role": "primary in-domain baseline for embedding ablations",
+        "task": "Jet assignment plus event classification"
+      },
+      {
+        "direct_metrics": [
+          "delta assignment accuracy versus native SPA-Net",
+          "delta AUC/significance versus native SPA-Net",
+          "robustness by jet multiplicity and b-tag category",
+          "compute and memory cost"
+        ],
+        "lane": "C",
+        "model": "SPA-Net with ParT jet embeddings",
+        "primary_dataset": "Track A",
+        "role": "supervised pretrained-representation ablation",
+        "task": "Same assignment/classification tasks and splits as lane B"
+      },
+      {
+        "direct_metrics": [
+          "delta assignment accuracy versus native SPA-Net",
+          "delta AUC/significance versus native SPA-Net",
+          "sample efficiency",
+          "domain-shift and nuisance robustness",
+          "compute and memory cost"
+        ],
+        "lane": "D",
+        "model": "SPA-Net with JP-JEPA jet embeddings",
+        "primary_dataset": "Track A",
+        "role": "self-supervised representation ablation",
+        "task": "Same assignment/classification tasks and splits as lanes B/C"
+      }
+    ],
+    "comparison_rule": "Direct performance comparisons among native SPA-Net, SPA-Net+ParT, and SPA-Net+JP-JEPA must use identical Track-A splits, labels, weighting, heads, and evaluation code. Track-B results are external response/stability studies unless a validated representation bridge and compatible labels exist.",
+    "core_hypothesis": "Jet representations pretrained with ParT or JP-JEPA may improve SPA-Net assignment/classification performance and robustness relative to native jet features, with JP-JEPA expected to be especially informative for sample efficiency and domain shift.",
+    "external_reference_and_stress_test_track": "Track B",
+    "primary_training_and_physics_performance_track": "Track A"
+  },
+  "status": "phase3_evaluation_and_representation_bridge_preflight_complete",
+  "track_b_representation_bridge": {
+    "available_schema_tokens": {
+      "event_identity": [
+        "event_class",
+        "event_no"
+      ],
+      "jet": [
+        "jet_energy",
+        "jet_eta",
+        "jet_flavor",
+        "jet_hadronFlavor",
+        "jet_mass",
+        "jet_nparticles",
+        "jet_partonFlavor",
+        "jet_phi",
+        "jet_pt",
+        "jet_sophonAK4_probB",
+        "jet_sophonAK4_probC",
+        "jet_sophonAK4_probL"
+      ],
+      "particle_or_constituent": [
+        "fj_nparticles",
+        "jet_nparticles",
+        "pfcand_sum_HT",
+        "pfcand_sum_energy",
+        "pfcand_sum_eta",
+        "pfcand_sum_mass",
+        "pfcand_sum_phi",
+        "pfcand_sum_pt"
+      ],
+      "truth_or_assignment": [
+        "part_fjlabel",
+        "part_label"
+      ],
+      "weights": [
+        "gen_weight"
+      ]
+    },
+    "blocked_near_term_uses": [
+      "training SPA-Net directly on Track B without validated jet/label construction",
+      "claiming cross-dataset AUC or efficiency",
+      "physical weighting before gen_weight clarification",
+      "calling Sophon output a calibrated reconstructed mass"
+    ],
+    "direct_spa_net_training_ready": false,
+    "reason": "Track B is currently frozen as a jet-free particle-level external dataset. A direct SPA-Net bridge requires a separately validated jet-clustering/constituent association contract and truth-assignment labels compatible with the Track-A task.",
+    "safe_near_term_uses": [
+      "external score and tail stability tests",
+      "process-domain stress tests",
+      "ParT/JP-JEPA embedding distribution-shift studies after a validated jet bridge",
+      "correlation/complementarity studies with Sophon responses",
+      "unweighted control-sample diagnostics"
+    ]
+  },
+  "unified_event_table_contract": {
+    "prediction_fields": [
+      "event_signal_score",
+      "event_background_scores",
+      "assignment_outputs_if_available",
+      "reconstructed_higgs_candidates_if_available",
+      "embedding_summary_if_available",
+      "inference_failure_code"
+    ],
+    "required_provenance": [
+      "dataset_track",
+      "sample_group",
+      "source_file",
+      "entry_index",
+      "split_name",
+      "fold_id",
+      "model_id",
+      "model_checkpoint_sha256",
+      "preprocessing_contract_sha256"
+    ],
+    "weight_fields": [
+      "weight_status",
+      "raw_generator_weight_payload",
+      "physical_event_weight_if_authorized"
+    ],
+    "weight_policy": "Track-B physical_event_weight remains null until author semantics are frozen. Track-A physical weights remain governed by the separate normalization closure."
+  }
+}

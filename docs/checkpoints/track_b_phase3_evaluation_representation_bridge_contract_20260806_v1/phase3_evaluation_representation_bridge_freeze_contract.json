@@ -1,0 +1,151 @@
+{
+  "checkpoint_name": "track_b_phase3_evaluation_representation_bridge_contract_20260806_v1",
+  "comparison_policy": "Direct performance comparisons among native SPA-Net, SPA-Net+ParT, and SPA-Net+JP-JEPA must use identical Track-A splits, labels, weighting, heads, and evaluation code. Track-B results are external response/stability studies unless a validated representation bridge and compatible labels exist.",
+  "next_gate": "40J7C_review_and_commit_phase3_evaluation_representation_bridge_contract",
+  "phase3_near_term_sequence": [
+    "freeze this evaluation and representation-bridge contract",
+    "define deterministic multifile sampling and unified event-table schema",
+    "build released-Sophon control-sample adapter on Track B",
+    "defer SPA-Net/ParT/JP-JEPA adapters until Track-A gate A1 is frozen",
+    "defer direct embedding ablations until native SPA-Net gate A3 is frozen"
+  ],
+  "repository_provenance": {
+    "ahead_count_at_install_start": 1,
+    "behind_count_at_install_start": 0,
+    "local_head_at_install_start": "5b96183b489e206b0d22b75da370d71610de55ab",
+    "phase2_published_head": "91d8c03d63fcece89b51fd44179df11fdc1d675a",
+    "remote_head_at_install_start": "91d8c03d63fcece89b51fd44179df11fdc1d675a",
+    "repository_mode_at_install_start": "clean_local_ahead"
+  },
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "698_candidates_are_validated_implementations": false,
+    "cross_track_auc_comparison_authorized": false,
+    "direct_track_b_spanet_training_ready": false,
+    "part_or_jpjepa_performance_claim_authorized": false,
+    "track_b_physical_weighting_authorized": false
+  },
+  "source_preflight": {
+    "candidate_asset_row_count": 698,
+    "candidate_inventory_interpretation": "The 698 rows are broad lexical discovery candidates. They are not 698 validated SPA-Net, ParT, JP-JEPA implementations, checkpoints, or usable model adapters.",
+    "source_next_gate": "40J7B_freeze_phase3_evaluation_and_representation_bridge_contract",
+    "source_output_root": "/tmp/iturkmen_track_b_40J7A_phase3_evaluation_embedding_preflight_20260806_v1_fvEeyZ",
+    "source_status": "phase3_evaluation_and_representation_bridge_preflight_complete"
+  },
+  "status": "phase3_evaluation_representation_bridge_contract_ready",
+  "track_a_maturity_gates": [
+    {
+      "done_when": [
+        "object and event selections are frozen",
+        "cut evaluation avoids test-set tuning",
+        "physical normalization and yield closure are frozen",
+        "uncertainty and provenance are reproducible"
+      ],
+      "gate": "A0",
+      "name": "cut_baseline_and_physical_normalization"
+    },
+    {
+      "done_when": [
+        "event identity and no-leakage split contract are frozen",
+        "jet ordering and feature schema are frozen",
+        "truth assignment and ambiguity policy are frozen",
+        "classification and assignment metrics are frozen"
+      ],
+      "gate": "A1",
+      "name": "common_ml_dataset_split_label_metric_contract"
+    },
+    {
+      "done_when": [
+        "BDT, dense DNN, and LBN-DNN use the same frozen splits",
+        "hyperparameter budgets and seeds are recorded",
+        "weighted and unweighted metrics are separated"
+      ],
+      "gate": "A2",
+      "name": "classical_and_dense_ml_baselines"
+    },
+    {
+      "done_when": [
+        "native SPA-Net trains on the frozen Track-A contract",
+        "assignment and event-classification outputs are validated",
+        "compute, stability, and physics metrics are frozen"
+      ],
+      "gate": "A3",
+      "name": "native_spanet_baseline"
+    },
+    {
+      "done_when": [
+        "native, frozen-encoder, and fine-tuned variants are paired",
+        "ParT and JP-JEPA use equal optimization budgets",
+        "performance, sample efficiency, robustness, and compute are compared"
+      ],
+      "entry_condition": "A0 through A3 are frozen; encoder adapters are validated without changing data splits, labels, heads, or metrics.",
+      "gate": "A4",
+      "name": "part_and_jpjepa_representation_ablations"
+    }
+  ],
+  "track_b_bridge_policy": {
+    "available_schema_tokens": {
+      "event_identity": [
+        "event_class",
+        "event_no"
+      ],
+      "jet": [
+        "jet_energy",
+        "jet_eta",
+        "jet_flavor",
+        "jet_hadronFlavor",
+        "jet_mass",
+        "jet_nparticles",
+        "jet_partonFlavor",
+        "jet_phi",
+        "jet_pt",
+        "jet_sophonAK4_probB",
+        "jet_sophonAK4_probC",
+        "jet_sophonAK4_probL"
+      ],
+      "particle_or_constituent": [
+        "fj_nparticles",
+        "jet_nparticles",
+        "pfcand_sum_HT",
+        "pfcand_sum_energy",
+        "pfcand_sum_eta",
+        "pfcand_sum_mass",
+        "pfcand_sum_phi",
+        "pfcand_sum_pt"
+      ],
+      "truth_or_assignment": [
+        "part_fjlabel",
+        "part_label"
+      ],
+      "weights": [
+        "gen_weight"
+      ]
+    },
+    "blocked_near_term_uses": [
+      "training SPA-Net directly on Track B without validated jet/label construction",
+      "claiming cross-dataset AUC or efficiency",
+      "physical weighting before gen_weight clarification",
+      "calling Sophon output a calibrated reconstructed mass"
+    ],
+    "direct_spa_net_training_ready": false,
+    "reason": "Track B is currently frozen as a jet-free particle-level external dataset. A direct SPA-Net bridge requires a separately validated jet-clustering/constituent association contract and truth-assignment labels compatible with the Track-A task.",
+    "safe_near_term_uses": [
+      "external score and tail stability tests",
+      "process-domain stress tests",
+      "ParT/JP-JEPA embedding distribution-shift studies after a validated jet bridge",
+      "correlation/complementarity studies with Sophon responses",
+      "unweighted control-sample diagnostics"
+    ]
+  },
+  "track_roles": {
+    "track_a": {
+      "current_maturity": "cut_baseline_establishment",
+      "embedding_work_authorized_now": false,
+      "role": "primary training and physics-performance lane"
+    },
+    "track_b": {
+      "direct_spa_net_training_ready": false,
+      "role": "external provenance, control-sample, released-model reference, and later domain-stress lane"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "category_counts": {
+    "embedding": 21,
+    "jpjepa": 4,
+    "part": 328,
+    "spanet": 381
+  },
+  "content_match_counts": {
+    "embedding": 21,
+    "jpjepa": 4,
+    "part": 328,
+    "spanet": 177
+  },
+  "content_only_reference_count": 414,
+  "documentation_checkpoint_or_output_candidate_count": 602,
+  "interpretation": "The 698 rows are broad lexical discovery candidates. They are not 698 validated SPA-Net, ParT, JP-JEPA implementations, checkpoints, or usable model adapters.",
+  "model_weight_candidate_count": 4,
+  "next_asset_gate": "Perform targeted interface-level validation only when the Track-A native SPA-Net input/label contract is frozen.",
+  "noncheckpoint_code_or_config_candidate_count": 306,
+  "path_match_counts": {
+    "embedding": 1,
+    "spanet": 284
+  },
+  "path_matched_candidate_count": 284,
+  "schema_version": 1,
+  "status": "broad_representation_asset_inventory_review_complete",
+  "suffix_counts": {
+    ".csv": 63,
+    ".json": 12,
+    ".md": 103,
+    ".pdf": 33,
+    ".png": 38,
+    ".pt": 4,
+    ".py": 298,
+    ".sh": 2,
+    ".tex": 21,
+    ".tsv": 34,
+    ".txt": 90
+  },
+  "top_level_location_counts": {
+    "Results Summaries": 10,
+    "backgrounds": 1,
+    "data": 2,
+    "docs": 105,
+    "notes": 1,
+    "options_files": 5,
+    "outputs": 496,
+    "scripts": 68,
+    "tests": 10
+  },
+  "total_candidate_rows": 698
+}
