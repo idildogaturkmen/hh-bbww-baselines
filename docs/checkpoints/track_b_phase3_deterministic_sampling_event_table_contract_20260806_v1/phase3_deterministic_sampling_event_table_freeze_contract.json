@@ -1,0 +1,194 @@
+{
+  "checkpoint_name": "track_b_phase3_deterministic_sampling_event_table_contract_20260806_v1",
+  "execution_authorization": {
+    "bounded_sophon_canary_ready_for_separate_gate": true,
+    "full_multifile_production_authorized": false,
+    "metadata_plan_frozen": true,
+    "native_spanet_adapter_ready": false,
+    "part_or_jpjepa_adapter_ready": false,
+    "remote_data_access_authorized_by_this_checkpoint": false,
+    "track_b_physical_weighting_authorized": false
+  },
+  "frozen_inventory": {
+    "complete_identity_count": 718,
+    "root_file_count": 718,
+    "sample_group_count": 18
+  },
+  "model_adapter_interface_contract": {
+    "adapter_failure_policy": {
+      "never_drop_silently": true,
+      "record_failure_code": true,
+      "record_scanned_entry_count": true,
+      "record_selected_valid_event_count": true
+    },
+    "adapters": {
+      "native_spanet": {
+        "allowed_dataset_tracks": [
+          "Track A"
+        ],
+        "readiness": "deferred_until_track_a_A1_and_A3"
+      },
+      "released_sophon_ensemble": {
+        "allowed_dataset_tracks": [
+          "Track B"
+        ],
+        "input_contract": "frozen Track-B Sophon preprocessing contract",
+        "output_contract": "released_sophon_prediction_fields",
+        "readiness": "ready_for_bounded_multifile_canary"
+      },
+      "spanet_jpjepa": {
+        "allowed_dataset_tracks": [
+          "Track A"
+        ],
+        "readiness": "deferred_until_native_spanet_A3"
+      },
+      "spanet_part": {
+        "allowed_dataset_tracks": [
+          "Track A"
+        ],
+        "readiness": "deferred_until_native_spanet_A3"
+      },
+      "track_b_embedding_bridge": {
+        "allowed_dataset_tracks": [
+          "Track B"
+        ],
+        "readiness": "blocked_pending_validated_jet_and_truth_bridge"
+      }
+    },
+    "schema_version": 1,
+    "status": "phase3_model_adapter_interface_preflight_complete"
+  },
+  "next_gate": "40J7G_review_and_commit_phase3_sampling_event_table_contract",
+  "post_publication_gate": "40J7I_bounded_multifile_sophon_adapter_canary",
+  "repository_provenance": {
+    "ahead_count_at_install_start": 0,
+    "behind_count_at_install_start": 0,
+    "local_head_at_install_start": "1228d02328a95db4f301a9dfc4ed3970400d87a0",
+    "phase3_bridge_published_head": "1228d02328a95db4f301a9dfc4ed3970400d87a0",
+    "remote_head_at_install_start": "1228d02328a95db4f301a9dfc4ed3970400d87a0",
+    "repository_mode_at_install_start": "synchronized"
+  },
+  "sampling_modes": {
+    "balanced_control_multifile_v1": {
+      "process_family_counts": {
+        "other": 2,
+        "qcd": 8,
+        "single_higgs": 7,
+        "single_top": 7,
+        "ttH": 1,
+        "ttbar": 12,
+        "ww": 1,
+        "zjets": 4,
+        "zz": 2
+      },
+      "selected_file_count": 44,
+      "selected_group_count": 18,
+      "selected_total_bytes": 48944111826,
+      "target_valid_event_count": 11264
+    },
+    "high_score_tail_stability_v1": {
+      "process_family_counts": {
+        "qcd": 16,
+        "ttbar": 20,
+        "zjets": 8,
+        "zz": 2
+      },
+      "selected_file_count": 46,
+      "selected_group_count": 8,
+      "selected_total_bytes": 59476303518,
+      "target_valid_event_count": 23552
+    }
+  },
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "efficiency_auc_yield_or_significance_has_been_computed": false,
+    "inference_has_been_run": false,
+    "physical_track_b_weights_have_been_assigned": false,
+    "selected_files_have_been_downloaded": false,
+    "selected_files_have_been_opened": false,
+    "spanet_part_or_jpjepa_result_has_been_computed": false
+  },
+  "source_preflight": {
+    "source_next_gate": "40J7F_freeze_phase3_deterministic_sampling_and_event_table_contract",
+    "source_output_root": "/tmp/iturkmen_track_b_40J7E_multifile_sampling_event_table_preflight_20260806_v1_C7j25e",
+    "source_status": "phase3_deterministic_multifile_sampling_and_event_table_preflight_complete"
+  },
+  "status": "phase3_deterministic_sampling_event_table_contract_ready",
+  "unified_event_table_contract": {
+    "event_identity": {
+      "event_uid_definition": "sha256(dataset_track + NUL + sample_group + NUL + remote_path + NUL + entry_index_decimal)",
+      "required_source_fields": [
+        "dataset_track",
+        "sample_group",
+        "process_family",
+        "source_endpoint",
+        "remote_path",
+        "remote_size_bytes",
+        "remote_adler32",
+        "entry_index"
+      ],
+      "uniqueness_scope": "all rows across all datasets and adapters"
+    },
+    "future_embedding_fields": [
+      "embedding_adapter_status",
+      "encoder_family",
+      "encoder_checkpoint_sha256",
+      "encoder_frozen_or_finetuned",
+      "jet_embedding_reference",
+      "embedding_summary_reference"
+    ],
+    "future_spanet_prediction_fields": [
+      "spanet_adapter_status",
+      "assignment_outputs_reference",
+      "event_classification_score",
+      "reconstructed_higgs_candidate_reference"
+    ],
+    "model_provenance_fields": [
+      "adapter_name",
+      "adapter_version",
+      "model_id",
+      "model_checkpoint_sha256",
+      "preprocessing_contract_sha256",
+      "runtime_environment_id"
+    ],
+    "released_sophon_prediction_fields": [
+      "model0_signal_probability",
+      "model0_qcd_probability",
+      "model0_ttbar_probability",
+      "model1_signal_probability",
+      "model1_qcd_probability",
+      "model1_ttbar_probability",
+      "model2_signal_probability",
+      "model2_qcd_probability",
+      "model2_ttbar_probability",
+      "ensemble_signal_probability",
+      "ensemble_qcd_probability",
+      "ensemble_ttbar_probability",
+      "ensemble_overall_top1_class",
+      "ensemble_signal_grid_top1_class",
+      "model_overall_top1_agreement",
+      "model_signal_grid_top1_agreement"
+    ],
+    "row_granularity": "one row per event per adapter evaluation; adapter outputs may also be stored in a wide Sophon-specific table when the manifest records the transformation.",
+    "sampling_provenance_fields": [
+      "sampling_mode",
+      "selection_seed",
+      "selection_rank_within_group",
+      "target_valid_events_per_file",
+      "scan_limit_per_file",
+      "preprocessing_valid",
+      "preprocessing_failure_code"
+    ],
+    "schema_version": 1,
+    "status": "phase3_unified_event_table_contract_ready_for_adapter_canary",
+    "weight_fields": [
+      "raw_gen_weight_payload_json",
+      "physical_weight_status",
+      "physical_event_weight"
+    ],
+    "weight_policy": {
+      "track_a": "physical weights are governed by the independent Track-A normalization closure and must never be inferred from Track B.",
+      "track_b": "raw payload may be preserved structurally; physical_event_weight must remain null until author semantics and normalization are frozen."
+    }
+  }
+}

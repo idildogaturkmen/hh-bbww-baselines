@@ -1,0 +1,48 @@
+{
+  "family_map_row_count": 18,
+  "frozen_inventory": {
+    "complete_identity_count": 718,
+    "root_file_count": 718,
+    "sample_group_count": 18
+  },
+  "interpretation": "The selected files form deterministic metadata-only plans. They are not yet downloaded, opened, or evaluated.",
+  "native_spanet_adapter_ready": false,
+  "released_sophon_adapter_ready": true,
+  "sampling_modes": {
+    "balanced_control_multifile_v1": {
+      "process_family_counts": {
+        "other": 2,
+        "qcd": 8,
+        "single_higgs": 7,
+        "single_top": 7,
+        "ttH": 1,
+        "ttbar": 12,
+        "ww": 1,
+        "zjets": 4,
+        "zz": 2
+      },
+      "selected_file_count": 44,
+      "selected_group_count": 18,
+      "selected_total_bytes": 48944111826,
+      "target_valid_event_count": 11264
+    },
+    "high_score_tail_stability_v1": {
+      "process_family_counts": {
+        "qcd": 16,
+        "ttbar": 20,
+        "zjets": 8,
+        "zz": 2
+      },
+      "selected_file_count": 46,
+      "selected_group_count": 8,
+      "selected_total_bytes": 59476303518,
+      "target_valid_event_count": 23552
+    }
+  },
+  "schema_version": 1,
+  "selection_row_count": 90,
+  "selection_summary_row_count": 26,
+  "source_output_root": "/tmp/iturkmen_track_b_40J7E_multifile_sampling_event_table_preflight_20260806_v1_C7j25e",
+  "status": "40J7E_sampling_and_event_table_review_complete",
+  "track_b_physical_weighting_authorized": false
+}

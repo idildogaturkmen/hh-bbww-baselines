@@ -1,0 +1,77 @@
+{
+  "event_identity": {
+    "event_uid_definition": "sha256(dataset_track + NUL + sample_group + NUL + remote_path + NUL + entry_index_decimal)",
+    "required_source_fields": [
+      "dataset_track",
+      "sample_group",
+      "process_family",
+      "source_endpoint",
+      "remote_path",
+      "remote_size_bytes",
+      "remote_adler32",
+      "entry_index"
+    ],
+    "uniqueness_scope": "all rows across all datasets and adapters"
+  },
+  "future_embedding_fields": [
+    "embedding_adapter_status",
+    "encoder_family",
+    "encoder_checkpoint_sha256",
+    "encoder_frozen_or_finetuned",
+    "jet_embedding_reference",
+    "embedding_summary_reference"
+  ],
+  "future_spanet_prediction_fields": [
+    "spanet_adapter_status",
+    "assignment_outputs_reference",
+    "event_classification_score",
+    "reconstructed_higgs_candidate_reference"
+  ],
+  "model_provenance_fields": [
+    "adapter_name",
+    "adapter_version",
+    "model_id",
+    "model_checkpoint_sha256",
+    "preprocessing_contract_sha256",
+    "runtime_environment_id"
+  ],
+  "released_sophon_prediction_fields": [
+    "model0_signal_probability",
+    "model0_qcd_probability",
+    "model0_ttbar_probability",
+    "model1_signal_probability",
+    "model1_qcd_probability",
+    "model1_ttbar_probability",
+    "model2_signal_probability",
+    "model2_qcd_probability",
+    "model2_ttbar_probability",
+    "ensemble_signal_probability",
+    "ensemble_qcd_probability",
+    "ensemble_ttbar_probability",
+    "ensemble_overall_top1_class",
+    "ensemble_signal_grid_top1_class",
+    "model_overall_top1_agreement",
+    "model_signal_grid_top1_agreement"
+  ],
+  "row_granularity": "one row per event per adapter evaluation; adapter outputs may also be stored in a wide Sophon-specific table when the manifest records the transformation.",
+  "sampling_provenance_fields": [
+    "sampling_mode",
+    "selection_seed",
+    "selection_rank_within_group",
+    "target_valid_events_per_file",
+    "scan_limit_per_file",
+    "preprocessing_valid",
+    "preprocessing_failure_code"
+  ],
+  "schema_version": 1,
+  "status": "phase3_unified_event_table_contract_ready_for_adapter_canary",
+  "weight_fields": [
+    "raw_gen_weight_payload_json",
+    "physical_weight_status",
+    "physical_event_weight"
+  ],
+  "weight_policy": {
+    "track_a": "physical weights are governed by the independent Track-A normalization closure and must never be inferred from Track B.",
+    "track_b": "raw payload may be preserved structurally; physical_event_weight must remain null until author semantics and normalization are frozen."
+  }
+}

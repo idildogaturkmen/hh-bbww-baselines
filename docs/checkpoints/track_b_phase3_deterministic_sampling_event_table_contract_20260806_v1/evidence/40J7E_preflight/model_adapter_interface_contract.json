@@ -1,0 +1,44 @@
+{
+  "adapter_failure_policy": {
+    "never_drop_silently": true,
+    "record_failure_code": true,
+    "record_scanned_entry_count": true,
+    "record_selected_valid_event_count": true
+  },
+  "adapters": {
+    "native_spanet": {
+      "allowed_dataset_tracks": [
+        "Track A"
+      ],
+      "readiness": "deferred_until_track_a_A1_and_A3"
+    },
+    "released_sophon_ensemble": {
+      "allowed_dataset_tracks": [
+        "Track B"
+      ],
+      "input_contract": "frozen Track-B Sophon preprocessing contract",
+      "output_contract": "released_sophon_prediction_fields",
+      "readiness": "ready_for_bounded_multifile_canary"
+    },
+    "spanet_jpjepa": {
+      "allowed_dataset_tracks": [
+        "Track A"
+      ],
+      "readiness": "deferred_until_native_spanet_A3"
+    },
+    "spanet_part": {
+      "allowed_dataset_tracks": [
+        "Track A"
+      ],
+      "readiness": "deferred_until_native_spanet_A3"
+    },
+    "track_b_embedding_bridge": {
+      "allowed_dataset_tracks": [
+        "Track B"
+      ],
+      "readiness": "blocked_pending_validated_jet_and_truth_bridge"
+    }
+  },
+  "schema_version": 1,
+  "status": "phase3_model_adapter_interface_preflight_complete"
+}

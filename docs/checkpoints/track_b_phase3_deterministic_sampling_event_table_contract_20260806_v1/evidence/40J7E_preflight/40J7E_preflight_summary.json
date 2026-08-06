@@ -1,0 +1,37 @@
+{
+  "frozen_inventory": {
+    "complete_identity_count": 718,
+    "root_file_count": 718,
+    "sample_group_count": 18
+  },
+  "next_gate": "40J7F_freeze_phase3_deterministic_sampling_and_event_table_contract",
+  "repository_provenance": {
+    "local_head_at_start": "1228d02328a95db4f301a9dfc4ed3970400d87a0",
+    "phase3_published_head": "1228d02328a95db4f301a9dfc4ed3970400d87a0",
+    "remote_head_at_start": "1228d02328a95db4f301a9dfc4ed3970400d87a0",
+    "repository_mode_at_start": "synchronized"
+  },
+  "sampling_modes": {
+    "balanced_control_multifile_v1": {
+      "selected_file_count": 44,
+      "selected_remote_bytes_if_all_downloaded": 48944111826,
+      "target_valid_event_count": 11264
+    },
+    "high_score_tail_stability_v1": {
+      "selected_file_count": 46,
+      "selected_remote_bytes_if_all_downloaded": 59476303518,
+      "target_valid_event_count": 23552
+    }
+  },
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "no_efficiency_auc_yield_or_significance_computed": true,
+    "no_inference_performed": true,
+    "no_physical_track_b_weights_assigned": true,
+    "no_remote_data_access_performed": true,
+    "no_spanet_part_or_jpjepa_result_computed": true,
+    "no_training_performed": true
+  },
+  "selection_seed": "track_b_phase3_multifile_v1_20260806",
+  "status": "phase3_deterministic_multifile_sampling_and_event_table_preflight_complete"
+}
