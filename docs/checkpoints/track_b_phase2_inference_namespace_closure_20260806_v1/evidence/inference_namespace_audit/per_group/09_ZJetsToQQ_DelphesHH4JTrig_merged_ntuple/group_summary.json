@@ -1,0 +1,238 @@
+{
+  "branch_count": 96,
+  "gen_weight_structure": {
+    "branch_present": true,
+    "length_counts": {
+      "2": 256
+    },
+    "physical_semantics_assigned": false,
+    "sampled_event_count": 256,
+    "used_in_metrics": false
+  },
+  "metrics": {
+    "ensemble": {
+      "mean_qcd_probability": 0.7156938981186917,
+      "mean_signal_probability": 0.2504628440897111,
+      "mean_ttbar_probability": 0.03384325421100861,
+      "n_events": 256,
+      "overall_top1_is_qcd_fraction": 0.91015625,
+      "overall_top1_is_signal_fraction": 0.05859375,
+      "overall_top1_is_ttbar_fraction": 0.03125,
+      "score_summary": {
+        "mean_qcd_probability": 0.7156938981186917,
+        "mean_signal_probability": 0.2504628440897111,
+        "mean_ttbar_probability": 0.03384325421100861,
+        "n_events": 256,
+        "signal_probability_quantiles": {
+          "median": 0.07785380991739999,
+          "q10": 0.002426797436489399,
+          "q90": 0.8374600790549873
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 55,
+            "fraction": 0.21484375
+          },
+          "0.9": {
+            "count": 21,
+            "fraction": 0.08203125
+          },
+          "0.997": {
+            "count": 1,
+            "fraction": 0.00390625
+          }
+        },
+        "top1_class_counts": {
+          "120": 1,
+          "122": 1,
+          "131": 1,
+          "136": 233,
+          "137": 8,
+          "20": 1,
+          "30": 1,
+          "46": 1,
+          "54": 1,
+          "67": 1,
+          "69": 1,
+          "73": 1,
+          "80": 1,
+          "88": 1,
+          "90": 2,
+          "96": 1
+        }
+      },
+      "signal_probability_gt_0p9_fraction": 0.08203125
+    },
+    "model0": {
+      "mean_qcd_probability": 0.7123468682975727,
+      "mean_signal_probability": 0.2528433190491878,
+      "mean_ttbar_probability": 0.03480981148918816,
+      "n_events": 256,
+      "overall_top1_is_qcd_fraction": 0.91796875,
+      "overall_top1_is_signal_fraction": 0.0546875,
+      "overall_top1_is_ttbar_fraction": 0.02734375,
+      "score_summary": {
+        "mean_qcd_probability": 0.7123468682975727,
+        "mean_signal_probability": 0.2528433190491878,
+        "mean_ttbar_probability": 0.03480981148918816,
+        "n_events": 256,
+        "signal_probability_quantiles": {
+          "median": 0.07072146871905716,
+          "q10": 0.002190913232503533,
+          "q90": 0.8459152044051734
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 59,
+            "fraction": 0.23046875
+          },
+          "0.9": {
+            "count": 22,
+            "fraction": 0.0859375
+          },
+          "0.997": {
+            "count": 2,
+            "fraction": 0.0078125
+          }
+        },
+        "top1_class_counts": {
+          "110": 1,
+          "132": 1,
+          "136": 235,
+          "137": 7,
+          "30": 1,
+          "4": 1,
+          "54": 1,
+          "6": 1,
+          "67": 1,
+          "69": 1,
+          "73": 1,
+          "80": 1,
+          "88": 1,
+          "90": 2,
+          "92": 1
+        }
+      },
+      "signal_probability_gt_0p9_fraction": 0.0859375
+    },
+    "model1": {
+      "mean_qcd_probability": 0.7169779961709537,
+      "mean_signal_probability": 0.2506873559222016,
+      "mean_ttbar_probability": 0.032334639824123546,
+      "n_events": 256,
+      "overall_top1_is_qcd_fraction": 0.91015625,
+      "overall_top1_is_signal_fraction": 0.0546875,
+      "overall_top1_is_ttbar_fraction": 0.03515625,
+      "score_summary": {
+        "mean_qcd_probability": 0.7169779961709537,
+        "mean_signal_probability": 0.2506873559222016,
+        "mean_ttbar_probability": 0.032334639824123546,
+        "n_events": 256,
+        "signal_probability_quantiles": {
+          "median": 0.07905090653184743,
+          "q10": 0.002440360816887477,
+          "q90": 0.8513068334360696
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 55,
+            "fraction": 0.21484375
+          },
+          "0.9": {
+            "count": 21,
+            "fraction": 0.08203125
+          },
+          "0.997": {
+            "count": 3,
+            "fraction": 0.01171875
+          }
+        },
+        "top1_class_counts": {
+          "120": 1,
+          "122": 1,
+          "131": 1,
+          "136": 233,
+          "137": 9,
+          "20": 1,
+          "30": 1,
+          "4": 1,
+          "54": 1,
+          "69": 1,
+          "73": 1,
+          "80": 1,
+          "88": 1,
+          "90": 2,
+          "98": 1
+        }
+      },
+      "signal_probability_gt_0p9_fraction": 0.08203125
+    },
+    "model2": {
+      "mean_qcd_probability": 0.7177568298875485,
+      "mean_signal_probability": 0.24785785729774382,
+      "mean_ttbar_probability": 0.03438531131971412,
+      "n_events": 256,
+      "overall_top1_is_qcd_fraction": 0.90625,
+      "overall_top1_is_signal_fraction": 0.06640625,
+      "overall_top1_is_ttbar_fraction": 0.02734375,
+      "score_summary": {
+        "mean_qcd_probability": 0.7177568298875485,
+        "mean_signal_probability": 0.24785785729774382,
+        "mean_ttbar_probability": 0.03438531131971412,
+        "n_events": 256,
+        "signal_probability_quantiles": {
+          "median": 0.07041448595100519,
+          "q10": 0.002069230321865234,
+          "q90": 0.8380611224947643
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 56,
+            "fraction": 0.21875
+          },
+          "0.9": {
+            "count": 21,
+            "fraction": 0.08203125
+          },
+          "0.997": {
+            "count": 2,
+            "fraction": 0.0078125
+          }
+        },
+        "top1_class_counts": {
+          "125": 1,
+          "127": 1,
+          "131": 1,
+          "136": 232,
+          "137": 7,
+          "20": 1,
+          "30": 1,
+          "46": 2,
+          "54": 1,
+          "68": 1,
+          "69": 1,
+          "73": 1,
+          "79": 1,
+          "80": 1,
+          "88": 1,
+          "90": 2,
+          "93": 1
+        }
+      },
+      "signal_probability_gt_0p9_fraction": 0.08203125
+    }
+  },
+  "missing_input_branches": [],
+  "model_agreement": {
+    "all_three_overall_top1_agreement_fraction": 0.93359375,
+    "all_three_signal_grid_top1_agreement_fraction": 0.3203125
+  },
+  "preprocessing_failure_count": 0,
+  "remote_path": "/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/ZJetsToQQ_DelphesHH4JTrig_merged_ntuple/ZJetsToQQ_DelphesHH4JTrig_ntuple_id2500-2999.root",
+  "sample_group": "ZJetsToQQ_DelphesHH4JTrig_merged_ntuple",
+  "schema_sha256": "97f48fd87af56ed545a3ca84a4292f635b8a768ef852b9cad2600773db6fe651",
+  "selected_valid_events": 256,
+  "status": "response_canary_complete",
+  "tree_entries": 251497,
+  "tree_name": "tree"
+}

@@ -1,0 +1,17 @@
+sample_group	remote_path	remote_size_bytes	remote_adler32	identity_status	selection_policy
+ZZ_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/ZZ_ntuple/selected_ntuples_0001.root	690055895	4cfd4cfc	complete	smallest_file_within_hard_size_cap
+QCD_DelphesHH4JTrig_forInfer2_merged_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/QCD_DelphesHH4JTrig_forInfer2_merged_ntuple/QCD_DelphesHH4JTrig_forInfer2_ntuple_mergeid380.root	698774117	49ff6c00	complete	smallest_file_within_hard_size_cap
+QCD_DelphesHH4JTrig_forInfer_merged_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/QCD_DelphesHH4JTrig_forInfer_merged_ntuple/QCD_DelphesHH4JTrig_forInfer_ntuple_mergeid96.root	959882466	67cb5b54	complete	smallest_file_within_hard_size_cap
+SingleTop_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/SingleTop_ntuple/selected_ntuples_0009.root	944879011	38f1619e	complete	smallest_file_within_hard_size_cap
+TTbar_forInfer2_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/TTbar_forInfer2_ntuple/selected_ntuples_0059.root	815574995	dd7dc854	complete	smallest_file_within_hard_size_cap
+TTbar_forInfer_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/TTbar_forInfer_ntuple/selected_ntuples_0059.root	76307845	0eeb7a72	complete	smallest_file_within_hard_size_cap
+TTbarW_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/TTbarW_ntuple/selected_ntuples_0001.root	599288170	bd9f58f6	complete	smallest_file_within_hard_size_cap
+TTbarZ_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/TTbarZ_ntuple/selected_ntuples_0001.root	1043812732	fed4dc69	complete	smallest_file_within_hard_size_cap
+ttH_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/ttH_ntuple/selected_ntuples_0000.root	1205040432	3f4953b6	complete	smallest_file_within_hard_size_cap
+ZJetsToQQ_DelphesHH4JTrig_merged_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/ZJetsToQQ_DelphesHH4JTrig_merged_ntuple/ZJetsToQQ_DelphesHH4JTrig_ntuple_id2500-2999.root	1749925223	cc5209ec	complete	smallest_file_within_hard_size_cap
+SingleHiggs_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/SingleHiggs_ntuple/selected_ntuples_0006.root	102267108	f0bc6d68	complete	smallest_file_within_hard_size_cap
+TW_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/TW_ntuple/selected_ntuples_0002.root	1012690616	4692a82a	complete	smallest_file_within_hard_size_cap
+VBFH_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/VBFH_ntuple/selected_ntuples_0000.root	685799527	68ca9c4d	complete	smallest_file_within_hard_size_cap
+WminusH_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/WminusH_ntuple/selected_ntuples_0000.root	395004306	1996233c	complete	smallest_file_within_hard_size_cap
+WplusH_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/WplusH_ntuple/selected_ntuples_0000.root	369458509	a6f9f3e7	complete	smallest_file_within_hard_size_cap
+WW_ntuple	/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/WW_ntuple/selected_ntuples_0000.root	476601734	76cbbf73	complete	smallest_file_within_hard_size_cap

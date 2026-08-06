@@ -1,0 +1,199 @@
+{
+  "branch_count": 98,
+  "gen_weight_structure": {
+    "branch_present": true,
+    "length_counts": {
+      "2": 256
+    },
+    "physical_semantics_assigned": false,
+    "sampled_event_count": 256,
+    "used_in_metrics": false
+  },
+  "metrics": {
+    "ensemble": {
+      "mean_qcd_probability": 0.14594296292410958,
+      "mean_signal_probability": 0.14002657231775917,
+      "mean_ttbar_probability": 0.7140304704411923,
+      "n_events": 256,
+      "overall_top1_is_qcd_fraction": 0.16796875,
+      "overall_top1_is_signal_fraction": 0.015625,
+      "overall_top1_is_ttbar_fraction": 0.81640625,
+      "score_summary": {
+        "mean_qcd_probability": 0.14594296292410958,
+        "mean_signal_probability": 0.14002657231775917,
+        "mean_ttbar_probability": 0.7140304704411923,
+        "n_events": 256,
+        "signal_probability_quantiles": {
+          "median": 0.01181157417847419,
+          "q10": 1.6055267660798353e-05,
+          "q90": 0.5664000574041996
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 32,
+            "fraction": 0.125
+          },
+          "0.9": {
+            "count": 5,
+            "fraction": 0.01953125
+          },
+          "0.997": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        },
+        "top1_class_counts": {
+          "104": 2,
+          "131": 1,
+          "136": 43,
+          "137": 209,
+          "82": 1
+        }
+      },
+      "signal_probability_gt_0p9_fraction": 0.01953125
+    },
+    "model0": {
+      "mean_qcd_probability": 0.14638585160797904,
+      "mean_signal_probability": 0.14030687951341964,
+      "mean_ttbar_probability": 0.7133072723913756,
+      "n_events": 256,
+      "overall_top1_is_qcd_fraction": 0.171875,
+      "overall_top1_is_signal_fraction": 0.01171875,
+      "overall_top1_is_ttbar_fraction": 0.81640625,
+      "score_summary": {
+        "mean_qcd_probability": 0.14638585160797904,
+        "mean_signal_probability": 0.14030687951341964,
+        "mean_ttbar_probability": 0.7133072723913756,
+        "n_events": 256,
+        "signal_probability_quantiles": {
+          "median": 0.011554348255967462,
+          "q10": 1.255142049522845e-05,
+          "q90": 0.5883465361532672
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 30,
+            "fraction": 0.1171875
+          },
+          "0.9": {
+            "count": 6,
+            "fraction": 0.0234375
+          },
+          "0.997": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        },
+        "top1_class_counts": {
+          "103": 1,
+          "105": 1,
+          "131": 1,
+          "136": 44,
+          "137": 209
+        }
+      },
+      "signal_probability_gt_0p9_fraction": 0.0234375
+    },
+    "model1": {
+      "mean_qcd_probability": 0.15046580607629134,
+      "mean_signal_probability": 0.14417185744135752,
+      "mean_ttbar_probability": 0.7053623407995246,
+      "n_events": 256,
+      "overall_top1_is_qcd_fraction": 0.1796875,
+      "overall_top1_is_signal_fraction": 0.0234375,
+      "overall_top1_is_ttbar_fraction": 0.796875,
+      "score_summary": {
+        "mean_qcd_probability": 0.15046580607629134,
+        "mean_signal_probability": 0.14417185744135752,
+        "mean_ttbar_probability": 0.7053623407995246,
+        "n_events": 256,
+        "signal_probability_quantiles": {
+          "median": 0.012309668283549513,
+          "q10": 1.2997856998916979e-05,
+          "q90": 0.601679328656644
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 31,
+            "fraction": 0.12109375
+          },
+          "0.9": {
+            "count": 7,
+            "fraction": 0.02734375
+          },
+          "0.997": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        },
+        "top1_class_counts": {
+          "104": 1,
+          "122": 1,
+          "125": 1,
+          "134": 1,
+          "136": 46,
+          "137": 204,
+          "76": 1,
+          "82": 1
+        }
+      },
+      "signal_probability_gt_0p9_fraction": 0.02734375
+    },
+    "model2": {
+      "mean_qcd_probability": 0.14097723108805835,
+      "mean_signal_probability": 0.1356009799985004,
+      "mean_ttbar_probability": 0.7234217981326765,
+      "n_events": 256,
+      "overall_top1_is_qcd_fraction": 0.1640625,
+      "overall_top1_is_signal_fraction": 0.015625,
+      "overall_top1_is_ttbar_fraction": 0.8203125,
+      "score_summary": {
+        "mean_qcd_probability": 0.14097723108805835,
+        "mean_signal_probability": 0.1356009799985004,
+        "mean_ttbar_probability": 0.7234217981326765,
+        "n_events": 256,
+        "signal_probability_quantiles": {
+          "median": 0.009301447404119756,
+          "q10": 1.1404558167923788e-05,
+          "q90": 0.5438528388549457
+        },
+        "signal_thresholds_strict_greater_than": {
+          "0.5": {
+            "count": 29,
+            "fraction": 0.11328125
+          },
+          "0.9": {
+            "count": 5,
+            "fraction": 0.01953125
+          },
+          "0.997": {
+            "count": 0,
+            "fraction": 0.0
+          }
+        },
+        "top1_class_counts": {
+          "104": 1,
+          "129": 1,
+          "131": 1,
+          "136": 42,
+          "137": 210,
+          "82": 1
+        }
+      },
+      "signal_probability_gt_0p9_fraction": 0.01953125
+    }
+  },
+  "missing_input_branches": [],
+  "model_agreement": {
+    "all_three_overall_top1_agreement_fraction": 0.91015625,
+    "all_three_signal_grid_top1_agreement_fraction": 0.23046875
+  },
+  "preprocessing_failure_count": 0,
+  "remote_path": "/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/TTbar_forInfer2_ntuple/selected_ntuples_0059.root",
+  "sample_group": "TTbar_forInfer2_ntuple",
+  "schema_sha256": "a23d1e371f5012c7ab2d1a89b9d3c7227f2e9f43164e63369a237c5a5223eadb",
+  "selected_valid_events": 256,
+  "status": "response_canary_complete",
+  "tree_entries": 102994,
+  "tree_name": "tree"
+}

@@ -1,0 +1,32 @@
+{
+  "bounded_canary": {
+    "max_file_bytes": 2500000000,
+    "max_groups": 16,
+    "no_valid_event_group_count": 0,
+    "response_complete_group_count": 16,
+    "schema_incompatible_group_count": 0,
+    "selected_group_count": 16,
+    "target_events_per_group": 256
+  },
+  "inference_namespace": "/eos/ihep/cms/store/user/coli/datasets/hh4b/inference",
+  "inventory": {
+    "all_remote_identities_complete": true,
+    "complete_identity_count": 718,
+    "root_file_count": 718,
+    "sample_group_count": 18
+  },
+  "next_gate": "40J6B_freeze_phase2_inference_namespace_closure_checkpoint",
+  "remote_head_at_start": "e715af2b1a976f8b5af6b76251e0998f42787ae1",
+  "repository_head_at_start": "b95231971ddbf12b2eb6934946bea3f24e6cae20",
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "auc_or_efficiency_computed": false,
+    "calibrated_mass_or_resolution_computed": false,
+    "expected_yields_computed": false,
+    "independent_signal_performance_measured": false,
+    "physical_gen_weight_semantics_assigned": false,
+    "physical_weights_used": false,
+    "significance_or_sensitivity_computed": false
+  },
+  "status": "inference_namespace_inventory_and_response_canary_complete"
+}

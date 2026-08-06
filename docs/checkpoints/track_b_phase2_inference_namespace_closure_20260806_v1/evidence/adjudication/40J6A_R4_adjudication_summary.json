@@ -1,0 +1,42 @@
+{
+  "bounded_canary": {
+    "aggregate_event_rows": 16384,
+    "events_per_group": 256,
+    "no_valid_event_group_count": 0,
+    "response_complete_group_count": 16,
+    "schema_incompatible_group_count": 0,
+    "score_sets_per_event": 4,
+    "selected_group_count": 16,
+    "skipped_group_count": 2
+  },
+  "inventory": {
+    "all_remote_identities_complete": true,
+    "complete_identity_count": 718,
+    "root_file_count": 718,
+    "sample_group_count": 18
+  },
+  "next_gate": "40J6B_freeze_phase2_inference_namespace_closure_checkpoint",
+  "observed_repository_head_at_failed_final_guard": "d830a84fdb94dc5c0c34c5c28978cbdc453dc9e9",
+  "remote_head_at_adjudication_start": "1cd21990ae07eeb503b858c1e57e7121b6a0e875",
+  "remote_head_at_audit_start": "e715af2b1a976f8b5af6b76251e0998f42787ae1",
+  "repository_head_at_adjudication": "1cd21990ae07eeb503b858c1e57e7121b6a0e875",
+  "repository_head_at_audit_start": "b95231971ddbf12b2eb6934946bea3f24e6cae20",
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "auc_or_efficiency_computed": false,
+    "calibrated_mass_or_resolution_computed": false,
+    "expected_yields_computed": false,
+    "independent_signal_performance_measured": false,
+    "physical_gen_weight_semantics_assigned": false,
+    "physical_weights_used": false,
+    "significance_or_sensitivity_computed": false
+  },
+  "source_failure_adjudication": "The expensive audit completed and the only source-script failure was the final repository immutability guard after the shared branch advanced. Protected Track-B inputs and paths remained unchanged.",
+  "source_log": "/tmp/iturkmen_track_b_40J6A_R2_20260806T162732Z.log",
+  "source_log_sha256": "8497894744a5f35515ab982e548d4ef9d34f4fdcc20be77ed82cda030dd18807",
+  "source_manifest_artifact_count": 72,
+  "source_manifest_sha256": "bebaddc9e5141c32ba58cedd765062119fbd75c94a65d48e4d96c292451ee573",
+  "source_output_root": "/tmp/iturkmen_track_b_40J6A_R2_inference_audit_20260806_v1_AwBvXo",
+  "source_summary_sha256": "2de5e9440d38d8dad86236bb160de3f586a9ccf94ba3bb6d49433e879d96b800",
+  "status": "existing_40J6A_R2_output_adjudicated_complete"
+}
