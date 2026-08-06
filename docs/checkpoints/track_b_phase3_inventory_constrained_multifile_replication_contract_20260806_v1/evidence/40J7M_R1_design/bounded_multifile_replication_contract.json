@@ -1,0 +1,99 @@
+{
+  "authorization": {
+    "design_metadata_complete": true,
+    "full_44_file_balanced_study_authorized": false,
+    "full_46_file_tail_study_authorized": false,
+    "full_90_selection_row_execution_authorized": false,
+    "replication_execution_authorized_by_this_step": false,
+    "track_b_physical_weighting_authorized": false
+  },
+  "contract_name": "track_b_phase3_bounded_multifile_replication_20260806_v1",
+  "next_gate": "40J7N_freeze_bounded_multifile_replication_contract",
+  "planned_outputs": {
+    "per_file_summary": true,
+    "per_lane_file_stability_summary": true,
+    "preprocessing_failures": true,
+    "runtime_and_model_provenance": true,
+    "temporary_cleanup_receipt": true,
+    "unified_event_rows": true
+  },
+  "planned_unweighted_stability_diagnostics": {
+    "canary_file_included_as_reference_only": true,
+    "per_file_mean_signal_probability": true,
+    "per_file_signal_probability_quantiles": [
+      0.5,
+      0.9,
+      0.99
+    ],
+    "per_file_threshold_fractions": [
+      0.5,
+      0.9,
+      0.997
+    ],
+    "per_lane_between_file_range": true,
+    "per_lane_between_file_standard_deviation": true
+  },
+  "repository_provenance": {
+    "local_head_at_design_start": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+    "published_canary_head": "7b2b11d6f97bc7e113161e74802a1b962f2e5f7a",
+    "remote_head_at_design_start": "7b2b11d6f97bc7e113161e74802a1b962f2e5f7a",
+    "repository_mode_at_design_start": "clean_local_ahead"
+  },
+  "required_execution_controls": {
+    "cpu_threads_per_model": 1,
+    "delete_each_temporary_root_file": true,
+    "one_model_per_short_lived_subprocess": true,
+    "onnx_cpu_memory_arena_disabled": true,
+    "onnx_memory_pattern_disabled": true,
+    "record_all_preprocessing_failures": true,
+    "require_unique_recomputed_event_uids": true,
+    "sequential_downloads": true,
+    "serialized_probability_sum_absolute_tolerance": 1e-06,
+    "verify_size_and_adler32_before_root_io": true
+  },
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "calibrated_mass_or_resolution_computed": false,
+    "efficiency_or_auc_computed": false,
+    "expected_yields_computed": false,
+    "jpjepa_inference_or_training_performed": false,
+    "part_inference_or_training_performed": false,
+    "physical_track_b_weights_used": false,
+    "significance_or_sensitivity_computed": false,
+    "spanet_inference_or_training_performed": false,
+    "unweighted_released_model_response_replication_only": true
+  },
+  "scientific_question": "Does the released Sophon ensemble response remain stable across additional files from the same four representative sample groups used in the published canary?",
+  "selection": {
+    "deterministic_policy": "same canary sample group; exclude canary paths; require complete identity, blocked physical weighting, and file size within bound; then order by frozen deterministic rank SHA and remote path",
+    "lanes": [
+      "qcd",
+      "ttbar",
+      "zjets",
+      "zz"
+    ],
+    "new_file_count": 7,
+    "new_files_per_lane": {
+      "qcd": 2,
+      "ttbar": 2,
+      "zjets": 2,
+      "zz": 1
+    },
+    "published_canary_paths_excluded": true,
+    "same_sample_group_as_canary": true,
+    "source_sampling_mode": "high_score_tail_stability_v1",
+    "target_new_unified_event_rows": 896,
+    "target_valid_events_per_file": 128
+  },
+  "status": "bounded_multifile_replication_design_ready",
+  "success_gate_for_later_execution": {
+    "all_896_event_uids_unique": true,
+    "all_score_matrices_valid": true,
+    "all_serialized_probability_triplets_within_1e_6": true,
+    "all_seven_download_identities_verified": true,
+    "all_seven_files_reach_128_valid_events": true,
+    "all_temporary_root_files_removed": true,
+    "preprocessing_failures_fully_accounted": true,
+    "repository_remains_unmodified": true
+  }
+}

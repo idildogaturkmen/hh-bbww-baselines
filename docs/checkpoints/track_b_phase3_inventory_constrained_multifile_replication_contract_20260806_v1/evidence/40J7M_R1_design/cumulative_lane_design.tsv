@@ -1,0 +1,5 @@
+replication_lane	sample_group	published_canary_file_count	published_canary_event_count	new_replication_file_count	new_replication_target_event_count	cumulative_file_count_after_replication	cumulative_target_or_observed_event_count
+qcd	QCD_DelphesHH4JTrig_forInfer_merged_ntuple	1	64	2	256	3	320
+ttbar	TTbar_forInfer_ntuple	1	64	2	256	3	320
+zjets	ZJetsToQQ_DelphesHH4JTrig_merged_ntuple	1	64	2	256	3	320
+zz	ZZ_ntuple	1	64	1	128	2	192

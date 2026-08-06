@@ -1,0 +1,89 @@
+{
+  "checkpoint_name": "track_b_phase3_inventory_constrained_multifile_replication_contract_20260806_v1",
+  "execution_authorization": {
+    "design_metadata_frozen": true,
+    "full_44_file_balanced_study_authorized": false,
+    "full_46_file_tail_study_authorized": false,
+    "full_90_selection_row_execution_authorized": false,
+    "native_spanet_adapter_ready": false,
+    "part_or_jpjepa_adapter_ready": false,
+    "replication_execution_authorized_by_this_checkpoint": false,
+    "seven_file_replication_ready_for_separate_execution_gate": true,
+    "track_b_physical_weighting_authorized": false
+  },
+  "next_gate": "40J7O_review_and_commit_inventory_constrained_replication_contract",
+  "post_publication_gate": "40J7Q_execute_inventory_constrained_multifile_replication",
+  "repository_provenance": {
+    "ahead_count_at_install_start": 0,
+    "behind_count_at_install_start": 0,
+    "local_head_at_install_start": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+    "published_canary_head": "7b2b11d6f97bc7e113161e74802a1b962f2e5f7a",
+    "remote_head_at_install_start": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+    "repository_mode_at_install_start": "synchronized"
+  },
+  "schema_version": 1,
+  "scientific_boundaries": {
+    "calibrated_mass_or_resolution_computed": false,
+    "efficiency_or_auc_computed": false,
+    "expected_yields_computed": false,
+    "jpjepa_inference_or_training_performed": false,
+    "part_inference_or_training_performed": false,
+    "physical_track_b_weights_used": false,
+    "significance_or_sensitivity_computed": false,
+    "spanet_inference_or_training_performed": false,
+    "unweighted_released_model_response_replication_only": true
+  },
+  "scientific_question": "Does the released Sophon ensemble response remain stable across additional files from the same four representative sample groups used in the published canary?",
+  "source_design": {
+    "inventory_constraint": {
+      "eligible_non_canary_file_count": 1,
+      "lane": "zz",
+      "sample_group": "ZZ_ntuple",
+      "scientific_response": "Retain the same-sample-group stability question and use one new ZZ file rather than borrow from another sample group.",
+      "selected_new_file_count": 1,
+      "selected_remote_path": "/eos/ihep/cms/store/user/coli/datasets/hh4b/inference/ZZ_ntuple/selected_ntuples_0000.root",
+      "symmetric_two_new_files_per_lane_feasible": false
+    },
+    "lane_file_counts": {
+      "qcd": 2,
+      "ttbar": 2,
+      "zjets": 2,
+      "zz": 1
+    },
+    "largest_selected_file_bytes": 1763435733,
+    "published_canary_overlap_count": 0,
+    "schema_adjudication": {
+      "authoritative_inventory_sources": [
+        "replication_candidate_audit.tsv",
+        "bounded_replication_selected_files.tsv",
+        "cumulative_lane_design.tsv",
+        "40J7M_replication_design_summary.json"
+      ],
+      "execution_scope_changed": false,
+      "issue": "The source contract omitted a redundant selection.inventory_constraint object.",
+      "resolution": "Derive and verify the ZZ inventory constraint from the authoritative candidate-audit and selected-file tables, then record it explicitly in the freeze checkpoint.",
+      "scientific_scope_changed": false,
+      "source_selection_inventory_constraint_present": false
+    },
+    "selected_new_file_count": 7,
+    "selected_total_remote_bytes": 9297311797,
+    "source_contract_name": "track_b_phase3_bounded_multifile_replication_20260806_v1",
+    "source_output_root": "/tmp/iturkmen_track_b_40J7M_R1_inventory_constrained_replication_design_20260806_v1_9nC658",
+    "source_status": "bounded_multifile_replication_design_complete",
+    "target_new_unified_event_rows": 896,
+    "target_valid_events_per_file": 128
+  },
+  "status": "phase3_inventory_constrained_multifile_replication_contract_ready",
+  "validated_execution_controls": {
+    "cpu_threads_per_model": 1,
+    "delete_each_temporary_root_file": true,
+    "one_model_per_short_lived_subprocess": true,
+    "onnx_cpu_memory_arena_disabled": true,
+    "onnx_memory_pattern_disabled": true,
+    "record_all_preprocessing_failures": true,
+    "require_unique_recomputed_event_uids": true,
+    "sequential_downloads": true,
+    "serialized_probability_sum_absolute_tolerance": 1e-06,
+    "verify_size_and_adler32_before_root_io": true
+  }
+}

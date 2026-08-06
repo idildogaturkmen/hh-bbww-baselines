@@ -1,0 +1,15 @@
+{
+  "download_strategy": "sequential_one_root_file_at_a_time",
+  "largest_selected_file_bytes": 1763435733,
+  "maximum_file_bytes": 2500000000,
+  "maximum_simultaneous_onnx_session_count": 1,
+  "maximum_simultaneous_root_file_count": 1,
+  "model_strategy": "one_onnx_model_per_short_lived_subprocess",
+  "schema_version": 1,
+  "selected_new_file_count": 7,
+  "selected_total_remote_bytes": 9297311797,
+  "status": "bounded_replication_resource_budget_ready",
+  "target_new_unified_event_rows": 896,
+  "target_valid_events_per_file": 128,
+  "temporary_storage_policy": "delete_each_downloaded_root_file_after_its_file-level outputs and identities validate"
+}

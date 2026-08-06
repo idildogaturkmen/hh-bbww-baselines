@@ -1,0 +1,30 @@
+{
+  "cumulative_files_per_lane_after_replication": {
+    "qcd": 3,
+    "ttbar": 3,
+    "zjets": 3,
+    "zz": 2
+  },
+  "full_44_file_balanced_study_authorized": false,
+  "full_46_file_tail_study_authorized": false,
+  "full_90_selection_row_execution_authorized": false,
+  "largest_selected_file_bytes": 1763435733,
+  "new_files_per_lane": {
+    "qcd": 2,
+    "ttbar": 2,
+    "zjets": 2,
+    "zz": 1
+  },
+  "next_gate": "40J7N_freeze_bounded_multifile_replication_contract",
+  "published_canary_event_row_count": 256,
+  "published_canary_file_count": 4,
+  "replication_execution_authorized": false,
+  "replication_lane_count": 4,
+  "schema_version": 1,
+  "selected_new_file_count": 7,
+  "selected_total_remote_bytes": 9297311797,
+  "status": "bounded_multifile_replication_design_complete",
+  "target_new_unified_event_rows": 896,
+  "target_valid_events_per_file": 128,
+  "track_b_physical_weighting_authorized": false
+}
