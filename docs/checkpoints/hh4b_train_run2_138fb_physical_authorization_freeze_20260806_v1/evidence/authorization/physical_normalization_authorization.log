@@ -1,0 +1,126 @@
+============================================================
+RUN-2 138 FB^-1 PHYSICAL NORMALIZATION AUTHORIZATION V2
+============================================================
+REPO=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines
+EXPECTED_HEAD=f01df61d4bf69487a7044d1a1d42c84568996aa2
+CAMPAIGN_ROOT=/uscms_data/d3/iturkmen/hh4b_delphes/common_table_scaleout/hh4b_train_common_table_full_scaleout_manifest_preflight_v2_20260805T221631Z
+OUTPUT_ROOT=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z
+LUMINOSITY_PB=138000.0
+EXPOSURE_LABEL=Run-2 13 TeV, 138 fb^-1 expected-yield projection
+From https://github.com/idildogaturkmen/hh-bbww-baselines
+ * branch            delphes-hh4b-production -> FETCH_HEAD
+CURRENT_BRANCH=delphes-hh4b-production
+CURRENT_HEAD=f01df61d4bf69487a7044d1a1d42c84568996aa2
+REMOTE_HEAD=f01df61d4bf69487a7044d1a1d42c84568996aa2
+WORKTREE_CLEAN=PASS
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/SHA256SUMS
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_policy_freeze_20260805_v1/SHA256SUMS
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_production_plan.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_source_worker_manifest.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/full_output_audit/source_output_audit_464.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/full_output_audit/full_464_source_output_audit_summary.json
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/common_table_full_freeze_contract.json
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_policy_freeze_20260805_v1/canary_evidence/source_physical_coefficient_registry_canary.tsv
+PASS_INPUT=/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_policy_freeze_20260805_v1/approved_common_train_table_contract.json
+PASS_INPUT=/uscms_data/d3/iturkmen/hh4b_delphes/runtime/hh4b_broad_ml_py39_v1/bin/python
+./.gitattributes: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./common_table_full_freeze_contract.json: OK
+./evidence/full_output_audit/condor_history_final.tsv: OK
+./evidence/full_output_audit/condor_queue_final.tsv: OK
+./evidence/full_output_audit/fold_output_summary.tsv: OK
+./evidence/full_output_audit/full_464_source_output_audit.log: OK
+./evidence/full_output_audit/full_464_source_output_audit_summary.json: OK
+./evidence/full_output_audit/global_event_uid_audit.json: OK
+./evidence/full_output_audit/output_schema_summary.tsv: OK
+./evidence/full_output_audit/process_output_summary.tsv: OK
+./evidence/full_output_audit/source_output_audit_464.tsv: OK
+./evidence/full_output_audit/transport_output_summary.tsv: OK
+./evidence/git_whitespace_diagnostic_lines.tsv: OK
+./evidence/git_whitespace_policy_receipt.json: OK
+./evidence/production_manifest/fold_accounting_summary.tsv: OK
+./evidence/production_manifest/full_464_production_plan.tsv: OK
+./evidence/production_manifest/full_464_source_worker_manifest.tsv: OK
+./evidence/production_manifest/full_manifest_preflight_summary.json: OK
+./evidence/production_manifest/pilot_reuse_checksum_audit_7.tsv: OK
+./evidence/production_manifest/process_accounting_summary.tsv: OK
+./evidence/production_manifest/source_input_checksum_audit_464.tsv: OK
+./evidence/production_manifest/transport_accounting_summary.tsv: OK
+./evidence/submission/common_table_scaleout_457.sub: OK
+./evidence/submission/jobs_457.tsv: OK
+./evidence/submission/jobs_457_headerless.queue: OK
+./evidence/submission/pre_submission_contract.json: OK
+./evidence/submission/run_common_table_worker.sh: OK
+./evidence/submission/submission_receipt.json: OK
+./README.md: OK
+./approved_common_train_table_contract.json: OK
+./augmentation_evidence/AUGMENTATION_REPORT.md: OK
+./augmentation_evidence/augmentation_determinism.tsv: OK
+./augmentation_evidence/augmentation_summary.json: OK
+./augmentation_evidence/combined_coverage_gates.tsv: OK
+./augmentation_evidence/scanned_source_weight_diagnostics.tsv: OK
+./augmentation_evidence/targeted_weight_transport_coverage_rows.tsv: OK
+./canary_evidence/CANARY_REPORT.md: OK
+./canary_evidence/canary_btag_category_summary.tsv: OK
+./canary_evidence/canary_summary.json: OK
+./canary_evidence/common_feature_schema_canary.tsv: OK
+./canary_evidence/common_reconstruction_policy_canary.json: OK
+./canary_evidence/determinism_audit.tsv: OK
+./canary_evidence/fold_local_comparison_weight_summary_canary.tsv: OK
+./canary_evidence/fold_local_source_comparison_weight_registry_canary.tsv: OK
+./canary_evidence/historical_reconstruction_parity.tsv: OK
+./canary_evidence/selected_canary_sources.tsv: OK
+./canary_evidence/source_physical_coefficient_registry_canary.tsv: OK
+./review_evidence/REVIEW_REPORT.md: OK
+./review_evidence/comparison_weight_closure.tsv: OK
+./review_evidence/physical_coefficient_join_summary.tsv: OK
+./review_evidence/reconstruction_parity_summary.tsv: OK
+./review_evidence/review_gates.tsv: OK
+./review_evidence/review_summary.json: OK
+./review_evidence/weight_transport_diagnostics.tsv: OK
+./review_evidence/weight_transport_diagnostics_git_serialization_receipt.json: OK
+./source_artifact_manifest.tsv: OK
+COMMON_TABLE_FREEZE_CHECKSUMS=PASS
+COMMON_TABLE_POLICY_CHECKSUMS=PASS
+OUTPUT_ROOT_PREPARATION=PASS
+LUMINOSITY_PB=138000
+FULL_SOURCES=464/464
+PRIMARY_SOURCES_AUTHORIZED=441/441
+AUXILIARY_SOURCES_EXCLUDED=23/23
+ACCOUNTING_ROWS=3799873/3799873
+RESOLVED_ROWS=1171072/1171072
+PRIMARY_EVENTS=3569873/3569873
+AUXILIARY_EVENTS=230000/230000
+PRIMARY_NEGATIVE_GENERATOR_WEIGHT_ROWS=70
+SOURCE_EVENT_WEIGHT_CLOSURE=PASS
+RESOLVED_FILE_WEIGHT_CLOSURE=PASS
+PROCESS_YIELD_CLOSURE=PASS
+COEFFICIENT_CAMPAIGN_YIELD_CLOSURE=PASS
+SAMPLE_CLASS_YIELD_CLOSURE=PASS
+FOLD_YIELD_CLOSURE=PASS
+TRANSPORT_YIELD_CLOSURE=PASS
+GLOBAL_GENERATED_RUN2_YIELD=2252070034699.9512
+GLOBAL_RESOLVED_RUN2_YIELD=62294488265.981934
+SIGNAL_RESOLVED_RUN2_YIELD=754.78495657184658
+BACKGROUND_RESOLVED_RUN2_YIELD=62294487511.196976
+COMMON_TABLE_PAYLOAD_MUTATED=FALSE
+AUTHORIZATION_MODEL=EXTERNAL_IMMUTABLE_SIDECAR
+PHYSICAL_WEIGHT_APPLICATION_AUTHORIZED=TRUE
+AUXILIARY_QCD_PHYSICAL_WEIGHT_APPLICATION_AUTHORIZED=FALSE
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+MODELS_TRAINED=0
+NOMINAL_CUT_THRESHOLD_SELECTED=FALSE
+REPOSITORY_MODIFIED=FALSE
+RESULT=RUN2_138FB_PHYSICAL_NORMALIZATION_AUTHORIZATION_V2_PASS
+NEXT=FREEZE_PHYSICAL_AUTHORIZATION_THEN_EVALUATE_HISTORICAL_RHH34
+SOURCE_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/source_physical_yield_summary_464.tsv
+PROCESS_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/process_physical_yield_summary.tsv
+CAMPAIGN_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/coefficient_campaign_yield_summary.tsv
+CLASS_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/sample_class_physical_yield_summary.tsv
+FOLD_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/fold_physical_yield_summary.tsv
+TRANSPORT_SUMMARY=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/transport_physical_yield_summary.tsv
+AUTHORIZATION_REGISTRY=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/physical_weight_authorization_registry_464.tsv
+COLUMN_ALIAS_CONTRACT=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/authorized_physical_weight_column_aliases.json
+SUMMARY_JSON=/uscms_data/d3/iturkmen/hh4b_delphes/physical_normalization/hh4b_train_run2_138fb_physical_authorization_v2_20260806T002543Z/physical_normalization_authorization_summary.json

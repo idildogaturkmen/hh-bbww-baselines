@@ -1,0 +1,3 @@
+sample_class	sources	accounting_rows	resolved_rows	positive_generator_weight_rows	negative_generator_weight_rows	zero_generator_weight_rows	sum_generator_nominal_weight	generated_run2_yield	resolved_run2_yield	generated_run2_sumw2	resolved_run2_sumw2	generated_effective_events	resolved_effective_events	signed_resolved_fraction
+background	354	3419873	951759	3419803	70	0	432254591.26939917	2252070033409.6577	62294487511.196976	3.656285174401095e+18	6.538130885204535e+16	1387150.9451427152	59353.4030201856	0.027660990371992326
+signal	87	150000	90638	150000	0	0	179.06699934974313	1290.2934607401717	754.7849565718466	16.874843552961277	9.78933096864414	98659.11998554155	58196.043477531945	0.5849715429378889
