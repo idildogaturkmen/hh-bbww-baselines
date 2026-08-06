@@ -1,0 +1,72 @@
+{
+  "authorized_primary_resolved_rows_read_for_accounting": 1042397,
+  "category_comparison": [
+    {
+      "acceptance_floor": 0.584957,
+      "canary_tolerance": 0.001,
+      "category_id": "exact3tag",
+      "default_full_search_best_structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+      "default_full_search_max_signal_efficiency": 0.5866881131047391,
+      "default_full_search_passes_canary": true,
+      "old_diagnostic_expected_max_signal_efficiency": 0.58594095229,
+      "reduced_matches_old_diagnostic_at_1e_minus_12": false,
+      "reduced_minus_old_diagnostic": 0.000747160814739134,
+      "reduced_search_best_structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+      "reduced_search_max_signal_efficiency": 0.5866881131047391,
+      "reduced_search_passes_canary": true,
+      "target": 0.585957
+    },
+    {
+      "acceptance_floor": 0.584957,
+      "canary_tolerance": 0.001,
+      "category_id": "ge4tag",
+      "default_full_search_best_structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+      "default_full_search_max_signal_efficiency": 0.5845961647399267,
+      "default_full_search_passes_canary": false,
+      "old_diagnostic_expected_max_signal_efficiency": 0.585252113872,
+      "reduced_matches_old_diagnostic_at_1e_minus_12": true,
+      "reduced_minus_old_diagnostic": 3.842481888227667e-13,
+      "reduced_search_best_structure_id": "symmetric_rectangular_mass__category__plus_h2_pt",
+      "reduced_search_max_signal_efficiency": 0.5852521138723843,
+      "reduced_search_passes_canary": true,
+      "target": 0.585957
+    }
+  ],
+  "default_search_settings": {
+    "beam_width": 128,
+    "max_coordinate_passes": 8,
+    "quantile_count": 63,
+    "refinement_starts": 16
+  },
+  "diagnosis": "search_budget_dependence_confirmed_but_not_exact_old_diagnostic_reproduction",
+  "failed_canary_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_committed_code_canary_v1_20260806T190836Z",
+  "next_action": "audit per-structure thresholds before amending the canary configuration",
+  "old_diagnostic_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_category_conditional_diagnostic_v2_20260806T181344Z",
+  "physics_result": false,
+  "production_contract_unchanged": {
+    "beam_width": 128,
+    "max_coordinate_passes": 8,
+    "quantile_count": 63,
+    "refinement_starts": 16,
+    "target_signal_efficiency": 0.585957,
+    "target_tolerance": 0.0
+  },
+  "production_cut_selected": false,
+  "production_families_ranked": 0,
+  "production_thresholds_scanned": 0,
+  "reduced_canary_return_code": 0,
+  "reduced_search_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_committed_canary_search_budget_diagnostic_v1_20260806T192014Z/reduced_search_canary",
+  "reduced_search_settings": {
+    "beam_width": 16,
+    "max_coordinate_passes": 2,
+    "quantile_count": 7,
+    "refinement_starts": 4
+  },
+  "repository_head": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+  "repository_modified": false,
+  "sampled_rows_both_workflows": 26936,
+  "schema_version": 1,
+  "status": "pass_diagnostic_not_physics_result",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

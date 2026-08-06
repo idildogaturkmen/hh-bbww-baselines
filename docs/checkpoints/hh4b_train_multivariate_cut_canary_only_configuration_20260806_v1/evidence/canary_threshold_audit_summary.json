@@ -1,0 +1,38 @@
+{
+  "default_and_reduced_input_root_identical": true,
+  "default_full_search_deterministic_rerun": true,
+  "default_reduced_inner_selection_difference_count": 9,
+  "default_reduced_threshold_difference_count": 27,
+  "diagnosis": "source_category_counts_match_but_reduced_committed_and_old_diagnostic_differ_for_at_least_one_structure",
+  "inner_fold_records_audited": 24,
+  "next_action": "inspect the mismatched structure rows and optimizer audits; do not freeze a canary-only configuration or submit HTCondor yet",
+  "old_event_uid_identity_provable_from_archived_manifest": false,
+  "optimizer_commit_ancestor": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+  "physics_result": false,
+  "production_contract_unchanged": {
+    "beam_width": 128,
+    "max_coordinate_passes": 8,
+    "quantile_count": 63,
+    "refinement_starts": 16,
+    "target_signal_efficiency": 0.585957,
+    "target_tolerance": 0.0
+  },
+  "production_cut_selected": false,
+  "production_families_ranked": 0,
+  "production_thresholds_scanned": 0,
+  "reduced_matches_old_per_structure_count": 4,
+  "reduced_old_mismatched_category_family_ids": [
+    "exact3tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+    "ge4tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets"
+  ],
+  "reduced_search_deterministic_rerun": true,
+  "repository_head": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+  "repository_modified": false,
+  "schema_version": 1,
+  "source_category_manifest_key_coverage_pass": true,
+  "source_category_written_row_counts_match": true,
+  "status": "pass_threshold_audit_not_physics_result",
+  "structures_audited": 6,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

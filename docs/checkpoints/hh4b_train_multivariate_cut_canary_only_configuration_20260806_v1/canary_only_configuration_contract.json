@@ -1,0 +1,50 @@
+{
+  "authoritative_optimizer_commit": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+  "branch": "delphes-hh4b-production",
+  "canary_only_search_budget": {
+    "absolute_oof_tolerance": 0.001,
+    "beam_width": 16,
+    "max_coordinate_passes": 2,
+    "quantile_count": 7,
+    "refinement_starts": 4
+  },
+  "configuration": {
+    "canary_only_path": "configs/baselines/hh4b_multivariate_cut_nested_oof_canary_v1.json",
+    "canary_only_sha256": "ac0f0f47f074194351b4847ec80946168daee701f224b5b9738dd800e013d0f0",
+    "production_path": "configs/baselines/hh4b_multivariate_cut_nested_oof_v1.json",
+    "production_sha256": "784b380f6905b50f706697f241f875038b8166485d967754eacd34215dd3aa37"
+  },
+  "created_at_utc": "2026-08-06T19:53:50.040108+00:00",
+  "decisive_findings": {
+    "committed_optimizer_is_authoritative": true,
+    "core_optimizer_function_differences": 4,
+    "difference_is_optimizer_implementation_path": true,
+    "effective_event_identity_proved_indirectly": true,
+    "old_thresholds_replay_old_metrics_on_committed_tables": true,
+    "same_effective_canary_tables_confirmed": true
+  },
+  "freeze_repository_head": "7b2b11d6f97bc7e113161e74802a1b962f2e5f7a",
+  "next": "push this configuration freeze, rerun the committed six-sentinel canary twice with the canary-only configuration on the immutable 26936-row fold tables, freeze the passing evidence, then prepare a full-production-settings HTCondor pilot",
+  "production_contract_unchanged": {
+    "beam_width": 128,
+    "categories": 2,
+    "max_coordinate_passes": 8,
+    "outer_folds": 5,
+    "quantile_count": 63,
+    "refinement_starts": 16,
+    "structure_jobs": 270,
+    "structures_per_category": 27,
+    "target_signal_efficiency": 0.585957,
+    "target_tolerance": 0.0
+  },
+  "schema_version": 1,
+  "state_at_freeze": {
+    "physics_result": false,
+    "production_cut_selected": false,
+    "production_families_ranked": 0,
+    "production_thresholds_scanned": 0,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "status": "pass_frozen_before_committed_canary_rerun"
+}

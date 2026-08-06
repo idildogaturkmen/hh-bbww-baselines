@@ -1,0 +1,41 @@
+{
+  "core_optimizer_function_difference_count": 4,
+  "core_optimizer_function_names": [
+    "build_threshold_grids",
+    "deterministic_beam_seeds",
+    "exact_coordinate_candidate",
+    "optimize_configuration"
+  ],
+  "diagnosis": "same_effective_canary_tables_confirmed_old_metrics_replay_optimizer_implementation_path_differs",
+  "inner_heldout_records_replayed": 8,
+  "mismatched_category_family_ids": [
+    "exact3tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+    "ge4tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets"
+  ],
+  "next_action": "freeze the committed implementation as authoritative, add a separate committed canary-only 7/16/4/2 configuration, preserve production at 63/128/16/8 with zero tolerance, rerun the committed canary, then prepare the full-settings HTCondor pilot",
+  "old_event_uid_identity_proved_indirectly_by_threshold_metric_replay": true,
+  "old_metrics_replay_on_committed_tables_all": true,
+  "old_replayed_vs_reduced_selection_difference_count": 8,
+  "old_vs_reduced_threshold_difference_count": 22,
+  "optimizer_audit_difference_count": 72,
+  "optimizer_commit_ancestor": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+  "physics_result": false,
+  "production_contract_unchanged": {
+    "beam_width": 128,
+    "max_coordinate_passes": 8,
+    "quantile_count": 63,
+    "refinement_starts": 16,
+    "target_signal_efficiency": 0.585957,
+    "target_tolerance": 0.0
+  },
+  "production_cut_selected": false,
+  "production_families_ranked": 0,
+  "production_thresholds_scanned": 0,
+  "repository_head": "7b2b11d6f97bc7e113161e74802a1b962f2e5f7a",
+  "repository_modified": false,
+  "schema_version": 1,
+  "status": "pass_mismatched_structure_replay_audit_not_physics_result",
+  "structures_replayed": 2,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
