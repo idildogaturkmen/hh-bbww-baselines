@@ -1,6 +1,6 @@
 universe = vanilla
 executable = /uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/condor/run_hh4b_multivariate_cut_structure_job.sh
-arguments = $(job_index) $(outer_fold) $(category_id) "$(structure_id)" "$(config)" "$(input_root)" "$(output_root)" $(expected_repository_head)
+arguments = "$(job_index) $(outer_fold) $(category_id) $(structure_id) $(config) $(input_root) $(output_root) $(expected_repository_head)"
 
 should_transfer_files = NO
 getenv = True
