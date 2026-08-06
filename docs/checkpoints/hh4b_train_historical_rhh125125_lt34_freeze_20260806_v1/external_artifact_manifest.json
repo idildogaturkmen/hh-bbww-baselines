@@ -1,0 +1,10 @@
+{
+  "artifact_role": "paired source-group bootstrap draw counts",
+  "bytes": 1276174,
+  "copied_to_git": false,
+  "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/hh4b_train_historical_rhh125125_lt34_v4_20260806T055823Z/source_group_bootstrap_draw_counts.parquet",
+  "reason": "binary Parquet bootstrap payload remains external; exact path and checksum are frozen",
+  "schema_version": 1,
+  "sha256": "3ac59a86fefc9e21275df73c945cd08e2b24642f02acc2b6459cf3c0f62c929b",
+  "status": "pass_external_artifact_frozen_by_path_and_sha256"
+}

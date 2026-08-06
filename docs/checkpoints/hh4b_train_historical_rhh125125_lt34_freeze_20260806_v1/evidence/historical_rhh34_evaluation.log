@@ -1,0 +1,143 @@
+============================================================
+HISTORICAL FIXED COMPARATOR V4: r_hh_125_125 < 34
+============================================================
+OUT=/uscms_data/d3/iturkmen/hh4b_delphes/baselines/hh4b_train_historical_rhh125125_lt34_v4_20260806T055823Z
+From https://github.com/idildogaturkmen/hh-bbww-baselines
+ * branch            delphes-hh4b-production -> FETCH_HEAD
+CURRENT_BRANCH=delphes-hh4b-production
+LOCAL_HEAD=b2ec5442916e9ade079439782f739546c533298c
+EXPECTED_LOCAL_HEAD=b2ec5442916e9ade079439782f739546c533298c
+REMOTE_HEAD=b2ec5442916e9ade079439782f739546c533298c
+EXPECTED_REMOTE_HEAD=b2ec5442916e9ade079439782f739546c533298c
+LOCAL_PARENT=80279019f7d3cfea73607e7de07f952a4083d35c
+EXPECTED_AUTH_HEAD=80279019f7d3cfea73607e7de07f952a4083d35c
+MERGE_BASE=b2ec5442916e9ade079439782f739546c533298c
+AHEAD_COUNT=0
+BEHIND_COUNT=0
+LOCAL_SUBJECT=docs: freeze Track B empirical mass-grid consistency
+EXPECTED_LOCAL_SUBJECT=docs: freeze Track B empirical mass-grid consistency
+ALLOWED_TRACK_B_PREFIX=docs/checkpoints/track_b_phase2_empirical_mapping_consistency_20260805_v1/
+TRACK_B_COMMIT_PATH_COUNT=26
+LOCAL_REMOTE_EXACT_HEAD=PASS
+TRACK_B_COMMIT_PARENT=PASS
+TRACK_B_COMMIT_SCOPE=PASS
+TRACKED_WORKTREE_CLEAN=PASS
+UNTRACKED_WORKTREE_CLEAN=PASS
+./.gitattributes: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./common_table_full_freeze_contract.json: OK
+./evidence/full_output_audit/condor_history_final.tsv: OK
+./evidence/full_output_audit/condor_queue_final.tsv: OK
+./evidence/full_output_audit/fold_output_summary.tsv: OK
+./evidence/full_output_audit/full_464_source_output_audit.log: OK
+./evidence/full_output_audit/full_464_source_output_audit_summary.json: OK
+./evidence/full_output_audit/global_event_uid_audit.json: OK
+./evidence/full_output_audit/output_schema_summary.tsv: OK
+./evidence/full_output_audit/process_output_summary.tsv: OK
+./evidence/full_output_audit/source_output_audit_464.tsv: OK
+./evidence/full_output_audit/transport_output_summary.tsv: OK
+./evidence/git_whitespace_diagnostic_lines.tsv: OK
+./evidence/git_whitespace_policy_receipt.json: OK
+./evidence/production_manifest/fold_accounting_summary.tsv: OK
+./evidence/production_manifest/full_464_production_plan.tsv: OK
+./evidence/production_manifest/full_464_source_worker_manifest.tsv: OK
+./evidence/production_manifest/full_manifest_preflight_summary.json: OK
+./evidence/production_manifest/pilot_reuse_checksum_audit_7.tsv: OK
+./evidence/production_manifest/process_accounting_summary.tsv: OK
+./evidence/production_manifest/source_input_checksum_audit_464.tsv: OK
+./evidence/production_manifest/transport_accounting_summary.tsv: OK
+./evidence/submission/common_table_scaleout_457.sub: OK
+./evidence/submission/jobs_457.tsv: OK
+./evidence/submission/jobs_457_headerless.queue: OK
+./evidence/submission/pre_submission_contract.json: OK
+./evidence/submission/run_common_table_worker.sh: OK
+./evidence/submission/submission_receipt.json: OK
+./README.md: OK
+./artifact_manifest.tsv: OK
+./evidence/authorization/authorized_physical_weight_column_aliases.json: OK
+./evidence/authorization/coefficient_campaign_yield_summary.tsv: OK
+./evidence/authorization/fold_physical_yield_summary.tsv: OK
+./evidence/authorization/physical_normalization_authorization.log: OK
+./evidence/authorization/physical_normalization_authorization_summary.json: OK
+./evidence/authorization/physical_weight_authorization_registry_464.tsv: OK
+./evidence/authorization/process_physical_yield_summary.tsv: OK
+./evidence/authorization/sample_class_physical_yield_summary.tsv: OK
+./evidence/authorization/source_physical_yield_summary_464.tsv: OK
+./evidence/authorization/transport_physical_yield_summary.tsv: OK
+./run2_physical_authorization_freeze_contract.json: OK
+./README.md: OK
+./auxiliary_qcd_fold_balance.tsv: OK
+./benchmark_contract.json: OK
+./fold_optimization_evidence/README.md: OK
+./fold_optimization_evidence/optimization.log: OK
+./fold_optimization_evidence/optimization_summary.json: OK
+./fold_optimization_evidence/optimization_trace.tsv: OK
+./fold_optimization_evidence/optimized_fold_stratum_summary.tsv: OK
+./fold_optimization_evidence/optimized_fold_summary.tsv: OK
+./fold_optimization_evidence/optimized_group_fold_map_k5.tsv: OK
+./fold_optimization_evidence/process_fold_coverage.tsv: OK
+./fold_optimization_evidence/source_fold_features.tsv: OK
+./README.md: OK
+./approved_common_train_table_contract.json: OK
+./augmentation_evidence/AUGMENTATION_REPORT.md: OK
+./augmentation_evidence/augmentation_determinism.tsv: OK
+./augmentation_evidence/augmentation_summary.json: OK
+./augmentation_evidence/combined_coverage_gates.tsv: OK
+./augmentation_evidence/scanned_source_weight_diagnostics.tsv: OK
+./augmentation_evidence/targeted_weight_transport_coverage_rows.tsv: OK
+./canary_evidence/CANARY_REPORT.md: OK
+./canary_evidence/canary_btag_category_summary.tsv: OK
+./canary_evidence/canary_summary.json: OK
+./canary_evidence/common_feature_schema_canary.tsv: OK
+./canary_evidence/common_reconstruction_policy_canary.json: OK
+./canary_evidence/determinism_audit.tsv: OK
+./canary_evidence/fold_local_comparison_weight_summary_canary.tsv: OK
+./canary_evidence/fold_local_source_comparison_weight_registry_canary.tsv: OK
+./canary_evidence/historical_reconstruction_parity.tsv: OK
+./canary_evidence/selected_canary_sources.tsv: OK
+./canary_evidence/source_physical_coefficient_registry_canary.tsv: OK
+./review_evidence/REVIEW_REPORT.md: OK
+./review_evidence/comparison_weight_closure.tsv: OK
+./review_evidence/physical_coefficient_join_summary.tsv: OK
+./review_evidence/reconstruction_parity_summary.tsv: OK
+./review_evidence/review_gates.tsv: OK
+./review_evidence/review_summary.json: OK
+./review_evidence/weight_transport_diagnostics.tsv: OK
+./review_evidence/weight_transport_diagnostics_git_serialization_receipt.json: OK
+./source_artifact_manifest.tsv: OK
+ALL_CHECKPOINT_CHECKSUMS=PASS
+COMPARATOR_DEFINITION=r_hh_125_125<34.0
+THRESHOLDS_EVALUATED=1
+THRESHOLD_SCAN_PERFORMED=FALSE
+TUNING_PERFORMED=FALSE
+PHYSICAL_SOURCES=441/441
+AUXILIARY_QCD_SOURCES_EXCLUDED=23/23
+AUXILIARY_RESOLVED_ROWS_EXCLUDED=128675
+SIGNAL_PRECUT_YIELD=754.78495657184658
+BACKGROUND_PRECUT_YIELD=62294487511.196976
+SIGNAL_POSTCUT_YIELD=417.46273293569186
+BACKGROUND_POSTCUT_YIELD=20240622849.775902
+SIGNAL_PHYSICAL_EFFICIENCY=0.55308830588219915
+BACKGROUND_PHYSICAL_EFFICIENCY=0.32491836209645031
+SIGNAL_OVER_BACKGROUND=2.0624994400323698e-08
+ASIMOV_SIGNIFICANCE_STAT_ONLY=0.0029343085318647984
+SIGNAL_EFFECTIVE_EVENTS=31769.297520111777
+BACKGROUND_EFFECTIVE_EVENTS=18233.175821910761
+SIGNAL_MC_RELATIVE_UNCERTAINTY=0.0056104305932759444
+BACKGROUND_MC_RELATIVE_UNCERTAINTY=0.0074057464670722597
+BOOTSTRAP_REPLICAS=2000/2000
+BOOTSTRAP_SEED=20260727
+BOOTSTRAP_UNIT=SOURCE_GROUP
+BOOTSTRAP_DRAW_COUNTS_SHA256=3ac59a86fefc9e21275df73c945cd08e2b24642f02acc2b6459cf3c0f62c929b
+PAIRED_BOOTSTRAP_PLAN=PASS
+SYSTEMATICS_AWARE_PROFILE_LIKELIHOOD_COMPUTED=FALSE
+COMMON_TABLE_PAYLOAD_MUTATED=FALSE
+PHYSICAL_WEIGHT_APPLICATION_AUTHORIZED=TRUE
+AUXILIARY_QCD_PHYSICAL_WEIGHT_APPLICATION_AUTHORIZED=FALSE
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+MODELS_TRAINED=0
+REPOSITORY_MODIFIED=FALSE
+RESULT=HISTORICAL_RHH125125_LT34_EVALUATION_V4_PASS
+NEXT=FREEZE_HISTORICAL_COMPARATOR_THEN_RUN_NESTED_OOF_CUT
