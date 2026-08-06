@@ -1,0 +1,87 @@
+{
+  "compatible_pdg_mass_pairs": [
+    {
+      "common_prefix_length": "12",
+      "events_read": "2000",
+      "mass_branch": "gen_bhadron_mass",
+      "pdg_branch": "gen_bhadron_pid",
+      "same_eventwise_length_fraction": "1.0"
+    },
+    {
+      "common_prefix_length": "5",
+      "events_read": "2000",
+      "mass_branch": "part_mass",
+      "pdg_branch": "part_pid",
+      "same_eventwise_length_fraction": "1.0"
+    }
+  ],
+  "deterministic_spread_file_count": 10,
+  "direct_mass_branch_profiles": {
+    "gen_dihiggs_mass": {
+      "events_read": 2000,
+      "finite_fraction": 1.0,
+      "flattened_numeric_values": 2000,
+      "jagged_list_length_fields_empty": true,
+      "maximum": 1294.2532958984375,
+      "minimum": 178.4402618408203,
+      "one_value_per_event": true,
+      "present": true,
+      "read_status": "pass",
+      "top_values": "624.69:2,1294.25:1,514.542:1,513.55:1,514.002:1,514.007:1,514.269:1,514.27:1,514.351:1,514.413:1,514.418:1,514.441:1",
+      "typename": "float",
+      "unique_count_capped": 1999
+    },
+    "gen_higgs1_mass": {
+      "events_read": 2000,
+      "finite_fraction": 1.0,
+      "flattened_numeric_values": 2000,
+      "jagged_list_length_fields_empty": true,
+      "maximum": 200.0,
+      "minimum": 40.0,
+      "one_value_per_event": true,
+      "present": true,
+      "read_status": "pass",
+      "top_values": "195:188,150:178,140:134,200:111,60:110,135:105,80:98,95:93,170:92,155:89,125:71,115:66",
+      "typename": "float",
+      "unique_count_capped": 33
+    },
+    "gen_higgs2_mass": {
+      "events_read": 2000,
+      "finite_fraction": 1.0,
+      "flattened_numeric_values": 2000,
+      "jagged_list_length_fields_empty": true,
+      "maximum": 200.0,
+      "minimum": 45.0,
+      "one_value_per_event": true,
+      "present": true,
+      "read_status": "pass",
+      "top_values": "200:262,195:165,145:151,185:110,160:105,75:97,95:96,180:89,175:89,65:86,140:81,125:63",
+      "typename": "float",
+      "unique_count_capped": 32
+    }
+  },
+  "event_identity_branch_detected": false,
+  "interpretation_boundaries": [
+    "Direct generator-mass branch names and pilot profiles are empirical ntuple evidence, not producer documentation.",
+    "The pair is not frozen until the same schema and physically plausible coverage are demonstrated across spread files.",
+    "No stored 138-node event score vector exists in the training ntuple; ONNX inference will be required later.",
+    "No event-identity branch was detected; train/test overlap cannot be excluded from this ntuple alone.",
+    "The physical semantics of gen_weight remain undefined.",
+    "The original training-label ordering remains unproven."
+  ],
+  "next_gate": "40J5B_read_only_multifile_generator_mass_coverage_audit",
+  "pilot_entries_profiled": 2000,
+  "prior_target_logic_shortlist_rows": 150,
+  "provisional_rule": {
+    "exchange_symmetry": true,
+    "first_mass_branch": "gen_higgs1_mass",
+    "second_mass_branch": "gen_higgs2_mass",
+    "status": "provisional_only_pending_deterministic_spread_file_validation",
+    "unordered_pair_operation": "sort each event pair as (min(gen_higgs1_mass,gen_higgs2_mass),max(gen_higgs1_mass,gen_higgs2_mass))"
+  },
+  "repository_head": "4d0b6616cf4ee03279f9d204b8ec45d1f944f13c",
+  "schema_version": 1,
+  "source_40J5A_output_root": "/tmp/iturkmen_track_b_40J5A_training_signal_mass_label_preflight_20260805_v1_DIrZo6",
+  "status": "direct_gen_higgs_mass_pair_ready_for_multifile_validation",
+  "stored_138_score_vector_detected": false
+}

@@ -1,0 +1,26 @@
+Subject: Follow-up on HH4b model and dataset provenance
+
+Dear Congqiao,
+
+I have now completed a local validation of the released three-model inference
+and mass-grid interpretation. The public mass-to-class function and released
+DCB mapping are mutually consistent, and the signal-grid localization behavior
+reproduces across a balanced canary and five additional variable-mass training
+files.
+
+A few points still cannot be established from the released materials:
+
+1. Could you share the original ordered 138-label list or Weaver data
+   configuration and confirm that outputs 0–135 use the same triangular mass
+   ordering as the released code?
+2. Could you confirm that outputs 136 and 137 correspond to QCD and ttbar?
+3. Where are the independent SM HH inference samples, including ggHHkl0,
+   ggHHkl5, qqHH, and the VBF HH benchmarks?
+4. What are the definitions and intended uses of the two gen_weight entries?
+   Across the files I inspected, the second is approximately the first
+   multiplied by 1e-5.
+
+Thank you again for your help.
+
+Best,
+Idil

@@ -1,0 +1,150 @@
+{
+  "balanced_canary": {
+    "ensemble": {
+      "mean_signal_probability": 0.9051279884471363,
+      "top1_exact_fraction": 0.10661764705882353,
+      "top3_fraction": 0.2610294117647059,
+      "top5_fraction": 0.3713235294117647,
+      "within_chebyshev_1_fraction": 0.4264705882352941,
+      "within_chebyshev_2_fraction": 0.5882352941176471
+    },
+    "events": 272,
+    "events_per_cell": 2,
+    "preprocessing_failures": 0,
+    "source_files": 1
+  },
+  "claims_not_allowed": [
+    "independent test-set performance",
+    "authoritatively proven original Weaver output ordering",
+    "calibrated Higgs-mass reconstruction",
+    "unbiased mass resolution",
+    "cross-section-weighted efficiency",
+    "expected yield",
+    "significance or sensitivity"
+  ],
+  "diagonal_behavior": {
+    "diagonal": {
+      "mean_chebyshev_distance": 3.808333333333333,
+      "median_target_rank": 13.5,
+      "n_events": 240,
+      "top1_fraction": 0.03333333333333333,
+      "top3_fraction": 0.14583333333333334,
+      "top5_fraction": 0.2875,
+      "within_chebyshev_1_fraction": 0.4583333333333333,
+      "within_chebyshev_2_fraction": 0.625
+    },
+    "interpretation": "Diagonal target cells show lower exact/top-k localization and larger mean cell distance than off-diagonal target cells.",
+    "off_diagonal": {
+      "mean_chebyshev_distance": 2.8833333333333333,
+      "median_target_rank": 8.0,
+      "n_events": 600,
+      "top1_fraction": 0.135,
+      "top3_fraction": 0.3233333333333333,
+      "top5_fraction": 0.42,
+      "within_chebyshev_1_fraction": 0.4683333333333333,
+      "within_chebyshev_2_fraction": 0.6333333333333333
+    },
+    "weakness_replicated": true
+  },
+  "five_file_replication": {
+    "canary_vs_replication": {
+      "canary_n_events": 272,
+      "diagonal_top5_fraction": {
+        "canary": 0.1875,
+        "replication": 0.2875,
+        "replication_minus_canary": 0.09999999999999998
+      },
+      "mean_signal_probability": {
+        "canary": 0.9051279884471363,
+        "replication": 0.9029006114051111,
+        "replication_minus_canary": -0.002227377042025136
+      },
+      "off_diagonal_top5_fraction": {
+        "canary": 0.3958333333333333,
+        "replication": 0.42,
+        "replication_minus_canary": 0.02416666666666667
+      },
+      "replication_n_events": 840,
+      "top1_exact_fraction": {
+        "canary": 0.10661764705882353,
+        "replication": 0.10595238095238095,
+        "replication_minus_canary": -0.0006652661064425747
+      },
+      "top3_fraction": {
+        "canary": 0.2610294117647059,
+        "replication": 0.2726190476190476,
+        "replication_minus_canary": 0.011589635854341696
+      },
+      "top5_fraction": {
+        "canary": 0.3713235294117647,
+        "replication": 0.3821428571428571,
+        "replication_minus_canary": 0.010819327731092399
+      },
+      "within_chebyshev_1_fraction": {
+        "canary": 0.4264705882352941,
+        "replication": 0.4654761904761905,
+        "replication_minus_canary": 0.039005602240896387
+      },
+      "within_chebyshev_2_fraction": {
+        "canary": 0.5882352941176471,
+        "replication": 0.6309523809523809,
+        "replication_minus_canary": 0.04271708683473385
+      }
+    },
+    "diagonal_events": 240,
+    "ensemble": {
+      "all_three_signal_top1_agreement_fraction": 0.48214285714285715,
+      "mean_signal_probability": 0.9029006114051111,
+      "signal_probability_gt_0p9_fraction": 0.780952380952381,
+      "top1_exact_fraction": 0.10595238095238095,
+      "top3_fraction": 0.2726190476190476,
+      "top5_fraction": 0.3821428571428571,
+      "within_chebyshev_1_fraction": 0.4654761904761905,
+      "within_chebyshev_2_fraction": 0.6309523809523809
+    },
+    "events": 840,
+    "off_diagonal_events": 600,
+    "replication_gates_pass": true,
+    "source_files": 5
+  },
+  "gen_weight_structure": {
+    "length_two": true,
+    "physical_semantics_proven": false,
+    "physical_use_allowed": false,
+    "second_over_first_approximately": 1e-05
+  },
+  "next_gate": "review_commit_publish_empirical_mapping_consistency_checkpoint",
+  "public_release_mapping": {
+    "background_outputs": [
+      136,
+      137
+    ],
+    "original_weaver_ordered_label_list_recovered": false,
+    "public_calculate_class_index_exercised": true,
+    "released_analysis_mapping_proven": true,
+    "signal_outputs": 136
+  },
+  "remaining_external_questions": [
+    "original ordered 138-label list or Weaver data configuration",
+    "author confirmation of outputs 136 and 137 and triangle convention",
+    "location and split provenance of independent HH evaluation samples",
+    "producer definition and intended use of the two gen_weight entries"
+  ],
+  "repository_head_at_install": "80279019f7d3cfea73607e7de07f952a4083d35c",
+  "schema_version": 1,
+  "scientific_claim_allowed": "The released three-model ensemble exhibits reproducible empirical consistency between its 136-cell signal-grid response and generator mass-cell assignments across a balanced canary and a bounded five-file variable-mass training-signal replication.",
+  "status": "empirical_mass_grid_consistency_checkpoint_complete",
+  "validated_generator_mass_rule": {
+    "exchange_symmetric_pair": "sort each event as (min(gen_higgs1_mass,gen_higgs2_mass),max(gen_higgs1_mass,gen_higgs2_mass))",
+    "first_branch": "gen_higgs1_mass",
+    "generator_mass_grid_gev": {
+      "maximum": 200,
+      "minimum": 40,
+      "step": 5
+    },
+    "multifile_validated": true,
+    "occupied_released_10gev_cells": 136,
+    "second_branch": "gen_higgs2_mass",
+    "unique_unordered_5gev_pairs": 561
+  }
+}

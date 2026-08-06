@@ -1,0 +1,30 @@
+{
+  "checkpoint_relative_path": "docs/checkpoints/track_b_phase2_empirical_mapping_consistency_20260805_v1",
+  "decisive_source_sha256": {
+    "40J5A_R1_decision": "6a87f7d16eaea4c86d6e428d17fc373ae263c8cd790a574109d224c29340a31b",
+    "40J5B_summary": "34cca18e41752bc2fada6d32d75fe4453c23bcc663f7d8a5b6e54670b395dc64",
+    "40J5C_R2_review": "7be34b992ce52a940d9af234370ab152b4b4ac246b73452dce10f68cd5143a2b",
+    "40J5C_summary": "a36d72d6a4917710e63b1c965e84c79101003f9330fc6437f6f39053dd3fc26c",
+    "40J5D_summary": "b251984e558232307e0b4a0660c7af5fcde6e9aa96219532dbb9a8a57cb2862c",
+    "released_mapping": "de5017e582fdfcb180e713f1b9971533ff5eba514044f8e360ff1d9d8e02bb0d",
+    "sophon_contract": "ff90137a4c919f0a07d47cbfb21ead3688ee49856d98a0ff16bbbaa7058eb735",
+    "sophon_score_contract": "9b0412c8cce16f4684910207ed3b82a1bfb6b74891c554bba1f1c3b4f9347b86"
+  },
+  "repository_actions": {
+    "commit": false,
+    "git_add": false,
+    "new_checkpoint_directory_installed": true,
+    "push": false
+  },
+  "repository_head_before_install": "80279019f7d3cfea73607e7de07f952a4083d35c",
+  "schema_version": 1,
+  "source_output_roots": {
+    "40J5A": "/tmp/iturkmen_track_b_40J5A_training_signal_mass_label_preflight_20260805_v1_DIrZo6",
+    "40J5A_R1": "/tmp/iturkmen_track_b_40J5A_R1_decisive_review_20260805_v1_aQFdAH",
+    "40J5B": "/tmp/iturkmen_track_b_40J5B_multifile_mass_coverage_20260805_v1_HK8l7x",
+    "40J5C": "/tmp/iturkmen_track_b_40J5C_cell_balanced_onnx_canary_20260805_v1_BGfVcA",
+    "40J5C_R2": "/tmp/iturkmen_track_b_40J5C_R2_empirical_metrics_review_20260805_v1_cu7Rix",
+    "40J5D": "/tmp/iturkmen_track_b_40J5D_multifile_stratified_inference_20260805_v1_3flfur"
+  },
+  "status": "installed_uncommitted"
+}

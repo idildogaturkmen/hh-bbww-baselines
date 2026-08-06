@@ -1,0 +1,4146 @@
+{
+  "diagonal_materially_weaker": true,
+  "diagonal_vs_off_diagonal_gap": {
+    "chebyshev_diag_minus_off": 1.3520833333333333,
+    "top5_off_minus_diag": 0.20833333333333331
+  },
+  "interpretation": "The released three-model ensemble exhibits nontrivial but imperfect localization of the generator-mass cell on a cell-balanced training-signal consistency sample. The result supports a bounded multi-file stratified follow-up, with extra diagonal-cell statistics, but it is not an independent performance or calibrated mass-resolution measurement.",
+  "metrics_by_score_set": {
+    "ensemble": {
+      "cell_level_coverage": {
+        "cells_with_at_least_one_top1_of_2": 27,
+        "cells_with_at_least_one_top3_of_2": 61,
+        "cells_with_at_least_one_top5_of_2": 82,
+        "cells_with_both_events_in_top5": 19,
+        "possible_cells": 136
+      },
+      "conditional_on_signal_probability": {
+        "0": {
+          "median_target_rank": 9.0,
+          "selected_count": 272,
+          "selected_fraction": 1.0,
+          "top1_exact_fraction": 0.10661764705882353,
+          "top3_fraction": 0.2610294117647059,
+          "top5_fraction": 0.3713235294117647,
+          "within_chebyshev_1_fraction": 0.4264705882352941,
+          "within_chebyshev_2_fraction": 0.5882352941176471
+        },
+        "0.5": {
+          "median_target_rank": 8.0,
+          "selected_count": 254,
+          "selected_fraction": 0.9338235294117647,
+          "top1_exact_fraction": 0.11023622047244094,
+          "top3_fraction": 0.27165354330708663,
+          "top5_fraction": 0.38976377952755903,
+          "within_chebyshev_1_fraction": 0.4409448818897638,
+          "within_chebyshev_2_fraction": 0.610236220472441
+        },
+        "0.9": {
+          "median_target_rank": 8.0,
+          "selected_count": 214,
+          "selected_fraction": 0.7867647058823529,
+          "top1_exact_fraction": 0.102803738317757,
+          "top3_fraction": 0.2757009345794392,
+          "top5_fraction": 0.3878504672897196,
+          "within_chebyshev_1_fraction": 0.4439252336448598,
+          "within_chebyshev_2_fraction": 0.6308411214953271
+        },
+        "0.997": {
+          "median_target_rank": 6.0,
+          "selected_count": 107,
+          "selected_fraction": 0.39338235294117646,
+          "top1_exact_fraction": 0.11214953271028037,
+          "top3_fraction": 0.35514018691588783,
+          "top5_fraction": 0.4672897196261682,
+          "within_chebyshev_1_fraction": 0.514018691588785,
+          "within_chebyshev_2_fraction": 0.7009345794392523
+        }
+      },
+      "diagonal_chebyshev_mean": 4.28125,
+      "diagonal_n": 32,
+      "diagonal_top1_fraction": 0.0,
+      "diagonal_top5_fraction": 0.1875,
+      "median_chebyshev_distance": 2.0,
+      "median_target_rank": 9.0,
+      "n_events": 272,
+      "off_diagonal_chebyshev_mean": 2.9291666666666667,
+      "off_diagonal_n": 240,
+      "off_diagonal_top1_fraction": 0.12083333333333333,
+      "off_diagonal_top5_fraction": 0.3958333333333333,
+      "per_cell": {
+        "0": {
+          "mean_chebyshev_distance": 11.5,
+          "mean_target_rank": 20.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "1": {
+          "mean_chebyshev_distance": 14.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "10": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 52.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "100": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 36.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "101": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 16.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "102": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 20.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "103": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "104": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "105": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 21.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "106": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 30.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "107": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "108": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "109": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "11": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "110": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 2
+        },
+        "111": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 12.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "112": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "113": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "114": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 10.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "115": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "116": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "117": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 12.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "118": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "119": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 16.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "12": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 12.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "120": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "121": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 31.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "122": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "123": {
+          "mean_chebyshev_distance": 6.5,
+          "mean_target_rank": 32.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "124": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 30.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "125": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "126": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 27.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "127": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "128": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 2
+        },
+        "129": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "13": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "130": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 11.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "131": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 19.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "132": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "133": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 45.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "134": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "135": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "14": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "15": {
+          "mean_chebyshev_distance": 9.0,
+          "mean_target_rank": 36.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "16": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "17": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 20.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "18": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 27.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "19": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "2": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "20": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 9.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "21": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "22": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 60.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "23": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "24": {
+          "mean_chebyshev_distance": 9.5,
+          "mean_target_rank": 31.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "25": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 22.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "26": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "27": {
+          "mean_chebyshev_distance": 7.0,
+          "mean_target_rank": 35.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "28": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 29.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "29": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "3": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 27.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "30": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "31": {
+          "mean_chebyshev_distance": 12.0,
+          "mean_target_rank": 100.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "32": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "33": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 24.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "34": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 52.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "35": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "36": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 3.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "37": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 28.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "38": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 50.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "39": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "4": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "40": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "41": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "42": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 14.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "43": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "44": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 40.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "45": {
+          "mean_chebyshev_distance": 7.5,
+          "mean_target_rank": 68.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "46": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "47": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 60.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "48": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "49": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "5": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 35.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "50": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "51": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 24.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "52": {
+          "mean_chebyshev_distance": 7.5,
+          "mean_target_rank": 50.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "53": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 15.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "54": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 10.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "55": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "56": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 22.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "57": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "58": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 31.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "59": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "6": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "60": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 47.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "61": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "62": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 26.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "63": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 26.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "64": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 44.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "65": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "66": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "67": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 3.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "68": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 17.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "69": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 24.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "7": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "70": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 55.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "71": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "72": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 57.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "73": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "74": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "75": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 27.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "76": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 21.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "77": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "78": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 19.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "79": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "8": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 29.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "80": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 8.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "81": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 12.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "82": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "83": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "84": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "85": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "86": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "87": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 37.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "88": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "89": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 22.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "9": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "90": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "91": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "92": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 24.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "93": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "94": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "95": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 19.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "96": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 17.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "97": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "98": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "99": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        }
+      },
+      "top1_exact_fraction": 0.10661764705882353,
+      "top3_fraction": 0.2610294117647059,
+      "top5_fraction": 0.3713235294117647,
+      "within_chebyshev_1_fraction": 0.4264705882352941,
+      "within_chebyshev_2_fraction": 0.5882352941176471
+    },
+    "model0": {
+      "cell_level_coverage": {
+        "cells_with_at_least_one_top1_of_2": 27,
+        "cells_with_at_least_one_top3_of_2": 61,
+        "cells_with_at_least_one_top5_of_2": 82,
+        "cells_with_both_events_in_top5": 18,
+        "possible_cells": 136
+      },
+      "conditional_on_signal_probability": {
+        "0": {
+          "median_target_rank": 10.0,
+          "selected_count": 272,
+          "selected_fraction": 1.0,
+          "top1_exact_fraction": 0.11029411764705882,
+          "top3_fraction": 0.2647058823529412,
+          "top5_fraction": 0.36764705882352944,
+          "within_chebyshev_1_fraction": 0.39705882352941174,
+          "within_chebyshev_2_fraction": 0.5955882352941176
+        },
+        "0.5": {
+          "median_target_rank": 10.0,
+          "selected_count": 253,
+          "selected_fraction": 0.9301470588235294,
+          "top1_exact_fraction": 0.11857707509881422,
+          "top3_fraction": 0.2727272727272727,
+          "top5_fraction": 0.3794466403162055,
+          "within_chebyshev_1_fraction": 0.40711462450592883,
+          "within_chebyshev_2_fraction": 0.6126482213438735
+        },
+        "0.9": {
+          "median_target_rank": 10.0,
+          "selected_count": 214,
+          "selected_fraction": 0.7867647058823529,
+          "top1_exact_fraction": 0.10747663551401869,
+          "top3_fraction": 0.26635514018691586,
+          "top5_fraction": 0.37850467289719625,
+          "within_chebyshev_1_fraction": 0.411214953271028,
+          "within_chebyshev_2_fraction": 0.6448598130841121
+        },
+        "0.997": {
+          "median_target_rank": 5.5,
+          "selected_count": 114,
+          "selected_fraction": 0.41911764705882354,
+          "top1_exact_fraction": 0.13157894736842105,
+          "top3_fraction": 0.3508771929824561,
+          "top5_fraction": 0.5,
+          "within_chebyshev_1_fraction": 0.4824561403508772,
+          "within_chebyshev_2_fraction": 0.6666666666666666
+        }
+      },
+      "diagonal_chebyshev_mean": 4.0625,
+      "diagonal_n": 32,
+      "diagonal_top1_fraction": 0.03125,
+      "diagonal_top5_fraction": 0.25,
+      "median_chebyshev_distance": 2.0,
+      "median_target_rank": 10.0,
+      "n_events": 272,
+      "off_diagonal_chebyshev_mean": 2.8583333333333334,
+      "off_diagonal_n": 240,
+      "off_diagonal_top1_fraction": 0.12083333333333333,
+      "off_diagonal_top5_fraction": 0.38333333333333336,
+      "per_cell": {
+        "0": {
+          "mean_chebyshev_distance": 12.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "1": {
+          "mean_chebyshev_distance": 14.0,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "10": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 52.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "100": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 44.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "101": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 18.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "102": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 26.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "103": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 14.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "104": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "105": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 22.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "106": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 29.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "107": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "108": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "109": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 14.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "11": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "110": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 2
+        },
+        "111": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "112": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "113": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "114": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 10.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "115": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "116": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "117": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 10.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "118": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 26.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "119": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "12": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 9.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "120": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "121": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 35.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "122": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "123": {
+          "mean_chebyshev_distance": 6.5,
+          "mean_target_rank": 31.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "124": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 26.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "125": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "126": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 32.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "127": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "128": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "129": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 7.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "13": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "130": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "131": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 14.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "132": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "133": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 52.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "134": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 6.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "135": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "14": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "15": {
+          "mean_chebyshev_distance": 8.5,
+          "mean_target_rank": 37.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "16": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "17": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 16.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "18": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 30.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "19": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "2": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "20": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 9.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "21": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "22": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 59.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "23": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "24": {
+          "mean_chebyshev_distance": 9.5,
+          "mean_target_rank": 32.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "25": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 20.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "26": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "27": {
+          "mean_chebyshev_distance": 7.0,
+          "mean_target_rank": 35.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "28": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 30.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "29": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 19.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "3": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 22.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "30": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "31": {
+          "mean_chebyshev_distance": 12.0,
+          "mean_target_rank": 111.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "32": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 17.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "33": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 24.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "34": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 56.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "35": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "36": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "37": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 20.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "38": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 53.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "39": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "4": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "40": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "41": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "42": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "43": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 7.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "44": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 40.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "45": {
+          "mean_chebyshev_distance": 6.5,
+          "mean_target_rank": 66.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "46": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 13.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "47": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 60.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "48": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 24.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "49": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "5": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 38.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "50": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 33.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "51": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 26.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "52": {
+          "mean_chebyshev_distance": 7.5,
+          "mean_target_rank": 47.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "53": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 17.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "54": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 9.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "55": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 12.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "56": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "57": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "58": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 31.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "59": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "6": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "60": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 46.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "61": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "62": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 23.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "63": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 29.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "64": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 51.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "65": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "66": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "67": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "68": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "69": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "7": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "70": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 52.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "71": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "72": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 58.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "73": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "74": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "75": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "76": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 21.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "77": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "78": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 20.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "79": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "8": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 32.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "80": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 8.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "81": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 20.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "82": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "83": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 11.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "84": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "85": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "86": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "87": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 36.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "88": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "89": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 22.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "9": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "90": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "91": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 19.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "92": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "93": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 19.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "94": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "95": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "96": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 18.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "97": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 19.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "98": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "99": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        }
+      },
+      "top1_exact_fraction": 0.11029411764705882,
+      "top3_fraction": 0.2647058823529412,
+      "top5_fraction": 0.36764705882352944,
+      "within_chebyshev_1_fraction": 0.39705882352941174,
+      "within_chebyshev_2_fraction": 0.5955882352941176
+    },
+    "model1": {
+      "cell_level_coverage": {
+        "cells_with_at_least_one_top1_of_2": 30,
+        "cells_with_at_least_one_top3_of_2": 60,
+        "cells_with_at_least_one_top5_of_2": 82,
+        "cells_with_both_events_in_top5": 17,
+        "possible_cells": 136
+      },
+      "conditional_on_signal_probability": {
+        "0": {
+          "median_target_rank": 9.0,
+          "selected_count": 272,
+          "selected_fraction": 1.0,
+          "top1_exact_fraction": 0.11764705882352941,
+          "top3_fraction": 0.26838235294117646,
+          "top5_fraction": 0.3639705882352941,
+          "within_chebyshev_1_fraction": 0.4338235294117647,
+          "within_chebyshev_2_fraction": 0.6176470588235294
+        },
+        "0.5": {
+          "median_target_rank": 9.0,
+          "selected_count": 254,
+          "selected_fraction": 0.9338235294117647,
+          "top1_exact_fraction": 0.1220472440944882,
+          "top3_fraction": 0.28346456692913385,
+          "top5_fraction": 0.3779527559055118,
+          "within_chebyshev_1_fraction": 0.44881889763779526,
+          "within_chebyshev_2_fraction": 0.6417322834645669
+        },
+        "0.9": {
+          "median_target_rank": 9.0,
+          "selected_count": 213,
+          "selected_fraction": 0.7830882352941176,
+          "top1_exact_fraction": 0.11737089201877934,
+          "top3_fraction": 0.2863849765258216,
+          "top5_fraction": 0.38497652582159625,
+          "within_chebyshev_1_fraction": 0.4507042253521127,
+          "within_chebyshev_2_fraction": 0.6666666666666666
+        },
+        "0.997": {
+          "median_target_rank": 6.0,
+          "selected_count": 107,
+          "selected_fraction": 0.39338235294117646,
+          "top1_exact_fraction": 0.14018691588785046,
+          "top3_fraction": 0.3644859813084112,
+          "top5_fraction": 0.4766355140186916,
+          "within_chebyshev_1_fraction": 0.5046728971962616,
+          "within_chebyshev_2_fraction": 0.7009345794392523
+        }
+      },
+      "diagonal_chebyshev_mean": 4.28125,
+      "diagonal_n": 32,
+      "diagonal_top1_fraction": 0.0,
+      "diagonal_top5_fraction": 0.1875,
+      "median_chebyshev_distance": 2.0,
+      "median_target_rank": 9.0,
+      "n_events": 272,
+      "off_diagonal_chebyshev_mean": 2.845833333333333,
+      "off_diagonal_n": 240,
+      "off_diagonal_top1_fraction": 0.13333333333333333,
+      "off_diagonal_top5_fraction": 0.3875,
+      "per_cell": {
+        "0": {
+          "mean_chebyshev_distance": 11.5,
+          "mean_target_rank": 18.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "1": {
+          "mean_chebyshev_distance": 14.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "10": {
+          "mean_chebyshev_distance": 6.5,
+          "mean_target_rank": 54.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "100": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 35.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "101": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "102": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "103": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 19.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "104": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "105": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "106": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "107": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "108": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "109": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 11.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "11": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "110": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "111": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "112": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 13.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "113": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "114": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 9.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "115": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "116": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "117": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 13.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "118": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 23.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "119": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 16.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "12": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 11.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "120": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "121": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 35.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "122": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "123": {
+          "mean_chebyshev_distance": 6.5,
+          "mean_target_rank": 26.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "124": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "125": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "126": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 27.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "127": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "128": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 2
+        },
+        "129": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "13": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "130": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 10.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "131": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 20.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "132": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "133": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 40.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "134": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 3.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "135": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "14": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "15": {
+          "mean_chebyshev_distance": 9.0,
+          "mean_target_rank": 34.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "16": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "17": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 30.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "18": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 30.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "19": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "2": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "20": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "21": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "22": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 62.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "23": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 1.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "24": {
+          "mean_chebyshev_distance": 9.5,
+          "mean_target_rank": 49.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "25": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 26.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "26": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "27": {
+          "mean_chebyshev_distance": 7.0,
+          "mean_target_rank": 35.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "28": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 30.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "29": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "3": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 21.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "30": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "31": {
+          "mean_chebyshev_distance": 12.0,
+          "mean_target_rank": 103.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "32": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "33": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 21.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "34": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 59.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "35": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "36": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "37": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "38": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 52.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "39": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 11.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "4": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "40": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "41": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "42": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 15.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "43": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "44": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 40.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "45": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 68.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "46": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "47": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 61.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "48": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 27.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "49": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "5": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 41.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "50": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 29.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "51": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 20.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "52": {
+          "mean_chebyshev_distance": 7.5,
+          "mean_target_rank": 57.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "53": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "54": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "55": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 12.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "56": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 23.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "57": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "58": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 30.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "59": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "6": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "60": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 45.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "61": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "62": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 26.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "63": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 25.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "64": {
+          "mean_chebyshev_distance": 7.0,
+          "mean_target_rank": 46.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "65": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "66": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "67": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "68": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "69": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 24.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "7": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "70": {
+          "mean_chebyshev_distance": 8.5,
+          "mean_target_rank": 64.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "71": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "72": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 55.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "73": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 12.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "74": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "75": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "76": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 19.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "77": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "78": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 28.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "79": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "8": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 25.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "80": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "81": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 14.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "82": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "83": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "84": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "85": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 23.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "86": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "87": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 38.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "88": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "89": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 20.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "9": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "90": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 24.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "91": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 15.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "92": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 27.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "93": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 14.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "94": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 6.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "95": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 20.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "96": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 18.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "97": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 28.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "98": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "99": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        }
+      },
+      "top1_exact_fraction": 0.11764705882352941,
+      "top3_fraction": 0.26838235294117646,
+      "top5_fraction": 0.3639705882352941,
+      "within_chebyshev_1_fraction": 0.4338235294117647,
+      "within_chebyshev_2_fraction": 0.6176470588235294
+    },
+    "model2": {
+      "cell_level_coverage": {
+        "cells_with_at_least_one_top1_of_2": 24,
+        "cells_with_at_least_one_top3_of_2": 59,
+        "cells_with_at_least_one_top5_of_2": 81,
+        "cells_with_both_events_in_top5": 18,
+        "possible_cells": 136
+      },
+      "conditional_on_signal_probability": {
+        "0": {
+          "median_target_rank": 10.0,
+          "selected_count": 272,
+          "selected_fraction": 1.0,
+          "top1_exact_fraction": 0.09558823529411764,
+          "top3_fraction": 0.25,
+          "top5_fraction": 0.3639705882352941,
+          "within_chebyshev_1_fraction": 0.4227941176470588,
+          "within_chebyshev_2_fraction": 0.5882352941176471
+        },
+        "0.5": {
+          "median_target_rank": 10.0,
+          "selected_count": 255,
+          "selected_fraction": 0.9375,
+          "top1_exact_fraction": 0.10196078431372549,
+          "top3_fraction": 0.2549019607843137,
+          "top5_fraction": 0.3764705882352941,
+          "within_chebyshev_1_fraction": 0.42745098039215684,
+          "within_chebyshev_2_fraction": 0.6039215686274509
+        },
+        "0.9": {
+          "median_target_rank": 10.0,
+          "selected_count": 217,
+          "selected_fraction": 0.7977941176470589,
+          "top1_exact_fraction": 0.10599078341013825,
+          "top3_fraction": 0.2626728110599078,
+          "top5_fraction": 0.391705069124424,
+          "within_chebyshev_1_fraction": 0.4377880184331797,
+          "within_chebyshev_2_fraction": 0.6359447004608295
+        },
+        "0.997": {
+          "median_target_rank": 8.0,
+          "selected_count": 109,
+          "selected_fraction": 0.4007352941176471,
+          "top1_exact_fraction": 0.11926605504587157,
+          "top3_fraction": 0.3302752293577982,
+          "top5_fraction": 0.46788990825688076,
+          "within_chebyshev_1_fraction": 0.5045871559633027,
+          "within_chebyshev_2_fraction": 0.6788990825688074
+        }
+      },
+      "diagonal_chebyshev_mean": 4.03125,
+      "diagonal_n": 32,
+      "diagonal_top1_fraction": 0.0,
+      "diagonal_top5_fraction": 0.21875,
+      "median_chebyshev_distance": 2.0,
+      "median_target_rank": 10.0,
+      "n_events": 272,
+      "off_diagonal_chebyshev_mean": 2.9791666666666665,
+      "off_diagonal_n": 240,
+      "off_diagonal_top1_fraction": 0.10833333333333334,
+      "off_diagonal_top5_fraction": 0.38333333333333336,
+      "per_cell": {
+        "0": {
+          "mean_chebyshev_distance": 12.0,
+          "mean_target_rank": 28.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "1": {
+          "mean_chebyshev_distance": 14.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "10": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 52.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "100": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "101": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "102": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 18.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "103": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 18.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "104": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "105": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 24.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "106": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 30.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "107": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "108": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 14.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "109": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "11": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "110": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 7.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "111": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "112": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 16.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "113": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "114": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 9.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "115": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "116": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "117": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "118": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 27.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "119": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "12": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 15.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "120": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "121": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 27.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "122": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "123": {
+          "mean_chebyshev_distance": 6.5,
+          "mean_target_rank": 39.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "124": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 31.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "125": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "126": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 23.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "127": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "128": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 4.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 2
+        },
+        "129": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 2
+        },
+        "13": {
+          "mean_chebyshev_distance": 6.5,
+          "mean_target_rank": 3.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "130": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 11.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "131": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 21.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "132": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 19.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "133": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 44.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "134": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 7.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "135": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "14": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "15": {
+          "mean_chebyshev_distance": 9.5,
+          "mean_target_rank": 34.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "16": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "17": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "18": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 26.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "19": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "2": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "20": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 8.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "21": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "22": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 61.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "23": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 2.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "24": {
+          "mean_chebyshev_distance": 9.0,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "25": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 20.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "26": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "27": {
+          "mean_chebyshev_distance": 7.0,
+          "mean_target_rank": 35.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "28": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 25.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "29": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 17.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "3": {
+          "mean_chebyshev_distance": 9.5,
+          "mean_target_rank": 33.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "30": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "31": {
+          "mean_chebyshev_distance": 6.5,
+          "mean_target_rank": 85.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "32": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 16.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "33": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 28.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "34": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 31.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "35": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 8.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "36": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 3.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "37": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 32.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "38": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 44.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "39": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "4": {
+          "mean_chebyshev_distance": 0.0,
+          "mean_target_rank": 1.0,
+          "top1_exact_count_of_2": 2,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "40": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 10.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "41": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 7.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "42": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "43": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "44": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 40.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "45": {
+          "mean_chebyshev_distance": 7.5,
+          "mean_target_rank": 68.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "46": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 16.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "47": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 61.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "48": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 24.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "49": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 9.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "5": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 30.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "50": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 25.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "51": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 27.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "52": {
+          "mean_chebyshev_distance": 7.0,
+          "mean_target_rank": 53.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "53": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "54": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 11.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "55": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 13.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "56": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 26.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "57": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 5.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "58": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 33.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "59": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        },
+        "6": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "60": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 52.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "61": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "62": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 32.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "63": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 25.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "64": {
+          "mean_chebyshev_distance": 6.0,
+          "mean_target_rank": 35.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "65": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "66": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 10.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "67": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "68": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 18.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "69": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 26.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "7": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 10.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "70": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 52.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "71": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "72": {
+          "mean_chebyshev_distance": 4.5,
+          "mean_target_rank": 56.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "73": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "74": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 4.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "75": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 26.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "76": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 24.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "77": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 6.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "78": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 13.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "79": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "8": {
+          "mean_chebyshev_distance": 5.0,
+          "mean_target_rank": 30.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "80": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 9.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "81": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 7.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "82": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 5.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "83": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 11.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "84": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 11.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "85": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 28.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "86": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 14.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "87": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 36.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "88": {
+          "mean_chebyshev_distance": 4.0,
+          "mean_target_rank": 14.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "89": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 24.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "9": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 2.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 2,
+          "top5_count_of_2": 2
+        },
+        "90": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 29.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "91": {
+          "mean_chebyshev_distance": 1.5,
+          "mean_target_rank": 9.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "92": {
+          "mean_chebyshev_distance": 1.0,
+          "mean_target_rank": 25.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "93": {
+          "mean_chebyshev_distance": 2.5,
+          "mean_target_rank": 24.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "94": {
+          "mean_chebyshev_distance": 3.5,
+          "mean_target_rank": 3.5,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 1
+        },
+        "95": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 19.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "96": {
+          "mean_chebyshev_distance": 3.0,
+          "mean_target_rank": 17.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "97": {
+          "mean_chebyshev_distance": 5.5,
+          "mean_target_rank": 30.0,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 0
+        },
+        "98": {
+          "mean_chebyshev_distance": 2.0,
+          "mean_target_rank": 8.5,
+          "top1_exact_count_of_2": 0,
+          "top3_count_of_2": 0,
+          "top5_count_of_2": 1
+        },
+        "99": {
+          "mean_chebyshev_distance": 0.5,
+          "mean_target_rank": 3.0,
+          "top1_exact_count_of_2": 1,
+          "top3_count_of_2": 1,
+          "top5_count_of_2": 2
+        }
+      },
+      "top1_exact_fraction": 0.09558823529411764,
+      "top3_fraction": 0.25,
+      "top5_fraction": 0.3639705882352941,
+      "within_chebyshev_1_fraction": 0.4227941176470588,
+      "within_chebyshev_2_fraction": 0.5882352941176471
+    }
+  },
+  "model_agreement": {
+    "ensemble_signal_top1_agreement_with_models": {
+      "model0": 0.7573529411764706,
+      "model1": 0.75,
+      "model2": 0.7830882352941176
+    },
+    "overall_138_class_all_three_top1_agreement_fraction": 0.5919117647058824,
+    "signal_grid_all_three_top1_agreement_fraction": 0.5036764705882353,
+    "signal_grid_pairwise_top1_agreement_fraction": {
+      "model0_model1": 0.6470588235294118,
+      "model0_model2": 0.6397058823529411,
+      "model1_model2": 0.6213235294117647
+    }
+  },
+  "next_gate": "40J5D_multifile_stratified_inference_with_diagonal_oversampling",
+  "repository_policy": {
+    "intervening_commit_range_track_a_only": true,
+    "track_a_checkpoint_prefix": "docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/",
+    "track_b_repository_paths_modified": false,
+    "working_tree_clean": true
+  },
+  "review_repository_head": "f01df61d4bf69487a7044d1a1d42c84568996aa2",
+  "scaleout_quality_gates": {
+    "all_three_signal_top1_agreement_at_least_0p45": true,
+    "mean_signal_probability_at_least_0p85": true,
+    "signal_probability_gt_0p9_fraction_at_least_0p70": true,
+    "top5_fraction_at_least_0p30": true,
+    "within_chebyshev_2_fraction_at_least_0p50": true
+  },
+  "scaleout_quality_gates_pass": true,
+  "schema_version": 1,
+  "scientific_decisions": {
+    "bounded_followup_scientifically_useful": true,
+    "dcb_fit_run": false,
+    "diagonal_target_cells_require_extra_sampling": true,
+    "empirical_signal_grid_localization_detected": true,
+    "gen_weight_used": false,
+    "independent_performance_measured": false,
+    "mass_resolution_measured": false,
+    "training_label_order_proven": false
+  },
+  "selection": {
+    "cells": 136,
+    "events": 272,
+    "events_per_cell": 2,
+    "independent_test_status": "not_established",
+    "preprocessing_failures": 0
+  },
+  "source_40J5C_output_root": "/tmp/iturkmen_track_b_40J5C_cell_balanced_onnx_canary_20260805_v1_BGfVcA",
+  "source_inference_repository_head": "4d0b6616cf4ee03279f9d204b8ec45d1f944f13c",
+  "source_summary_sha256": "a36d72d6a4917710e63b1c965e84c79101003f9330fc6437f6f39053dd3fc26c",
+  "status": "bounded_multifile_stratified_scaleout_ready_with_diagonal_oversampling"
+}

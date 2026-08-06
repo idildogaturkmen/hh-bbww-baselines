@@ -1,0 +1,61 @@
+{
+  "aggregate_occupied_provisional_output_classes": 136,
+  "aggregate_occupied_released_10gev_cells": 136,
+  "aggregate_unique_unordered_generator_mass_pairs": 561,
+  "all_direct_masses_finite_scalar_one_per_event": true,
+  "all_direct_masses_on_5gev_grid": true,
+  "all_direct_masses_within_40_200_gev": true,
+  "all_files_schema_sha256": "b195d1b29676575a5f5260a5eb09787a0d717e166aa2528f865985be46b978e2",
+  "all_schema_same": true,
+  "coverage_fraction_of_released_cells": 1.0,
+  "event_identity_branch_detected": false,
+  "files_processed": 10,
+  "gen_weight_structure": {
+    "length_two_in_all_files": true,
+    "physical_semantics": "undefined",
+    "physical_use_allowed": false,
+    "second_over_first_near_1e_minus_5_in_all_files": true
+  },
+  "independent_test_sample_status": "not_established",
+  "interpretation_boundaries": [
+    "This audit validates the direct generator-mass branches across spread files but does not prove the producer's label ordering.",
+    "The provisional floor-and-clip policy is an empirical organizing rule, not authoritative training configuration provenance.",
+    "The training ntuple lacks event identity; train/test independence cannot be established from these files alone.",
+    "The approximately 1e-5 gen_weight ratio is structural evidence only; its physical meaning remains undefined."
+  ],
+  "next_gate": "40J5C_cell_balanced_three_model_onnx_inference_canary",
+  "original_branch_order_m1_le_m2_fraction_weighted": 0.5177027604157649,
+  "pilot_first64_provisional_target_class_counts": {
+    "103": 1,
+    "135": 62,
+    "17": 1
+  },
+  "pilot_raw_first64_matches_prior_canary_counts": true,
+  "possible_released_cells": 136,
+  "prior_canary_reported_target_class_counts": {
+    "103": 1,
+    "135": 62,
+    "17": 1
+  },
+  "provisional_mass_to_cell_policy": {
+    "policy": "sort masses; floor into 10 GeV cells from 40 GeV; clip the inclusive 200 GeV endpoint to the final cell",
+    "producer_authoritative": false,
+    "training_label_order_proven": false
+  },
+  "repository_head": "4d0b6616cf4ee03279f9d204b8ec45d1f944f13c",
+  "schema_version": 1,
+  "scientific_decisions": {
+    "cell_balanced_onnx_canary_ready": true,
+    "dcb_fit_run": false,
+    "direct_gen_higgs_mass_pair_multifile_validated": true,
+    "gen_weight_physical_meaning_proven": false,
+    "independent_hh_performance_ready": false,
+    "model_inference_run": false,
+    "training_label_order_proven": false
+  },
+  "source_40J5A": "/tmp/iturkmen_track_b_40J5A_training_signal_mass_label_preflight_20260805_v1_DIrZo6",
+  "source_40J5A_R1": "/tmp/iturkmen_track_b_40J5A_R1_decisive_review_20260805_v1_aQFdAH",
+  "status": "multifile_direct_mass_pair_validated_ready_for_cell_balanced_inference",
+  "stored_138_score_vector_detected": false,
+  "total_entries": 1386168
+}
