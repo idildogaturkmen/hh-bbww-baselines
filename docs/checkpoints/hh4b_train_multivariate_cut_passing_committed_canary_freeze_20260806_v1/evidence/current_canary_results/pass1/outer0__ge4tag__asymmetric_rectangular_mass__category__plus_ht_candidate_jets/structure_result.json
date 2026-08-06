@@ -1,0 +1,112 @@
+{
+  "all_inner_support_pass": true,
+  "canonical_payload_sha256": "8e40cd8d137d9bcab74f3734ceb4a5a2f5e6e171983045cdd33a34982250eade",
+  "category_family_id": "ge4tag::asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+  "category_id": "ge4tag",
+  "comparison_weight_column": "comparison_weight_outer_fold_0",
+  "cuts": [
+    {
+      "operator": "<",
+      "variable": "abs_mbb1_minus_125"
+    },
+    {
+      "operator": "<",
+      "variable": "abs_mbb2_minus_125"
+    },
+    {
+      "operator": ">",
+      "variable": "ht_candidate_jets"
+    }
+  ],
+  "development_folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "input_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_committed_code_canary_v1_20260806T190836Z/fold_tables",
+  "job_id": "outer0__ge4tag__asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+  "outer_fold": 0,
+  "outer_fold_used_for_selection": false,
+  "outer_physical_evaluation": {
+    "background": {
+      "negative_weight_rows": 0,
+      "selected_negative_weight_rows": 0,
+      "selected_rows": 273,
+      "selected_signed_yield": 22222.155199539447,
+      "selected_sumw2": 10831353.735440252,
+      "total_rows": 873,
+      "total_signed_yield": 522077.2186835996,
+      "total_sumw2": 205862349364.7784
+    },
+    "signal": {
+      "negative_weight_rows": 0,
+      "selected_negative_weight_rows": 0,
+      "selected_rows": 711,
+      "selected_signed_yield": 9.795994834812463,
+      "selected_sumw2": 0.14025209398505312,
+      "total_rows": 1190,
+      "total_signed_yield": 16.350219392841268,
+      "total_sumw2": 0.23401299723284688
+    }
+  },
+  "outer_selected_event_uid_sha256": "36e8128548d1545a1e487eb23ea58f4aa62524cf3169a7c5bde62d4685ad003f",
+  "physical_weight_column": "resolved_selection_contribution_weight",
+  "pooled_inner_oof_feasible": false,
+  "pooled_inner_oof_metric": {
+    "background_efficiency": 0.31514676101708794,
+    "feasible": false,
+    "selected_background_neff": 455.9986630441395,
+    "selected_background_rows": 1505,
+    "selected_background_sumw2": 2326.016232267215,
+    "selected_background_weight": 1029.8836303839462,
+    "selected_signal_neff": 2333.9199044795573,
+    "selected_signal_rows": 2337,
+    "selected_signal_sumw2": 101833.30843829164,
+    "selected_signal_weight": 15416.575025054524,
+    "signal_efficiency": 0.5852297480524355
+  },
+  "pooled_support_failures": [],
+  "pooled_support_pass": true,
+  "refit_development_metric": {
+    "background_efficiency": 0.316308461045393,
+    "feasible": true,
+    "selected_background_neff": 458.54019664194107,
+    "selected_background_rows": 1510,
+    "selected_background_sumw2": 2330.208703651538,
+    "selected_background_weight": 1033.680007153635,
+    "selected_signal_neff": 2336.914665118821,
+    "selected_signal_rows": 2340,
+    "selected_signal_sumw2": 101970.20338217993,
+    "selected_signal_weight": 15436.828161541642,
+    "signal_efficiency": 0.5859985788689019
+  },
+  "refit_optimizer_audit": {
+    "algorithm": "deterministic bounded quantile-product beam seeds plus exact empirical coordinate refinement",
+    "beam_seed_count": 8,
+    "beam_width_limit": 16,
+    "coordinate_passes_completed": 2,
+    "exhaustive_cartesian_claim": false,
+    "fully_open_seed_included": true,
+    "grid_sizes": {
+      "abs_mbb1_minus_125": 8,
+      "abs_mbb2_minus_125": 8,
+      "ht_candidate_jets": 8
+    },
+    "max_coordinate_passes": 2,
+    "refinement_starts_used": 4
+  },
+  "refit_thresholds": {
+    "abs_mbb1_minus_125": 17.20512669828293,
+    "abs_mbb2_minus_125": 654.4499179649249,
+    "ht_candidate_jets": 141.2724285125732
+  },
+  "repository_head": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+  "runtime_seconds": 2.3583455085754395,
+  "schema_version": 1,
+  "status": "pass_structure_job_complete",
+  "structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+  "target_signal_efficiency": 0.585957,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

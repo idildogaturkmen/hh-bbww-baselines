@@ -1,0 +1,31 @@
+{
+  "canary_physics_result": false,
+  "category_acceptance": [
+    {
+      "canary_tolerance": 0.001,
+      "category_id": "exact3tag",
+      "diagnostic_best_structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+      "maximum_pooled_inner_oof_signal_efficiency": 0.5866881131047391,
+      "passes_repaired_canary_acceptance": true,
+      "target": 0.585957
+    },
+    {
+      "canary_tolerance": 0.001,
+      "category_id": "ge4tag",
+      "diagnostic_best_structure_id": "symmetric_rectangular_mass__category__plus_h2_pt",
+      "maximum_pooled_inner_oof_signal_efficiency": 0.5852521138723843,
+      "passes_repaired_canary_acceptance": true,
+      "target": 0.585957
+    }
+  ],
+  "complete_passes": 2,
+  "deterministic_rerun": true,
+  "production_target_tolerance": 0.0,
+  "production_target_unchanged": 0.585957,
+  "repository_head": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+  "schema_version": 1,
+  "sentinel_jobs_per_pass": 6,
+  "status": "pass_committed_code_canary_not_physics_result",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

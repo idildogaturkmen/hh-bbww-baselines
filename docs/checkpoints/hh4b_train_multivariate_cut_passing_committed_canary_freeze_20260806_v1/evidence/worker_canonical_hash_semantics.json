@@ -1,0 +1,7 @@
+{
+  "interpretation": "Raw canonical hashes intentionally differ when the same scientific job is executed at different repository heads.",
+  "repository_head_is_inside_canonical_payload": true,
+  "runtime_seconds_is_added_after_canonical_hash": true,
+  "worker_path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/analysis/hh4b_multivariate_cut_structure_worker.py",
+  "worker_sha256": "d72e6b5f2319d9b02f9caac3333c509b48f6b36a3075195a018d050921831bc2"
+}

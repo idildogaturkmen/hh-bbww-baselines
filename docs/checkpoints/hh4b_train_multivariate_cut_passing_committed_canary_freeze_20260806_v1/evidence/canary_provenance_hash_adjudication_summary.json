@@ -1,0 +1,59 @@
+{
+  "canary_search_budget": {
+    "absolute_oof_tolerance": 0.001,
+    "beam_width": 16,
+    "max_coordinate_passes": 2,
+    "quantile_count": 7,
+    "refinement_starts": 4
+  },
+  "category_acceptance": [
+    {
+      "canary_tolerance": 0.001,
+      "category_id": "exact3tag",
+      "diagnostic_best_structure_id": "asymmetric_rectangular_mass__category__plus_ht_candidate_jets",
+      "maximum_pooled_inner_oof_signal_efficiency": 0.5866881131047391,
+      "passes_repaired_canary_acceptance": true,
+      "target": 0.585957
+    },
+    {
+      "canary_tolerance": 0.001,
+      "category_id": "ge4tag",
+      "diagnostic_best_structure_id": "symmetric_rectangular_mass__category__plus_h2_pt",
+      "maximum_pooled_inner_oof_signal_efficiency": 0.5852521138723843,
+      "passes_repaired_canary_acceptance": true,
+      "target": 0.585957
+    }
+  ],
+  "current_deterministic_rerun": true,
+  "current_result_repository_head": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+  "current_run_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_committed_canary_canaryconfig_v1_20260806T195908Z",
+  "diagnosis": "pass_raw_hash_difference_is_repository_head_provenance_only_scientific_payloads_identical",
+  "exact_match_to_reference_scientific_results": true,
+  "inner_crossfit_tsvs_byte_identical": true,
+  "passes_per_run": 2,
+  "physics_result": false,
+  "production_contract_unchanged": {
+    "beam_width": 128,
+    "max_coordinate_passes": 8,
+    "quantile_count": 63,
+    "refinement_starts": 16,
+    "target_signal_efficiency": 0.585957,
+    "target_tolerance": 0.0
+  },
+  "production_cut_selected": false,
+  "production_families_ranked": 0,
+  "production_thresholds_scanned": 0,
+  "raw_canonical_differences_only_repository_head": true,
+  "reference_deterministic_rerun": true,
+  "reference_result_repository_head": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+  "reference_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_committed_canary_search_budget_diagnostic_v1_20260806T192014Z/reduced_search_canary",
+  "repository_head_at_adjudication": "d00a01989ecd208aa6a5f0813b4a8dd3042ba017",
+  "schema_version": 1,
+  "scientific_payloads_identical_after_removing_repository_head": true,
+  "status": "pass_provenance_only_hash_adjudication_not_physics_result",
+  "stored_canonical_hashes_recomputed": true,
+  "structure_result_files_compared": 24,
+  "structures_compared": 6,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

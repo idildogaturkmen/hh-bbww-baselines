@@ -1,0 +1,106 @@
+{
+  "all_inner_support_pass": true,
+  "canonical_payload_sha256": "1d6892904bad4295aeb8523a745375842cd1bd5766b12c417034fea91047f402",
+  "category_family_id": "exact3tag::symmetric_rectangular_mass__category__plus_h2_pt",
+  "category_id": "exact3tag",
+  "comparison_weight_column": "comparison_weight_outer_fold_0",
+  "cuts": [
+    {
+      "operator": "<",
+      "variable": "max_abs_mbb_minus_125"
+    },
+    {
+      "operator": ">",
+      "variable": "h2_pt"
+    }
+  ],
+  "development_folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "input_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_committed_code_canary_v1_20260806T190836Z/fold_tables",
+  "job_id": "outer0__exact3tag__symmetric_rectangular_mass__category__plus_h2_pt",
+  "outer_fold": 0,
+  "outer_fold_used_for_selection": false,
+  "outer_physical_evaluation": {
+    "background": {
+      "negative_weight_rows": 1,
+      "selected_negative_weight_rows": 0,
+      "selected_rows": 927,
+      "selected_signed_yield": 9738209.323275845,
+      "selected_sumw2": 7687717595926.281,
+      "total_rows": 2057,
+      "total_signed_yield": 29202076.630681314,
+      "total_sumw2": 23107136047267.01
+    },
+    "signal": {
+      "negative_weight_rows": 0,
+      "selected_negative_weight_rows": 0,
+      "selected_rows": 747,
+      "selected_signed_yield": 10.377435238006566,
+      "selected_sumw2": 0.14876053536125375,
+      "total_rows": 1280,
+      "total_signed_yield": 17.646206173746613,
+      "total_sumw2": 0.25267516963913667
+    }
+  },
+  "outer_selected_event_uid_sha256": "680532c5dc580d9b5492fa0954329206b0dfc9b0cd500650336c2a6aef8f430f",
+  "physical_weight_column": "resolved_selection_contribution_weight",
+  "pooled_inner_oof_feasible": false,
+  "pooled_inner_oof_metric": {
+    "background_efficiency": 0.37838178667088956,
+    "feasible": false,
+    "selected_background_neff": 946.5691416137744,
+    "selected_background_rows": 3933,
+    "selected_background_sumw2": 13753.909011244874,
+    "selected_background_weight": 3608.1887210355303,
+    "selected_signal_neff": 2509.8538903646845,
+    "selected_signal_rows": 2513,
+    "selected_signal_sumw2": 109715.4609889907,
+    "selected_signal_weight": 16594.269390255573,
+    "signal_efficiency": 0.5859409522899955
+  },
+  "pooled_support_failures": [],
+  "pooled_support_pass": true,
+  "refit_development_metric": {
+    "background_efficiency": 0.37814849081275326,
+    "feasible": true,
+    "selected_background_neff": 945.614972789216,
+    "selected_background_rows": 3933,
+    "selected_background_sumw2": 13750.815178334191,
+    "selected_background_weight": 3605.964048724006,
+    "selected_signal_neff": 2510.8535192148197,
+    "selected_signal_rows": 2514,
+    "selected_signal_sumw2": 109754.49145872962,
+    "selected_signal_weight": 16600.525628087325,
+    "signal_efficiency": 0.5861618590299477
+  },
+  "refit_optimizer_audit": {
+    "algorithm": "deterministic bounded quantile-product beam seeds plus exact empirical coordinate refinement",
+    "beam_seed_count": 8,
+    "beam_width_limit": 16,
+    "coordinate_passes_completed": 2,
+    "exhaustive_cartesian_claim": false,
+    "fully_open_seed_included": true,
+    "grid_sizes": {
+      "h2_pt": 8,
+      "max_abs_mbb_minus_125": 8
+    },
+    "max_coordinate_passes": 2,
+    "refinement_starts_used": 4
+  },
+  "refit_thresholds": {
+    "h2_pt": 1.8406657943106222,
+    "max_abs_mbb_minus_125": 30.678458922312533
+  },
+  "repository_head": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+  "runtime_seconds": 2.7823596000671387,
+  "schema_version": 1,
+  "status": "pass_structure_job_complete",
+  "structure_id": "symmetric_rectangular_mass__category__plus_h2_pt",
+  "target_signal_efficiency": 0.585957,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

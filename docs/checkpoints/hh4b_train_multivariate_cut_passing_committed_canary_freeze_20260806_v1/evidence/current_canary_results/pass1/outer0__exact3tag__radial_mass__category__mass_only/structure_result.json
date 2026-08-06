@@ -1,0 +1,100 @@
+{
+  "all_inner_support_pass": true,
+  "canonical_payload_sha256": "5d6cd410e6e5799f027889fcd390df1347ec2eb242d4219235f7d033f79f0615",
+  "category_family_id": "exact3tag::radial_mass__category__mass_only",
+  "category_id": "exact3tag",
+  "comparison_weight_column": "comparison_weight_outer_fold_0",
+  "cuts": [
+    {
+      "operator": "<",
+      "variable": "r_hh_125_125"
+    }
+  ],
+  "development_folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "input_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_committed_code_canary_v1_20260806T190836Z/fold_tables",
+  "job_id": "outer0__exact3tag__radial_mass__category__mass_only",
+  "outer_fold": 0,
+  "outer_fold_used_for_selection": false,
+  "outer_physical_evaluation": {
+    "background": {
+      "negative_weight_rows": 1,
+      "selected_negative_weight_rows": 0,
+      "selected_rows": 924,
+      "selected_signed_yield": 10190163.366985828,
+      "selected_sumw2": 7891504071194.732,
+      "total_rows": 2057,
+      "total_signed_yield": 29202076.630681314,
+      "total_sumw2": 23107136047267.01
+    },
+    "signal": {
+      "negative_weight_rows": 0,
+      "selected_negative_weight_rows": 0,
+      "selected_rows": 761,
+      "selected_signed_yield": 10.578880945166672,
+      "selected_sumw2": 0.15165913466052455,
+      "total_rows": 1280,
+      "total_signed_yield": 17.646206173746613,
+      "total_sumw2": 0.25267516963913667
+    }
+  },
+  "outer_selected_event_uid_sha256": "d17470fa614ef00e2b8258f16f1d3de422018845db4bfd9a97fc4bb5b78bf6a8",
+  "physical_weight_column": "resolved_selection_contribution_weight",
+  "pooled_inner_oof_feasible": false,
+  "pooled_inner_oof_metric": {
+    "background_efficiency": 0.37280276604896456,
+    "feasible": false,
+    "selected_background_neff": 932.7349435267215,
+    "selected_background_rows": 3929,
+    "selected_background_sumw2": 13549.33706516233,
+    "selected_background_weight": 3554.98806500088,
+    "selected_signal_neff": 2508.8500813241435,
+    "selected_signal_rows": 2512,
+    "selected_signal_sumw2": 109686.4905991518,
+    "selected_signal_weight": 16588.760076022616,
+    "signal_efficiency": 0.5857464193007926
+  },
+  "pooled_support_failures": [],
+  "pooled_support_pass": true,
+  "refit_development_metric": {
+    "background_efficiency": 0.3731350914123341,
+    "feasible": true,
+    "selected_background_neff": 933.9041874654674,
+    "selected_background_rows": 3932,
+    "selected_background_sumw2": 13556.510275002332,
+    "selected_background_weight": 3558.157066972074,
+    "selected_signal_neff": 2510.8366951423413,
+    "selected_signal_rows": 2514,
+    "selected_signal_sumw2": 109753.95770264258,
+    "selected_signal_weight": 16600.429646153603,
+    "signal_efficiency": 0.5861584699234842
+  },
+  "refit_optimizer_audit": {
+    "algorithm": "deterministic bounded quantile-product beam seeds plus exact empirical coordinate refinement",
+    "beam_seed_count": 8,
+    "beam_width_limit": 16,
+    "coordinate_passes_completed": 2,
+    "exhaustive_cartesian_claim": false,
+    "fully_open_seed_included": true,
+    "grid_sizes": {
+      "r_hh_125_125": 8
+    },
+    "max_coordinate_passes": 2,
+    "refinement_starts_used": 4
+  },
+  "refit_thresholds": {
+    "r_hh_125_125": 33.72263301621597
+  },
+  "repository_head": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+  "runtime_seconds": 1.816293478012085,
+  "schema_version": 1,
+  "status": "pass_structure_job_complete",
+  "structure_id": "radial_mass__category__mass_only",
+  "target_signal_efficiency": 0.585957,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
