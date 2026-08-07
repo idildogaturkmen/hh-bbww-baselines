@@ -1,0 +1,95 @@
+{
+  "categories": {
+    "exact3tag": {
+      "deployment_thresholds_coordinatewise_median": {
+        "ht_candidate_jets": 176.5458068847656,
+        "r_hh_125_125": 36.40814019639858
+      },
+      "fold_specific_refit_thresholds": [
+        {
+          "outer_fold": 1,
+          "thresholds": {
+            "ht_candidate_jets": 176.3644104003906,
+            "r_hh_125_125": 36.328844680580374
+          }
+        },
+        {
+          "outer_fold": 3,
+          "thresholds": {
+            "ht_candidate_jets": 176.7272033691406,
+            "r_hh_125_125": 36.48743571221678
+          }
+        }
+      ],
+      "modal_count": 2,
+      "modal_frequency": 0.4,
+      "modal_outer_folds": [
+        1,
+        3
+      ],
+      "modal_structure_id": "radial_mass__category__plus_ht_candidate_jets",
+      "stability_escalation_required": true,
+      "stability_escalation_triggers": [
+        "modal_family_frequency_below_0.70",
+        "optional_variable_inclusion_frequency_0.30_to_0.70:ht_candidate_jets"
+      ]
+    },
+    "ge4tag": {
+      "deployment_thresholds_coordinatewise_median": {
+        "abs_h_delta_eta": 6.904302164473993,
+        "mhh": 164.73708096689654,
+        "r_hh_125_125": 33.92808917804956
+      },
+      "fold_specific_refit_thresholds": [
+        {
+          "outer_fold": 0,
+          "thresholds": {
+            "abs_h_delta_eta": 6.809818891966871,
+            "mhh": 120.69842482135816,
+            "r_hh_125_125": 33.904321025139396
+          }
+        },
+        {
+          "outer_fold": 2,
+          "thresholds": {
+            "abs_h_delta_eta": 6.998785436981115,
+            "mhh": 208.7757371124349,
+            "r_hh_125_125": 33.951857330959726
+          }
+        }
+      ],
+      "modal_count": 2,
+      "modal_frequency": 0.4,
+      "modal_outer_folds": [
+        0,
+        2
+      ],
+      "modal_structure_id": "radial_mass__category__plus_mhh_and_abs_h_delta_eta",
+      "stability_escalation_required": true,
+      "stability_escalation_triggers": [
+        "modal_family_frequency_below_0.70",
+        "optional_variable_inclusion_frequency_0.30_to_0.70:abs_h_delta_eta",
+        "optional_variable_inclusion_frequency_0.30_to_0.70:max_drbb",
+        "optional_variable_inclusion_frequency_0.30_to_0.70:mhh"
+      ]
+    }
+  },
+  "final_paper_result_claim": false,
+  "next_gate": "run_selection_reoptimization_stability_diagnostic_before_validation_gate",
+  "nominal_selection_is_changed_by_stability_escalation": false,
+  "outer_fold_results_used_for_selection": false,
+  "role": "train-only candidate for later validation gate",
+  "schema_version": 1,
+  "selection_rule": "modal family across five outer folds, then coordinate-wise median thresholds among folds selecting that family; if there is no unique modal family, use the deterministic primary-endpoint ranking evaluated by inner OOF frequency, then lexicographic family ID",
+  "selection_stability_initial_reoptimization_replicas": 200,
+  "selection_stability_predeclared_total_if_escalated": 1000,
+  "stability_escalation_required": true,
+  "status": "train_only_deployment_candidate_frozen",
+  "target_signal_efficiency": 0.585957,
+  "test_applied": false,
+  "test_opening_authorized": false,
+  "test_payloads_opened": 0,
+  "validation_applied": false,
+  "validation_opening_authorized": false,
+  "validation_payloads_opened": 0
+}
