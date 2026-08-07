@@ -1,0 +1,22 @@
+{
+  "exact3tag_modal_count": 2,
+  "exact3tag_modal_frequency": 0.4,
+  "exact3tag_modal_structure_id": "radial_mass__category__plus_ht_candidate_jets",
+  "final_deployable_thresholds_selected": false,
+  "ge4tag_modal_count": 2,
+  "ge4tag_modal_frequency": 0.4,
+  "ge4tag_modal_structure_id": "radial_mass__category__plus_mhh_and_abs_h_delta_eta",
+  "ge4tag_radial_mass_winner_count": 5,
+  "next_gate": "run_predeclared_full_reoptimization_selection_stability_diagnostic",
+  "outer_fold_category_winner_count": 10,
+  "outer_results_used_for_selection": false,
+  "parent_audit_freeze_head": "23701eb96e850ee2e9174e5b5ec89cbb22246602",
+  "schema_version": 1,
+  "selection_uses_pooled_true_inner_oof_only": true,
+  "stability_escalation_required": true,
+  "status": "pass_freeze_train_only_nested_oof_aggregation",
+  "test_opening_authorized": false,
+  "test_payloads_opened": 0,
+  "validation_opening_authorized": false,
+  "validation_payloads_opened": 0
+}

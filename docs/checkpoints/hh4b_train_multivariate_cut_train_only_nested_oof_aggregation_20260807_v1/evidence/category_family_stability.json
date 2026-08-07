@@ -1,0 +1,105 @@
+{
+  "categories": {
+    "exact3tag": {
+      "family_frequency_counts": {
+        "asymmetric_rectangular_mass__category__mass_only": 1,
+        "radial_mass__category__mass_only": 1,
+        "radial_mass__category__plus_ht_candidate_jets": 2,
+        "symmetric_rectangular_mass__category__mass_only": 1
+      },
+      "modal_count": 2,
+      "modal_family_fold_specific_refit_thresholds": [
+        {
+          "outer_fold": 1,
+          "refit_thresholds": {
+            "ht_candidate_jets": 176.3644104003906,
+            "r_hh_125_125": 36.328844680580374
+          }
+        },
+        {
+          "outer_fold": 3,
+          "refit_thresholds": {
+            "ht_candidate_jets": 176.7272033691406,
+            "r_hh_125_125": 36.48743571221678
+          }
+        }
+      ],
+      "modal_frequency": 0.4,
+      "modal_structure_id": "radial_mass__category__plus_ht_candidate_jets",
+      "note": "These thresholds are outer-development refits for nested evaluation, not final deployable all-training thresholds.",
+      "optional_variable_inclusion_frequencies": {
+        "abs_h_delta_eta": 0.0,
+        "h2_pt": 0.0,
+        "ht_candidate_jets": 0.4,
+        "max_drbb": 0.0,
+        "mhh": 0.0
+      },
+      "outer_fold_winner_count": 5,
+      "second_frequency": 0.2,
+      "stability_escalation_required": true,
+      "stability_escalation_triggers": [
+        "modal_family_frequency_below_0.70",
+        "optional_variable_inclusion_frequency_0.30_to_0.70:ht_candidate_jets"
+      ],
+      "top_two_frequency_gap": 0.2,
+      "unique_modal_family": true
+    },
+    "ge4tag": {
+      "family_frequency_counts": {
+        "radial_mass__category__plus_h2_pt_and_max_drbb": 1,
+        "radial_mass__category__plus_ht_candidate_jets_and_max_drbb": 1,
+        "radial_mass__category__plus_mhh": 1,
+        "radial_mass__category__plus_mhh_and_abs_h_delta_eta": 2
+      },
+      "modal_count": 2,
+      "modal_family_fold_specific_refit_thresholds": [
+        {
+          "outer_fold": 0,
+          "refit_thresholds": {
+            "abs_h_delta_eta": 6.809818891966871,
+            "mhh": 120.69842482135816,
+            "r_hh_125_125": 33.904321025139396
+          }
+        },
+        {
+          "outer_fold": 2,
+          "refit_thresholds": {
+            "abs_h_delta_eta": 6.998785436981115,
+            "mhh": 208.7757371124349,
+            "r_hh_125_125": 33.951857330959726
+          }
+        }
+      ],
+      "modal_frequency": 0.4,
+      "modal_structure_id": "radial_mass__category__plus_mhh_and_abs_h_delta_eta",
+      "note": "These thresholds are outer-development refits for nested evaluation, not final deployable all-training thresholds.",
+      "optional_variable_inclusion_frequencies": {
+        "abs_h_delta_eta": 0.4,
+        "h2_pt": 0.2,
+        "ht_candidate_jets": 0.2,
+        "max_drbb": 0.4,
+        "mhh": 0.6
+      },
+      "outer_fold_winner_count": 5,
+      "second_frequency": 0.2,
+      "stability_escalation_required": true,
+      "stability_escalation_triggers": [
+        "modal_family_frequency_below_0.70",
+        "optional_variable_inclusion_frequency_0.30_to_0.70:abs_h_delta_eta",
+        "optional_variable_inclusion_frequency_0.30_to_0.70:max_drbb",
+        "optional_variable_inclusion_frequency_0.30_to_0.70:mhh"
+      ],
+      "top_two_frequency_gap": 0.2,
+      "unique_modal_family": true
+    }
+  },
+  "final_deployable_thresholds_selected": false,
+  "outer_fold_performance_used_for_selection": false,
+  "repository_audit_freeze_head": "23701eb96e850ee2e9174e5b5ec89cbb22246602",
+  "schema_version": 1,
+  "selection_uses": "pooled_true_inner_oof_only",
+  "status": "train_only_nested_oof_category_family_aggregation_complete",
+  "target_signal_efficiency": 0.585957,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

@@ -1,0 +1,22 @@
+TRAIN-ONLY NESTED-OOF AGGREGATION SUMMARY
+========================================================================
+OUTER_FOLD_CATEGORY_WINNER_COUNT=10
+VALIDATION_PAYLOADS_OPENED=0
+TEST_PAYLOADS_OPENED=0
+OUTER_RESULTS_USED_FOR_SELECTION=FALSE
+FINAL_DEPLOYABLE_THRESHOLDS_SELECTED=FALSE
+
+CATEGORY=exact3tag
+MODAL_STRUCTURE_ID=radial_mass__category__plus_ht_candidate_jets
+MODAL_COUNT=2
+MODAL_FREQUENCY=0.400
+STABILITY_ESCALATION_REQUIRED=TRUE
+STABILITY_TRIGGERS=modal_family_frequency_below_0.70;optional_variable_inclusion_frequency_0.30_to_0.70:ht_candidate_jets
+
+CATEGORY=ge4tag
+MODAL_STRUCTURE_ID=radial_mass__category__plus_mhh_and_abs_h_delta_eta
+MODAL_COUNT=2
+MODAL_FREQUENCY=0.400
+STABILITY_ESCALATION_REQUIRED=TRUE
+STABILITY_TRIGGERS=modal_family_frequency_below_0.70;optional_variable_inclusion_frequency_0.30_to_0.70:abs_h_delta_eta;optional_variable_inclusion_frequency_0.30_to_0.70:max_drbb;optional_variable_inclusion_frequency_0.30_to_0.70:mhh
+
