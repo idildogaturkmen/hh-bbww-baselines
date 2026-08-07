@@ -1,0 +1,7 @@
+3754344.0 - 3754344.5
+[WARNING]: -name parameter is disabled for LPC submission..
+[WARNING]: Ignoring the flag and using the system defined schedd..
+Querying the CMS LPC pool and trying to find an available schedd...
+
+Attempting to submit jobs to lpcschedd4.fnal.gov
+

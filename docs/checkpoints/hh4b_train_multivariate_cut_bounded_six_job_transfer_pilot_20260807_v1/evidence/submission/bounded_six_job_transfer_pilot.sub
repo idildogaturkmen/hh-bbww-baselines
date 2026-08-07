@@ -1,0 +1,26 @@
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/submission/run_bounded_transfer_pilot_job.sh
+arguments = "$(job_index) $(outer_fold) $(category_id) $(structure_id) $(expected_head)"
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_multivariate_cut_payload_v8_r1.tar.gz,/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz
+transfer_output_files = result_bundle.tar.gz,job_receipt.json,worker.log
+
+getenv = False
+environment = "PYTHONNOUSERSITE=1"
+
+request_cpus = 1
+request_memory = 8000MB
+request_disk = 4000MB
++JobFlavour = "workday"
+
+initialdir = $(return_dir)
+
+log = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/logs/job_$(job_index).log
+output = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/logs/job_$(job_index).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/logs/job_$(job_index).err
+
+on_exit_remove = (ExitBySignal == False) && (ExitCode == 0)
+
+queue job_index, outer_fold, category_id, structure_id, expected_head, return_dir from /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/submission/pilot_queue.items

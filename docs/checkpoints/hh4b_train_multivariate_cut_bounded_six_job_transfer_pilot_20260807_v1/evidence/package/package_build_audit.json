@@ -1,0 +1,135 @@
+{
+  "authorized_primary_resolved_rows": 1042397,
+  "categories": [
+    "exact3tag",
+    "ge4tag"
+  ],
+  "category_eligible_fold_rows": 139383,
+  "category_eligible_fraction_of_authorized_resolved": 0.13371393048905553,
+  "category_row_counts": {
+    "exact3tag": 108678,
+    "ge4tag": 30705
+  },
+  "fold_table_count": 10,
+  "fold_table_total_bytes": 21567478,
+  "full_270_job_submission_authorized": false,
+  "generated_total_events": 5200000,
+  "generated_training_events": 3799873,
+  "mass_families": [
+    "asymmetric_rectangular",
+    "radial",
+    "symmetric_rectangular"
+  ],
+  "optimizer_sha256": "7760ee7ae309bec6cd47eb1c73ed04ec12bb805f133527498fcb75aca8088a62",
+  "outer_folds_covered": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "pilot_job_count": 6,
+  "pilot_matrix_sha256": "36fe35296fda2b1e8ae726fc981c4c6f6c7cb0af5c278e262992cac3d486d687",
+  "repository_head": "dfccc037be7c64dd4345d4bdb4418f41004d7d60",
+  "schema_version": 1,
+  "scientific_contract_checks": {
+    "authorized_rows": true,
+    "beam": true,
+    "families_54": true,
+    "five_folds": true,
+    "jobs_270": true,
+    "no_aux_qcd": true,
+    "passes": true,
+    "quantiles": true,
+    "starts": true,
+    "target": true,
+    "test_sealed": true,
+    "validation_sealed": true
+  },
+  "status": "pass_bounded_six_job_transfer_package_build",
+  "tables": [
+    {
+      "category": "exact3tag",
+      "fold": 0,
+      "relative_path": "fold_tables/fold_0/exact3tag.parquet",
+      "rows": 21410,
+      "sha256": "eb062c28af45a050fd81f6e3980afc430a6aca7cadc19b860634d4a91644597b",
+      "size_bytes": 3318238
+    },
+    {
+      "category": "ge4tag",
+      "fold": 0,
+      "relative_path": "fold_tables/fold_0/ge4tag.parquet",
+      "rows": 6195,
+      "sha256": "db71164c992853ead333bc8dfc3670f316f77033157b0a6ce611f6bb569a5b28",
+      "size_bytes": 959694
+    },
+    {
+      "category": "exact3tag",
+      "fold": 1,
+      "relative_path": "fold_tables/fold_1/exact3tag.parquet",
+      "rows": 21577,
+      "sha256": "79acbfaa404e7f0538d668220c45093498a9dc48a81a1bae8a5b5bf81fe6d30e",
+      "size_bytes": 3336347
+    },
+    {
+      "category": "ge4tag",
+      "fold": 1,
+      "relative_path": "fold_tables/fold_1/ge4tag.parquet",
+      "rows": 6151,
+      "sha256": "f151557a887864b13ab390b15a9cc59edb7c821a3e9c7ced2b4a60c0d3c30fa1",
+      "size_bytes": 953697
+    },
+    {
+      "category": "exact3tag",
+      "fold": 2,
+      "relative_path": "fold_tables/fold_2/exact3tag.parquet",
+      "rows": 22474,
+      "sha256": "ee9e9efd69b1f352e0b3c33289abaf89e81a88aa30709ae1a292fe9d84582c41",
+      "size_bytes": 3469984
+    },
+    {
+      "category": "ge4tag",
+      "fold": 2,
+      "relative_path": "fold_tables/fold_2/ge4tag.parquet",
+      "rows": 6169,
+      "sha256": "ce3d4b035f438a42f2d76990f32bf2585e57f1735c5d54ee047561c0e02c59c6",
+      "size_bytes": 956855
+    },
+    {
+      "category": "exact3tag",
+      "fold": 3,
+      "relative_path": "fold_tables/fold_3/exact3tag.parquet",
+      "rows": 21543,
+      "sha256": "bfedfd7db4700caa8c5acf5162379d7872bd18ee3732ef8f78b1a0bb0b74af0b",
+      "size_bytes": 3328726
+    },
+    {
+      "category": "ge4tag",
+      "fold": 3,
+      "relative_path": "fold_tables/fold_3/ge4tag.parquet",
+      "rows": 6112,
+      "sha256": "7ca7c784f10458db0064c6198e089de080f7cbb54a5cf35d7f509fe2de63e9d5",
+      "size_bytes": 945907
+    },
+    {
+      "category": "exact3tag",
+      "fold": 4,
+      "relative_path": "fold_tables/fold_4/exact3tag.parquet",
+      "rows": 21674,
+      "sha256": "e80b2acae8dbc6811e15e8ec95bfda7fec53fdd2fa206124d68e7c12f5c6d5e3",
+      "size_bytes": 3354920
+    },
+    {
+      "category": "ge4tag",
+      "fold": 4,
+      "relative_path": "fold_tables/fold_4/ge4tag.parquet",
+      "rows": 6078,
+      "sha256": "b70d972f666a5d327b776fac56b86ce0d42b9e5e7a394a78439bea26e8e60a00",
+      "size_bytes": 943110
+    }
+  ],
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0,
+  "worker_sha256": "739147c33d6597018f4dce8c483278c64ff8b41533de1f1b213749dfb39332ed"
+}
