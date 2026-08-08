@@ -1,0 +1,97 @@
+{
+  "all_inner_support_fail_structure_count": 0,
+  "all_inner_support_pass_structure_count": 108,
+  "bootstrap_replicas": [
+    2,
+    3
+  ],
+  "categories": [
+    "exact3tag",
+    "ge4tag"
+  ],
+  "cluster_id": 3768139,
+  "condor_production_submission_performed": false,
+  "execution_integrity_pass_jobs": 4,
+  "initial_200_production_authorized": false,
+  "jobs": [
+    {
+      "all_inner_support_pass_count": 27,
+      "bootstrap_replica": 2,
+      "category_id": "exact3tag",
+      "execution_provenance_sha256": "d5038825b45eb7b7521f1ba7b35efab6ef4371f00360be4d64d6152c5b2df60e",
+      "job_index": 0,
+      "outer_fold": 0,
+      "pooled_feasible_count": 0,
+      "pooled_support_pass_count": 27,
+      "result_bundle_sha256": "20c01c0890eba4e4accb3b0112f67370332e13ad36bbfb93d9a2cb49d6fa9afa",
+      "runner_elapsed_seconds": 4282,
+      "runner_log_sha256": "de01ef03a4ae5f5994625d80b2e16f5302573c1903a0d61e0c7162eb729294fd",
+      "structures_returned": 27
+    },
+    {
+      "all_inner_support_pass_count": 27,
+      "bootstrap_replica": 2,
+      "category_id": "ge4tag",
+      "execution_provenance_sha256": "8c45f8a5a84f02b605252ad0d64647eb209f5f1b8d281cb5007d9cc1b8713989",
+      "job_index": 1,
+      "outer_fold": 1,
+      "pooled_feasible_count": 0,
+      "pooled_support_pass_count": 27,
+      "result_bundle_sha256": "5ef0ab1a73624ffc1ca892ee9f939399a6cb0632dd6bb93c75982aaad7140386",
+      "runner_elapsed_seconds": 1576,
+      "runner_log_sha256": "37004247300325b6ccbb5265249007655c230c3f0496c28619ffee832b41910a",
+      "structures_returned": 27
+    },
+    {
+      "all_inner_support_pass_count": 27,
+      "bootstrap_replica": 3,
+      "category_id": "exact3tag",
+      "execution_provenance_sha256": "63461afef1d7064d5c19685d4baf17d7a7dc3c83bf50541e3def3b1825b01ca5",
+      "job_index": 2,
+      "outer_fold": 2,
+      "pooled_feasible_count": 0,
+      "pooled_support_pass_count": 27,
+      "result_bundle_sha256": "6f10172ab1d6f88590afe027eafe57ae48bc093c04585d409f24849de62907d7",
+      "runner_elapsed_seconds": 4869,
+      "runner_log_sha256": "8409122e31a4fb61b32217c4e217d0034a0724d563c313e0196e2558b3c26dc5",
+      "structures_returned": 27
+    },
+    {
+      "all_inner_support_pass_count": 27,
+      "bootstrap_replica": 3,
+      "category_id": "ge4tag",
+      "execution_provenance_sha256": "be130eea0d218223d2092ea205d9c19e3df4318989cab1192c9d39e37b105279",
+      "job_index": 3,
+      "outer_fold": 3,
+      "pooled_feasible_count": 3,
+      "pooled_support_pass_count": 27,
+      "result_bundle_sha256": "85fcb77425419023e667389e461d0e6a26624e6b1a2de0b1da83144070c69fc2",
+      "runner_elapsed_seconds": 1435,
+      "runner_log_sha256": "3d1d011cedcf31c14171eea4dff3687e1fee886e83a454eca4bd3bb8e059310e",
+      "structures_returned": 27
+    }
+  ],
+  "next": "freeze_transfer_pilot_and_authorize_initial_200_selection_stability_replicas",
+  "outer_fold_used_for_selection_any": false,
+  "outer_folds_exercised": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "pilot_jobs": 4,
+  "pilot_results_may_enter_stability_aggregation": false,
+  "pooled_feasible_structure_count": 3,
+  "pooled_infeasible_structure_count": 105,
+  "pooled_support_fail_structure_count": 0,
+  "pooled_support_pass_structure_count": 108,
+  "repository_head": "5b8447897cc98f7df00d460274b857ec882266b8",
+  "runner_rc_zero_jobs": 4,
+  "schema_version": 1,
+  "scientific_support_or_feasibility_used_as_infrastructure_gate": false,
+  "status": "pass_bounded_category_fold_transfer_pilot_complete",
+  "structure_results_expected": 108,
+  "structure_results_returned": 108,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

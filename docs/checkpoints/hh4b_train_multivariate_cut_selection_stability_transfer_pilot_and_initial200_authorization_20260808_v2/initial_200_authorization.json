@@ -1,0 +1,70 @@
+{
+  "authorization_basis": {
+    "all_condor_clean_completions": true,
+    "all_execution_provenance": true,
+    "all_outer_fold_used_for_selection_false": true,
+    "all_returned_structure_integrity": true,
+    "bounded_transfer_pilot_cluster": 3768139,
+    "bounded_transfer_pilot_jobs": 4,
+    "bounded_transfer_pilot_structure_results": 108,
+    "scientific_feasibility_used_as_infrastructure_gate": false,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "authorization_state": {
+    "initial_200_production_authorized": true,
+    "production_package_built": false,
+    "production_submission_performed": false,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "execution_policy": {
+    "complete_returned_output_audit_required_before_aggregation": true,
+    "expected_condor_jobs": 2000,
+    "expected_structure_results": 54000,
+    "if_submission_occurs_but_bookkeeping_parse_fails_do_not_resubmit": true,
+    "production_package_must_use_authorizing_repository_commit": true,
+    "production_submission_must_parse_full_condor_submit_terse_output": true
+  },
+  "frozen_selection_stability_program": {
+    "authorized_replica_max": 199,
+    "authorized_replica_min": 0,
+    "authorized_replicas": 200,
+    "escalation_replicas_200_999_authorized_by_this_checkpoint": false,
+    "nominal_deployment_candidate_changed": false,
+    "predeclared_total_replicas": 1000,
+    "seed": 20260806,
+    "source_fold_reassignment": false
+  },
+  "next": "freeze_this_checkpoint_in_git_then_build_initial_200_transfer_safe_production_package",
+  "production_architecture": {
+    "architecture_id": "replica__category__outer_fold__all_27_structures_sequential",
+    "categories": 2,
+    "condor_jobs": 2000,
+    "outer_folds": 5,
+    "production_search_budget": "63_128_16_8",
+    "structure_evaluations": 54000,
+    "structures_per_job": 27,
+    "target_signal_efficiency": 0.585957
+  },
+  "resource_policy": {
+    "job_flavour": "workday",
+    "pilot_runner_elapsed_seconds_max": 4869,
+    "pilot_runner_elapsed_seconds_median": 2929.0,
+    "pilot_runner_elapsed_seconds_min": 1435,
+    "request_cpus": 1,
+    "request_disk_mb": 4000,
+    "request_memory_mb": 2048
+  },
+  "schema_version": 1,
+  "scientific_policy": {
+    "bootstrap_reoptimization_results_from_replicas_0_199_may_enter_initial_stability_aggregation": true,
+    "infeasible_structures_are_not_execution_failures": true,
+    "nominal_selection_may_be_changed_by_stability_bootstrap": false,
+    "pilot_results_may_enter_stability_aggregation": false,
+    "support_and_feasibility_outcomes_must_be_retained_for_all_replicas": true,
+    "test_may_be_opened": false,
+    "validation_may_be_opened": false
+  },
+  "status": "authorized_initial_200_selection_stability_reoptimization_replicas"
+}

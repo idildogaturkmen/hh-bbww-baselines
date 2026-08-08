@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "pass_transfer_pilot_evidence_frozen_by_path_and_sha256",
+  "pilot_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808",
+  "cluster_id": 3768139,
+  "audit_v2": {
+    "json": {"path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/audit/category_fold_transfer_pilot_audit_v2.json", "sha256": "8a7348293fe2e83a03ac7eee0db7f982e8213739435d11f37ef0eaa2e46100ff"},
+    "tsv": {"path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/audit/category_fold_transfer_pilot_audit_v2.tsv", "sha256": "95e3ed33b021200b6b53d9c61324865db81d1167849c92eecc6ea62c23d86794"},
+    "log": {"path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/audit/category_fold_transfer_pilot_audit_v2.txt", "sha256": "04a35ac571d6a372fadc514b4989c2541695cc806b40d87497b24c82adf02380"}
+  },
+  "condor_snapshots": {
+    "queue": {"path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/audit/queue_snapshot.txt", "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    "history": {"path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/audit/history_snapshot.txt", "sha256": "2c1027ec616e77317876203a4d3ffd438a13182dddd30aefed9fe4a9df0196aa"}
+  },
+  "audit_repair_provenance": {
+    "v1_failed_log": {"path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/audit/category_fold_transfer_pilot_audit.txt", "sha256": "bffb0152dc4490c14d8beef861aa18ce187bab100437f75cb4a60400714d6470"},
+    "v2_auditor": {"path": "/uscms/home/iturkmen/operator_scripts/audit_category_fold_transfer_pilot_cluster_3768139_v2.sh", "sha256": "f028629ff99bad81e26213ba5c10a4b8624894269ecf6ec9a13c1c26730b6e00"}
+  },
+  "runner": {"path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/submission/run_category_fold_transfer_pilot_job.sh", "sha256": "7e1871e292f18ddaa2da5cd5bccbbe5b5659cca24e40d8b9815bbdd039d808ba"},
+  "granularity_contract": {"path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_full_budget_pilot_and_granularity_20260808_v1/production_granularity.json", "sha256": "148034411f73ff226f30f7c8665b4621f7b4d85f36fb103ba31ad183aabbaf7c"},
+  "draw_contract": {"path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_draw_registry_20260808_v1/selection_stability_draw_contract.json", "sha256": "5fbb1431c0bb5f54b2c8acf4ed48dacf3e52866a64d0937ea6274bfe8d40c048"}
+}

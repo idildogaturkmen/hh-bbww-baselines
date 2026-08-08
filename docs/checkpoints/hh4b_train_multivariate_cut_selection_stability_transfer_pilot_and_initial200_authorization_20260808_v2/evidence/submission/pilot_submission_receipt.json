@@ -1,0 +1,18 @@
+{
+  "cluster_id": 3768139,
+  "cluster_parse_pass": true,
+  "first_proc": 0,
+  "initial_200_production_authorized": false,
+  "last_proc": 3,
+  "parsed_job_count": 4,
+  "pilot_jobs_expected": 4,
+  "queue_items_sha256": "2ed3aa9c31bc95da22a825d5b1b760ce70c5117761d13d1a7ff86ecdee320648",
+  "raw_submit_output_sha256": "666e17ffa73d162c3761d5b664827607a6160f8161b89bb1e552f487030b2017",
+  "repository_head": "5b8447897cc98f7df00d460274b857ec882266b8",
+  "schema_version": 1,
+  "status": "condor_submit_succeeded",
+  "submission_occurred": true,
+  "submit_file_sha256": "7142e2c05955486fdf22a173abefd6f9f16f917a80fb58c0f830dbf9f4eb0ddf",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

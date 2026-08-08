@@ -1,0 +1,5 @@
+job_index	replica	outer_fold	category_id	role
+0	2	0	exact3tag	replica2_exact3tag_outer0
+1	2	1	ge4tag	replica2_ge4tag_outer1
+2	3	2	exact3tag	replica3_exact3tag_outer2
+3	3	3	ge4tag	replica3_ge4tag_outer3

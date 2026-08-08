@@ -1,0 +1,63 @@
+{
+  "initial_200_production_authorized": false,
+  "payloads": [
+    {
+      "category_id": "exact3tag",
+      "job_index": 0,
+      "outer_fold": 0,
+      "payload_archive": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/archives/stability_category_fold_pilot_payload_job00.tar.gz",
+      "payload_archive_name": "stability_category_fold_pilot_payload_job00.tar.gz",
+      "payload_archive_sha256": "9ccfacc235479574b32111dab429225233efb5d8a7bbd6ce1e24c64d6bf64a03",
+      "payload_archive_size_bytes": 14316621,
+      "replica": 2,
+      "structure_count": 27,
+      "transferred_fold_tables": 5,
+      "transferred_rows": 108280
+    },
+    {
+      "category_id": "ge4tag",
+      "job_index": 1,
+      "outer_fold": 1,
+      "payload_archive": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/archives/stability_category_fold_pilot_payload_job01.tar.gz",
+      "payload_archive_name": "stability_category_fold_pilot_payload_job01.tar.gz",
+      "payload_archive_sha256": "4fe441394afda05cde4377b61b82af310dbe555d915dd2dacb472f2e2e9955f2",
+      "payload_archive_size_bytes": 4014580,
+      "replica": 2,
+      "structure_count": 27,
+      "transferred_fold_tables": 5,
+      "transferred_rows": 30708
+    },
+    {
+      "category_id": "exact3tag",
+      "job_index": 2,
+      "outer_fold": 2,
+      "payload_archive": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/archives/stability_category_fold_pilot_payload_job02.tar.gz",
+      "payload_archive_name": "stability_category_fold_pilot_payload_job02.tar.gz",
+      "payload_archive_sha256": "41477a2b12454890aca6f562935c8fd78ce24c13acf85180b7143d73f22c18b7",
+      "payload_archive_size_bytes": 14420969,
+      "replica": 3,
+      "structure_count": 27,
+      "transferred_fold_tables": 5,
+      "transferred_rows": 108807
+    },
+    {
+      "category_id": "ge4tag",
+      "job_index": 3,
+      "outer_fold": 3,
+      "payload_archive": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_category_fold_transfer_pilot_v1_20260808/archives/stability_category_fold_pilot_payload_job03.tar.gz",
+      "payload_archive_name": "stability_category_fold_pilot_payload_job03.tar.gz",
+      "payload_archive_sha256": "bca47750f8deca7f78e78e780d3fff2f3ba6ec110546e4c30e799a9fca981e77",
+      "payload_archive_size_bytes": 4065707,
+      "replica": 3,
+      "structure_count": 27,
+      "transferred_fold_tables": 5,
+      "transferred_rows": 30840
+    }
+  ],
+  "pilot_jobs": 4,
+  "repository_head": "5b8447897cc98f7df00d460274b857ec882266b8",
+  "schema_version": 1,
+  "status": "pass_category_fold_transfer_payload_build",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
