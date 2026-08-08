@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "pass_external_canary_artifacts_frozen_by_path_and_sha256",
+  "canary_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_reoptimization_canary_v1_20260808",
+  "tree_manifest_path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_reoptimization_canary_v1_20260808/evidence/canary_full_tree_SHA256SUMS.txt",
+  "tree_manifest_sha256": "b568f8054ed7db9ea3e657d1caeab1741073d15a70ad7606ab6d4121a6ba993a",
+  "tree_file_count": 58,
+  "key_artifacts": {
+    "materializer": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_reoptimization_canary_v1_20260808/selection_stability_materialize_replica.py",
+      "sha256": "bea9bf35923c79e87aeb8097e524a2dee3712ffa1f8e44c78787f2683d19efcc"
+    },
+    "canary_config": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_reoptimization_canary_v1_20260808/hh4b_multivariate_cut_nested_oof_stability_canary_v1.json",
+      "sha256": "7f9eaa521d320032ea279ca3f7f0e83b0ea83cc9c2177da3369de56492b297b9"
+    },
+    "summary_json": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_reoptimization_canary_v1_20260808/evidence/selection_stability_reoptimization_canary_summary.json",
+      "sha256": "5e21234c6733d14062f13425ba2f2f7bd9648df2f4bec22d8a6f1f00d542cacb"
+    },
+    "summary_tsv": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_reoptimization_canary_v1_20260808/evidence/selection_stability_reoptimization_canary_jobs.tsv",
+      "sha256": "4ad0b2bf04447e1791b01174d6c89e737b41e29c0e6b85b7b7c71464606f5794"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "bootstrap_replica_count_exercised": 2,
+  "bootstrap_replicas_exercised": [
+    0,
+    1
+  ],
+  "bootstrap_semantics": {
+    "per_event_weights_scaled_by_multiplicity": false,
+    "source_fold_reassigned": false,
+    "source_rows_duplicated_by_multiplicity": true,
+    "sumw_and_sumw2_closure": true
+  },
+  "canary_config_sha256": "7f9eaa521d320032ea279ca3f7f0e83b0ea83cc9c2177da3369de56492b297b9",
+  "canary_search_budget": "7_16_4_2",
+  "categories_exercised": [
+    "exact3tag",
+    "ge4tag"
+  ],
+  "determinism": {
+    "identical_rerun_canonical_payload": true,
+    "identical_rerun_inner_crossfit_sha256": true
+  },
+  "mass_families_exercised": [
+    "asymmetric_rectangular_mass",
+    "radial_mass",
+    "symmetric_rectangular_mass"
+  ],
+  "materializer_sha256": "bea9bf35923c79e87aeb8097e524a2dee3712ffa1f8e44c78787f2683d19efcc",
+  "next": "freeze_canary_evidence_then_design_initial_200_replica_production",
+  "optimizer_sha256": "7760ee7ae309bec6cd47eb1c73ed04ec12bb805f133527498fcb75aca8088a62",
+  "outer_folds_exercised": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "production_contract_changed": false,
+  "production_search_budget": "63_128_16_8",
+  "production_submission_authorized": false,
+  "repository_head": "1e52f208f5f4564b929cda1b6fe47b7795424273",
+  "role": "implementation_evidence_only_not_physics_result",
+  "runtime_seconds": {
+    "max": 17.741999626159668,
+    "median": 5.749039173126221,
+    "min": 1.983567476272583,
+    "sum": 47.35766386985779
+  },
+  "schema_version": 1,
+  "scientific_outcomes_not_acceptance_gates": {
+    "all_inner_support_pass": true,
+    "pooled_inner_oof_feasible": true,
+    "pooled_support_pass": true
+  },
+  "selection_stability_draw_sha256": "723f11cf3f78cc0f8eb68013cc7ec1ff7dcb24279c4f317ef42927caf8b97cc2",
+  "sentinel_jobs": 6,
+  "status": "pass_selection_stability_reoptimization_canary",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0,
+  "worker_sha256": "739147c33d6597018f4dce8c483278c64ff8b41533de1f1b213749dfb39332ed"
+}

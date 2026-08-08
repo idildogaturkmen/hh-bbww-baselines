@@ -1,0 +1,98 @@
+{
+  "categories": [
+    {
+      "category_id": "exact3tag",
+      "definition": "candidate_tagged_jet_count == 3"
+    },
+    {
+      "category_id": "ge4tag",
+      "definition": "candidate_tagged_jet_count >= 4"
+    }
+  ],
+  "dataset": {
+    "authorized_primary_resolved_rows": 1042397,
+    "authorized_primary_sources": 441,
+    "auxiliary_qcd_allowed": false,
+    "source_group_folds": 5,
+    "test_payloads_allowed": false,
+    "validation_payloads_allowed": false
+  },
+  "inputs": {
+    "base_cut_contract": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_and_figure_contract_20260806_v1/multivariate_nested_oof_cut_contract.json",
+    "canary_acceptance_repair": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_canary_acceptance_repair_20260806_v1/multivariate_cut_canary_acceptance_repair.json",
+    "category_endpoint_amendment": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_category_endpoint_amendment_20260806_v1/multivariate_cut_category_endpoint_amendment.json",
+    "implementation_clarification": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_implementation_clarification_20260806_v1/multivariate_cut_implementation_clarification.json",
+    "physical_authorization_registry": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_run2_138fb_physical_authorization_freeze_20260806_v1/evidence/authorization/physical_weight_authorization_registry_464.tsv",
+    "production_plan": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_production_plan.tsv",
+    "source_worker_manifest": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_source_worker_manifest.tsv"
+  },
+  "optimization": {
+    "beam_width": 16,
+    "max_coordinate_passes": 2,
+    "minimum_inner_selected_background_rows": 50,
+    "minimum_inner_selected_signal_rows": 25,
+    "minimum_pooled_background_neff": 100.0,
+    "minimum_pooled_background_rows": 500,
+    "quantile_count": 7,
+    "refinement_starts": 4,
+    "target_signal_efficiency": 0.585957
+  },
+  "production": {
+    "canary_only_absolute_oof_tolerance": 0.001,
+    "category_family_configurations": 54,
+    "retain_both_categories": true,
+    "structure_jobs": 270,
+    "structures_per_category": 27,
+    "target_tolerance": 0.0
+  },
+  "repository": {
+    "branch": "delphes-hh4b-production",
+    "path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines",
+    "required_cut_repair_ancestor": "5b96183b489e206b0d22b75da370d71610de55ab"
+  },
+  "resampling_after_full_scan": {
+    "paired_metric_bootstrap_replicas": 2000,
+    "selection_reoptimization_replicas_escalated": 1000,
+    "selection_reoptimization_replicas_initial": 200
+  },
+  "runtime": {
+    "python": "/uscms_data/d3/iturkmen/hh4b_delphes/runtime/hh4b_broad_ml_py39_v1/bin/python"
+  },
+  "schema_version": 1,
+  "search_algorithm": {
+    "exhaustive_cartesian_claim": false,
+    "family_selection_uses_pooled_true_inner_oof_only": true,
+    "fully_open_seed_required": true,
+    "name": "deterministic bounded quantile-product beam seeds plus exact empirical coordinate refinement",
+    "outer_fold_used_for_selection": false,
+    "strict_inequalities_via_nextafter": true
+  },
+  "stability_reoptimization_canary": {
+    "canary_search_budget": "7_16_4_2",
+    "production_contract_modified": false,
+    "production_search_budget": "63_128_16_8",
+    "replicas_exercised": [
+      0,
+      1
+    ],
+    "role": "implementation_evidence_only_not_physics_result",
+    "schema_version": 1,
+    "selection_stability_seed": 20260806,
+    "source_bootstrap_method": "literal whole-source row-copy resampling",
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "status": "frozen_before_committed_code_canary",
+  "weights": {
+    "physical_column": "resolved_selection_contribution_weight",
+    "selection_columns": [
+      "comparison_weight_outer_fold_0",
+      "comparison_weight_outer_fold_1",
+      "comparison_weight_outer_fold_2",
+      "comparison_weight_outer_fold_3",
+      "comparison_weight_outer_fold_4"
+    ],
+    "signed_physical_weights_allowed": true,
+    "signed_weights_allowed_for_selection": false
+  }
+}

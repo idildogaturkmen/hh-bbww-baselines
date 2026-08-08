@@ -1,0 +1,98 @@
+{
+  "drawn_sparse_groups": 293,
+  "event_uid_bootstrap_suffix_applied": true,
+  "method": "literal whole-source row-copy resampling",
+  "per_event_weights_scaled_by_multiplicity": false,
+  "replica": 0,
+  "schema_version": 1,
+  "source_fold_reassigned": false,
+  "source_rows_duplicated_by_multiplicity": true,
+  "status": "pass_source_copy_bootstrap_replica_materialization",
+  "table_count": 10,
+  "tables": [
+    {
+      "materialized_rows": 24479,
+      "materialized_unique_groups": 48,
+      "nominal_rows": 21410,
+      "nominal_unique_groups": 68,
+      "output_sha256": "149c71a59362c316e979c930de99f6b3509d9cfa5660fc1d41133305f002242c",
+      "relative_path": "fold_0/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 7783,
+      "materialized_unique_groups": 39,
+      "nominal_rows": 6195,
+      "nominal_unique_groups": 54,
+      "output_sha256": "57025a04112aeac2f3fb7050982ddfa80d11c94d8d6d0f17b83404a1264fce60",
+      "relative_path": "fold_0/ge4tag.parquet"
+    },
+    {
+      "materialized_rows": 20472,
+      "materialized_unique_groups": 49,
+      "nominal_rows": 21577,
+      "nominal_unique_groups": 78,
+      "output_sha256": "1bcb3177516fb8428326bd599eb25a1f83a4b033e5fa5ece24f9e62cf7958eea",
+      "relative_path": "fold_1/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 5562,
+      "materialized_unique_groups": 32,
+      "nominal_rows": 6151,
+      "nominal_unique_groups": 52,
+      "output_sha256": "628632b26b17b7f702d1969221a93d68a138b22c5a37c860c5f3009a324c058f",
+      "relative_path": "fold_1/ge4tag.parquet"
+    },
+    {
+      "materialized_rows": 16822,
+      "materialized_unique_groups": 42,
+      "nominal_rows": 22474,
+      "nominal_unique_groups": 62,
+      "output_sha256": "33a8f01181445f4879ab7c40d350b7426e85d7662f4f38a3fa3748bc80d871b0",
+      "relative_path": "fold_2/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 4399,
+      "materialized_unique_groups": 36,
+      "nominal_rows": 6169,
+      "nominal_unique_groups": 52,
+      "output_sha256": "6c529a49056309303deb88e434335f5cf044a8cf9442e0dd50a802feb4e57c98",
+      "relative_path": "fold_2/ge4tag.parquet"
+    },
+    {
+      "materialized_rows": 22080,
+      "materialized_unique_groups": 42,
+      "nominal_rows": 21543,
+      "nominal_unique_groups": 69,
+      "output_sha256": "c17de484f3d90df9898535beb7824a23a446cfe1a256fe07dce4b5b232f410a6",
+      "relative_path": "fold_3/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 5843,
+      "materialized_unique_groups": 34,
+      "nominal_rows": 6112,
+      "nominal_unique_groups": 58,
+      "output_sha256": "65414c2a8a4b8616816b862da26a64e2125f898c314b7a7a5d155ea3f17f61e3",
+      "relative_path": "fold_3/ge4tag.parquet"
+    },
+    {
+      "materialized_rows": 25341,
+      "materialized_unique_groups": 56,
+      "nominal_rows": 21674,
+      "nominal_unique_groups": 74,
+      "output_sha256": "960807be63b72a05ee800c927c3252cfb4806dd2f2cb99d410e6e99ed057a288",
+      "relative_path": "fold_4/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 7253,
+      "materialized_unique_groups": 44,
+      "nominal_rows": 6078,
+      "nominal_unique_groups": 59,
+      "output_sha256": "370da6fcaa3166618047e9495e78df851782853574ed0a8a2ef131e5ff5de680",
+      "relative_path": "fold_4/ge4tag.parquet"
+    }
+  ],
+  "test_payloads_opened": 0,
+  "total_materialized_rows": 140034,
+  "total_source_multiplicity": 441,
+  "validation_payloads_opened": 0
+}

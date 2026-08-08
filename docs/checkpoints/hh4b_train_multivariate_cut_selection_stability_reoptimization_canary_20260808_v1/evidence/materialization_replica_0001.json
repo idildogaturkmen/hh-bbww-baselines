@@ -1,0 +1,98 @@
+{
+  "drawn_sparse_groups": 279,
+  "event_uid_bootstrap_suffix_applied": true,
+  "method": "literal whole-source row-copy resampling",
+  "per_event_weights_scaled_by_multiplicity": false,
+  "replica": 1,
+  "schema_version": 1,
+  "source_fold_reassigned": false,
+  "source_rows_duplicated_by_multiplicity": true,
+  "status": "pass_source_copy_bootstrap_replica_materialization",
+  "table_count": 10,
+  "tables": [
+    {
+      "materialized_rows": 30909,
+      "materialized_unique_groups": 42,
+      "nominal_rows": 21410,
+      "nominal_unique_groups": 68,
+      "output_sha256": "2869fa2fe9682eeaef2f6af57363002252c1e7ae4dda58732fc7d70d51943dcb",
+      "relative_path": "fold_0/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 10289,
+      "materialized_unique_groups": 35,
+      "nominal_rows": 6195,
+      "nominal_unique_groups": 54,
+      "output_sha256": "db1c48cde82b8c8310ecd1b61c4adc68ba51cccb2cea12b147e0a174b1e913fe",
+      "relative_path": "fold_0/ge4tag.parquet"
+    },
+    {
+      "materialized_rows": 10736,
+      "materialized_unique_groups": 43,
+      "nominal_rows": 21577,
+      "nominal_unique_groups": 78,
+      "output_sha256": "6273188eaa88268c998af9b009b37778102dd804e84c233078be6466b6865c0c",
+      "relative_path": "fold_1/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 1795,
+      "materialized_unique_groups": 27,
+      "nominal_rows": 6151,
+      "nominal_unique_groups": 52,
+      "output_sha256": "24ee29705e5b6275a2a38ae8fad395f1512194525186a436896bfde947d556d1",
+      "relative_path": "fold_1/ge4tag.parquet"
+    },
+    {
+      "materialized_rows": 22604,
+      "materialized_unique_groups": 39,
+      "nominal_rows": 22474,
+      "nominal_unique_groups": 62,
+      "output_sha256": "d44c6f481b62f376aeba9d7a0ba9d4f9c59eb505f955b487d256b902abe86b07",
+      "relative_path": "fold_2/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 5985,
+      "materialized_unique_groups": 35,
+      "nominal_rows": 6169,
+      "nominal_unique_groups": 52,
+      "output_sha256": "77fa57c4cef9aa1119938614e30025b85ecc893c748dbda0dc969e5cadd8db09",
+      "relative_path": "fold_2/ge4tag.parquet"
+    },
+    {
+      "materialized_rows": 24735,
+      "materialized_unique_groups": 45,
+      "nominal_rows": 21543,
+      "nominal_unique_groups": 69,
+      "output_sha256": "27baa165c3297c5f3019174d51ae72fcc42264495746c1d0839583935f5a515b",
+      "relative_path": "fold_3/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 6899,
+      "materialized_unique_groups": 37,
+      "nominal_rows": 6112,
+      "nominal_unique_groups": 58,
+      "output_sha256": "fda48f6efaba323c9bcb00b37ce4fb7ce62cd77cd8e6d7f7545a8713b668bab1",
+      "relative_path": "fold_3/ge4tag.parquet"
+    },
+    {
+      "materialized_rows": 20182,
+      "materialized_unique_groups": 48,
+      "nominal_rows": 21674,
+      "nominal_unique_groups": 74,
+      "output_sha256": "b2921257a196b95248dee2e0fd9149b03b98b846bc4872521cd0e4f05af36bf2",
+      "relative_path": "fold_4/exact3tag.parquet"
+    },
+    {
+      "materialized_rows": 5541,
+      "materialized_unique_groups": 38,
+      "nominal_rows": 6078,
+      "nominal_unique_groups": 59,
+      "output_sha256": "c1f96dd9e15caac2ca49a4b445663b4f19ae7071f353e91f65c33d16db8a3c6d",
+      "relative_path": "fold_4/ge4tag.parquet"
+    }
+  ],
+  "test_payloads_opened": 0,
+  "total_materialized_rows": 139675,
+  "total_source_multiplicity": 441,
+  "validation_payloads_opened": 0
+}
