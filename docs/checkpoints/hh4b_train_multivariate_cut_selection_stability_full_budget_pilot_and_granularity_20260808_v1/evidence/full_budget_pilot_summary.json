@@ -1,0 +1,81 @@
+{
+  "bootstrap_replicas_exercised": [
+    0,
+    1
+  ],
+  "categories_exercised": [
+    "exact3tag",
+    "ge4tag"
+  ],
+  "condor_submission_performed": false,
+  "continuous_cut_dimensions_exercised": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "determinism": {
+    "identical_full_budget_rerun_canonical_payload": true,
+    "identical_full_budget_rerun_inner_crossfit_sha256": true
+  },
+  "includes_frozen_nominal_exact3tag_family": true,
+  "includes_frozen_nominal_ge4tag_family": true,
+  "initial_200_production_authorized": false,
+  "memory": {
+    "max_rss_kb_max": 394832,
+    "max_rss_kb_median": 313074.0
+  },
+  "next": "freeze_full_budget_pilot_and_select_condor_production_granularity",
+  "pilot_job_count": 6,
+  "pilot_results_may_enter_stability_aggregation": false,
+  "production_architecture_selected": false,
+  "repository_head": "86954fb70686a8c135caa6a431788e6541819075",
+  "role": "runtime_resource_and_production_path_evidence_only",
+  "runtime_seconds": {
+    "by_cut_dimension": {
+      "1": {
+        "jobs": 2,
+        "max_rss_kb_max": 390976,
+        "runtime_seconds_max": 31.230830907821655,
+        "runtime_seconds_median": 19.452370405197144,
+        "runtime_seconds_min": 7.673909902572632
+      },
+      "2": {
+        "jobs": 1,
+        "max_rss_kb_max": 394832,
+        "runtime_seconds_max": 52.642637491226196,
+        "runtime_seconds_median": 52.642637491226196,
+        "runtime_seconds_min": 52.642637491226196
+      },
+      "3": {
+        "jobs": 1,
+        "max_rss_kb_max": 235172,
+        "runtime_seconds_max": 18.893850326538086,
+        "runtime_seconds_median": 18.893850326538086,
+        "runtime_seconds_min": 18.893850326538086
+      },
+      "4": {
+        "jobs": 2,
+        "max_rss_kb_max": 391564,
+        "runtime_seconds_max": 93.08614468574524,
+        "runtime_seconds_median": 55.450316309928894,
+        "runtime_seconds_min": 17.81448793411255
+      }
+    },
+    "max": 93.08614468574524,
+    "median": 25.06234061717987,
+    "min": 7.673909902572632,
+    "sum": 221.34186124801636
+  },
+  "schema_version": 1,
+  "scientific_outcomes_not_acceptance_gates": {
+    "all_inner_support_pass": true,
+    "pooled_inner_oof_feasible": true,
+    "pooled_support_pass": true
+  },
+  "search_budget": "63_128_16_8",
+  "status": "pass_full_production_budget_bootstrap_reoptimization_pilot",
+  "target_signal_efficiency": 0.585957,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

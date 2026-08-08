@@ -1,0 +1,131 @@
+{
+  "authorization_state": {
+    "condor_submission_performed": false,
+    "initial_200_production_authorized": false,
+    "production_transfer_package_built": false,
+    "test_payloads_opened": 0,
+    "transfer_pilot_run": false,
+    "validation_payloads_opened": 0
+  },
+  "campaign_sizes": {
+    "full_1000_replicas": {
+      "condor_jobs": 10000,
+      "structure_evaluations": 270000
+    },
+    "initial_200_replicas": {
+      "condor_jobs": 2000,
+      "structure_evaluations": 54000
+    }
+  },
+  "frozen_family_program": {
+    "categories": 2,
+    "dimension_counts_per_category": {
+      "exact3tag": {
+        "1": 2,
+        "2": 11,
+        "3": 11,
+        "4": 3
+      },
+      "ge4tag": {
+        "1": 2,
+        "2": 11,
+        "3": 11,
+        "4": 3
+      }
+    },
+    "outer_folds": 5,
+    "structures_per_category": 27
+  },
+  "full_budget_pilot": {
+    "jobs": 6,
+    "memory": {
+      "max_rss_kb_max": 394832,
+      "max_rss_kb_median": 313074.0
+    },
+    "pilot_results_may_enter_stability_aggregation": false,
+    "runtime_seconds": {
+      "by_cut_dimension": {
+        "1": {
+          "jobs": 2,
+          "max_rss_kb_max": 390976,
+          "runtime_seconds_max": 31.230830907821655,
+          "runtime_seconds_median": 19.452370405197144,
+          "runtime_seconds_min": 7.673909902572632
+        },
+        "2": {
+          "jobs": 1,
+          "max_rss_kb_max": 394832,
+          "runtime_seconds_max": 52.642637491226196,
+          "runtime_seconds_median": 52.642637491226196,
+          "runtime_seconds_min": 52.642637491226196
+        },
+        "3": {
+          "jobs": 1,
+          "max_rss_kb_max": 235172,
+          "runtime_seconds_max": 18.893850326538086,
+          "runtime_seconds_median": 18.893850326538086,
+          "runtime_seconds_min": 18.893850326538086
+        },
+        "4": {
+          "jobs": 2,
+          "max_rss_kb_max": 391564,
+          "runtime_seconds_max": 93.08614468574524,
+          "runtime_seconds_median": 55.450316309928894,
+          "runtime_seconds_min": 17.81448793411255
+        }
+      },
+      "max": 93.08614468574524,
+      "median": 25.06234061717987,
+      "min": 7.673909902572632,
+      "sum": 221.34186124801636
+    },
+    "search_budget": "63_128_16_8",
+    "target_signal_efficiency": 0.585957
+  },
+  "next": "build_transfer_safe_category_fold_runner_and_bounded_condor_transfer_pilot",
+  "provisional_condor_resources": {
+    "request_cpus": 1,
+    "request_disk": "to_be_frozen_after_transfer_package_size_audit",
+    "request_memory_mb": 2048,
+    "walltime_class": "to_be_frozen_after_transfer_pilot"
+  },
+  "repository_head_before_checkpoint": "86954fb70686a8c135caa6a431788e6541819075",
+  "runtime_model": {
+    "category_fold_runtime_gate_seconds": 3600.0,
+    "estimated_category_fold_seconds_using_dimension_maxima": 1128.6214618682861,
+    "estimated_category_fold_seconds_using_dimension_medians": 992.1570557355882,
+    "maximum_observed_seconds_by_cut_dimension": {
+      "1": 31.23083090782165,
+      "2": 52.6426374912262,
+      "3": 18.89385032653809,
+      "4": 93.08614468574524
+    },
+    "median_observed_seconds_by_cut_dimension": {
+      "1": 19.452370405197144,
+      "2": 52.6426374912262,
+      "3": 18.89385032653809,
+      "4": 55.450316309928894
+    },
+    "pilot_median_rss_kb": 313074.0,
+    "pilot_peak_rss_kb": 394832,
+    "rss_gate_kb": 1048576
+  },
+  "schema_version": 1,
+  "selected_architecture": {
+    "architecture_id": "replica__category__outer_fold__all_27_structures_sequential",
+    "bootstrap_replica_tables_reused_within_job": true,
+    "family_selection_rule_changed": false,
+    "one_condor_job_contains": {
+      "bootstrap_replicas": 1,
+      "categories": 1,
+      "outer_folds": 1,
+      "structure_execution": "sequential",
+      "structures": 27
+    },
+    "outer_fold_isolation_changed": false,
+    "resampling_registry_changed": false,
+    "scientific_algorithm_changed": false
+  },
+  "selection_basis": "runtime_memory_and_scheduler_overhead_only_not_physics_outcomes",
+  "status": "pass_full_budget_pilot_frozen_and_production_granularity_selected"
+}

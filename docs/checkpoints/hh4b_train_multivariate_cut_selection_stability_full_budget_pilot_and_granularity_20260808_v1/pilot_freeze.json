@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "pass_full_production_budget_bootstrap_reoptimization_pilot_frozen",
+  "parent_repository_head": "86954fb70686a8c135caa6a431788e6541819075",
+  "pilot_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_full_budget_pilot_v1_20260808",
+  "summary_json_sha256": "8246dec34241618431f0fbfc0b4d592847b10071a646218bccfe3dce03db279e",
+  "summary_tsv_sha256": "6797e7af972d07f1ad7173bedb025150081ee6ed9794a9881de6104372283783",
+  "external_tree_manifest_sha256": "a2df308849cdf85c195948a495de9f0ddf7572039edd5b23286fad0cfc474ec6",
+  "external_tree_file_count": 38,
+  "search_budget": "63_128_16_8",
+  "target_signal_efficiency": 0.585957,
+  "pilot_results_may_enter_stability_aggregation": false,
+  "production_submission_authorized": false,
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0
+}
