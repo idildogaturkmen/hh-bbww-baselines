@@ -1,0 +1,115 @@
+{
+  "fold_tables": {
+    "all_fold_groups_in_historical_draw_universe": true,
+    "count": 10,
+    "draw_groups_absent_from_exact3tag_ge4tag_tables": 90,
+    "group_id_crosses_sample_class": 0,
+    "group_id_crosses_source_fold": 0,
+    "table_summary": [
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_0/exact3tag.parquet",
+        "rows": 21410,
+        "unique_groups": 68
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_0/ge4tag.parquet",
+        "rows": 6195,
+        "unique_groups": 54
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_1/exact3tag.parquet",
+        "rows": 21577,
+        "unique_groups": 78
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_1/ge4tag.parquet",
+        "rows": 6151,
+        "unique_groups": 52
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_2/exact3tag.parquet",
+        "rows": 22474,
+        "unique_groups": 62
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_2/ge4tag.parquet",
+        "rows": 6169,
+        "unique_groups": 52
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_3/exact3tag.parquet",
+        "rows": 21543,
+        "unique_groups": 69
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_3/ge4tag.parquet",
+        "rows": 6112,
+        "unique_groups": 58
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_4/exact3tag.parquet",
+        "rows": 21674,
+        "unique_groups": 74
+      },
+      {
+        "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_full_train_scan_v9_20260807T051625Z/build/payload/fold_tables/fold_4/ge4tag.parquet",
+        "rows": 6078,
+        "unique_groups": 59
+      }
+    ],
+    "unique_groups": 351
+  },
+  "historical_draw": {
+    "expected_sha256": "3ac59a86fefc9e21275df73c945cd08e2b24642f02acc2b6459cf3c0f62c929b",
+    "multiplicity_sum_per_replica_max": 441,
+    "multiplicity_sum_per_replica_min": 441,
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/hh4b_train_historical_rhh125125_lt34_v4_20260806T055823Z/source_group_bootstrap_draw_counts.parquet",
+    "replica_max": 1999,
+    "replica_min": 0,
+    "replicas": 2000,
+    "role_summaries": {
+      "final_role": {
+        "development_train": 441
+      },
+      "final_split": {
+        "train": 441
+      },
+      "is_auxiliary_overlapping_qcd": {
+        "False": 441
+      },
+      "physical_population_role": {
+        "physical_ordinary_background_direct": 168,
+        "physical_qcd_primary_transfer_and_secondary_direct_closure": 186,
+        "physical_signal_direct": 87
+      },
+      "physical_weight_authorized": {
+        "True": 441
+      },
+      "primary_train_fit_eligible": {
+        "False": 166,
+        "True": 275
+      },
+      "workflow_role": {
+        "primary_train_fit_and_source_group_oof": 441
+      }
+    },
+    "source_uid_identity": "group_id::sample_class::source_index::member_id",
+    "strata": 23,
+    "stratification": "sample_class_and_process_or_mode",
+    "unique_group_ids": 441,
+    "unique_source_uids": 441
+  },
+  "interpretation": {
+    "historical_draw_role": "paired_metric_bootstrap_2000",
+    "historical_metric_bootstrap_seed": 20260727,
+    "selection_reoptimization_initial_replicas": 200,
+    "selection_reoptimization_predeclared_total": 1000,
+    "selection_reoptimization_seed": 20260806,
+    "selection_reoptimization_uses_same_historical_draws": false
+  },
+  "next": "freeze_selection_stability_source_group_draw_registry_seed_20260806",
+  "schema_version": 3,
+  "status": "pass_historical_draw_identity_strata_fold_mapping_audit_v3",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

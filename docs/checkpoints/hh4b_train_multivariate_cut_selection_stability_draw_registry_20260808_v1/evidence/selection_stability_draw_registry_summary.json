@@ -1,0 +1,76 @@
+{
+  "algorithm": "numpy Generator PCG64; stratified nonparametric source-group draws with replacement",
+  "artifacts": {
+    "escalation_800_draw_counts": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_draw_counts_escalation_800.parquet",
+      "rows": 226901,
+      "sha256": "091c2a401cb6ab74d9219449c117fc99832737cc2951e812dc7765540615a279"
+    },
+    "full_draw_counts": {
+      "canonical_content_sha256": "9afb0854a1dbaafd1377eb89708680faed5b0cfd381a73bbe200af3176b12a4c",
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_draw_counts_1000.parquet",
+      "rows": 283733,
+      "sha256": "723f11cf3f78cc0f8eb68013cc7ec1ff7dcb24279c4f317ef42927caf8b97cc2"
+    },
+    "initial_200_draw_counts": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_draw_counts_initial_200.parquet",
+      "rows": 56832,
+      "sha256": "14220e25d79a8756d81740e6d3266a57e9715d36afb0884d56dc10b68601079e"
+    },
+    "source_universe": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_source_universe.tsv",
+      "rows": 441,
+      "sha256": "548a4e37c6ca04a4f835981c4e09e9d6c03dbc882212b0c6d8c40b4df8b45d26"
+    }
+  },
+  "closure": {
+    "replica_ids_exact": true,
+    "stratum_multiplicity_preserved_per_replica": true,
+    "total_multiplicity_per_replica": 441
+  },
+  "deterministic_regeneration_matches": true,
+  "deterministic_regeneration_semantic_sha256": "9afb0854a1dbaafd1377eb89708680faed5b0cfd381a73bbe200af3176b12a4c",
+  "fold_policy": {
+    "bootstrap_multiplicity_join_key": "group_id",
+    "fold_assignments_reassigned": false,
+    "fold_assignments_resampled": false,
+    "source_fold_remains_from_frozen_fold_tables": true
+  },
+  "historical_metric_bootstrap_draw_reused_as_stability_draw": false,
+  "historical_metric_bootstrap_seed": 20260727,
+  "next": "implement_and_canary_full_selection_reoptimization_under_frozen_draw_registry",
+  "nominal_deployment_candidate_changed": false,
+  "replicas": {
+    "escalation_block": {
+      "count": 800,
+      "first": 200,
+      "last": 999
+    },
+    "initial_block": {
+      "count": 200,
+      "first": 0,
+      "last": 199
+    },
+    "total": 1000
+  },
+  "rng": {
+    "bit_generator": "PCG64",
+    "numpy_version": "1.23.5",
+    "seed": 20260806
+  },
+  "role": "selection_reoptimization_stability_resampling_registry",
+  "schema_version": 1,
+  "selection_stability_seed": 20260806,
+  "source_universe": {
+    "active_cut_table_groups": 351,
+    "authoritative_origin": "frozen historical paired metric-bootstrap source universe",
+    "canonical_source_order": "bootstrap_source_index ascending, exactly 0..440",
+    "source_groups": 441,
+    "strata": 23,
+    "stratification": "sample_class_and_process_or_mode",
+    "zero_exact3tag_ge4tag_row_groups": 90
+  },
+  "status": "pass_selection_stability_draw_registry_frozen_external",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
