@@ -1,0 +1,18 @@
+{
+  "authorized_replicas": [
+    0,
+    199
+  ],
+  "condor_submission_performed": false,
+  "expected_condor_jobs": 2000,
+  "expected_payload_archives": 400,
+  "expected_structure_evaluations": 54000,
+  "package_audit_json": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_initial200_production_package_v1_20260808/evidence/initial200_production_package_audit.json",
+  "production_package_built": true,
+  "production_submission_performed": false,
+  "repository_head": "b317d2c3270166edce86c70a3972e6db3b75c186",
+  "schema_version": 1,
+  "status": "pass_initial200_production_package_built_and_audited_pre_submission",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

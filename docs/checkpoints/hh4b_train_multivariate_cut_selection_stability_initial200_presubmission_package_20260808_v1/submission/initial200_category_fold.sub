@@ -1,0 +1,26 @@
+universe = vanilla
+executable = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_initial200_production_package_v1_20260808/submission/run_initial200_category_fold_job.sh
+arguments = "$(job_index) $(replica) $(outer_fold) $(category_id) $(expected_head) $(payload_basename) $(payload_sha) $(runtime_sha)"
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = $(payload_archive),/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz
+transfer_output_files = result_bundle.tar.gz,job_receipt.json,runner.log
+
+getenv = False
+environment = "PYTHONNOUSERSITE=1"
+
+request_cpus = 1
+request_memory = 2048MB
+request_disk = 4000MB
++JobFlavour = "workday"
+
+initialdir = $(return_dir)
+
+log = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_initial200_production_package_v1_20260808/logs/job_$(job_index).log
+output = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_initial200_production_package_v1_20260808/logs/job_$(job_index).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_initial200_production_package_v1_20260808/logs/job_$(job_index).err
+
+on_exit_remove = (ExitBySignal == False) && (ExitCode == 0)
+
+queue job_index, replica, outer_fold, category_id, expected_head, payload_archive, payload_basename, payload_sha, runtime_sha, return_dir from /uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_initial200_production_package_v1_20260808/submission/initial200_queue.items
