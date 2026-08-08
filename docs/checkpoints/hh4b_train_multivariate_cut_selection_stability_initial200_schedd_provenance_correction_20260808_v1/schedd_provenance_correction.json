@@ -1,0 +1,53 @@
+{
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "cluster_id": 30002685,
+  "condor_mutation_performed": false,
+  "correction_basis": {
+    "cluster_resolved_on_exactly_one_schedd": true,
+    "raw_wrapper_selected_schedd": "lpcschedd5.fnal.gov",
+    "schedd4_unique_union_procs": 0,
+    "schedd5_unique_union_procs": 2000
+  },
+  "escalation_replicas_200_999_production_authorized": false,
+  "expected_job_count": 2000,
+  "expected_structure_evaluations": 54000,
+  "monitoring_policy": {
+    "all_future_cluster_queries_use": "lpcschedd5.fnal.gov",
+    "do_not_resubmit_cluster": true,
+    "read_only_until_complete_return_audit": true
+  },
+  "next": "monitor_cluster_30002685_on_lpcschedd5_read_only_until_completion_then_run_full_return_audit",
+  "nominal_selection_changed": false,
+  "original_frozen_receipt_schedd": "lpcschedd4.fnal.gov",
+  "original_receipt_schedd_field_is_incorrect": true,
+  "original_submission_checkpoint_rewritten": false,
+  "original_submission_receipt_rewritten": false,
+  "pilot_results_may_enter_stability_aggregation": false,
+  "repository_parent_head": "e2e8ff6032af921b6639e7c26359aad233a8c47f",
+  "schema_version": 1,
+  "snapshot_at_correction_freeze": {
+    "authoritative_schedd": "lpcschedd5.fnal.gov",
+    "clean_history_completions": 0,
+    "cluster_id": 30002685,
+    "completion_ready": false,
+    "condor_mutation_performed": false,
+    "do_not_resubmit_cluster": true,
+    "history_rows": 0,
+    "history_status_counts": {},
+    "queue_rows": 2000,
+    "queue_status_counts": {
+      "1": 1587,
+      "2": 413
+    },
+    "schema_version": 1,
+    "status": "read_only_authoritative_schedd_snapshot",
+    "test_payloads_opened": 0,
+    "unique_history_procs": 0,
+    "unique_queue_procs": 2000,
+    "unique_union_procs": 2000,
+    "validation_payloads_opened": 0
+  },
+  "status": "pass_initial200_submission_schedd_provenance_corrected",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

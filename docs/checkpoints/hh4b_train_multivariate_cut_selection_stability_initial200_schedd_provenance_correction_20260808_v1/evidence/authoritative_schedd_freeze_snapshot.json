@@ -1,0 +1,22 @@
+{
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "clean_history_completions": 0,
+  "cluster_id": 30002685,
+  "completion_ready": false,
+  "condor_mutation_performed": false,
+  "do_not_resubmit_cluster": true,
+  "history_rows": 0,
+  "history_status_counts": {},
+  "queue_rows": 2000,
+  "queue_status_counts": {
+    "1": 1587,
+    "2": 413
+  },
+  "schema_version": 1,
+  "status": "read_only_authoritative_schedd_snapshot",
+  "test_payloads_opened": 0,
+  "unique_history_procs": 0,
+  "unique_queue_procs": 2000,
+  "unique_union_procs": 2000,
+  "validation_payloads_opened": 0
+}

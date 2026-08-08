@@ -1,0 +1,53 @@
+{
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "cluster_id": 30002685,
+  "cluster_resolved_on_exactly_one_schedd": true,
+  "condor_mutation_performed": false,
+  "do_not_resubmit_cluster": true,
+  "expected_job_count": 2000,
+  "frozen_receipt_recorded_schedd": "lpcschedd4.fnal.gov",
+  "next": "freeze_schedd_provenance_correction_and_monitor_authoritative_cluster_read_only",
+  "raw_wrapper_selected_schedd": "lpcschedd5.fnal.gov",
+  "receipt_schedd_field_is_incorrect": true,
+  "schedd_snapshots": {
+    "lpcschedd4.fnal.gov": {
+      "cmd_exact_expected_runner_rows": 0,
+      "cmd_rows_with_value": 0,
+      "history_exit_by_signal_counts": {},
+      "history_exit_code_counts": {},
+      "history_rows": 0,
+      "history_status_counts": {},
+      "max_proc": null,
+      "min_proc": null,
+      "queue_history_overlap_procs": 0,
+      "queue_rows": 0,
+      "queue_status_counts": {},
+      "unique_history_procs": 0,
+      "unique_queue_procs": 0,
+      "unique_union_procs": 0
+    },
+    "lpcschedd5.fnal.gov": {
+      "cmd_exact_expected_runner_rows": 2000,
+      "cmd_rows_with_value": 2000,
+      "history_exit_by_signal_counts": {},
+      "history_exit_code_counts": {},
+      "history_rows": 0,
+      "history_status_counts": {},
+      "max_proc": 1999,
+      "min_proc": 0,
+      "queue_history_overlap_procs": 0,
+      "queue_rows": 2000,
+      "queue_status_counts": {
+        "1": 1911,
+        "2": 89
+      },
+      "unique_history_procs": 0,
+      "unique_queue_procs": 2000,
+      "unique_union_procs": 2000
+    }
+  },
+  "schema_version": 1,
+  "status": "pass_initial200_submission_schedd_reconciliation",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
