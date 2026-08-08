@@ -1,0 +1,150 @@
+{
+  "data_access_policy": {
+    "test_opening_authorized": false,
+    "test_payloads_opened": 0,
+    "train_only": true,
+    "validation_opening_authorized": false,
+    "validation_payloads_opened": 0
+  },
+  "fold_level_winner_rule": {
+    "every_category_fold_produces_one_deterministic_winner": true,
+    "infeasible_structure_can_be_valid_execution_result": true,
+    "outer_fold_used_for_selection": false,
+    "ranking_feasible": [
+      "feasibility_class_0",
+      "minimum_pooled_inner_oof_background_efficiency",
+      "minimum_signal_efficiency_overshoot_above_target",
+      "fewer_continuous_cuts",
+      "lexicographic_structure_id"
+    ],
+    "ranking_infeasible": [
+      "feasibility_class_1",
+      "maximum_pooled_inner_oof_signal_efficiency",
+      "minimum_pooled_inner_oof_background_efficiency",
+      "fewer_continuous_cuts",
+      "lexicographic_structure_id"
+    ],
+    "selection_information": "pooled true inner out-of-fold metrics only",
+    "support_gates_are_separate_from_feasibility": true
+  },
+  "predeclared_stability_flags": {
+    "modal_family_frequency_below": 0.7,
+    "no_unique_five_fold_modal_family_is_instability_flag": true,
+    "note": "These flags are reported as diagnostics. The total-1000 escalation was already triggered by the nominal five-fold result and is not re-decided after observing replicas 0-199.",
+    "optional_variable_inclusion_ambiguous_interval_inclusive": [
+      0.3,
+      0.7
+    ],
+    "top_two_frequency_gap_below": 0.15
+  },
+  "production_gate": {
+    "aggregation_protocol_frozen_before_production": true,
+    "initial_200_authorized": true,
+    "next": "build_and_audit_initial_200_transfer_safe_production_package",
+    "production_package_built": false,
+    "production_submission_performed": false
+  },
+  "purpose": "Predeclare how each source-bootstrap reoptimization replica is reduced from five nested outer-fold winners per category to replica-level selection-stability diagnostics before any initial-200 production results exist.",
+  "replica_level_category_reduction": {
+    "input": "exactly five fold-level structure winners for one replica and one category",
+    "modal_structure_definition": "structure_id with maximum five-fold winner count",
+    "replica_thresholds": {
+      "folds_not_selecting_replica_structure_are_excluded": true,
+      "rule": "For the replica-level selected structure, take each continuous-cut coordinate independently and compute the median of the fold-specific development-refit thresholds from only the outer folds whose winner has that selected structure_id.",
+      "single_supporting_fold_case": "the single fold-specific refit threshold is the replica threshold",
+      "thresholds_do_not_modify_nominal_deployment_candidate": true
+    },
+    "structure_frequency_definition": "count each fold-level winner structure_id once; divide by 5 for frequency",
+    "tie_resolution": {
+      "interpretation_of_existing_frozen_rule": "This is the operational form of the already-frozen deployment-candidate rule: primary-endpoint ranking evaluated by inner OOF frequency, then lexicographic family ID.",
+      "rule": "Restrict to the tied maximum-frequency structure_ids. Their frequency is the frozen inner-OOF-derived primary selection frequency; if still tied, choose the lexicographically smallest structure_id.",
+      "tie_resolution_applied_flag_required": true,
+      "tied_structure_ids_must_be_retained": true,
+      "when": "two or more structure_ids share the maximum five-fold winner count"
+    },
+    "unique_mode_definition": "exactly one structure_id attains the maximum five-fold winner count"
+  },
+  "repository_parent_head": "eb474c715cd38a3eb0193213ea69959e66331b08",
+  "required_initial200_outputs": {
+    "aggregate_over_200_replicas_per_category": [
+      "replica_selected_structure_frequency",
+      "nominal_structure_recovery_frequency",
+      "unique_modal_family_fraction",
+      "tie_resolution_fraction",
+      "modal_count_distribution",
+      "optional_variable_inclusion_frequency_replica_level",
+      "optional_variable_inclusion_frequency_fold_level",
+      "conditional_replica_threshold_distributions_by_selected_structure",
+      "conditional_nominal_structure_threshold_distribution",
+      "support_failure_frequency",
+      "infeasible_fold_winner_frequency"
+    ],
+    "per_replica_per_category": [
+      "five_fold_winner_structure_ids",
+      "five_fold_winner_counts_by_structure",
+      "maximum_winner_count",
+      "maximum_winner_frequency",
+      "unique_modal_family",
+      "tie_resolution_applied",
+      "tied_maximum_frequency_structure_ids",
+      "replica_selected_structure_id",
+      "replica_selected_structure_supporting_outer_folds",
+      "replica_selected_structure_coordinatewise_median_thresholds",
+      "fold_level_support_and_feasibility_outcomes"
+    ],
+    "top_two_frequency_gap_definition": "difference between the largest and second-largest replica-selected structure frequencies over the analyzed replica block"
+  },
+  "schema_version": 1,
+  "scope": {
+    "categories": [
+      "exact3tag",
+      "ge4tag"
+    ],
+    "initial_authorized_replica_count": 200,
+    "initial_authorized_replicas": [
+      0,
+      199
+    ],
+    "initial_expected_condor_jobs": 2000,
+    "initial_expected_structure_evaluations": 54000,
+    "initial_results_can_cancel_pretriggered_escalation": false,
+    "outer_folds_per_category_per_replica": 5,
+    "predeclared_total_replicas": 1000,
+    "pretriggered_escalation_replicas": [
+      200,
+      999
+    ],
+    "structures_per_category_fold_job": 27
+  },
+  "stability_diagnostic_interpretation": {
+    "final_report_after_escalation_uses_all_1000_replicas": true,
+    "initial_200_results_enter_initial_stability_aggregation": true,
+    "initial_200_results_may_cancel_replicas_200_999": false,
+    "nominal_deployment_candidate": {
+      "exact3tag": {
+        "nominal_outer_fold_modal_count": 2,
+        "nominal_outer_fold_modal_frequency": 0.4,
+        "structure_id": "radial_mass__category__plus_ht_candidate_jets",
+        "thresholds": {
+          "ht_candidate_jets": 176.5458068847656,
+          "r_hh_125_125": 36.40814019639858
+        }
+      },
+      "ge4tag": {
+        "nominal_outer_fold_modal_count": 2,
+        "nominal_outer_fold_modal_frequency": 0.4,
+        "structure_id": "radial_mass__category__plus_mhh_and_abs_h_delta_eta",
+        "thresholds": {
+          "abs_h_delta_eta": 6.904302164473993,
+          "mhh": 164.73708096689654,
+          "r_hh_125_125": 33.92808917804956
+        }
+      }
+    },
+    "nominal_selection_can_be_changed_by_stability_results": false,
+    "pilot_replicas_2_3_from_transfer_qualification_enter_aggregation": false,
+    "replicas_200_999_are_already_pretriggered_by_nominal_five_fold_stability": true,
+    "stability_results_are_diagnostic_not_retuning": true
+  },
+  "status": "selection_stability_replica_aggregation_protocol_frozen_before_initial200_production"
+}
