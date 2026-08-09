@@ -1,0 +1,16 @@
+{
+  "aggregation_implementation_sha256": "db501c98f24e0a5b2725acbee45705925e19a45c9330af74389856df4a4126c8",
+  "aggregation_protocol_sha256": "a856d9027cc1d2e11a9d60e72b4104b5b8c24ce61acf43def0d4d487ab867eea",
+  "aggregation_validation_implementation_sha256": "24fe1c9b91587036e3baef8f7ae3db8897a671cc8f1491afa027d82d6638664e",
+  "complete_return_audit_freeze_sha256": "9c3b937968def05917ff280ad4438ecba591fdde9f2251e04401d988af4e52df",
+  "complete_return_audit_json_sha256": "1e0984279f9e35c33acb9534681508d38bba0c88726ad8b78a1c4ca98d22b876",
+  "complete_return_audit_txt_sha256": "fe3db0d39f86d306dc94ed79b24d8c7330205e90c2d9529ef1373ffb0d08b302",
+  "final_history_snapshot_sha256": "da54a66134d91d1fad2494becf72609002af3b5db1a6ae22ece9049bfdb34640",
+  "final_queue_snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "job_return_audit_sha256": "881deb63d4f8d0216a7365586f33397ab9cf876d5c8d9e0b4831648c62df1cab",
+  "repository_head_containing_frozen_return_audit": "fd2557fffee1c3f1a5a5d903c7fd624cad5c92c9",
+  "schema_version": 1,
+  "structure_result_inventory_sha256": "47df422f39a50ac2f008031d3222ef04556760526abf160db57485861f3db056",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

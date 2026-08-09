@@ -1,0 +1,32 @@
+{
+  "aggregation_manifest_sha256": "8bef50c6e0447e19bf8d95cb2aca37112ae39a90b1943e8e2b5ab2ae129d5aa8",
+  "aggregation_summary_sha256": "449300786a15517d6783a9df34936bc6f9fc346bcc1825f8d5ea34b5ceb73d77",
+  "aggregator_sha256": "db501c98f24e0a5b2725acbee45705925e19a45c9330af74389856df4a4126c8",
+  "byte_for_byte_reproduction_verified": true,
+  "category_results": {
+    "exact3tag": {
+      "infeasible_fold_winner_count": 538,
+      "modal_replica_selected_count": 37,
+      "modal_replica_selected_structure_id": "asymmetric_rectangular_mass__category__plus_abs_h_delta_eta",
+      "nominal_structure_recovery_count": 24,
+      "tie_resolution_count": 79
+    },
+    "ge4tag": {
+      "infeasible_fold_winner_count": 156,
+      "modal_replica_selected_count": 52,
+      "modal_replica_selected_structure_id": "asymmetric_rectangular_mass__category__mass_only",
+      "nominal_structure_recovery_count": 5,
+      "tie_resolution_count": 72
+    }
+  },
+  "fold_level_winners_audited": 2000,
+  "nominal_deployment_candidate_changed": false,
+  "pilot_results_used": false,
+  "ranked_structure_results_audited": 54000,
+  "replica_category_results_audited": 400,
+  "reproduction_original_sha256sums_sha256": "5a86aa9445d81790ac668f8c28e0b6ea1819bdf8d55a0b090150828db5db50b1",
+  "schema_version": 1,
+  "status": "pass_initial200_stability_aggregation_independent_audit",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
