@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "pass_external_selection_stability_draw_artifacts_frozen_by_path_and_sha256",
+  "artifacts": {
+    "full_1000": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_draw_counts_1000.parquet",
+      "sha256": "723f11cf3f78cc0f8eb68013cc7ec1ff7dcb24279c4f317ef42927caf8b97cc2"
+    },
+    "initial_200": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_draw_counts_initial_200.parquet",
+      "sha256": "14220e25d79a8756d81740e6d3266a57e9715d36afb0884d56dc10b68601079e"
+    },
+    "escalation_800": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_draw_counts_escalation_800.parquet",
+      "sha256": "091c2a401cb6ab74d9219449c117fc99832737cc2951e812dc7765540615a279"
+    },
+    "source_universe": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_source_universe.tsv",
+      "sha256": "548a4e37c6ca04a4f835981c4e09e9d6c03dbc882212b0c6d8c40b4df8b45d26"
+    }
+  }
+}

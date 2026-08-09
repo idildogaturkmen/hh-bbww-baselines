@@ -1,0 +1,78 @@
+{
+  "authorization_basis": {
+    "aggregation_protocol_pretriggered_total1000_escalation": true,
+    "initial200_aggregation_freeze_commit": "18a4ff9b2723c0eae7a550ae5071c74001188a49",
+    "initial200_aggregation_freeze_status": "pass_initial200_selection_stability_aggregation_frozen",
+    "initial200_results_used_to_redecide_escalation": false,
+    "initial200_results_may_cancel_escalation": false,
+    "nominal_five_fold_stability_pretriggered_escalation": true
+  },
+  "authorization_state": {
+    "escalation_package_built": false,
+    "escalation_production_authorized": true,
+    "escalation_submission_performed": false,
+    "test_opening_authorized": false,
+    "test_payloads_opened": 0,
+    "validation_opening_authorized": false,
+    "validation_payloads_opened": 0
+  },
+  "bootstrap_contract": {
+    "bootstrap_event_uid_suffixes_preserved": true,
+    "draw_registry_regenerated": false,
+    "draw_with_replacement_within_stratum": true,
+    "fold_assignments_reassigned": false,
+    "fold_assignments_resampled": false,
+    "literal_row_duplication": true,
+    "original_per_event_weights_unchanged": true,
+    "resampling_unit": "source group",
+    "rng_algorithm": "numpy Generator PCG64",
+    "seed": 20260806,
+    "source_fold_unchanged": true,
+    "source_groups": 441,
+    "strata": 23,
+    "zero_category_row_source_groups_remain_in_bootstrap_universe": true
+  },
+  "draw_registry": {
+    "escalation_draw_counts": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_draw_registry_v1_20260808/selection_stability_draw_counts_escalation_800.parquet",
+      "rows": 226901,
+      "sha256": "091c2a401cb6ab74d9219449c117fc99832737cc2951e812dc7765540615a279"
+    },
+    "full_1000_draw_counts_sha256": "723f11cf3f78cc0f8eb68013cc7ec1ff7dcb24279c4f317ef42927caf8b97cc2",
+    "selection_stability_draw_contract_sha256": "5fbb1431c0bb5f54b2c8acf4ed48dacf3e52866a64d0937ea6274bfe8d40c048",
+    "selection_stability_draw_registry_summary_sha256": "03459fe7133184de05ab53f3076da43139ba8737832194bc0a1e541c320bc765"
+  },
+  "never_resubmit_clusters": [
+    3755882,
+    3768139,
+    30002685
+  ],
+  "next": "build_audit_and_freeze_transfer_safe_escalation_package_before_exactly_once_submission",
+  "nominal_deployment_candidate_changed": false,
+  "pilot_results_may_enter_stability_aggregation": false,
+  "production_architecture": {
+    "architecture_id": "replica__category__outer_fold__all_27_structures_sequential",
+    "categories": 2,
+    "expected_condor_jobs": 8000,
+    "expected_payload_archives_if_replica_category_reuse": 1600,
+    "expected_structure_evaluations": 216000,
+    "outer_folds": 5,
+    "search_budget": {
+      "beam_width": 128,
+      "max_coordinate_passes": 8,
+      "quantile_count": 63,
+      "starts": 16
+    },
+    "structures_per_job": 27,
+    "target_signal_efficiency": 0.585957
+  },
+  "repository_parent_head": "18a4ff9b2723c0eae7a550ae5071c74001188a49",
+  "scope": {
+    "authorized_replica_count": 800,
+    "authorized_replica_max": 999,
+    "authorized_replica_min": 200,
+    "predeclared_total_replica_count": 1000
+  },
+  "schema_version": 1,
+  "status": "authorized_pretriggered_selection_stability_replicas_200_999"
+}
