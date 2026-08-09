@@ -142,7 +142,9 @@ def make_deterministic_archive(
 @dataclass(frozen=True)
 class BuildContext:
     package_root: Path
+    archive_root: Path
     repository_head: str
+    tooling_repository_head: str
     nominal_root: Path
     draw_parquet: Path
     materializer: Path
@@ -155,7 +157,7 @@ def payload_record_path(context: BuildContext, replica: int, category: str) -> P
 
 
 def archive_path(context: BuildContext, replica: int, category: str) -> Path:
-    return context.package_root / "archives" / f"escalation800_payload_replica_{replica:04d}__{category}.tar.gz"
+    return context.archive_root / f"escalation800_payload_replica_{replica:04d}__{category}.tar.gz"
 
 
 def load_complete_record(context: BuildContext, replica: int, category: str) -> dict[str, Any] | None:
@@ -332,7 +334,16 @@ def validate_inputs(args: argparse.Namespace, repository_root: Path) -> dict[str
     actual_head = subprocess.run(
         ["git", "rev-parse", "HEAD"], cwd=repository_root, check=True, text=True, capture_output=True
     ).stdout.strip()
-    require(actual_head == args.expected_repository_head, f"repository HEAD mismatch: {actual_head}")
+    if args.expected_tooling_head is None:
+        require(actual_head == args.expected_repository_head, f"repository HEAD mismatch: {actual_head}")
+    else:
+        require(actual_head == args.expected_tooling_head, f"tooling repository HEAD mismatch: {actual_head}")
+        ancestry = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", args.expected_repository_head, actual_head],
+            cwd=repository_root,
+            check=False,
+        )
+        require(ancestry.returncode == 0, "execution HEAD is not an ancestor of tooling HEAD")
     require(sha256(args.draw_parquet) == DRAW_SHA256, "escalation draw hash mismatch")
     require(sha256(args.materializer) == MATERIALIZER_SHA256, "materializer hash mismatch")
     require(sha256(args.runtime_archive) == RUNTIME_SHA256, "runtime archive hash mismatch")
@@ -342,6 +353,7 @@ def validate_inputs(args: argparse.Namespace, repository_root: Path) -> dict[str
     for relative_name, expected_hash in EXPECTED_NOMINAL_TABLE_HASHES.items():
         require(sha256(args.nominal_root / relative_name) == expected_hash, f"nominal table hash mismatch: {relative_name}")
     require(not args.package_root.is_symlink(), "package root may not be a symlink")
+    require(not args.archive_root.is_symlink(), "archive root may not be a symlink")
     return load_template_members(args.template_archive)
 
 
@@ -467,10 +479,12 @@ queue job_index, replica, outer_fold, category_id, expected_head, payload_archiv
         "nominal_fold_table_manifest_sha256": NOMINAL_SHA256SUMS_SHA256,
         "payload_archive_count": len(records),
         "payload_archive_total_bytes": sum(int(record["payload_archive_size_bytes"]) for record in records),
+        "payload_archive_root": str(context.archive_root),
         "payload_manifest_json_sha256": sha256(manifest_json),
         "payload_manifest_tsv_sha256": sha256(manifest_tsv),
         "queue_items_sha256": sha256(queue),
         "repository_head": context.repository_head,
+        "tooling_repository_head": context.tooling_repository_head,
         "runner_sha256": runner_hash,
         "runtime_archive_sha256": RUNTIME_SHA256,
         "schema_version": 1,
@@ -488,7 +502,9 @@ def parse_args() -> argparse.Namespace:
     baselines = Path("/uscms_data/d3/iturkmen/hh4b_delphes/baselines")
     parser = argparse.ArgumentParser()
     parser.add_argument("--package-root", type=Path, required=True)
+    parser.add_argument("--archive-root", type=Path)
     parser.add_argument("--expected-repository-head", required=True)
+    parser.add_argument("--expected-tooling-head")
     parser.add_argument("--replica-start", type=int, default=200)
     parser.add_argument("--replica-stop", type=int, default=1000, help="exclusive")
     parser.add_argument("--workers", type=int, default=4)
@@ -508,6 +524,11 @@ def main() -> None:
     args = parse_args()
     repository_root = Path(__file__).resolve().parents[2]
     args.package_root = args.package_root.resolve()
+    args.archive_root = (
+        args.archive_root.resolve()
+        if args.archive_root is not None
+        else (args.package_root / "archives").resolve()
+    )
     args.nominal_root = args.nominal_root.resolve()
     args.draw_parquet = args.draw_parquet.resolve()
     args.materializer = args.materializer.resolve()
@@ -520,11 +541,18 @@ def main() -> None:
     require(args.runner_source.is_file(), "runner source missing")
     require(not (args.package_root / "production_submission_v1").exists(), "submission evidence already exists")
     core_members = validate_inputs(args, repository_root)
-    for directory in ("archives", "build/materialization_summaries", "build/payload_records", "build/partials", "build/work", "evidence", "logs", "returns", "submission"):
+    for directory in ("build/materialization_summaries", "build/payload_records", "build/partials", "build/work", "evidence", "logs", "returns", "submission"):
         (args.package_root / directory).mkdir(parents=True, exist_ok=True)
+    args.archive_root.mkdir(parents=True, exist_ok=True)
     context = BuildContext(
         package_root=args.package_root,
+        archive_root=args.archive_root,
         repository_head=args.expected_repository_head,
+        tooling_repository_head=(
+            args.expected_tooling_head
+            if args.expected_tooling_head is not None
+            else args.expected_repository_head
+        ),
         nominal_root=args.nominal_root,
         draw_parquet=args.draw_parquet,
         materializer=args.materializer,

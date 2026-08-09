@@ -1,0 +1,14 @@
+{
+  "archive_count": 1441,
+  "archive_total_bytes": 13413171236,
+  "execution_repository_head": "275a2aaebe83b2f1f5e7403a245b52daf30560b4",
+  "nfs_quota_failure_preserved": true,
+  "pilot_results_used": false,
+  "schema_version": 1,
+  "source_archive_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/archives",
+  "source_copies_removed_only_after_target_sha256_closure": true,
+  "status": "pass_escalation800_completed_archive_eos_relocation",
+  "target_archive_root": "/eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

@@ -1,0 +1,59 @@
+{
+  "architecture": {
+    "categories": 2,
+    "expected_condor_jobs": 8000,
+    "expected_payload_archives": 1600,
+    "expected_structure_evaluations": 216000,
+    "outer_folds": 5,
+    "payload_reuse_factor_outer_folds": 5,
+    "resource_model_changed": false,
+    "structures_per_job": 27
+  },
+  "build_failure": {
+    "completed_payload_records_after_worker_shutdown": 1441,
+    "complete_replica_category_pairs": 720,
+    "errno": 122,
+    "exception": "OSError: [Errno 122] Disk quota exceeded",
+    "failed_write": "build/materialization_summaries/replica_0919.json.partial",
+    "nfs_package_size_at_failure_du_sh": "13G",
+    "single_category_replicas": 1,
+    "trigger": "NFS user quota exhaustion",
+    "unique_replicas_with_at_least_one_payload": 721
+  },
+  "execution_repository_head": "275a2aaebe83b2f1f5e7403a245b52daf30560b4",
+  "implementation": {
+    "audit_hh4b_stability_escalation800_package.py_sha256": "4d650bd4e7dfb17401034ad7d062a54f16f2005c377923bf15f4dadc6e09751f",
+    "build_hh4b_stability_escalation800_package.py_sha256": "92277f7217598675bcf26fc0ff1fce7a8bcce5c8e90e612f810aad820e4bb415",
+    "relocate_hh4b_escalation800_archives_to_eos.py_sha256": "d7ea25fe07d44682d658ae4fb5b4e31fb8af06b0ec0aeaee97a4065bbcd39278",
+    "separate_archive_root_smoke_audit_passed": true,
+    "separate_archive_root_smoke_replica": 201
+  },
+  "never_resubmit_clusters": [
+    3755882,
+    3768139,
+    30002685
+  ],
+  "next": "complete_package_to_1600_archives_on_eos_then_run_full_presubmission_audit",
+  "nominal_deployment_candidate_changed": false,
+  "package_root": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809",
+  "pilot_results_may_enter_stability_aggregation": false,
+  "production_submission_performed": false,
+  "relocation": {
+    "archive_count": 1441,
+    "archive_relocation_detail_jsonl_sha256": "b41b15e7f5de0447370320e2ca3ad565488641b46c0f6dfa2e9879cb50762848",
+    "archive_relocation_summary_json_sha256": "8abdc88756788d1864ffc7b4929d8919fac293d1fa69e422707eed26be8672f5",
+    "archive_total_bytes": 13413171236,
+    "eos_receipt_root": "/eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/evidence/storage_relocation_v1",
+    "relocation_script_sha256": "d7ea25fe07d44682d658ae4fb5b4e31fb8af06b0ec0aeaee97a4065bbcd39278",
+    "source_copies_removed_only_after_target_sha256_closure": true,
+    "source_payload_archive_count_after_relocation": 0,
+    "status": "pass_escalation800_completed_archive_eos_relocation",
+    "target_archive_root": "/eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives",
+    "target_payload_archive_count_after_relocation": 1441
+  },
+  "schema_version": 1,
+  "scientific_contract_changed": false,
+  "status": "pass_escalation800_archive_storage_amendment_after_demonstrated_nfs_quota_failure",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

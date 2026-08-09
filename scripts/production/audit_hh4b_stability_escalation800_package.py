@@ -193,6 +193,7 @@ def audit_submission_tables(package_root: Path, expected_head: str, replica_star
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--package-root", type=Path, required=True)
+    parser.add_argument("--archive-root", type=Path)
     parser.add_argument("--expected-repository-head", required=True)
     parser.add_argument("--replica-start", type=int, default=200)
     parser.add_argument("--replica-stop", type=int, default=1000, help="exclusive")
@@ -203,7 +204,13 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     package_root = args.package_root.resolve()
+    archive_root = (
+        args.archive_root.resolve()
+        if args.archive_root is not None
+        else (package_root / "archives").resolve()
+    )
     require(not package_root.is_symlink(), "package root may not be a symlink")
+    require(not archive_root.is_symlink(), "archive root may not be a symlink")
     require(200 <= args.replica_start < args.replica_stop <= 1000, "replica range outside authorization")
     require(1 <= args.workers <= 8, "workers must be in [1, 8]")
     require(not (package_root / "production_submission_v1").exists(), "submission evidence exists before audit")
@@ -229,7 +236,11 @@ def main() -> None:
     require(build_receipt["repository_head"] == args.expected_repository_head, "build receipt HEAD mismatch")
     require(state["repository_head"] == args.expected_repository_head, "build state HEAD mismatch")
     require(state["production_submission_performed"] is False, "build state reports prior submission")
-    archive_paths = sorted((package_root / "archives").glob("*.tar.gz"))
+    require(
+        all(Path(record["payload_archive"]).parent == archive_root for record in records),
+        "payload records do not bind the audited archive root",
+    )
+    archive_paths = sorted(archive_root.glob("*.tar.gz"))
     require(len(archive_paths) == expected_payload_count, "external archive count mismatch")
     expected_keys = [f"replica_{replica:04d}__{category}" for replica in range(args.replica_start, args.replica_stop) for category in CATEGORIES]
     require([record["payload_key"] for record in records] == expected_keys, "payload manifest ordering or coverage mismatch")
@@ -262,6 +273,7 @@ def main() -> None:
         "nominal_selection_changed": False,
         "outer_folds": list(OUTER_FOLDS),
         "payload_archive_count": len(rows),
+        "payload_archive_root": str(archive_root),
         "payload_archive_total_bytes": sum(int(row["payload_archive_size_bytes"]) for row in rows),
         "payload_internal_sha256_closure": True,
         "payload_manifest_json_sha256": sha256(manifest_path),
