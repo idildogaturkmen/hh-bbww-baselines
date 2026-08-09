@@ -1,0 +1,80 @@
+{
+  "aggregation_implementation": {
+    "path": "scripts/analysis/aggregate_hh4b_initial200_selection_stability.py",
+    "sha256": "db501c98f24e0a5b2725acbee45705925e19a45c9330af74389856df4a4126c8"
+  },
+  "inputs": {
+    "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_aggregation_protocol_20260808_v1/selection_stability_aggregation_protocol.json": "a856d9027cc1d2e11a9d60e72b4104b5b8c24ce61acf43def0d4d487ab867eea",
+    "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_initial200_complete_return_audit_20260809_v1/complete_return_audit.json": "1e0984279f9e35c33acb9534681508d38bba0c88726ad8b78a1c4ca98d22b876",
+    "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_initial200_complete_return_audit_20260809_v1/complete_return_audit_freeze.json": "9c3b937968def05917ff280ad4438ecba591fdde9f2251e04401d988af4e52df",
+    "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_initial200_complete_return_audit_20260809_v1/structure_result_inventory.tsv": "47df422f39a50ac2f008031d3222ef04556760526abf160db57485861f3db056"
+  },
+  "output_files": {
+    "figure_data/conditional_replica_thresholds.tsv": {
+      "bytes": 116638,
+      "sha256": "e7828a272bc33b6a696a2b5182a80de6fead097065c78f2d1fab61300aee230f"
+    },
+    "figure_data/modal_count_distribution.tsv": {
+      "bytes": 303,
+      "sha256": "844b93f71b72398d04fb85fa1f0ac765ec81326fc621333e27cc7927c78185f5"
+    },
+    "figure_data/optional_variable_inclusion_frequencies.tsv": {
+      "bytes": 1193,
+      "sha256": "0e53f209566624e90a9b73715ec6a57efa8d163155b65edd402dab659185b4e0"
+    },
+    "figure_data/selection_structure_frequencies.tsv": {
+      "bytes": 10618,
+      "sha256": "a6e6caa41eba595e625ce924191abde923c7f86366d77f76a2a995c735476c6a"
+    },
+    "initial200_stability_summary.json": {
+      "bytes": 8501,
+      "sha256": "449300786a15517d6783a9df34936bc6f9fc346bcc1825f8d5ea34b5ceb73d77"
+    },
+    "tables/category_stability_diagnostics.tsv": {
+      "bytes": 1386,
+      "sha256": "0fabd6bf3a189c282a5cbc42e121fdb1d46dd8f4f0ead1ec131baa72b1a41569"
+    },
+    "tables/conditional_nominal_structure_thresholds.tsv": {
+      "bytes": 6878,
+      "sha256": "72e890adbb0baf3f4be9e1a71818cecb1fde08aec22374f4e4efc0674cbab027"
+    },
+    "tables/conditional_replica_thresholds.tsv": {
+      "bytes": 116638,
+      "sha256": "e7828a272bc33b6a696a2b5182a80de6fead097065c78f2d1fab61300aee230f"
+    },
+    "tables/conditional_threshold_distribution_summary.tsv": {
+      "bytes": 24166,
+      "sha256": "5187935954e854930e856a602138612027499157f7b8a6c5c8c6e3e8e4c2bc18"
+    },
+    "tables/fold_level_winners.tsv": {
+      "bytes": 1543420,
+      "sha256": "f5b54bc4ec4838d342f675261fa094ec1fc02d4277c4293175927a06c3c158ff"
+    },
+    "tables/modal_count_distribution.tsv": {
+      "bytes": 303,
+      "sha256": "844b93f71b72398d04fb85fa1f0ac765ec81326fc621333e27cc7927c78185f5"
+    },
+    "tables/optional_variable_inclusion_frequencies.tsv": {
+      "bytes": 1193,
+      "sha256": "0e53f209566624e90a9b73715ec6a57efa8d163155b65edd402dab659185b4e0"
+    },
+    "tables/ranked_structure_results.tsv": {
+      "bytes": 41946280,
+      "sha256": "bca58ae3f2b7e7eb5801a3a99545f6191a608a4bb37a7abf4708dd22ccd5c42d"
+    },
+    "tables/replica_category_results.tsv": {
+      "bytes": 377193,
+      "sha256": "94a019b5bfcdf4cee0cbb971dd7bdb5c78fdaf2119da9a4a849d633cba11198d"
+    },
+    "tables/structure_frequencies.tsv": {
+      "bytes": 10618,
+      "sha256": "a6e6caa41eba595e625ce924191abde923c7f86366d77f76a2a995c735476c6a"
+    }
+  },
+  "pilot_results_used": false,
+  "repository_head_at_aggregation": "fd2557fffee1c3f1a5a5d903c7fd624cad5c92c9",
+  "schema_version": 1,
+  "status": "pass_deterministic_initial200_aggregation_manifest",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

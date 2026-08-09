@@ -1,0 +1,11 @@
+category_id	maximum_winner_count	replica_category_count	denominator	frequency
+exact3tag	1	52	200	0.26
+exact3tag	2	113	200	0.565
+exact3tag	3	29	200	0.145
+exact3tag	4	6	200	0.03
+exact3tag	5	0	200	0.0
+ge4tag	1	58	200	0.29
+ge4tag	2	112	200	0.56
+ge4tag	3	27	200	0.135
+ge4tag	4	3	200	0.015
+ge4tag	5	0	200	0.0
