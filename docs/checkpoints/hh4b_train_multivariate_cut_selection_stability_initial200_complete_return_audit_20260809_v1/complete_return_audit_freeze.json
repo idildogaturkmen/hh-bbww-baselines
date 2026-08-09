@@ -1,0 +1,103 @@
+{
+  "artifact_byte_identity": {
+    "complete_return_audit_json": {
+      "bytes": 3153,
+      "sha256": "1e0984279f9e35c33acb9534681508d38bba0c88726ad8b78a1c4ca98d22b876"
+    },
+    "complete_return_audit_txt": {
+      "bytes": 1136,
+      "sha256": "fe3db0d39f86d306dc94ed79b24d8c7330205e90c2d9529ef1373ffb0d08b302"
+    },
+    "final_history_snapshot_txt": {
+      "bytes": 396890,
+      "sha256": "da54a66134d91d1fad2494becf72609002af3b5db1a6ae22ece9049bfdb34640"
+    },
+    "final_history_snapshot_txt_stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "final_queue_snapshot_txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "final_queue_snapshot_txt_stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "job_return_audit_tsv": {
+      "bytes": 516021,
+      "rows_excluding_header": 2000,
+      "sha256": "881deb63d4f8d0216a7365586f33397ab9cf876d5c8d9e0b4831648c62df1cab"
+    },
+    "structure_result_inventory_tsv": {
+      "bytes": 40920127,
+      "committed_directly_as_normalized_later_aggregation_input": true,
+      "rows_excluding_header": 54000,
+      "sha256": "47df422f39a50ac2f008031d3222ef04556760526abf160db57485861f3db056"
+    }
+  },
+  "checkpoint": {
+    "branch": "delphes-hh4b-production",
+    "commit_subject": "docs: freeze initial200 complete return audit",
+    "freeze_date_utc": "2026-08-09",
+    "repository_parent_head": "269449d2b0ac04ba1e4caee3b2a838e1e5ee21ef",
+    "repository_parent_subject": "docs: correct initial200 submission schedd provenance"
+  },
+  "data_access_policy": {
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "next": "run_the_already_predeclared_initial200_aggregation_using_only_the_frozen_production_inventory",
+  "return_audit": {
+    "all_canonical_payload_sha256s_pass": true,
+    "all_execution_provenance_pass": true,
+    "all_inner_crossfit_fold_coverage_pass": true,
+    "all_outer_fold_used_for_selection_false": true,
+    "all_structure_internal_sha256s_pass": true,
+    "complete_return_audit": "PASS",
+    "exact_27_structure_set_per_job_pass": true,
+    "jobs_audited": 2000,
+    "jobs_completed_cleanly": 2000,
+    "jobs_expected": 2000,
+    "structure_results_audited": 54000,
+    "structure_results_expected": 54000
+  },
+  "scheduler_evidence": {
+    "authoritative_schedd": "lpcschedd5.fnal.gov",
+    "clean_history_rows": 2000,
+    "cluster_id": 30002685,
+    "do_not_resubmit_cluster": true,
+    "procs": [
+      0,
+      1999
+    ],
+    "queue_rows": 0
+  },
+  "schema_version": 1,
+  "scientific_outcome_diagnostics": {
+    "infeasible_structures_are_valid_scientific_outcomes_not_execution_failures": true,
+    "pooled_inner_oof_feasible_structure_results": 6561,
+    "pooled_inner_oof_infeasible_structure_results": 47439,
+    "pooled_support_fail_structure_results": 0,
+    "pooled_support_pass_structure_results": 54000,
+    "support_gates_are_separate_from_feasibility": true
+  },
+  "scientific_state_at_freeze": {
+    "aggregation_performed": false,
+    "fold_level_winners_selected": false,
+    "nominal_deployment_candidate_changed": false,
+    "pilot_results_enter_stability_aggregation": false,
+    "replica_level_stability_statistics_computed": false,
+    "replicas_200_999_production_authorized": false
+  },
+  "status": "pass_initial200_complete_return_audit_frozen_before_aggregation",
+  "upstream_contracts": {
+    "aggregation_protocol": {
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_aggregation_protocol_20260808_v1/selection_stability_aggregation_protocol.json",
+      "sha256": "a856d9027cc1d2e11a9d60e72b4104b5b8c24ce61acf43def0d4d487ab867eea"
+    },
+    "optimizer_sha256": "7760ee7ae309bec6cd47eb1c73ed04ec12bb805f133527498fcb75aca8088a62",
+    "scientific_execution_package_head": "b317d2c3270166edce86c70a3972e6db3b75c186",
+    "worker_sha256": "739147c33d6597018f4dce8c483278c64ff8b41533de1f1b213749dfb39332ed"
+  }
+}
