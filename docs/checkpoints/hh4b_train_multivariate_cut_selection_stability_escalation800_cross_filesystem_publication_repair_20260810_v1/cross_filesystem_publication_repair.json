@@ -1,0 +1,74 @@
+{
+  "case_classification": "CASE_1_fewer_than_1600_valid_eos_archives_and_payload_records",
+  "code_repair": {
+    "after": "partial = archive.with_name(archive.name + '.partial')",
+    "before": "partial = context.package_root / 'build' / 'partials' / (archive.name + '.partial')",
+    "changed_lines": 1,
+    "scientific_semantics_changed": false,
+    "status": "pass_minimal_same_filesystem_atomic_publication_repair"
+  },
+  "forensic_state": {
+    "build_state_json_exists": false,
+    "eos_archive_count": 1441,
+    "eos_archive_root_device": 57,
+    "expected_payload_count": 1600,
+    "legacy_nfs_partial_bytes": 1150751563,
+    "legacy_nfs_partial_count": 80,
+    "legacy_nfs_partials_preserved": true,
+    "materialization_summary_count": 800,
+    "missing_payload_count": 159,
+    "nfs_archive_count": 0,
+    "nfs_partial_root_device": 50,
+    "package_audit_exists": false,
+    "package_build_receipt_exists": false,
+    "payload_manifest_exists": false,
+    "payload_record_count": 1441,
+    "production_submission_evidence_exists": false,
+    "submission_file_count": 0,
+    "test_payloads_opened": 0,
+    "unique_replicas_with_payload": 721,
+    "validation_payloads_opened": 0
+  },
+  "git": {
+    "branch": "delphes-hh4b-production",
+    "execution_repository_head": "275a2aaebe83b2f1f5e7403a245b52daf30560b4",
+    "local_head_before_repair": "191c2c0737c6a60459ad95e62af41e33665d60d8",
+    "remote_head_before_repair": "191c2c0737c6a60459ad95e62af41e33665d60d8"
+  },
+  "implementation_sha256": {
+    "audit_hh4b_stability_escalation800_package.py": "4d650bd4e7dfb17401034ad7d062a54f16f2005c377923bf15f4dadc6e09751f",
+    "build_hh4b_stability_escalation800_package.py": "2312f641da92fdc7f3a5e944fcc3fac14f7f1a15eed96f055578c951981e0658",
+    "run_hh4b_stability_escalation800_category_fold_job.sh": "b5a0f96950f1b2cba99e1ed173b33a70630f10f2e1c516090920dea7137c15e5"
+  },
+  "next": "commit_and_push_repair_then_resume_only_missing_payloads_with_execution_head_275a2aa_and_current_tooling_head",
+  "nominal_deployment_candidate_changed": false,
+  "pilot_results_may_enter_stability_aggregation": false,
+  "production_submission_performed": false,
+  "root_cause": {
+    "confidence": "high",
+    "inferred_failure_boundary": "os.replace of completed staging archive from NFS device 50 to EOS device 57",
+    "raw_manual_traceback_preserved": false,
+    "scientific_failure": false
+  },
+  "schema_version": 1,
+  "smoke_test": {
+    "archive_root": "/eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/evidence/tooling_crossfs_publish_repair_smoke_v1_20260810/archives",
+    "audit_json_sha256": "576de56cd3b81348201a522843e10ccb2d538e3df94f5944cb81f0f14caebe1a",
+    "audit_status": "pass_escalation800_transfer_safe_production_package_pre_submission_audit",
+    "condor_jobs": 10,
+    "exact3tag_archive_sha256": "3c847483807a7e00599b45a784832acf56f0fa10acf67218c2d1dd6c3e47d135",
+    "exact3tag_matches_existing_production_replica_200": true,
+    "ge4tag_archive_sha256": "f0a7f879dc32dac7d976cd99cc4493b07870d8d39631bc4b2891222aeb23323d",
+    "ge4tag_matches_existing_production_replica_200": true,
+    "package_build_status": "pass_escalation800_transfer_safe_package_build",
+    "payload_archives": 2,
+    "replica": 200,
+    "structure_evaluations": 270,
+    "test_payloads_opened": 0,
+    "validation_payloads_opened": 0
+  },
+  "status": "pass_escalation800_cross_filesystem_publication_repair_frozen",
+  "storage_amendment_checkpoint": "191c2c0737c6a60459ad95e62af41e33665d60d8",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

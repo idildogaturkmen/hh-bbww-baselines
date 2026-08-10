@@ -272,7 +272,7 @@ def build_replica(context: BuildContext, replica: int) -> tuple[int, list[dict[s
                 for relative_name, digest in sorted(internal_hashes.items())
             ).encode()
             archive = archive_path(context, replica, category)
-            partial = context.package_root / "build" / "partials" / (archive.name + ".partial")
+            partial = archive.with_name(archive.name + ".partial")
             partial.parent.mkdir(parents=True, exist_ok=True)
             if partial.exists():
                 require(partial.is_file() and not partial.is_symlink(), f"unsafe partial archive: {partial}")
