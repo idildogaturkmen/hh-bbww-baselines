@@ -1,0 +1,28 @@
+{
+  "attempted_utc": "2026-08-10T20:49:23Z",
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "canary_proc_excluded": 0,
+  "cluster_id": 30020809,
+  "condor_submit_called": false,
+  "never_resubmit_cluster": true,
+  "nominal_selection_changed": false,
+  "pilot_results_enter_stability_aggregation": false,
+  "post_release_status_counts": {
+    "1": 7999
+  },
+  "recovery_cmd": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_stability_escalation800_eos_recovery.sh",
+  "recovery_transfer_input": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/submission/run_escalation800_category_fold_job.sh,/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz",
+  "released_utc": "2026-08-10T20:49:35Z",
+  "repository_head": "75898d4bd05158ddedd95fbc15bff53b54a35d72",
+  "schema_version": 1,
+  "scientific_arguments_changed": false,
+  "status": "pass_escalation800_cluster_in_place_transport_recovery_edited_and_released",
+  "target_count": 7999,
+  "target_proc_range": [
+    1,
+    7999
+  ],
+  "test_payloads_opened": 0,
+  "transport_recovery_only": true,
+  "validation_payloads_opened": 0
+}

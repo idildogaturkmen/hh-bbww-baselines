@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "pass_escalation800_cluster_in_place_transport_recovery_checkpoint_freeze",
+  "checkpoint_provenance_parent_head": "75898d4bd05158ddedd95fbc15bff53b54a35d72",
+  "scientific_execution_head": "275a2aaebe83b2f1f5e7403a245b52daf30560b4",
+  "cluster_id": 30020809,
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "target_proc_range": [
+    1,
+    7999
+  ],
+  "target_count": 7999,
+  "recovery_attempted_utc": "2026-08-10T20:49:23Z",
+  "recovery_released_utc": "2026-08-10T20:49:35Z",
+  "controlled_hold_skipped_all_targets_already_held": true,
+  "qedit_cmd_matching_jobs": 7999,
+  "qedit_transfer_input_matching_jobs": 7999,
+  "post_release_idle_jobs": 7999,
+  "condor_submit_called": false,
+  "new_cluster_created": false,
+  "never_resubmit_cluster": true,
+  "transport_recovery_only": true,
+  "scientific_arguments_changed": false,
+  "nominal_selection_changed": false,
+  "pilot_results_enter_stability_aggregation": false,
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0,
+  "external_evidence_file_count": 19,
+  "external_evidence_total_bytes": 47082140,
+  "next": "monitor_existing_cluster_30020809_read_only_then_complete_8000_job_216000_result_audit"
+}

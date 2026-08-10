@@ -1,0 +1,49 @@
+{
+  "attempted_utc": "2026-08-10T20:49:23Z",
+  "cluster_id": 30020809,
+  "condor_submit_planned": false,
+  "git_and_canary": {
+    "canary_audit_path": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_eos_recovery_canary_20260810_v1/proc0_complete_return_audit.json",
+    "canary_audit_sha256": "68e5a94f70a690a911a8056d2716fb63aed6088b338935323b5f5ce1c0deb116",
+    "repository_head": "75898d4bd05158ddedd95fbc15bff53b54a35d72",
+    "transport_input_sha256": {
+      "recovery_sha256": "ed687c9cda7dc27c51c65b1a789479c1612ce402dcb2ebd59a7cdeca67bd4821",
+      "runner_sha256": "b5a0f96950f1b2cba99e1ed173b33a70630f10f2e1c516090920dea7137c15e5",
+      "runtime_sha256": "4a9c4061e1d975f276326022454e578c5f0de3c094b9b56345f192cccc654112"
+    }
+  },
+  "nominal_selection_changed": false,
+  "scheduler": {
+    "canary_history_ad": {
+      "ClusterId": 30020809,
+      "Cmd": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_stability_escalation800_eos_recovery.sh",
+      "CompletionDate": 1786394109,
+      "ExitBySignal": false,
+      "ExitCode": 0,
+      "Iwd": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/returns/job_0000",
+      "JobStatus": 4,
+      "ProcId": 0,
+      "TransferInput": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/submission/run_escalation800_category_fold_job.sh,/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz"
+    },
+    "held_reason_counts": {
+      "13:2": 7999
+    },
+    "history_count": 1,
+    "queued_proc_max": 7999,
+    "queued_proc_min": 1,
+    "queued_target_count": 7999,
+    "status_counts": {
+      "1": 0,
+      "2": 0,
+      "5": 7999
+    },
+    "target_return_directories_empty": 7999
+  },
+  "status": "pass_escalation800_cluster_in_place_transport_recovery_preflight",
+  "target_proc_range": [
+    1,
+    7999
+  ],
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
