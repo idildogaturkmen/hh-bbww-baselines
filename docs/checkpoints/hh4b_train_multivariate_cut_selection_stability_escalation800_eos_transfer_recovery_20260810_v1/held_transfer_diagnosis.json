@@ -1,0 +1,22 @@
+{
+  "all_distinct_reported_archives_exist_on_login_host": true,
+  "all_holds_before_executable_start": true,
+  "all_holds_code_13_subcode_2": true,
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "cluster_id": 30020809,
+  "distinct_reported_archive_count": 185,
+  "held_job_count": 864,
+  "held_proc_max": 925,
+  "held_proc_min": 0,
+  "hold_reason_code_subcode_counts": {
+    "13:2": 864
+  },
+  "login_host_missing_archive_count": 0,
+  "manifest_archive_count": 1600,
+  "manifest_path_mismatch_count": 0,
+  "observed_utc": "2026-08-10T18:57:13Z",
+  "outside_frozen_eos_root_count": 0,
+  "reported_archive_not_in_manifest_count": 0,
+  "status": "diagnosis_escalation800_schedd_cannot_read_eos_fuse_transfer_inputs",
+  "unparsed_hold_reason_count": 0
+}
