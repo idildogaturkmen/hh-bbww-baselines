@@ -1,0 +1,7 @@
+status=condor_submit_returned_zero_acceptance_marker
+accepted_utc=2026-08-10T18:38:09Z
+condor_submit_rc=0
+raw_submit_output_sha256=88688cab16a8a92a7dc99a774fe6577d1db5421d3e6f6649920dc66d6f51464c
+repository_head=5d730256593f346a9f47914980d9bb4796cbc23a
+expected_jobs=8000
+rule=DO_NOT_RESUBMIT_EVEN_IF_CLUSTER_PARSING_OR_LATER_BOOKKEEPING_FAILS

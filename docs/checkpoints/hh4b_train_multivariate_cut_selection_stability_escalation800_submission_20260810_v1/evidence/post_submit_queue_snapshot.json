@@ -1,0 +1,28 @@
+{
+  "acceptance_gate": false,
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "cluster_id": 30020809,
+  "completed": 0,
+  "endpoint_rows": [
+    {
+      "iwd": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/returns/job_0000",
+      "job_status": 1,
+      "proc_id": 0
+    },
+    {
+      "iwd": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/returns/job_7999",
+      "job_status": 1,
+      "proc_id": 7999
+    }
+  ],
+  "held": 0,
+  "idle": 8000,
+  "observed_local": "2026-08-10T13:38:41-05:00",
+  "observed_utc": "2026-08-10T18:38:41Z",
+  "query_job_count": 8000,
+  "removed": 0,
+  "running": 0,
+  "status": "read_only_initial_escalation800_queue_snapshot",
+  "suspended": 0,
+  "wrapper_selected_schedd_from_raw_submit_output": "lpcschedd5.fnal.gov"
+}
