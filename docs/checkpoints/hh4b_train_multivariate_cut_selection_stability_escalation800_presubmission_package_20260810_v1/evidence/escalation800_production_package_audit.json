@@ -1,0 +1,47 @@
+{
+  "aggregation_protocol_sha256": "a856d9027cc1d2e11a9d60e72b4104b5b8c24ce61acf43def0d4d487ab867eea",
+  "authorized_replicas": [
+    200,
+    999
+  ],
+  "categories": [
+    "exact3tag",
+    "ge4tag"
+  ],
+  "condor_job_count": 8000,
+  "condor_submission_performed": false,
+  "escalation_200_999_production_authorized": true,
+  "expected_structure_evaluations": 216000,
+  "job_matrix_sha256": "730853b84ca172572b15a26203115808b652ef3044125d0196cd3e67a1b53888",
+  "materialized_total_rows_across_replicas": 111491362,
+  "next": "freeze_pre_submission_package_evidence_then_submit_exactly_8000_jobs_once",
+  "nominal_selection_changed": false,
+  "outer_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "payload_archive_count": 1600,
+  "payload_archive_root": "/eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives",
+  "payload_archive_total_bytes": 14885685766,
+  "payload_internal_sha256_closure": true,
+  "payload_manifest_json_sha256": "2d29023c1fb00e18c159c35716876266e0694bcaad3c2a3de4b725a7a38634fd",
+  "payload_manifest_tsv_sha256": "5e24f8795552d50482401b9582d3b3ded85649f05a27743a4c17c05f56ef4ab4",
+  "payload_reuse_factor_outer_folds": 5,
+  "pilot_results_may_enter_stability_aggregation": false,
+  "production_package_built": true,
+  "production_submission_performed": false,
+  "queue_items_sha256": "7fbf206d0b55627500cd11ca6bc62affb171932eead5f87c1167a99a1f633daf",
+  "replica_count": 800,
+  "repository_head": "275a2aaebe83b2f1f5e7403a245b52daf30560b4",
+  "runner_sha256": "b5a0f96950f1b2cba99e1ed173b33a70630f10f2e1c516090920dea7137c15e5",
+  "runtime_archive_sha256": "4a9c4061e1d975f276326022454e578c5f0de3c094b9b56345f192cccc654112",
+  "schema_version": 1,
+  "status": "pass_escalation800_transfer_safe_production_package_pre_submission_audit",
+  "structures_per_job": 27,
+  "submit_file_sha256": "631c32bfb32be59220d6ba14b2ac0899d8fba489a5596a0131d25d955a8c87c6",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
