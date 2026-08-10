@@ -1,0 +1,17 @@
+{
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "canary_job": "30020809.0",
+  "cluster_id": 30020809,
+  "condor_submit_called": false,
+  "in_place_cmd_edit": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_stability_escalation800_eos_recovery.sh",
+  "in_place_transfer_input_edit": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/submission/run_escalation800_category_fold_job.sh,/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz",
+  "never_resubmit_cluster": true,
+  "proc_id": 0,
+  "recovery_attempted_utc": "2026-08-10T19:17:19Z",
+  "recovery_released_utc": "2026-08-10T19:17:33Z",
+  "repository_head": "515002fdb1ce01f4de3ca3a066f8cc92e07d81bd",
+  "schema_version": 1,
+  "status": "pass_escalation800_proc0_in_place_recovery_edited_and_released",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

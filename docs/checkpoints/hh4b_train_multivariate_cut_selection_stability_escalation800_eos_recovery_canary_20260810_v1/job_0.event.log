@@ -1,0 +1,104 @@
+000 (30020809.000.000) 2026-08-10 13:33:19 Job submitted from host: <131.225.204.62:9618?addrs=131.225.204.62-9618+[2620-6a-0-8420-f0-0-204-62]-9618&alias=lpcschedd5.fnal.gov&noUDP&sock=schedd_2266_ddb2>
+...
+040 (30020809.000.000) 2026-08-10 13:44:41 Started transferring input files
+	Transferring to host: <131.225.204.35:9618?addrs=[2620-6a-0-8420-f0-0-204-35]-9618+131.225.204.35-9618&alias=cmswn2260.fnal.gov&noUDP&sock=slot1_13_2079_97ee_24682>
+...
+040 (30020809.000.000) 2026-08-10 13:45:45 Finished transferring input files
+...
+040 (30020809.000.000) 2026-08-10 13:45:46 Started transferring output files
+...
+021 (30020809.000.000) 2026-08-10 13:45:46 Error from starter on slot1_13@cmswn2260.fnal.gov:
+	Failed to transfer files: SHADOW at 131.225.204.62 failed to send file(s) to <131.225.204.35:39465>: |Error: 1 total failures: first failure: reading from file /eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives/escalation800_payload_replica_0200__exact3tag.tar.gz: (errno 2) No such file or directory; STARTER failed to receive file(s) from <131.225.204.62:9618>
+	Code 13 Subcode 2
+...
+004 (30020809.000.000) 2026-08-10 13:45:46 Job was evicted. Code 13 Subcode 2
+	(0) CPU times
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	Reason: Transfer input files failure at access point lpcschedd5 while sending files to execution point slot1_13@cmswn2260.fnal.gov. Details: 1 total failures: first failure: reading from file /eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives/escalation800_payload_replica_0200__exact3tag.tar.gz: (errno 2) No such file or directory
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :    89266  4096000   4099503 
+	   GPUs                 :                           0 
+	   Memory (MB)          :              2048      2048 
+...
+012 (30020809.000.000) 2026-08-10 13:45:47 Job was held.
+	Transfer input files failure at access point lpcschedd5 while sending files to execution point slot1_13@cmswn2260.fnal.gov. Details: 1 total failures: first failure: reading from file /eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives/escalation800_payload_replica_0200__exact3tag.tar.gz: (errno 2) No such file or directory
+	Code 13 Subcode 2
+...
+013 (30020809.000.000) 2026-08-10 14:17:33 Job was released.
+	via condor_release (by user iturkmen)
+...
+040 (30020809.000.000) 2026-08-10 14:24:16 Started transferring input files
+	Transferring to host: <131.225.205.115:9618?addrs=[2620-6a-0-8420-f0-0-205-115]-9618+131.225.205.115-9618&alias=cmswn2279.fnal.gov&noUDP&sock=slot1_39_2085_d22e_11366>
+...
+040 (30020809.000.000) 2026-08-10 14:24:25 Finished transferring input files
+...
+001 (30020809.000.000) 2026-08-10 14:24:25 Job executing on host: <131.225.205.115:9618?addrs=[2620-6a-0-8420-f0-0-205-115]-9618+131.225.205.115-9618&alias=cmswn2279.fnal.gov&noUDP&sock=startd_2010_4573>
+	SlotName: slot1_39@cmswn2279.fnal.gov
+	CondorScratchDir = "/storage/local/data1/condor/execute/dir_1127198"
+	Cpus = 1
+	Disk = 4099499
+	GPUs = 0
+	Memory = 2048
+...
+006 (30020809.000.000) 2026-08-10 14:25:35 Image size of job updated: 19
+	19  -  MemoryUsage of job (MB)
+	20296  -  ResidentSetSize of job (KB)
+...
+006 (30020809.000.000) 2026-08-10 14:26:36 Image size of job updated: 61
+	61  -  MemoryUsage of job (MB)
+	62472  -  ResidentSetSize of job (KB)
+...
+006 (30020809.000.000) 2026-08-10 14:27:37 Image size of job updated: 182
+	182  -  MemoryUsage of job (MB)
+	187220  -  ResidentSetSize of job (KB)
+...
+006 (30020809.000.000) 2026-08-10 14:28:38 Image size of job updated: 194
+	194  -  MemoryUsage of job (MB)
+	199476  -  ResidentSetSize of job (KB)
+...
+006 (30020809.000.000) 2026-08-10 14:29:39 Image size of job updated: 230
+	230  -  MemoryUsage of job (MB)
+	235704  -  ResidentSetSize of job (KB)
+...
+006 (30020809.000.000) 2026-08-10 14:55:53 Image size of job updated: 231
+	231  -  MemoryUsage of job (MB)
+	237296  -  ResidentSetSize of job (KB)
+...
+006 (30020809.000.000) 2026-08-10 14:56:53 Image size of job updated: 231
+	231  -  MemoryUsage of job (MB)
+	237300  -  ResidentSetSize of job (KB)
+...
+006 (30020809.000.000) 2026-08-10 15:12:57 Image size of job updated: 231
+	231  -  MemoryUsage of job (MB)
+	237356  -  ResidentSetSize of job (KB)
+...
+006 (30020809.000.000) 2026-08-10 15:13:58 Image size of job updated: 231
+	231  -  MemoryUsage of job (MB)
+	237540  -  ResidentSetSize of job (KB)
+...
+040 (30020809.000.000) 2026-08-10 15:35:05 Started transferring output files
+...
+040 (30020809.000.000) 2026-08-10 15:35:06 Finished transferring output files
+...
+005 (30020809.000.000) 2026-08-10 15:35:09 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 01:07:19, Sys 0 00:00:08  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 01:07:19, Sys 0 00:00:08  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	69268  -  Run Bytes Sent By Job
+	91380829  -  Run Bytes Received By Job
+	69268  -  Total Bytes Sent By Job
+	91380829  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :   420479  4096000   4099499 
+	   GPUs                 :                           0 
+	   Memory (MB)          :      231     2048      2048 
+	   TimeExecute (s)      :     4240                    
+	   TimeSlotBusy (s)     :     4253                    
+...

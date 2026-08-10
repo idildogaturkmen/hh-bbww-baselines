@@ -1,0 +1,29 @@
+{
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "canary_job": "30020809.0",
+  "frozen_input_sha256": {
+    "/eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives/escalation800_payload_replica_0200__exact3tag.tar.gz": "3c847483807a7e00599b45a784832acf56f0fa10acf67218c2d1dd6c3e47d135",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz": "4a9c4061e1d975f276326022454e578c5f0de3c094b9b56345f192cccc654112",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/submission/run_escalation800_category_fold_job.sh": "b5a0f96950f1b2cba99e1ed173b33a70630f10f2e1c516090920dea7137c15e5",
+    "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_stability_escalation800_eos_recovery.sh": "ed687c9cda7dc27c51c65b1a789479c1612ce402dcb2ebd59a7cdeca67bd4821"
+  },
+  "git_head": "515002fdb1ce01f4de3ca3a066f8cc92e07d81bd",
+  "history_count": 0,
+  "original_job_ad": {
+    "ClusterId": 30020809,
+    "Cmd": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/submission/run_escalation800_category_fold_job.sh",
+    "HoldReason": "Transfer input files failure at access point lpcschedd5 while sending files to execution point slot1_13@cmswn2260.fnal.gov. Details: 1 total failures: first failure: reading from file /eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives/escalation800_payload_replica_0200__exact3tag.tar.gz: (errno 2) No such file or directory",
+    "HoldReasonCode": 13,
+    "HoldReasonSubCode": 2,
+    "Iwd": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/returns/job_0000",
+    "JobStatus": 5,
+    "NumJobStarts": 0,
+    "NumSystemHolds": 0,
+    "ProcId": 0,
+    "TransferInput": "/eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives/escalation800_payload_replica_0200__exact3tag.tar.gz,/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz"
+  },
+  "planned_cmd": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_stability_escalation800_eos_recovery.sh",
+  "planned_transfer_input": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/submission/run_escalation800_category_fold_job.sh,/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz",
+  "return_directory_empty": true,
+  "status": "pass_escalation800_proc0_in_place_recovery_preflight"
+}

@@ -1,0 +1,13 @@
+{
+  "ClusterId": 30020809,
+  "Cmd": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/scripts/production/run_hh4b_stability_escalation800_eos_recovery.sh",
+  "HoldReason": "Transfer input files failure at access point lpcschedd5 while sending files to execution point slot1_13@cmswn2260.fnal.gov. Details: 1 total failures: first failure: reading from file /eos/uscms/store/user/iturkmen/hh4b_cut_baseline/selection_stability_escalation800_production_package_v1_20260809/archives/escalation800_payload_replica_0200__exact3tag.tar.gz: (errno 2) No such file or directory",
+  "HoldReasonCode": 13,
+  "HoldReasonSubCode": 2,
+  "Iwd": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/returns/job_0000",
+  "JobStatus": 5,
+  "NumJobStarts": 0,
+  "NumSystemHolds": 0,
+  "ProcId": 0,
+  "TransferInput": "/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_selection_stability_escalation800_production_package_v1_20260809/submission/run_escalation800_category_fold_job.sh,/uscms_data/d3/iturkmen/hh4b_delphes/baselines/multivariate_cut_bounded_six_job_transfer_pilot_v8_r1_20260807T004537Z/archives/hh4b_python_runtime_v8_r1.tar.gz"
+}
