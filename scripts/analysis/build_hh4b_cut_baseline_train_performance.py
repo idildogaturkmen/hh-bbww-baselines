@@ -73,6 +73,14 @@ BOOTSTRAP_METRICS = (
     "signal_over_background",
     "asimov_significance_stat_only",
 )
+DISTRIBUTION_SPECS = {
+    "r_hh_125_125": (0.0, 300.0, 60, r"$R_{HH}(125,125)$"),
+    "mhh": (0.0, 3000.0, 60, r"$m_{HH}$ [GeV]"),
+    "h2_pt": (0.0, 1500.0, 60, r"$p_T(H_2)$ [GeV]"),
+    "ht_candidate_jets": (0.0, 3000.0, 60, r"$H_T^{\mathrm{cand.}}$ [GeV]"),
+    "max_drbb": (0.0, 6.5, 52, r"$\max\Delta R_{bb}$"),
+    "abs_h_delta_eta": (0.0, 12.0, 48, r"$|\Delta\eta(H_1,H_2)|$"),
+}
 
 
 class PerformanceError(RuntimeError):
@@ -499,6 +507,89 @@ def add_combined_source_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]
     return rows + combined
 
 
+def accumulate_distributions(
+    accumulator: dict[tuple[str, str, str, str], dict[str, Any]],
+    frame: pd.DataFrame,
+    selected: np.ndarray,
+    category: str,
+) -> None:
+    classes = frame["sample_class"].astype(str).to_numpy()
+    weights = frame["resolved_selection_contribution_weight"].to_numpy(dtype=float)
+    for variable, (minimum, maximum, bins, label) in DISTRIBUTION_SPECS.items():
+        values = frame[variable].to_numpy(dtype=float)
+        require(np.isfinite(values).all(), f"non-finite distribution values: {variable}")
+        edges = np.linspace(minimum, maximum, bins + 1)
+        for sample_class in SAMPLE_CLASSES:
+            class_mask = classes == sample_class
+            for stage, stage_mask in (("preselection", class_mask),
+                                      ("postselection", class_mask & selected)):
+                chosen_values = values[stage_mask]
+                chosen_weights = weights[stage_mask]
+                key = (category, sample_class, stage, variable)
+                if key not in accumulator:
+                    accumulator[key] = {
+                        "edges": edges,
+                        "label": label,
+                        "rows": np.zeros(bins, dtype=np.int64),
+                        "signed_yield": np.zeros(bins, dtype=float),
+                        "sumw2": np.zeros(bins, dtype=float),
+                        "underflow_rows": 0,
+                        "overflow_rows": 0,
+                        "underflow_signed_yield": 0.0,
+                        "overflow_signed_yield": 0.0,
+                    }
+                target = accumulator[key]
+                target["rows"] += np.histogram(chosen_values, bins=edges)[0]
+                target["signed_yield"] += np.histogram(
+                    chosen_values, bins=edges, weights=chosen_weights
+                )[0]
+                target["sumw2"] += np.histogram(
+                    chosen_values, bins=edges, weights=np.square(chosen_weights)
+                )[0]
+                underflow = chosen_values < minimum
+                overflow = chosen_values >= maximum
+                target["underflow_rows"] += int(np.count_nonzero(underflow))
+                target["overflow_rows"] += int(np.count_nonzero(overflow))
+                target["underflow_signed_yield"] += float(chosen_weights[underflow].sum())
+                target["overflow_signed_yield"] += float(chosen_weights[overflow].sum())
+
+
+def distribution_rows(
+    accumulator: Mapping[tuple[str, str, str, str], Mapping[str, Any]]
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for (category, sample_class, stage, variable), values in sorted(accumulator.items()):
+        edges = values["edges"]
+        for index in range(len(edges) - 1):
+            rows.append({
+                "category_id": category,
+                "sample_class": sample_class,
+                "selection_stage": stage,
+                "selection_id": "fixed_nominal_deployment_cut",
+                "variable": variable,
+                "axis_label_latex": values["label"],
+                "bin_index": index,
+                "bin_low_inclusive": float(edges[index]),
+                "bin_high_exclusive": float(edges[index + 1]),
+                "rows": int(values["rows"][index]),
+                "signed_yield": float(values["signed_yield"][index]),
+                "sumw2": float(values["sumw2"][index]),
+                "underflow_rows_distribution_total": int(values["underflow_rows"]),
+                "overflow_rows_distribution_total": int(values["overflow_rows"]),
+                "underflow_signed_yield_distribution_total": float(
+                    values["underflow_signed_yield"]
+                ),
+                "overflow_signed_yield_distribution_total": float(
+                    values["overflow_signed_yield"]
+                ),
+                "validation_payloads_opened": 0,
+                "test_payloads_opened": 0,
+            })
+    expected = sum(spec[2] for spec in DISTRIBUTION_SPECS.values()) * 2 * 2 * 2
+    require(len(rows) == expected, "pre/post distribution row count mismatch")
+    return rows
+
+
 def bootstrap_performance_rows(
     draws: pd.DataFrame, source_rows: list[dict[str, Any]]
 ) -> list[dict[str, Any]]:
@@ -695,6 +786,7 @@ def build(
     seen_event_uids: set[str] = set()
     fold_input_rows: list[dict[str, Any]] = []
     reproduction_rows: list[dict[str, Any]] = []
+    distributions: dict[tuple[str, str, str, str], dict[str, Any]] = {}
 
     needed_columns = [
         "source_uid", "group_id", "source_fold", "event_uid", "sample_class",
@@ -769,6 +861,7 @@ def build(
 
             historical_mask = frame["r_hh_125_125"].to_numpy(dtype=float) < 34.0
             nominal_mask = fixed_nominal_mask(frame, category, deployment)
+            accumulate_distributions(distributions, frame, nominal_mask, category)
             for selection_id, mask in (
                 ("historical_rhh125125_lt34", historical_mask),
                 ("fixed_nominal_deployment_cut", nominal_mask),
@@ -853,6 +946,7 @@ def build(
     require(multiplicities.eq(441).all(), "bootstrap multiplicity closure mismatch")
     bootstrap_rows = bootstrap_performance_rows(draws, source_rows)
     paired_rows = paired_difference_rows(bootstrap_rows, performance_rows)
+    fixed_distribution_rows = distribution_rows(distributions)
 
     output.mkdir(parents=True)
     tables = output / "tables"
@@ -895,6 +989,12 @@ def build(
     paired_fields = tuple(paired_rows[0])
     write_tsv(tables / "paired_bootstrap_difference_summary.tsv", paired_fields, paired_rows)
     write_tsv(figure_data / "paired_bootstrap_difference_summary.tsv", paired_fields, paired_rows)
+    distribution_fields = tuple(fixed_distribution_rows[0])
+    write_tsv(
+        figure_data / "pre_post_nominal_variable_distributions.tsv",
+        distribution_fields,
+        fixed_distribution_rows,
+    )
 
     pooled_lookup = {
         (row["selection_id"], row["scope"]): row for row in pooled_rows
@@ -916,6 +1016,7 @@ def build(
         "category_matched_source_groups": 351,
         "historical_comparator_threshold_scan_performed": False,
         "historical_comparator_threshold": {"r_hh_125_125_lt": 34.0},
+        "pre_post_nominal_variable_distribution_rows": len(fixed_distribution_rows),
         "frozen_nominal_deployment_thresholds_unchanged": deployment,
         "selection_stability_all1000_checkpoint": str(all1000_checkpoint.relative_to(repo)),
         "selection_stability_all1000_summary_sha256": sha256_file(all1000_summary_path),
