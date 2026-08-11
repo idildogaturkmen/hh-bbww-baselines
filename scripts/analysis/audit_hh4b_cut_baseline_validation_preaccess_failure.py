@@ -59,18 +59,17 @@ def checked(arguments: list[str]) -> bytes:
 
 
 def query_scheduler() -> tuple[list[dict[str, object]], list[dict[str, object]]]:
-    queue = json.loads(
-        checked(
-            [
-                "/usr/bin/bash",
-                "/usr/local/bin/condor_q",
-                "-name",
-                SCHEDD,
-                str(CLUSTER),
-                "-json",
-            ]
-        )
+    queue_payload = checked(
+        [
+            "/usr/bin/bash",
+            "/usr/local/bin/condor_q",
+            "-name",
+            SCHEDD,
+            str(CLUSTER),
+            "-json",
+        ]
     )
+    queue = json.loads(queue_payload) if queue_payload.strip() else []
     history = json.loads(
         checked(
             [
