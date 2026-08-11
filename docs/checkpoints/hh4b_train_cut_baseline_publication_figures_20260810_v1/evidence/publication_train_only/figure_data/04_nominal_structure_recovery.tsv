@@ -1,0 +1,3 @@
+category_id	metric	initial200_value	all1000_value	all1000_minus_initial200
+exact3tag	nominal_structure_recovery_frequency	0.12	0.119	-0.001
+ge4tag	nominal_structure_recovery_frequency	0.025	0.034	0.009

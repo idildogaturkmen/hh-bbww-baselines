@@ -1,0 +1,11 @@
+outer_fold	category_id	structure_id	structure_label
+0	exact3tag	asymmetric_rectangular_mass__category__mass_only	asym. rect.: mass only
+1	exact3tag	radial_mass__category__plus_ht_candidate_jets	radial: $H_T^{\mathrm{cand.}}$
+2	exact3tag	radial_mass__category__mass_only	radial: mass only
+3	exact3tag	radial_mass__category__plus_ht_candidate_jets	radial: $H_T^{\mathrm{cand.}}$
+4	exact3tag	symmetric_rectangular_mass__category__mass_only	sym. rect.: mass only
+0	ge4tag	radial_mass__category__plus_mhh_and_abs_h_delta_eta	radial: $m_{HH}$ + $|\Delta\eta(H_1,H_2)|$
+1	ge4tag	radial_mass__category__plus_ht_candidate_jets_and_max_drbb	radial: $H_T^{\mathrm{cand.}}$ + $\max\Delta R_{bb}$
+2	ge4tag	radial_mass__category__plus_mhh_and_abs_h_delta_eta	radial: $m_{HH}$ + $|\Delta\eta(H_1,H_2)|$
+3	ge4tag	radial_mass__category__plus_h2_pt_and_max_drbb	radial: $p_T(H_2)$ + $\max\Delta R_{bb}$
+4	ge4tag	radial_mass__category__plus_mhh	radial: $m_{HH}$

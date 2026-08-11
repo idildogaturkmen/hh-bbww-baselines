@@ -1,0 +1,224 @@
+{
+  "checkpoint_evidence_file_count": 51,
+  "independent_audit": null,
+  "large_ranked_result_shard_count": 0,
+  "large_ranked_result_shards": {},
+  "large_ranked_result_shards_bound_by_sha256_not_copied": false,
+  "next": "commit_and_push_then_freeze_master_train_only_checkpoint",
+  "nominal_selection_changed": false,
+  "repository_parent_head": "754f441fbf106aec6351fff201f810cc198eaa54",
+  "role": "publication_train_only",
+  "schema_version": 1,
+  "source_artifacts": {
+    "figure_data/01_nested_outer_fold_winners.tsv": {
+      "bytes": 943,
+      "sha256": "a4fdbe8334a9fb3bc5a89dfd7b1f1e3993a3093adfa7d3e148e06ae6342daac3"
+    },
+    "figure_data/02_all1000_cut_family_frequency_matrix.tsv": {
+      "bytes": 14057,
+      "sha256": "5eae6f7a56394552067832d246757a2bb803d711c063be9959ef5146b88fe99b"
+    },
+    "figure_data/03_initial200_vs_all1000_stability.tsv": {
+      "bytes": 966,
+      "sha256": "2ac30f3982ff865e044b233d86dc1c488df3f5788d88a8929025e7db196c3bac"
+    },
+    "figure_data/04_nominal_structure_recovery.tsv": {
+      "bytes": 202,
+      "sha256": "3fe963f17c6bb8fa5542c6f16b697c5fed9cbecd88b994ba2de0700fcd511011"
+    },
+    "figure_data/05_optional_variable_inclusion.tsv": {
+      "bytes": 699,
+      "sha256": "c219cf6e4e7863af2301ced153c8c637273b1b1a2c4342893543edc7f76a7ec2"
+    },
+    "figure_data/06_modal_count_and_ties.tsv": {
+      "bytes": 2294,
+      "sha256": "b4c824b2584067242f24ae694256073e277410add1d8e11a9605581925a4a89d"
+    },
+    "figure_data/07_conditional_nominal_thresholds.tsv": {
+      "bytes": 1390,
+      "sha256": "03c5ac3ae099c72bdf39a034094b07bc427348cd5ba0cc3f00209aff0ee7468a"
+    },
+    "figure_data/08_exact3tag_ge4tag_stability.tsv": {
+      "bytes": 1398,
+      "sha256": "f2c503c6b958328a7f2bc76bd6045e9ca448d569fa4e63fa13aaf0b41418f717"
+    },
+    "figure_data/09_signal_background_efficiency_plane.tsv": {
+      "bytes": 6400,
+      "sha256": "80447c3e323ffc9a47705d1669a75bc1ad6ef5cd739443527420966f19112590"
+    },
+    "figure_data/10_nested_outer_oof_fold_performance.tsv": {
+      "bytes": 9797,
+      "sha256": "8c19ff89c39ceda4aac041e2a2cbb55a2ef840c929934c03279650f7c3eeb3b3"
+    },
+    "figure_data/11_historical_rhh34_comparison.tsv": {
+      "bytes": 2239,
+      "sha256": "ffca7543227f209f05993466373041a197fb6eaf6cd39f4be28e3ec4681fc2ac"
+    },
+    "figure_data/12_run2_equivalent_yields.tsv": {
+      "bytes": 2831,
+      "sha256": "ddaffa63fab5974d3d010065fdf9ff6b68f2ec01067fd3cc31db56df63562057"
+    },
+    "figure_data/13_signal_over_background.tsv": {
+      "bytes": 2831,
+      "sha256": "ddaffa63fab5974d3d010065fdf9ff6b68f2ec01067fd3cc31db56df63562057"
+    },
+    "figure_data/14_asimov_significance_stat_only.tsv": {
+      "bytes": 2831,
+      "sha256": "ddaffa63fab5974d3d010065fdf9ff6b68f2ec01067fd3cc31db56df63562057"
+    },
+    "figure_data/15_neff_finite_mc.tsv": {
+      "bytes": 2831,
+      "sha256": "ddaffa63fab5974d3d010065fdf9ff6b68f2ec01067fd3cc31db56df63562057"
+    },
+    "figure_data/16_pre_post_nominal_distributions.tsv": {
+      "bytes": 97310,
+      "sha256": "65a808688284ea1bcc7a0097f07438c31f3f1b6e4288b7f8b12fe6a8953cb2d7"
+    },
+    "figures/pdf/01_nested_outer_fold_winners.pdf": {
+      "bytes": 1064047,
+      "sha256": "24c224bb5c9d846771b905ade24ab494dfe452b633a32be5c141e8ebc454c55b"
+    },
+    "figures/pdf/02_all1000_cut_family_frequency_matrix.pdf": {
+      "bytes": 1084670,
+      "sha256": "a79771ba23f6edc6b80163a27410e674713e71b1bd9d39e56b7c2487d76ccfe0"
+    },
+    "figures/pdf/03_initial200_vs_all1000_stability.pdf": {
+      "bytes": 1063444,
+      "sha256": "7c9bd63d7d47cecc88aabdd035bf29b97153989b3404f3a9499fc3ed12ede258"
+    },
+    "figures/pdf/04_nominal_structure_recovery.pdf": {
+      "bytes": 1061981,
+      "sha256": "b15118315c0c0bdd27c4deb1ec3f8fa71d80f8388fef5db42a73acdfb65d2215"
+    },
+    "figures/pdf/05_optional_variable_inclusion.pdf": {
+      "bytes": 1062891,
+      "sha256": "dea4de5e853ebac1345671f93aec55699b031ff41e49659df395df59e9325934"
+    },
+    "figures/pdf/06_modal_count_and_ties.pdf": {
+      "bytes": 1063568,
+      "sha256": "0f3d0972a5f642f56bd58c88f2dd3d724146047936572ad70aa1b64053ededee"
+    },
+    "figures/pdf/07_conditional_nominal_thresholds.pdf": {
+      "bytes": 1063153,
+      "sha256": "45d1f72eb6732ed8b4a73fbdb699fa732d8395c272d2b5491954d78b8718afbc"
+    },
+    "figures/pdf/08_exact3tag_ge4tag_stability.pdf": {
+      "bytes": 1062488,
+      "sha256": "5fb6f18c33bafa9ec45df8e78f0e4b3b0e11a392fb438bbb860963cda247144d"
+    },
+    "figures/pdf/09_signal_background_efficiency_plane.pdf": {
+      "bytes": 1063667,
+      "sha256": "6e774b19fc098a7506d3f54ff5f28eaf49f588b1a598c92cc7b36ae584d3f1bd"
+    },
+    "figures/pdf/10_nested_outer_oof_fold_performance.pdf": {
+      "bytes": 1065856,
+      "sha256": "f93473cd3c7a916b995fb58ecada862de26c3249c0a45f147117814b3fc28284"
+    },
+    "figures/pdf/11_historical_rhh34_comparison.pdf": {
+      "bytes": 1063003,
+      "sha256": "412ea9fc257dfbd96e3d0b50697548d3230818a125c38d8539b09eaad599ffd0"
+    },
+    "figures/pdf/12_run2_equivalent_yields.pdf": {
+      "bytes": 1062728,
+      "sha256": "c91984d657195f19711ed7c16be834000a266d0751c2625785dfbf40e2fd3fde"
+    },
+    "figures/pdf/13_signal_over_background.pdf": {
+      "bytes": 1062260,
+      "sha256": "021f5303efe0ffbafbd07863213a8037e393ca5a4e2ce70ee4fe49204e7cd57e"
+    },
+    "figures/pdf/14_asimov_significance_stat_only.pdf": {
+      "bytes": 1062222,
+      "sha256": "e707945b358e2961668d960520cbb8a69b192022bf5fca144208f1f95d28e7c0"
+    },
+    "figures/pdf/15_neff_finite_mc.pdf": {
+      "bytes": 1063545,
+      "sha256": "d81e4a0f689ec596fe2f1d7dfa13047c441ab92cdb24354f881a0c50d6190fde"
+    },
+    "figures/pdf/16_pre_post_nominal_distributions.pdf": {
+      "bytes": 1078917,
+      "sha256": "d729fa13f6aa5856d84c821eaa11c76bd7d791465980e1b259f8d1de161a8d87"
+    },
+    "figures/png/01_nested_outer_fold_winners.png": {
+      "bytes": 146745,
+      "sha256": "007f4dc6b50f8946dc094522dfdc706c2dbacf8f8197a51fd7af31eb3786d927"
+    },
+    "figures/png/02_all1000_cut_family_frequency_matrix.png": {
+      "bytes": 390875,
+      "sha256": "3852e2486b9c651329f99e59e3147ff29c2ca9af0ced1727815246db666b515c"
+    },
+    "figures/png/03_initial200_vs_all1000_stability.png": {
+      "bytes": 239971,
+      "sha256": "7af80c146cfe7622601a21a17dde9105369a357864541ba03cab36d67b602548"
+    },
+    "figures/png/04_nominal_structure_recovery.png": {
+      "bytes": 111279,
+      "sha256": "aa94345c17060afe21bc237ed6a1604fb4d6f94c9d00de712e5446f532253d96"
+    },
+    "figures/png/05_optional_variable_inclusion.png": {
+      "bytes": 124420,
+      "sha256": "c49a9ff9257b6b9ddada6c4f6f9845800319ecc199d3a312093aaf8ebc8dbdc1"
+    },
+    "figures/png/06_modal_count_and_ties.png": {
+      "bytes": 207937,
+      "sha256": "f9e33afd23dfbbf805a93ddbb240755fcdf1fb7aac88b693329ca9e076b134bf"
+    },
+    "figures/png/07_conditional_nominal_thresholds.png": {
+      "bytes": 160401,
+      "sha256": "2572853c4f0d438a691144f50824e9f66f4a878ce73f3f52a4cbbc026d43ab1a"
+    },
+    "figures/png/08_exact3tag_ge4tag_stability.png": {
+      "bytes": 164800,
+      "sha256": "e2e05e2e3e22fc6856da27bc5dd51bc36f09097853a9cafa797010bcf1c9f357"
+    },
+    "figures/png/09_signal_background_efficiency_plane.png": {
+      "bytes": 124463,
+      "sha256": "1344adfffe338942e5c252ebe22909142f069e61a653968111bc56997bb014b6"
+    },
+    "figures/png/10_nested_outer_oof_fold_performance.png": {
+      "bytes": 264966,
+      "sha256": "300d805e415ba760597439d44f976bde1a85ae602986bbb09978588594e38ae5"
+    },
+    "figures/png/11_historical_rhh34_comparison.png": {
+      "bytes": 149259,
+      "sha256": "7d3369ce0d04cbb9a235744923a351b126da0010f40bde128d719d3af03cdf3b"
+    },
+    "figures/png/12_run2_equivalent_yields.png": {
+      "bytes": 168916,
+      "sha256": "38c8124e67fad2f5f62a2e4398e7f8411e7c72cc962ab0fa4954be69d7fb0d7e"
+    },
+    "figures/png/13_signal_over_background.png": {
+      "bytes": 125801,
+      "sha256": "c3a4afb2090513741cc6bdf1d4dd67bdc1042852b343ce51df900966bbebcfb2"
+    },
+    "figures/png/14_asimov_significance_stat_only.png": {
+      "bytes": 129826,
+      "sha256": "11da03f7a22e62330f1f39eb46a34f33caf5aa222a4238eb3ec395858c168ba4"
+    },
+    "figures/png/15_neff_finite_mc.png": {
+      "bytes": 171146,
+      "sha256": "3805187ccb41db4ba59746f1f92678dd869d07f2cd96e9ac58118ca3bf0d72b2"
+    },
+    "figures/png/16_pre_post_nominal_distributions.png": {
+      "bytes": 396343,
+      "sha256": "ad460d9e426e3cb0487ca3786a8ed85cc1fd5fabd942ab35357accf960855171"
+    },
+    "manifests/figure_manifest.tsv": {
+      "bytes": 9730,
+      "sha256": "a3ae0b56e057793d083eadcf33f5aaf9aa07c2c1c1cefa6b1cfc9431b3008390"
+    },
+    "publication_figure_summary.json": {
+      "bytes": 521,
+      "sha256": "64965390e83c8e66ee90bf3e81ba03c51d4944fccc595c51c6802cf0ad782e2f"
+    }
+  },
+  "source_artifacts_committed_and_unchanged": true,
+  "source_file_count_excluding_sha256s": 50,
+  "source_path": "artifacts/hh4b_cut_baseline/publication_train_only",
+  "source_sha256s_sha256": "50c53215a6d33132e154178d85f71c3e9e35abc362a9edb2384ff671c247e9d5",
+  "source_total_bytes_excluding_sha256s": 20284858,
+  "status": "pass_publication_train_only_artifact_checkpoint_frozen",
+  "summary_path": "artifacts/hh4b_cut_baseline/publication_train_only/publication_figure_summary.json",
+  "summary_sha256": "64965390e83c8e66ee90bf3e81ba03c51d4944fccc595c51c6802cf0ad782e2f",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
