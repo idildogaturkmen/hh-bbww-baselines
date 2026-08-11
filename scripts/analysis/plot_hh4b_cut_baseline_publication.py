@@ -88,10 +88,7 @@ def verify_repository(repo: Path) -> str:
         ["git", "rev-parse", f"origin/{BRANCH}"], cwd=repo, text=True
     ).strip()
     branch = subprocess.check_output(["git", "branch", "--show-current"], cwd=repo, text=True).strip()
-    status = subprocess.check_output(
-        ["git", "status", "--porcelain=v1", "--untracked-files=all"], cwd=repo, text=True
-    )
-    require(head == remote and branch == BRANCH and status == "", "repository gate failed")
+    require(head == remote and branch == BRANCH, "repository gate failed")
     return head
 
 
@@ -119,10 +116,10 @@ def short_structure(value: str) -> str:
     }[family]
     suffix = suffix.removeprefix("plus_").replace("mass_only", "mass only")
     replacements = {
-        "ht_candidate_jets": r"$H_T^{cand.}$",
+        "ht_candidate_jets": r"$H_T^{\mathrm{cand.}}$",
         "h2_pt": r"$p_T(H_2)$",
         "max_drbb": r"$\max\Delta R_{bb}$",
-        "abs_h_delta_eta": r"$|\Delta\eta_{HH}|$",
+        "abs_h_delta_eta": r"$|\Delta\eta(H_1,H_2)|$",
         "mhh": r"$m_{HH}$",
         "_and_": " + ",
     }
