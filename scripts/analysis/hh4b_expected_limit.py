@@ -34,3 +34,35 @@ def expected_upper_limit(signal,background,background_variance=None,confidence_l
         if qmu_asimov(mid,signal,background,background_variance)<target: lo=mid
         else: hi=mid
     return (lo+hi)/2
+
+def _q_gamma(mu,s,b,v):
+    """Poisson-equivalent gamma constraint with tau=b^2/v effective counts."""
+    if not v: return _q(mu,s,b,0.)
+    tau=b*b/v
+    if tau<=0 or b<=0: raise ValueError("gamma model requires positive b and variance")
+    n=b
+    def score(beta): return b*n/(mu*s+beta*b)-b+tau/beta-tau
+    lo,hi=1e-14,1.
+    while score(hi)>0: hi*=2
+    for _ in range(100):
+        mid=(lo+hi)/2
+        if score(mid)>0: lo=mid
+        else: hi=mid
+    beta=(lo+hi)/2; lam=mu*s+beta*b
+    lr=n*math.log(lam/n)-(lam-n)+tau*math.log(beta)-(beta*tau-tau)
+    return max(0.,-2*lr)
+
+def expected_upper_limit_gamma(signal,background,background_variance):
+    """Median 95% CLs limit using positive-bin effective-count constraints."""
+    if not (len(signal)==len(background)==len(background_variance)) or not signal: raise ValueError("length mismatch")
+    target=1.959963984540054**2
+    def q(mu): return sum(_q_gamma(mu,s,b,v) for s,b,v in zip(signal,background,background_variance))
+    lo,hi=0.,1.
+    while q(hi)<target:
+        hi*=2
+        if hi>1e15: raise RuntimeError("cannot bracket")
+    for _ in range(100):
+        mid=(lo+hi)/2
+        if q(mid)<target: lo=mid
+        else: hi=mid
+    return (lo+hi)/2
