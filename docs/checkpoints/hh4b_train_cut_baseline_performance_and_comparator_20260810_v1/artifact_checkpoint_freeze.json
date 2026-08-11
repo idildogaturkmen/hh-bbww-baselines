@@ -1,0 +1,72 @@
+{
+  "checkpoint_evidence_file_count": 13,
+  "independent_audit": null,
+  "large_ranked_result_shard_count": 0,
+  "large_ranked_result_shards": {},
+  "large_ranked_result_shards_bound_by_sha256_not_copied": false,
+  "next": "commit_and_push_then_render_train_only_publication_figures",
+  "nominal_selection_changed": false,
+  "repository_parent_head": "d3a825f76139570c61ed9e8e5407f51d67156503",
+  "role": "train_performance",
+  "schema_version": 1,
+  "source_artifacts": {
+    "figure_data/fold_train_performance_metrics.tsv": {
+      "bytes": 27830,
+      "sha256": "bf7750a9fc9fb9312e8e76eca46965d72c2fd693beed47543a40244740eca826"
+    },
+    "figure_data/paired_bootstrap_difference_summary.tsv": {
+      "bytes": 19262,
+      "sha256": "cb596a644c2782a993f1eb71f29f6fe612d49799f586fab8d426734c72b7fce1"
+    },
+    "figure_data/pooled_train_performance_metrics.tsv": {
+      "bytes": 6464,
+      "sha256": "0a94d629ca2d2a6e47596c8583dd367c15c129274bce09f5abf82a62d1bd49a1"
+    },
+    "figure_data/pre_post_nominal_variable_distributions.tsv": {
+      "bytes": 417321,
+      "sha256": "3f92f74d470f8d595f4cc1bc63df00a173ac270cd75f7f4f5d7ea139a56b9722"
+    },
+    "manifests/artifact_manifest.json": {
+      "bytes": 3920,
+      "sha256": "a2973ec689ef0fb9af2cd4cd42f330d7b99bba641b8fa1d0f4ea83bf3354eec0"
+    },
+    "manifests/fold_table_inventory.tsv": {
+      "bytes": 2563,
+      "sha256": "03101a125a0f97864847b715d15a69b840ac0870edd0fecffc3b989ecbee2fb7"
+    },
+    "tables/fixed_selection_source_metrics.tsv": {
+      "bytes": 627216,
+      "sha256": "7fa62b3ec751cf2c880dfffec54743eb356036f53a320762ea288324af2df03b"
+    },
+    "tables/nested_outer_oof_reproduction_audit.tsv": {
+      "bytes": 2519,
+      "sha256": "cc6a669404b5cbae6f964263d124ef1010769cb2d6ee6f9f48feb6c0b47bc347"
+    },
+    "tables/paired_bootstrap_difference_summary.tsv": {
+      "bytes": 19262,
+      "sha256": "cb596a644c2782a993f1eb71f29f6fe612d49799f586fab8d426734c72b7fce1"
+    },
+    "tables/paired_bootstrap_replica_metrics.tsv": {
+      "bytes": 7341513,
+      "sha256": "5a6dd66ffc929492581be9e74945a5d07c329e7de37613f1fdb5ae0b7ee672fe"
+    },
+    "tables/train_performance_metrics.tsv": {
+      "bytes": 33248,
+      "sha256": "ac03bcc6ecc4925a8a6cdd5e7cde3ea670b1a27f796dd7dc4e45bb58c55e799c"
+    },
+    "train_performance_summary.json": {
+      "bytes": 9563,
+      "sha256": "023f19704ef17322d35e88d0454ebd21b5781037af2e18d5f580f65c3a72d3c9"
+    }
+  },
+  "source_artifacts_committed_and_unchanged": true,
+  "source_file_count_excluding_sha256s": 12,
+  "source_path": "artifacts/hh4b_cut_baseline/train_performance",
+  "source_sha256s_sha256": "d02c5639086dcae081ed18a94c6b0bcc6605b5a81e286a4c1519a5a236e3a505",
+  "source_total_bytes_excluding_sha256s": 8510681,
+  "status": "pass_train_performance_artifact_checkpoint_frozen",
+  "summary_path": "artifacts/hh4b_cut_baseline/train_performance/train_performance_summary.json",
+  "summary_sha256": "023f19704ef17322d35e88d0454ebd21b5781037af2e18d5f580f65c3a72d3c9",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
