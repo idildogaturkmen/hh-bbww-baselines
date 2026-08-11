@@ -124,7 +124,12 @@ def test_full_preparation_is_metadata_only_and_builds_116_jobs() -> None:
         coefficient_rows = []
         for index in range(121):
             physical = index < 116
-            uid = f"source_{index:04d}"
+            uid = (
+                "source_0000::background::4::"
+                "bundle:/store/user/iturkmen/frozen/source_0000.tar.gz"
+                if index == 0
+                else f"source_{index:04d}"
+            )
             access_rows.append(
                 {
                     "production_row_index": index,
@@ -252,6 +257,12 @@ def test_full_preparation_is_metadata_only_and_builds_116_jobs() -> None:
         assert result.returncode == 0, result.stdout + result.stderr
         assert "PRODUCTION_SUBMISSION_PERFORMED=FALSE" in result.stdout
         assert len((package / "validation_queue.items").read_text().splitlines()) == 116
+        assert (
+            package / "validation_queue.items"
+        ).read_text().splitlines()[0].endswith(
+            "source_0000::background::4::"
+            "bundle:/store/user/iturkmen/frozen/source_0000.tar.gz"
+        )
         summary = json.loads((package / "campaign_summary.json").read_text())
         assert summary["condor_jobs_prepared"] == 116
         assert summary["production_submission_performed"] is False

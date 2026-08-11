@@ -151,7 +151,10 @@ def validate_remote_path(value: str, label: str) -> str:
 
 def validate_source_token(value: str) -> str:
     token = clean(value)
-    require(bool(re.fullmatch(r"[A-Za-z0-9_.:+-]+", token)), f"unsafe source UID: {token}")
+    # Frozen source UIDs retain the physical bundle provenance as
+    # ``bundle:/store/...``.  A slash is therefore part of the canonical UID,
+    # while whitespace and shell metacharacters remain forbidden.
+    require(bool(re.fullmatch(r"[A-Za-z0-9_./:+-]+", token)), f"unsafe source UID: {token}")
     return token
 
 
@@ -309,7 +312,7 @@ for command in awk grep python3 sed sha256sum tar xrdcp xrdfs; do
 done
 [[ -n "${{X509_USER_PROXY:-}}" && -f "$X509_USER_PROXY" ]] || fail "X509 proxy unavailable"
 [[ "$ROW_INDEX" =~ ^[0-9]+$ ]] || fail "invalid row index"
-[[ "$SOURCE_UID" =~ ^[A-Za-z0-9_.:+-]+$ ]] || fail "invalid source UID"
+[[ "$SOURCE_UID" =~ ^[A-Za-z0-9_./:+-]+$ ]] || fail "invalid source UID"
 [[ "$(sha256sum validation_common_bundle.tar.gz | awk '{{print $1}}')" == "$COMMON_SHA" ]] || fail "common bundle SHA mismatch"
 
 mkdir -p "$SCRATCH/common" "$SCRATCH/runtime" "$SCRATCH/downloads" "$SCRATCH/job_output" "$SCRATCH/job_work"
