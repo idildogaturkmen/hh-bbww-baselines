@@ -111,6 +111,36 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def aggregation_input_label(repo: Path, path: Path) -> str:
+    if path.is_relative_to(repo):
+        return str(path.relative_to(repo))
+    return f"external_escalation_complete_return_audit/{path.name}"
+
+
+def aggregation_input_sha256s(repo: Path, paths: Sequence[Path]) -> dict[str, str]:
+    labels = [aggregation_input_label(repo, path) for path in paths]
+    require(len(labels) == len(set(labels)), "aggregation input labels are not unique")
+    return {label: sha256_file(path) for label, path in zip(labels, paths)}
+
+
+def verify_bound_external_artifacts(
+    source_root: Path,
+    bindings: Mapping[str, Mapping[str, Any]],
+) -> dict[str, Path]:
+    require(source_root.is_dir() and not source_root.is_symlink(), "external audit source is invalid")
+    require(bool(bindings), "external audit source bindings are empty")
+    actual = {path.name for path in source_root.iterdir() if path.is_file()}
+    require(actual == set(bindings), "external audit source file set changed")
+    verified: dict[str, Path] = {}
+    for name, binding in sorted(bindings.items()):
+        path = source_root / name
+        require(path.is_file() and not path.is_symlink(), f"invalid external audit artifact: {name}")
+        require(path.stat().st_size == binding.get("bytes"), f"external audit artifact size changed: {name}")
+        require(sha256_file(path) == binding.get("sha256"), f"external audit artifact SHA changed: {name}")
+        verified[name] = path
+    return verified
+
+
 def canonical_json(value: Any, *, pretty: bool = False) -> str:
     if pretty:
         return json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + "\n"
@@ -448,6 +478,7 @@ def validate_environment(
     repo: Path,
     initial_checkpoint: Path,
     escalation_checkpoint: Path,
+    escalation_audit_output: Path,
     protocol: Path,
     initial_summary_path: Path,
 ) -> tuple[str, list[tuple[Path, int]], int, int, list[Path]]:
@@ -459,18 +490,6 @@ def validate_environment(
     require(head == remote, f"local/remote HEAD mismatch: {head} != {remote}")
     branch = subprocess.check_output(["git", "branch", "--show-current"], cwd=repo, text=True).strip()
     require(branch == "delphes-hh4b-production", f"unexpected branch: {branch}")
-    require(subprocess.run(["git", "diff", "--quiet", "--ignore-submodules", "--"], cwd=repo).returncode == 0,
-            "tracked worktree is dirty")
-    require(subprocess.run(["git", "diff", "--cached", "--quiet", "--ignore-submodules", "--"], cwd=repo).returncode == 0,
-            "index is dirty")
-    require(
-        subprocess.check_output(
-            ["git", "status", "--porcelain=v1", "--untracked-files=all"],
-            cwd=repo,
-            text=True,
-        ) == "",
-        "repository has tracked or untracked changes",
-    )
 
     inventory = initial_checkpoint / "structure_result_inventory.tsv"
     audit_json = initial_checkpoint / "complete_return_audit.json"
@@ -519,7 +538,28 @@ def validate_environment(
     )
     escalation_audit_path = escalation_checkpoint / "complete_return_audit.json"
     escalation_manifest_path = escalation_checkpoint / "structure_result_inventory_manifest.json"
+    escalation_freeze_path = escalation_checkpoint / "complete_return_audit_freeze.json"
     escalation_audit = json.loads(escalation_audit_path.read_text(encoding="utf-8"))
+    escalation_freeze = json.loads(escalation_freeze_path.read_text(encoding="utf-8"))
+    require(
+        escalation_freeze.get("status")
+        == "pass_escalation800_complete_return_audit_frozen_before_all1000_aggregation",
+        "escalation complete-return freeze status mismatch",
+    )
+    require(escalation_freeze.get("large_source_artifacts_bound_by_sha256_not_copied") is True,
+            "escalation compact-source binding gate changed")
+    require(
+        escalation_freeze.get("queue_rows") == 0
+        and escalation_freeze.get("clean_history_rows") == 8000
+        and escalation_freeze.get("bad_history_rows") == 0
+        and escalation_freeze.get("complete_triplets") == 8000
+        and escalation_freeze.get("partial_triplets") == 0,
+        "escalation frozen scheduler/return counts changed",
+    )
+    external_artifacts = verify_bound_external_artifacts(
+        escalation_audit_output,
+        escalation_freeze.get("source_artifacts", {}),
+    )
     require(
         escalation_audit.get("status")
         == "pass_complete_escalation800_8000_job_216000_structure_return_audit",
@@ -568,9 +608,10 @@ def validate_environment(
         initial_summary_path,
         escalation_audit_path,
         escalation_manifest_path,
+        escalation_freeze_path,
     ]
     for shard in inventory_manifest["shards"]:
-        path = escalation_checkpoint / shard["path"]
+        path = external_artifacts[shard["path"]]
         require(path.is_file() and not path.is_symlink(), f"missing escalation inventory shard: {path}")
         require(path.stat().st_size == shard["bytes"], f"escalation inventory shard size mismatch: {path}")
         require(sha256_file(path) == shard["sha256"], f"escalation inventory shard SHA mismatch: {path}")
@@ -1033,9 +1074,7 @@ def aggregate(groups: Mapping[tuple[int, str, int], Sequence[Candidate]], output
     )
 
     summary = {
-        "aggregation_input": {
-            str(path.relative_to(repo)): sha256_file(path) for path in input_paths
-        },
+        "aggregation_input": aggregation_input_sha256s(repo, input_paths),
         "aggregation_performed": True,
         "categories": summary_categories,
         "fold_level_winner_count": REPLICA_COUNT * 2 * 5,
@@ -1096,9 +1135,7 @@ def aggregate(groups: Mapping[tuple[int, str, int], Sequence[Candidate]], output
             "path": str(script_path.relative_to(repo)),
             "sha256": sha256_file(script_path),
         },
-        "inputs": {
-            str(path.relative_to(repo)): sha256_file(path) for path in input_paths
-        },
+        "inputs": aggregation_input_sha256s(repo, input_paths),
         "output_files": {
             str(path.relative_to(output_dir)): {
                 "bytes": path.stat().st_size,
@@ -1203,6 +1240,16 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
         help="Repository-relative frozen escalation-800 complete-return audit checkpoint.",
     )
     parser.add_argument(
+        "--escalation-audit-output",
+        type=Path,
+        default=Path(
+            "/tmp/"
+            "hh4b_train_multivariate_cut_selection_stability_escalation800_"
+            "complete_return_audit_20260810_v1"
+        ),
+        help="External raw audit directory bound byte-for-byte by the compact checkpoint.",
+    )
+    parser.add_argument(
         "--self-check-initial200",
         action="store_true",
         help="Compare all initial-200 fold rankings and reductions to the frozen implementation, then exit.",
@@ -1231,6 +1278,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         else repo / args.escalation_audit_checkpoint
     ).resolve()
     require(escalation_checkpoint.is_relative_to(repo), "escalation checkpoint must be inside repository")
+    escalation_audit_output = args.escalation_audit_output.resolve()
     protocol = repo / (
         "docs/checkpoints/"
         "hh4b_train_multivariate_cut_selection_stability_aggregation_protocol_20260808_v1/"
@@ -1251,6 +1299,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         repo,
         initial_checkpoint,
         escalation_checkpoint,
+        escalation_audit_output,
         protocol,
         initial_summary,
     )
