@@ -1,0 +1,9 @@
+[FERMIHTC-APPTAINER]: INFO -- ApptainerImage classAd detected
+[FERMIHTC-APPTAINER]: INFO -- Attempting to run job in /cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel9
+[FERMIHTC-APPTAINER]: INFO -- Running /cvmfs/oasis.opensciencegrid.org/mis/apptainer/current/bin/apptainer exec --pid --ipc --contain --bind /cvmfs --bind /etc/hosts --bind /etc/grid-security --home /storage/local/data1/condor/execute/dir_3147250:/srv --pwd /srv /cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel9 ./run_validation_source.sh 109 17ccbaae4920ce5050e36cc2::signal::90::ggf_shard_090 3795859 104
+extractor.py: OK
+physical_coefficient_registry.tsv: OK
+reconstruction.py: OK
+source_access_manifest.tsv: OK
+validation_authorization.json: OK
+worker.py: OK

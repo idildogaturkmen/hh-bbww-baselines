@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+ModuleNotFoundError: No module named 'awkward'
+VALIDATION_RUNNER_STATUS=FAIL;row_index=104;cluster_id=3795859;proc_id=99;marker_created=FALSE;worker_started=FALSE;message=runtime probe failed
+VALIDATION_RUNNER_EXIT_RC=1;row_index=104;marker_created=FALSE;worker_started=FALSE
