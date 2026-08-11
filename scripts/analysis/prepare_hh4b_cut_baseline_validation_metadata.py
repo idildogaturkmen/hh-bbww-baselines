@@ -124,6 +124,7 @@ def build_metadata(
     hard_qcd: pd.DataFrame,
     ttbar_registry: pd.DataFrame,
     legacy_root: Path,
+    remote_checksums: pd.DataFrame | None = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
     validation = development.loc[
         development["final_split"].astype(str).map(clean) == "validation"
@@ -288,6 +289,51 @@ def build_metadata(
 
     access = pd.DataFrame(access_rows)
     coefficients = pd.DataFrame(coefficient_rows)
+    remote_mask = access["access_mode"].eq("remote_bundle_extraction_required")
+    if remote_checksums is not None:
+        required_checksum_columns = {
+            "source_uid",
+            "archive_locator",
+            "source_size_bytes",
+            "checksum_kind",
+            "checksum",
+            "independent_query_passes",
+            "independent_queries_match",
+            "validation_event_payload_opened",
+            "test_event_payload_opened",
+            "status",
+        }
+        require(
+            required_checksum_columns.issubset(remote_checksums.columns),
+            "remote checksum registry schema changed",
+        )
+        require(len(remote_checksums) == int(remote_mask.sum()) == 116, "remote checksum row closure changed")
+        require(remote_checksums["source_uid"].astype(str).is_unique, "remote checksum source UID is not unique")
+        checksum_by_uid = remote_checksums.set_index("source_uid", drop=False)
+        for index in access.index[remote_mask]:
+            uid = access.at[index, "source_uid"]
+            require(uid in checksum_by_uid.index, f"remote checksum missing: {uid}")
+            frozen = checksum_by_uid.loc[uid]
+            require(clean(frozen["archive_locator"]) == access.at[index, "archive_locator"], f"remote checksum locator changed: {uid}")
+            require(int(frozen["source_size_bytes"]) == int(access.at[index, "source_size_bytes"]), f"remote checksum size changed: {uid}")
+            require(clean(frozen["checksum_kind"]).lower() == "adler32", f"remote checksum kind changed: {uid}")
+            require(int(frozen["independent_query_passes"]) == 2, f"remote checksum query count changed: {uid}")
+            require(truthy(frozen["independent_queries_match"]), f"remote checksum rerun mismatch: {uid}")
+            require(not truthy(frozen["validation_event_payload_opened"]), f"checksum query opened validation: {uid}")
+            require(not truthy(frozen["test_event_payload_opened"]), f"checksum query opened test: {uid}")
+            require(clean(frozen["status"]) == "pass_metadata_only_remote_checksum_closure", f"remote checksum status changed: {uid}")
+            checksum = clean(frozen["checksum"]).lower()
+            require(len(checksum) == 8, f"bad remote Adler-32: {uid}")
+            preexisting = clean(access.at[index, "source_checksum"]).lower()
+            require(not preexisting or preexisting == checksum, f"preexisting checksum mismatch: {uid}")
+            access.at[index, "source_checksum_kind"] = "adler32"
+            access.at[index, "source_checksum"] = checksum
+
+    require(
+        access.loc[remote_mask, "source_checksum_kind"].eq("adler32").all()
+        and access.loc[remote_mask, "source_checksum"].astype(str).str.fullmatch(r"[0-9a-f]{8}").all(),
+        "remote validation archive checksum closure is incomplete",
+    )
     require(access["source_uid"].is_unique, "validation source UID is not unique")
     require(coefficients["source_uid"].is_unique, "validation coefficient UID is not unique")
     require(access["source_uid"].tolist() == coefficients["source_uid"].tolist(), "registry order mismatch")
@@ -306,6 +352,8 @@ def build_metadata(
         "physical_evaluation_sources": int(access["physical_evaluation_eligible"].sum()),
         "auxiliary_qcd_sources": int(access["auxiliary_qcd"].sum()),
         "remote_bundle_sources": int(access["access_mode"].eq("remote_bundle_extraction_required").sum()),
+        "remote_bundle_checksum_closure": "pass_116_of_116",
+        "remote_bundle_checksum_independent_queries_per_source": 2,
         "local_direct_root_sources": int(access["access_mode"].eq("local_direct_root").sum()),
         "luminosity_pb_inverse": 138000.0,
         "exposure_label": "Run-2 13 TeV, 138 fb^-1 expected-yield projection",
@@ -325,6 +373,11 @@ def main() -> None:
     parser.add_argument("--ordinary-coefficients", type=Path, required=True)
     parser.add_argument("--hard-qcd-coefficients", type=Path, required=True)
     parser.add_argument("--ttbar-registry", type=Path, required=True)
+    parser.add_argument("--remote-checksum-registry", type=Path, required=True)
+    parser.add_argument(
+        "--remote-checksum-registry-label",
+        help="Stable repository-relative provenance label when the registry is staged atomically.",
+    )
     parser.add_argument("--legacy-root", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
@@ -335,6 +388,7 @@ def main() -> None:
         args.ordinary_coefficients,
         args.hard_qcd_coefficients,
         args.ttbar_registry,
+        args.remote_checksum_registry,
     ]
     for path in input_paths:
         require(path.is_file(), f"missing frozen metadata input: {path}")
@@ -346,6 +400,7 @@ def main() -> None:
         pd.read_csv(args.hard_qcd_coefficients, sep="\t", keep_default_na=False),
         pd.read_csv(args.ttbar_registry, sep="\t", keep_default_na=False),
         args.legacy_root,
+        pd.read_csv(args.remote_checksum_registry, sep="\t", keep_default_na=False),
     )
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -356,10 +411,18 @@ def main() -> None:
 
     access.to_csv(access_path, sep="\t", index=False, lineterminator="\n")
     coefficients.to_csv(coefficient_path, sep="\t", index=False, lineterminator="\n")
-    summary["input_sha256"] = {str(path): sha256(path) for path in input_paths}
+    input_labels = [str(path) for path in input_paths]
+    if args.remote_checksum_registry_label:
+        input_labels[-1] = args.remote_checksum_registry_label
+    summary["input_sha256"] = {
+        label: sha256(path) for label, path in zip(input_labels, input_paths)
+    }
     summary_path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     pd.DataFrame(
-        [{"path": str(path), "sha256": sha256(path), "bytes": path.stat().st_size} for path in input_paths]
+        [
+            {"path": label, "sha256": sha256(path), "bytes": path.stat().st_size}
+            for label, path in zip(input_labels, input_paths)
+        ]
     ).to_csv(inputs_path, sep="\t", index=False, lineterminator="\n")
 
     outputs = [access_path, coefficient_path, inputs_path, summary_path]
