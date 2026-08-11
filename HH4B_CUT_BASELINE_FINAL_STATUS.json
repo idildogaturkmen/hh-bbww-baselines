@@ -1,0 +1,989 @@
+{
+  "branch": "delphes-hh4b-production",
+  "checkpoints": [
+    {
+      "files": 5,
+      "last_checkpoint_commit": "ba536089a86282437ab07f7a837fbffb1086204f",
+      "path": "docs/checkpoints/hh4b_cut_baseline_master_train_only_freeze_20260810_v1",
+      "sha256s_sha256": "c6adf047567cbb5f6eab4c4e25a6d6e1a40a541f1ab24f5af7c60ef04631b587"
+    },
+    {
+      "files": 5,
+      "last_checkpoint_commit": "27c14307885a7ad9214360ac5be61183a4b5ed70",
+      "path": "docs/checkpoints/hh4b_cut_baseline_master_train_only_freeze_20260811_v2",
+      "sha256s_sha256": "0d6a7b26bdfb4c086f123fa1973bc9fd2c7010de42d0f1db50651c2a4b418e9b"
+    },
+    {
+      "files": 5,
+      "last_checkpoint_commit": "d69be420d01dd2b731aac17ed4ff33cc0691722e",
+      "path": "docs/checkpoints/hh4b_cut_baseline_master_train_only_freeze_20260811_v3",
+      "sha256s_sha256": "d3350869882317ea41bc2a1386b71aadd5802ba060048939bcb9a26f00a4d159"
+    },
+    {
+      "files": 3,
+      "last_checkpoint_commit": "62726d179652d5b5681486533e27ccf7cdd45b53",
+      "path": "docs/checkpoints/hh4b_cut_baseline_validation_authorization_20260810_v1",
+      "sha256s_sha256": "1b4332b36643bbb1689311ca80c7e41f0a34f801e22d2b7f7c40ed8aca43fe21"
+    },
+    {
+      "files": 3,
+      "last_checkpoint_commit": "70e5b4d8eeb5cba9686010f9730b5e5ab73c2b02",
+      "path": "docs/checkpoints/hh4b_cut_baseline_validation_authorization_20260811_v2",
+      "sha256s_sha256": "0762cde01035e052c8cdf3b85210a398a592e840191ee18ff1eca6905f26cfaf"
+    },
+    {
+      "files": 3,
+      "last_checkpoint_commit": "3e54a57a65aa572786a4816588c604898adfe40f",
+      "path": "docs/checkpoints/hh4b_cut_baseline_validation_authorization_20260811_v3",
+      "sha256s_sha256": "4f9d6639e696a8abd7ef1e2bd4a53b29686d7f7e0e22e7c0a6a0eac765eece51"
+    },
+    {
+      "files": 13,
+      "last_checkpoint_commit": "b1b4e2cdd34a3c28a82112952f6104698ff38c5b",
+      "path": "docs/checkpoints/hh4b_cut_baseline_validation_campaign_presubmission_20260811_v1",
+      "sha256s_sha256": "5194bcdd76dd6afb5661f83a2a65e3827285e65b2c11bd27c476b11ed728be46"
+    },
+    {
+      "files": 10,
+      "last_checkpoint_commit": "96c5733487462e6b7448d7efb7390e0ffc1e6e85",
+      "path": "docs/checkpoints/hh4b_cut_baseline_validation_metadata_20260810_v1",
+      "sha256s_sha256": "ebfb27711dc61f7281915127beefc8d3f9491962cba0b4fd9a0498e0c9cf3c45"
+    },
+    {
+      "files": 239,
+      "last_checkpoint_commit": "24dc2c0751c5be88a55c7c7221e14a062270cff8",
+      "path": "docs/checkpoints/hh4b_cut_baseline_validation_preaccess_failure_audit_20260811_v1",
+      "sha256s_sha256": "dcc10d5bfc0b6fdfed414a64d9942cc10d19d1c17c7a6a5e5b90999f989bf85f"
+    },
+    {
+      "files": 11,
+      "last_checkpoint_commit": "b890468b0a64c2219955968c0250376593580237",
+      "path": "docs/checkpoints/hh4b_cut_baseline_validation_submission_20260811_v1",
+      "sha256s_sha256": "47657c1b9ad5b3980c606da65b6bb53cc34792b53e86f1a74506817912244f0f"
+    },
+    {
+      "files": 18,
+      "last_checkpoint_commit": "6fd18aab8e6ddab5ce4045af54e20926cadbbccc",
+      "path": "docs/checkpoints/hh4b_cut_baseline_validation_transport_recovery_20260811_v1",
+      "sha256s_sha256": "1f6ab77eaef51bba3bd034add3c3faa3b2108b9db8e148b4ca97e7aeb64e96e6"
+    },
+    {
+      "files": 16,
+      "last_checkpoint_commit": "4f5893d4d828172170284484d6a1e1675ea4f372",
+      "path": "docs/checkpoints/hh4b_train_cut_baseline_performance_and_comparator_20260810_v1",
+      "sha256s_sha256": "89c98a7a80f2fd1f842c470a50f3e55c190460f8a80cfc5ac4eb7b9b48f1edb0"
+    },
+    {
+      "files": 54,
+      "last_checkpoint_commit": "1d4ff11b1706ecc1d7918115233ac45af5650071",
+      "path": "docs/checkpoints/hh4b_train_cut_baseline_publication_figures_20260810_v1",
+      "sha256s_sha256": "4e270d328a96e418bb5b21c22736aa273d1d1176a6524731e164e478b7bd4345"
+    },
+    {
+      "files": 14,
+      "last_checkpoint_commit": "e715af2b1a976f8b5af6b76251e0998f42787ae1",
+      "path": "docs/checkpoints/hh4b_train_historical_rhh125125_lt34_freeze_20260806_v1",
+      "sha256s_sha256": "b32fd988b5d29711a446a30296df609f0f3f96e2da49e05270158fcfa503b102"
+    },
+    {
+      "files": 12,
+      "last_checkpoint_commit": "e99d0a09e038cc2699c777036c8540d57555ab6f",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_and_figure_contract_20260806_v1",
+      "sha256s_sha256": "a0616ebc10f54b059bbbf0dc291ac69a0e2f1ffe61e13c217310349a737971f5"
+    },
+    {
+      "files": 14,
+      "last_checkpoint_commit": "bac9ed51ada51d2d51e1593bfa8606b2cc9139f1",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_bounded_six_job_transfer_pilot_20260807_v1",
+      "sha256s_sha256": "7b034a2d9eb0716a8324322d953b543c47c6447e10002f82ba8c1dd4de51d80b"
+    },
+    {
+      "files": 14,
+      "last_checkpoint_commit": "5b96183b489e206b0d22b75da370d71610de55ab",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_canary_acceptance_repair_20260806_v1",
+      "sha256s_sha256": "0144f3431070bac85afcc8bed73c07d4cc156cdfc12823710d3148312d6e8857"
+    },
+    {
+      "files": 12,
+      "last_checkpoint_commit": "956dbd3febaf279ef98b3f6325e1c7e724e78945",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_canary_only_configuration_20260806_v1",
+      "sha256s_sha256": "859df59b4206feeccb4e4df408ed6d31ec308a8c276bbe0847794ee5dc1a91f9"
+    },
+    {
+      "files": 8,
+      "last_checkpoint_commit": "1cd21990ae07eeb503b858c1e57e7121b6a0e875",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_category_endpoint_amendment_20260806_v1",
+      "sha256s_sha256": "9c7343054bb2fcb8b3175687e525d4e1a71955c0c023cba76c32dc4e733a0ae7"
+    },
+    {
+      "files": 5,
+      "last_checkpoint_commit": "23701eb96e850ee2e9174e5b5ec89cbb22246602",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_full_270_integrity_audit_20260807_v1",
+      "sha256s_sha256": "cc6e79d027749d4fb78f0950c4408b3e598aca97de3a963bd7f9b70a7e5ab5ae"
+    },
+    {
+      "files": 4,
+      "last_checkpoint_commit": "d830a84fdb94dc5c0c34c5c28978cbdc453dc9e9",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_implementation_clarification_20260806_v1",
+      "sha256s_sha256": "9bdf5d420143e280736bc8008c47863027358e1cfdd57b8ba4f46b7f1550b20c"
+    },
+    {
+      "files": 47,
+      "last_checkpoint_commit": "8aac74a38649e81e8cc0061a11aac8baed188e60",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_passing_committed_canary_freeze_20260806_v1",
+      "sha256s_sha256": "e131aabf41559a19db7a31016d1de9cedcd41311fc1263370feed7bdd6a7b471"
+    },
+    {
+      "files": 8,
+      "last_checkpoint_commit": "dfccc037be7c64dd4345d4bdb4418f41004d7d60",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_post_publication_transfer_provenance_canary_20260806_v1",
+      "sha256s_sha256": "c5c5b8cbcde554db7bd6928ed9eb58eb03ee6fd3313369b290da0edc97c2a89a"
+    },
+    {
+      "files": 5,
+      "last_checkpoint_commit": "11f8bc445983bf47bcca33827e138ca87a7e5a39",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_repo_native_optimizer_20260806_v1",
+      "sha256s_sha256": "1f1dce536c331c8af99697c2faf46f39c3f81cc465fe5c39b04858192b365120"
+    },
+    {
+      "files": 3,
+      "last_checkpoint_commit": "b317d2c3270166edce86c70a3972e6db3b75c186",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_aggregation_protocol_20260808_v1",
+      "sha256s_sha256": "0cfc828ad073684080a79e45c71d84b103ade6c6ad7bde42bfa3ea78e645b8c1"
+    },
+    {
+      "files": 30,
+      "last_checkpoint_commit": "1f2b598230f5dbac82ce483ff593d31d46afbda4",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_all1000_aggregation_20260810_v1",
+      "sha256s_sha256": "8a86e1dadc8c861a8d7da8461d4e95bd7b69275dc04d96997261471c058f7725"
+    },
+    {
+      "files": 8,
+      "last_checkpoint_commit": "1e52f208f5f4564b929cda1b6fe47b7795424273",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_draw_registry_20260808_v1",
+      "sha256s_sha256": "f148f6b470c0f41165a92fec3ee0163286087ae47089b38f85dc1078142b4119"
+    },
+    {
+      "files": 9,
+      "last_checkpoint_commit": "fe995b16eda400a3e822a7f5117ee1b3e53c46a1",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_cluster_in_place_transport_recovery_20260810_v1",
+      "sha256s_sha256": "a540847d4624fe73d34a6863800fb273a079e5f7df84e323c522196f92b42cf7"
+    },
+    {
+      "files": 6,
+      "last_checkpoint_commit": "9845fc97d4d35b3d532d4c892acb0f7095ba7e33",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_complete_return_audit_20260810_v1",
+      "sha256s_sha256": "a423453bbe3554d0fa1bd0ec52e77dcca8ddeb51b6e039c423d061c41d73d0f9"
+    },
+    {
+      "files": 3,
+      "last_checkpoint_commit": "d11cca4909fb4fcf1052cc9ec357b748efc0a616",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_cross_filesystem_publication_repair_20260810_v1",
+      "sha256s_sha256": "5dfecde94246f5986bbb3baaf86f4c7598e6202c9fd9cdb42445b0c96089dd3d"
+    },
+    {
+      "files": 12,
+      "last_checkpoint_commit": "75898d4bd05158ddedd95fbc15bff53b54a35d72",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_eos_recovery_canary_20260810_v1",
+      "sha256s_sha256": "05ce4218e74ab79d3ce1e0f9c97372cbea4df4079d2d6777025ce06ed12880cb"
+    },
+    {
+      "files": 5,
+      "last_checkpoint_commit": "515002fdb1ce01f4de3ca3a066f8cc92e07d81bd",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_eos_transfer_recovery_20260810_v1",
+      "sha256s_sha256": "eac4ace8a9ece7e66e0c8573a95160a36a96480d4a10344aa81e3f9f42efe6cb"
+    },
+    {
+      "files": 13,
+      "last_checkpoint_commit": "5d730256593f346a9f47914980d9bb4796cbc23a",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_presubmission_package_20260810_v1",
+      "sha256s_sha256": "cc03fd11f7a66f55ecf32b958c7a616edbe04c8c1cc0bb4aa334b0e191028e90"
+    },
+    {
+      "files": 5,
+      "last_checkpoint_commit": "191c2c0737c6a60459ad95e62af41e33665d60d8",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_storage_amendment_20260809_v1",
+      "sha256s_sha256": "f5b71b7aad8a6fe82c75a34a1cd8160f9f04509ebbd196b6c90ad04cf0cc1c8a"
+    },
+    {
+      "files": 12,
+      "last_checkpoint_commit": "ca9064bef431491dba8490ca3b95dba0cc9d0ac7",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation800_submission_20260810_v1",
+      "sha256s_sha256": "bcc0129528f801774c8e7ccb5ff381b9fc5477149e58a03200fd478024d0f169"
+    },
+    {
+      "files": 10,
+      "last_checkpoint_commit": "f5bd2abc69e0ed3b91c6f9ecfb1fce128aa1f8b3",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_escalation_200_999_authorization_20260809_v1",
+      "sha256s_sha256": "2bd620dff4fbc2d38f89f4f55da090f5d4183ac71925b0b40a891d77702dc9bf"
+    },
+    {
+      "files": 8,
+      "last_checkpoint_commit": "5b8447897cc98f7df00d460274b857ec882266b8",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_full_budget_pilot_and_granularity_20260808_v1",
+      "sha256s_sha256": "ed48ad3e16a32abcddf86a25f414e0e961a7af9fefdc87ca486f878dce32b520"
+    },
+    {
+      "files": 26,
+      "last_checkpoint_commit": "18a4ff9b2723c0eae7a550ae5071c74001188a49",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_initial200_aggregation_20260809_v1",
+      "sha256s_sha256": "3ca7c99ccd775313590e8dc09e2fe9044a30d8740575f63929af891e0fb333a4"
+    },
+    {
+      "files": 11,
+      "last_checkpoint_commit": "fd2557fffee1c3f1a5a5d903c7fd624cad5c92c9",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_initial200_complete_return_audit_20260809_v1",
+      "sha256s_sha256": "d5a66de4dedfff24b44123203cd272ee471c256cd9dd2cd00274979448967800"
+    },
+    {
+      "files": 12,
+      "last_checkpoint_commit": "d8e60031225005017c613908fba0671fd82e36d2",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_initial200_presubmission_package_20260808_v1",
+      "sha256s_sha256": "7854483f491456a6985bdd56ed136be21e5520fe4f4cab12086170c2f4f3fd03"
+    },
+    {
+      "files": 8,
+      "last_checkpoint_commit": "269449d2b0ac04ba1e4caee3b2a838e1e5ee21ef",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_initial200_schedd_provenance_correction_20260808_v1",
+      "sha256s_sha256": "a7726b5d79597b2582922ce3711959e0516fe1c662fd5e88ff06ecaa973bf2e0"
+    },
+    {
+      "files": 10,
+      "last_checkpoint_commit": "e2e8ff6032af921b6639e7c26359aad233a8c47f",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_initial200_submission_20260808_v1",
+      "sha256s_sha256": "0c75aab9d0e0930f69327b56ac3c983d075476eff4c15a0dcac4856ade7c3ebb"
+    },
+    {
+      "files": 12,
+      "last_checkpoint_commit": "86954fb70686a8c135caa6a431788e6541819075",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_reoptimization_canary_20260808_v1",
+      "sha256s_sha256": "5b78602a40044946d095cd5d7a1b1cb4a0aa72e2a5d550cf7739ca3d7088ca1a"
+    },
+    {
+      "files": 18,
+      "last_checkpoint_commit": "eb474c715cd38a3eb0193213ea69959e66331b08",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_selection_stability_transfer_pilot_and_initial200_authorization_20260808_v2",
+      "sha256s_sha256": "8247c46d2fb5808dc09b35a78764c46d1c5efa4f442e1b1b45553575b3f5a413"
+    },
+    {
+      "files": 3,
+      "last_checkpoint_commit": "4ec362d4832bd07600188ef29ade55282af3a9d0",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_train_only_deployment_candidate_20260807_v1",
+      "sha256s_sha256": "ba8710ba3c682042cef20a04f2c77f37aebcc7f50a918c160743b2ff4de3f256"
+    },
+    {
+      "files": 8,
+      "last_checkpoint_commit": "8f94b553ec2eb81dbdc0087da062be24ac179b0e",
+      "path": "docs/checkpoints/hh4b_train_multivariate_cut_train_only_nested_oof_aggregation_20260807_v1",
+      "sha256s_sha256": "02a64ccc2959d64ddfcb66b252b158b1305f560eba8e7310f078f1466077647b"
+    }
+  ],
+  "clusters": [
+    {
+      "authoritative_schedd": "lpcschedd4.fnal.gov",
+      "cluster_id": 3754344,
+      "jobs": 6,
+      "never_resubmit": true,
+      "role": "bounded_six_job_transfer_pilot"
+    },
+    {
+      "authoritative_schedd": "lpcschedd4.fnal.gov",
+      "cluster_id": 3755882,
+      "jobs": 270,
+      "never_resubmit": true,
+      "role": "original_270_scan"
+    },
+    {
+      "authoritative_schedd": "lpcschedd4.fnal.gov",
+      "cluster_id": 3768139,
+      "jobs": 4,
+      "never_resubmit": true,
+      "role": "four_job_transfer_pilot"
+    },
+    {
+      "authoritative_schedd": "lpcschedd5.fnal.gov",
+      "cluster_id": 30002685,
+      "jobs": 2000,
+      "never_resubmit": true,
+      "role": "initial200_stability"
+    },
+    {
+      "authoritative_schedd": "lpcschedd5.fnal.gov",
+      "cluster_id": 30020809,
+      "jobs": 8000,
+      "never_resubmit": true,
+      "role": "escalation800_stability"
+    },
+    {
+      "authoritative_schedd": "lpcschedd4.fnal.gov",
+      "cluster_id": 3795859,
+      "jobs": 116,
+      "never_resubmit": true,
+      "role": "one_time_validation_preaccess_failure"
+    }
+  ],
+  "corrected_validation_retry_authorized": false,
+  "figures": {
+    "figure_17_validation_comparison_produced": false,
+    "inventory": [
+      {
+        "bytes": 1064047,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/01_nested_outer_fold_winners.pdf",
+        "sha256": "24c224bb5c9d846771b905ade24ab494dfe452b633a32be5c141e8ebc454c55b"
+      },
+      {
+        "bytes": 1084670,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/02_all1000_cut_family_frequency_matrix.pdf",
+        "sha256": "a79771ba23f6edc6b80163a27410e674713e71b1bd9d39e56b7c2487d76ccfe0"
+      },
+      {
+        "bytes": 1063444,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/03_initial200_vs_all1000_stability.pdf",
+        "sha256": "7c9bd63d7d47cecc88aabdd035bf29b97153989b3404f3a9499fc3ed12ede258"
+      },
+      {
+        "bytes": 1061981,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/04_nominal_structure_recovery.pdf",
+        "sha256": "b15118315c0c0bdd27c4deb1ec3f8fa71d80f8388fef5db42a73acdfb65d2215"
+      },
+      {
+        "bytes": 1062891,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/05_optional_variable_inclusion.pdf",
+        "sha256": "dea4de5e853ebac1345671f93aec55699b031ff41e49659df395df59e9325934"
+      },
+      {
+        "bytes": 1063568,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/06_modal_count_and_ties.pdf",
+        "sha256": "0f3d0972a5f642f56bd58c88f2dd3d724146047936572ad70aa1b64053ededee"
+      },
+      {
+        "bytes": 1063153,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/07_conditional_nominal_thresholds.pdf",
+        "sha256": "45d1f72eb6732ed8b4a73fbdb699fa732d8395c272d2b5491954d78b8718afbc"
+      },
+      {
+        "bytes": 1062488,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/08_exact3tag_ge4tag_stability.pdf",
+        "sha256": "5fb6f18c33bafa9ec45df8e78f0e4b3b0e11a392fb438bbb860963cda247144d"
+      },
+      {
+        "bytes": 1063667,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/09_signal_background_efficiency_plane.pdf",
+        "sha256": "6e774b19fc098a7506d3f54ff5f28eaf49f588b1a598c92cc7b36ae584d3f1bd"
+      },
+      {
+        "bytes": 1065856,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/10_nested_outer_oof_fold_performance.pdf",
+        "sha256": "f93473cd3c7a916b995fb58ecada862de26c3249c0a45f147117814b3fc28284"
+      },
+      {
+        "bytes": 1063003,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/11_historical_rhh34_comparison.pdf",
+        "sha256": "412ea9fc257dfbd96e3d0b50697548d3230818a125c38d8539b09eaad599ffd0"
+      },
+      {
+        "bytes": 1062728,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/12_run2_equivalent_yields.pdf",
+        "sha256": "c91984d657195f19711ed7c16be834000a266d0751c2625785dfbf40e2fd3fde"
+      },
+      {
+        "bytes": 1062260,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/13_signal_over_background.pdf",
+        "sha256": "021f5303efe0ffbafbd07863213a8037e393ca5a4e2ce70ee4fe49204e7cd57e"
+      },
+      {
+        "bytes": 1062222,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/14_asimov_significance_stat_only.pdf",
+        "sha256": "e707945b358e2961668d960520cbb8a69b192022bf5fca144208f1f95d28e7c0"
+      },
+      {
+        "bytes": 1063545,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/15_neff_finite_mc.pdf",
+        "sha256": "d81e4a0f689ec596fe2f1d7dfa13047c441ab92cdb24354f881a0c50d6190fde"
+      },
+      {
+        "bytes": 1078917,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/pdf/16_pre_post_nominal_distributions.pdf",
+        "sha256": "d729fa13f6aa5856d84c821eaa11c76bd7d791465980e1b259f8d1de161a8d87"
+      },
+      {
+        "bytes": 146745,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/01_nested_outer_fold_winners.png",
+        "sha256": "007f4dc6b50f8946dc094522dfdc706c2dbacf8f8197a51fd7af31eb3786d927"
+      },
+      {
+        "bytes": 390875,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/02_all1000_cut_family_frequency_matrix.png",
+        "sha256": "3852e2486b9c651329f99e59e3147ff29c2ca9af0ced1727815246db666b515c"
+      },
+      {
+        "bytes": 239971,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/03_initial200_vs_all1000_stability.png",
+        "sha256": "7af80c146cfe7622601a21a17dde9105369a357864541ba03cab36d67b602548"
+      },
+      {
+        "bytes": 111279,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/04_nominal_structure_recovery.png",
+        "sha256": "aa94345c17060afe21bc237ed6a1604fb4d6f94c9d00de712e5446f532253d96"
+      },
+      {
+        "bytes": 124420,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/05_optional_variable_inclusion.png",
+        "sha256": "c49a9ff9257b6b9ddada6c4f6f9845800319ecc199d3a312093aaf8ebc8dbdc1"
+      },
+      {
+        "bytes": 207937,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/06_modal_count_and_ties.png",
+        "sha256": "f9e33afd23dfbbf805a93ddbb240755fcdf1fb7aac88b693329ca9e076b134bf"
+      },
+      {
+        "bytes": 160401,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/07_conditional_nominal_thresholds.png",
+        "sha256": "2572853c4f0d438a691144f50824e9f66f4a878ce73f3f52a4cbbc026d43ab1a"
+      },
+      {
+        "bytes": 164800,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/08_exact3tag_ge4tag_stability.png",
+        "sha256": "e2e05e2e3e22fc6856da27bc5dd51bc36f09097853a9cafa797010bcf1c9f357"
+      },
+      {
+        "bytes": 124463,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/09_signal_background_efficiency_plane.png",
+        "sha256": "1344adfffe338942e5c252ebe22909142f069e61a653968111bc56997bb014b6"
+      },
+      {
+        "bytes": 264966,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/10_nested_outer_oof_fold_performance.png",
+        "sha256": "300d805e415ba760597439d44f976bde1a85ae602986bbb09978588594e38ae5"
+      },
+      {
+        "bytes": 149259,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/11_historical_rhh34_comparison.png",
+        "sha256": "7d3369ce0d04cbb9a235744923a351b126da0010f40bde128d719d3af03cdf3b"
+      },
+      {
+        "bytes": 168916,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/12_run2_equivalent_yields.png",
+        "sha256": "38c8124e67fad2f5f62a2e4398e7f8411e7c72cc962ab0fa4954be69d7fb0d7e"
+      },
+      {
+        "bytes": 125801,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/13_signal_over_background.png",
+        "sha256": "c3a4afb2090513741cc6bdf1d4dd67bdc1042852b343ce51df900966bbebcfb2"
+      },
+      {
+        "bytes": 129826,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/14_asimov_significance_stat_only.png",
+        "sha256": "11da03f7a22e62330f1f39eb46a34f33caf5aa222a4238eb3ec395858c168ba4"
+      },
+      {
+        "bytes": 171146,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/15_neff_finite_mc.png",
+        "sha256": "3805187ccb41db4ba59746f1f92678dd869d07f2cd96e9ac58118ca3bf0d72b2"
+      },
+      {
+        "bytes": 396343,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figures/png/16_pre_post_nominal_distributions.png",
+        "sha256": "ad460d9e426e3cb0487ca3786a8ed85cc1fd5fabd942ab35357accf960855171"
+      },
+      {
+        "bytes": 943,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/01_nested_outer_fold_winners.tsv",
+        "sha256": "a4fdbe8334a9fb3bc5a89dfd7b1f1e3993a3093adfa7d3e148e06ae6342daac3"
+      },
+      {
+        "bytes": 14057,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/02_all1000_cut_family_frequency_matrix.tsv",
+        "sha256": "5eae6f7a56394552067832d246757a2bb803d711c063be9959ef5146b88fe99b"
+      },
+      {
+        "bytes": 966,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/03_initial200_vs_all1000_stability.tsv",
+        "sha256": "2ac30f3982ff865e044b233d86dc1c488df3f5788d88a8929025e7db196c3bac"
+      },
+      {
+        "bytes": 202,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/04_nominal_structure_recovery.tsv",
+        "sha256": "3fe963f17c6bb8fa5542c6f16b697c5fed9cbecd88b994ba2de0700fcd511011"
+      },
+      {
+        "bytes": 699,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/05_optional_variable_inclusion.tsv",
+        "sha256": "c219cf6e4e7863af2301ced153c8c637273b1b1a2c4342893543edc7f76a7ec2"
+      },
+      {
+        "bytes": 2294,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/06_modal_count_and_ties.tsv",
+        "sha256": "b4c824b2584067242f24ae694256073e277410add1d8e11a9605581925a4a89d"
+      },
+      {
+        "bytes": 1390,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/07_conditional_nominal_thresholds.tsv",
+        "sha256": "03c5ac3ae099c72bdf39a034094b07bc427348cd5ba0cc3f00209aff0ee7468a"
+      },
+      {
+        "bytes": 1398,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/08_exact3tag_ge4tag_stability.tsv",
+        "sha256": "f2c503c6b958328a7f2bc76bd6045e9ca448d569fa4e63fa13aaf0b41418f717"
+      },
+      {
+        "bytes": 6400,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/09_signal_background_efficiency_plane.tsv",
+        "sha256": "80447c3e323ffc9a47705d1669a75bc1ad6ef5cd739443527420966f19112590"
+      },
+      {
+        "bytes": 9797,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/10_nested_outer_oof_fold_performance.tsv",
+        "sha256": "8c19ff89c39ceda4aac041e2a2cbb55a2ef840c929934c03279650f7c3eeb3b3"
+      },
+      {
+        "bytes": 2239,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/11_historical_rhh34_comparison.tsv",
+        "sha256": "ffca7543227f209f05993466373041a197fb6eaf6cd39f4be28e3ec4681fc2ac"
+      },
+      {
+        "bytes": 2831,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/12_run2_equivalent_yields.tsv",
+        "sha256": "ddaffa63fab5974d3d010065fdf9ff6b68f2ec01067fd3cc31db56df63562057"
+      },
+      {
+        "bytes": 2831,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/13_signal_over_background.tsv",
+        "sha256": "ddaffa63fab5974d3d010065fdf9ff6b68f2ec01067fd3cc31db56df63562057"
+      },
+      {
+        "bytes": 2831,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/14_asimov_significance_stat_only.tsv",
+        "sha256": "ddaffa63fab5974d3d010065fdf9ff6b68f2ec01067fd3cc31db56df63562057"
+      },
+      {
+        "bytes": 2831,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/15_neff_finite_mc.tsv",
+        "sha256": "ddaffa63fab5974d3d010065fdf9ff6b68f2ec01067fd3cc31db56df63562057"
+      },
+      {
+        "bytes": 97310,
+        "path": "artifacts/hh4b_cut_baseline/publication_train_only/figure_data/16_pre_post_nominal_distributions.tsv",
+        "sha256": "65a808688284ea1bcc7a0097f07438c31f3f1b6e4288b7f8b12fe6a8953cb2d7"
+      }
+    ],
+    "machine_readable_sidecars": 16,
+    "pdf_files": 16,
+    "png_files": 16,
+    "train_only_figures": 16
+  },
+  "never_resubmit_registry": [
+    3754344,
+    3755882,
+    3768139,
+    30002685,
+    30020809,
+    3795859
+  ],
+  "next_decision_required": "determine separately whether a replacement validation campaign is scientifically/procedurally permissible given that the failed campaign never opened validation payloads",
+  "normalization_and_wording": {
+    "luminosity_fb_inverse_equivalent": 138.0,
+    "official_cms_result": false,
+    "simulation": "Delphes simulation",
+    "sqrt_s_tev": 13.0,
+    "systematic_uncertainties_included": false,
+    "yield_interpretation": "Run-2 expected-yield projection"
+  },
+  "report_builder": {
+    "commit": "a620e306e03a0cb64b6ca1a6d55465a4f71b6c71",
+    "path": "scripts/analysis/build_hh4b_cut_baseline_blocked_final_report.py",
+    "sha256": "d651bcbfaa7d7a50c37798fb25cc17ccc6ab0cfadfad20406a118d9ea5443aa9"
+  },
+  "repository_parent_head": "a620e306e03a0cb64b6ca1a6d55465a4f71b6c71",
+  "schema_version": 1,
+  "status": "blocked_validation_preaccess_infrastructure_failure",
+  "test": {
+    "access_authorized": false,
+    "payloads_opened": 0,
+    "status": "sealed_not_opened"
+  },
+  "test_payloads_opened": 0,
+  "train_only": {
+    "all1000_selection_stability": {
+      "categories": {
+        "exact3tag": {
+          "all1000_aggregation_complete": true,
+          "ambiguous_optional_variables_replica_level": [
+            "ht_candidate_jets"
+          ],
+          "category_id": "exact3tag",
+          "fold_winner_count": 5000,
+          "fold_winner_support_failure_count": 0,
+          "fold_winner_support_failure_frequency": 0.0,
+          "infeasible_fold_winner_count": 2776,
+          "infeasible_fold_winner_frequency": 0.5552,
+          "initial200_retained_separately": true,
+          "modal_count_distribution": {
+            "1": 266,
+            "2": 525,
+            "3": 168,
+            "4": 39,
+            "5": 2
+          },
+          "modal_frequency_below_0p70": true,
+          "modal_replica_selected_count": 185,
+          "modal_replica_selected_frequency": 0.185,
+          "modal_replica_selected_structure_id": "asymmetric_rectangular_mass__category__plus_abs_h_delta_eta",
+          "no_unique_five_fold_modal_structure_count": 380,
+          "no_unique_five_fold_modal_structure_fraction": 0.38,
+          "nominal_deployment_candidate_changed": false,
+          "nominal_deployment_thresholds_unchanged": {
+            "ht_candidate_jets": 176.5458068847656,
+            "r_hh_125_125": 36.40814019639858
+          },
+          "nominal_structure_id": "radial_mass__category__plus_ht_candidate_jets",
+          "nominal_structure_recovery_count": 119,
+          "nominal_structure_recovery_frequency": 0.119,
+          "replica_category_count": 1000,
+          "replica_selected_structure_counts": {
+            "asymmetric_rectangular_mass__category__mass_only": 48,
+            "asymmetric_rectangular_mass__category__plus_abs_h_delta_eta": 185,
+            "asymmetric_rectangular_mass__category__plus_h2_pt": 75,
+            "asymmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb": 10,
+            "asymmetric_rectangular_mass__category__plus_ht_candidate_jets": 134,
+            "asymmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb": 36,
+            "asymmetric_rectangular_mass__category__plus_max_drbb": 121,
+            "asymmetric_rectangular_mass__category__plus_mhh": 60,
+            "asymmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta": 25,
+            "radial_mass__category__mass_only": 45,
+            "radial_mass__category__plus_abs_h_delta_eta": 4,
+            "radial_mass__category__plus_h2_pt": 13,
+            "radial_mass__category__plus_h2_pt_and_max_drbb": 5,
+            "radial_mass__category__plus_ht_candidate_jets": 119,
+            "radial_mass__category__plus_ht_candidate_jets_and_max_drbb": 3,
+            "radial_mass__category__plus_max_drbb": 16,
+            "radial_mass__category__plus_mhh": 6,
+            "radial_mass__category__plus_mhh_and_abs_h_delta_eta": 6,
+            "symmetric_rectangular_mass__category__mass_only": 13,
+            "symmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb": 1,
+            "symmetric_rectangular_mass__category__plus_ht_candidate_jets": 63,
+            "symmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb": 2,
+            "symmetric_rectangular_mass__category__plus_max_drbb": 6,
+            "symmetric_rectangular_mass__category__plus_mhh": 4
+          },
+          "second_replica_selected_count": 134,
+          "second_replica_selected_frequency": 0.134,
+          "test_payloads_opened": 0,
+          "tie_resolution_replica_category_count": 380,
+          "tie_resolution_replica_category_fraction": 0.38,
+          "top_two_frequency_gap": 0.05099999999999999,
+          "top_two_frequency_gap_below_0p15": true,
+          "unique_modal_replica_category_count": 620,
+          "unique_modal_replica_category_fraction": 0.62,
+          "validation_payloads_opened": 0
+        },
+        "ge4tag": {
+          "all1000_aggregation_complete": true,
+          "ambiguous_optional_variables_replica_level": [
+            "ht_candidate_jets"
+          ],
+          "category_id": "ge4tag",
+          "fold_winner_count": 5000,
+          "fold_winner_support_failure_count": 0,
+          "fold_winner_support_failure_frequency": 0.0,
+          "infeasible_fold_winner_count": 786,
+          "infeasible_fold_winner_frequency": 0.1572,
+          "initial200_retained_separately": true,
+          "modal_count_distribution": {
+            "1": 292,
+            "2": 536,
+            "3": 138,
+            "4": 31,
+            "5": 3
+          },
+          "modal_frequency_below_0p70": true,
+          "modal_replica_selected_count": 207,
+          "modal_replica_selected_frequency": 0.207,
+          "modal_replica_selected_structure_id": "asymmetric_rectangular_mass__category__mass_only",
+          "no_unique_five_fold_modal_structure_count": 380,
+          "no_unique_five_fold_modal_structure_fraction": 0.38,
+          "nominal_deployment_candidate_changed": false,
+          "nominal_deployment_thresholds_unchanged": {
+            "abs_h_delta_eta": 6.904302164473993,
+            "mhh": 164.73708096689654,
+            "r_hh_125_125": 33.92808917804956
+          },
+          "nominal_structure_id": "radial_mass__category__plus_mhh_and_abs_h_delta_eta",
+          "nominal_structure_recovery_count": 34,
+          "nominal_structure_recovery_frequency": 0.034,
+          "replica_category_count": 1000,
+          "replica_selected_structure_counts": {
+            "asymmetric_rectangular_mass__category__mass_only": 207,
+            "asymmetric_rectangular_mass__category__plus_abs_h_delta_eta": 11,
+            "asymmetric_rectangular_mass__category__plus_h2_pt": 53,
+            "asymmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb": 17,
+            "asymmetric_rectangular_mass__category__plus_ht_candidate_jets": 84,
+            "asymmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb": 14,
+            "asymmetric_rectangular_mass__category__plus_max_drbb": 88,
+            "asymmetric_rectangular_mass__category__plus_mhh": 12,
+            "asymmetric_rectangular_mass__category__plus_mhh_and_abs_h_delta_eta": 6,
+            "radial_mass__category__mass_only": 69,
+            "radial_mass__category__plus_abs_h_delta_eta": 22,
+            "radial_mass__category__plus_h2_pt": 18,
+            "radial_mass__category__plus_h2_pt_and_max_drbb": 15,
+            "radial_mass__category__plus_ht_candidate_jets": 125,
+            "radial_mass__category__plus_ht_candidate_jets_and_max_drbb": 121,
+            "radial_mass__category__plus_max_drbb": 15,
+            "radial_mass__category__plus_mhh": 18,
+            "radial_mass__category__plus_mhh_and_abs_h_delta_eta": 34,
+            "symmetric_rectangular_mass__category__mass_only": 11,
+            "symmetric_rectangular_mass__category__plus_abs_h_delta_eta": 12,
+            "symmetric_rectangular_mass__category__plus_h2_pt": 2,
+            "symmetric_rectangular_mass__category__plus_h2_pt_and_max_drbb": 1,
+            "symmetric_rectangular_mass__category__plus_ht_candidate_jets": 34,
+            "symmetric_rectangular_mass__category__plus_ht_candidate_jets_and_max_drbb": 10,
+            "symmetric_rectangular_mass__category__plus_mhh": 1
+          },
+          "second_replica_selected_count": 125,
+          "second_replica_selected_frequency": 0.125,
+          "test_payloads_opened": 0,
+          "tie_resolution_replica_category_count": 380,
+          "tie_resolution_replica_category_fraction": 0.38,
+          "top_two_frequency_gap": 0.08199999999999999,
+          "top_two_frequency_gap_below_0p15": true,
+          "unique_modal_replica_category_count": 620,
+          "unique_modal_replica_category_fraction": 0.62,
+          "validation_payloads_opened": 0
+        }
+      },
+      "detailed_structure_stability": "not_especially_stable_under_resampling",
+      "fold_level_winner_count": 10000,
+      "nominal_deployment_candidate_changed": false,
+      "ranked_structure_result_count": 270000,
+      "replica_category_result_count": 2000
+    },
+    "conclusion": "no_material_stat_only_significance_improvement_over_historical_rhh125125_lt34",
+    "fixed_nominal_deployment_cut": {
+      "combined": {
+        "asimov_significance_stat_only": 0.026503285331277087,
+        "background_finite_mc_relative_uncertainty": 0.12570849072655738,
+        "background_physical_efficiency": 0.29684301878720987,
+        "background_rejection": 3.368783958893923,
+        "background_selected_effective_events": 63.280627283988004,
+        "background_selected_signed_yield": 52092305.57487701,
+        "background_selected_sumw2": 42882133388601.71,
+        "signal_finite_mc_relative_uncertainty": 0.008294817627998744,
+        "signal_over_background": 3.672088912122949e-06,
+        "signal_physical_efficiency": 0.6114096089673137,
+        "signal_selected_effective_events": 14534.038828151548,
+        "signal_selected_signed_yield": 191.28757770842634,
+        "signal_selected_sumw2": 2.517602836912946
+      },
+      "exact3tag": {
+        "asimov_significance_stat_only": 0.020167210927216767,
+        "background_finite_mc_relative_uncertainty": 0.128228446121858,
+        "background_physical_efficiency": 0.30445215202149545,
+        "background_rejection": 3.284588377386133,
+        "background_selected_effective_events": 60.81787490830227,
+        "background_selected_signed_yield": 50623055.01308942,
+        "background_selected_sumw2": 42137179286881.71,
+        "signal_finite_mc_relative_uncertainty": 0.009580241289673492,
+        "signal_over_background": 2.8344700371591085e-06,
+        "signal_physical_efficiency": 0.6141851726310507,
+        "signal_selected_effective_events": 10895.49849717388,
+        "signal_selected_signed_yield": 143.48953262405917,
+        "signal_selected_sumw2": 1.8897020616368736
+      },
+      "ge4tag": {
+        "asimov_significance_stat_only": 0.0394330025719292,
+        "background_finite_mc_relative_uncertainty": 0.5874472734332242,
+        "background_physical_efficiency": 0.15949613864138795,
+        "background_rejection": 6.2697442616363634,
+        "background_selected_effective_events": 2.897758678459562,
+        "background_selected_signed_yield": 1469250.5617876018,
+        "background_selected_sumw2": 744954101720.0022,
+        "signal_finite_mc_relative_uncertainty": 0.016578123670571137,
+        "signal_over_background": 3.2532262588494425e-05,
+        "signal_physical_efficiency": 0.6032260532723526,
+        "signal_selected_effective_events": 3638.5575617145805,
+        "signal_selected_signed_yield": 47.79804508436722,
+        "signal_selected_sumw2": 0.6279007752760725
+      }
+    },
+    "historical_primary_simple_cut_reference": {
+      "r_hh_125_125_lt": 34.0
+    },
+    "historical_rhh125125_lt34": {
+      "combined": {
+        "asimov_significance_stat_only": 0.02648303384974075,
+        "background_finite_mc_relative_uncertainty": 0.13189145844012334,
+        "background_physical_efficiency": 0.27724641949172424,
+        "background_rejection": 3.606899601564917,
+        "background_selected_effective_events": 57.48660467004717,
+        "background_selected_signed_yield": 48653342.97808226,
+        "background_selected_sumw2": 41177380305020.62,
+        "signal_finite_mc_relative_uncertainty": 0.008442704519050652,
+        "signal_over_background": 3.7967470783827355e-06,
+        "signal_physical_efficiency": 0.5904319435607848,
+        "signal_selected_effective_events": 14029.326422129969,
+        "signal_selected_signed_yield": 184.724437805587,
+        "signal_selected_sumw2": 2.4322705806291673
+      },
+      "exact3tag": {
+        "asimov_significance_stat_only": 0.019921521458710217,
+        "background_finite_mc_relative_uncertainty": 0.13476487595325345,
+        "background_physical_efficiency": 0.2837650357451106,
+        "background_rejection": 3.524042337965277,
+        "background_selected_effective_events": 55.061313609007236,
+        "background_selected_signed_yield": 47183286.17464262,
+        "background_selected_sumw2": 40432426114040.94,
+        "signal_finite_mc_relative_uncertainty": 0.009813846906288136,
+        "signal_over_background": 2.900204493113888e-06,
+        "signal_physical_efficiency": 0.5857279018345259,
+        "signal_selected_effective_events": 10382.96625129023,
+        "signal_selected_signed_yield": 136.84117856357693,
+        "signal_selected_sumw2": 1.8034834841480714
+      },
+      "ge4tag": {
+        "asimov_significance_stat_only": 0.03949246917105729,
+        "background_finite_mc_relative_uncertainty": 0.5871251275469059,
+        "background_physical_efficiency": 0.1595836611060072,
+        "background_rejection": 6.266305667318451,
+        "background_selected_effective_events": 2.9009394557498522,
+        "background_selected_signed_yield": 1470056.8034396332,
+        "background_selected_sumw2": 744954190979.6759,
+        "signal_finite_mc_relative_uncertainty": 0.01656029644534283,
+        "signal_over_background": 3.25723870873377e-05,
+        "signal_physical_efficiency": 0.6043014821922399,
+        "signal_selected_effective_events": 3646.3956217754103,
+        "signal_selected_signed_yield": 47.88325924201004,
+        "signal_selected_sumw2": 0.6287870964810958
+      }
+    },
+    "methodology_status": "frozen",
+    "nominal_thresholds": {
+      "exact3tag": {
+        "ht_candidate_jets": 176.5458068847656,
+        "r_hh_125_125": 36.40814019639858
+      },
+      "ge4tag": {
+        "abs_h_delta_eta": 6.904302164473993,
+        "mhh": 164.73708096689654,
+        "r_hh_125_125": 33.92808917804956
+      }
+    },
+    "paired_bootstrap": {
+      "draw_sha256": "3ac59a86fefc9e21275df73c945cd08e2b24642f02acc2b6459cf3c0f62c929b",
+      "paired_across_fixed_selections": true,
+      "replicas": 2000,
+      "seed": 20260727,
+      "selection_reoptimization_inside_bootstrap": false,
+      "source_groups_in_draw_universe": 441,
+      "strata": 23
+    },
+    "paired_bootstrap_combined_za_difference": {
+      "bootstrap_replicas": "2000",
+      "bootstrap_seed": "20260727",
+      "bootstrap_unit": "source_group_within_sample_class_and_process_or_mode_strata",
+      "difference_definition": "fixed_nominal_deployment_cut_minus_historical_rhh125125_lt34",
+      "difference_mean": "-1.6921289121667477e-06",
+      "difference_median": "3.968605699912128e-05",
+      "difference_p16": "-0.0003555910546712393",
+      "difference_p2p5": "-0.0008187977698690706",
+      "difference_p84": "0.00035240115500964294",
+      "difference_p97p5": "0.0006179069891563046",
+      "difference_std": "0.00036667527382956683",
+      "metric": "asimov_significance_stat_only",
+      "nominal_difference": "2.025148153633749e-05",
+      "ratio_mean": "1.000236738364782",
+      "ratio_median": "1.0014984292549742",
+      "ratio_p16": "0.9868093555947594",
+      "ratio_p2p5": "0.9712118595279245",
+      "ratio_p84": "1.0136237779890964",
+      "ratio_p97p5": "1.0234394116617138",
+      "ratio_std": "0.013428273983064048",
+      "scope": "combined",
+      "selection_reoptimization_inside_bootstrap": "False",
+      "test_payloads_opened": "0",
+      "validation_payloads_opened": "0"
+    },
+    "pooled_nested_outer_oof": {
+      "combined": {
+        "asimov_significance_stat_only": 0.026978117645712747,
+        "background_finite_mc_relative_uncertainty": 0.12565591628044132,
+        "background_physical_efficiency": 0.28553696455451394,
+        "background_rejection": 3.5021735331541732,
+        "background_selected_effective_events": 63.33359160154102,
+        "background_selected_signed_yield": 50108231.856916614,
+        "background_selected_sumw2": 39644599908738.16,
+        "signal_finite_mc_relative_uncertainty": 0.008299803454569037,
+        "signal_over_background": 3.8111617483943304e-06,
+        "signal_physical_efficiency": 0.610396382875053,
+        "signal_selected_effective_events": 14516.582407128974,
+        "signal_selected_signed_yield": 190.97057653275482,
+        "signal_selected_sumw2": 2.5122828554565824
+      },
+      "exact3tag": {
+        "asimov_significance_stat_only": 0.020527839398965603,
+        "background_finite_mc_relative_uncertainty": 0.12823357627218193,
+        "background_physical_efficiency": 0.2925107060127148,
+        "background_rejection": 3.4186782891855323,
+        "background_selected_effective_events": 60.813008809911324,
+        "background_selected_signed_yield": 48637480.35308288,
+        "background_selected_sumw2": 38899645674347.49,
+        "signal_finite_mc_relative_uncertainty": 0.009589906515386822,
+        "signal_over_background": 2.943458521043637e-06,
+        "signal_physical_efficiency": 0.6127849566978724,
+        "signal_selected_effective_events": 10873.547420842393,
+        "signal_selected_signed_yield": 143.16240598737429,
+        "signal_selected_sumw2": 1.88489309834692
+      },
+      "ge4tag": {
+        "asimov_significance_stat_only": 0.03942122554154197,
+        "background_finite_mc_relative_uncertainty": 0.5868478197159438,
+        "background_physical_efficiency": 0.15965907508457192,
+        "background_rejection": 6.2633458165174565,
+        "background_selected_effective_events": 2.9036817111302398,
+        "background_selected_signed_yield": 1470751.5038337412,
+        "background_selected_sumw2": 744954234390.6675,
+        "signal_finite_mc_relative_uncertainty": 0.01656786651946851,
+        "signal_over_background": 3.250594707587319e-05,
+        "signal_physical_efficiency": 0.6033538397095138,
+        "signal_selected_effective_events": 3643.064211672616,
+        "signal_selected_signed_yield": 47.8081705453805,
+        "signal_selected_sumw2": 0.6273897571096627
+      }
+    },
+    "primary_generalization_estimate": "pooled_five_fold_nested_outer_oof",
+    "scientific_status": "complete"
+  },
+  "validation": {
+    "attempt_status": "infrastructure_failure_before_event_access",
+    "authoritative_schedd": "lpcschedd4.fnal.gov",
+    "cluster_id": 3795859,
+    "corrected_validation_retry_authorized": false,
+    "durable_source_attempt_markers_created": 0,
+    "exit_code_1_jobs": 116,
+    "failure_audit_checkpoint": "docs/checkpoints/hh4b_cut_baseline_validation_preaccess_failure_audit_20260811_v1",
+    "failure_audit_checkpoint_sha256s_sha256": "dcc10d5bfc0b6fdfed414a64d9942cc10d19d1c17c7a6a5e5b90999f989bf85f",
+    "failure_exception": "ModuleNotFoundError: No module named 'awkward'",
+    "failure_stage": "runtime_probe_before_marker_and_worker",
+    "figure_17_omission_intentional": true,
+    "figure_17_validation_comparison_produced": false,
+    "frozen_runner_sha256": "20c41377c2aaadf5d2de26c3698bac570022e81c81105a30889af6c50e3e59c1",
+    "history_jobs": 116,
+    "infrastructure_failure_is_cut_performance_observation": false,
+    "never_resubmit": true,
+    "preaccess_failure_auditor_sha256": "1fe0ec17f0bb3cde07b1e9ba460be5aafddf1706c39deb250a760ea22a813253",
+    "queue_jobs": 0,
+    "root_cause": "frozen runner exported $SCRATCH/runtime/site-packages while the authorized archive stores packages under lib/python3.9/site-packages",
+    "runtime_bundle_sha256": "4a9c4061e1d975f276326022454e578c5f0de3c094b9b56345f192cccc654112",
+    "runtime_probe_failure_jobs": 116,
+    "scientific_result_available": false,
+    "scientific_workers_started": 0,
+    "submitted_jobs": 116,
+    "test_payloads_opened": 0,
+    "validation_aggregation_performed": false,
+    "validation_evaluation_cycles": 0,
+    "validation_metrics_available": false,
+    "validation_payloads_opened": 0,
+    "validation_sources_opened": 0
+  },
+  "validation_payloads_opened": 0,
+  "validation_scientific_result_available": false
+}
