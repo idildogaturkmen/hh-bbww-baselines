@@ -1,0 +1,27 @@
+universe = vanilla
+executable = /tmp/hh4b_cut_baseline_validation_campaign_package_20260811_v2/run_validation_source.sh
+arguments = $(row_index) $(source_uid) $(ClusterId) $(ProcId)
+
+output = /uscms_data/d3/iturkmen/hh4b_delphes/condor_submit/hh4b_cut_baseline_validation_once_20260811_v1/logs/validation.$(ClusterId).$(ProcId).row$(row_index).out
+error = /uscms_data/d3/iturkmen/hh4b_delphes/condor_submit/hh4b_cut_baseline_validation_once_20260811_v1/logs/validation.$(ClusterId).$(ProcId).row$(row_index).err
+log = /uscms_data/d3/iturkmen/hh4b_delphes/condor_submit/hh4b_cut_baseline_validation_once_20260811_v1/logs/validation.$(ClusterId).log
+
+getenv = True
+use_x509userproxy = True
+x509userproxy = /uscms/homes/i/iturkmen/x509up_u17821
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_executable = True
+transfer_input_files = /tmp/hh4b_cut_baseline_validation_campaign_package_20260811_v2/validation_common_bundle.tar.gz
+transfer_output_files = ""
+
+request_cpus = 1
+request_memory = 8000MB
+request_disk = 20GB
+
+on_exit_remove = True
++JobBatchName = "hh4b_cut_baseline_one_time_validation_116"
++ApptainerImage = "/cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel9"
+
+queue row_index, source_uid from /tmp/hh4b_cut_baseline_validation_campaign_package_20260811_v2/validation_queue.items

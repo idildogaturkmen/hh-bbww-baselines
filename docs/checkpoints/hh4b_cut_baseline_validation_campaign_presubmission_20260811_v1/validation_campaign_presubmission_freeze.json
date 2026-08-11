@@ -1,0 +1,18 @@
+{
+  "automatic_validation_source_rerun_authorized": false,
+  "campaign_audit_sha256s_sha256": "361760f9fdc349435bdcf5fedbeff5dd35a5608741562b7dfa6e4ee77a10b62c",
+  "campaign_audit_summary_sha256": "70c8f975acff0b41cd83df0a5e5f225984ee025ab0293af51cc8a1d6786a3249",
+  "campaign_package_sha256s_sha256": "c4a077cbfc3e034abfb29912c11ae0560a50cdca2d6c4eb40a5e66da0b65d96b",
+  "campaign_summary_sha256": "308ae104494e71ee23becf0fa8b37e3831b6b1236e45443ed49742108d1495c2",
+  "condor_jobs_prepared": 116,
+  "durable_marker_precedes_source_access": true,
+  "implementation_sha256": "36c007b7c5185e606ad4a9e32cb72b111df6f203d598275f39576a1b1e1945f6",
+  "next": "commit_and_push_then_run_exactly_once_validation_submission_preflight_and_one_submit_call",
+  "production_submission_performed": false,
+  "remote_output_namespace_absent": true,
+  "repository_parent_head": "3e54a57a65aa572786a4816588c604898adfe40f",
+  "schema_version": 1,
+  "status": "pass_exactly_once_validation_campaign_frozen_before_submission",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
