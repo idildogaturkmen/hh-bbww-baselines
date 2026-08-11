@@ -24,7 +24,7 @@ def synthetic_rows_and_ads() -> tuple[dict[int, dict[str, object]], list[dict[st
                 "NumJobStarts": 0,
                 "Cmd": str(recovery.ORIGINAL_RUNNER),
                 "TransferInput": recovery.ORIGINAL_TRANSFER_INPUT,
-                "Arguments": arguments,
+                "Args": arguments,
             }
         )
     return rows, ads
@@ -52,6 +52,6 @@ def test_edited_held_validation_preserves_arguments_and_checks_shared_paths() ->
         ad["Cmd"] = str(recovery.FROZEN_RUNNER)
         ad["TransferInput"] = recovery.RECOVERY_TRANSFER_INPUT
     recovery.validate_edited_held(edited, rows)
-    edited[23]["Arguments"] = "changed"
+    edited[23]["Args"] = "changed"
     with pytest.raises(recovery.RecoveryGateError, match="arguments changed"):
         recovery.validate_edited_held(edited, rows)

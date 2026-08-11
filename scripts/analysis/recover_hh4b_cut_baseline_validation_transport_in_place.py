@@ -154,7 +154,7 @@ def query_queue() -> list[dict[str, Any]]:
             "-json",
             "-attributes",
             "ClusterId,ProcId,JobStatus,HoldReasonCode,HoldReasonSubCode,"
-            "HoldReason,Cmd,Arguments,TransferInput,Iwd,NumJobStarts,"
+            "HoldReason,Cmd,Args,TransferInput,Iwd,NumJobStarts,"
             "NumShadowStarts,NumSystemHolds,Owner",
         ]
     )
@@ -264,7 +264,7 @@ def validate_original_held(
             ad.get("TransferInput") == ORIGINAL_TRANSFER_INPUT,
             f"original TransferInput changed for proc {proc}",
         )
-        require(ad.get("Arguments") == rows[proc]["arguments"], f"arguments changed for proc {proc}")
+        require(ad.get("Args") == rows[proc]["arguments"], f"arguments changed for proc {proc}")
     return {
         "queued_jobs": len(ads),
         "held_jobs": len(ads),
@@ -289,7 +289,7 @@ def validate_edited_held(
             ad.get("TransferInput") == RECOVERY_TRANSFER_INPUT,
             f"TransferInput edit failed for proc {proc}",
         )
-        require(ad.get("Arguments") == rows[proc]["arguments"], f"arguments changed for proc {proc}")
+        require(ad.get("Args") == rows[proc]["arguments"], f"arguments changed for proc {proc}")
 
 
 def preflight(expected_head: str) -> dict[str, Any]:
@@ -401,7 +401,7 @@ def execute(expected_head: str) -> None:
             ad.get("TransferInput") == RECOVERY_TRANSFER_INPUT,
             f"post-release TransferInput changed for proc {proc}",
         )
-        require(ad.get("Arguments") == rows[proc]["arguments"], f"post-release arguments changed for proc {proc}")
+        require(ad.get("Args") == rows[proc]["arguments"], f"post-release arguments changed for proc {proc}")
     durable_write(EVIDENCE / "post_release_job_ads.json", json_bytes(post_ads))
     status_counts: dict[str, int] = {}
     for ad in post_ads:
