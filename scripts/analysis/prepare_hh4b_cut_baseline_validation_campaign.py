@@ -338,7 +338,8 @@ done
 [[ "$(sha256sum "$RUNTIME_ARCHIVE" | awk '{{print $1}}')" == "$RUNTIME_SHA" ]] || fail "runtime SHA mismatch"
 tar -xzf "$RUNTIME_ARCHIVE" -C "$SCRATCH/runtime"
 export PYTHONNOUSERSITE=1
-export PYTHONPATH="$SCRATCH/runtime/site-packages"
+export PATH="$SCRATCH/runtime/bin:$PATH"
+export PYTHONPATH="$SCRATCH/runtime/lib/python3.9/site-packages"
 EXPECTED_RUNTIME_JSON_VALUE="$EXPECTED_RUNTIME_JSON" python3 - <<'PY_RUNTIME' || fail "runtime probe failed"
 import json
 import os

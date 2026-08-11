@@ -89,6 +89,12 @@ def test_runner_places_irreversible_marker_before_source_worker() -> None:
     assert "--durable-attempt-marker-uri" in runner
     assert "rerun_forbidden_even_if_downstream_bookkeeping_fails" in runner
     assert 'xrdcp -f --nopbar --cksum adler32 "$LOCAL_MARKER"' not in runner
+    assert 'export PATH="$SCRATCH/runtime/bin:$PATH"' in runner
+    assert (
+        'export PYTHONPATH="$SCRATCH/runtime/lib/python3.9/site-packages"'
+        in runner
+    )
+    assert 'export PYTHONPATH="$SCRATCH/runtime/site-packages"' not in runner
 
 
 def test_repository_gate_allows_unrelated_prepared_worktree() -> None:
