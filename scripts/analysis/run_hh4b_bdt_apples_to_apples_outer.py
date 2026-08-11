@@ -36,7 +36,8 @@ from hh4b_bdt_apples_to_apples_common import (
 )
 
 
-REPO = Path(__file__).resolve().parents[2]
+SCRIPT_PATH = Path(__file__).resolve()
+REPO = Path(os.environ.get("HH4B_BDT_REPO", SCRIPT_PATH.parents[2] if len(SCRIPT_PATH.parents) >= 3 else SCRIPT_PATH.parent))
 DEFAULT_PROTOCOL = REPO / "configs/baselines/hh4b_bdt_apples_to_apples_v1.json"
 DEFAULT_PLAN = REPO / "docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/production_manifest/full_464_production_plan.tsv"
 DEFAULT_AUTHORIZATION = REPO / "docs/checkpoints/hh4b_train_run2_138fb_physical_authorization_freeze_20260806_v1/evidence/authorization/physical_weight_authorization_registry_464.tsv"
@@ -192,6 +193,7 @@ def main() -> int:
     parser.add_argument("--protocol", type=Path, default=DEFAULT_PROTOCOL)
     parser.add_argument("--plan", type=Path, default=DEFAULT_PLAN)
     parser.add_argument("--authorization", type=Path, default=DEFAULT_AUTHORIZATION)
+    parser.add_argument("--feature-registry", type=Path, default=REPO / "docs/analysis/hh4b_bdt_apples_to_apples_v1_features.tsv")
     args = parser.parse_args()
     started = time.time()
     args.output_dir.mkdir(parents=True, exist_ok=False)
@@ -271,7 +273,7 @@ def main() -> int:
         "development_rows": len(inner_table), "held_outer_rows": len(output),
         "held_outer_payloads_opened_before_selection_freeze": 0,
         "validation_payloads_opened": 0, "test_payloads_opened": 0,
-        "protocol_sha256": sha256(args.protocol), "feature_registry_sha256": sha256(REPO / "docs/analysis/hh4b_bdt_apples_to_apples_v1_features.tsv"),
+        "protocol_sha256": sha256(args.protocol), "feature_registry_sha256": sha256(args.feature_registry),
         "python": platform.python_version(), "xgboost": xgboost.__version__, "sklearn": sklearn.__version__,
         "wall_seconds": time.time() - started, "max_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
         "artifacts": {},

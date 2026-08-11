@@ -2,6 +2,8 @@ import importlib.util
 import json
 from pathlib import Path
 import sys
+import subprocess
+import tempfile
 
 import numpy as np
 import csv
@@ -140,6 +142,18 @@ def test_historical_comparator_preserves_identical_universe():
 def test_full_training_and_submission_remain_blocked():
     assert CONFIG["authorization"]["full_training_authorized"] is False
     assert CONFIG["authorization"]["condor_submit_authorized"] is False
+
+
+def test_worker_imports_from_condor_scratch_root_layout():
+    with tempfile.TemporaryDirectory(dir="/tmp") as directory:
+        target = Path(directory) / "worker.py"
+        target.write_bytes((ROOT / "scripts/analysis/run_hh4b_bdt_apples_to_apples_outer.py").read_bytes())
+        environment = dict(__import__("os").environ)
+        environment["PYTHONPATH"] = str(ROOT / "scripts/analysis")
+        environment["PYTHONDONTWRITEBYTECODE"] = "1"
+        result = subprocess.run([sys.executable, str(target), "--help"], env=environment, capture_output=True, text=True)
+        assert result.returncode == 0, result.stderr
+        assert "--feature-registry" in result.stdout
 
 
 if __name__ == "__main__":

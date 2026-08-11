@@ -16,7 +16,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 STORE = Path("/uscms_data/d3/iturkmen/hh4b_delphes")
-CAMPAIGN = "hh4b_bdt_apples_full_budget_pilot_outer0_blind_v1_20260811"
+CAMPAIGN = "hh4b_bdt_apples_full_budget_pilot_outer0_blind_v2_20260811"
 PACKAGE = STORE / "condor_submit" / CAMPAIGN
 ASSETS = STORE / "bdt_apples_to_apples" / "portable_assets" / CAMPAIGN
 PROTOCOL = REPO / "configs/baselines/hh4b_bdt_apples_to_apples_v1.json"
@@ -110,7 +110,7 @@ xrdcp --force root://cmseos.fnal.gov/{REMOTE_ROOT}/python39_bdt_cpu_runtime.tar.
 tar -xf data.tar
 tar -xzf runtime.tar.gz
 export PYTHONPATH="$PWD/site-packages"
-/usr/bin/time -v -o pilot_time.txt /usr/bin/python3 run_hh4b_bdt_apples_to_apples_outer.py --outer-fold 0 --variant global_mass_plane_blind --output-dir pilot_result --protocol {PROTOCOL.name} --plan portable_primary_plan.tsv --authorization physical_weight_authorization_registry_464.tsv
+/usr/bin/time -v -o pilot_time.txt /usr/bin/python3 run_hh4b_bdt_apples_to_apples_outer.py --outer-fold 0 --variant global_mass_plane_blind --output-dir pilot_result --protocol {PROTOCOL.name} --plan portable_primary_plan.tsv --authorization physical_weight_authorization_registry_464.tsv --feature-registry {FEATURES.name}
 tar -czf pilot_result.tar.gz pilot_result pilot_time.txt
 ''', encoding="utf-8")
     wrapper.chmod(0o755)
