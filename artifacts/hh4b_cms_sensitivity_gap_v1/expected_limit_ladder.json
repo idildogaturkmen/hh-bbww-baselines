@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "label": "Delphes simulation expected-limit diagnostic",
+  "selection": "R_HH(125,125) < 34",
+  "shape_binning": {
+    "variable": "r_hh_125_125",
+    "edges": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      34.0
+    ],
+    "rule": "predeclared fixed physics intervals"
+  },
+  "inference": {
+    "method": "asymptotic median background-only CLs",
+    "target_sqrt_qmu": 1.959963984540054,
+    "finite_mc_model": "independent Gaussian-constrained background per bin; sigma=sqrt(sumw2)",
+    "experimental_systematics": "none"
+  },
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0,
+  "ladder": [
+    {
+      "stage": "pooled_one_bin",
+      "bins": 1,
+      "signal_yield": 184.72443780558697,
+      "background_yield": 48653342.97808224,
+      "background_sumw2": 41177380305020.63,
+      "background_neff": 57.4866046700471,
+      "mu95_stat_only": 74.0151727273842,
+      "mu95_finite_mc_aware": 68085.29934608826
+    },
+    {
+      "stage": "exact3tag_ge4tag",
+      "bins": 2,
+      "signal_yield": 184.72443780558697,
+      "background_yield": 48653342.97808224,
+      "background_sumw2": 41177380305020.63,
+      "background_neff": 57.4866046700471,
+      "mu95_stat_only": 44.32758473485289,
+      "mu95_finite_mc_aware": 32937.518650134225,
+      "gain_vs_pooled_mu95_stat_only": 1.669731684460336,
+      "gain_vs_pooled_mu95_finite_mc_aware": 2.0671046920473106
+    },
+    {
+      "stage": "exact3tag_ge4tag_rhh_fixed_shape",
+      "bins": 8,
+      "signal_yield": 184.72443780558703,
+      "background_yield": 48653342.97808172,
+      "background_sumw2": 41177380305017.484,
+      "background_neff": 57.486604670050255,
+      "mu95_stat_only": 31.95647727235911,
+      "mu95_finite_mc_aware": 545.7007962261,
+      "gain_vs_categories_mu95_stat_only": 1.3871236293367737,
+      "gain_vs_categories_mu95_finite_mc_aware": 60.358201560122396
+    }
+  ]
+}
