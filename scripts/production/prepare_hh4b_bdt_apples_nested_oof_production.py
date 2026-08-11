@@ -6,7 +6,7 @@ from pathlib import Path
 
 REPO=Path(__file__).resolve().parents[2]
 STORE=Path('/uscms_data/d3/iturkmen/hh4b_delphes')
-CAMPAIGN='hh4b_bdt_apples_nested_oof10_v2_20260811'
+CAMPAIGN='hh4b_bdt_apples_nested_oof10_v3_20260811'
 OUT=STORE/'condor_submit'/CAMPAIGN
 PILOT=STORE/'condor_submit'/'hh4b_bdt_apples_full_budget_pilot_outer0_blind_v2_20260811'
 REMOTE='/store/user/iturkmen/hh4b_delphes/run2_13tev/bdt_apples_to_apples/hh4b_bdt_apples_full_budget_pilot_outer0_blind_v2_20260811'
@@ -52,7 +52,7 @@ when_to_transfer_output = ON_EXIT
 transfer_input_files = run_hh4b_bdt_apples_to_apples_outer.py,hh4b_bdt_apples_to_apples_common.py,hh4b_bdt_apples_to_apples_v1.json,hh4b_bdt_apples_to_apples_v1_features.tsv,portable_primary_plan.tsv,physical_weight_authorization_registry_464.tsv
 transfer_output_files = result_$(outer_fold)_$(variant).tar.gz,time_$(outer_fold)_$(variant).txt
 on_exit_hold = (ExitBySignal == True) || (ExitCode != 0)
-queue outer_fold,variant from jobs.tsv
+queue outer_fold,variant from {OUT/'jobs.tsv'}
 ''')
  (OUT/'logs').mkdir()
  inventory={p.name:{'bytes':p.stat().st_size,'sha256':sha(p)} for p in OUT.iterdir() if p.is_file()}
