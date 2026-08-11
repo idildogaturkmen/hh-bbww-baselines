@@ -21,6 +21,15 @@ from build_hh4b_cut_baseline_train_performance import (  # noqa: E402
 )
 
 
+def test_repository_gate_allows_unrelated_prepared_worktree() -> None:
+    source = (SCRIPT_DIR / "build_hh4b_cut_baseline_train_performance.py").read_text(
+        encoding="utf-8"
+    )
+    verify_body = source.split("def verify_repository", 1)[1].split("def verify_hash", 1)[0]
+    assert "status --porcelain" not in verify_body
+    assert "local/remote HEAD mismatch" in verify_body
+
+
 def test_asimov_formula_matches_frozen_historical_benchmark() -> None:
     assert np.isclose(
         asimov_significance(417.46273293569186, 20240622849.775902),

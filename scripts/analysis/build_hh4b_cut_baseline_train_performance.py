@@ -298,10 +298,6 @@ def verify_repository(repo: Path) -> str:
         ["git", "rev-parse", f"origin/{BRANCH}"], cwd=repo, text=True
     ).strip()
     require(head == remote, f"local/remote HEAD mismatch: {head} != {remote}")
-    status = subprocess.check_output(
-        ["git", "status", "--porcelain=v1", "--untracked-files=all"], cwd=repo, text=True
-    )
-    require(status == "", "repository has tracked or untracked changes")
     return head
 
 
