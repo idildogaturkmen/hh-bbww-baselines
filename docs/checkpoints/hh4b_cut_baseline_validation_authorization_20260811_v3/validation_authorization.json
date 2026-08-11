@@ -1,0 +1,58 @@
+{
+  "authorized_generated_events": 952584,
+  "authorized_sha256": {
+    "broad_feature_extractor": "32d0bfb53d263791c96c08ad25825be79a8fd0b92450f6bdb652925c26ecb842",
+    "candidate_reconstruction_module": "4ceeeaed6e05a1dfaee16926a8ebb297110945ca32b18c16da49b3f162e3a21e",
+    "final_report_builder": "2f3716856ab158de91c333ba1ba14fdb3f50c4a6fb260de7ae7888cec61edd99",
+    "physical_coefficient_registry": "9df403f365b2f43627a8e3b9be23e09a286329dd91fdde976035007a6e12f11d",
+    "source_access_manifest": "04e5e7d61d4907e706e4555fe21370617e23768a65db70a5f8541fc3d94e4d8b",
+    "validation_aggregator": "679018c32ce017347ab4eb4cb602bd354383aacee4ee6ccf2971841a2b05b68e",
+    "validation_artifact_freezer": "9a08c0d6b50c61d4264e554ebb8b9810a597e0eafd3bb394184fb60e41a81bd4",
+    "validation_campaign_auditor": "f3b3151fcff9748f400a7769f6bc1b7418acab1dfc04197aab90ec45f7c91adc",
+    "validation_campaign_preparer": "89d53eaf910abbc10cae328e1044c7110a071588f651e25724c51631e0cb04d9",
+    "validation_campaign_presubmission_freezer": "36c007b7c5185e606ad4a9e32cb72b111df6f203d598275f39576a1b1e1945f6",
+    "validation_campaign_submitter": "d2df0bd95bb853a42445f47f093cabb635c8b3f4384beff68c2233913ff9364c",
+    "validation_plotter": "45d98cc47f59bdd7c25a51224db782e5b08f9fe7d5e80137d47472b6df56f30c",
+    "validation_return_auditor": "07e1a349364e59510a6eb014c48eaafb6051d550d278d371ebb64ae8c861499c",
+    "validation_runtime_bundle": "4a9c4061e1d975f276326022454e578c5f0de3c094b9b56345f192cccc654112",
+    "validation_source_worker": "cc4d070869e2b0cecbf4de170b43d0f142cf028628979c549d1b2d80293aa5d1",
+    "validation_submission_freezer": "5ee21fcabdab1ac91810af26bf63fe81014a332e8fbfb8ad868fc0b6aa2f7125"
+  },
+  "authorized_validation_sources": 116,
+  "auxiliary_qcd_validation_sources_authorized": 0,
+  "auxiliary_qcd_validation_sources_remain_unopened": 5,
+  "cut_family_frozen": true,
+  "cut_scan_authorized": false,
+  "family_adjustment_authorized": false,
+  "master_train_only_checkpoint_commit": "d69be420d01dd2b731aac17ed4ff33cc0691722e",
+  "master_train_only_checkpoint_path": "docs/checkpoints/hh4b_cut_baseline_master_train_only_freeze_20260811_v3",
+  "master_train_only_checkpoint_sha256s": "d3350869882317ea41bc2a1386b71aadd5802ba060048939bcb9a26f00a4d159",
+  "master_train_only_code_manifest_sha256": "8e497c578a8cd68a825581e7c67d640806792d318273ec4290639198e97c3328",
+  "next": "commit_and_push_this_authorization_then_prepare_exactly_once_116_source_validation_execution",
+  "nominal_thresholds": {
+    "exact3tag": {
+      "ht_candidate_jets": 176.5458068847656,
+      "r_hh_125_125": 36.40814019639858
+    },
+    "ge4tag": {
+      "abs_h_delta_eta": 6.904302164473993,
+      "mhh": 164.73708096689654,
+      "r_hh_125_125": 33.92808917804956
+    }
+  },
+  "reporting_choices_frozen": true,
+  "repository_head": "d69be420d01dd2b731aac17ed4ff33cc0691722e",
+  "schema_version": 1,
+  "source_payload_access_policy": "each of 116 physical validation sources may be opened exactly once; a durable do-not-rerun marker must precede access",
+  "status": "authorized_one_time_cut_baseline_validation",
+  "test_access_authorized": false,
+  "test_payloads_opened": 0,
+  "threshold_adjustment_authorized": false,
+  "thresholds_frozen": true,
+  "validation_access_authorized": true,
+  "validation_metadata_checkpoint_path": "docs/checkpoints/hh4b_cut_baseline_validation_metadata_20260810_v1",
+  "validation_metadata_checkpoint_sha256s": "ebfb27711dc61f7281915127beefc8d3f9491962cba0b4fd9a0498e0c9cf3c45",
+  "validation_payloads_opened": 0,
+  "validation_payloads_opened_before_authorization": 0,
+  "variables_frozen": true
+}
