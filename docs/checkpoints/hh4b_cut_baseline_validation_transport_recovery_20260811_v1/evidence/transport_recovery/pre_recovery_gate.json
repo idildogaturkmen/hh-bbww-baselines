@@ -1,0 +1,33 @@
+{
+  "authoritative_schedd": "lpcschedd4.fnal.gov",
+  "cluster_id": 3795859,
+  "condor_submit_planned": false,
+  "original_cmd": "/tmp/hh4b_cut_baseline_validation_campaign_package_20260811_v2/run_validation_source.sh",
+  "original_transfer_input": "/tmp/hh4b_cut_baseline_validation_campaign_package_20260811_v2/validation_common_bundle.tar.gz",
+  "recovery_cmd": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_cut_baseline_validation_campaign_presubmission_20260811_v1/evidence/campaign_package/run_validation_source.sh",
+  "recovery_transfer_input": "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines/docs/checkpoints/hh4b_cut_baseline_validation_campaign_presubmission_20260811_v1/evidence/campaign_package/validation_common_bundle.tar.gz",
+  "remote_parent": "/store/user/iturkmen/hh4b_cut_baseline/validation_once_20260811_v1",
+  "remote_parent_listing_sha256": "05f7b4947ab7629993fc08cc4def3bebf6c99d66e3a48a245fb086ea57022dcd",
+  "remote_result_namespace_absent": true,
+  "repository": {
+    "common_bundle_sha256": "7cf5d1f560d618f581bf84e0a96b88bd74fb46da4b05a7ca2b5df5559f0907d4",
+    "driver_sha256": "9b2d235543afde8544b5796766b2042f35a82f69b8973dd6f2d252c9b593d94c",
+    "repository_head": "f2ba83a1c319f353576b0d877f8830c0a01982f5",
+    "runner_sha256": "20c41377c2aaadf5d2de26c3698bac570022e81c81105a30889af6c50e3e59c1",
+    "submission_receipt_sha256": "decde623f78dafcca49ab0e690abfb73905f0cbeb8e4b494759a9ca2a48c2019"
+  },
+  "scheduler": {
+    "held_jobs": 116,
+    "hold_reason_13_2_jobs": 116,
+    "proc_max": 115,
+    "proc_min": 0,
+    "queued_jobs": 116,
+    "scientific_executable_starts": 0
+  },
+  "schema_version": 1,
+  "scientific_arguments_changed": false,
+  "status": "pass_validation_cluster_in_place_transport_recovery_preflight",
+  "target_count": 116,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

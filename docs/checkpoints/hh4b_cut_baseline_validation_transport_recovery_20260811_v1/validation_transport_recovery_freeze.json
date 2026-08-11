@@ -1,0 +1,29 @@
+{
+  "authoritative_schedd": "lpcschedd4.fnal.gov",
+  "cluster_id": 3795859,
+  "condor_submit_called": false,
+  "do_not_resubmit_cluster": true,
+  "driver_sha256": "9b2d235543afde8544b5796766b2042f35a82f69b8973dd6f2d252c9b593d94c",
+  "gate_sha256": "33127a8198ff9d9fe0ac848ae49eab01c58db252e013a90f8885429cf19df836",
+  "implementation_sha256": "64440997770031de4b039706138bab238536623ab7d7de6ff5f71231739b9144",
+  "next": "monitor_existing_cluster_read_only_then_audit_all_116_returns",
+  "nominal_selection_changed": false,
+  "post_edit_status_counts": {
+    "5": 116
+  },
+  "post_release_status_counts": {
+    "1": 116
+  },
+  "pre_recovery_status_counts": {
+    "5": 116
+  },
+  "receipt_sha256": "f0ec5d61b67583f404b9df7dd53a18289ac46d79501c3dc3a863e01e99fc8857",
+  "repository_parent_head": "c5ed93785f0dcdaaf87eea8341c5fb3cff0950a2",
+  "schema_version": 1,
+  "scientific_arguments_changed": false,
+  "status": "pass_validation_cluster_in_place_transport_recovery_checkpoint_freeze",
+  "target_count": 116,
+  "test_payloads_opened": 0,
+  "transport_recovery_only": true,
+  "validation_payloads_opened_before_release": 0
+}

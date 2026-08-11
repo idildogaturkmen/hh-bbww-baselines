@@ -1,0 +1,20 @@
+{
+  "attempted_utc": "2026-08-11T18:07:14Z",
+  "authoritative_schedd": "lpcschedd4.fnal.gov",
+  "cluster_id": 3795859,
+  "condor_submit_called": false,
+  "never_resubmit_cluster": true,
+  "nominal_selection_changed": false,
+  "post_release_status_counts": {
+    "1": 116
+  },
+  "released_utc": "2026-08-11T18:07:15Z",
+  "repository_head": "f2ba83a1c319f353576b0d877f8830c0a01982f5",
+  "schema_version": 1,
+  "scientific_arguments_changed": false,
+  "status": "pass_validation_cluster_in_place_transport_recovery_edited_and_released",
+  "target_count": 116,
+  "test_payloads_opened": 0,
+  "transport_recovery_only": true,
+  "validation_payloads_opened_before_release": 0
+}

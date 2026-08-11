@@ -1,0 +1,58 @@
+{
+  "RECOVERY_ATTEMPTED_DO_NOT_REPEAT.txt": {
+    "bytes": 295,
+    "sha256": "815df08d0d784f01dec7940a05fe2dd6eddc59102acb1de1da31160b5de4d85d"
+  },
+  "RECOVERY_RELEASED_MONITOR_ONLY.txt": {
+    "bytes": 170,
+    "sha256": "27c590f38261069a4c09b67612ee44a67c19655868aa6a77c5f63d7912fa50f0"
+  },
+  "condor_qedit_transport_attributes.rc": {
+    "bytes": 2,
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "condor_qedit_transport_attributes.stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "condor_qedit_transport_attributes.stdout": {
+    "bytes": 96,
+    "sha256": "275b9482029d29492bcf18360fbee2e33c36f47eacf47c987684c84a8c70dd33"
+  },
+  "condor_release_recovered_targets.rc": {
+    "bytes": 2,
+    "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "condor_release_recovered_targets.stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "condor_release_recovered_targets.stdout": {
+    "bytes": 511,
+    "sha256": "ca7561275bf9a2f5a6ed2a7703ca45afe601c0df85484d048206318d198384b8"
+  },
+  "post_edit_pre_release_job_ads.json": {
+    "bytes": 148781,
+    "sha256": "0644084b7f2d814ef90ff652c20118a9a3a08eea545b1752318ad9e374cd6dd1"
+  },
+  "post_release_job_ads.json": {
+    "bytes": 103427,
+    "sha256": "6376ac099ad147e0621d2bfa0580fa454ef1dad06b223d51a000617f28d217ab"
+  },
+  "pre_recovery_gate.json": {
+    "bytes": 1872,
+    "sha256": "33127a8198ff9d9fe0ac848ae49eab01c58db252e013a90f8885429cf19df836"
+  },
+  "pre_recovery_job_ads.json": {
+    "bytes": 127437,
+    "sha256": "03e64620ca86f6687f045931cc4447656784406148b294e49b7159e9b9e0b19c"
+  },
+  "recovery_driver.py": {
+    "bytes": 17738,
+    "sha256": "9b2d235543afde8544b5796766b2042f35a82f69b8973dd6f2d252c9b593d94c"
+  },
+  "transport_recovery_receipt.json": {
+    "bytes": 672,
+    "sha256": "f0ec5d61b67583f404b9df7dd53a18289ac46d79501c3dc3a863e01e99fc8857"
+  }
+}
