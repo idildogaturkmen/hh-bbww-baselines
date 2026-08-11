@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "physical_sources": 441,
+  "resolved_rows": 1042397,
+  "canary_sources": 5,
+  "canary_category_checks": 10,
+  "canary_closure_pass": true,
+  "new_extraction_required": false,
+  "full_condor_campaign_required": false,
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0
+}

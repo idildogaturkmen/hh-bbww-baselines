@@ -1,0 +1,17 @@
+metric	value
+cms_expected_mu95	5.9
+pooled_mu95_stat_only	74.0151727273842
+category_mu95_stat_only	44.32758473485289
+shape_mu95_stat_only	31.95647727235911
+category_gain	1.669731684460336
+shape_gain	1.3871236293367737
+total_gain	2.316106
+selected_qcd_yield	46452891.01438077
+selected_qcd_rows	123
+qcd_neff	52.404597089332476
+finite_mc_gaussian_mu95	545.7007962261
+finite_mc_gamma_mu95	522.0596881654055
+lower_tag_resolved_rows	1042397
+new_extraction_required	false
+transfer_2b_to_3b_yield_ratio	1.0053873387079122
+transfer_2b_to_ge4_yield_ratio	0.2943391221533552
