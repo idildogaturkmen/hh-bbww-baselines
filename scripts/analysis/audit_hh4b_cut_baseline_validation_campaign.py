@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import tarfile
 from typing import Any
@@ -198,7 +199,18 @@ def audit_local_package(
     submit_text = expected_submit.lower()
     require("queue row_index, source_uid" in submit_text, "validation queue statement changed")
     require("max_retries" not in submit_text and "retry" not in submit_text, "validation retry directive detected")
-    require("condor_submit" not in submit_text, "nested submission command detected")
+    command_directives = []
+    for line in submit_text.splitlines():
+        key, separator, value = line.partition("=")
+        if separator and key.strip() in {"executable", "arguments"}:
+            command_directives.append(value.strip())
+    require(
+        not any(
+            re.search(r"(^|[/\s])condor_submit(?:\s|$)", value)
+            for value in command_directives
+        ),
+        "nested submission command detected",
+    )
 
     artifact_manifest = pd.read_csv(package / "artifact_manifest.tsv", sep="\t", keep_default_na=False)
     expected_manifest_names = expected_files - {"SHA256SUMS", "artifact_manifest.tsv"}

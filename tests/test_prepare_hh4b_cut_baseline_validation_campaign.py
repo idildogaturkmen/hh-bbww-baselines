@@ -106,10 +106,10 @@ def test_full_preparation_is_metadata_only_and_builds_116_jobs() -> None:
         repository = root / "repo"
         remote = root / "remote.git"
         package = root / "package"
-        logs = root / "logs"
+        logs = root / "condor_submit" / "logs"
         proxy = root / "x509up"
         repository.mkdir()
-        logs.mkdir()
+        logs.mkdir(parents=True)
         proxy.write_text("synthetic proxy\n", encoding="utf-8")
         run("git", "init", "--bare", str(remote), cwd=root)
         run("git", "init", str(repository), cwd=root)
