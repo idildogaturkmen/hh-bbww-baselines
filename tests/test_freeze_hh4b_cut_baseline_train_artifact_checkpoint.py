@@ -11,6 +11,7 @@ from freeze_hh4b_cut_baseline_train_artifact_checkpoint import (  # noqa: E402
     ALL1000_AUDIT_STATUS,
     ArtifactFreezeError,
     ROLE_CONTRACTS,
+    checkpoint_readme,
     should_copy_all1000_file,
     validate_all1000_audit,
     validate_role_summary,
@@ -109,6 +110,15 @@ def test_all1000_compact_copy_excludes_only_source_sums_and_ranked_shards() -> N
     assert should_copy_all1000_file(
         "tables/ranked_structure_results_replicas_0000_0099.tsv"
     ) is False
+
+
+def test_checkpoint_readmes_have_one_terminal_newline() -> None:
+    for role in ROLE_CONTRACTS:
+        readme = checkpoint_readme(role)
+        assert readme.endswith("\n")
+        assert not readme.endswith("\n\n")
+    assert "For the all-1000 role" in checkpoint_readme("all1000")
+    assert "For the all-1000 role" not in checkpoint_readme("publication_train_only")
 
 
 if __name__ == "__main__":

@@ -167,6 +167,24 @@ def validate_role_summary(role: str, summary: dict[str, Any]) -> None:
         require(summary.get("official_cms_status_claimed") is False, "figures claim official CMS status")
 
 
+def checkpoint_readme(role: str) -> str:
+    lines = [
+        f"# HH→4b {role.replace('_', ' ')} checkpoint",
+        "",
+        "This checkpoint was frozen before validation. The nominal cut is unchanged, "
+        "validation and test payload counts are zero, and no official CMS status is claimed.",
+    ]
+    if role == "all1000":
+        lines.extend([
+            "",
+            "For the all-1000 role, the ten large ranked-result shards remain in the committed "
+            "source artifact and are bound here by exact path, byte count, and SHA-256. Every "
+            "downstream-consumed table and the independent byte-identical-rerun audit are copied "
+            "into this compact checkpoint.",
+        ])
+    return "\n".join(lines) + "\n"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", type=Path, default=Path("/uscms_data/d3/iturkmen/repos/hh-bbww-baselines"))
@@ -300,19 +318,7 @@ def main() -> None:
     (build / "artifact_checkpoint_freeze.json").write_text(
         json.dumps(freeze, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    (build / "README.md").write_text(
-        f"# HH→4b {args.role.replace('_', ' ')} checkpoint\n\n"
-        "This checkpoint was frozen before validation. The nominal cut is unchanged, "
-        "validation and test payload counts are zero, and no official CMS status is claimed.\n\n"
-        + (
-            "For the all-1000 role, the ten large ranked-result shards remain in the committed "
-            "source artifact and are bound here by exact path, byte count, and SHA-256. Every "
-            "downstream-consumed table and the independent byte-identical-rerun audit are copied "
-            "into this compact checkpoint.\n"
-            if args.role == "all1000" else ""
-        ),
-        encoding="utf-8",
-    )
+    (build / "README.md").write_text(checkpoint_readme(args.role), encoding="utf-8")
     files = sorted(path for path in build.rglob("*") if path.is_file())
     (build / "SHA256SUMS").write_text(
         "".join(
