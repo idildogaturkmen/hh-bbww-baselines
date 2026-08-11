@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "label": "simulation-only exact3tag transfer-constrained expected-limit diagnostic",
+  "predeclared_pass_gate": {"overall_yield_ratio":[0.8,1.2],"each_fold_yield_ratio":[0.75,1.25],"maximum_shape_tv":0.2,"minimum_target_neff":100},
+  "observed_closure": {"overall_yield_ratio":1.0053873387079122,"fold3_ratio":0.8214011610094817,"fold4_ratio":1.1507184531199295,"maximum_shape_tv":0.1455786937279496,"target_neff":117.67760026794073,"pass":true},
+  "closure_relative_uncertainty":0.17859883899051832,
+  "closure_uncertainty_rule":"maximum absolute held-fold yield deviation from unity",
+  "exact3tag_mu95_stat_only":98.39356195875988,
+  "exact3tag_mu95_direct_mc_gaussian":91074.42530485772,
+  "exact3tag_mu95_transfer_constrained":115372.0738848279,
+  "ge4_transfer_constrained_result":"not constructed because every ge4 transfer failed closure",
+  "validation_payloads_opened":0,
+  "test_payloads_opened":0
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "rule": "left-to-right adjacent accumulation until QCD Neff threshold; merge terminal residual backward; no sensitivity input",
+  "results": [
+    {
+      "minimum_qcd_neff_threshold": 5,
+      "merged_bins": 5,
+      "threshold_achievable_all_bins": false,
+      "mu95_stat_only_support_merge": 43.710089847270524,
+      "gain_vs_two_channel": 1.0141270560124673,
+      "fraction_nominal_shape_gain_retained": 0.049914277234634256
+    },
+    {
+      "minimum_qcd_neff_threshold": 10,
+      "merged_bins": 4,
+      "threshold_achievable_all_bins": false,
+      "mu95_stat_only_support_merge": 43.79843208218898,
+      "gain_vs_two_channel": 1.012081543276959,
+      "fraction_nominal_shape_gain_retained": 0.04277326458186332
+    },
+    {
+      "minimum_qcd_neff_threshold": 20,
+      "merged_bins": 2,
+      "threshold_achievable_all_bins": false,
+      "mu95_stat_only_support_merge": 44.32758473485278,
+      "gain_vs_two_channel": 1.0000000000000027,
+      "fraction_nominal_shape_gain_retained": 9.189705777456637e-15
+    }
+  ],
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0
+}
