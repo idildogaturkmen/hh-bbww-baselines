@@ -93,17 +93,18 @@ def verify_repository(repo: Path) -> str:
 
 
 def add_header(axes: plt.Axes, subtitle: str = "Train-only") -> None:
-    axes.text(
-        0.0, 1.045, "Delphes simulation", transform=axes.transAxes,
-        ha="left", va="bottom", fontweight="bold", fontsize=11,
+    figure = axes.get_figure()
+    figure.text(
+        0.06, 0.985, "Delphes simulation",
+        ha="left", va="top", fontweight="bold", fontsize=11,
     )
-    axes.text(
-        1.0, 1.045, r"$\sqrt{s}=13$ TeV, 138 fb$^{-1}$ equivalent",
-        transform=axes.transAxes, ha="right", va="bottom", fontsize=10,
+    figure.text(
+        0.94, 0.985, r"$\sqrt{s}=13$ TeV, 138 fb$^{-1}$ equivalent",
+        ha="right", va="top", fontsize=10,
     )
-    axes.text(
-        0.0, 1.012, subtitle, transform=axes.transAxes,
-        ha="left", va="bottom", fontsize=9,
+    figure.text(
+        0.06, 0.955, subtitle,
+        ha="left", va="top", fontsize=9,
     )
 
 
