@@ -1,0 +1,59 @@
+{
+  "authoritative_schedd": "lpcschedd4.fnal.gov",
+  "cluster_id": 3795859,
+  "do_not_resubmit_cluster": true,
+  "first_proc": 0,
+  "implementation_sha256": "5ee21fcabdab1ac91810af26bf63fe81014a332e8fbfb8ad868fc0b6aa2f7125",
+  "jobs_submitted": 116,
+  "last_proc": 115,
+  "never_resubmit_clusters": [
+    3754344,
+    3755882,
+    3768139,
+    30002685,
+    30020809,
+    3795859
+  ],
+  "next": "commit_and_push_then_monitor_this_validation_cluster_read_only",
+  "repository_head_at_submission": "b1b4e2cdd34a3c28a82112952f6104698ff38c5b",
+  "repository_parent_head": "b1b4e2cdd34a3c28a82112952f6104698ff38c5b",
+  "schema_version": 1,
+  "status": "pass_exactly_once_validation_submission_frozen_before_monitoring",
+  "submission_evidence": {
+    "CONDOR_ACCEPTED_DO_NOT_RESUBMIT.txt": {
+      "bytes": 354,
+      "sha256": "78a7549827f51509c21878a7d6ce54377555a4ec06c5b3a82113f36256fac58b"
+    },
+    "SUBMISSION_ATTEMPTED_DO_NOT_RERUN.txt": {
+      "bytes": 648,
+      "sha256": "5babac0bfc2bc000d42b7d004ce3dad0650b17a7646e752fd8eb17fffaa3ed9b"
+    },
+    "condor_submit_parse.json": {
+      "bytes": 229,
+      "sha256": "84eff1b543754f164d7a92d87f9ed13ed43747f44aefb2ceb5facaa45f854897"
+    },
+    "condor_submit_rc.txt": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "condor_submit_terse_output.txt": {
+      "bytes": 143,
+      "sha256": "bcbbd8075cee4c2070473f282a398efdb018a6160655fd9bd71abdfdbd8f4f4f"
+    },
+    "pre_submit_gate.json": {
+      "bytes": 3494,
+      "sha256": "ab546eeb043fbcf47e57ccecea72c63d6aedfcb8c325d358be1296eae888ae27"
+    },
+    "submission_driver.py": {
+      "bytes": 22800,
+      "sha256": "d2df0bd95bb853a42445f47f093cabb635c8b3f4384beff68c2233913ff9364c"
+    },
+    "validation_submission_receipt.json": {
+      "bytes": 1657,
+      "sha256": "decde623f78dafcca49ab0e690abfb73905f0cbeb8e4b494759a9ca2a48c2019"
+    }
+  },
+  "test_access_authorized": false,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened_before_submission": 0
+}

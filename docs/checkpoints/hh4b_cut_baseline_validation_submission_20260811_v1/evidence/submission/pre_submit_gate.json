@@ -1,0 +1,75 @@
+{
+  "advertised_cms_lpc_schedds": [
+    "lpcschedd4.fnal.gov",
+    "lpcschedd5.fnal.gov",
+    "lpcschedd6.fnal.gov"
+  ],
+  "authorization_checkpoint_commit": "3e54a57a65aa572786a4816588c604898adfe40f",
+  "campaign_audit_checkpoint_commit": "b1b4e2cdd34a3c28a82112952f6104698ff38c5b",
+  "campaign_package": "/tmp/hh4b_cut_baseline_validation_campaign_package_20260811_v2",
+  "expected_jobs": 116,
+  "local_log_root": "/uscms_data/d3/iturkmen/hh4b_delphes/condor_submit/hh4b_cut_baseline_validation_once_20260811_v1/logs",
+  "no_prior_scheduler_association": true,
+  "production_submission_performed": false,
+  "queue_items_sha256": "75612d120ad1de05db414acd22b5792de6ae5afce79b570f9765f68017e4de9c",
+  "remote_output_namespace_absent": true,
+  "remote_output_parent": "/store/user/iturkmen/hh4b_cut_baseline/validation_once_20260811_v1",
+  "remote_output_parent_listing_sha256": "05f7b4947ab7629993fc08cc4def3bebf6c99d66e3a48a245fb086ea57022dcd",
+  "remote_runtime_adler32": "a0430d06",
+  "repository_head": "b1b4e2cdd34a3c28a82112952f6104698ff38c5b",
+  "runner_sha256": "20c41377c2aaadf5d2de26c3698bac570022e81c81105a30889af6c50e3e59c1",
+  "runtime_remote_checksum_query": "adler32 a0430d06",
+  "scheduler_scans": [
+    {
+      "kind": "queue",
+      "row_count": 0,
+      "schedd": "lpcschedd4.fnal.gov",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "history",
+      "row_count": 0,
+      "schedd": "lpcschedd4.fnal.gov",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "queue",
+      "row_count": 0,
+      "schedd": "lpcschedd5.fnal.gov",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "history",
+      "row_count": 0,
+      "schedd": "lpcschedd5.fnal.gov",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "queue",
+      "row_count": 0,
+      "schedd": "lpcschedd6.fnal.gov",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "history",
+      "row_count": 0,
+      "schedd": "lpcschedd6.fnal.gov",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "schema_version": 1,
+  "status": "pass_exactly_once_cut_baseline_validation_submission_preflight",
+  "submit_file": "/tmp/hh4b_cut_baseline_validation_campaign_package_20260811_v2/validation_116.submit",
+  "submit_file_sha256": "605624be86999a26780b9a1bb60c96099ae8c5fab548478d8271f89a0fb19335",
+  "test_payloads_opened": 0,
+  "validation_campaign_presubmission_freeze_sha256": "b5170f1663f91926eaf31710c63e932c3c06e32b005b2be0433edc4a0e4218fb",
+  "validation_payloads_opened_before_submission": 0,
+  "x509_proxy": "/uscms/homes/i/iturkmen/x509up_u17821",
+  "x509_proxy_timeleft_seconds": 110506
+}
