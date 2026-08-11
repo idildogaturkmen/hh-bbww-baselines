@@ -1,0 +1,11 @@
+category_id	selected_structure_id	threshold_variable	replica_count	mean	population_standard_deviation	minimum	p16_linear	median	p84_linear	maximum	is_nominal_structure	coordinate
+exact3tag	radial_mass__category__plus_ht_candidate_jets	ht_candidate_jets	119	181.820533153014	6.901967993282449	175.40518474578855	176.56460166931151	180.65910434722895	184.95323364257808	208.2866218090057	True	"exactly 3 tags
+$H_T^{\mathrm{cand.}}$"
+exact3tag	radial_mass__category__plus_ht_candidate_jets	r_hh_125_125	119	37.03153297413687	1.467798503236966	36.1004606491224	36.3731640142245	36.69574679588723	37.037912143241854	43.208215253967374	True	"exactly 3 tags
+$R_{HH}(125,125)$"
+ge4tag	radial_mass__category__plus_mhh_and_abs_h_delta_eta	abs_h_delta_eta	34	6.910177377451986	0.0920493947376566	6.748628493001711	6.809818891966872	6.904302164473993	6.998785436981115	6.998785436981115	True	"$\geq 4$ tags
+$|\Delta\eta(H_1,H_2)|$"
+ge4tag	radial_mass__category__plus_mhh_and_abs_h_delta_eta	mhh	34	195.0215071825276	24.105130637146654	120.69842482135816	165.32778054129497	209.0710868996341	213.1496590229328	214.02690702221057	True	"$\geq 4$ tags
+$m_{HH}$"
+ge4tag	radial_mass__category__plus_mhh_and_abs_h_delta_eta	r_hh_125_125	34	33.953053344271325	0.1914248840653297	33.60697335136507	33.81996391989742	33.89553562762484	34.117474196245844	34.428577665560425	True	"$\geq 4$ tags
+$R_{HH}(125,125)$"

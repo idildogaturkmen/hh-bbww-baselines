@@ -1,0 +1,11 @@
+category_id	aggregation_level	optional_variable	inclusion_count	denominator	inclusion_frequency	ambiguous_interval_inclusive_0p30_0p70
+exact3tag	replica_selected	abs_h_delta_eta	220	1000	0.22	False
+exact3tag	replica_selected	h2_pt	104	1000	0.104	False
+exact3tag	replica_selected	ht_candidate_jets	357	1000	0.357	True
+exact3tag	replica_selected	max_drbb	200	1000	0.2	False
+exact3tag	replica_selected	mhh	101	1000	0.101	False
+ge4tag	replica_selected	abs_h_delta_eta	85	1000	0.085	False
+ge4tag	replica_selected	h2_pt	106	1000	0.106	False
+ge4tag	replica_selected	ht_candidate_jets	388	1000	0.388	True
+ge4tag	replica_selected	max_drbb	281	1000	0.281	False
+ge4tag	replica_selected	mhh	71	1000	0.071	False

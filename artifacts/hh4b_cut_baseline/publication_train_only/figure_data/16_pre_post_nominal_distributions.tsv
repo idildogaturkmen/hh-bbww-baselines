@@ -1,0 +1,1361 @@
+sample_class	selection_stage	variable	bin_index	bin_low_inclusive	bin_high_exclusive	axis_label_latex	rows
+background	postselection	abs_h_delta_eta	0	0.0	0.25	$|\Delta\eta(H_1,H_2)|$	6365
+background	postselection	abs_h_delta_eta	1	0.25	0.5	$|\Delta\eta(H_1,H_2)|$	6081
+background	postselection	abs_h_delta_eta	2	0.5	0.75	$|\Delta\eta(H_1,H_2)|$	5658
+background	postselection	abs_h_delta_eta	3	0.75	1.0	$|\Delta\eta(H_1,H_2)|$	5015
+background	postselection	abs_h_delta_eta	4	1.0	1.25	$|\Delta\eta(H_1,H_2)|$	4470
+background	postselection	abs_h_delta_eta	5	1.25	1.5	$|\Delta\eta(H_1,H_2)|$	3723
+background	postselection	abs_h_delta_eta	6	1.5	1.75	$|\Delta\eta(H_1,H_2)|$	3084
+background	postselection	abs_h_delta_eta	7	1.75	2.0	$|\Delta\eta(H_1,H_2)|$	2529
+background	postselection	abs_h_delta_eta	8	2.0	2.25	$|\Delta\eta(H_1,H_2)|$	2030
+background	postselection	abs_h_delta_eta	9	2.25	2.5	$|\Delta\eta(H_1,H_2)|$	1730
+background	postselection	abs_h_delta_eta	10	2.5	2.75	$|\Delta\eta(H_1,H_2)|$	1315
+background	postselection	abs_h_delta_eta	11	2.75	3.0	$|\Delta\eta(H_1,H_2)|$	1070
+background	postselection	abs_h_delta_eta	12	3.0	3.25	$|\Delta\eta(H_1,H_2)|$	903
+background	postselection	abs_h_delta_eta	13	3.25	3.5	$|\Delta\eta(H_1,H_2)|$	644
+background	postselection	abs_h_delta_eta	14	3.5	3.75	$|\Delta\eta(H_1,H_2)|$	503
+background	postselection	abs_h_delta_eta	15	3.75	4.0	$|\Delta\eta(H_1,H_2)|$	383
+background	postselection	abs_h_delta_eta	16	4.0	4.25	$|\Delta\eta(H_1,H_2)|$	302
+background	postselection	abs_h_delta_eta	17	4.25	4.5	$|\Delta\eta(H_1,H_2)|$	257
+background	postselection	abs_h_delta_eta	18	4.5	4.75	$|\Delta\eta(H_1,H_2)|$	170
+background	postselection	abs_h_delta_eta	19	4.75	5.0	$|\Delta\eta(H_1,H_2)|$	142
+background	postselection	abs_h_delta_eta	20	5.0	5.25	$|\Delta\eta(H_1,H_2)|$	87
+background	postselection	abs_h_delta_eta	21	5.25	5.5	$|\Delta\eta(H_1,H_2)|$	56
+background	postselection	abs_h_delta_eta	22	5.5	5.75	$|\Delta\eta(H_1,H_2)|$	55
+background	postselection	abs_h_delta_eta	23	5.75	6.0	$|\Delta\eta(H_1,H_2)|$	35
+background	postselection	abs_h_delta_eta	24	6.0	6.25	$|\Delta\eta(H_1,H_2)|$	27
+background	postselection	abs_h_delta_eta	25	6.25	6.5	$|\Delta\eta(H_1,H_2)|$	20
+background	postselection	abs_h_delta_eta	26	6.5	6.75	$|\Delta\eta(H_1,H_2)|$	6
+background	postselection	abs_h_delta_eta	27	6.75	7.0	$|\Delta\eta(H_1,H_2)|$	11
+background	postselection	abs_h_delta_eta	28	7.0	7.25	$|\Delta\eta(H_1,H_2)|$	6
+background	postselection	abs_h_delta_eta	29	7.25	7.5	$|\Delta\eta(H_1,H_2)|$	1
+background	postselection	abs_h_delta_eta	30	7.5	7.75	$|\Delta\eta(H_1,H_2)|$	2
+background	postselection	abs_h_delta_eta	31	7.75	8.0	$|\Delta\eta(H_1,H_2)|$	2
+background	postselection	abs_h_delta_eta	32	8.0	8.25	$|\Delta\eta(H_1,H_2)|$	1
+background	postselection	abs_h_delta_eta	33	8.25	8.5	$|\Delta\eta(H_1,H_2)|$	3
+background	postselection	abs_h_delta_eta	34	8.5	8.75	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	35	8.75	9.0	$|\Delta\eta(H_1,H_2)|$	1
+background	postselection	abs_h_delta_eta	36	9.0	9.25	$|\Delta\eta(H_1,H_2)|$	1
+background	postselection	abs_h_delta_eta	37	9.25	9.5	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	38	9.5	9.75	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	39	9.75	10.0	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	40	10.0	10.25	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	41	10.25	10.5	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	42	10.5	10.75	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	43	10.75	11.0	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	44	11.0	11.25	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	45	11.25	11.5	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	46	11.5	11.75	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	abs_h_delta_eta	47	11.75	12.0	$|\Delta\eta(H_1,H_2)|$	0
+background	postselection	h2_pt	0	0.0	25.0	$p_T(H_2)$ [GeV]	6329
+background	postselection	h2_pt	1	25.0	50.0	$p_T(H_2)$ [GeV]	11637
+background	postselection	h2_pt	2	50.0	75.0	$p_T(H_2)$ [GeV]	9851
+background	postselection	h2_pt	3	75.0	100.0	$p_T(H_2)$ [GeV]	6951
+background	postselection	h2_pt	4	100.0	125.0	$p_T(H_2)$ [GeV]	4541
+background	postselection	h2_pt	5	125.0	150.0	$p_T(H_2)$ [GeV]	2767
+background	postselection	h2_pt	6	150.0	175.0	$p_T(H_2)$ [GeV]	1657
+background	postselection	h2_pt	7	175.0	200.0	$p_T(H_2)$ [GeV]	1067
+background	postselection	h2_pt	8	200.0	225.0	$p_T(H_2)$ [GeV]	669
+background	postselection	h2_pt	9	225.0	250.0	$p_T(H_2)$ [GeV]	429
+background	postselection	h2_pt	10	250.0	275.0	$p_T(H_2)$ [GeV]	247
+background	postselection	h2_pt	11	275.0	300.0	$p_T(H_2)$ [GeV]	172
+background	postselection	h2_pt	12	300.0	325.0	$p_T(H_2)$ [GeV]	115
+background	postselection	h2_pt	13	325.0	350.0	$p_T(H_2)$ [GeV]	98
+background	postselection	h2_pt	14	350.0	375.0	$p_T(H_2)$ [GeV]	63
+background	postselection	h2_pt	15	375.0	400.0	$p_T(H_2)$ [GeV]	34
+background	postselection	h2_pt	16	400.0	425.0	$p_T(H_2)$ [GeV]	25
+background	postselection	h2_pt	17	425.0	450.0	$p_T(H_2)$ [GeV]	14
+background	postselection	h2_pt	18	450.0	475.0	$p_T(H_2)$ [GeV]	10
+background	postselection	h2_pt	19	475.0	500.0	$p_T(H_2)$ [GeV]	6
+background	postselection	h2_pt	20	500.0	525.0	$p_T(H_2)$ [GeV]	2
+background	postselection	h2_pt	21	525.0	550.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	22	550.0	575.0	$p_T(H_2)$ [GeV]	1
+background	postselection	h2_pt	23	575.0	600.0	$p_T(H_2)$ [GeV]	1
+background	postselection	h2_pt	24	600.0	625.0	$p_T(H_2)$ [GeV]	1
+background	postselection	h2_pt	25	625.0	650.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	26	650.0	675.0	$p_T(H_2)$ [GeV]	1
+background	postselection	h2_pt	27	675.0	700.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	28	700.0	725.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	29	725.0	750.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	30	750.0	775.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	31	775.0	800.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	32	800.0	825.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	33	825.0	850.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	34	850.0	875.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	35	875.0	900.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	36	900.0	925.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	37	925.0	950.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	38	950.0	975.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	39	975.0	1000.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	40	1000.0	1025.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	41	1025.0	1050.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	42	1050.0	1075.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	43	1075.0	1100.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	44	1100.0	1125.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	45	1125.0	1150.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	46	1150.0	1175.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	47	1175.0	1200.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	48	1200.0	1225.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	49	1225.0	1250.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	50	1250.0	1275.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	51	1275.0	1300.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	52	1300.0	1325.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	53	1325.0	1350.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	54	1350.0	1375.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	55	1375.0	1400.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	56	1400.0	1425.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	57	1425.0	1450.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	58	1450.0	1475.0	$p_T(H_2)$ [GeV]	0
+background	postselection	h2_pt	59	1475.0	1500.0	$p_T(H_2)$ [GeV]	0
+background	postselection	ht_candidate_jets	0	0.0	50.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	1	50.0	100.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	2	100.0	150.0	$H_T^{\mathrm{cand.}}$ [GeV]	4
+background	postselection	ht_candidate_jets	3	150.0	200.0	$H_T^{\mathrm{cand.}}$ [GeV]	2664
+background	postselection	ht_candidate_jets	4	200.0	250.0	$H_T^{\mathrm{cand.}}$ [GeV]	12443
+background	postselection	ht_candidate_jets	5	250.0	300.0	$H_T^{\mathrm{cand.}}$ [GeV]	13051
+background	postselection	ht_candidate_jets	6	300.0	350.0	$H_T^{\mathrm{cand.}}$ [GeV]	7703
+background	postselection	ht_candidate_jets	7	350.0	400.0	$H_T^{\mathrm{cand.}}$ [GeV]	4218
+background	postselection	ht_candidate_jets	8	400.0	450.0	$H_T^{\mathrm{cand.}}$ [GeV]	2449
+background	postselection	ht_candidate_jets	9	450.0	500.0	$H_T^{\mathrm{cand.}}$ [GeV]	1483
+background	postselection	ht_candidate_jets	10	500.0	550.0	$H_T^{\mathrm{cand.}}$ [GeV]	944
+background	postselection	ht_candidate_jets	11	550.0	600.0	$H_T^{\mathrm{cand.}}$ [GeV]	644
+background	postselection	ht_candidate_jets	12	600.0	650.0	$H_T^{\mathrm{cand.}}$ [GeV]	351
+background	postselection	ht_candidate_jets	13	650.0	700.0	$H_T^{\mathrm{cand.}}$ [GeV]	237
+background	postselection	ht_candidate_jets	14	700.0	750.0	$H_T^{\mathrm{cand.}}$ [GeV]	172
+background	postselection	ht_candidate_jets	15	750.0	800.0	$H_T^{\mathrm{cand.}}$ [GeV]	125
+background	postselection	ht_candidate_jets	16	800.0	850.0	$H_T^{\mathrm{cand.}}$ [GeV]	70
+background	postselection	ht_candidate_jets	17	850.0	900.0	$H_T^{\mathrm{cand.}}$ [GeV]	55
+background	postselection	ht_candidate_jets	18	900.0	950.0	$H_T^{\mathrm{cand.}}$ [GeV]	29
+background	postselection	ht_candidate_jets	19	950.0	1000.0	$H_T^{\mathrm{cand.}}$ [GeV]	15
+background	postselection	ht_candidate_jets	20	1000.0	1050.0	$H_T^{\mathrm{cand.}}$ [GeV]	8
+background	postselection	ht_candidate_jets	21	1050.0	1100.0	$H_T^{\mathrm{cand.}}$ [GeV]	11
+background	postselection	ht_candidate_jets	22	1100.0	1150.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+background	postselection	ht_candidate_jets	23	1150.0	1200.0	$H_T^{\mathrm{cand.}}$ [GeV]	2
+background	postselection	ht_candidate_jets	24	1200.0	1250.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+background	postselection	ht_candidate_jets	25	1250.0	1300.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+background	postselection	ht_candidate_jets	26	1300.0	1350.0	$H_T^{\mathrm{cand.}}$ [GeV]	2
+background	postselection	ht_candidate_jets	27	1350.0	1400.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	28	1400.0	1450.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	29	1450.0	1500.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	30	1500.0	1550.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	31	1550.0	1600.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+background	postselection	ht_candidate_jets	32	1600.0	1650.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	33	1650.0	1700.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	34	1700.0	1750.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	35	1750.0	1800.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	36	1800.0	1850.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	37	1850.0	1900.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	38	1900.0	1950.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	39	1950.0	2000.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	40	2000.0	2050.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	41	2050.0	2100.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	42	2100.0	2150.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	43	2150.0	2200.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	44	2200.0	2250.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	45	2250.0	2300.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	46	2300.0	2350.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	47	2350.0	2400.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	48	2400.0	2450.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	49	2450.0	2500.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	50	2500.0	2550.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	51	2550.0	2600.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	52	2600.0	2650.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	53	2650.0	2700.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	54	2700.0	2750.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	55	2750.0	2800.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	56	2800.0	2850.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	57	2850.0	2900.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	58	2900.0	2950.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	ht_candidate_jets	59	2950.0	3000.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	postselection	max_drbb	0	0.0	0.125	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	1	0.125	0.25	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	2	0.25	0.375	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	3	0.375	0.5	$\max\Delta R_{bb}$	10
+background	postselection	max_drbb	4	0.5	0.625	$\max\Delta R_{bb}$	54
+background	postselection	max_drbb	5	0.625	0.75	$\max\Delta R_{bb}$	141
+background	postselection	max_drbb	6	0.75	0.875	$\max\Delta R_{bb}$	215
+background	postselection	max_drbb	7	0.875	1.0	$\max\Delta R_{bb}$	343
+background	postselection	max_drbb	8	1.0	1.125	$\max\Delta R_{bb}$	530
+background	postselection	max_drbb	9	1.125	1.25	$\max\Delta R_{bb}$	742
+background	postselection	max_drbb	10	1.25	1.375	$\max\Delta R_{bb}$	912
+background	postselection	max_drbb	11	1.375	1.5	$\max\Delta R_{bb}$	1167
+background	postselection	max_drbb	12	1.5	1.625	$\max\Delta R_{bb}$	1411
+background	postselection	max_drbb	13	1.625	1.75	$\max\Delta R_{bb}$	1665
+background	postselection	max_drbb	14	1.75	1.875	$\max\Delta R_{bb}$	1825
+background	postselection	max_drbb	15	1.875	2.0	$\max\Delta R_{bb}$	2074
+background	postselection	max_drbb	16	2.0	2.125	$\max\Delta R_{bb}$	2370
+background	postselection	max_drbb	17	2.125	2.25	$\max\Delta R_{bb}$	2484
+background	postselection	max_drbb	18	2.25	2.375	$\max\Delta R_{bb}$	2693
+background	postselection	max_drbb	19	2.375	2.5	$\max\Delta R_{bb}$	2976
+background	postselection	max_drbb	20	2.5	2.625	$\max\Delta R_{bb}$	3178
+background	postselection	max_drbb	21	2.625	2.75	$\max\Delta R_{bb}$	3541
+background	postselection	max_drbb	22	2.75	2.875	$\max\Delta R_{bb}$	3671
+background	postselection	max_drbb	23	2.875	3.0	$\max\Delta R_{bb}$	4001
+background	postselection	max_drbb	24	3.0	3.125	$\max\Delta R_{bb}$	4394
+background	postselection	max_drbb	25	3.125	3.25	$\max\Delta R_{bb}$	3066
+background	postselection	max_drbb	26	3.25	3.375	$\max\Delta R_{bb}$	1521
+background	postselection	max_drbb	27	3.375	3.5	$\max\Delta R_{bb}$	840
+background	postselection	max_drbb	28	3.5	3.625	$\max\Delta R_{bb}$	466
+background	postselection	max_drbb	29	3.625	3.75	$\max\Delta R_{bb}$	240
+background	postselection	max_drbb	30	3.75	3.875	$\max\Delta R_{bb}$	105
+background	postselection	max_drbb	31	3.875	4.0	$\max\Delta R_{bb}$	36
+background	postselection	max_drbb	32	4.0	4.125	$\max\Delta R_{bb}$	14
+background	postselection	max_drbb	33	4.125	4.25	$\max\Delta R_{bb}$	3
+background	postselection	max_drbb	34	4.25	4.375	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	35	4.375	4.5	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	36	4.5	4.625	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	37	4.625	4.75	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	38	4.75	4.875	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	39	4.875	5.0	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	40	5.0	5.125	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	41	5.125	5.25	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	42	5.25	5.375	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	43	5.375	5.5	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	44	5.5	5.625	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	45	5.625	5.75	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	46	5.75	5.875	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	47	5.875	6.0	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	48	6.0	6.125	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	49	6.125	6.25	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	50	6.25	6.375	$\max\Delta R_{bb}$	0
+background	postselection	max_drbb	51	6.375	6.5	$\max\Delta R_{bb}$	0
+background	postselection	mhh	0	0.0	50.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	1	50.0	100.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	2	100.0	150.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	3	150.0	200.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	4	200.0	250.0	$m_{HH}$ [GeV]	3712
+background	postselection	mhh	5	250.0	300.0	$m_{HH}$ [GeV]	12186
+background	postselection	mhh	6	300.0	350.0	$m_{HH}$ [GeV]	11361
+background	postselection	mhh	7	350.0	400.0	$m_{HH}$ [GeV]	6921
+background	postselection	mhh	8	400.0	450.0	$m_{HH}$ [GeV]	4277
+background	postselection	mhh	9	450.0	500.0	$m_{HH}$ [GeV]	2646
+background	postselection	mhh	10	500.0	550.0	$m_{HH}$ [GeV]	1702
+background	postselection	mhh	11	550.0	600.0	$m_{HH}$ [GeV]	1108
+background	postselection	mhh	12	600.0	650.0	$m_{HH}$ [GeV]	793
+background	postselection	mhh	13	650.0	700.0	$m_{HH}$ [GeV]	508
+background	postselection	mhh	14	700.0	750.0	$m_{HH}$ [GeV]	411
+background	postselection	mhh	15	750.0	800.0	$m_{HH}$ [GeV]	300
+background	postselection	mhh	16	800.0	850.0	$m_{HH}$ [GeV]	195
+background	postselection	mhh	17	850.0	900.0	$m_{HH}$ [GeV]	164
+background	postselection	mhh	18	900.0	950.0	$m_{HH}$ [GeV]	101
+background	postselection	mhh	19	950.0	1000.0	$m_{HH}$ [GeV]	75
+background	postselection	mhh	20	1000.0	1050.0	$m_{HH}$ [GeV]	57
+background	postselection	mhh	21	1050.0	1100.0	$m_{HH}$ [GeV]	45
+background	postselection	mhh	22	1100.0	1150.0	$m_{HH}$ [GeV]	35
+background	postselection	mhh	23	1150.0	1200.0	$m_{HH}$ [GeV]	27
+background	postselection	mhh	24	1200.0	1250.0	$m_{HH}$ [GeV]	12
+background	postselection	mhh	25	1250.0	1300.0	$m_{HH}$ [GeV]	6
+background	postselection	mhh	26	1300.0	1350.0	$m_{HH}$ [GeV]	6
+background	postselection	mhh	27	1350.0	1400.0	$m_{HH}$ [GeV]	12
+background	postselection	mhh	28	1400.0	1450.0	$m_{HH}$ [GeV]	4
+background	postselection	mhh	29	1450.0	1500.0	$m_{HH}$ [GeV]	6
+background	postselection	mhh	30	1500.0	1550.0	$m_{HH}$ [GeV]	1
+background	postselection	mhh	31	1550.0	1600.0	$m_{HH}$ [GeV]	2
+background	postselection	mhh	32	1600.0	1650.0	$m_{HH}$ [GeV]	1
+background	postselection	mhh	33	1650.0	1700.0	$m_{HH}$ [GeV]	5
+background	postselection	mhh	34	1700.0	1750.0	$m_{HH}$ [GeV]	3
+background	postselection	mhh	35	1750.0	1800.0	$m_{HH}$ [GeV]	2
+background	postselection	mhh	36	1800.0	1850.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	37	1850.0	1900.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	38	1900.0	1950.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	39	1950.0	2000.0	$m_{HH}$ [GeV]	1
+background	postselection	mhh	40	2000.0	2050.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	41	2050.0	2100.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	42	2100.0	2150.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	43	2150.0	2200.0	$m_{HH}$ [GeV]	1
+background	postselection	mhh	44	2200.0	2250.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	45	2250.0	2300.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	46	2300.0	2350.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	47	2350.0	2400.0	$m_{HH}$ [GeV]	1
+background	postselection	mhh	48	2400.0	2450.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	49	2450.0	2500.0	$m_{HH}$ [GeV]	1
+background	postselection	mhh	50	2500.0	2550.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	51	2550.0	2600.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	52	2600.0	2650.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	53	2650.0	2700.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	54	2700.0	2750.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	55	2750.0	2800.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	56	2800.0	2850.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	57	2850.0	2900.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	58	2900.0	2950.0	$m_{HH}$ [GeV]	0
+background	postselection	mhh	59	2950.0	3000.0	$m_{HH}$ [GeV]	0
+background	postselection	r_hh_125_125	0	0.0	5.0	$R_{HH}(125,125)$	1699
+background	postselection	r_hh_125_125	1	5.0	10.0	$R_{HH}(125,125)$	4700
+background	postselection	r_hh_125_125	2	10.0	15.0	$R_{HH}(125,125)$	6612
+background	postselection	r_hh_125_125	3	15.0	20.0	$R_{HH}(125,125)$	7819
+background	postselection	r_hh_125_125	4	20.0	25.0	$R_{HH}(125,125)$	8247
+background	postselection	r_hh_125_125	5	25.0	30.0	$R_{HH}(125,125)$	8317
+background	postselection	r_hh_125_125	6	30.0	35.0	$R_{HH}(125,125)$	7559
+background	postselection	r_hh_125_125	7	35.0	40.0	$R_{HH}(125,125)$	1735
+background	postselection	r_hh_125_125	8	40.0	45.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	9	45.0	50.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	10	50.0	55.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	11	55.0	60.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	12	60.0	65.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	13	65.0	70.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	14	70.0	75.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	15	75.0	80.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	16	80.0	85.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	17	85.0	90.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	18	90.0	95.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	19	95.0	100.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	20	100.0	105.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	21	105.0	110.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	22	110.0	115.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	23	115.0	120.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	24	120.0	125.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	25	125.0	130.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	26	130.0	135.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	27	135.0	140.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	28	140.0	145.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	29	145.0	150.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	30	150.0	155.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	31	155.0	160.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	32	160.0	165.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	33	165.0	170.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	34	170.0	175.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	35	175.0	180.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	36	180.0	185.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	37	185.0	190.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	38	190.0	195.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	39	195.0	200.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	40	200.0	205.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	41	205.0	210.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	42	210.0	215.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	43	215.0	220.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	44	220.0	225.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	45	225.0	230.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	46	230.0	235.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	47	235.0	240.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	48	240.0	245.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	49	245.0	250.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	50	250.0	255.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	51	255.0	260.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	52	260.0	265.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	53	265.0	270.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	54	270.0	275.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	55	275.0	280.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	56	280.0	285.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	57	285.0	290.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	58	290.0	295.0	$R_{HH}(125,125)$	0
+background	postselection	r_hh_125_125	59	295.0	300.0	$R_{HH}(125,125)$	0
+background	preselection	abs_h_delta_eta	0	0.0	0.25	$|\Delta\eta(H_1,H_2)|$	12499
+background	preselection	abs_h_delta_eta	1	0.25	0.5	$|\Delta\eta(H_1,H_2)|$	12056
+background	preselection	abs_h_delta_eta	2	0.5	0.75	$|\Delta\eta(H_1,H_2)|$	11213
+background	preselection	abs_h_delta_eta	3	0.75	1.0	$|\Delta\eta(H_1,H_2)|$	10196
+background	preselection	abs_h_delta_eta	4	1.0	1.25	$|\Delta\eta(H_1,H_2)|$	9232
+background	preselection	abs_h_delta_eta	5	1.25	1.5	$|\Delta\eta(H_1,H_2)|$	8058
+background	preselection	abs_h_delta_eta	6	1.5	1.75	$|\Delta\eta(H_1,H_2)|$	6847
+background	preselection	abs_h_delta_eta	7	1.75	2.0	$|\Delta\eta(H_1,H_2)|$	5927
+background	preselection	abs_h_delta_eta	8	2.0	2.25	$|\Delta\eta(H_1,H_2)|$	4850
+background	preselection	abs_h_delta_eta	9	2.25	2.5	$|\Delta\eta(H_1,H_2)|$	4261
+background	preselection	abs_h_delta_eta	10	2.5	2.75	$|\Delta\eta(H_1,H_2)|$	3518
+background	preselection	abs_h_delta_eta	11	2.75	3.0	$|\Delta\eta(H_1,H_2)|$	2951
+background	preselection	abs_h_delta_eta	12	3.0	3.25	$|\Delta\eta(H_1,H_2)|$	2527
+background	preselection	abs_h_delta_eta	13	3.25	3.5	$|\Delta\eta(H_1,H_2)|$	1900
+background	preselection	abs_h_delta_eta	14	3.5	3.75	$|\Delta\eta(H_1,H_2)|$	1540
+background	preselection	abs_h_delta_eta	15	3.75	4.0	$|\Delta\eta(H_1,H_2)|$	1213
+background	preselection	abs_h_delta_eta	16	4.0	4.25	$|\Delta\eta(H_1,H_2)|$	890
+background	preselection	abs_h_delta_eta	17	4.25	4.5	$|\Delta\eta(H_1,H_2)|$	711
+background	preselection	abs_h_delta_eta	18	4.5	4.75	$|\Delta\eta(H_1,H_2)|$	549
+background	preselection	abs_h_delta_eta	19	4.75	5.0	$|\Delta\eta(H_1,H_2)|$	414
+background	preselection	abs_h_delta_eta	20	5.0	5.25	$|\Delta\eta(H_1,H_2)|$	289
+background	preselection	abs_h_delta_eta	21	5.25	5.5	$|\Delta\eta(H_1,H_2)|$	230
+background	preselection	abs_h_delta_eta	22	5.5	5.75	$|\Delta\eta(H_1,H_2)|$	146
+background	preselection	abs_h_delta_eta	23	5.75	6.0	$|\Delta\eta(H_1,H_2)|$	91
+background	preselection	abs_h_delta_eta	24	6.0	6.25	$|\Delta\eta(H_1,H_2)|$	83
+background	preselection	abs_h_delta_eta	25	6.25	6.5	$|\Delta\eta(H_1,H_2)|$	46
+background	preselection	abs_h_delta_eta	26	6.5	6.75	$|\Delta\eta(H_1,H_2)|$	29
+background	preselection	abs_h_delta_eta	27	6.75	7.0	$|\Delta\eta(H_1,H_2)|$	36
+background	preselection	abs_h_delta_eta	28	7.0	7.25	$|\Delta\eta(H_1,H_2)|$	20
+background	preselection	abs_h_delta_eta	29	7.25	7.5	$|\Delta\eta(H_1,H_2)|$	12
+background	preselection	abs_h_delta_eta	30	7.5	7.75	$|\Delta\eta(H_1,H_2)|$	6
+background	preselection	abs_h_delta_eta	31	7.75	8.0	$|\Delta\eta(H_1,H_2)|$	8
+background	preselection	abs_h_delta_eta	32	8.0	8.25	$|\Delta\eta(H_1,H_2)|$	10
+background	preselection	abs_h_delta_eta	33	8.25	8.5	$|\Delta\eta(H_1,H_2)|$	4
+background	preselection	abs_h_delta_eta	34	8.5	8.75	$|\Delta\eta(H_1,H_2)|$	1
+background	preselection	abs_h_delta_eta	35	8.75	9.0	$|\Delta\eta(H_1,H_2)|$	2
+background	preselection	abs_h_delta_eta	36	9.0	9.25	$|\Delta\eta(H_1,H_2)|$	2
+background	preselection	abs_h_delta_eta	37	9.25	9.5	$|\Delta\eta(H_1,H_2)|$	2
+background	preselection	abs_h_delta_eta	38	9.5	9.75	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	abs_h_delta_eta	39	9.75	10.0	$|\Delta\eta(H_1,H_2)|$	1
+background	preselection	abs_h_delta_eta	40	10.0	10.25	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	abs_h_delta_eta	41	10.25	10.5	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	abs_h_delta_eta	42	10.5	10.75	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	abs_h_delta_eta	43	10.75	11.0	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	abs_h_delta_eta	44	11.0	11.25	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	abs_h_delta_eta	45	11.25	11.5	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	abs_h_delta_eta	46	11.5	11.75	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	abs_h_delta_eta	47	11.75	12.0	$|\Delta\eta(H_1,H_2)|$	0
+background	preselection	h2_pt	0	0.0	25.0	$p_T(H_2)$ [GeV]	12521
+background	preselection	h2_pt	1	25.0	50.0	$p_T(H_2)$ [GeV]	20329
+background	preselection	h2_pt	2	50.0	75.0	$p_T(H_2)$ [GeV]	18259
+background	preselection	h2_pt	3	75.0	100.0	$p_T(H_2)$ [GeV]	14452
+background	preselection	h2_pt	4	100.0	125.0	$p_T(H_2)$ [GeV]	10829
+background	preselection	h2_pt	5	125.0	150.0	$p_T(H_2)$ [GeV]	7971
+background	preselection	h2_pt	6	150.0	175.0	$p_T(H_2)$ [GeV]	5772
+background	preselection	h2_pt	7	175.0	200.0	$p_T(H_2)$ [GeV]	3883
+background	preselection	h2_pt	8	200.0	225.0	$p_T(H_2)$ [GeV]	2608
+background	preselection	h2_pt	9	225.0	250.0	$p_T(H_2)$ [GeV]	1809
+background	preselection	h2_pt	10	250.0	275.0	$p_T(H_2)$ [GeV]	1147
+background	preselection	h2_pt	11	275.0	300.0	$p_T(H_2)$ [GeV]	786
+background	preselection	h2_pt	12	300.0	325.0	$p_T(H_2)$ [GeV]	497
+background	preselection	h2_pt	13	325.0	350.0	$p_T(H_2)$ [GeV]	424
+background	preselection	h2_pt	14	350.0	375.0	$p_T(H_2)$ [GeV]	286
+background	preselection	h2_pt	15	375.0	400.0	$p_T(H_2)$ [GeV]	203
+background	preselection	h2_pt	16	400.0	425.0	$p_T(H_2)$ [GeV]	124
+background	preselection	h2_pt	17	425.0	450.0	$p_T(H_2)$ [GeV]	86
+background	preselection	h2_pt	18	450.0	475.0	$p_T(H_2)$ [GeV]	75
+background	preselection	h2_pt	19	475.0	500.0	$p_T(H_2)$ [GeV]	73
+background	preselection	h2_pt	20	500.0	525.0	$p_T(H_2)$ [GeV]	45
+background	preselection	h2_pt	21	525.0	550.0	$p_T(H_2)$ [GeV]	35
+background	preselection	h2_pt	22	550.0	575.0	$p_T(H_2)$ [GeV]	26
+background	preselection	h2_pt	23	575.0	600.0	$p_T(H_2)$ [GeV]	20
+background	preselection	h2_pt	24	600.0	625.0	$p_T(H_2)$ [GeV]	14
+background	preselection	h2_pt	25	625.0	650.0	$p_T(H_2)$ [GeV]	8
+background	preselection	h2_pt	26	650.0	675.0	$p_T(H_2)$ [GeV]	11
+background	preselection	h2_pt	27	675.0	700.0	$p_T(H_2)$ [GeV]	11
+background	preselection	h2_pt	28	700.0	725.0	$p_T(H_2)$ [GeV]	13
+background	preselection	h2_pt	29	725.0	750.0	$p_T(H_2)$ [GeV]	5
+background	preselection	h2_pt	30	750.0	775.0	$p_T(H_2)$ [GeV]	9
+background	preselection	h2_pt	31	775.0	800.0	$p_T(H_2)$ [GeV]	3
+background	preselection	h2_pt	32	800.0	825.0	$p_T(H_2)$ [GeV]	5
+background	preselection	h2_pt	33	825.0	850.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	34	850.0	875.0	$p_T(H_2)$ [GeV]	5
+background	preselection	h2_pt	35	875.0	900.0	$p_T(H_2)$ [GeV]	4
+background	preselection	h2_pt	36	900.0	925.0	$p_T(H_2)$ [GeV]	2
+background	preselection	h2_pt	37	925.0	950.0	$p_T(H_2)$ [GeV]	5
+background	preselection	h2_pt	38	950.0	975.0	$p_T(H_2)$ [GeV]	1
+background	preselection	h2_pt	39	975.0	1000.0	$p_T(H_2)$ [GeV]	3
+background	preselection	h2_pt	40	1000.0	1025.0	$p_T(H_2)$ [GeV]	1
+background	preselection	h2_pt	41	1025.0	1050.0	$p_T(H_2)$ [GeV]	2
+background	preselection	h2_pt	42	1050.0	1075.0	$p_T(H_2)$ [GeV]	1
+background	preselection	h2_pt	43	1075.0	1100.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	44	1100.0	1125.0	$p_T(H_2)$ [GeV]	2
+background	preselection	h2_pt	45	1125.0	1150.0	$p_T(H_2)$ [GeV]	1
+background	preselection	h2_pt	46	1150.0	1175.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	47	1175.0	1200.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	48	1200.0	1225.0	$p_T(H_2)$ [GeV]	1
+background	preselection	h2_pt	49	1225.0	1250.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	50	1250.0	1275.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	51	1275.0	1300.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	52	1300.0	1325.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	53	1325.0	1350.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	54	1350.0	1375.0	$p_T(H_2)$ [GeV]	1
+background	preselection	h2_pt	55	1375.0	1400.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	56	1400.0	1425.0	$p_T(H_2)$ [GeV]	1
+background	preselection	h2_pt	57	1425.0	1450.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	58	1450.0	1475.0	$p_T(H_2)$ [GeV]	0
+background	preselection	h2_pt	59	1475.0	1500.0	$p_T(H_2)$ [GeV]	0
+background	preselection	ht_candidate_jets	0	0.0	50.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	1	50.0	100.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	2	100.0	150.0	$H_T^{\mathrm{cand.}}$ [GeV]	439
+background	preselection	ht_candidate_jets	3	150.0	200.0	$H_T^{\mathrm{cand.}}$ [GeV]	9044
+background	preselection	ht_candidate_jets	4	200.0	250.0	$H_T^{\mathrm{cand.}}$ [GeV]	19459
+background	preselection	ht_candidate_jets	5	250.0	300.0	$H_T^{\mathrm{cand.}}$ [GeV]	20654
+background	preselection	ht_candidate_jets	6	300.0	350.0	$H_T^{\mathrm{cand.}}$ [GeV]	15602
+background	preselection	ht_candidate_jets	7	350.0	400.0	$H_T^{\mathrm{cand.}}$ [GeV]	10915
+background	preselection	ht_candidate_jets	8	400.0	450.0	$H_T^{\mathrm{cand.}}$ [GeV]	7699
+background	preselection	ht_candidate_jets	9	450.0	500.0	$H_T^{\mathrm{cand.}}$ [GeV]	5371
+background	preselection	ht_candidate_jets	10	500.0	550.0	$H_T^{\mathrm{cand.}}$ [GeV]	3740
+background	preselection	ht_candidate_jets	11	550.0	600.0	$H_T^{\mathrm{cand.}}$ [GeV]	2614
+background	preselection	ht_candidate_jets	12	600.0	650.0	$H_T^{\mathrm{cand.}}$ [GeV]	1838
+background	preselection	ht_candidate_jets	13	650.0	700.0	$H_T^{\mathrm{cand.}}$ [GeV]	1291
+background	preselection	ht_candidate_jets	14	700.0	750.0	$H_T^{\mathrm{cand.}}$ [GeV]	928
+background	preselection	ht_candidate_jets	15	750.0	800.0	$H_T^{\mathrm{cand.}}$ [GeV]	679
+background	preselection	ht_candidate_jets	16	800.0	850.0	$H_T^{\mathrm{cand.}}$ [GeV]	493
+background	preselection	ht_candidate_jets	17	850.0	900.0	$H_T^{\mathrm{cand.}}$ [GeV]	382
+background	preselection	ht_candidate_jets	18	900.0	950.0	$H_T^{\mathrm{cand.}}$ [GeV]	251
+background	preselection	ht_candidate_jets	19	950.0	1000.0	$H_T^{\mathrm{cand.}}$ [GeV]	177
+background	preselection	ht_candidate_jets	20	1000.0	1050.0	$H_T^{\mathrm{cand.}}$ [GeV]	144
+background	preselection	ht_candidate_jets	21	1050.0	1100.0	$H_T^{\mathrm{cand.}}$ [GeV]	146
+background	preselection	ht_candidate_jets	22	1100.0	1150.0	$H_T^{\mathrm{cand.}}$ [GeV]	82
+background	preselection	ht_candidate_jets	23	1150.0	1200.0	$H_T^{\mathrm{cand.}}$ [GeV]	70
+background	preselection	ht_candidate_jets	24	1200.0	1250.0	$H_T^{\mathrm{cand.}}$ [GeV]	70
+background	preselection	ht_candidate_jets	25	1250.0	1300.0	$H_T^{\mathrm{cand.}}$ [GeV]	54
+background	preselection	ht_candidate_jets	26	1300.0	1350.0	$H_T^{\mathrm{cand.}}$ [GeV]	38
+background	preselection	ht_candidate_jets	27	1350.0	1400.0	$H_T^{\mathrm{cand.}}$ [GeV]	27
+background	preselection	ht_candidate_jets	28	1400.0	1450.0	$H_T^{\mathrm{cand.}}$ [GeV]	26
+background	preselection	ht_candidate_jets	29	1450.0	1500.0	$H_T^{\mathrm{cand.}}$ [GeV]	20
+background	preselection	ht_candidate_jets	30	1500.0	1550.0	$H_T^{\mathrm{cand.}}$ [GeV]	10
+background	preselection	ht_candidate_jets	31	1550.0	1600.0	$H_T^{\mathrm{cand.}}$ [GeV]	13
+background	preselection	ht_candidate_jets	32	1600.0	1650.0	$H_T^{\mathrm{cand.}}$ [GeV]	19
+background	preselection	ht_candidate_jets	33	1650.0	1700.0	$H_T^{\mathrm{cand.}}$ [GeV]	13
+background	preselection	ht_candidate_jets	34	1700.0	1750.0	$H_T^{\mathrm{cand.}}$ [GeV]	6
+background	preselection	ht_candidate_jets	35	1750.0	1800.0	$H_T^{\mathrm{cand.}}$ [GeV]	4
+background	preselection	ht_candidate_jets	36	1800.0	1850.0	$H_T^{\mathrm{cand.}}$ [GeV]	8
+background	preselection	ht_candidate_jets	37	1850.0	1900.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+background	preselection	ht_candidate_jets	38	1900.0	1950.0	$H_T^{\mathrm{cand.}}$ [GeV]	7
+background	preselection	ht_candidate_jets	39	1950.0	2000.0	$H_T^{\mathrm{cand.}}$ [GeV]	5
+background	preselection	ht_candidate_jets	40	2000.0	2050.0	$H_T^{\mathrm{cand.}}$ [GeV]	4
+background	preselection	ht_candidate_jets	41	2050.0	2100.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+background	preselection	ht_candidate_jets	42	2100.0	2150.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+background	preselection	ht_candidate_jets	43	2150.0	2200.0	$H_T^{\mathrm{cand.}}$ [GeV]	4
+background	preselection	ht_candidate_jets	44	2200.0	2250.0	$H_T^{\mathrm{cand.}}$ [GeV]	2
+background	preselection	ht_candidate_jets	45	2250.0	2300.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+background	preselection	ht_candidate_jets	46	2300.0	2350.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+background	preselection	ht_candidate_jets	47	2350.0	2400.0	$H_T^{\mathrm{cand.}}$ [GeV]	2
+background	preselection	ht_candidate_jets	48	2400.0	2450.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	49	2450.0	2500.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+background	preselection	ht_candidate_jets	50	2500.0	2550.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	51	2550.0	2600.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	52	2600.0	2650.0	$H_T^{\mathrm{cand.}}$ [GeV]	2
+background	preselection	ht_candidate_jets	53	2650.0	2700.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	54	2700.0	2750.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	55	2750.0	2800.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	56	2800.0	2850.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	57	2850.0	2900.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+background	preselection	ht_candidate_jets	58	2900.0	2950.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+background	preselection	ht_candidate_jets	59	2950.0	3000.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+background	preselection	max_drbb	0	0.0	0.125	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	1	0.125	0.25	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	2	0.25	0.375	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	3	0.375	0.5	$\max\Delta R_{bb}$	39
+background	preselection	max_drbb	4	0.5	0.625	$\max\Delta R_{bb}$	274
+background	preselection	max_drbb	5	0.625	0.75	$\max\Delta R_{bb}$	615
+background	preselection	max_drbb	6	0.75	0.875	$\max\Delta R_{bb}$	881
+background	preselection	max_drbb	7	0.875	1.0	$\max\Delta R_{bb}$	1176
+background	preselection	max_drbb	8	1.0	1.125	$\max\Delta R_{bb}$	1541
+background	preselection	max_drbb	9	1.125	1.25	$\max\Delta R_{bb}$	1971
+background	preselection	max_drbb	10	1.25	1.375	$\max\Delta R_{bb}$	2269
+background	preselection	max_drbb	11	1.375	1.5	$\max\Delta R_{bb}$	2693
+background	preselection	max_drbb	12	1.5	1.625	$\max\Delta R_{bb}$	3155
+background	preselection	max_drbb	13	1.625	1.75	$\max\Delta R_{bb}$	3638
+background	preselection	max_drbb	14	1.75	1.875	$\max\Delta R_{bb}$	4047
+background	preselection	max_drbb	15	1.875	2.0	$\max\Delta R_{bb}$	4441
+background	preselection	max_drbb	16	2.0	2.125	$\max\Delta R_{bb}$	4883
+background	preselection	max_drbb	17	2.125	2.25	$\max\Delta R_{bb}$	5238
+background	preselection	max_drbb	18	2.25	2.375	$\max\Delta R_{bb}$	5545
+background	preselection	max_drbb	19	2.375	2.5	$\max\Delta R_{bb}$	6046
+background	preselection	max_drbb	20	2.5	2.625	$\max\Delta R_{bb}$	6492
+background	preselection	max_drbb	21	2.625	2.75	$\max\Delta R_{bb}$	7161
+background	preselection	max_drbb	22	2.75	2.875	$\max\Delta R_{bb}$	7456
+background	preselection	max_drbb	23	2.875	3.0	$\max\Delta R_{bb}$	8104
+background	preselection	max_drbb	24	3.0	3.125	$\max\Delta R_{bb}$	8979
+background	preselection	max_drbb	25	3.125	3.25	$\max\Delta R_{bb}$	6565
+background	preselection	max_drbb	26	3.25	3.375	$\max\Delta R_{bb}$	3513
+background	preselection	max_drbb	27	3.375	3.5	$\max\Delta R_{bb}$	2138
+background	preselection	max_drbb	28	3.5	3.625	$\max\Delta R_{bb}$	1363
+background	preselection	max_drbb	29	3.625	3.75	$\max\Delta R_{bb}$	831
+background	preselection	max_drbb	30	3.75	3.875	$\max\Delta R_{bb}$	531
+background	preselection	max_drbb	31	3.875	4.0	$\max\Delta R_{bb}$	294
+background	preselection	max_drbb	32	4.0	4.125	$\max\Delta R_{bb}$	184
+background	preselection	max_drbb	33	4.125	4.25	$\max\Delta R_{bb}$	122
+background	preselection	max_drbb	34	4.25	4.375	$\max\Delta R_{bb}$	71
+background	preselection	max_drbb	35	4.375	4.5	$\max\Delta R_{bb}$	53
+background	preselection	max_drbb	36	4.5	4.625	$\max\Delta R_{bb}$	23
+background	preselection	max_drbb	37	4.625	4.75	$\max\Delta R_{bb}$	11
+background	preselection	max_drbb	38	4.75	4.875	$\max\Delta R_{bb}$	11
+background	preselection	max_drbb	39	4.875	5.0	$\max\Delta R_{bb}$	11
+background	preselection	max_drbb	40	5.0	5.125	$\max\Delta R_{bb}$	2
+background	preselection	max_drbb	41	5.125	5.25	$\max\Delta R_{bb}$	2
+background	preselection	max_drbb	42	5.25	5.375	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	43	5.375	5.5	$\max\Delta R_{bb}$	1
+background	preselection	max_drbb	44	5.5	5.625	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	45	5.625	5.75	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	46	5.75	5.875	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	47	5.875	6.0	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	48	6.0	6.125	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	49	6.125	6.25	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	50	6.25	6.375	$\max\Delta R_{bb}$	0
+background	preselection	max_drbb	51	6.375	6.5	$\max\Delta R_{bb}$	0
+background	preselection	mhh	0	0.0	50.0	$m_{HH}$ [GeV]	0
+background	preselection	mhh	1	50.0	100.0	$m_{HH}$ [GeV]	0
+background	preselection	mhh	2	100.0	150.0	$m_{HH}$ [GeV]	78
+background	preselection	mhh	3	150.0	200.0	$m_{HH}$ [GeV]	2123
+background	preselection	mhh	4	200.0	250.0	$m_{HH}$ [GeV]	8815
+background	preselection	mhh	5	250.0	300.0	$m_{HH}$ [GeV]	16047
+background	preselection	mhh	6	300.0	350.0	$m_{HH}$ [GeV]	16461
+background	preselection	mhh	7	350.0	400.0	$m_{HH}$ [GeV]	13196
+background	preselection	mhh	8	400.0	450.0	$m_{HH}$ [GeV]	10198
+background	preselection	mhh	9	450.0	500.0	$m_{HH}$ [GeV]	7925
+background	preselection	mhh	10	500.0	550.0	$m_{HH}$ [GeV]	6054
+background	preselection	mhh	11	550.0	600.0	$m_{HH}$ [GeV]	4634
+background	preselection	mhh	12	600.0	650.0	$m_{HH}$ [GeV]	3580
+background	preselection	mhh	13	650.0	700.0	$m_{HH}$ [GeV]	2751
+background	preselection	mhh	14	700.0	750.0	$m_{HH}$ [GeV]	2186
+background	preselection	mhh	15	750.0	800.0	$m_{HH}$ [GeV]	1668
+background	preselection	mhh	16	800.0	850.0	$m_{HH}$ [GeV]	1258
+background	preselection	mhh	17	850.0	900.0	$m_{HH}$ [GeV]	1075
+background	preselection	mhh	18	900.0	950.0	$m_{HH}$ [GeV]	777
+background	preselection	mhh	19	950.0	1000.0	$m_{HH}$ [GeV]	672
+background	preselection	mhh	20	1000.0	1050.0	$m_{HH}$ [GeV]	549
+background	preselection	mhh	21	1050.0	1100.0	$m_{HH}$ [GeV]	388
+background	preselection	mhh	22	1100.0	1150.0	$m_{HH}$ [GeV]	330
+background	preselection	mhh	23	1150.0	1200.0	$m_{HH}$ [GeV]	263
+background	preselection	mhh	24	1200.0	1250.0	$m_{HH}$ [GeV]	228
+background	preselection	mhh	25	1250.0	1300.0	$m_{HH}$ [GeV]	167
+background	preselection	mhh	26	1300.0	1350.0	$m_{HH}$ [GeV]	145
+background	preselection	mhh	27	1350.0	1400.0	$m_{HH}$ [GeV]	140
+background	preselection	mhh	28	1400.0	1450.0	$m_{HH}$ [GeV]	99
+background	preselection	mhh	29	1450.0	1500.0	$m_{HH}$ [GeV]	74
+background	preselection	mhh	30	1500.0	1550.0	$m_{HH}$ [GeV]	69
+background	preselection	mhh	31	1550.0	1600.0	$m_{HH}$ [GeV]	57
+background	preselection	mhh	32	1600.0	1650.0	$m_{HH}$ [GeV]	46
+background	preselection	mhh	33	1650.0	1700.0	$m_{HH}$ [GeV]	50
+background	preselection	mhh	34	1700.0	1750.0	$m_{HH}$ [GeV]	38
+background	preselection	mhh	35	1750.0	1800.0	$m_{HH}$ [GeV]	44
+background	preselection	mhh	36	1800.0	1850.0	$m_{HH}$ [GeV]	18
+background	preselection	mhh	37	1850.0	1900.0	$m_{HH}$ [GeV]	20
+background	preselection	mhh	38	1900.0	1950.0	$m_{HH}$ [GeV]	21
+background	preselection	mhh	39	1950.0	2000.0	$m_{HH}$ [GeV]	16
+background	preselection	mhh	40	2000.0	2050.0	$m_{HH}$ [GeV]	11
+background	preselection	mhh	41	2050.0	2100.0	$m_{HH}$ [GeV]	6
+background	preselection	mhh	42	2100.0	2150.0	$m_{HH}$ [GeV]	11
+background	preselection	mhh	43	2150.0	2200.0	$m_{HH}$ [GeV]	6
+background	preselection	mhh	44	2200.0	2250.0	$m_{HH}$ [GeV]	9
+background	preselection	mhh	45	2250.0	2300.0	$m_{HH}$ [GeV]	9
+background	preselection	mhh	46	2300.0	2350.0	$m_{HH}$ [GeV]	8
+background	preselection	mhh	47	2350.0	2400.0	$m_{HH}$ [GeV]	4
+background	preselection	mhh	48	2400.0	2450.0	$m_{HH}$ [GeV]	5
+background	preselection	mhh	49	2450.0	2500.0	$m_{HH}$ [GeV]	4
+background	preselection	mhh	50	2500.0	2550.0	$m_{HH}$ [GeV]	4
+background	preselection	mhh	51	2550.0	2600.0	$m_{HH}$ [GeV]	5
+background	preselection	mhh	52	2600.0	2650.0	$m_{HH}$ [GeV]	2
+background	preselection	mhh	53	2650.0	2700.0	$m_{HH}$ [GeV]	0
+background	preselection	mhh	54	2700.0	2750.0	$m_{HH}$ [GeV]	4
+background	preselection	mhh	55	2750.0	2800.0	$m_{HH}$ [GeV]	2
+background	preselection	mhh	56	2800.0	2850.0	$m_{HH}$ [GeV]	1
+background	preselection	mhh	57	2850.0	2900.0	$m_{HH}$ [GeV]	1
+background	preselection	mhh	58	2900.0	2950.0	$m_{HH}$ [GeV]	2
+background	preselection	mhh	59	2950.0	3000.0	$m_{HH}$ [GeV]	0
+background	preselection	r_hh_125_125	0	0.0	5.0	$R_{HH}(125,125)$	1712
+background	preselection	r_hh_125_125	1	5.0	10.0	$R_{HH}(125,125)$	4748
+background	preselection	r_hh_125_125	2	10.0	15.0	$R_{HH}(125,125)$	6665
+background	preselection	r_hh_125_125	3	15.0	20.0	$R_{HH}(125,125)$	7892
+background	preselection	r_hh_125_125	4	20.0	25.0	$R_{HH}(125,125)$	8377
+background	preselection	r_hh_125_125	5	25.0	30.0	$R_{HH}(125,125)$	8470
+background	preselection	r_hh_125_125	6	30.0	35.0	$R_{HH}(125,125)$	8079
+background	preselection	r_hh_125_125	7	35.0	40.0	$R_{HH}(125,125)$	7532
+background	preselection	r_hh_125_125	8	40.0	45.0	$R_{HH}(125,125)$	6786
+background	preselection	r_hh_125_125	9	45.0	50.0	$R_{HH}(125,125)$	5917
+background	preselection	r_hh_125_125	10	50.0	55.0	$R_{HH}(125,125)$	5201
+background	preselection	r_hh_125_125	11	55.0	60.0	$R_{HH}(125,125)$	4076
+background	preselection	r_hh_125_125	12	60.0	65.0	$R_{HH}(125,125)$	3412
+background	preselection	r_hh_125_125	13	65.0	70.0	$R_{HH}(125,125)$	2827
+background	preselection	r_hh_125_125	14	70.0	75.0	$R_{HH}(125,125)$	2359
+background	preselection	r_hh_125_125	15	75.0	80.0	$R_{HH}(125,125)$	1992
+background	preselection	r_hh_125_125	16	80.0	85.0	$R_{HH}(125,125)$	1624
+background	preselection	r_hh_125_125	17	85.0	90.0	$R_{HH}(125,125)$	1373
+background	preselection	r_hh_125_125	18	90.0	95.0	$R_{HH}(125,125)$	1193
+background	preselection	r_hh_125_125	19	95.0	100.0	$R_{HH}(125,125)$	1006
+background	preselection	r_hh_125_125	20	100.0	105.0	$R_{HH}(125,125)$	839
+background	preselection	r_hh_125_125	21	105.0	110.0	$R_{HH}(125,125)$	764
+background	preselection	r_hh_125_125	22	110.0	115.0	$R_{HH}(125,125)$	632
+background	preselection	r_hh_125_125	23	115.0	120.0	$R_{HH}(125,125)$	583
+background	preselection	r_hh_125_125	24	120.0	125.0	$R_{HH}(125,125)$	517
+background	preselection	r_hh_125_125	25	125.0	130.0	$R_{HH}(125,125)$	479
+background	preselection	r_hh_125_125	26	130.0	135.0	$R_{HH}(125,125)$	482
+background	preselection	r_hh_125_125	27	135.0	140.0	$R_{HH}(125,125)$	415
+background	preselection	r_hh_125_125	28	140.0	145.0	$R_{HH}(125,125)$	399
+background	preselection	r_hh_125_125	29	145.0	150.0	$R_{HH}(125,125)$	379
+background	preselection	r_hh_125_125	30	150.0	155.0	$R_{HH}(125,125)$	350
+background	preselection	r_hh_125_125	31	155.0	160.0	$R_{HH}(125,125)$	302
+background	preselection	r_hh_125_125	32	160.0	165.0	$R_{HH}(125,125)$	281
+background	preselection	r_hh_125_125	33	165.0	170.0	$R_{HH}(125,125)$	291
+background	preselection	r_hh_125_125	34	170.0	175.0	$R_{HH}(125,125)$	254
+background	preselection	r_hh_125_125	35	175.0	180.0	$R_{HH}(125,125)$	195
+background	preselection	r_hh_125_125	36	180.0	185.0	$R_{HH}(125,125)$	239
+background	preselection	r_hh_125_125	37	185.0	190.0	$R_{HH}(125,125)$	231
+background	preselection	r_hh_125_125	38	190.0	195.0	$R_{HH}(125,125)$	181
+background	preselection	r_hh_125_125	39	195.0	200.0	$R_{HH}(125,125)$	175
+background	preselection	r_hh_125_125	40	200.0	205.0	$R_{HH}(125,125)$	153
+background	preselection	r_hh_125_125	41	205.0	210.0	$R_{HH}(125,125)$	170
+background	preselection	r_hh_125_125	42	210.0	215.0	$R_{HH}(125,125)$	150
+background	preselection	r_hh_125_125	43	215.0	220.0	$R_{HH}(125,125)$	151
+background	preselection	r_hh_125_125	44	220.0	225.0	$R_{HH}(125,125)$	130
+background	preselection	r_hh_125_125	45	225.0	230.0	$R_{HH}(125,125)$	120
+background	preselection	r_hh_125_125	46	230.0	235.0	$R_{HH}(125,125)$	120
+background	preselection	r_hh_125_125	47	235.0	240.0	$R_{HH}(125,125)$	104
+background	preselection	r_hh_125_125	48	240.0	245.0	$R_{HH}(125,125)$	96
+background	preselection	r_hh_125_125	49	245.0	250.0	$R_{HH}(125,125)$	109
+background	preselection	r_hh_125_125	50	250.0	255.0	$R_{HH}(125,125)$	90
+background	preselection	r_hh_125_125	51	255.0	260.0	$R_{HH}(125,125)$	86
+background	preselection	r_hh_125_125	52	260.0	265.0	$R_{HH}(125,125)$	66
+background	preselection	r_hh_125_125	53	265.0	270.0	$R_{HH}(125,125)$	94
+background	preselection	r_hh_125_125	54	270.0	275.0	$R_{HH}(125,125)$	81
+background	preselection	r_hh_125_125	55	275.0	280.0	$R_{HH}(125,125)$	68
+background	preselection	r_hh_125_125	56	280.0	285.0	$R_{HH}(125,125)$	63
+background	preselection	r_hh_125_125	57	285.0	290.0	$R_{HH}(125,125)$	58
+background	preselection	r_hh_125_125	58	290.0	295.0	$R_{HH}(125,125)$	48
+background	preselection	r_hh_125_125	59	295.0	300.0	$R_{HH}(125,125)$	66
+signal	postselection	abs_h_delta_eta	0	0.0	0.25	$|\Delta\eta(H_1,H_2)|$	3075
+signal	postselection	abs_h_delta_eta	1	0.25	0.5	$|\Delta\eta(H_1,H_2)|$	2899
+signal	postselection	abs_h_delta_eta	2	0.5	0.75	$|\Delta\eta(H_1,H_2)|$	2597
+signal	postselection	abs_h_delta_eta	3	0.75	1.0	$|\Delta\eta(H_1,H_2)|$	2143
+signal	postselection	abs_h_delta_eta	4	1.0	1.25	$|\Delta\eta(H_1,H_2)|$	1844
+signal	postselection	abs_h_delta_eta	5	1.25	1.5	$|\Delta\eta(H_1,H_2)|$	1570
+signal	postselection	abs_h_delta_eta	6	1.5	1.75	$|\Delta\eta(H_1,H_2)|$	1288
+signal	postselection	abs_h_delta_eta	7	1.75	2.0	$|\Delta\eta(H_1,H_2)|$	1028
+signal	postselection	abs_h_delta_eta	8	2.0	2.25	$|\Delta\eta(H_1,H_2)|$	876
+signal	postselection	abs_h_delta_eta	9	2.25	2.5	$|\Delta\eta(H_1,H_2)|$	778
+signal	postselection	abs_h_delta_eta	10	2.5	2.75	$|\Delta\eta(H_1,H_2)|$	642
+signal	postselection	abs_h_delta_eta	11	2.75	3.0	$|\Delta\eta(H_1,H_2)|$	553
+signal	postselection	abs_h_delta_eta	12	3.0	3.25	$|\Delta\eta(H_1,H_2)|$	458
+signal	postselection	abs_h_delta_eta	13	3.25	3.5	$|\Delta\eta(H_1,H_2)|$	390
+signal	postselection	abs_h_delta_eta	14	3.5	3.75	$|\Delta\eta(H_1,H_2)|$	329
+signal	postselection	abs_h_delta_eta	15	3.75	4.0	$|\Delta\eta(H_1,H_2)|$	292
+signal	postselection	abs_h_delta_eta	16	4.0	4.25	$|\Delta\eta(H_1,H_2)|$	234
+signal	postselection	abs_h_delta_eta	17	4.25	4.5	$|\Delta\eta(H_1,H_2)|$	170
+signal	postselection	abs_h_delta_eta	18	4.5	4.75	$|\Delta\eta(H_1,H_2)|$	128
+signal	postselection	abs_h_delta_eta	19	4.75	5.0	$|\Delta\eta(H_1,H_2)|$	118
+signal	postselection	abs_h_delta_eta	20	5.0	5.25	$|\Delta\eta(H_1,H_2)|$	89
+signal	postselection	abs_h_delta_eta	21	5.25	5.5	$|\Delta\eta(H_1,H_2)|$	52
+signal	postselection	abs_h_delta_eta	22	5.5	5.75	$|\Delta\eta(H_1,H_2)|$	31
+signal	postselection	abs_h_delta_eta	23	5.75	6.0	$|\Delta\eta(H_1,H_2)|$	32
+signal	postselection	abs_h_delta_eta	24	6.0	6.25	$|\Delta\eta(H_1,H_2)|$	21
+signal	postselection	abs_h_delta_eta	25	6.25	6.5	$|\Delta\eta(H_1,H_2)|$	12
+signal	postselection	abs_h_delta_eta	26	6.5	6.75	$|\Delta\eta(H_1,H_2)|$	14
+signal	postselection	abs_h_delta_eta	27	6.75	7.0	$|\Delta\eta(H_1,H_2)|$	6
+signal	postselection	abs_h_delta_eta	28	7.0	7.25	$|\Delta\eta(H_1,H_2)|$	5
+signal	postselection	abs_h_delta_eta	29	7.25	7.5	$|\Delta\eta(H_1,H_2)|$	4
+signal	postselection	abs_h_delta_eta	30	7.5	7.75	$|\Delta\eta(H_1,H_2)|$	2
+signal	postselection	abs_h_delta_eta	31	7.75	8.0	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	32	8.0	8.25	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	33	8.25	8.5	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	34	8.5	8.75	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	35	8.75	9.0	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	36	9.0	9.25	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	37	9.25	9.5	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	38	9.5	9.75	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	39	9.75	10.0	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	40	10.0	10.25	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	41	10.25	10.5	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	42	10.5	10.75	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	43	10.75	11.0	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	44	11.0	11.25	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	45	11.25	11.5	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	46	11.5	11.75	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	abs_h_delta_eta	47	11.75	12.0	$|\Delta\eta(H_1,H_2)|$	0
+signal	postselection	h2_pt	0	0.0	25.0	$p_T(H_2)$ [GeV]	2685
+signal	postselection	h2_pt	1	25.0	50.0	$p_T(H_2)$ [GeV]	5083
+signal	postselection	h2_pt	2	50.0	75.0	$p_T(H_2)$ [GeV]	4296
+signal	postselection	h2_pt	3	75.0	100.0	$p_T(H_2)$ [GeV]	3108
+signal	postselection	h2_pt	4	100.0	125.0	$p_T(H_2)$ [GeV]	2118
+signal	postselection	h2_pt	5	125.0	150.0	$p_T(H_2)$ [GeV]	1387
+signal	postselection	h2_pt	6	150.0	175.0	$p_T(H_2)$ [GeV]	863
+signal	postselection	h2_pt	7	175.0	200.0	$p_T(H_2)$ [GeV]	599
+signal	postselection	h2_pt	8	200.0	225.0	$p_T(H_2)$ [GeV]	472
+signal	postselection	h2_pt	9	225.0	250.0	$p_T(H_2)$ [GeV]	309
+signal	postselection	h2_pt	10	250.0	275.0	$p_T(H_2)$ [GeV]	196
+signal	postselection	h2_pt	11	275.0	300.0	$p_T(H_2)$ [GeV]	159
+signal	postselection	h2_pt	12	300.0	325.0	$p_T(H_2)$ [GeV]	129
+signal	postselection	h2_pt	13	325.0	350.0	$p_T(H_2)$ [GeV]	67
+signal	postselection	h2_pt	14	350.0	375.0	$p_T(H_2)$ [GeV]	62
+signal	postselection	h2_pt	15	375.0	400.0	$p_T(H_2)$ [GeV]	42
+signal	postselection	h2_pt	16	400.0	425.0	$p_T(H_2)$ [GeV]	46
+signal	postselection	h2_pt	17	425.0	450.0	$p_T(H_2)$ [GeV]	23
+signal	postselection	h2_pt	18	450.0	475.0	$p_T(H_2)$ [GeV]	11
+signal	postselection	h2_pt	19	475.0	500.0	$p_T(H_2)$ [GeV]	12
+signal	postselection	h2_pt	20	500.0	525.0	$p_T(H_2)$ [GeV]	5
+signal	postselection	h2_pt	21	525.0	550.0	$p_T(H_2)$ [GeV]	4
+signal	postselection	h2_pt	22	550.0	575.0	$p_T(H_2)$ [GeV]	2
+signal	postselection	h2_pt	23	575.0	600.0	$p_T(H_2)$ [GeV]	2
+signal	postselection	h2_pt	24	600.0	625.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	25	625.0	650.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	26	650.0	675.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	27	675.0	700.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	28	700.0	725.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	29	725.0	750.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	30	750.0	775.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	31	775.0	800.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	32	800.0	825.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	33	825.0	850.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	34	850.0	875.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	35	875.0	900.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	36	900.0	925.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	37	925.0	950.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	38	950.0	975.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	39	975.0	1000.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	40	1000.0	1025.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	41	1025.0	1050.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	42	1050.0	1075.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	43	1075.0	1100.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	44	1100.0	1125.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	45	1125.0	1150.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	46	1150.0	1175.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	47	1175.0	1200.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	48	1200.0	1225.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	49	1225.0	1250.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	50	1250.0	1275.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	51	1275.0	1300.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	52	1300.0	1325.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	53	1325.0	1350.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	54	1350.0	1375.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	55	1375.0	1400.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	56	1400.0	1425.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	57	1425.0	1450.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	58	1450.0	1475.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	h2_pt	59	1475.0	1500.0	$p_T(H_2)$ [GeV]	0
+signal	postselection	ht_candidate_jets	0	0.0	50.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	1	50.0	100.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	2	100.0	150.0	$H_T^{\mathrm{cand.}}$ [GeV]	2
+signal	postselection	ht_candidate_jets	3	150.0	200.0	$H_T^{\mathrm{cand.}}$ [GeV]	992
+signal	postselection	ht_candidate_jets	4	200.0	250.0	$H_T^{\mathrm{cand.}}$ [GeV]	5780
+signal	postselection	ht_candidate_jets	5	250.0	300.0	$H_T^{\mathrm{cand.}}$ [GeV]	5889
+signal	postselection	ht_candidate_jets	6	300.0	350.0	$H_T^{\mathrm{cand.}}$ [GeV]	3320
+signal	postselection	ht_candidate_jets	7	350.0	400.0	$H_T^{\mathrm{cand.}}$ [GeV]	1957
+signal	postselection	ht_candidate_jets	8	400.0	450.0	$H_T^{\mathrm{cand.}}$ [GeV]	1151
+signal	postselection	ht_candidate_jets	9	450.0	500.0	$H_T^{\mathrm{cand.}}$ [GeV]	815
+signal	postselection	ht_candidate_jets	10	500.0	550.0	$H_T^{\mathrm{cand.}}$ [GeV]	534
+signal	postselection	ht_candidate_jets	11	550.0	600.0	$H_T^{\mathrm{cand.}}$ [GeV]	371
+signal	postselection	ht_candidate_jets	12	600.0	650.0	$H_T^{\mathrm{cand.}}$ [GeV]	239
+signal	postselection	ht_candidate_jets	13	650.0	700.0	$H_T^{\mathrm{cand.}}$ [GeV]	199
+signal	postselection	ht_candidate_jets	14	700.0	750.0	$H_T^{\mathrm{cand.}}$ [GeV]	109
+signal	postselection	ht_candidate_jets	15	750.0	800.0	$H_T^{\mathrm{cand.}}$ [GeV]	95
+signal	postselection	ht_candidate_jets	16	800.0	850.0	$H_T^{\mathrm{cand.}}$ [GeV]	65
+signal	postselection	ht_candidate_jets	17	850.0	900.0	$H_T^{\mathrm{cand.}}$ [GeV]	61
+signal	postselection	ht_candidate_jets	18	900.0	950.0	$H_T^{\mathrm{cand.}}$ [GeV]	33
+signal	postselection	ht_candidate_jets	19	950.0	1000.0	$H_T^{\mathrm{cand.}}$ [GeV]	29
+signal	postselection	ht_candidate_jets	20	1000.0	1050.0	$H_T^{\mathrm{cand.}}$ [GeV]	15
+signal	postselection	ht_candidate_jets	21	1050.0	1100.0	$H_T^{\mathrm{cand.}}$ [GeV]	11
+signal	postselection	ht_candidate_jets	22	1100.0	1150.0	$H_T^{\mathrm{cand.}}$ [GeV]	8
+signal	postselection	ht_candidate_jets	23	1150.0	1200.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+signal	postselection	ht_candidate_jets	24	1200.0	1250.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+signal	postselection	ht_candidate_jets	25	1250.0	1300.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	26	1300.0	1350.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+signal	postselection	ht_candidate_jets	27	1350.0	1400.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	28	1400.0	1450.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	29	1450.0	1500.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	30	1500.0	1550.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	31	1550.0	1600.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	32	1600.0	1650.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	33	1650.0	1700.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	34	1700.0	1750.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	35	1750.0	1800.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	36	1800.0	1850.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	37	1850.0	1900.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	38	1900.0	1950.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	39	1950.0	2000.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	40	2000.0	2050.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	41	2050.0	2100.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	42	2100.0	2150.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	43	2150.0	2200.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	44	2200.0	2250.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	45	2250.0	2300.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	46	2300.0	2350.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	47	2350.0	2400.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	48	2400.0	2450.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	49	2450.0	2500.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	50	2500.0	2550.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	51	2550.0	2600.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	52	2600.0	2650.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	53	2650.0	2700.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	54	2700.0	2750.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	55	2750.0	2800.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	56	2800.0	2850.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	57	2850.0	2900.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	58	2900.0	2950.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	ht_candidate_jets	59	2950.0	3000.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	postselection	max_drbb	0	0.0	0.125	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	1	0.125	0.25	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	2	0.25	0.375	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	3	0.375	0.5	$\max\Delta R_{bb}$	16
+signal	postselection	max_drbb	4	0.5	0.625	$\max\Delta R_{bb}$	82
+signal	postselection	max_drbb	5	0.625	0.75	$\max\Delta R_{bb}$	147
+signal	postselection	max_drbb	6	0.75	0.875	$\max\Delta R_{bb}$	242
+signal	postselection	max_drbb	7	0.875	1.0	$\max\Delta R_{bb}$	290
+signal	postselection	max_drbb	8	1.0	1.125	$\max\Delta R_{bb}$	419
+signal	postselection	max_drbb	9	1.125	1.25	$\max\Delta R_{bb}$	515
+signal	postselection	max_drbb	10	1.25	1.375	$\max\Delta R_{bb}$	601
+signal	postselection	max_drbb	11	1.375	1.5	$\max\Delta R_{bb}$	666
+signal	postselection	max_drbb	12	1.5	1.625	$\max\Delta R_{bb}$	741
+signal	postselection	max_drbb	13	1.625	1.75	$\max\Delta R_{bb}$	875
+signal	postselection	max_drbb	14	1.75	1.875	$\max\Delta R_{bb}$	1001
+signal	postselection	max_drbb	15	1.875	2.0	$\max\Delta R_{bb}$	1025
+signal	postselection	max_drbb	16	2.0	2.125	$\max\Delta R_{bb}$	1046
+signal	postselection	max_drbb	17	2.125	2.25	$\max\Delta R_{bb}$	1135
+signal	postselection	max_drbb	18	2.25	2.375	$\max\Delta R_{bb}$	1251
+signal	postselection	max_drbb	19	2.375	2.5	$\max\Delta R_{bb}$	1288
+signal	postselection	max_drbb	20	2.5	2.625	$\max\Delta R_{bb}$	1408
+signal	postselection	max_drbb	21	2.625	2.75	$\max\Delta R_{bb}$	1498
+signal	postselection	max_drbb	22	2.75	2.875	$\max\Delta R_{bb}$	1563
+signal	postselection	max_drbb	23	2.875	3.0	$\max\Delta R_{bb}$	1749
+signal	postselection	max_drbb	24	3.0	3.125	$\max\Delta R_{bb}$	1800
+signal	postselection	max_drbb	25	3.125	3.25	$\max\Delta R_{bb}$	1186
+signal	postselection	max_drbb	26	3.25	3.375	$\max\Delta R_{bb}$	581
+signal	postselection	max_drbb	27	3.375	3.5	$\max\Delta R_{bb}$	306
+signal	postselection	max_drbb	28	3.5	3.625	$\max\Delta R_{bb}$	154
+signal	postselection	max_drbb	29	3.625	3.75	$\max\Delta R_{bb}$	55
+signal	postselection	max_drbb	30	3.75	3.875	$\max\Delta R_{bb}$	24
+signal	postselection	max_drbb	31	3.875	4.0	$\max\Delta R_{bb}$	13
+signal	postselection	max_drbb	32	4.0	4.125	$\max\Delta R_{bb}$	3
+signal	postselection	max_drbb	33	4.125	4.25	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	34	4.25	4.375	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	35	4.375	4.5	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	36	4.5	4.625	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	37	4.625	4.75	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	38	4.75	4.875	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	39	4.875	5.0	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	40	5.0	5.125	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	41	5.125	5.25	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	42	5.25	5.375	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	43	5.375	5.5	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	44	5.5	5.625	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	45	5.625	5.75	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	46	5.75	5.875	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	47	5.875	6.0	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	48	6.0	6.125	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	49	6.125	6.25	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	50	6.25	6.375	$\max\Delta R_{bb}$	0
+signal	postselection	max_drbb	51	6.375	6.5	$\max\Delta R_{bb}$	0
+signal	postselection	mhh	0	0.0	50.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	1	50.0	100.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	2	100.0	150.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	3	150.0	200.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	4	200.0	250.0	$m_{HH}$ [GeV]	1970
+signal	postselection	mhh	5	250.0	300.0	$m_{HH}$ [GeV]	5426
+signal	postselection	mhh	6	300.0	350.0	$m_{HH}$ [GeV]	4423
+signal	postselection	mhh	7	350.0	400.0	$m_{HH}$ [GeV]	2834
+signal	postselection	mhh	8	400.0	450.0	$m_{HH}$ [GeV]	1889
+signal	postselection	mhh	9	450.0	500.0	$m_{HH}$ [GeV]	1277
+signal	postselection	mhh	10	500.0	550.0	$m_{HH}$ [GeV]	958
+signal	postselection	mhh	11	550.0	600.0	$m_{HH}$ [GeV]	696
+signal	postselection	mhh	12	600.0	650.0	$m_{HH}$ [GeV]	481
+signal	postselection	mhh	13	650.0	700.0	$m_{HH}$ [GeV]	399
+signal	postselection	mhh	14	700.0	750.0	$m_{HH}$ [GeV]	290
+signal	postselection	mhh	15	750.0	800.0	$m_{HH}$ [GeV]	236
+signal	postselection	mhh	16	800.0	850.0	$m_{HH}$ [GeV]	176
+signal	postselection	mhh	17	850.0	900.0	$m_{HH}$ [GeV]	149
+signal	postselection	mhh	18	900.0	950.0	$m_{HH}$ [GeV]	103
+signal	postselection	mhh	19	950.0	1000.0	$m_{HH}$ [GeV]	85
+signal	postselection	mhh	20	1000.0	1050.0	$m_{HH}$ [GeV]	72
+signal	postselection	mhh	21	1050.0	1100.0	$m_{HH}$ [GeV]	48
+signal	postselection	mhh	22	1100.0	1150.0	$m_{HH}$ [GeV]	33
+signal	postselection	mhh	23	1150.0	1200.0	$m_{HH}$ [GeV]	34
+signal	postselection	mhh	24	1200.0	1250.0	$m_{HH}$ [GeV]	24
+signal	postselection	mhh	25	1250.0	1300.0	$m_{HH}$ [GeV]	12
+signal	postselection	mhh	26	1300.0	1350.0	$m_{HH}$ [GeV]	15
+signal	postselection	mhh	27	1350.0	1400.0	$m_{HH}$ [GeV]	12
+signal	postselection	mhh	28	1400.0	1450.0	$m_{HH}$ [GeV]	9
+signal	postselection	mhh	29	1450.0	1500.0	$m_{HH}$ [GeV]	7
+signal	postselection	mhh	30	1500.0	1550.0	$m_{HH}$ [GeV]	5
+signal	postselection	mhh	31	1550.0	1600.0	$m_{HH}$ [GeV]	2
+signal	postselection	mhh	32	1600.0	1650.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	33	1650.0	1700.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	34	1700.0	1750.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	35	1750.0	1800.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	36	1800.0	1850.0	$m_{HH}$ [GeV]	2
+signal	postselection	mhh	37	1850.0	1900.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	38	1900.0	1950.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	39	1950.0	2000.0	$m_{HH}$ [GeV]	2
+signal	postselection	mhh	40	2000.0	2050.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	41	2050.0	2100.0	$m_{HH}$ [GeV]	2
+signal	postselection	mhh	42	2100.0	2150.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	43	2150.0	2200.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	44	2200.0	2250.0	$m_{HH}$ [GeV]	1
+signal	postselection	mhh	45	2250.0	2300.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	46	2300.0	2350.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	47	2350.0	2400.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	48	2400.0	2450.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	49	2450.0	2500.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	50	2500.0	2550.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	51	2550.0	2600.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	52	2600.0	2650.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	53	2650.0	2700.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	54	2700.0	2750.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	55	2750.0	2800.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	56	2800.0	2850.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	57	2850.0	2900.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	58	2900.0	2950.0	$m_{HH}$ [GeV]	0
+signal	postselection	mhh	59	2950.0	3000.0	$m_{HH}$ [GeV]	0
+signal	postselection	r_hh_125_125	0	0.0	5.0	$R_{HH}(125,125)$	916
+signal	postselection	r_hh_125_125	1	5.0	10.0	$R_{HH}(125,125)$	2584
+signal	postselection	r_hh_125_125	2	10.0	15.0	$R_{HH}(125,125)$	3629
+signal	postselection	r_hh_125_125	3	15.0	20.0	$R_{HH}(125,125)$	3984
+signal	postselection	r_hh_125_125	4	20.0	25.0	$R_{HH}(125,125)$	3785
+signal	postselection	r_hh_125_125	5	25.0	30.0	$R_{HH}(125,125)$	3381
+signal	postselection	r_hh_125_125	6	30.0	35.0	$R_{HH}(125,125)$	2856
+signal	postselection	r_hh_125_125	7	35.0	40.0	$R_{HH}(125,125)$	545
+signal	postselection	r_hh_125_125	8	40.0	45.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	9	45.0	50.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	10	50.0	55.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	11	55.0	60.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	12	60.0	65.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	13	65.0	70.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	14	70.0	75.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	15	75.0	80.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	16	80.0	85.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	17	85.0	90.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	18	90.0	95.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	19	95.0	100.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	20	100.0	105.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	21	105.0	110.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	22	110.0	115.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	23	115.0	120.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	24	120.0	125.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	25	125.0	130.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	26	130.0	135.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	27	135.0	140.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	28	140.0	145.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	29	145.0	150.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	30	150.0	155.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	31	155.0	160.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	32	160.0	165.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	33	165.0	170.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	34	170.0	175.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	35	175.0	180.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	36	180.0	185.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	37	185.0	190.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	38	190.0	195.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	39	195.0	200.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	40	200.0	205.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	41	205.0	210.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	42	210.0	215.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	43	215.0	220.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	44	220.0	225.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	45	225.0	230.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	46	230.0	235.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	47	235.0	240.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	48	240.0	245.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	49	245.0	250.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	50	250.0	255.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	51	255.0	260.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	52	260.0	265.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	53	265.0	270.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	54	270.0	275.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	55	275.0	280.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	56	280.0	285.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	57	285.0	290.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	58	290.0	295.0	$R_{HH}(125,125)$	0
+signal	postselection	r_hh_125_125	59	295.0	300.0	$R_{HH}(125,125)$	0
+signal	preselection	abs_h_delta_eta	0	0.0	0.25	$|\Delta\eta(H_1,H_2)|$	4728
+signal	preselection	abs_h_delta_eta	1	0.25	0.5	$|\Delta\eta(H_1,H_2)|$	4550
+signal	preselection	abs_h_delta_eta	2	0.5	0.75	$|\Delta\eta(H_1,H_2)|$	4093
+signal	preselection	abs_h_delta_eta	3	0.75	1.0	$|\Delta\eta(H_1,H_2)|$	3501
+signal	preselection	abs_h_delta_eta	4	1.0	1.25	$|\Delta\eta(H_1,H_2)|$	2976
+signal	preselection	abs_h_delta_eta	5	1.25	1.5	$|\Delta\eta(H_1,H_2)|$	2547
+signal	preselection	abs_h_delta_eta	6	1.5	1.75	$|\Delta\eta(H_1,H_2)|$	2221
+signal	preselection	abs_h_delta_eta	7	1.75	2.0	$|\Delta\eta(H_1,H_2)|$	1775
+signal	preselection	abs_h_delta_eta	8	2.0	2.25	$|\Delta\eta(H_1,H_2)|$	1597
+signal	preselection	abs_h_delta_eta	9	2.25	2.5	$|\Delta\eta(H_1,H_2)|$	1432
+signal	preselection	abs_h_delta_eta	10	2.5	2.75	$|\Delta\eta(H_1,H_2)|$	1293
+signal	preselection	abs_h_delta_eta	11	2.75	3.0	$|\Delta\eta(H_1,H_2)|$	1054
+signal	preselection	abs_h_delta_eta	12	3.0	3.25	$|\Delta\eta(H_1,H_2)|$	945
+signal	preselection	abs_h_delta_eta	13	3.25	3.5	$|\Delta\eta(H_1,H_2)|$	838
+signal	preselection	abs_h_delta_eta	14	3.5	3.75	$|\Delta\eta(H_1,H_2)|$	698
+signal	preselection	abs_h_delta_eta	15	3.75	4.0	$|\Delta\eta(H_1,H_2)|$	608
+signal	preselection	abs_h_delta_eta	16	4.0	4.25	$|\Delta\eta(H_1,H_2)|$	483
+signal	preselection	abs_h_delta_eta	17	4.25	4.5	$|\Delta\eta(H_1,H_2)|$	375
+signal	preselection	abs_h_delta_eta	18	4.5	4.75	$|\Delta\eta(H_1,H_2)|$	332
+signal	preselection	abs_h_delta_eta	19	4.75	5.0	$|\Delta\eta(H_1,H_2)|$	264
+signal	preselection	abs_h_delta_eta	20	5.0	5.25	$|\Delta\eta(H_1,H_2)|$	191
+signal	preselection	abs_h_delta_eta	21	5.25	5.5	$|\Delta\eta(H_1,H_2)|$	131
+signal	preselection	abs_h_delta_eta	22	5.5	5.75	$|\Delta\eta(H_1,H_2)|$	115
+signal	preselection	abs_h_delta_eta	23	5.75	6.0	$|\Delta\eta(H_1,H_2)|$	78
+signal	preselection	abs_h_delta_eta	24	6.0	6.25	$|\Delta\eta(H_1,H_2)|$	56
+signal	preselection	abs_h_delta_eta	25	6.25	6.5	$|\Delta\eta(H_1,H_2)|$	40
+signal	preselection	abs_h_delta_eta	26	6.5	6.75	$|\Delta\eta(H_1,H_2)|$	32
+signal	preselection	abs_h_delta_eta	27	6.75	7.0	$|\Delta\eta(H_1,H_2)|$	21
+signal	preselection	abs_h_delta_eta	28	7.0	7.25	$|\Delta\eta(H_1,H_2)|$	14
+signal	preselection	abs_h_delta_eta	29	7.25	7.5	$|\Delta\eta(H_1,H_2)|$	15
+signal	preselection	abs_h_delta_eta	30	7.5	7.75	$|\Delta\eta(H_1,H_2)|$	3
+signal	preselection	abs_h_delta_eta	31	7.75	8.0	$|\Delta\eta(H_1,H_2)|$	2
+signal	preselection	abs_h_delta_eta	32	8.0	8.25	$|\Delta\eta(H_1,H_2)|$	2
+signal	preselection	abs_h_delta_eta	33	8.25	8.5	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	34	8.5	8.75	$|\Delta\eta(H_1,H_2)|$	1
+signal	preselection	abs_h_delta_eta	35	8.75	9.0	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	36	9.0	9.25	$|\Delta\eta(H_1,H_2)|$	1
+signal	preselection	abs_h_delta_eta	37	9.25	9.5	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	38	9.5	9.75	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	39	9.75	10.0	$|\Delta\eta(H_1,H_2)|$	1
+signal	preselection	abs_h_delta_eta	40	10.0	10.25	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	41	10.25	10.5	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	42	10.5	10.75	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	43	10.75	11.0	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	44	11.0	11.25	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	45	11.25	11.5	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	46	11.5	11.75	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	abs_h_delta_eta	47	11.75	12.0	$|\Delta\eta(H_1,H_2)|$	0
+signal	preselection	h2_pt	0	0.0	25.0	$p_T(H_2)$ [GeV]	4344
+signal	preselection	h2_pt	1	25.0	50.0	$p_T(H_2)$ [GeV]	7625
+signal	preselection	h2_pt	2	50.0	75.0	$p_T(H_2)$ [GeV]	6785
+signal	preselection	h2_pt	3	75.0	100.0	$p_T(H_2)$ [GeV]	5247
+signal	preselection	h2_pt	4	100.0	125.0	$p_T(H_2)$ [GeV]	3839
+signal	preselection	h2_pt	5	125.0	150.0	$p_T(H_2)$ [GeV]	2794
+signal	preselection	h2_pt	6	150.0	175.0	$p_T(H_2)$ [GeV]	1841
+signal	preselection	h2_pt	7	175.0	200.0	$p_T(H_2)$ [GeV]	1305
+signal	preselection	h2_pt	8	200.0	225.0	$p_T(H_2)$ [GeV]	942
+signal	preselection	h2_pt	9	225.0	250.0	$p_T(H_2)$ [GeV]	643
+signal	preselection	h2_pt	10	250.0	275.0	$p_T(H_2)$ [GeV]	436
+signal	preselection	h2_pt	11	275.0	300.0	$p_T(H_2)$ [GeV]	330
+signal	preselection	h2_pt	12	300.0	325.0	$p_T(H_2)$ [GeV]	257
+signal	preselection	h2_pt	13	325.0	350.0	$p_T(H_2)$ [GeV]	151
+signal	preselection	h2_pt	14	350.0	375.0	$p_T(H_2)$ [GeV]	114
+signal	preselection	h2_pt	15	375.0	400.0	$p_T(H_2)$ [GeV]	89
+signal	preselection	h2_pt	16	400.0	425.0	$p_T(H_2)$ [GeV]	86
+signal	preselection	h2_pt	17	425.0	450.0	$p_T(H_2)$ [GeV]	51
+signal	preselection	h2_pt	18	450.0	475.0	$p_T(H_2)$ [GeV]	35
+signal	preselection	h2_pt	19	475.0	500.0	$p_T(H_2)$ [GeV]	31
+signal	preselection	h2_pt	20	500.0	525.0	$p_T(H_2)$ [GeV]	17
+signal	preselection	h2_pt	21	525.0	550.0	$p_T(H_2)$ [GeV]	14
+signal	preselection	h2_pt	22	550.0	575.0	$p_T(H_2)$ [GeV]	12
+signal	preselection	h2_pt	23	575.0	600.0	$p_T(H_2)$ [GeV]	4
+signal	preselection	h2_pt	24	600.0	625.0	$p_T(H_2)$ [GeV]	4
+signal	preselection	h2_pt	25	625.0	650.0	$p_T(H_2)$ [GeV]	2
+signal	preselection	h2_pt	26	650.0	675.0	$p_T(H_2)$ [GeV]	3
+signal	preselection	h2_pt	27	675.0	700.0	$p_T(H_2)$ [GeV]	1
+signal	preselection	h2_pt	28	700.0	725.0	$p_T(H_2)$ [GeV]	3
+signal	preselection	h2_pt	29	725.0	750.0	$p_T(H_2)$ [GeV]	1
+signal	preselection	h2_pt	30	750.0	775.0	$p_T(H_2)$ [GeV]	1
+signal	preselection	h2_pt	31	775.0	800.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	32	800.0	825.0	$p_T(H_2)$ [GeV]	1
+signal	preselection	h2_pt	33	825.0	850.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	34	850.0	875.0	$p_T(H_2)$ [GeV]	3
+signal	preselection	h2_pt	35	875.0	900.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	36	900.0	925.0	$p_T(H_2)$ [GeV]	1
+signal	preselection	h2_pt	37	925.0	950.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	38	950.0	975.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	39	975.0	1000.0	$p_T(H_2)$ [GeV]	1
+signal	preselection	h2_pt	40	1000.0	1025.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	41	1025.0	1050.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	42	1050.0	1075.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	43	1075.0	1100.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	44	1100.0	1125.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	45	1125.0	1150.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	46	1150.0	1175.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	47	1175.0	1200.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	48	1200.0	1225.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	49	1225.0	1250.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	50	1250.0	1275.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	51	1275.0	1300.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	52	1300.0	1325.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	53	1325.0	1350.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	54	1350.0	1375.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	55	1375.0	1400.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	56	1400.0	1425.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	57	1425.0	1450.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	58	1450.0	1475.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	h2_pt	59	1475.0	1500.0	$p_T(H_2)$ [GeV]	0
+signal	preselection	ht_candidate_jets	0	0.0	50.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	1	50.0	100.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	2	100.0	150.0	$H_T^{\mathrm{cand.}}$ [GeV]	53
+signal	preselection	ht_candidate_jets	3	150.0	200.0	$H_T^{\mathrm{cand.}}$ [GeV]	2511
+signal	preselection	ht_candidate_jets	4	200.0	250.0	$H_T^{\mathrm{cand.}}$ [GeV]	8093
+signal	preselection	ht_candidate_jets	5	250.0	300.0	$H_T^{\mathrm{cand.}}$ [GeV]	8337
+signal	preselection	ht_candidate_jets	6	300.0	350.0	$H_T^{\mathrm{cand.}}$ [GeV]	5688
+signal	preselection	ht_candidate_jets	7	350.0	400.0	$H_T^{\mathrm{cand.}}$ [GeV]	3822
+signal	preselection	ht_candidate_jets	8	400.0	450.0	$H_T^{\mathrm{cand.}}$ [GeV]	2525
+signal	preselection	ht_candidate_jets	9	450.0	500.0	$H_T^{\mathrm{cand.}}$ [GeV]	1767
+signal	preselection	ht_candidate_jets	10	500.0	550.0	$H_T^{\mathrm{cand.}}$ [GeV]	1201
+signal	preselection	ht_candidate_jets	11	550.0	600.0	$H_T^{\mathrm{cand.}}$ [GeV]	804
+signal	preselection	ht_candidate_jets	12	600.0	650.0	$H_T^{\mathrm{cand.}}$ [GeV]	580
+signal	preselection	ht_candidate_jets	13	650.0	700.0	$H_T^{\mathrm{cand.}}$ [GeV]	429
+signal	preselection	ht_candidate_jets	14	700.0	750.0	$H_T^{\mathrm{cand.}}$ [GeV]	275
+signal	preselection	ht_candidate_jets	15	750.0	800.0	$H_T^{\mathrm{cand.}}$ [GeV]	247
+signal	preselection	ht_candidate_jets	16	800.0	850.0	$H_T^{\mathrm{cand.}}$ [GeV]	162
+signal	preselection	ht_candidate_jets	17	850.0	900.0	$H_T^{\mathrm{cand.}}$ [GeV]	133
+signal	preselection	ht_candidate_jets	18	900.0	950.0	$H_T^{\mathrm{cand.}}$ [GeV]	95
+signal	preselection	ht_candidate_jets	19	950.0	1000.0	$H_T^{\mathrm{cand.}}$ [GeV]	78
+signal	preselection	ht_candidate_jets	20	1000.0	1050.0	$H_T^{\mathrm{cand.}}$ [GeV]	53
+signal	preselection	ht_candidate_jets	21	1050.0	1100.0	$H_T^{\mathrm{cand.}}$ [GeV]	37
+signal	preselection	ht_candidate_jets	22	1100.0	1150.0	$H_T^{\mathrm{cand.}}$ [GeV]	31
+signal	preselection	ht_candidate_jets	23	1150.0	1200.0	$H_T^{\mathrm{cand.}}$ [GeV]	16
+signal	preselection	ht_candidate_jets	24	1200.0	1250.0	$H_T^{\mathrm{cand.}}$ [GeV]	11
+signal	preselection	ht_candidate_jets	25	1250.0	1300.0	$H_T^{\mathrm{cand.}}$ [GeV]	16
+signal	preselection	ht_candidate_jets	26	1300.0	1350.0	$H_T^{\mathrm{cand.}}$ [GeV]	11
+signal	preselection	ht_candidate_jets	27	1350.0	1400.0	$H_T^{\mathrm{cand.}}$ [GeV]	10
+signal	preselection	ht_candidate_jets	28	1400.0	1450.0	$H_T^{\mathrm{cand.}}$ [GeV]	7
+signal	preselection	ht_candidate_jets	29	1450.0	1500.0	$H_T^{\mathrm{cand.}}$ [GeV]	5
+signal	preselection	ht_candidate_jets	30	1500.0	1550.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+signal	preselection	ht_candidate_jets	31	1550.0	1600.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+signal	preselection	ht_candidate_jets	32	1600.0	1650.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+signal	preselection	ht_candidate_jets	33	1650.0	1700.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	34	1700.0	1750.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+signal	preselection	ht_candidate_jets	35	1750.0	1800.0	$H_T^{\mathrm{cand.}}$ [GeV]	3
+signal	preselection	ht_candidate_jets	36	1800.0	1850.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	37	1850.0	1900.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	38	1900.0	1950.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	39	1950.0	2000.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+signal	preselection	ht_candidate_jets	40	2000.0	2050.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	41	2050.0	2100.0	$H_T^{\mathrm{cand.}}$ [GeV]	2
+signal	preselection	ht_candidate_jets	42	2100.0	2150.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+signal	preselection	ht_candidate_jets	43	2150.0	2200.0	$H_T^{\mathrm{cand.}}$ [GeV]	1
+signal	preselection	ht_candidate_jets	44	2200.0	2250.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	45	2250.0	2300.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	46	2300.0	2350.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	47	2350.0	2400.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	48	2400.0	2450.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	49	2450.0	2500.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	50	2500.0	2550.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	51	2550.0	2600.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	52	2600.0	2650.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	53	2650.0	2700.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	54	2700.0	2750.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	55	2750.0	2800.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	56	2800.0	2850.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	57	2850.0	2900.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	58	2900.0	2950.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	ht_candidate_jets	59	2950.0	3000.0	$H_T^{\mathrm{cand.}}$ [GeV]	0
+signal	preselection	max_drbb	0	0.0	0.125	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	1	0.125	0.25	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	2	0.25	0.375	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	3	0.375	0.5	$\max\Delta R_{bb}$	22
+signal	preselection	max_drbb	4	0.5	0.625	$\max\Delta R_{bb}$	133
+signal	preselection	max_drbb	5	0.625	0.75	$\max\Delta R_{bb}$	250
+signal	preselection	max_drbb	6	0.75	0.875	$\max\Delta R_{bb}$	400
+signal	preselection	max_drbb	7	0.875	1.0	$\max\Delta R_{bb}$	535
+signal	preselection	max_drbb	8	1.0	1.125	$\max\Delta R_{bb}$	742
+signal	preselection	max_drbb	9	1.125	1.25	$\max\Delta R_{bb}$	884
+signal	preselection	max_drbb	10	1.25	1.375	$\max\Delta R_{bb}$	1036
+signal	preselection	max_drbb	11	1.375	1.5	$\max\Delta R_{bb}$	1144
+signal	preselection	max_drbb	12	1.5	1.625	$\max\Delta R_{bb}$	1220
+signal	preselection	max_drbb	13	1.625	1.75	$\max\Delta R_{bb}$	1414
+signal	preselection	max_drbb	14	1.75	1.875	$\max\Delta R_{bb}$	1574
+signal	preselection	max_drbb	15	1.875	2.0	$\max\Delta R_{bb}$	1605
+signal	preselection	max_drbb	16	2.0	2.125	$\max\Delta R_{bb}$	1694
+signal	preselection	max_drbb	17	2.125	2.25	$\max\Delta R_{bb}$	1857
+signal	preselection	max_drbb	18	2.25	2.375	$\max\Delta R_{bb}$	2067
+signal	preselection	max_drbb	19	2.375	2.5	$\max\Delta R_{bb}$	2110
+signal	preselection	max_drbb	20	2.5	2.625	$\max\Delta R_{bb}$	2292
+signal	preselection	max_drbb	21	2.625	2.75	$\max\Delta R_{bb}$	2458
+signal	preselection	max_drbb	22	2.75	2.875	$\max\Delta R_{bb}$	2641
+signal	preselection	max_drbb	23	2.875	3.0	$\max\Delta R_{bb}$	2924
+signal	preselection	max_drbb	24	3.0	3.125	$\max\Delta R_{bb}$	3032
+signal	preselection	max_drbb	25	3.125	3.25	$\max\Delta R_{bb}$	2035
+signal	preselection	max_drbb	26	3.25	3.375	$\max\Delta R_{bb}$	1112
+signal	preselection	max_drbb	27	3.375	3.5	$\max\Delta R_{bb}$	666
+signal	preselection	max_drbb	28	3.5	3.625	$\max\Delta R_{bb}$	427
+signal	preselection	max_drbb	29	3.625	3.75	$\max\Delta R_{bb}$	252
+signal	preselection	max_drbb	30	3.75	3.875	$\max\Delta R_{bb}$	144
+signal	preselection	max_drbb	31	3.875	4.0	$\max\Delta R_{bb}$	109
+signal	preselection	max_drbb	32	4.0	4.125	$\max\Delta R_{bb}$	80
+signal	preselection	max_drbb	33	4.125	4.25	$\max\Delta R_{bb}$	44
+signal	preselection	max_drbb	34	4.25	4.375	$\max\Delta R_{bb}$	32
+signal	preselection	max_drbb	35	4.375	4.5	$\max\Delta R_{bb}$	29
+signal	preselection	max_drbb	36	4.5	4.625	$\max\Delta R_{bb}$	21
+signal	preselection	max_drbb	37	4.625	4.75	$\max\Delta R_{bb}$	12
+signal	preselection	max_drbb	38	4.75	4.875	$\max\Delta R_{bb}$	9
+signal	preselection	max_drbb	39	4.875	5.0	$\max\Delta R_{bb}$	4
+signal	preselection	max_drbb	40	5.0	5.125	$\max\Delta R_{bb}$	2
+signal	preselection	max_drbb	41	5.125	5.25	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	42	5.25	5.375	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	43	5.375	5.5	$\max\Delta R_{bb}$	1
+signal	preselection	max_drbb	44	5.5	5.625	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	45	5.625	5.75	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	46	5.75	5.875	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	47	5.875	6.0	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	48	6.0	6.125	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	49	6.125	6.25	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	50	6.25	6.375	$\max\Delta R_{bb}$	0
+signal	preselection	max_drbb	51	6.375	6.5	$\max\Delta R_{bb}$	0
+signal	preselection	mhh	0	0.0	50.0	$m_{HH}$ [GeV]	0
+signal	preselection	mhh	1	50.0	100.0	$m_{HH}$ [GeV]	0
+signal	preselection	mhh	2	100.0	150.0	$m_{HH}$ [GeV]	15
+signal	preselection	mhh	3	150.0	200.0	$m_{HH}$ [GeV]	500
+signal	preselection	mhh	4	200.0	250.0	$m_{HH}$ [GeV]	3511
+signal	preselection	mhh	5	250.0	300.0	$m_{HH}$ [GeV]	6569
+signal	preselection	mhh	6	300.0	350.0	$m_{HH}$ [GeV]	5764
+signal	preselection	mhh	7	350.0	400.0	$m_{HH}$ [GeV]	4424
+signal	preselection	mhh	8	400.0	450.0	$m_{HH}$ [GeV]	3427
+signal	preselection	mhh	9	450.0	500.0	$m_{HH}$ [GeV]	2647
+signal	preselection	mhh	10	500.0	550.0	$m_{HH}$ [GeV]	2137
+signal	preselection	mhh	11	550.0	600.0	$m_{HH}$ [GeV]	1609
+signal	preselection	mhh	12	600.0	650.0	$m_{HH}$ [GeV]	1262
+signal	preselection	mhh	13	650.0	700.0	$m_{HH}$ [GeV]	1045
+signal	preselection	mhh	14	700.0	750.0	$m_{HH}$ [GeV]	787
+signal	preselection	mhh	15	750.0	800.0	$m_{HH}$ [GeV]	648
+signal	preselection	mhh	16	800.0	850.0	$m_{HH}$ [GeV]	514
+signal	preselection	mhh	17	850.0	900.0	$m_{HH}$ [GeV]	457
+signal	preselection	mhh	18	900.0	950.0	$m_{HH}$ [GeV]	302
+signal	preselection	mhh	19	950.0	1000.0	$m_{HH}$ [GeV]	276
+signal	preselection	mhh	20	1000.0	1050.0	$m_{HH}$ [GeV]	211
+signal	preselection	mhh	21	1050.0	1100.0	$m_{HH}$ [GeV]	159
+signal	preselection	mhh	22	1100.0	1150.0	$m_{HH}$ [GeV]	141
+signal	preselection	mhh	23	1150.0	1200.0	$m_{HH}$ [GeV]	99
+signal	preselection	mhh	24	1200.0	1250.0	$m_{HH}$ [GeV]	77
+signal	preselection	mhh	25	1250.0	1300.0	$m_{HH}$ [GeV]	52
+signal	preselection	mhh	26	1300.0	1350.0	$m_{HH}$ [GeV]	65
+signal	preselection	mhh	27	1350.0	1400.0	$m_{HH}$ [GeV]	55
+signal	preselection	mhh	28	1400.0	1450.0	$m_{HH}$ [GeV]	47
+signal	preselection	mhh	29	1450.0	1500.0	$m_{HH}$ [GeV]	36
+signal	preselection	mhh	30	1500.0	1550.0	$m_{HH}$ [GeV]	31
+signal	preselection	mhh	31	1550.0	1600.0	$m_{HH}$ [GeV]	26
+signal	preselection	mhh	32	1600.0	1650.0	$m_{HH}$ [GeV]	15
+signal	preselection	mhh	33	1650.0	1700.0	$m_{HH}$ [GeV]	15
+signal	preselection	mhh	34	1700.0	1750.0	$m_{HH}$ [GeV]	7
+signal	preselection	mhh	35	1750.0	1800.0	$m_{HH}$ [GeV]	9
+signal	preselection	mhh	36	1800.0	1850.0	$m_{HH}$ [GeV]	9
+signal	preselection	mhh	37	1850.0	1900.0	$m_{HH}$ [GeV]	7
+signal	preselection	mhh	38	1900.0	1950.0	$m_{HH}$ [GeV]	8
+signal	preselection	mhh	39	1950.0	2000.0	$m_{HH}$ [GeV]	11
+signal	preselection	mhh	40	2000.0	2050.0	$m_{HH}$ [GeV]	8
+signal	preselection	mhh	41	2050.0	2100.0	$m_{HH}$ [GeV]	3
+signal	preselection	mhh	42	2100.0	2150.0	$m_{HH}$ [GeV]	4
+signal	preselection	mhh	43	2150.0	2200.0	$m_{HH}$ [GeV]	10
+signal	preselection	mhh	44	2200.0	2250.0	$m_{HH}$ [GeV]	3
+signal	preselection	mhh	45	2250.0	2300.0	$m_{HH}$ [GeV]	0
+signal	preselection	mhh	46	2300.0	2350.0	$m_{HH}$ [GeV]	2
+signal	preselection	mhh	47	2350.0	2400.0	$m_{HH}$ [GeV]	1
+signal	preselection	mhh	48	2400.0	2450.0	$m_{HH}$ [GeV]	1
+signal	preselection	mhh	49	2450.0	2500.0	$m_{HH}$ [GeV]	2
+signal	preselection	mhh	50	2500.0	2550.0	$m_{HH}$ [GeV]	0
+signal	preselection	mhh	51	2550.0	2600.0	$m_{HH}$ [GeV]	1
+signal	preselection	mhh	52	2600.0	2650.0	$m_{HH}$ [GeV]	1
+signal	preselection	mhh	53	2650.0	2700.0	$m_{HH}$ [GeV]	0
+signal	preselection	mhh	54	2700.0	2750.0	$m_{HH}$ [GeV]	0
+signal	preselection	mhh	55	2750.0	2800.0	$m_{HH}$ [GeV]	1
+signal	preselection	mhh	56	2800.0	2850.0	$m_{HH}$ [GeV]	1
+signal	preselection	mhh	57	2850.0	2900.0	$m_{HH}$ [GeV]	0
+signal	preselection	mhh	58	2900.0	2950.0	$m_{HH}$ [GeV]	0
+signal	preselection	mhh	59	2950.0	3000.0	$m_{HH}$ [GeV]	1
+signal	preselection	r_hh_125_125	0	0.0	5.0	$R_{HH}(125,125)$	917
+signal	preselection	r_hh_125_125	1	5.0	10.0	$R_{HH}(125,125)$	2597
+signal	preselection	r_hh_125_125	2	10.0	15.0	$R_{HH}(125,125)$	3648
+signal	preselection	r_hh_125_125	3	15.0	20.0	$R_{HH}(125,125)$	4001
+signal	preselection	r_hh_125_125	4	20.0	25.0	$R_{HH}(125,125)$	3811
+signal	preselection	r_hh_125_125	5	25.0	30.0	$R_{HH}(125,125)$	3422
+signal	preselection	r_hh_125_125	6	30.0	35.0	$R_{HH}(125,125)$	3056
+signal	preselection	r_hh_125_125	7	35.0	40.0	$R_{HH}(125,125)$	2557
+signal	preselection	r_hh_125_125	8	40.0	45.0	$R_{HH}(125,125)$	2088
+signal	preselection	r_hh_125_125	9	45.0	50.0	$R_{HH}(125,125)$	1670
+signal	preselection	r_hh_125_125	10	50.0	55.0	$R_{HH}(125,125)$	1256
+signal	preselection	r_hh_125_125	11	55.0	60.0	$R_{HH}(125,125)$	979
+signal	preselection	r_hh_125_125	12	60.0	65.0	$R_{HH}(125,125)$	848
+signal	preselection	r_hh_125_125	13	65.0	70.0	$R_{HH}(125,125)$	677
+signal	preselection	r_hh_125_125	14	70.0	75.0	$R_{HH}(125,125)$	531
+signal	preselection	r_hh_125_125	15	75.0	80.0	$R_{HH}(125,125)$	487
+signal	preselection	r_hh_125_125	16	80.0	85.0	$R_{HH}(125,125)$	392
+signal	preselection	r_hh_125_125	17	85.0	90.0	$R_{HH}(125,125)$	335
+signal	preselection	r_hh_125_125	18	90.0	95.0	$R_{HH}(125,125)$	262
+signal	preselection	r_hh_125_125	19	95.0	100.0	$R_{HH}(125,125)$	218
+signal	preselection	r_hh_125_125	20	100.0	105.0	$R_{HH}(125,125)$	232
+signal	preselection	r_hh_125_125	21	105.0	110.0	$R_{HH}(125,125)$	171
+signal	preselection	r_hh_125_125	22	110.0	115.0	$R_{HH}(125,125)$	151
+signal	preselection	r_hh_125_125	23	115.0	120.0	$R_{HH}(125,125)$	146
+signal	preselection	r_hh_125_125	24	120.0	125.0	$R_{HH}(125,125)$	146
+signal	preselection	r_hh_125_125	25	125.0	130.0	$R_{HH}(125,125)$	121
+signal	preselection	r_hh_125_125	26	130.0	135.0	$R_{HH}(125,125)$	112
+signal	preselection	r_hh_125_125	27	135.0	140.0	$R_{HH}(125,125)$	90
+signal	preselection	r_hh_125_125	28	140.0	145.0	$R_{HH}(125,125)$	120
+signal	preselection	r_hh_125_125	29	145.0	150.0	$R_{HH}(125,125)$	86
+signal	preselection	r_hh_125_125	30	150.0	155.0	$R_{HH}(125,125)$	86
+signal	preselection	r_hh_125_125	31	155.0	160.0	$R_{HH}(125,125)$	93
+signal	preselection	r_hh_125_125	32	160.0	165.0	$R_{HH}(125,125)$	95
+signal	preselection	r_hh_125_125	33	165.0	170.0	$R_{HH}(125,125)$	73
+signal	preselection	r_hh_125_125	34	170.0	175.0	$R_{HH}(125,125)$	81
+signal	preselection	r_hh_125_125	35	175.0	180.0	$R_{HH}(125,125)$	77
+signal	preselection	r_hh_125_125	36	180.0	185.0	$R_{HH}(125,125)$	60
+signal	preselection	r_hh_125_125	37	185.0	190.0	$R_{HH}(125,125)$	75
+signal	preselection	r_hh_125_125	38	190.0	195.0	$R_{HH}(125,125)$	58
+signal	preselection	r_hh_125_125	39	195.0	200.0	$R_{HH}(125,125)$	63
+signal	preselection	r_hh_125_125	40	200.0	205.0	$R_{HH}(125,125)$	51
+signal	preselection	r_hh_125_125	41	205.0	210.0	$R_{HH}(125,125)$	54
+signal	preselection	r_hh_125_125	42	210.0	215.0	$R_{HH}(125,125)$	44
+signal	preselection	r_hh_125_125	43	215.0	220.0	$R_{HH}(125,125)$	50
+signal	preselection	r_hh_125_125	44	220.0	225.0	$R_{HH}(125,125)$	42
+signal	preselection	r_hh_125_125	45	225.0	230.0	$R_{HH}(125,125)$	44
+signal	preselection	r_hh_125_125	46	230.0	235.0	$R_{HH}(125,125)$	45
+signal	preselection	r_hh_125_125	47	235.0	240.0	$R_{HH}(125,125)$	36
+signal	preselection	r_hh_125_125	48	240.0	245.0	$R_{HH}(125,125)$	50
+signal	preselection	r_hh_125_125	49	245.0	250.0	$R_{HH}(125,125)$	39
+signal	preselection	r_hh_125_125	50	250.0	255.0	$R_{HH}(125,125)$	25
+signal	preselection	r_hh_125_125	51	255.0	260.0	$R_{HH}(125,125)$	27
+signal	preselection	r_hh_125_125	52	260.0	265.0	$R_{HH}(125,125)$	19
+signal	preselection	r_hh_125_125	53	265.0	270.0	$R_{HH}(125,125)$	20
+signal	preselection	r_hh_125_125	54	270.0	275.0	$R_{HH}(125,125)$	20
+signal	preselection	r_hh_125_125	55	275.0	280.0	$R_{HH}(125,125)$	24
+signal	preselection	r_hh_125_125	56	280.0	285.0	$R_{HH}(125,125)$	30
+signal	preselection	r_hh_125_125	57	285.0	290.0	$R_{HH}(125,125)$	23
+signal	preselection	r_hh_125_125	58	290.0	295.0	$R_{HH}(125,125)$	17
+signal	preselection	r_hh_125_125	59	295.0	300.0	$R_{HH}(125,125)$	17

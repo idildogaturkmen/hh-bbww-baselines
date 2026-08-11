@@ -1,0 +1,15 @@
+{
+  "energy_luminosity": "sqrt(s)=13 TeV, 138 fb^-1 equivalent",
+  "figure_data_sidecars": 16,
+  "figures": 16,
+  "header": "Delphes simulation",
+  "next": "bind_figures_in_master_train_only_freeze_before_validation",
+  "official_cms_status_claimed": false,
+  "pdfs": 16,
+  "pngs": 16,
+  "repository_head_at_execution": "cbba41652a7eadcd5348c74de3a0d84f8bed7f77",
+  "schema_version": 1,
+  "status": "pass_hh4b_cut_baseline_train_only_publication_figures",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
