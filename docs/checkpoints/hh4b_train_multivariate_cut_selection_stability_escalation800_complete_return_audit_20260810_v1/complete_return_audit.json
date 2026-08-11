@@ -1,0 +1,73 @@
+{
+  "aggregation_performed": false,
+  "all_execution_optimizer_sha256s_match": true,
+  "all_execution_provenance_sha256s_match_frozen_payload_manifest": true,
+  "all_execution_worker_sha256s_match": true,
+  "all_inner_crossfit_four_fold_coverage_verified": true,
+  "all_job_receipts_clean": true,
+  "all_outer_fold_used_for_selection_false": true,
+  "all_runner_logs_match_receipt_sha256": true,
+  "all_structure_canonical_payload_sha256s_recomputed": true,
+  "all_structure_internal_sha256s_verified": true,
+  "all_test_payloads_opened_zero": true,
+  "all_validation_payloads_opened_zero": true,
+  "audit_repository_head": "e65b81ee2a5f8e85f2cfd00148671fefec424364",
+  "authoritative_schedd": "lpcschedd5.fnal.gov",
+  "bundle_sha256s_recomputed_in_audit_inventory": true,
+  "categories": [
+    "exact3tag",
+    "ge4tag"
+  ],
+  "cluster_id": 30020809,
+  "exact_structure_set_per_category_fold_verified": true,
+  "fold_level_winners_selected": false,
+  "job_return_audit_sha256": "42e560705af7b2e72d68a627473a8614e82bf94f847d2f1a3ec831a1e35a6349",
+  "jobs_audited": 8000,
+  "jobs_expected": 8000,
+  "never_resubmit_cluster": true,
+  "next": "freeze_complete_escalation800_return_audit_before_all1000_predeclared_aggregation",
+  "nominal_selection_changed": false,
+  "outer_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "payload_manifest_sha256": "2d29023c1fb00e18c159c35716876266e0694bcaad3c2a3de4b725a7a38634fd",
+  "pilot_results_enter_stability_aggregation": false,
+  "receipt_result_bundle_sha256_null_count": 8000,
+  "receipt_result_bundle_sha256_present_count": 0,
+  "replica_count": 800,
+  "replica_level_stability_statistics_computed": false,
+  "replicas": [
+    200,
+    999
+  ],
+  "scheduler_snapshot_audit": {
+    "history_rows": 8000,
+    "history_snapshot_sha256": "3a0dd749f0ac00fa14353351f11a98a1b570e24967777807d15492722a9eec4d",
+    "history_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "queue_snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "queue_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "schema_version": 1,
+  "scientific_outcome_diagnostics": {
+    "all_inner_support_fail_structure_results": 0,
+    "all_inner_support_pass_structure_results": 216000,
+    "infeasible_or_support_failed_structure_can_be_valid_execution_result": true,
+    "pooled_inner_oof_feasible_structure_results": 25905,
+    "pooled_inner_oof_infeasible_structure_results": 190095,
+    "pooled_support_fail_structure_results": 0,
+    "pooled_support_pass_structure_results": 216000,
+    "these_counts_are_not_a_return_audit_failure_gate": true
+  },
+  "scientific_package_head": "275a2aaebe83b2f1f5e7403a245b52daf30560b4",
+  "status": "pass_complete_escalation800_8000_job_216000_structure_return_audit",
+  "structure_result_inventory_manifest_sha256": "260e83919c03d12a6d4e1f3789dcb839a1dc541dd781c70ebc110db1ddd6e1ab",
+  "structure_results_audited": 216000,
+  "structure_results_expected": 216000,
+  "structures_per_job": 27,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
