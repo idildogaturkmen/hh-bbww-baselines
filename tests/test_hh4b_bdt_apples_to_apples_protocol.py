@@ -1,6 +1,7 @@
 import importlib.util
 import json
 from pathlib import Path
+import sys
 
 import numpy as np
 import csv
@@ -8,10 +9,14 @@ from xgboost import XGBClassifier
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts/analysis"))
 CONFIG = json.loads((ROOT / "configs/baselines/hh4b_bdt_apples_to_apples_v1.json").read_text())
 SPEC = importlib.util.spec_from_file_location("bdt_common", ROOT / "scripts/analysis/hh4b_bdt_apples_to_apples_common.py")
 COMMON = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(COMMON)
+WORKER_SPEC = importlib.util.spec_from_file_location("bdt_worker", ROOT / "scripts/analysis/run_hh4b_bdt_apples_to_apples_outer.py")
+WORKER = importlib.util.module_from_spec(WORKER_SPEC)
+WORKER_SPEC.loader.exec_module(WORKER)
 
 
 def test_frozen_population_and_seals():
@@ -70,6 +75,30 @@ def test_training_and_physical_weight_roles_are_separate():
             raise AssertionError("invalid learner weights accepted")
     assert CONFIG["weights"]["training"]["signed"] is False
     assert CONFIG["weights"]["evaluation"]["signed"] is True
+
+
+def test_hierarchical_training_weight_closure():
+    rows = []
+    for sample_class, process, groups in (
+        ("signal", "ggf_hh4b", ("sg1", "sg2")),
+        ("signal", "vbf_hh4b", ("sv1", "sv2")),
+        ("background", "qcd_hardqcd", ("bq1", "bq2")),
+        ("background", "ttbar_inclusive", ("bt1", "bt2")),
+        ("background", "zbbbb", ("bz1", "bz2")),
+        ("background", "schannel_single_top", ("bs1", "bs2")),
+        ("background", "ggh_hbb", ("bh1", "bh2")),
+        ("background", "tth_hbb", ("ba1", "ba2")),
+        ("background", "ww", ("bd1", "bd2")),
+        ("background", "wwz_zbb", ("bv1", "bv2")),
+    ):
+        for group in groups:
+            for _ in range(1 if group.endswith("1") else 3):
+                rows.append({"sample_class": sample_class, "process_or_mode": process, "group_id": group})
+    frame = __import__("pandas").DataFrame(rows)
+    weights = WORKER.hierarchical_weights(frame)
+    assert np.isclose(weights[frame.sample_class.eq("signal")].sum(), len(frame) * 0.5)
+    assert np.isclose(weights[frame.sample_class.eq("background")].sum(), len(frame) * 0.5)
+    assert np.isclose(weights.mean(), 1.0)
 
 
 def test_threshold_is_deterministic_and_development_only():
