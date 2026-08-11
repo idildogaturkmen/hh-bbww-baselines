@@ -6,7 +6,7 @@ from pathlib import Path
 
 REPO=Path(__file__).resolve().parents[2]
 STORE=Path('/uscms_data/d3/iturkmen/hh4b_delphes')
-CAMPAIGN='hh4b_bdt_apples_nested_oof10_v1_20260811'
+CAMPAIGN='hh4b_bdt_apples_nested_oof10_v2_20260811'
 OUT=STORE/'condor_submit'/CAMPAIGN
 PILOT=STORE/'condor_submit'/'hh4b_bdt_apples_full_budget_pilot_outer0_blind_v2_20260811'
 REMOTE='/store/user/iturkmen/hh4b_delphes/run2_13tev/bdt_apples_to_apples/hh4b_bdt_apples_full_budget_pilot_outer0_blind_v2_20260811'
@@ -18,7 +18,7 @@ def main():
  for p in FILES: shutil.copy2(p,OUT/p.name)
  jobs=[(f,v) for f in range(5) for v in ('global_mass_aware','global_mass_plane_blind')]
  with (OUT/'jobs.tsv').open('w',newline='') as h:
-  w=csv.writer(h,delimiter='\t',lineterminator='\n'); w.writerow(['outer_fold','variant']); w.writerows(jobs)
+  w=csv.writer(h,delimiter='\t',lineterminator='\n'); w.writerows(jobs)
  wrapper=OUT/'run_production.sh'
  wrapper.write_text(f'''#!/usr/bin/bash
 set -euo pipefail
