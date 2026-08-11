@@ -118,17 +118,20 @@ def validate_logs(
     log_root: Path, items: dict[int, tuple[int, str]]
 ) -> tuple[list[dict[str, object]], list[Path]]:
     require(log_root.is_dir() and not log_root.is_symlink(), "log root is invalid")
+    names = set(os.listdir(log_root))
     cluster_log = log_root / f"validation.{CLUSTER}.log"
-    require(cluster_log.is_file(), "cluster event log is missing")
+    require(cluster_log.name in names, "cluster event log is missing")
     rows = []
     files = [cluster_log]
     for proc in range(EXPECTED_JOBS):
         row_index, source_uid = items[proc]
         stdout = log_root / f"validation.{CLUSTER}.{proc}.row{row_index}.out"
         stderr = log_root / f"validation.{CLUSTER}.{proc}.row{row_index}.err"
-        require(stdout.is_file() and stderr.is_file(), f"scheduler log pair missing for proc {proc}")
-        out_text = stdout.read_text(encoding="utf-8")
-        err_text = stderr.read_text(encoding="utf-8")
+        require(stdout.name in names and stderr.name in names, f"scheduler log pair missing for proc {proc}")
+        out_bytes = stdout.read_bytes()
+        err_bytes = stderr.read_bytes()
+        out_text = out_bytes.decode("utf-8")
+        err_text = err_bytes.decode("utf-8")
         require("worker.py: OK" in out_text, f"common bundle check missing for proc {proc}")
         require("VALIDATION_RUNTIME=PASS" not in out_text, f"runtime unexpectedly passed for proc {proc}")
         require(EXPECTED_TRACE in err_text, f"runtime traceback changed for proc {proc}")
@@ -140,10 +143,10 @@ def validate_logs(
                 "proc_id": proc,
                 "production_row_index": row_index,
                 "source_uid": source_uid,
-                "stdout_bytes": stdout.stat().st_size,
-                "stdout_sha256": sha256(stdout),
-                "stderr_bytes": stderr.stat().st_size,
-                "stderr_sha256": sha256(stderr),
+                "stdout_bytes": len(out_bytes),
+                "stdout_sha256": sha256_bytes(out_bytes),
+                "stderr_bytes": len(err_bytes),
+                "stderr_sha256": sha256_bytes(err_bytes),
                 "exit_code": 1,
                 "durable_marker_created": False,
                 "validation_worker_started": False,
@@ -151,8 +154,8 @@ def validate_logs(
             }
         )
         files.extend((stdout, stderr))
-    actual = {path.resolve() for path in log_root.glob(f"validation.{CLUSTER}*") if path.is_file()}
-    require(actual == {path.resolve() for path in files}, "scheduler log file closure changed")
+    actual = {name for name in names if name.startswith(f"validation.{CLUSTER}")}
+    require(actual == {path.name for path in files}, "scheduler log file closure changed")
     return rows, files
 
 
