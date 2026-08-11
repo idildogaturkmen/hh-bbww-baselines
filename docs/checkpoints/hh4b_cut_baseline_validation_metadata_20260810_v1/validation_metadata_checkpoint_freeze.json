@@ -1,0 +1,16 @@
+{
+  "auxiliary_qcd_sources": 5,
+  "event_payload_files_opened": 0,
+  "next": "commit_and_push_then_bind_this_metadata_in_the_master_train_only_freeze",
+  "physical_coefficient_registry_sha256": "9df403f365b2f43627a8e3b9be23e09a286329dd91fdde976035007a6e12f11d",
+  "physical_evaluation_sources": 116,
+  "remote_checksum_evidence_sha256s_sha256": "c290a1a2ccb1c62d94c066cf70d2496e5ccea69d9abc3b001b909930b0689077",
+  "remote_checksum_registry_sha256": "a0763268aa2007e4f9d673561623984452b7d84a15f1517a15a017a29da4f7fd",
+  "repository_parent_head": "8db3318d89c4b38fd3e73657bbf4b4594e3dcc4e",
+  "schema_version": 1,
+  "source_access_manifest_sha256": "04e5e7d61d4907e706e4555fe21370617e23768a65db70a5f8541fc3d94e4d8b",
+  "status": "pass_cut_baseline_validation_metadata_checkpoint_frozen",
+  "test_payloads_opened": 0,
+  "validation_access_authorized": false,
+  "validation_payloads_opened": 0
+}

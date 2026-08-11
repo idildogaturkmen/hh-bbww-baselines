@@ -1,0 +1,13 @@
+{
+  "all_independent_queries_match": true,
+  "draft_source_access_manifest_sha256": "2c95aa16e2eb9e9f314fb594f2c080d69eff6c9008d386e41b3e8ffd216a2eb3",
+  "event_payload_files_opened": 0,
+  "independent_checksum_queries_per_bundle": 2,
+  "new_metadata_checksum_closures": 97,
+  "preexisting_frozen_checksums_verified": 19,
+  "remote_bundles": 116,
+  "schema_version": 1,
+  "status": "pass_metadata_only_validation_remote_bundle_checksum_closure",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
