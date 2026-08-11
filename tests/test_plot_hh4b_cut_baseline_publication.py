@@ -11,6 +11,7 @@ from plot_hh4b_cut_baseline_publication import (  # noqa: E402
     add_header,
     pd,
     plot_conditional_thresholds,
+    plot_modal_tie,
     plot_yields,
     plt,
     short_structure,
@@ -74,6 +75,26 @@ def test_conditional_threshold_coordinates_have_publication_labels() -> None:
     labels = [label.get_text() for label in figure.axes[0].get_xticklabels()]
     assert any(r"$H_T^{\mathrm{cand.}}$" in label for label in labels)
     assert any(r"$|\Delta\eta(H_1,H_2)|$" in label for label in labels)
+    plt.close(figure)
+
+
+def test_heterogeneous_modal_sidecar_has_no_trailing_empty_fields() -> None:
+    modal = pd.DataFrame([
+        {"category_id": "exact3tag", "maximum_winner_count": 1, "frequency": 0.2},
+        {"category_id": "ge4tag", "maximum_winner_count": 1, "frequency": 0.3},
+    ])
+    category = pd.DataFrame([
+        {
+            "category_id": category_id,
+            "unique_modal_replica_category_fraction": 0.6,
+            "tie_resolution_replica_category_fraction": 0.4,
+        }
+        for category_id in ("exact3tag", "ge4tag")
+    ])
+    figure, sidecar = plot_modal_tie(modal, category)
+    serialized = sidecar.to_csv(sep="\t", index=False, lineterminator="\n")
+    assert sidecar.columns[-1] == "record_type"
+    assert all(not line.endswith("\t") for line in serialized.splitlines())
     plt.close(figure)
 
 

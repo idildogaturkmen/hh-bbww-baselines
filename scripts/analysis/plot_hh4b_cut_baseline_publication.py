@@ -286,8 +286,18 @@ def plot_modal_tie(modal: pd.DataFrame, category: pd.DataFrame) -> tuple[plt.Fig
     axes[1].legend()
     add_header(axes[0], "Five-fold replica reduction")
     fig.tight_layout(rect=(0, 0, 1, 0.92))
-    return fig, pd.concat([plot.assign(record_type="modal_distribution"),
-                           category.assign(record_type="category_diagnostics")], ignore_index=True)
+    sidecar = pd.concat(
+        [
+            plot.assign(record_type="modal_distribution"),
+            category.assign(record_type="category_diagnostics"),
+        ],
+        ignore_index=True,
+    )
+    # Keep the row-type discriminator last.  It is populated for both input
+    # schemas, so heterogeneous rows never serialize with trailing empty TSV
+    # fields that look like whitespace corruption to Git and text tooling.
+    sidecar = sidecar[[column for column in sidecar if column != "record_type"] + ["record_type"]]
+    return fig, sidecar
 
 
 def plot_conditional_thresholds(frame: pd.DataFrame) -> tuple[plt.Figure, pd.DataFrame]:
