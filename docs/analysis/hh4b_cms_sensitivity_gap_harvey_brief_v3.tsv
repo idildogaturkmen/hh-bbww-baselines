@@ -1,0 +1,13 @@
+metric	value
+pooled_mu95	74.0151727273842
+category_mu95	44.32758473485289
+optimistic_shape_mu95	31.95647727235911
+support_gain_retained_neff5	0.049914277234634256
+support_gain_retained_neff10	0.04277326458186332
+support_gain_retained_neff20	0
+transfer_2b_3b_ratio	1.0053873387079122
+transfer_3b_ge4_ratio	4.425356655941187
+transfer_sequential_ratio	0.2940491559726193
+transfer_joint_ratio	0.2945640165085229
+ge4_target_rows	24
+ge4_target_neff	12.127765653460985
