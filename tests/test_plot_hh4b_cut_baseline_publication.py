@@ -7,7 +7,14 @@ import sys
 SCRIPT_DIR = Path(__file__).resolve().parents[1] / "scripts/analysis"
 sys.path.insert(0, str(SCRIPT_DIR))
 
-from plot_hh4b_cut_baseline_publication import add_header, plt, short_structure  # noqa: E402
+from plot_hh4b_cut_baseline_publication import (  # noqa: E402
+    add_header,
+    pd,
+    plot_conditional_thresholds,
+    plot_yields,
+    plt,
+    short_structure,
+)
 
 
 def test_shared_header_uses_figure_coordinates_for_multi_panel_layouts() -> None:
@@ -20,6 +27,53 @@ def test_shared_header_uses_figure_coordinates_for_multi_panel_layouts() -> None
         "Multi-panel subtitle",
     ]
     assert not axes[0].texts
+    plt.close(figure)
+
+
+def test_close_yield_comparisons_use_zero_based_linear_axes() -> None:
+    frame = pd.DataFrame([
+        {
+            "outer_fold": "pooled",
+            "scope": "combined",
+            "selection_id": selection,
+            "signal_selected_signed_yield": signal,
+            "background_selected_signed_yield": background,
+        }
+        for selection, signal, background in (
+            ("nested_outer_oof", 190.0, 50.0e6),
+            ("historical_rhh125125_lt34", 185.0, 49.0e6),
+            ("fixed_nominal_deployment_cut", 191.0, 52.0e6),
+        )
+    ])
+    figure, _ = plot_yields(frame)
+    assert all(axes.get_yscale() == "linear" for axes in figure.axes)
+    assert all(axes.get_ylim()[0] == 0.0 for axes in figure.axes)
+    plt.close(figure)
+
+
+def test_conditional_threshold_coordinates_have_publication_labels() -> None:
+    frame = pd.DataFrame([
+        {
+            "is_nominal_structure": True,
+            "category_id": "exact3tag",
+            "threshold_variable": "ht_candidate_jets",
+            "median": 176.0,
+            "p16_linear": 170.0,
+            "p84_linear": 180.0,
+        },
+        {
+            "is_nominal_structure": True,
+            "category_id": "ge4tag",
+            "threshold_variable": "abs_h_delta_eta",
+            "median": 6.9,
+            "p16_linear": 6.0,
+            "p84_linear": 7.5,
+        },
+    ])
+    figure, _ = plot_conditional_thresholds(frame)
+    labels = [label.get_text() for label in figure.axes[0].get_xticklabels()]
+    assert any(r"$H_T^{\mathrm{cand.}}$" in label for label in labels)
+    assert any(r"$|\Delta\eta(H_1,H_2)|$" in label for label in labels)
     plt.close(figure)
 
 

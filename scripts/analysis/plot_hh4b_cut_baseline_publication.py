@@ -293,7 +293,16 @@ def plot_modal_tie(modal: pd.DataFrame, category: pd.DataFrame) -> tuple[plt.Fig
 def plot_conditional_thresholds(frame: pd.DataFrame) -> tuple[plt.Figure, pd.DataFrame]:
     plot = frame[frame.is_nominal_structure.astype(str).str.lower().isin(["true", "1"])].copy()
     require(not plot.empty, "no nominal conditional threshold summaries")
-    plot["coordinate"] = plot.category_id + ":" + plot.threshold_variable
+    threshold_labels = {
+        "r_hh_125_125": r"$R_{HH}(125,125)$",
+        "ht_candidate_jets": r"$H_T^{\mathrm{cand.}}$",
+        "mhh": r"$m_{HH}$",
+        "abs_h_delta_eta": r"$|\Delta\eta(H_1,H_2)|$",
+    }
+    plot["coordinate"] = [
+        f"{CATEGORY_LABELS[category]}\n{threshold_labels[variable]}"
+        for category, variable in zip(plot.category_id, plot.threshold_variable)
+    ]
     fig, ax = plt.subplots(figsize=(9.4, 5.4))
     x = np.arange(len(plot))
     low = plot["median"].to_numpy(float) - plot.p16_linear.to_numpy(float)
@@ -303,7 +312,7 @@ def plot_conditional_thresholds(frame: pd.DataFrame) -> tuple[plt.Figure, pd.Dat
                 capsize=4, lw=1.6)
     ax.scatter(x, plot["median"].to_numpy(float), c=colors, s=55, zorder=3)
     ax.set_xticks(x)
-    ax.set_xticklabels(plot.coordinate.str.replace("_", " "), rotation=25, ha="right")
+    ax.set_xticklabels(plot.coordinate, rotation=15, ha="right")
     ax.set_ylabel("Conditional median threshold")
     ax.set_yscale("symlog", linthresh=10.0)
     add_header(ax, "Nominal structure recovered conditionally; 16th--84th percentiles")
@@ -425,7 +434,7 @@ def plot_yields(performance: pd.DataFrame) -> tuple[plt.Figure, pd.DataFrame]:
         ax.set_xticks(range(len(plot)))
         ax.set_xticklabels([SELECTION_LABELS[value] for value in plot.selection_id], rotation=18, ha="right")
         ax.set_ylabel(f"{sample_class.capitalize()} expected yield")
-        ax.set_yscale("log")
+        ax.set_ylim(bottom=0.0)
     add_header(axes[0], "Run-2 expected-yield projection")
     fig.tight_layout(rect=(0, 0, 1, 0.91))
     return fig, plot
@@ -535,8 +544,8 @@ def build_figures(repo: Path, all1000: Path, train: Path, output: Path) -> dict[
         ("10_nested_outer_oof_fold_performance", lambda: plot_nested_folds(performance), "nested outer-OOF performance"),
         ("11_historical_rhh34_comparison", lambda: plot_historical_comparison(performance), "historical comparator"),
         ("12_run2_equivalent_yields", lambda: plot_yields(performance), "Run-2-equivalent yields"),
-        ("13_signal_over_background", lambda: bar_metric(performance, "signal_over_background", "S/B", "Pooled category-combined train metrics", True), "S/B comparison"),
-        ("14_asimov_significance_stat_only", lambda: bar_metric(performance, "asimov_significance_stat_only", r"Stat-only $Z_A$", "No nuisance parameters included", True), "stat-only Asimov significance"),
+        ("13_signal_over_background", lambda: bar_metric(performance, "signal_over_background", "S/B", "Pooled category-combined train metrics"), "S/B comparison"),
+        ("14_asimov_significance_stat_only", lambda: bar_metric(performance, "asimov_significance_stat_only", r"Stat-only $Z_A$", "No nuisance parameters included"), "stat-only Asimov significance"),
         ("15_neff_finite_mc", lambda: plot_neff_uncertainty(performance), "effective counts and finite-MC uncertainty"),
         ("16_pre_post_nominal_distributions", lambda: plot_pre_post_distributions(distributions), "pre/post variable distributions"),
     ]
