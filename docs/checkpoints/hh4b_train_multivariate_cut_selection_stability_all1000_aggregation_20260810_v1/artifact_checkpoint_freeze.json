@@ -1,0 +1,190 @@
+{
+  "checkpoint_evidence_file_count": 19,
+  "independent_audit": {
+    "deterministic_rerun": {
+      "byte_count": 220872316,
+      "file_count": 29,
+      "status": "pass_every_output_file_byte_identical"
+    },
+    "fold_level_winners_independently_selected": 10000,
+    "path": "artifacts/hh4b_cut_baseline/all1000_stability_independent_audit/all1000_stability_independent_audit.json",
+    "ranked_structure_results_audited": 270000,
+    "replica_category_reductions_independently_recomputed": 2000,
+    "sha256": "a501f3676cea17ff8239a593561f1288db2503bb5aa5933b67be873c67ce5b30",
+    "sha256s_sha256": "048be60950e3b3ba20ffb1a1a02289a1cef337630611ec04874bf60dda6a75bd",
+    "status": "pass_independent_all1000_row_level_audit_and_byte_identical_rerun"
+  },
+  "large_ranked_result_shard_count": 10,
+  "large_ranked_result_shards": {
+    "tables/ranked_structure_results_replicas_0000_0099.tsv": {
+      "bytes": 20943375,
+      "sha256": "08edc6f186aafb8fb4bd0730a18f46a6fc2c667a78f449c8bfc8d0c15739c278"
+    },
+    "tables/ranked_structure_results_replicas_0100_0199.tsv": {
+      "bytes": 21003430,
+      "sha256": "303f19f3968c2ed47b4d76f49a9160f4a356e3b6a222d63a3e10d1e12067d79a"
+    },
+    "tables/ranked_structure_results_replicas_0200_0299.tsv": {
+      "bytes": 21003463,
+      "sha256": "ce2c8cdc6a651b03c554078aa27cb3a8374d2c1f03f6261cf33b0d2bf9540b19"
+    },
+    "tables/ranked_structure_results_replicas_0300_0399.tsv": {
+      "bytes": 21004233,
+      "sha256": "2523ce381c9b4ff08bfb45b8ec519b951655b24a83026396ba63e13d94fa899e"
+    },
+    "tables/ranked_structure_results_replicas_0400_0499.tsv": {
+      "bytes": 21003694,
+      "sha256": "84b2a6637b00f38d4d75e3e8638925905cf8dbf9c66d7f943c344f2b0111b250"
+    },
+    "tables/ranked_structure_results_replicas_0500_0599.tsv": {
+      "bytes": 21003130,
+      "sha256": "8fbb864de86bd970d31e474f62c777663a25c9097659f6e2effa354f81b1a969"
+    },
+    "tables/ranked_structure_results_replicas_0600_0699.tsv": {
+      "bytes": 21003479,
+      "sha256": "bad4adb3fcd96aa60f3307fdf47c30a371e54e710f532b9dba0418f26e4cc7ba"
+    },
+    "tables/ranked_structure_results_replicas_0700_0799.tsv": {
+      "bytes": 21002941,
+      "sha256": "b087799838ed2201852cebee2e121e7345533a687232018aa84da526f88a735b"
+    },
+    "tables/ranked_structure_results_replicas_0800_0899.tsv": {
+      "bytes": 21004077,
+      "sha256": "a210aa440530455c1999b6085f38d8b54ec98c75638a601bf622ef59799ff976"
+    },
+    "tables/ranked_structure_results_replicas_0900_0999.tsv": {
+      "bytes": 21002885,
+      "sha256": "d17430b718f54e6087a61abcb8d5cd6528894ee819c535e9fb4ee2d85dbc978e"
+    }
+  },
+  "large_ranked_result_shards_bound_by_sha256_not_copied": true,
+  "next": "commit_and_push_then_build_train_performance_and_fixed_comparator",
+  "nominal_selection_changed": false,
+  "repository_parent_head": "07aa61973481d43117a343d830c5c4a9d401155d",
+  "role": "all1000",
+  "schema_version": 1,
+  "source_artifacts": {
+    "all1000_stability_summary.json": {
+      "bytes": 11513,
+      "sha256": "6bf2f7f462b4fb01b11b66696ec35540d870a1908b7ef89385ca3fc498333121"
+    },
+    "figure_data/conditional_replica_thresholds.tsv": {
+      "bytes": 587597,
+      "sha256": "37672d57eb2e2c9379785f8bd32bc9ffcf7531f5e3ea85f31924171c1f1c5dc8"
+    },
+    "figure_data/initial200_vs_all1000_category_diagnostics.tsv": {
+      "bytes": 1124,
+      "sha256": "6b81e2ddd438f311c74d30c42314f71307dd8eb0f4875c3dc9f0830bcac47ae6"
+    },
+    "figure_data/modal_count_distribution.tsv": {
+      "bytes": 327,
+      "sha256": "29f80f891e13148fc91ea530245341fc614f9c520ee29ee67e4e4d4b5ba6e8c3"
+    },
+    "figure_data/optional_variable_inclusion_frequencies.tsv": {
+      "bytes": 1231,
+      "sha256": "273a02a884f3d130aba6f37d86a678330f92fee2c3bebdfbf40edc6a62b3205c"
+    },
+    "figure_data/selection_structure_frequencies.tsv": {
+      "bytes": 10810,
+      "sha256": "f93c6251d6f28b779e8977599d0867a6954434d1753bdb1e8a6110741466bd32"
+    },
+    "manifests/aggregation_manifest.json": {
+      "bytes": 8134,
+      "sha256": "1e269532947e961d1c20aac222086543a33218881729354d23480a99dfcba9fc"
+    },
+    "manifests/ranked_structure_results_manifest.json": {
+      "bytes": 3225,
+      "sha256": "331a9a082b8ea4dfe4dcb8ab2d715c38530fecfc719ef102a11c8d4298633e2d"
+    },
+    "tables/category_stability_diagnostics.tsv": {
+      "bytes": 1400,
+      "sha256": "a26cf299b57c0aa51bd3594ecbb7a54922ad2f7be59fffb742ef5ed8e33e6b3f"
+    },
+    "tables/conditional_nominal_structure_thresholds.tsv": {
+      "bytes": 36550,
+      "sha256": "c031c07114e439f3d9868f5d3c92ecdbe0c1e091e935c6199847dd8a905dac5a"
+    },
+    "tables/conditional_replica_thresholds.tsv": {
+      "bytes": 587597,
+      "sha256": "37672d57eb2e2c9379785f8bd32bc9ffcf7531f5e3ea85f31924171c1f1c5dc8"
+    },
+    "tables/conditional_threshold_distribution_summary.tsv": {
+      "bytes": 27256,
+      "sha256": "dd880bab1340a0865715faffdfd9323a04fc417ccfe8dee3e74a3ea4fc44e193"
+    },
+    "tables/fold_level_winners.tsv": {
+      "bytes": 7722491,
+      "sha256": "92d07e15303f8692a67a7d1485f43d9f62f3cb15090f60964a2fc4148dea0d12"
+    },
+    "tables/initial200_vs_all1000_category_diagnostics.tsv": {
+      "bytes": 1124,
+      "sha256": "6b81e2ddd438f311c74d30c42314f71307dd8eb0f4875c3dc9f0830bcac47ae6"
+    },
+    "tables/modal_count_distribution.tsv": {
+      "bytes": 327,
+      "sha256": "29f80f891e13148fc91ea530245341fc614f9c520ee29ee67e4e4d4b5ba6e8c3"
+    },
+    "tables/optional_variable_inclusion_frequencies.tsv": {
+      "bytes": 1231,
+      "sha256": "273a02a884f3d130aba6f37d86a678330f92fee2c3bebdfbf40edc6a62b3205c"
+    },
+    "tables/ranked_structure_results_replicas_0000_0099.tsv": {
+      "bytes": 20943375,
+      "sha256": "08edc6f186aafb8fb4bd0730a18f46a6fc2c667a78f449c8bfc8d0c15739c278"
+    },
+    "tables/ranked_structure_results_replicas_0100_0199.tsv": {
+      "bytes": 21003430,
+      "sha256": "303f19f3968c2ed47b4d76f49a9160f4a356e3b6a222d63a3e10d1e12067d79a"
+    },
+    "tables/ranked_structure_results_replicas_0200_0299.tsv": {
+      "bytes": 21003463,
+      "sha256": "ce2c8cdc6a651b03c554078aa27cb3a8374d2c1f03f6261cf33b0d2bf9540b19"
+    },
+    "tables/ranked_structure_results_replicas_0300_0399.tsv": {
+      "bytes": 21004233,
+      "sha256": "2523ce381c9b4ff08bfb45b8ec519b951655b24a83026396ba63e13d94fa899e"
+    },
+    "tables/ranked_structure_results_replicas_0400_0499.tsv": {
+      "bytes": 21003694,
+      "sha256": "84b2a6637b00f38d4d75e3e8638925905cf8dbf9c66d7f943c344f2b0111b250"
+    },
+    "tables/ranked_structure_results_replicas_0500_0599.tsv": {
+      "bytes": 21003130,
+      "sha256": "8fbb864de86bd970d31e474f62c777663a25c9097659f6e2effa354f81b1a969"
+    },
+    "tables/ranked_structure_results_replicas_0600_0699.tsv": {
+      "bytes": 21003479,
+      "sha256": "bad4adb3fcd96aa60f3307fdf47c30a371e54e710f532b9dba0418f26e4cc7ba"
+    },
+    "tables/ranked_structure_results_replicas_0700_0799.tsv": {
+      "bytes": 21002941,
+      "sha256": "b087799838ed2201852cebee2e121e7345533a687232018aa84da526f88a735b"
+    },
+    "tables/ranked_structure_results_replicas_0800_0899.tsv": {
+      "bytes": 21004077,
+      "sha256": "a210aa440530455c1999b6085f38d8b54ec98c75638a601bf622ef59799ff976"
+    },
+    "tables/ranked_structure_results_replicas_0900_0999.tsv": {
+      "bytes": 21002885,
+      "sha256": "d17430b718f54e6087a61abcb8d5cd6528894ee819c535e9fb4ee2d85dbc978e"
+    },
+    "tables/replica_category_results.tsv": {
+      "bytes": 1881611,
+      "sha256": "f06a44d34d7daf2158effd00b237e0f84588dbf0d974b20ecaa3ab4b1cd594e5"
+    },
+    "tables/structure_frequencies.tsv": {
+      "bytes": 10810,
+      "sha256": "f93c6251d6f28b779e8977599d0867a6954434d1753bdb1e8a6110741466bd32"
+    }
+  },
+  "source_artifacts_committed_and_unchanged": true,
+  "source_file_count_excluding_sha256s": 28,
+  "source_path": "artifacts/hh4b_cut_baseline/all1000_stability",
+  "source_sha256s_sha256": "d616365f1e07bca96c3b4d20e448078be0d2f929f5508fc815b3faa3fc75c679",
+  "source_total_bytes_excluding_sha256s": 220869065,
+  "status": "pass_all1000_artifact_checkpoint_frozen",
+  "summary_path": "artifacts/hh4b_cut_baseline/all1000_stability/all1000_stability_summary.json",
+  "summary_sha256": "6bf2f7f462b4fb01b11b66696ec35540d870a1908b7ef89385ca3fc498333121",
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}
