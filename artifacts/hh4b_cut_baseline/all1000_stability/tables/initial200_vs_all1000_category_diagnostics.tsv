@@ -1,0 +1,15 @@
+category_id	metric	initial200_value	all1000_value	all1000_minus_initial200
+exact3tag	modal_replica_selected_frequency	0.185	0.185	0.0
+exact3tag	nominal_structure_recovery_frequency	0.12	0.119	-0.0010000000000000009
+exact3tag	top_two_frequency_gap	0.04000000000000001	0.05099999999999999	0.010999999999999982
+exact3tag	unique_modal_replica_category_fraction	0.605	0.62	0.015000000000000013
+exact3tag	tie_resolution_replica_category_fraction	0.395	0.38	-0.015000000000000013
+exact3tag	infeasible_fold_winner_frequency	0.538	0.5552	0.017199999999999993
+exact3tag	fold_winner_support_failure_frequency	0.0	0.0	0.0
+ge4tag	modal_replica_selected_frequency	0.26	0.207	-0.05300000000000002
+ge4tag	nominal_structure_recovery_frequency	0.025	0.034	0.009000000000000001
+ge4tag	top_two_frequency_gap	0.13	0.08199999999999999	-0.048000000000000015
+ge4tag	unique_modal_replica_category_fraction	0.64	0.62	-0.020000000000000018
+ge4tag	tie_resolution_replica_category_fraction	0.36	0.38	0.020000000000000018
+ge4tag	infeasible_fold_winner_frequency	0.156	0.1572	0.0012000000000000066
+ge4tag	fold_winner_support_failure_frequency	0.0	0.0	0.0
