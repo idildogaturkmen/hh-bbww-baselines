@@ -1,0 +1,13 @@
+{
+  "ZA_improvement_factor": 12.535976974736169,
+  "background_reduction_factor_if_S_fixed_counting_only": 157.31111749497268,
+  "cms_expected_mu95_literature_benchmark": 5.9,
+  "interpretation": "Equivalent fixed-S one-bin background reduction is only a scaling diagnostic; genuine gain may come from rejection, categories, and supported shape information.",
+  "old_simple_one_bin": {
+    "B": 48650000.0,
+    "S": 184.7,
+    "ZA": 0.0265,
+    "mu95_diagnostic": 73.9622641509434
+  },
+  "required_ZA_for_mu95_5p9": 0.33220338983050846
+}

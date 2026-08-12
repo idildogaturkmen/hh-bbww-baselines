@@ -1,0 +1,16 @@
+method	variant	signal_efficiency	S	B	ZA_stat_only	mu95_diagnostic	support_rule
+old_simple_R_HH_one_bin	historical		184.7	48650000.0	0.0265	73.9622641509434	provided frozen historical count
+existing_BDT_working_point	global_mass_plane_blind	0.6000022065800217	436.21369804353657	856430867.1268209	0.014905725070138818	131.49310018648737	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_plane_blind	0.5859573247423818	425.08792051100846	786673933.2189323	0.015155886522541575	129.32268904790644	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_plane_blind	0.5	356.6632314322876	514731485.4957526	0.015720556752266655	124.67751816216045	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_plane_blind	0.3999977934199784	283.1228618950594	236447489.365647	0.018412276981723704	106.45071231252521	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_plane_blind	0.2500055164500541	169.9933015022349	72175616.43874976	0.020009506939901327	97.95343812752967	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_plane_blind	0.10000220658002162	58.94537959023506	16054021.41786743	0.014711521268680984	133.22891386987956	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_aware	0.6000022065800217	436.2845754268462	850781699.1182517	0.014957559952589045	131.03741560873624	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_aware	0.5859573247423818	425.3352873198514	773312842.1876981	0.015295150823898722	128.1451894503383	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_aware	0.5	357.52162790124606	463752769.8167869	0.01660194631003147	118.05844708795982	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_aware	0.3999977934199784	281.4199938419696	229613340.61648595	0.01857189851711661	105.53579097977436	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_aware	0.2500055164500541	173.6223939918794	61277076.24950698	0.02217974339994593	88.36892134670856	immutable pooled outer-OOF count
+existing_BDT_working_point	global_mass_aware	0.10000220658002162	66.06562538273668	7984087.856337525	0.023380957789293916	83.82890117946661	immutable pooled outer-OOF count
+supported_five_bin_BDT_score_shape	global_mass_plane_blind				0.016083848730999894	121.86137987124376	only bins with QCD raw>=10 and QCD Neff>=10 included; unsupported bins omitted
+supported_five_bin_BDT_score_shape	global_mass_aware				0.016123828066077955	121.55922228689211	only bins with QCD raw>=10 and QCD Neff>=10 included; unsupported bins omitted

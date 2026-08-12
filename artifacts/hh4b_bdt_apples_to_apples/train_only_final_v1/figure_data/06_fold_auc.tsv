@@ -1,0 +1,11 @@
+fold	auc	variant
+0	0.7954271950819785	global_mass_plane_blind
+1	0.813548781374201	global_mass_plane_blind
+2	0.7968731975496297	global_mass_plane_blind
+3	0.7852810857096981	global_mass_plane_blind
+4	0.7651523685363916	global_mass_plane_blind
+0	0.802909417399205	global_mass_aware
+1	0.8206168231050308	global_mass_aware
+2	0.8038574858471512	global_mass_aware
+3	0.7919147696757245	global_mass_aware
+4	0.7734270849144914	global_mass_aware
