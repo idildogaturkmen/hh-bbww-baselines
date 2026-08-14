@@ -60,16 +60,12 @@ such as the Particle Transformer learn representations from jet constituents
 from all reconstructed particles and provides continuous SophonAK4 flavor
 outputs [2,3].
 
-The motivating observation from the initial Delphes studies was that larger
-neural architectures did not automatically outperform a mass-aware BDT. On the
-early selected sample, the strongest neural SPA-Net configuration improved on
-the first SPA-Net but remained below the BDT, and its tightest working region
-was limited by a handful of simulated background events. The expanded
-5.2-million-event campaign confirmed that high-score QCD-tail support, rather
-than training-set size alone, is a central experimental constraint. This
-motivates a high-statistics benchmark in which representation changes can be
-tested without interpreting an empty or nearly empty background tail as a
-physics sensitivity.
+In the 5.2-million-event local campaign, successive resolved-event and
+high-score requirements leave limited QCD support in the most signal-like
+region. This makes tail support, rather than generated-event count alone, a
+central experimental constraint. The high-statistics external benchmark allows
+representation changes to be tested without interpreting an empty or nearly
+empty simulated background tail as a physics sensitivity.
 
 This study is organized around three questions:
 
@@ -109,11 +105,10 @@ members, and 45 final-evaluation members. No source member crosses a split. The
 final-evaluation population remains closed to models developed under this
 protocol.
 
-Earlier feasibility samples used small-radius jets with R=0.5. The production
-workflow subsequently introduced a CMS-convention AK4/AK8 card with
-small-radius R=0.4 jets and R=0.8 large-radius jets. The final paper must name
-the exact card, source registry, reconstruction version, and hashes used by
-each reported model rather than combining the two detector configurations.
+The reported local-simulation results use the frozen CMS-inspired AK4/AK8
+configuration, with small-radius R=0.4 jets and R=0.8 large-radius jets. Each
+result must identify the exact detector card, source registry, reconstruction
+version, and software hashes used.
 
 Although the generated sample is sizeable for model development, successive
 selection and high-score requirements leave sparse QCD support in the most
