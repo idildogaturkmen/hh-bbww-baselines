@@ -1,0 +1,7 @@
+split	model	input_summary	epsilon_S	R_B	R_B_uncertainty	E1_vs_E0_percent	note
+development	E0	kinematics_only	0.40	283.1	27.2		reference
+development	E1	kinematics_plus_continuous_sophon_BCL	0.40	370.6	26.8	30.9	continuous Sophon B/C/L flavor information improves rejection
+development	E2	E1_plus_frozen_pairwise_attention_augmentation	0.40	216.3	18.0		not additional improvement in this frozen setup
+holdout_A	E0	kinematics_only	0.40	285.7	43.9		reference
+holdout_A	E1	kinematics_plus_continuous_sophon_BCL	0.40	439.5	38.4	53.8	continuous Sophon B/C/L flavor information improves rejection
+holdout_A	E2	E1_plus_frozen_pairwise_attention_augmentation	0.40	244.6	19.3		not additional improvement in this frozen setup
