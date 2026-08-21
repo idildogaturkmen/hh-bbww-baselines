@@ -1,0 +1,19 @@
+% DEVELOPMENT ONLY -- not a final/governing result, not independent Stage-C inference, not physically normalized.
+\begin{table}[htbp]
+\centering
+\caption{DEVELOPMENT ONLY: SPA-Net seed-0 training-scaling comparison, 2M vs.\ 10M events. Same architecture/seed/batch/epoch-budget/validation population/checkpoint criterion.}
+\begin{tabular}{lrr}
+\hline
+Metric & 2M seed-0 & 10M seed-0 \\
+\hline
+Primary best epoch & 49 & 47 \\
+validation\_average\_jet\_accuracy & 0.4912 & 0.4928 \\
+Total runtime (s) & 8577.3 & 31727.2 \\
+Events/s (train-only) & 15499.3 & 16848.3 \\
+Training population & 2,000,000 & 10,000,000 \\
+AUC all-background & 0.9693 & 0.9693 \\
+AUC QCD & 0.9682 & 0.9678 \\
+AUC ttbar & 0.9754 & 0.9775 \\
+\hline
+\end{tabular}
+\end{table}

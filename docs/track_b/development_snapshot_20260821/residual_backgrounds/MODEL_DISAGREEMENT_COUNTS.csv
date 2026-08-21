@@ -1,0 +1,5 @@
+epsS,process,KF_pass_SPA_pass,KF_pass_SPA_fail,KF_fail_SPA_pass,KF_fail_SPA_fail,n_flag_KF_pass_SPA_fail,n_flag_KF_fail_SPA_pass
+0.5,qcd,516,308,149,173512,ok,ok
+0.5,ttbar,64,29,22,32042,LIMITED,LIMITED
+0.4,qcd,248,150,70,174017,ok,LIMITED
+0.4,ttbar,27,16,15,32099,EXTREMELY_LIMITED,EXTREMELY_LIMITED

@@ -1,0 +1,252 @@
+{
+  "DIAGNOSTIC_ONLY": true,
+  "DEVELOPMENT": true,
+  "note": "10M epoch-49 secondary checkpoint (best val/loss/total_loss). Does NOT change checkpoint selection -- the governing checkpoint remains the primary (validation_average_jet_accuracy, epoch 47).",
+  "utc": "2026-08-21T16:27:02Z",
+  "checkpoint": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/full_run_attempt2_eaf_local_staging/spanet_10M_seed0/version_0/checkpoints/secondary-epoch=49-step=244100-val/loss/total_loss=0.4918.ckpt",
+  "checkpoint_sha256": "0a7f5504c0ab11434bc8712bff8ff90cf45c30b4daa073e00cf37fb5e2e24ca1",
+  "checkpoint_load_missing_keys": [],
+  "checkpoint_load_unexpected_keys": [],
+  "n_scored": 400000,
+  "population": {
+    "n_signal": 193358,
+    "n_qcd": 174485,
+    "n_ttbar": 32157,
+    "n_all_background": 206642,
+    "process_reconstruction_check": {
+      "n_mismatch": 0,
+      "n_signal": 193358,
+      "n_qcd": 174485,
+      "n_ttbar": 32157
+    }
+  },
+  "classification_cross_entropy_loss_mean": 0.22255370933532714,
+  "roc_auc": {
+    "signal_vs_all_background": 0.9694592746462904,
+    "signal_vs_qcd": 0.9678946665362411,
+    "signal_vs_ttbar": 0.9779488926480304
+  },
+  "threshold_accuracy_0p5": 0.91037,
+  "working_points_signal_vs_all_background": [
+    {
+      "background_population": "all_background",
+      "target_signal_efficiency": 0.6,
+      "threshold": 0.953646719455719,
+      "achieved_signal_efficiency": 0.6000010343507898,
+      "n_signal_pass": 116015,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.007549288140842617,
+      "background_rejection": 132.4628205128205,
+      "n_background_pass": 1560,
+      "n_background_total": 206642
+    },
+    {
+      "background_population": "all_background",
+      "target_signal_efficiency": 0.5,
+      "threshold": 0.9746788740158081,
+      "achieved_signal_efficiency": 0.5,
+      "n_signal_pass": 96679,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.00383755480492833,
+      "background_rejection": 260.58259773013873,
+      "n_background_pass": 793,
+      "n_background_total": 206642
+    },
+    {
+      "background_population": "all_background",
+      "target_signal_efficiency": 0.4,
+      "threshold": 0.9863532781600952,
+      "achieved_signal_efficiency": 0.40000413740315893,
+      "n_signal_pass": 77344,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.0019260363333688214,
+      "background_rejection": 519.2010050251256,
+      "n_background_pass": 398,
+      "n_background_total": 206642
+    },
+    {
+      "background_population": "all_background",
+      "target_signal_efficiency": 0.25,
+      "threshold": 0.9950850009918213,
+      "achieved_signal_efficiency": 0.2500025858769743,
+      "n_signal_pass": 48340,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.0005081251633259453,
+      "background_rejection": 1968.0190476190478,
+      "n_background_pass": 105,
+      "n_background_total": 206642
+    },
+    {
+      "background_population": "all_background",
+      "target_signal_efficiency": 0.2,
+      "threshold": 0.9966804385185242,
+      "achieved_signal_efficiency": 0.20000206870157947,
+      "n_signal_pass": 38672,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.00025648222529785816,
+      "background_rejection": 3898.905660377358,
+      "n_background_pass": 53,
+      "n_background_total": 206642
+    },
+    {
+      "background_population": "all_background",
+      "target_signal_efficiency": 0.1,
+      "threshold": 0.9987906813621521,
+      "achieved_signal_efficiency": 0.10000620610473836,
+      "n_signal_pass": 19337,
+      "n_signal_total": 193358,
+      "background_efficiency": 3.3875010888396355e-05,
+      "background_rejection": 29520.285714285717,
+      "n_background_pass": 7,
+      "n_background_total": 206642
+    }
+  ],
+  "working_points_signal_vs_qcd": [
+    {
+      "background_population": "qcd",
+      "target_signal_efficiency": 0.6,
+      "threshold": 0.953646719455719,
+      "achieved_signal_efficiency": 0.6000010343507898,
+      "n_signal_pass": 116015,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.00806373040662521,
+      "background_rejection": 124.01208244491828,
+      "n_background_pass": 1407,
+      "n_background_total": 174485
+    },
+    {
+      "background_population": "qcd",
+      "target_signal_efficiency": 0.5,
+      "threshold": 0.9746788740158081,
+      "achieved_signal_efficiency": 0.5,
+      "n_signal_pass": 96679,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.004069117689199645,
+      "background_rejection": 245.75352112676055,
+      "n_background_pass": 710,
+      "n_background_total": 174485
+    },
+    {
+      "background_population": "qcd",
+      "target_signal_efficiency": 0.4,
+      "threshold": 0.9863532781600952,
+      "achieved_signal_efficiency": 0.40000413740315893,
+      "n_signal_pass": 77344,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.0020632146029744675,
+      "background_rejection": 484.6805555555556,
+      "n_background_pass": 360,
+      "n_background_total": 174485
+    },
+    {
+      "background_population": "qcd",
+      "target_signal_efficiency": 0.25,
+      "threshold": 0.9950850009918213,
+      "achieved_signal_efficiency": 0.2500025858769743,
+      "n_signal_pass": 48340,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.0005444594091182623,
+      "background_rejection": 1836.6842105263156,
+      "n_background_pass": 95,
+      "n_background_total": 174485
+    },
+    {
+      "background_population": "qcd",
+      "target_signal_efficiency": 0.2,
+      "threshold": 0.9966804385185242,
+      "achieved_signal_efficiency": 0.20000206870157947,
+      "n_signal_pass": 38672,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.00028655758374645385,
+      "background_rejection": 3489.7000000000003,
+      "n_background_pass": 50,
+      "n_background_total": 174485
+    },
+    {
+      "background_population": "qcd",
+      "target_signal_efficiency": 0.1,
+      "threshold": 0.9987906813621521,
+      "achieved_signal_efficiency": 0.10000620610473836,
+      "n_signal_pass": 19337,
+      "n_signal_total": 193358,
+      "background_efficiency": 3.438691004957446e-05,
+      "background_rejection": 29080.833333333332,
+      "n_background_pass": 6,
+      "n_background_total": 174485
+    }
+  ],
+  "working_points_signal_vs_ttbar": [
+    {
+      "background_population": "ttbar",
+      "target_signal_efficiency": 0.6,
+      "threshold": 0.953646719455719,
+      "achieved_signal_efficiency": 0.6000010343507898,
+      "n_signal_pass": 116015,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.004757906521130702,
+      "background_rejection": 210.1764705882353,
+      "n_background_pass": 153,
+      "n_background_total": 32157
+    },
+    {
+      "background_population": "ttbar",
+      "target_signal_efficiency": 0.5,
+      "threshold": 0.9746788740158081,
+      "achieved_signal_efficiency": 0.5,
+      "n_signal_pass": 96679,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.002581086544142799,
+      "background_rejection": 387.43373493975906,
+      "n_background_pass": 83,
+      "n_background_total": 32157
+    },
+    {
+      "background_population": "ttbar",
+      "target_signal_efficiency": 0.4,
+      "threshold": 0.9863532781600952,
+      "achieved_signal_efficiency": 0.40000413740315893,
+      "n_signal_pass": 77344,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.0011817022732220045,
+      "background_rejection": 846.2368421052632,
+      "n_background_pass": 38,
+      "n_background_total": 32157
+    },
+    {
+      "background_population": "ttbar",
+      "target_signal_efficiency": 0.25,
+      "threshold": 0.9950850009918213,
+      "achieved_signal_efficiency": 0.2500025858769743,
+      "n_signal_pass": 48340,
+      "n_signal_total": 193358,
+      "background_efficiency": 0.0003109742824268433,
+      "background_rejection": 3215.7,
+      "n_background_pass": 10,
+      "n_background_total": 32157
+    },
+    {
+      "background_population": "ttbar",
+      "target_signal_efficiency": 0.2,
+      "threshold": 0.9966804385185242,
+      "achieved_signal_efficiency": 0.20000206870157947,
+      "n_signal_pass": 38672,
+      "n_signal_total": 193358,
+      "background_efficiency": 9.329228472805298e-05,
+      "background_rejection": 10719.0,
+      "n_background_pass": 3,
+      "n_background_total": 32157
+    },
+    {
+      "background_population": "ttbar",
+      "target_signal_efficiency": 0.1,
+      "threshold": 0.9987906813621521,
+      "achieved_signal_efficiency": 0.10000620610473836,
+      "n_signal_pass": 19337,
+      "n_signal_total": 193358,
+      "background_efficiency": 3.109742824268433e-05,
+      "background_rejection": 32156.999999999996,
+      "n_background_pass": 1,
+      "n_background_total": 32157
+    }
+  ]
+}
