@@ -1,0 +1,14 @@
+{
+  "full_sm_normalization_population": 2538851,
+  "luminosity_high_fb": 4000,
+  "luminosity_reference_fb": 450,
+  "luminosity_scale_4000_over_450": 8.88888888888889,
+  "physical_qcd_inference_population": 87623306,
+  "qcd1_population": 27683689,
+  "qcd2_population": 59939617,
+  "qcd_weight_at_450_fb": 7.3112875413134075,
+  "sm_holdout_A_threshold_population": 508168,
+  "sm_weight_at_450_fb": 0.000473265,
+  "status": "FINAL_FOR_THESE_EXACT_FOUR_MODEL_ARTIFACTS",
+  "zero_count_poisson_mean_95_upper_one_sided": 2.99573227355399
+}
