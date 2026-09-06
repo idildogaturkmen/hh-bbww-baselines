@@ -1,0 +1,135 @@
+{
+  "package": "track_b_harvey_fp32_score_precision_20260906_v2_governing10m",
+  "supersedes": "track_b_harvey_fp32_score_precision_20260906_v1 (2M-sibling stand-in for the per-event census)",
+  "utc_package_created": "2026-09-06T19:15:21Z",
+  "authorization": "User explicitly authorized governing-SPA10M validation inference for this task, CPU-only, no training/gradients, no Stage-C/holdout_B, no EAF GPU, no ParT interaction, no package installs.",
+  "governing_model": {
+    "name": "SPA-Net 10M seed-0, 50-epoch baseline, primary checkpoint (epoch 47)",
+    "checkpoint_path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/full_run_attempt2_eaf_local_staging/spanet_10M_seed0/version_0/checkpoints/primary-epoch=47-step=234336-validation_average_jet_accuracy=0.4928.ckpt",
+    "checkpoint_sha256_expected": "fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+    "checkpoint_sha256_verified": "fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+    "match": true
+  },
+  "validation_cohort": {
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/production_hdf5_build_v1/work/production_2M_val.h5",
+    "sha256_expected": "3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2",
+    "sha256_verified": "3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2",
+    "match": true,
+    "same_cohort_and_order_as_frozen_evaluation_proof": "evaluate_classification_10M.py imports evaluate_classification.py as `base` and never reassigns base.HDF5_VAL; both are scored via the identical shuffle=False, drop_last=False DataLoader over model.validation_dataset -- deterministic, identical row order by construction.",
+    "n_events": 400000,
+    "n_signal": 193358,
+    "n_qcd": 174485,
+    "n_ttbar": 32157,
+    "n_all_background": 206642
+  },
+  "environment": {
+    "python_interpreter": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AE_spanet_10jet_literature_aligned_training_preflight_20260818_v1/gpu_canary_10jet_trainonlyweighted_v23exact_r2/.pixi/envs/default/bin/python",
+    "python_version": "3.9.23 (conda-forge)",
+    "torch_version": "2.8.0+cu128",
+    "cuda_available": false,
+    "pytorch_lightning_version": "2.6.0",
+    "h5py_version": "3.14.0",
+    "spanet_pinned_commit_expected": "debbdc999bfb785eb110a36c5fd3eff211ebf234",
+    "spanet_pinned_commit_verified": "debbdc999bfb785eb110a36c5fd3eff211ebf234",
+    "spanet_repo_working_tree_clean": true,
+    "packages_installed_or_modified": false,
+    "note_pandas_broken_worked_around_with_pyarrow": true
+  },
+  "inference_run": {
+    "script": "scripts/run_governing_10m_tail_inference.py",
+    "cpu_only": true,
+    "options_num_gpu": 0,
+    "eaf_gpu_used": false,
+    "training_or_gradient_update": false,
+    "stage_c_or_holdout_B_accessed": false,
+    "part_touched": false,
+    "batch_size": 2048,
+    "n_events_scored": 400000,
+    "forward_pass_wall_s": 127.92895293235779,
+    "forward_pass_events_per_s": 3126.7355108542106,
+    "total_wall_s": 146.07755374908447,
+    "checkpoint_load_missing_keys": [],
+    "checkpoint_load_unexpected_keys": [],
+    "exit_code": 0,
+    "process_reconstruction_check": {"n_mismatch": 0, "n_signal": 193358, "n_qcd": 174485, "n_ttbar": 32157},
+    "correctness_cross_check": {
+      "recomputed_auc_signal_vs_all_background": 0.9692723276616946,
+      "frozen_v1_reference_auc": 0.9692723276616946,
+      "match_to_16_significant_digits": true
+    }
+  },
+  "task_3_census": {
+    "u_cut": 5.5,
+    "n_tail_u_gt_5p5": {"signal": 2239, "all_background": 0, "qcd": 0, "ttbar": 0, "other_background": 0},
+    "n_unique_float32_values_tail": {"signal": 27, "all_background": 0, "qcd": 0, "ttbar": 0},
+    "spike_k2_u6p9237": {"signal": 99, "all_background": 0, "qcd": 0, "ttbar": 0},
+    "spike_k4_u6p6227": {"signal": 100, "all_background": 0, "qcd": 0, "ttbar": 0},
+    "exact_score_eq_1p0": {"signal": 67, "all_background": 0, "qcd": 0, "ttbar": 0},
+    "exact_score_eq_nextafter_1p0_full_400k": 0,
+    "even_k_only_pattern_confirmed_again": true,
+    "csv_unique_values": "SPA10M_FP32_UNIQUE_SCORE_CENSUS.csv",
+    "csv_explicit_k1_to_k64": "SPA10M_LATTICE_BINS_K1_TO_K64.csv"
+  },
+  "task_4_logits": {
+    "raw_logits_available": true,
+    "source": "this task's own inference run (not previously available anywhere in the frozen record, per v1's finding)",
+    "parquet": "SPA10M_EVENT_LOGITS_400K.parquet",
+    "n_distinct_delta_u_gt_5p5": 2239,
+    "n_distinct_u_logit_u_gt_5p5": 2239,
+    "n_events_u_gt_5p5": 2239,
+    "all_events_distinct_in_logit_space_at_u_gt_5p5": true,
+    "n_distinct_delta_u_gt_3p5": 9252,
+    "n_events_u_gt_3p5": 9258,
+    "n_distinct_delta_u_gt_4p5": 6449,
+    "n_events_u_gt_4p5": 6454,
+    "figures": [
+      "figures/u_prob32_tail_10M.png",
+      "figures/u_logit_tail_10M.png",
+      "figures/u_prob32_vs_u_logit.png",
+      "figures/delta_by_fp32_bin.png"
+    ]
+  },
+  "u35_u45_quantification": {
+    "u_gt_3p5": {
+      "k_lattice_steps_remaining_to_1": 5305.421535661945,
+      "n_events_signal": 9258, "n_events_background": 0,
+      "n_distinct_float32_values": 1705,
+      "mean_events_per_distinct_value": 5.42991202346041
+    },
+    "u_gt_4p5": {
+      "k_lattice_steps_remaining_to_1": 530.5421535661945,
+      "n_events_signal": 6454, "n_events_background": 0,
+      "n_distinct_float32_values": 266,
+      "mean_events_per_distinct_value": 24.263157894736842
+    },
+    "materially_affects_interpretation": false,
+    "reasons": [
+      "zero background events populate either region in this cohort",
+      "logit ordering survives at 99.9%+ distinctness even at these looser thresholds",
+      "all physics quantities this project reports at these thresholds are threshold-crossing counts, unaffected by ties among events that all pass or all fail"
+    ]
+  },
+  "task_6_quantization_vs_pathology": {
+    "post_softmax_fp32_quantization_confirmed": true,
+    "logit_ordering_lost_before_softmax": false,
+    "model_pathology_claimed": false,
+    "fp32_training_invalidity_claimed": false,
+    "model_called_calibrated": false,
+    "resolved_this_task": true
+  },
+  "final_answers": {
+    "GOVERNING_10M_FULL_COHORT_RERUN": "YES",
+    "N_EVENTS": 400000,
+    "SPIKE_6P9237_SIGNAL": 99,
+    "SPIKE_6P9237_BACKGROUND": 0,
+    "SPIKE_6P6227_SIGNAL": 100,
+    "SPIKE_6P6227_BACKGROUND": 0,
+    "EXACT_SCORE_1_SIGNAL": 67,
+    "EXACT_SCORE_1_BACKGROUND": 0,
+    "N_UNIQUE_PROB_U_GT_5P5": 27,
+    "N_UNIQUE_LOGIT_U_GT_5P5": 2239,
+    "LOGIT_MARGIN_SMOOTH_THROUGH_SPIKES": "YES",
+    "FP32_QUANTIZATION_AFFECTS_U35_U45_INTERPRETATION": "NO",
+    "NEW_TRAINING_LAUNCHED": "NO"
+  }
+}

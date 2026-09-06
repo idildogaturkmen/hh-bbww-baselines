@@ -1,0 +1,38 @@
+governing checkpoint sha256: fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5
+HDF5_VAL sha256: 3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2
+==== Preflight (read-only classification evaluation) ====
+val HDF5 sha256: 3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2
+primary checkpoint sha256: fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5
+secondary checkpoint sha256: f333911ad2b5881f01fa4be7eeea7e9d5dfd63578543f1899d3608f11cc84a64
+spanet_repo commit: debbdc999bfb785eb110a36c5fd3eff211ebf234
+==== Preflight OK ====
+process reconstruction VERIFIED: {'n_mismatch': 0, 'n_signal': 193358, 'n_qcd': 174485, 'n_ttbar': 32157}
+Seed set to 0
+Index Range: 0...1999999
+Index Range: 0...399999
+checkpoint load: missing=[] unexpected=[]
+forward pass wall time: 127.93s for 400000 events (3126.7 events/s)
+{
+  "governing_checkpoint": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/full_run_attempt2_eaf_local_staging/spanet_10M_seed0/version_0/checkpoints/primary-epoch=47-step=234336-validation_average_jet_accuracy=0.4928.ckpt",
+  "governing_checkpoint_sha256": "fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+  "hdf5_val": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/production_hdf5_build_v1/work/production_2M_val.h5",
+  "hdf5_val_sha256": "3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2",
+  "spanet_commit": "debbdc999bfb785eb110a36c5fd3eff211ebf234",
+  "n_scored": 400000,
+  "n_signal": 193358,
+  "n_qcd": 174485,
+  "n_ttbar": 32157,
+  "n_all_background": 206642,
+  "checkpoint_load_missing_keys": [],
+  "checkpoint_load_unexpected_keys": [],
+  "forward_pass_wall_s": 127.92895293235779,
+  "forward_pass_events_per_s": 3126.7355108542106,
+  "total_wall_s": 146.07755374908447,
+  "process_reconstruction_check": {
+    "n_mismatch": 0,
+    "n_signal": 193358,
+    "n_qcd": 174485,
+    "n_ttbar": 32157
+  }
+}
+wrote /uscms_data/d3/iturkmen/repos/hh-bbww-baselines-bdt/docs/checkpoints/track_b_harvey_fp32_score_precision_20260906_v2_governing10m/SPA10M_EVENT_LOGITS_400K.parquet

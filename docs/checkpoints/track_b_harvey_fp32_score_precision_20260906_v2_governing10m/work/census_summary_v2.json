@@ -1,0 +1,59 @@
+{
+  "n_total": 400000,
+  "n_signal": 193358,
+  "n_qcd": 174485,
+  "n_ttbar": 32157,
+  "n_all_background": 206642,
+  "u_cut": 5.5,
+  "spike_counts": {
+    "signal": {
+      "k2_u6p9237": 99,
+      "k4_u6p6227": 100,
+      "exact_1p0": 67
+    },
+    "all_background": {
+      "k2_u6p9237": 0,
+      "k4_u6p6227": 0,
+      "exact_1p0": 0
+    },
+    "qcd": {
+      "k2_u6p9237": 0,
+      "k4_u6p6227": 0,
+      "exact_1p0": 0
+    },
+    "ttbar": {
+      "k2_u6p9237": 0,
+      "k4_u6p6227": 0,
+      "exact_1p0": 0
+    },
+    "other_background": {
+      "k2_u6p9237": 0,
+      "k4_u6p6227": 0,
+      "exact_1p0": 0
+    }
+  },
+  "global_distinctness": {
+    "n_distinct_prob32_u_gt_5p5": 27,
+    "n_distinct_delta_u_gt_5p5": 2239,
+    "n_distinct_u_logit_u_gt_5p5": 2239,
+    "n_events_u_gt_5p5": 2239
+  },
+  "u35_u45_quantification": {
+    "3.5": {
+      "k_lattice_steps_remaining_to_1": 5305.421535661945,
+      "n_events_above_threshold": 9258,
+      "n_events_above_threshold_signal": 9258,
+      "n_events_above_threshold_background": 0,
+      "n_distinct_float32_values_above_threshold": 1705,
+      "mean_events_per_distinct_value": 5.42991202346041
+    },
+    "4.5": {
+      "k_lattice_steps_remaining_to_1": 530.5421535661945,
+      "n_events_above_threshold": 6454,
+      "n_events_above_threshold_signal": 6454,
+      "n_events_above_threshold_background": 0,
+      "n_distinct_float32_values_above_threshold": 266,
+      "mean_events_per_distinct_value": 24.263157894736842
+    }
+  }
+}
