@@ -1,0 +1,127 @@
+{
+  "frozen_candidate_cut_GeV": 406.1153676240428,
+  "n_ttbar_lane1": 11,
+  "n_ttbar_lane2": 16,
+  "lanes_disjoint_by_event_uid": true,
+  "per_lane_results": [
+    {
+      "lane": "inference_ttbar_1",
+      "threshold": 406.1153676240428,
+      "n_ttbar_before": 11,
+      "n_ttbar_after": 7,
+      "ttbar_rejection": 0.36363636363636365,
+      "ttbar_rejection_ci68_lo": 0.23566989274432185,
+      "ttbar_rejection_ci68_hi": 0.5143301072556783,
+      "n_signal_before": 27339,
+      "n_signal_after": 26951,
+      "signal_efficiency": 0.9858078203299316
+    },
+    {
+      "lane": "inference_ttbar_2",
+      "threshold": 406.1153676240428,
+      "n_ttbar_before": 16,
+      "n_ttbar_after": 6,
+      "ttbar_rejection": 0.625,
+      "ttbar_rejection_ci68_lo": 0.5,
+      "ttbar_rejection_ci68_hi": 0.7352941176470589,
+      "n_signal_before": 27339,
+      "n_signal_after": 26951,
+      "signal_efficiency": 0.9858078203299316
+    },
+    {
+      "lane": "pooled (both lanes)",
+      "threshold": 406.1153676240428,
+      "n_ttbar_before": 27,
+      "n_ttbar_after": 13,
+      "ttbar_rejection": 0.5185185185185186,
+      "ttbar_rejection_ci68_lo": 0.4234285394103905,
+      "ttbar_rejection_ci68_hi": 0.6122857463038951,
+      "n_signal_before": 27339,
+      "n_signal_after": 26951,
+      "signal_efficiency": 0.9858078203299316
+    }
+  ],
+  "leave_one_lane_out": [
+    {
+      "derived_on": "inference_ttbar_1",
+      "threshold": 337.00118283042264,
+      "eval_lane": "inference_ttbar_2",
+      "eval_threshold": 337.00118283042264,
+      "eval_n_ttbar_before": 16,
+      "eval_n_ttbar_after": 5,
+      "eval_ttbar_rejection": 0.6875,
+      "eval_ttbar_rejection_ci68_lo": 0.5635125625313441,
+      "eval_ttbar_rejection_ci68_hi": 0.7894286139392442,
+      "eval_n_signal_before": 27339,
+      "eval_n_signal_after": 26212,
+      "eval_signal_efficiency": 0.958776838948023
+    },
+    {
+      "derived_on": "inference_ttbar_2",
+      "threshold": 549.4823485940818,
+      "eval_lane": "inference_ttbar_1",
+      "eval_threshold": 549.4823485940818,
+      "eval_n_ttbar_before": 11,
+      "eval_n_ttbar_after": 7,
+      "eval_ttbar_rejection": 0.36363636363636365,
+      "eval_ttbar_rejection_ci68_lo": 0.23566989274432185,
+      "eval_ttbar_rejection_ci68_hi": 0.5143301072556783,
+      "eval_n_signal_before": 27339,
+      "eval_n_signal_after": 27278,
+      "eval_signal_efficiency": 0.9977687552580563
+    }
+  ],
+  "threshold_from_lane1_median": 337.00118283042264,
+  "threshold_from_lane2_median": 549.4823485940818,
+  "threshold_ratio": 1.6305056972769698,
+  "thresholds_stable_lt_1p15": false,
+  "qualitative_feature_check": [
+    {
+      "feature": "pT_H1",
+      "signal_median": 173.02210795532966,
+      "lane1_median": 337.00118283042264,
+      "lane1_ratio_to_signal": 1.9477348115388158,
+      "lane2_median": 549.4823485940818,
+      "lane2_ratio_to_signal": 3.175792706998724,
+      "both_lanes_boosted_gt1p5x": true
+    },
+    {
+      "feature": "jet1_pt",
+      "signal_median": 165.21066284179688,
+      "lane1_median": 254.40284729003906,
+      "lane1_ratio_to_signal": 1.5398694183174557,
+      "lane2_median": 549.8615112304688,
+      "lane2_ratio_to_signal": 3.3282446893697624,
+      "both_lanes_boosted_gt1p5x": true
+    },
+    {
+      "feature": "HT",
+      "signal_median": 456.4609069824219,
+      "lane1_median": 575.7196655273438,
+      "lane1_ratio_to_signal": 1.261268285455855,
+      "lane2_median": 1138.5902709960938,
+      "lane2_ratio_to_signal": 2.4943872598490464,
+      "both_lanes_boosted_gt1p5x": false
+    },
+    {
+      "feature": "pT_H2",
+      "signal_median": 146.84365588884523,
+      "lane1_median": 178.95623221328194,
+      "lane1_ratio_to_signal": 1.2186854864792023,
+      "lane2_median": 433.0341030972246,
+      "lane2_ratio_to_signal": 2.9489466226924645,
+      "both_lanes_boosted_gt1p5x": false
+    },
+    {
+      "feature": "jet2_pt",
+      "signal_median": 113.97019958496094,
+      "lane1_median": 130.47373962402344,
+      "lane1_ratio_to_signal": 1.1448057483373948,
+      "lane2_median": 342.7494201660156,
+      "lane2_ratio_to_signal": 3.007360006512119,
+      "both_lanes_boosted_gt1p5x": false
+    }
+  ],
+  "n_features_both_lanes_boosted_gt1p5x": 2,
+  "TTBAR_SUPPRESSION": "NOT_REPRODUCED"
+}

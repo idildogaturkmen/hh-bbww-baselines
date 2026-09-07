@@ -1,0 +1,91 @@
+{
+  "n_signal_ge5jets": 88854,
+  "n_signal_total": 193358,
+  "median_delta_u_logit": -0.09016944323088913,
+  "median_delta_u_logit_ci68": [
+    -0.09280473711483891,
+    -0.08794534406089322
+  ],
+  "mean_delta_u_logit": -0.14844106393910564,
+  "mean_delta_u_logit_ci68": [
+    -0.15121800134949454,
+    -0.14577688649082093
+  ],
+  "frac_more_signal_like_after_masking": 0.4190807391901321,
+  "frac_less_signal_like_after_masking": 0.5809192608098679,
+  "frac_exactly_unchanged": 0.0,
+  "threshold_crossings_u3p5": {
+    "threshold": 3.5,
+    "n_pass_A": 5374,
+    "n_pass_B": 7622,
+    "gained_B_only": 2578,
+    "lost_A_only": 330,
+    "both": 5044,
+    "neither": 80902
+  },
+  "threshold_crossings_u4p5": {
+    "threshold": 4.5,
+    "n_pass_A": 3334,
+    "n_pass_B": 6165,
+    "gained_B_only": 3441,
+    "lost_A_only": 610,
+    "both": 2724,
+    "neither": 82079
+  },
+  "stratification_by_pt5": {
+    "30-50": {
+      "n": 59111,
+      "median_delta_u_logit": -0.06112210050332578,
+      "mean_delta_u_logit": -0.15674799947873472
+    },
+    "50-75": {
+      "n": 23455,
+      "median_delta_u_logit": -0.19167939744450235,
+      "mean_delta_u_logit": -0.1511327384760332
+    },
+    "75-100": {
+      "n": 4683,
+      "median_delta_u_logit": -0.29729090699845373,
+      "mean_delta_u_logit": -0.0861943741318722
+    },
+    "100-150": {
+      "n": 1462,
+      "median_delta_u_logit": -0.32603977603470347,
+      "mean_delta_u_logit": 0.02451911971031771
+    },
+    "150+": {
+      "n": 143,
+      "median_delta_u_logit": -0.563137309010195,
+      "mean_delta_u_logit": -0.0799413710445889
+    }
+  },
+  "stratification_by_min_dR_j5_leading4": {
+    "0-0.5": {
+      "n": 4999,
+      "median_delta_u_logit": -0.020996248099878434,
+      "mean_delta_u_logit": -0.09690070321908091
+    },
+    "0.5-1.0": {
+      "n": 36534,
+      "median_delta_u_logit": -0.14095232901004595,
+      "mean_delta_u_logit": -0.19232774943774075
+    },
+    "1.0-1.5": {
+      "n": 26843,
+      "median_delta_u_logit": -0.23235263697021957,
+      "mean_delta_u_logit": -0.21116953234847502
+    },
+    "1.5-2.0": {
+      "n": 12809,
+      "median_delta_u_logit": -0.030942159762718302,
+      "mean_delta_u_logit": -0.08517532274128065
+    },
+    "2.0+": {
+      "n": 7669,
+      "median_delta_u_logit": 0.1587668472028132,
+      "mean_delta_u_logit": 0.14092590741015648
+    }
+  },
+  "hh_origin_truth_match_stratification": "NOT ATTEMPTED -- would require joining this 400k development-cohort event identity (production_2M_val.h5 row index) to the physical master-table truth-matching convention (signal_holdout_A row identity), which is a DIFFERENT signal sample/identity; no proven join key exists between the two, so this stratification is not performed rather than assumed.",
+  "spanet_assignment_output_recovery": "NOT ATTEMPTED in this pass. A legitimate ground-truth assignment target DOES exist for this population (TARGETS/h1/{b1,b2}, TARGETS/h2/{b3,b4} in production_2M_val.h5), so this would be technically feasible in a follow-up, but decoding the model's assignment head (not just the EVENT/signal classification head already captured here) is a separate, more expensive computation not run in this pass to keep it tractable. Not invented/estimated here."
+}

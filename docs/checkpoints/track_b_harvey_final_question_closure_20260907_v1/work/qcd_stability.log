@@ -1,0 +1,92 @@
+{
+  "lane_generated_totals": {
+    "inference_qcd_1": 88000000000,
+    "inference_qcd_2": 190360000000
+  },
+  "lane_selected_totals": {
+    "inference_qcd_1": 27683689,
+    "inference_qcd_2": 59939617
+  },
+  "lane_files": {
+    "inference_qcd_1": 176,
+    "inference_qcd_2": 381
+  },
+  "lane1_jobs_per_file": 100.0,
+  "lane1_uniform_per_file_generated_count_PROVEN": true,
+  "lane2_jobs_per_file": 99.92650918635171,
+  "lane2_uniform_per_file_generated_count_PROVEN": false,
+  "lane2_per_file_generated_count_status": "APPROXIMATION_ONLY_selected_count_scaled_by_lane_efficiency",
+  "lane_efficiency": {
+    "inference_qcd_1": 0.000314587375,
+    "inference_qcd_2": 0.00031487506303845347
+  },
+  "n_qcd_survivors_u35_total": 68,
+  "n_qcd_survivors_u45_total": 12,
+  "weight_numerator_reproduces_frozen_constant": "True",
+  "final_running_weight_450fb": 7.3112875413134075,
+  "final_running_B_u35": 497.1675528093117,
+  "final_running_B_u45": 87.73545049576089,
+  "dispersion_test_u35": {
+    "verdict": "STABLE_WITHIN_CURRENT_MC",
+    "chi2": 6.723171136843035,
+    "dof": 7,
+    "chi2_over_dof": 0.9604530195490051,
+    "total_n": 68.0
+  },
+  "dispersion_test_u45": {
+    "verdict": "TOO_FEW_EVENTS_TO_JUDGE",
+    "total_n": 12.0
+  },
+  "lane_compare": {
+    "u35": {
+      "lane1": {
+        "n": 22,
+        "HT_median": 590.3520202636719,
+        "mHH_median": 811.2090148925781,
+        "RHH_median": 143.11062622070312,
+        "n_selected_jets_median": 4.0,
+        "n_btag_loose_median": 3.0
+      },
+      "lane2": {
+        "n": 46,
+        "HT_median": 514.9967651367188,
+        "mHH_median": 725.3457641601562,
+        "RHH_median": 150.91168212890625,
+        "n_selected_jets_median": 4.0,
+        "n_btag_loose_median": 3.0
+      }
+    },
+    "u45": {
+      "lane1": {
+        "n": 5,
+        "HT_median": 617.3526611328125,
+        "mHH_median": 904.0745239257812,
+        "RHH_median": 131.59933471679688,
+        "n_selected_jets_median": 4.0,
+        "n_btag_loose_median": 3.0
+      },
+      "lane2": {
+        "n": 7,
+        "HT_median": 528.319091796875,
+        "mHH_median": 1332.5089111328125,
+        "RHH_median": 342.7293395996094,
+        "n_selected_jets_median": 4.0,
+        "n_btag_loose_median": 3.0
+      }
+    }
+  },
+  "binomial_rate_compatibility_u35": {
+    "n_lane1": 22,
+    "n_lane2": 46,
+    "p1_expected_from_generated_exposure": 0.3161373760597788,
+    "observed_p1": 0.3235294117647059,
+    "p_value": 0.8966344109884941
+  },
+  "binomial_rate_compatibility_u45": {
+    "n_lane1": 5,
+    "n_lane2": 7,
+    "p1_expected_from_generated_exposure": 0.3161373760597788,
+    "observed_p1": 0.4166666666666667,
+    "p_value": 0.5360952441577855
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "package": "track_b_harvey_final_question_closure_20260907_v1",
+  "role": "Track D -- final Harvey-question closure pass. Purely additive: complements Track A/B/C, does not modify them.",
+  "utc_created": "2026-09-07T18:35:00Z",
+  "path": "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_final_question_closure_20260907_v1",
+  "git_repository_modified": false,
+  "git_commands_run": false,
+  "frozen_packages_modified": false,
+
+  "governing_checkpoint": {
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/full_run_attempt2_eaf_local_staging/spanet_10M_seed0/version_0/checkpoints/primary-epoch=47-step=234336-validation_average_jet_accuracy=0.4928.ckpt",
+    "sha256_expected": "fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+    "sha256_verified": "fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+    "match": true,
+    "modified": false
+  },
+  "validation_hdf5": {
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/production_hdf5_build_v1/work/production_2M_val.h5",
+    "sha256_expected": "3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2",
+    "sha256_verified": "3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2",
+    "match": true,
+    "n_events": 400000
+  },
+
+  "inference_performed": {
+    "any_new_inference": true,
+    "scope": "Task 1 (fifth-jet counterfactual) ONLY -- the only new-inference activity in this package, explicitly authorized in the task instructions.",
+    "script": "scripts/run_fifth_jet_counterfactual.py",
+    "exact_command": "$TORCH_ENV_PYTHON scripts/run_fifth_jet_counterfactual.py",
+    "torch_env_python": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AE_spanet_10jet_literature_aligned_training_preflight_20260818_v1/gpu_canary_10jet_trainonlyweighted_v23exact_r2/.pixi/envs/default/bin/python",
+    "spanet_pinned_commit_expected": "debbdc999bfb785eb110a36c5fd3eff211ebf234",
+    "spanet_pinned_commit_verified": "debbdc999bfb785eb110a36c5fd3eff211ebf234",
+    "cpu_only": true,
+    "options_num_gpu": 0,
+    "eaf_or_gpu_used": false,
+    "model_eval_and_no_grad": true,
+    "training_or_gradient_update": false,
+    "optimizer_step_or_trainer_fit": false,
+    "n_events_inferred": 400000,
+    "n_forward_passes_per_event": 2,
+    "forward_pass_wall_s_both_passes": 156.99859189987183,
+    "forward_pass_events_per_s": 2547.7935512638605,
+    "total_script_wall_s": 223.58075499534607,
+    "checkpoint_load_missing_keys": [],
+    "checkpoint_load_unexpected_keys": [],
+    "sanity_check_masking_correctness": {
+      "population": "events with n_selected_jets<=4 (mask slots >=4 already empty)",
+      "n_events": 232662,
+      "max_abs_delta_u_logit_B_minus_A": 0.0,
+      "pass": true
+    },
+    "part_touched": false,
+    "stage_c_or_holdout_B_accessed": false,
+    "part_type": null
+  },
+
+  "post_processing_only_scripts": [
+    "scripts/fifth_jet_analysis.py",
+    "scripts/qcd_stability.py",
+    "scripts/fp32_spike_kinematics.py",
+    "scripts/ttbar_lane_validation.py"
+  ],
+  "post_processing_environment": "/uscms_data/d3/iturkmen/venvs/hh4b-bdt-v1/bin/python (numpy/pandas/pyarrow/scipy/matplotlib only -- no torch, no spanet, no h5py model access)",
+  "post_processing_reads_h5py_only_for": [
+    "FULL_QCD_SURVIVOR_SIDECAR.h5 (Task 2, already-frozen per-event survivor sidecar, read-only, no model/checkpoint involved)"
+  ],
+
+  "task_1_fifth_jet_counterfactual": {
+    "status": "EXECUTED",
+    "result_files": ["FIFTH_JET_COUNTERFACTUAL_FINAL.md", "FIFTH_JET_COUNTERFACTUAL_EVENTS.parquet",
+                      "FIFTH_JET_COUNTERFACTUAL_EVENTS_ALL400K.parquet"],
+    "n_signal_events_ge5_selected_jets": 88854,
+    "median_delta_u_logit": -0.09016944323088913,
+    "mean_delta_u_logit": -0.14844106393910564,
+    "frac_more_signal_like_after_masking": 0.4190807391901321,
+    "frac_less_signal_like_after_masking": 0.5809192608098679,
+    "threshold_crossings_u3p5": {"gained": 2578, "lost": 330},
+    "threshold_crossings_u4p5": {"gained": 3441, "lost": 610},
+    "direct_jet5_only_isolation_C_attempted": false,
+    "assignment_output_recovery_attempted": false,
+    "hh_origin_truth_stratification_attempted": false
+  },
+  "task_2_qcd_stability": {
+    "status": "EXECUTED",
+    "result_files": ["QCD_EXISTING_STATS_STABILITY_FINAL.md", "QCD_CUMULATIVE_STABILITY.csv"],
+    "lane1_per_file_generated_count_proven_uniform": true,
+    "lane2_per_file_generated_count_proven_uniform": false,
+    "verdict_u35": "STABLE_WITHIN_CURRENT_MC",
+    "verdict_u45": "TOO_FEW_EVENTS_TO_JUDGE",
+    "n_qcd_survivors_u35": 68,
+    "n_qcd_survivors_u45": 12,
+    "lane_compatibility_binomial_p_u35": 0.8966344109884941,
+    "lane_compatibility_binomial_p_u45": 0.5360952441577855
+  },
+  "task_3_fp32_spike_kinematics": {
+    "status": "EXECUTED",
+    "result_files": ["FP32_SPIKE_KINEMATICS_FINAL.md", "FP32_SPIKE_KINEMATICS_TABLE.csv"],
+    "sample": "HARVEY_MASTER_EVENT_TABLE.parquet (physical signal, u>3.5) -- explicitly NOT the Track A 400k dev cohort",
+    "k2_n_events": 255, "k4_n_events": 228,
+    "n_feature_comparisons": 26, "n_large_effect_cliffs_ge_0p33": 0,
+    "verdict": "NO_CLEAR_SPECIAL_MODE"
+  },
+  "task_4_ttbar_validation": {
+    "status": "EXECUTED",
+    "result_files": ["TTBAR_SIMPLE_CUT_VALIDATION_FINAL.md", "TTBAR_LANE_VALIDATION.csv"],
+    "n_ttbar_lane1": 11, "n_ttbar_lane2": 16,
+    "lanes_disjoint_by_event_uid": true,
+    "leave_one_lane_out_threshold_ratio": 1.6305056972769698,
+    "verdict": "NOT_REPRODUCED"
+  },
+  "task_5_preselection": {
+    "status": "COMPILED (reorganized, not recomputed)",
+    "result_files": ["PRESELECTION_ANSWER_FOR_HARVEY.md"]
+  },
+
+  "safety_confirmation": {
+    "trained_or_fine_tuned_spanet": false,
+    "modified_frozen_checkpoint": false,
+    "modified_track_a_b_c_packages": false,
+    "accessed_holdout_B_or_stage_c": false,
+    "launched_new_qcd_or_ttbar_mc_generation": false,
+    "launched_condor_production": false,
+    "used_part": false,
+    "installed_or_upgraded_packages": false,
+    "changed_normalization_contracts": false,
+    "git_repository_modified": false,
+    "voms_proxy_status": "not required -- no IHEP/XRootD remote file access performed in this package; all inputs read from local/AFS-mounted frozen files already materialized by prior packages"
+  },
+
+  "final_answers": {
+    "HARVEY_QUESTIONS_TOTAL": 16,
+    "ANSWERED_WITH_RESULT": 4,
+    "ANSWERED_WITH_LIMITATION": 1,
+    "REQUIRES_NEW_MC": 0,
+    "RESOLVED_EARLIER": 11,
+    "FIFTH_JET_COUNTERFACTUAL_RUN": "YES",
+    "FIFTH_JET_COUNTERFACTUAL_RESULT": "CAUSAL_PERTURBATION_CONFIRMED",
+    "QCD_EXISTING_STATS_STABILITY_RESULT_U35": "STABLE_WITHIN_CURRENT_MC",
+    "QCD_EXISTING_STATS_STABILITY_RESULT_U45": "TOO_FEW_EVENTS_TO_JUDGE",
+    "SPIKE_KINEMATICS_RESULT": "NO_CLEAR_SPECIAL_MODE",
+    "TTBAR_SUPPRESSION_RESULT": "NOT_REPRODUCED",
+    "NEW_TRAINING_LAUNCHED": "NO",
+    "NEW_MC_GENERATION_LAUNCHED": "NO",
+    "HOLDOUT_B_OR_STAGEC_ACCESSED": "NO",
+    "FROZEN_PACKAGES_MODIFIED": "NO",
+    "CHECKSUMS_PASS": "YES",
+    "READY_FOR_HARVEY": "YES"
+  }
+}
