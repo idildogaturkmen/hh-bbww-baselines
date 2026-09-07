@@ -1,0 +1,12 @@
+files to re-read: 200; total events to rematch: 27339
+[20/200] files done, 15s elapsed
+[40/200] files done, 26s elapsed
+[60/200] files done, 35s elapsed
+[80/200] files done, 44s elapsed
+[100/200] files done, 54s elapsed
+[120/200] files done, 65s elapsed
+[140/200] files done, 76s elapsed
+[160/200] files done, 86s elapsed
+[180/200] files done, 97s elapsed
+[200/200] files done, 107s elapsed
+wrote truth_rematch_audit_correction3.parquet: 27339 rows, 108s total

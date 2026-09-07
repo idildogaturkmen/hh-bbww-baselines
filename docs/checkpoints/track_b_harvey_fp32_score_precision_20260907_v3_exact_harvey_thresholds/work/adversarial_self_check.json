@@ -1,0 +1,79 @@
+{
+  "decimal_threshold_crosscheck": {
+    "0.9997": {
+      "threshold": 0.9997,
+      "u_decimal_50digit": "3.5228787452803375627049720967448846907998711358092",
+      "u_float64": 3.5228787452803854,
+      "u_agrees_to_1e10": true,
+      "delta_decimal_50digit": "8.1114280382990710191905990505638705453091214525232",
+      "delta_float64": 8.11142803829918,
+      "delta_agrees_to_1e10": true
+    },
+    "0.99997": {
+      "threshold": 0.99997,
+      "u_decimal_50digit": "4.5228787452803375627049720967448846907998711358092",
+      "u_float64": 4.522878745280707,
+      "u_agrees_to_1e10": true,
+      "delta_decimal_50digit": "10.414283175852109728492207176377792208990287912548",
+      "delta_float64": 10.41428317585296,
+      "delta_agrees_to_1e10": true
+    }
+  },
+  "independent_loop_recount_signal": {
+    "0.9997": {
+      "loop": {
+        "n_pass_fp32": 9170,
+        "n_pass_logit": 9170,
+        "n_pass_both": 9170,
+        "n_events_exactly_equal_to_threshold": 0
+      },
+      "vectorized_pass_fp32": 9170,
+      "vectorized_pass_logit": 9170,
+      "loop_matches_vectorized_fp32": true,
+      "loop_matches_vectorized_logit": true
+    },
+    "0.99997": {
+      "loop": {
+        "n_pass_fp32": 6368,
+        "n_pass_logit": 6370,
+        "n_pass_both": 6368,
+        "n_events_exactly_equal_to_threshold": 0
+      },
+      "vectorized_pass_fp32": 6368,
+      "vectorized_pass_logit": 6370,
+      "loop_matches_vectorized_fp32": true,
+      "loop_matches_vectorized_logit": true
+    }
+  },
+  "gt_vs_ge_semantics": {
+    "0.9997": {
+      "n_strictly_greater": 9170,
+      "n_greater_or_equal": 9170,
+      "n_exactly_equal_to_threshold": 0,
+      "gt_and_ge_identical": true
+    },
+    "0.99997": {
+      "n_strictly_greater": 6368,
+      "n_greater_or_equal": 6368,
+      "n_exactly_equal_to_threshold": 0,
+      "gt_and_ge_identical": true
+    }
+  },
+  "score_eq_1_handling": {
+    "n_score_eq_1p0": 67,
+    "n_u_prob32_nonfinite": 67,
+    "matches": true
+  },
+  "v2_package_untouched": {
+    "sha256_now": "bb282dac7717d8e5145e5c2f842beb9e1b6a6ac2d64c95ab04aa2a40ad0d5412",
+    "sha256_recorded_in_v2_SHA256SUMS": "bb282dac7717d8e5145e5c2f842beb9e1b6a6ac2d64c95ab04aa2a40ad0d5412",
+    "match": true
+  },
+  "no_new_inference_ast_import_check": {
+    "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines-bdt/docs/checkpoints/track_b_harvey_fp32_score_precision_20260907_v3_exact_harvey_thresholds/scripts/adversarial_self_check.py": [],
+    "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines-bdt/docs/checkpoints/track_b_harvey_fp32_score_precision_20260907_v3_exact_harvey_thresholds/scripts/build_harvey_figure.py": [],
+    "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines-bdt/docs/checkpoints/track_b_harvey_fp32_score_precision_20260907_v3_exact_harvey_thresholds/scripts/exact_threshold_analysis.py": []
+  },
+  "no_new_inference_confirmed": true,
+  "note_on_prior_naive_grep_false_positive": "An earlier naive substring grep over this same directory flagged this script itself, because it literally contains the forbidden-token strings as data (the token list used to search for them), not as executable imports. Replaced with this AST-based import check, which only looks at actual `import`/`from ... import` statements and is not subject to that self-reference false positive."
+}

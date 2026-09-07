@@ -1,0 +1,42 @@
+threshold(u>3.5) = 0.9996837722339832
+threshold(u>4.5) = 0.9999683772233983
+sidecar keys: ['HT', 'dataset_id', 'fixed_12', 'fixed_pairing_index', 'jet_eta', 'jet_mask', 'jet_mass', 'jet_phi', 'jet_probB', 'jet_probC', 'jet_probL', 'jet_pt', 'mHH_leading_four', 'n_jets_kept', 'n_selected_jets', 'pairing_RHH', 'pairing_deltaR_HH', 'pairing_deltaRbb', 'pairing_mass_asymmetry', 'pairing_mbb', 'pairing_ptbb', 'pass_mask_bdt_kf', 'pass_mask_spanet_10m', 'pass_mask_spanet_2m', 'raw_entry_index', 'score_bdt_kf', 'score_spanet_10m', 'score_spanet_2m', 'source_file', 'source_file_index', 'spanet_10m_assignment_indices', 'spanet_10m_assignment_probability', 'spanet_2m_assignment_indices', 'spanet_2m_assignment_probability']
+QCD: n(u>3.5, strict >)=68  n(score>=u35 same value)=68
+QCD: n(u>4.5, strict >)=12
+QCD: n(score>=0.9997)=61  n(score>=0.99997)=12
+non-QCD u>3.5: {'inference_ttbar_1': 11, 'inference_ttbar_2': 16, 'TTbarZ': 1, 'ttH': 1, 'ZJetsToQQ': 8, 'SingleTop': 2, 'TTbarW': 2, 'TW': 1}
+non-QCD u>4.5: {'inference_ttbar_2': 2, 'SingleTop': 1}
+non-QCD score>=0.9997: {'inference_ttbar_1': 9, 'inference_ttbar_2': 16, 'TTbarZ': 1, 'ZJetsToQQ': 8, 'SingleTop': 2, 'TTbarW': 2, 'TW': 1}
+non-QCD score>=0.99997: {'inference_ttbar_2': 2, 'SingleTop': 1}
+
+=== u>3.5 ===
+  QCD n=68 B=497.1676  ttbar n=27 B=62.6782  other n=15 B=29.0968 ({'TTbarZ': 1, 'ttH': 1, 'ZJetsToQQ': 8, 'SingleTop': 2, 'TTbarW': 2, 'TW': 1})
+  ALL n=110 B=588.9425 sum_w2=3883.7971 N_eff=89.3078 rel_unc=10.5817%
+
+=== u>4.5 ===
+  QCD n=12 B=87.7355  ttbar n=2 B=4.6428  other n=1 B=4.8846 ({'SingleTop': 1})
+  ALL n=15 B=97.2629 sum_w2=676.0963 N_eff=13.9922 rel_unc=26.7336%
+
+=== score>=0.9997 ===
+  QCD n=61 B=445.9885  ttbar n=25 B=58.0353  other n=14 B=28.3361 ({'TTbarZ': 1, 'ZJetsToQQ': 8, 'SingleTop': 2, 'TTbarW': 2, 'TW': 1})
+  ALL n=100 B=532.3600 sum_w2=3498.2561 N_eff=81.0138 rel_unc=11.1102%
+
+=== score>=0.99997 ===
+  QCD n=12 B=87.7355  ttbar n=2 B=4.6428  other n=1 B=4.8846 ({'SingleTop': 1})
+  ALL n=15 B=97.2629 sum_w2=676.0963 N_eff=13.9922 rel_unc=26.7336%
+
+=== eps_S=4.0% WP (frozen fine-scan row) ===
+{'target_eps': 0.04, 'achieved_eps': 0.040024165236693374, 'threshold': 0.9999514818191528, 'S_450': 48.09100846428068, 'B_450_central': 139.87245404355997, 'B_450_b95': 302.6581508428303, 'S_over_B': 0.3438204383638244, 'Z_A_central': 3.8614299639973413, 'Z_A_B95': 2.695569361226731, 'raw_QCD': 17, 'raw_ttbar': 4, 'raw_ZJetsToQQ': 1, 'raw_total_all_bkg': 23, 'support_tier_overall': 'LIMITED', 'support_tier_min_process': 'ZERO_OBSERVED_MC', 'Z_A_450_central': 3.8614299639973413, 'Z_A_450_B95': 2.695569361226731, 'S_1000': 106.86890769840151, 'B_1000_central': 310.8276756523555, 'B_1000_b95': 672.573668539623, 'Z_A_1000_central': 5.756279926568415, 'Z_A_1000_B95': 4.018317553179105, 'S_3000': 320.60672309520453, 'B_3000_central': 932.4830269570665, 'B_3000_b95': 2017.7210056188687, 'Z_A_3000_central': 9.970169295405343, 'Z_A_3000_B95': 6.95993016305206}
+  recomputed: n_QCD=17 n_tt=4 n_ZJets=1 n_SingleTop=1
+  B=139.872454  sum_w2=956.137876  N_eff=20.461801  rel_unc=22.106911%
+
+--- QCD-only scaling: eps_S=4.0% WP ---
+   1x: N_eff=20.462  rel_unc=22.107%
+   2x: N_eff=38.991  rel_unc=16.015%
+   4x: N_eff=71.250  rel_unc=11.847%
+  10x: N_eff=141.486  rel_unc=8.407%
+2x: additional generated = 2.783600e+11  CPU-slot-hours = 7,525,184.2
+4x: additional generated = 8.350800e+11  CPU-slot-hours = 22,575,552.7
+10x: additional generated = 2.505240e+12  CPU-slot-hours = 67,726,658.2
+
+ALL CROSS-CHECKS PASSED

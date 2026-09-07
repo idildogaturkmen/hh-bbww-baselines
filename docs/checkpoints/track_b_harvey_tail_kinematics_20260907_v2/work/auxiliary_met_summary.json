@@ -1,0 +1,18 @@
+{
+  "label": "AUXILIARY_NONQCD_MET -- QCD ABSENT, NOT an all-background result, NOT numerically comparable to PRIMARY_BKG_N=110 models",
+  "n_signal_met_available": 27337,
+  "n_nonqcd_background": 42,
+  "n_ttbar": 27,
+  "n_other_background": 15,
+  "qcd_included": false,
+  "met_pt_auc_raw_unweighted": 0.25972038594127733,
+  "met_pt_auc_weighted_450fb": 0.22913327756836938,
+  "met_pt_auc_bootstrap_mean": 0.2574257330647392,
+  "met_pt_auc_bootstrap_ci68": [
+    0.21890915579381492,
+    0.30135714779376394
+  ],
+  "median_met_pt_signal_GeV": 49.178260803222656,
+  "median_met_pt_nonqcd_background_GeV": 106.62112426757812,
+  "interpretation": "met_pt separates signal from ttbar+other_background reasonably well (AUC far from 0.5, background has systematically higher met_pt), but this cannot be folded into the PRIMARY 110-background ranking because QCD has no met_pt value at all. Any future model wanting to use met_pt would need a QCD-specific imputation/handling strategy, which is out of scope here."
+}

@@ -1,0 +1,18 @@
+{
+  "0.9997": {
+    "score_threshold": 0.9997,
+    "one_minus_score": 0.00029999999999996696,
+    "u": 3.5228787452803854,
+    "u_roundtrip_from_delta": 3.522878745280385,
+    "u_matches_roundtrip_to_1e12": true,
+    "delta_threshold_natural_log": 8.11142803829918
+  },
+  "0.99997": {
+    "score_threshold": 0.99997,
+    "one_minus_score": 2.999999999997449e-05,
+    "u": 4.522878745280707,
+    "u_roundtrip_from_delta": 4.522878745280706,
+    "u_matches_roundtrip_to_1e12": true,
+    "delta_threshold_natural_log": 10.41428317585296
+  }
+}

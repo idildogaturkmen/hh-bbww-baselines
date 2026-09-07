@@ -15,10 +15,18 @@ u>3.5), essentially every event keeps its own distinct raw logit margin
 only 27 stored float32 probabilities -- the classifier's internal
 ranking is fully intact and varies smoothly; only the 32-bit probability
 *storage* saturates. This is not evidence of a broken model, invalid
-FP32 training, or lost discrimination power, and it does not
-meaningfully affect the u>3.5/u>4.5 regions either, since no background
-event reaches anywhere near that confidence level in this cohort and
-every count-based physics quantity we use (efficiencies, rejections,
-yields) only depends on threshold crossings, which are exact regardless
-of these ties. Full per-event archive, census, and figures are in
+FP32 training, or lost discrimination power. We also directly
+cross-checked, event by event, whether `u_prob32 > threshold` and
+`u_logit > threshold` ever disagree: at u>3.5 they select the identical
+9,258 events (zero disagreements); at u>4.5, 3 out of 6,454 passing
+events (0.046%) disagree -- all 3 sit within one float32 rounding step
+of the threshold. So FP32 quantization does not meaningfully affect the
+u>3.5/u>4.5 regions in this cohort, with that small measured exception
+disclosed rather than hidden; and it's zero QCD/ttbar events at any of
+these thresholds **in this 400,000-event development cohort**
+specifically -- this is an FP32/logit numerical audit, not a new
+physical-background-yield determination, and it does not replace the
+separate full physical-background tail study, where the much larger
+pooled QCD/ttbar/minor-background samples do contain rare survivors.
+Full per-event archive, census, and figures are in
 `docs/checkpoints/track_b_harvey_fp32_score_precision_20260906_v2_governing10m/`.

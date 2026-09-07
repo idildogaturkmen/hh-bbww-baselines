@@ -1,0 +1,110 @@
+{
+  "package": "track_b_harvey_fp32_score_precision_20260907_v3_exact_harvey_thresholds",
+  "purpose": "Answer Harvey's literal probability thresholds (score > 0.9997, score > 0.99997) with an exact FP32-vs-raw-logit event-by-event audit, using only the already-produced v2 governing-10M per-event parquet.",
+  "utc_created": "2026-09-06T21:32:22Z",
+  "additive_only": true,
+  "source_data": {
+    "path": "../track_b_harvey_fp32_score_precision_20260906_v2_governing10m/SPA10M_EVENT_LOGITS_400K.parquet",
+    "sha256": "bb282dac7717d8e5145e5c2f842beb9e1b6a6ac2d64c95ab04aa2a40ad0d5412",
+    "v2_package_untouched_reverified_end_of_task": true
+  },
+  "constraints_honored": {
+    "model_inference_run": false,
+    "checkpoint_loaded": false,
+    "hdf5_accessed": false,
+    "training_or_gradient_update": false,
+    "eaf_or_gpu_used": false,
+    "stage_c_or_holdout_B_accessed": false,
+    "part_touched": false,
+    "packages_installed_or_modified": false,
+    "v2_package_modified_or_deleted": false,
+    "verification_method": "AST-based import check across all 3 scripts in this package (scripts/adversarial_self_check.py): no import of torch, spanet, h5py, or pytorch_lightning anywhere"
+  },
+  "task_1_exact_thresholds": {
+    "method": "float64 math.log10/math.log from the literal decimal threshold, independently cross-checked against 50-digit decimal arithmetic (agreement < 1e-10) and against a Delta->u round-trip via the same stable softplus formula used in v2 (agreement < 1e-12)",
+    "0.9997": {"u": 3.5228787452803854, "delta_natural_log": 8.11142803829918},
+    "0.99997": {"u": 4.522878745280707, "delta_natural_log": 10.41428317585296}
+  },
+  "task_2_crosscheck": {
+    "semantics": "exact '>' both sides, never '>=' -- explicitly verified in task_6 that '>' vs '>=' makes no difference here (no event lands exactly on either threshold)",
+    "0.9997": {
+      "signal": {"n_population": 193358, "n_pass_fp32": 9170, "n_pass_logit": 9170, "n_only_fp32": 0, "n_only_logit": 0, "n_disagree": 0},
+      "qcd": {"n_population": 174485, "n_pass_fp32": 0, "n_pass_logit": 0, "n_disagree": 0},
+      "ttbar": {"n_population": 32157, "n_pass_fp32": 0, "n_pass_logit": 0, "n_disagree": 0},
+      "all_background": {"n_population": 206642, "n_pass_fp32": 0, "n_pass_logit": 0, "n_disagree": 0},
+      "full_cohort": {"n_population": 400000, "n_pass_fp32": 9170, "n_pass_logit": 9170, "n_disagree": 0}
+    },
+    "0.99997": {
+      "signal": {"n_population": 193358, "n_pass_fp32": 6368, "n_pass_logit": 6370, "n_only_fp32": 0, "n_only_logit": 2, "n_disagree": 2, "disagreement_fraction_of_signal": 1.034350789726828e-05},
+      "qcd": {"n_population": 174485, "n_pass_fp32": 0, "n_pass_logit": 0, "n_disagree": 0},
+      "ttbar": {"n_population": 32157, "n_pass_fp32": 0, "n_pass_logit": 0, "n_disagree": 0},
+      "all_background": {"n_population": 206642, "n_pass_fp32": 0, "n_pass_logit": 0, "n_disagree": 0},
+      "full_cohort": {"n_population": 400000, "n_pass_fp32": 6368, "n_pass_logit": 6370, "n_disagree": 2, "disagreement_fraction_of_cohort": 5e-06}
+    },
+    "disagreement_detail_csv": "SPA10M_EXACT_THRESHOLD_DISAGREEMENTS.csv",
+    "disagreements_0p99997": [
+      {"row_index": 245484, "process_label": "signal", "score_float32": 0.9999699592590332, "u_prob32": 4.522289359490023, "delta": 10.414567470550537, "u_logit": 4.523002209195597, "disagreement_type": "only_logit_pass"},
+      {"row_index": 352452, "process_label": "signal", "score_float32": 0.9999699592590332, "u_prob32": 4.522289359490023, "delta": 10.414351463317871, "u_logit": 4.522908401260225, "disagreement_type": "only_logit_pass"}
+    ]
+  },
+  "task_3_tail_census": {
+    "background_scope_note": "All counts are within this 400,000-event development cohort only -- not a physical background-yield determination.",
+    "0.9997": {"n_signal": 9170, "n_qcd": 0, "n_ttbar": 0, "n_all_background": 0, "n_distinct_float32_probabilities": 1637, "n_distinct_delta": 9164, "n_distinct_u_logit": 9164, "n_exact_score_eq_1p0": 67, "fraction_events_in_fp32_tie": 0.9236641221374046, "max_multiplicity_one_stored_probability": 113},
+    "0.99997": {"n_signal": 6368, "n_qcd": 0, "n_ttbar": 0, "n_all_background": 0, "n_distinct_float32_probabilities": 252, "n_distinct_delta": 6363, "n_distinct_u_logit": 6363, "n_exact_score_eq_1p0": 67, "fraction_events_in_fp32_tie": 1.0, "max_multiplicity_one_stored_probability": 113},
+    "supplementary_no_new_inference": {
+      "0.9999": {"n_signal": 7930, "n_distinct_float32_probabilities": 766, "n_distinct_delta": 7925, "n_exact_score_eq_1p0": 67, "fraction_events_in_fp32_tie": 0.9848675914249685, "max_multiplicity_one_stored_probability": 113},
+      "0.99999": {"n_signal": 4400, "n_distinct_float32_probabilities": 84, "n_distinct_delta": 4398, "n_exact_score_eq_1p0": 67, "fraction_events_in_fp32_tie": 1.0, "max_multiplicity_one_stored_probability": 113}
+    },
+    "csv_main": "SPA10M_EXACT_THRESHOLD_TAIL_CENSUS.csv",
+    "csv_supplementary": "SPA10M_SUPPLEMENTARY_0P9999_0P99999.csv"
+  },
+  "task_4_compression_demo": {
+    "figure": "figures/harvey_exact_threshold_compression.png",
+    "figure_caption_explicit_about_infinity": true,
+    "tie_example": {
+      "shared_stored_score_float32": 0.9999994039535522,
+      "k_lattice_point": 10,
+      "n_events_sharing_this_value": 113,
+      "n_distinct_delta_within_this_value": 113,
+      "delta_min": 14.238361, "delta_max": 14.435105,
+      "note": "these 113 events share one stored probability but do NOT share identical model outputs -- their raw logit margins differ by up to 0.197 and remain fully distinct/orderable"
+    },
+    "csv": "SPA10M_TIE_EXAMPLES_TABLE.csv"
+  },
+  "task_6_adversarial_self_check": {
+    "decimal_50digit_crosscheck_agrees_to_1e10": true,
+    "independent_python_loop_recount_matches_vectorized": true,
+    "gt_vs_ge_semantics_identical_in_this_cohort": true,
+    "score_eq_1_count_matches_u_prob32_nonfinite_count": true,
+    "v2_parquet_sha256_unchanged": true,
+    "no_forbidden_imports_ast_verified": true,
+    "prior_naive_grep_false_positive_disclosed_and_corrected": true,
+    "full_detail": "work/adversarial_self_check.json"
+  },
+  "internal_provenance_note_csv_writing_bug": {
+    "audience": "internal / archival only -- not included in the Harvey-facing email paragraph",
+    "what_happened": "task3_tail_census() in scripts/exact_threshold_analysis.py originally wrote its CSV/JSON outputs to fixed filenames regardless of which thresholds were passed. Calling it a second time for the 0.9999/0.99999 supplementary table silently overwrote SPA10M_EXACT_THRESHOLD_TAIL_CENSUS.csv and work/task3_tail_census.json with the supplementary-threshold numbers.",
+    "what_was_NOT_affected": "No computed numerical result was ever wrong. The in-memory census dict for Harvey's two literal thresholds (0.9997/0.99997) was bound to a distinct Python variable before the second call ran, so this report, receipt.json's final_answers, and work/master_results.json were correct throughout -- only the two on-disk CSV/JSON files named above were transiently wrong.",
+    "how_caught": "Noticed directly (identical SHA256 for two files that should differ) while regenerating SHA256SUMS, i.e. by the same file-integrity discipline this package's own adversarial-check culture requires -- not by a dedicated unit test.",
+    "fix": "Parameterized task3_tail_census()'s output filenames (json_name/csv_name arguments) so the main-threshold and supplementary-threshold calls write to distinct files. Reran scripts/exact_threshold_analysis.py end-to-end; every number reproduced identically to the pre-fix in-memory values. Reran scripts/adversarial_self_check.py; all 6 checks pass against the corrected files.",
+    "current_state_verified": "SPA10M_EXACT_THRESHOLD_TAIL_CENSUS.csv (0.9997/0.99997) and SPA10M_SUPPLEMENTARY_0P9999_0P99999.csv (0.9999/0.99999) are now confirmed distinct files (different SHA256) holding their own intended threshold rows."
+  },
+  "final_answers": {
+    "HARVEY_THRESHOLD_0P9997_U": 3.5228787452803854,
+    "HARVEY_THRESHOLD_0P9997_DELTA": 8.11142803829918,
+    "FP32_PASS_0P9997": 9170,
+    "LOGIT_PASS_0P9997": 9170,
+    "DISAGREE_0P9997": 0,
+    "HARVEY_THRESHOLD_0P99997_U": 4.522878745280707,
+    "HARVEY_THRESHOLD_0P99997_DELTA": 10.41428317585296,
+    "FP32_PASS_0P99997": 6368,
+    "LOGIT_PASS_0P99997": 6370,
+    "DISAGREE_0P99997": 2,
+    "LOGIT_RANKING_PRESERVED": "YES",
+    "LOGIT_RANKING_PRESERVED_CAVEAT": "99.93% (9164/9170) and 99.92% (6363/6368) of tail events retain a fully distinct Delta at the two thresholds respectively; a small number of genuine (non-FP32-driven) Delta ties exist among the remainder and are disclosed, not hidden.",
+    "NEW_INFERENCE_LAUNCHED": "NO",
+    "NEW_TRAINING_LAUNCHED": "NO",
+    "READY_FOR_HARVEY": "YES"
+  },
+  "package_status": "COMPLETE / READY_FOR_HARVEY -- awaiting a separate archival git commit pass; this task did not run git add/commit/push and did not modify any file outside this new directory."
+}

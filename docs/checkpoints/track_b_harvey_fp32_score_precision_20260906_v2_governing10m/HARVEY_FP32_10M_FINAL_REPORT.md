@@ -133,26 +133,38 @@ including zero-count bins, plus the exact-1.0 row):
 1. **How many SPA10M events are in the u~6.9 spike?** **99**, all signal.
 2. **How many are in the u~6.6 spike?** **100**, all signal.
 3. **How many are exact score=1?** **67**, all signal.
-4. **Are any of these background?** **No. Zero.** Across the entire
-   u>5.5 tail (2,239 events, 27 distinct float32 values, spanning
-   exact-1.0 down through k=52), not one QCD or ttbar event appears.
-   This holds for the actual governing checkpoint, not just the v1 2M
-   stand-in -- the same qualitative finding, now on the real model.
+4. **Are any of these background?** **No -- zero background events in
+   this 400,000-event development cohort.** Across the entire u>5.5
+   tail (2,239 events, 27 distinct float32 values, spanning exact-1.0
+   down through k=52), not one QCD or ttbar event appears in this
+   cohort. This holds for the actual governing checkpoint, not just the
+   v1 2M stand-in -- the same qualitative finding, now on the real
+   model. This is a statement about this specific development archive,
+   not a physical background-yield determination: it does not replace
+   the separate, much larger full physical-background tail study, where
+   the pooled QCD/ttbar/minor-background statistics can and do contain
+   rare survivors at tight working points. The purpose of this package
+   is the FP32/logit numerical audit, not a new physical-background-
+   yield determination.
 
 Same still-tens-not-hundreds conclusion as v1, with slightly larger
 (but still real, exact) counts for the governing model: 99, 100, and 67
-respectively, none of them background.
+respectively, none of them background events in this cohort.
 
 **Observed even-k-only pattern, again confirmed:** every nonzero-count
 `k` in the governing-10M tail is even (2,4,6,...,52) -- identical to
-the pattern found in the unrelated 2M-checkpoint weights in v1. Since
-this now holds across two independently trained sets of weights
-(different seeds' worth of training, same architecture/code/library
-stack), this strengthens the v1 hypothesis that the even-only pattern
-is a property of the CPU `torch.softmax` kernel's rounding behavior for
-a 2-class input on this platform, not a property of any specific
-trained model. Still not independently proven bit-for-bit at the
-kernel level; reported as a reinforced observation.
+the pattern found in the distinct 2M-checkpoint weights in v1. Both the
+2M and 10M checkpoints are **seed-0** studies -- they are two distinct
+trained checkpoints that differ in training-population size (2,000,000
+vs. 10,000,000 events), not in random seed. Since the even-only pattern
+now holds across both of these independently trained checkpoints (same
+architecture/code/library stack, same seed, different population size
+and therefore different converged weights), this strengthens the v1
+hypothesis that the even-only pattern is a property of the CPU
+`torch.softmax` kernel's rounding behavior for a 2-class input on this
+platform, not a property of any specific trained model. Still not
+independently proven bit-for-bit at the kernel level; reported as a
+reinforced observation.
 
 ---
 
@@ -252,7 +264,18 @@ checked, because real logits now exist.
 
 ## FP32 relevance at u>3.5 and u>4.5 (Harvey's physics regions)
 
-| Threshold | FP32 lattice steps remaining to 1 (`k` at threshold) | events above threshold (signal / background) | distinct float32 values used | mean events per distinct value |
+**Scope note:** every "background" count in this section is a count of
+QCD/ttbar events **in this specific 400,000-event development cohort**,
+not a statement about the physical background yield in the analysis as
+a whole. This package audits FP32/logit numerics on the fixed
+development cohort; it is not a new physical-background-yield
+determination and does not replace the separate, much larger full
+physical-background tail study, where the pooled QCD/ttbar/minor-
+background statistics (orders of magnitude larger than this 206,642-event
+development-cohort background sample) can and do contain rare survivors
+at tight working points.
+
+| Threshold | FP32 lattice steps remaining to 1 (`k` at threshold) | events above threshold, this cohort (signal / background) | distinct float32 values used | mean events per distinct value |
 |---|---:|---:|---:|---:|
 | u>3.5 | ~5,305 | 9,258 / **0** | 1,705 | 5.43 |
 | u>4.5 | ~531 | 6,454 / **0** | 266 | 24.26 |
@@ -266,35 +289,93 @@ available float32 value rises sharply (5.4 -> 24.3 -> 82.9 events/value)
 -- FP32 collisions among individual signal events become common well
 before u=5.5, and are already measurable at u=3.5.
 
-**Does this materially affect interpretation at u>3.5/u>4.5? No.**
-Three independent reasons, each checked directly rather than assumed:
+### Direct threshold cross-check, u_prob32 vs u_logit (post-processing only, no rerun)
 
-1. **Zero background events** populate either region in this 400,000-event
-   cohort. Any background-yield or background-rejection estimate at
-   these thresholds is unaffected by FP32 quantization because there is
-   nothing there to quantize (it is exactly zero either way, at full
-   float64 precision or float32).
-2. **Logit ordering survives.** Even at these looser thresholds,
-   99.9%+ of events retain a distinct `Delta` (9,252/9,258 at u>3.5;
-   6,449/6,454 at u>4.5) -- any analysis that reasons in logit/Delta
-   space, or that only needs raw pass/fail counts against a threshold
-   (not a full re-ranking of tied events), is not distorted.
-3. **Threshold-based physics quantities are unaffected by ties.** The
-   working-point machinery this project already uses
-   (`roc_auc_and_working_points` in `evaluate_classification.py`) only
-   ever counts `probs >= threshold`; float32 ties among events that all
-   clear (or all miss) a threshold change nothing about that count.
-   Ties would only matter for exercises that need a strict total order
-   among the tied events themselves (e.g. picking "the single most
-   signal-like event") -- not for efficiency/rejection/yield reporting.
+The claim that FP32 quantization does not change threshold-crossing
+counts was, up to this point, only argued from the ties/distinctness
+statistics above. It is now checked directly, event by event, using
+only the already-produced `SPA10M_EVENT_LOGITS_400K.parquet` (script:
+`scripts/threshold_crosscheck.py`; no model, checkpoint, or HDF5 touched;
+`NEW_INFERENCE_LAUNCHED = NO`):
 
-`FP32_QUANTIZATION_AFFECTS_U35_U45_INTERPRETATION = NO`, with the
-above caveat stated precisely rather than glossed over: FP32 *does*
-create real, measurable score-level ties among individual high-confidence
-signal events in these regions; it does not corrupt any of the
-aggregate physics quantities this project actually reports there, and
-it is moot for background because no background event reaches these
-regions at all in this cohort.
+| Threshold | n pass `u_prob32` | n pass `u_logit` | n only `u_prob32` | n only `u_logit` | n disagreements |
+|---|---:|---:|---:|---:|---:|
+| u>3.5 | 9,258 | 9,258 | 0 | 0 | **0** |
+| u>4.5 | 6,454 | 6,451 | 3 | 0 | **3** |
+
+**u>3.5: zero disagreements** -- `u_prob32 > 3.5` and `u_logit > 3.5`
+select the exact same 9,258 events. The claim that FP32 quantization
+does not change this working point's count is directly demonstrated,
+not inferred, at this threshold.
+
+**u>4.5: 3 disagreements, reported exactly, not smoothed over.** All 3
+are `process_label=signal` events that pass `u_prob32 > 4.5` but do
+**not** pass `u_logit > 4.5` -- their true (float64, logit-derived)
+confidence is a hair below the 4.5 line, but float32 rounding of the
+stored production score pushes the displayed `u_prob32` a hair above
+it. Exact identities (full detail in
+[`SPA10M_THRESHOLD_CROSSCHECK_DISAGREEMENTS.csv`](SPA10M_THRESHOLD_CROSSCHECK_DISAGREEMENTS.csv)):
+
+| row_index | process_label | u_prob32 | u_logit | delta | score_float32 |
+|---:|---|---:|---:|---:|---:|
+| 193602 | signal | 4.500444026 | 4.499948255 | 10.361482143 | 0.9999684095 |
+| 213003 | signal | 4.500444026 | 4.499782797 | 10.361101151 | 0.9999684095 |
+| 271112 | signal | 4.500444026 | 4.499840365 | 10.361233711 | 0.9999684095 |
+
+All 3 sit within 0.0006 of u=4.5 on the `u_logit` side -- i.e. this is
+not a random or large disagreement, it is exactly the boundary-adjacent
+case the ties/distinctness argument above does not cover: **individual
+events whose true confidence happens to fall within one float32 rounding
+step of a chosen threshold value can be placed on the wrong side of that
+threshold by FP32 quantization.** This is a real, if extremely small
+(3 of 400,000 events; 3 of 6,454 passing events at u>4.5, 0.046% of that
+working point's count), effect and the claim below is stated with this
+now-measured caveat rather than as an unqualified "no effect."
+
+**Does this materially affect interpretation at u>3.5/u>4.5?** For the
+aggregate physics quantities this project actually reports (efficiencies,
+rejections, yields), **no, at the level this cohort can resolve** --
+with the boundary-adjacent caveat just demonstrated, stated precisely
+rather than glossed over:
+
+1. **Zero background events in this 400,000-event development cohort**
+   populate either region. Any background-yield or background-rejection
+   estimate computed *from this cohort* at these thresholds is
+   unaffected by FP32 quantization because there is nothing there to
+   quantize (it is exactly zero either way, at full float64 precision
+   or float32) -- this says nothing about the separate, much larger
+   physical-background tail study, which is not audited by this
+   package and where the pooled QCD/ttbar/minor-background statistics
+   do contain rare survivors at tight working points.
+2. **Logit ordering overwhelmingly survives**, but not with zero
+   exceptions. Directly demonstrated above: 0/9,258 disagreements at
+   u>3.5, 3/6,454 (0.046%) at u>4.5. Both are consistent with "ties in
+   float32 probability do not, in the overwhelming majority of cases,
+   correspond to any change in threshold-crossing outcome," not with
+   "float32 quantization can never change a threshold-crossing outcome."
+3. **Threshold-based physics quantities computed from the stored
+   float32 score are internally self-consistent** (the working-point
+   machinery this project already uses,
+   `roc_auc_and_working_points` in `evaluate_classification.py`, always
+   counts `probs >= threshold` against the same stored float32 array,
+   so its own counts do not depend on ties within that array). What
+   this section adds is the separate, now-measured fact that the
+   float32-derived count can differ from the "true" float64-logit count
+   by a handful of boundary-adjacent events when a threshold happens to
+   sit within about one float32 rounding step of the true value --
+   0 events at u>3.5, 3 events (0.046% of that working point) at u>4.5
+   in this cohort.
+
+`FP32_QUANTIZATION_AFFECTS_U35_U45_INTERPRETATION = NO`, understood
+precisely as: no material effect on the aggregate physics quantities
+this project reports at these thresholds in this cohort, given a
+directly-measured, non-zero-but-tiny (0 and 3 events respectively)
+boundary effect that is disclosed rather than hidden. This conclusion
+is scoped to this cohort and to the FP32/logit numerical question this
+package audits; it does not replace the separate full
+physical-background tail study, where the much larger pooled
+QCD/ttbar/minor-background samples do contain rare survivors at tight
+working points.
 
 ---
 
@@ -307,11 +388,15 @@ regions at all in this cohort.
 - `SPA10M_FP32_UNIQUE_SCORE_CENSUS.csv` -- Task 3, u>5.5, 27 rows
 - `SPA10M_LATTICE_BINS_K1_TO_K64.csv` -- explicit k=1..64 + exact-1.0 census, all 5 populations
 - `SPA10M_FP32_VS_LOGIT_BIN_SUMMARY.csv` -- per-bin Delta/u_logit distinctness summary
+- `SPA10M_THRESHOLD_CROSSCHECK_DISAGREEMENTS.csv` -- exact row identities of every
+  `u_prob32 > threshold` vs `u_logit > threshold` disagreement at u>3.5 and u>4.5 (3 rows total; empty at u>3.5)
 - `figures/u_prob32_tail_10M.png`, `figures/u_logit_tail_10M.png`,
   `figures/u_prob32_vs_u_logit.png`, `figures/delta_by_fp32_bin.png`
 - `scripts/run_governing_10m_tail_inference.py` -- the actual inference script that was run
 - `scripts/build_census_and_figures.py` -- post-processing (executed)
-- `work/run_governing_10m_meta.json`, `work/census_summary_v2.json`, `work/work_inference.log` -- raw run records
+- `scripts/threshold_crosscheck.py` -- post-processing only, reads the parquet, no model (executed)
+- `work/run_governing_10m_meta.json`, `work/census_summary_v2.json`,
+  `work/threshold_crosscheck_result.json`, `work/work_inference.log` -- raw run records
 - `receipt.json`, `SHA256SUMS`
 
 ## Explicitly not done
@@ -329,3 +414,10 @@ as found; the one broken import found there (`pandas`) was worked
 around by using `pyarrow` directly, not fixed. No inference command
 failed silently -- the one inference command run exited 0 and its full
 stdout/stderr is preserved verbatim in `work/work_inference.log`.
+
+**Documentation-only rigor pass (this update):** no rerun, no new
+inference, no numerical output modified. The one new computation
+performed (`scripts/threshold_crosscheck.py`) is pure post-processing
+that only reads the already-produced
+`SPA10M_EVENT_LOGITS_400K.parquet`; it touches no model, checkpoint, or
+HDF5. `NEW_INFERENCE_LAUNCHED = NO`, `NEW_TRAINING_LAUNCHED = NO`.

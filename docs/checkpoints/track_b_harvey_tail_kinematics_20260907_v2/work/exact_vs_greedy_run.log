@@ -1,0 +1,18 @@
+files to re-read: 200; total events: 27339
+[20/200] files done, 14s elapsed
+[40/200] files done, 25s elapsed
+[60/200] files done, 34s elapsed
+[80/200] files done, 43s elapsed
+[100/200] files done, 53s elapsed
+[120/200] files done, 63s elapsed
+[140/200] files done, 74s elapsed
+[160/200] files done, 85s elapsed
+[180/200] files done, 96s elapsed
+[200/200] files done, 105s elapsed
+wrote truth_rematch_exact_vs_greedy_correction3a.parquet: 27339 rows, 107s total
+assignment differs: 3
+j5 flag differs: 1
+n_matched_leading4 differs: 2
+all4_leading4 differs: 0
+EXACT j5 match fraction (of all 27339): 0.379202
+EXACT all4_leading4 fraction (of all 27339): 0.014558

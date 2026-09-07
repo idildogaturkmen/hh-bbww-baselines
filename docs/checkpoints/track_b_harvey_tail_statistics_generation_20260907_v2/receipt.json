@@ -1,0 +1,63 @@
+{
+  "package": "track_b_harvey_tail_statistics_generation_20260907_v2",
+  "date_utc": "2026-09-07",
+  "task": "Harvey Track C follow-up: physical-background tail statistics, MC scaling, and practical next-step recommendation",
+  "scope_confirmed": {
+    "spanet_training_run": false,
+    "part_touched": false,
+    "eaf_gpu_used": false,
+    "holdout_B_or_stage_C_accessed": false,
+    "new_mc_generation_launched": false,
+    "condor_production_launched": false,
+    "package_installed_or_changed": false,
+    "existing_packages_modified": false,
+    "fp32_precision_400k_cohort_used_for_physics_numbers": false
+  },
+  "score_u_semantics": {
+    "score": "SPA-Net 10M class-1 softmax output, checkpoint fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+    "u_definition": "u = -log10(1 - score)",
+    "threshold_u_gt_3.5": "score > 1 - 10**-3.5 = 0.9996837722339832 (strict >)",
+    "threshold_u_gt_4.5": "score > 1 - 10**-4.5 = 0.9999683772233983 (strict >)",
+    "threshold_score_ge_0.9997": "u >= 3.522878745...",
+    "threshold_score_ge_0.99997": "u >= 4.522878745...",
+    "verified_relationships": [
+      "u>3.5 and score>=0.9997 are DIFFERENT populations (110 vs 100 all-background raw events)",
+      "u>4.5 and score>=0.99997 are IDENTICAL populations (15 all-background raw events each, verified by direct per-event re-thresholding, zero events in the intervening sliver)"
+    ]
+  },
+  "primary_data_sources": [
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_tail_characterization_20260825_v1/work/FULL_QCD_SURVIVOR_SIDECAR.h5",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_complete_3to5pct_study_20260825_v1/work/job_summary_ttbar_PRESERVED.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_complete_3to5pct_study_20260825_v1/work/job_summary_medium.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_complete_3to5pct_study_20260825_v1/work/job_summary_zjetstoqq.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_complete_3to5pct_study_20260825_v1/work/job_summary_small.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_followup_finescan_likelihood_20260829_v1/work/spa10m_finescan_rows.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_followup_finescan_likelihood_20260829_v1/HARVEY_FOLLOWUP_FINE_SCAN.csv",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_score_tail_diagnostics_20260829_v5_background_stats_audit/ (N_eff/rel.unc. cross-check, 1x QCD-scaling values)",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_score_tail_diagnostics_20260829_v3/HARVEY_LIKELIHOOD_BIN_TABLE.md and ERRATA.md (corrected 9-bin decomposition, v1 bug NOT reused)",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_spanet_compressed_tail_20260903_v2/HARVEY_COMPRESSED_TAIL_REPORT.md (cross-check of score>=0.9997/0.99997 populations)",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_qcd_tail_generation_strategy_20260902_v1/ (CURRENT_QCD_GENERATION_AUDIT.md, THREE_DESIGNS_COMPARISON.md, CANARY_PRODUCTION_PLAN.md, STRATUM_TAIL_TABLE.csv)",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_final_physics_bridge_20260825_v1/TENFOLD_BACKGROUND_FEASIBILITY_MEMO.md (CPU-hour cross-check)",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/track_a_targeted_qcd_pilot_arm1_200to500_50k_20260814_v1/PILOT_JOB_SUMMARY.tsv (measured Pythia8+Delphes rate)",
+    "docs/paper/jhep_hh4b_ml/track_b_physical_normalization/ (repo, frozen normalization constants)"
+  ],
+  "methodology": {
+    "tail_counts": "Direct re-thresholding of already-frozen per-event scores: FULL_QCD_SURVIVOR_SIDECAR.h5's score_spanet_10m column for QCD; job_summary_*.json's per-event 'survivors' [file_idx, entry_idx, score, flag] lists for ttbar and the 14 minor backgrounds. No event was rescored.",
+    "weighted_yield_Neff": "Flat per-process weight_450fb convention, B=sum(n_k*w_k), sum_w2=sum(n_k*w_k^2), N_eff=B^2/sum_w2, reused unchanged from track_b_harvey_score_tail_diagnostics_20260829_v5_background_stats_audit.",
+    "qcd_scaling": "Physical yield B held fixed; QCD's own sum_w2 divided by the multiplier K (weight ~ 1/N_generated, count ~ N_generated); minor-background sum_w2 held fixed (not regenerated). Superseded v4 model (which incorrectly let B grow with raw count) is NOT used.",
+    "resource_estimate": "Rate = 1.3517 CPU-slot-hr / 50,000 events (allocated-wall) and 1.2461 (CPU-busy), from the only real measured Pythia8+Delphes QCD generation receipt in this project. Explicitly labeled CPU-slot-hours, never called wall time; wall time given only as illustrative hours-divided-by-slots.",
+    "stability_bin_decomposition": "Uses the v3-corrected 9-bin score-space likelihood table (terminal cumulative bin properly included, n=12, 77.10% of total Z_A^2), NOT the v1 bug that folded the terminal population into a mislabeled 15-event display bin."
+  },
+  "independent_cross_checks": {
+    "script": "work/cross_check_recompute.py",
+    "output": "work/cross_check_output.txt",
+    "result": "ALL CROSS-CHECKS PASSED -- every recomputed value matches the values used in HARVEY_PHYSICAL_TAIL_STATS_FINAL.md and the independently-published source packages to the digit or floating-point precision. One drafting error was caught and corrected (eps_S=4.0% WP support-tier label, EXTREMELY_LIMITED -> LIMITED, matching the frozen support_tier_overall field)."
+  },
+  "not_available_or_not_resolved": [
+    "SPA-Net 10M inference-only (as opposed to training) throughput -- no measurement exists anywhere in this project",
+    "Process/run cards for the governing QCD sample itself (IHEP-side, received as finished ntuples only)",
+    "A per-event generator-level pTHat branch anywhere in the frozen ntuples",
+    "bias2Selection canary results -- prepared, not executed",
+    "Whether one HTCondor slot maps to one physical core at LPC -- never independently verified"
+  ]
+}

@@ -216,16 +216,20 @@ def make_figures(d, pops):
     if len(tail_bg):
         ax.hist(tail_bg, bins=bin_edges, color="#c53030", alpha=0.7, label=f"all background (n={len(tail_bg)})")
     else:
-        ax.text(0.98, 0.6, "all background: 0 events with u > 5.5", transform=ax.transAxes,
-                color="#c53030", fontsize=9, ha="right")
+        ax.text(0.98, 0.6, "all background: 0 events with u > 5.5\nin this development cohort",
+                transform=ax.transAxes, color="#c53030", fontsize=9, ha="right")
     ax.axvline(6.9237, color="#805ad5", linestyle="--", linewidth=1.2, label="u=6.9237 (k=2)")
     ax.axvline(6.6227, color="#dd6b20", linestyle="--", linewidth=1.2, label="u=6.6227 (k=4)")
     ax.set_xlabel(r"$u_{\rm prob32} = -\log_{10}(1-\mathrm{score}_{f32})$")
     ax.set_ylabel("events / 0.02")
-    ax.set_title(f"Governing SPA-Net 10M, full 400k cohort\n({n_inf_signal} signal events at exact float32 1.0 not shown)")
+    ax.set_title(f"Governing SPA-Net 10M, full 400k-event development cohort", fontsize=11)
+    fig.text(0.5, 0.965,
+             f"Caption: {n_inf_signal} signal events at exact float32 score=1.0 have true "
+             f"u_prob32=+infinity and are excluded here (not shown at any finite u).",
+             ha="center", fontsize=8, style="italic")
     ax.legend(fontsize=8, loc="upper left")
     ax.set_xlim(U_CUT, 7.35)
-    fig.tight_layout()
+    fig.tight_layout(rect=[0, 0, 1, 0.93])
     fig.savefig(f"{OUT_DIR}/figures/u_prob32_tail_10M.png", dpi=160)
     plt.close(fig)
 
@@ -254,12 +258,15 @@ def make_figures(d, pops):
     if inf_sel.sum():
         y_top = u_signal[finite_u_signal].max() + 0.3 if finite_u_signal.any() else 8.0
         ax.scatter(d["u_logit"][inf_sel], np.full(inf_sel.sum(), y_top), s=10, alpha=0.5,
-                   color="#805ad5", marker="^", label=f"score32==1.0 exactly (n={inf_sel.sum()}), plotted at u_prob32={y_top:.2f}")
+                   color="#805ad5", marker="^",
+                   label=f"score32==1.0 exactly (n={inf_sel.sum()}): true u_prob32=+infinity;\n"
+                         f"shown at y={y_top:.2f} as a FINITE plotting coordinate for visualization only")
     lims = [U_CUT - 0.5, max(ul_signal[sel].max() if sel.any() else 8, 8)]
     ax.plot(lims, lims, color="#666666", linestyle=":", linewidth=1, label="y=x")
     ax.set_xlabel(r"$u_{\rm logit}$ (float64, from raw logits)")
     ax.set_ylabel(r"$u_{\rm prob32}$ (from stored float32 score)")
-    ax.set_title("u_prob32 vs u_logit: the FP32 steps are a display/storage artifact,\nnot present in the underlying logit margin")
+    ax.set_title("u_prob32 vs u_logit: the FP32 steps are a display/storage artifact,\n"
+                 "not present in the underlying logit margin (see legend re: score==1.0)")
     ax.legend(fontsize=8, loc="upper left")
     fig.tight_layout()
     fig.savefig(f"{OUT_DIR}/figures/u_prob32_vs_u_logit.png", dpi=160)

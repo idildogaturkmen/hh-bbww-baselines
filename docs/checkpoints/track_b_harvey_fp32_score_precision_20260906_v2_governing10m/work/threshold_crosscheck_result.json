@@ -1,0 +1,22 @@
+{
+  "3.5": {
+    "threshold": 3.5,
+    "n_pass_u_prob32": 9258,
+    "n_pass_u_logit": 9258,
+    "n_only_u_prob32": 0,
+    "n_only_u_logit": 0,
+    "n_agree": 400000,
+    "n_disagree": 0,
+    "n_total": 400000
+  },
+  "4.5": {
+    "threshold": 4.5,
+    "n_pass_u_prob32": 6454,
+    "n_pass_u_logit": 6451,
+    "n_only_u_prob32": 3,
+    "n_only_u_logit": 0,
+    "n_agree": 399997,
+    "n_disagree": 3,
+    "n_total": 400000
+  }
+}

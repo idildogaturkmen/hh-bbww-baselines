@@ -1,0 +1,79 @@
+{
+  "n_bkg_primary": 110,
+  "n_sig_primary": 27339,
+  "best_1d": "n_btag_loose",
+  "best_1d_score": 0.27248148050563253,
+  "best_2d": [
+    "n_btag_loose",
+    "jet1_pt"
+  ],
+  "best_2d_cv_auc": 0.8930538000720795,
+  "best_2d_cv_auc_std": 0.03934857342547034,
+  "best_4d": [
+    "n_btag_loose",
+    "jet1_pt",
+    "jet2_pt",
+    "pT_H2"
+  ],
+  "best_4d_cv_auc": 0.89384549354824,
+  "best_4d_cv_auc_std": 0.03918259255354379,
+  "nested_cv_2d_auc": 0.8930538000720795,
+  "nested_cv_2d_std": 0.03934857342547034,
+  "nested_cv_2d_chosen_pairs_per_fold": [
+    [
+      "n_btag_loose",
+      "jet1_pt"
+    ],
+    [
+      "n_btag_loose",
+      "jet1_pt"
+    ],
+    [
+      "n_btag_loose",
+      "jet1_pt"
+    ],
+    [
+      "n_btag_loose",
+      "jet1_pt"
+    ],
+    [
+      "n_btag_loose",
+      "jet1_pt"
+    ]
+  ],
+  "nested_cv_4d_auc": 0.8928512504482825,
+  "nested_cv_4d_std": 0.038940378081002175,
+  "nested_cv_4d_chosen_sets_per_fold": [
+    [
+      "n_btag_loose",
+      "jet1_pt",
+      "pT_H1",
+      "jet2_pt"
+    ],
+    [
+      "n_btag_loose",
+      "jet1_pt",
+      "jet2_pt",
+      "pT_H2"
+    ],
+    [
+      "n_btag_loose",
+      "jet1_pt",
+      "jet2_pt",
+      "pT_H2"
+    ],
+    [
+      "n_btag_loose",
+      "jet1_pt",
+      "jet2_pt",
+      "pT_H2"
+    ],
+    [
+      "n_btag_loose",
+      "jet1_pt",
+      "jet2_pt",
+      "HT"
+    ]
+  ],
+  "selection_bias_note": "naive best-of-search CV AUC is computed by picking the highest-CV-AUC combination among many candidates evaluated on the SAME 110-background sample the CV itself uses -- this is expected to be optimistic. Nested CV re-runs the full search independently within each outer fold's training data only, giving an honest (typically lower) estimate of out-of-sample performance. Both numbers are reported; the nested number is the more defensible one."
+}

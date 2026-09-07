@@ -1,0 +1,15 @@
+{
+  "best_4d_features": "n_btag_loose+jet1_pt+met_pt+mHH",
+  "best_4d_cv_auc": 0.9279436140041859,
+  "best_4d_cv_auc_std": 0.04442583484850621,
+  "best_1d_auc_same_population": 0.8102207677384503,
+  "best_2d_cv_auc_same_population": 0.8930538000720795,
+  "delta_4d_minus_1d": 0.11772284626573559,
+  "delta_4d_minus_2d": 0.03488981393210644,
+  "improvement_over_2d_credible": false,
+  "descriptive_check_u_gt_4p5_auc": 0.9999717604914072,
+  "descriptive_check_n": 18158,
+  "descriptive_check_n_sig": 18155,
+  "descriptive_check_n_bkg": 3,
+  "descriptive_check_note": "model fit ONLY on u>3.5, applied without refitting to u>4.5 -- descriptive, not an independent optimization"
+}

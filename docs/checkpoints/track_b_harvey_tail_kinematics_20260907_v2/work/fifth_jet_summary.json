@@ -1,0 +1,30 @@
+{
+  "signal": {
+    "n_with_5th_jet_u_gt_3p5": 17520,
+    "frac_j5_truth_matched_to_HH_b": 0.5913812785388128,
+    "frac_truth_all4_in_leading4_given_has5": 0.0045091324200913245,
+    "median_pt5": 41.829917907714844,
+    "median_min_dR5": 1.1248939186293456,
+    "median_u": 4.658872077262031,
+    "n_u_gt_4p5": 10274,
+    "frac_u_gt_4p5_given_has5_and_u_gt_3p5": 0.5864155251141553,
+    "n_without_5th_jet": 9819,
+    "median_u_without_5th_jet": 5.175501873265367,
+    "frac_u_gt_4p5_without_5th_jet": 0.8026275588145433
+  },
+  "QCD": {
+    "n_with_5th_jet": 28,
+    "frac_j5_in_genuine_assignment": 0.7142857142857143,
+    "frac_assignment_eq_leading4": 0.14285714285714285,
+    "median_pt5": 44.91845512390137,
+    "median_min_dR5": 0.9894070893313407,
+    "median_u": 3.631667361164061,
+    "note": "assignment correctness relative to TRUTH is not answerable for QCD (no truth Higgs to match) -- only genuine-model-assignment vs geometric-leading-4 agreement is reported"
+  },
+  "ttbar": {
+    "n_with_5th_jet": 19,
+    "median_pt5": 40.59980010986328,
+    "median_min_dR5": 1.160416204115328,
+    "note": "no genuine SPA-Net assignment or truth-HH-matching available for ttbar -- descriptive kinematics only"
+  }
+}

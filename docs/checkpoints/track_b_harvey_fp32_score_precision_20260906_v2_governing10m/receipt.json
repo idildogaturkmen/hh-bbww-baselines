@@ -59,6 +59,7 @@
     }
   },
   "task_3_census": {
+    "background_scope_note": "All 'background'/'qcd'/'ttbar' counts below are within this 400,000-event development cohort only -- not a physical background-yield determination and not a substitute for the separate full physical-background tail study.",
     "u_cut": 5.5,
     "n_tail_u_gt_5p5": {"signal": 2239, "all_background": 0, "qcd": 0, "ttbar": 0, "other_background": 0},
     "n_unique_float32_values_tail": {"signal": 27, "all_background": 0, "qcd": 0, "ttbar": 0},
@@ -67,6 +68,7 @@
     "exact_score_eq_1p0": {"signal": 67, "all_background": 0, "qcd": 0, "ttbar": 0},
     "exact_score_eq_nextafter_1p0_full_400k": 0,
     "even_k_only_pattern_confirmed_again": true,
+    "even_k_pattern_provenance_note": "Confirmed across two distinct seed-0 checkpoints (2M and 10M training-population sizes) -- same seed, different population size and therefore different converged weights, not different random seeds.",
     "csv_unique_values": "SPA10M_FP32_UNIQUE_SCORE_CENSUS.csv",
     "csv_explicit_k1_to_k64": "SPA10M_LATTICE_BINS_K1_TO_K64.csv"
   },
@@ -90,24 +92,39 @@
     ]
   },
   "u35_u45_quantification": {
+    "background_scope_note": "'n_events_background' below counts QCD/ttbar events in this 400,000-event development cohort only. This is not a physical background-yield determination and does not replace the separate, much larger full physical-background tail study, where the pooled QCD/ttbar/minor-background statistics do contain rare survivors at tight working points.",
     "u_gt_3p5": {
       "k_lattice_steps_remaining_to_1": 5305.421535661945,
-      "n_events_signal": 9258, "n_events_background": 0,
+      "n_events_signal": 9258, "n_events_background_this_dev_cohort": 0,
       "n_distinct_float32_values": 1705,
       "mean_events_per_distinct_value": 5.42991202346041
     },
     "u_gt_4p5": {
       "k_lattice_steps_remaining_to_1": 530.5421535661945,
-      "n_events_signal": 6454, "n_events_background": 0,
+      "n_events_signal": 6454, "n_events_background_this_dev_cohort": 0,
       "n_distinct_float32_values": 266,
       "mean_events_per_distinct_value": 24.263157894736842
     },
     "materially_affects_interpretation": false,
+    "materially_affects_interpretation_caveat": "Directly measured, not assumed: see task_item3_threshold_crosscheck below for a small (0 and 3 events respectively) boundary-adjacent exception, disclosed rather than hidden.",
     "reasons": [
-      "zero background events populate either region in this cohort",
-      "logit ordering survives at 99.9%+ distinctness even at these looser thresholds",
-      "all physics quantities this project reports at these thresholds are threshold-crossing counts, unaffected by ties among events that all pass or all fail"
+      "zero background events in this 400,000-event development cohort populate either region (does not speak to the separate physical-background tail study)",
+      "logit ordering overwhelmingly survives: 0/9258 (0%) threshold-crossing disagreements at u>3.5, 3/6454 (0.046%) at u>4.5, directly measured via task_item3_threshold_crosscheck",
+      "the working-point machinery this project reports from is internally self-consistent on the stored float32 array; the measured float32-vs-true-logit boundary effect is 0 events at u>3.5 and 3 events (0.046%) at u>4.5 in this cohort"
     ]
+  },
+  "task_item3_threshold_crosscheck": {
+    "method": "post-processing only, reads SPA10M_EVENT_LOGITS_400K.parquet exclusively; no model/checkpoint/HDF5 touched",
+    "script": "scripts/threshold_crosscheck.py",
+    "u_gt_3p5": {"n_pass_u_prob32": 9258, "n_pass_u_logit": 9258, "n_only_u_prob32": 0, "n_only_u_logit": 0, "n_disagree": 0},
+    "u_gt_4p5": {"n_pass_u_prob32": 6454, "n_pass_u_logit": 6451, "n_only_u_prob32": 3, "n_only_u_logit": 0, "n_disagree": 3},
+    "disagreement_detail_csv": "SPA10M_THRESHOLD_CROSSCHECK_DISAGREEMENTS.csv",
+    "disagreements_u_gt_4p5": [
+      {"row_index": 193602, "process_label": "signal", "u_prob32": 4.500444026, "u_logit": 4.499948255, "delta": 10.361482143, "score_float32": 0.9999684095},
+      {"row_index": 213003, "process_label": "signal", "u_prob32": 4.500444026, "u_logit": 4.499782797, "delta": 10.361101151, "score_float32": 0.9999684095},
+      {"row_index": 271112, "process_label": "signal", "u_prob32": 4.500444026, "u_logit": 4.499840365, "delta": 10.361233711, "score_float32": 0.9999684095}
+    ],
+    "interpretation": "All 3 disagreements are boundary-adjacent (true u_logit within 0.0006 of the 4.5 threshold); FP32 rounding of the stored score can flip an individual event's threshold-crossing outcome when its true confidence sits within about one float32 rounding step of the chosen threshold value. This is a real, small (0.046% of the u>4.5 passing count), directly-measured effect, not assumed away."
   },
   "task_6_quantization_vs_pathology": {
     "post_softmax_fp32_quantization_confirmed": true,
@@ -130,6 +147,20 @@
     "N_UNIQUE_LOGIT_U_GT_5P5": 2239,
     "LOGIT_MARGIN_SMOOTH_THROUGH_SPIKES": "YES",
     "FP32_QUANTIZATION_AFFECTS_U35_U45_INTERPRETATION": "NO",
+    "NEW_INFERENCE_LAUNCHED": "NO",
     "NEW_TRAINING_LAUNCHED": "NO"
+  },
+  "documentation_rigor_pass_20260906": {
+    "purpose": "Fix background-scope wording, fix 2M-vs-10M seed-provenance wording, and add a direct event-by-event u_prob32-vs-u_logit threshold cross-check at u>3.5/u>4.5, using only the already-produced parquet.",
+    "numerical_outputs_modified": false,
+    "new_inference_or_rerun": false,
+    "new_computation_performed": "scripts/threshold_crosscheck.py (post-processing only, reads SPA10M_EVENT_LOGITS_400K.parquet)",
+    "files_regenerated": [
+      "figures/u_prob32_tail_10M.png",
+      "figures/u_prob32_vs_u_logit.png",
+      "figures/u_logit_tail_10M.png",
+      "figures/delta_by_fp32_bin.png"
+    ],
+    "files_regenerated_reason": "caption/title text only (explicit +infinity/finite-plotting-coordinate note and dev-cohort scoping) -- build_census_and_figures.py re-run against the same unmodified parquet; all underlying counts unchanged (verified against work/census_summary_v2.json before and after)."
   }
 }

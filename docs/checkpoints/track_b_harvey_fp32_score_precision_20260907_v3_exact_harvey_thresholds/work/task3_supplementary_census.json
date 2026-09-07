@@ -1,0 +1,30 @@
+{
+  "0.9999": {
+    "threshold": 0.9999,
+    "n_signal": 7930,
+    "n_qcd": 0,
+    "n_ttbar": 0,
+    "n_all_background": 0,
+    "n_total_tail": 7930,
+    "n_distinct_float32_probabilities": 766,
+    "n_distinct_delta": 7925,
+    "n_distinct_u_logit": 7925,
+    "n_exact_score_eq_1p0": 67,
+    "fraction_events_in_fp32_tie": 0.9848675914249685,
+    "max_multiplicity_one_stored_probability": 113
+  },
+  "0.99999": {
+    "threshold": 0.99999,
+    "n_signal": 4400,
+    "n_qcd": 0,
+    "n_ttbar": 0,
+    "n_all_background": 0,
+    "n_total_tail": 4400,
+    "n_distinct_float32_probabilities": 84,
+    "n_distinct_delta": 4398,
+    "n_distinct_u_logit": 4398,
+    "n_exact_score_eq_1p0": 67,
+    "fraction_events_in_fp32_tie": 1.0,
+    "max_multiplicity_one_stored_probability": 113
+  }
+}

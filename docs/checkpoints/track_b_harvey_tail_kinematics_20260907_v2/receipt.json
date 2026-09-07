@@ -1,0 +1,120 @@
+{
+  "status": "HARVEY_TAIL_KINEMATICS_V2_CORRECTIONS_COMPLETE",
+  "utc": "2026-09-07T00:00:00Z",
+  "package": "track_b_harvey_tail_kinematics_20260907_v2",
+  "based_on": "track_b_harvey_tail_kinematics_20260906_v1 (preserved byte-for-byte untouched; re-verified via sha256sum -c SHA256SUMS during v2 work)",
+  "scope": "methodological correction pass on v1 (Corrections 1-4 below); read-only throughout; no SPA-Net training; no frozen artifact modified; no holdout_B/Stage-C access; no new MC generation; no new SPA-Net inference launched",
+  "safety_compliance": {
+    "training_launched": false,
+    "new_inference_launched": false,
+    "holdout_B_or_stageC_accessed": false,
+    "frozen_artifacts_modified": false,
+    "mc_generation_launched": false,
+    "v1_package_modified": false
+  },
+  "environment_compliance": {
+    "pip_used": false,
+    "packages_installed_modified": [],
+    "sklearn_available": false,
+    "statistics_implementation": "self-implemented NumPy/pandas, unit-tested before use (carried over from v1); exact bipartite matching implemented as a from-scratch bitmask DP (no package needed), unit-tested against adversarial/tied/trivial cases before the full-population run"
+  },
+  "ihep_access": {
+    "correction_3_blocker_2026_09_07": "attempted exact-vs-greedy re-extraction failed with XRootD error 3010 (kXR_NotAuthorized); voms-proxy-info -all showed timeleft=0:00:00 on both the base proxy and the cms VOMS extension",
+    "resolution": "user renewed the proxy; voms-proxy-info -timeleft re-verified positive (43154s) before resuming",
+    "resumed_run": "work/audit_correction3a_exact_vs_greedy.py completed 200/200 files, 27339 events, 107s, zero file failures"
+  },
+  "corrections": {
+    "correction_1_met_qcd_population_mismatch": {
+      "status": "COMPLETE",
+      "fix": "PRIMARY 1D/2D/4D study restricted to features defined for all 3 background classes (met_pt excluded); n_bkg_primary=110 asserted and NaN-scanned to zero; AUXILIARY_NONQCD_MET study (n=42, QCD absent) reported separately, never compared numerically to PRIMARY",
+      "primary_best_1d": "n_btag_loose",
+      "primary_best_2d": ["n_btag_loose", "jet1_pt"], "primary_best_2d_cv_auc": 0.8930538000720795, "primary_best_2d_cv_auc_std": 0.03934857342547034,
+      "primary_best_4d": ["n_btag_loose", "jet1_pt", "jet2_pt", "pT_H2"], "primary_best_4d_cv_auc": 0.89384549354824, "primary_best_4d_cv_auc_std": 0.03918259255354379,
+      "nested_cv_2d_auc": 0.8930538000720795, "nested_cv_4d_auc": 0.8928512504482825,
+      "selection_bias_conclusion": "not meaningful at this population size -- naive and nested CV AUC agree to within 0.001",
+      "auxiliary_nonqcd_met": {"n_signal": 27337, "n_nonqcd_background": 42, "n_ttbar": 27, "n_other_background": 15,
+                                "auc_raw": 0.25972038594127733, "auc_bootstrap_mean": 0.2574257330647392, "auc_bootstrap_ci68": [0.21890915579381492, 0.30135714779376394]}
+    },
+    "correction_2_ttbar_arithmetic_and_table": {
+      "status": "COMPLETE",
+      "fix": "prose corrected from erroneous '13 of 27 removed' to correct '14 of 27 removed (51.85%), 13 remaining'; underlying computed fraction (0.518519) was always correct in v1",
+      "frozen_cut": "pT_H1 < 406.1153676240428 GeV (median of ttbar's own pT_H1 at u>3.5 -- EXPLORATORY, selected and evaluated on the same 27-event sample)",
+      "n_ttbar_before": 27, "n_ttbar_after": 13, "n_ttbar_rejected": 14, "ttbar_rejection_fraction": 0.5185185185185186,
+      "process_by_process_table": "work/analysis_correction2_ttbar_table.py -> work/correction2_ttbar_table.json / correction2_ttbar_table_rows.csv",
+      "exploratory_significance": {"S_weighted_450fb_after_cut": 12.754965, "B_weighted_450fb_after_cut_nominal": 480.210392,
+                                     "Z_A_nominal": 0.5795, "B_95upper_450fb_total": 617.4403947639782, "Z_A_using_B95_upper": 0.5116,
+                                     "caveat": "exploratory -- cut selected on the same finite sample it is evaluated on, no held-out test set exists"}
+    },
+    "correction_3_truth_matching_audit": {
+      "status": "COMPLETE",
+      "algorithm_audit": "v1's matching (per-truth-object nearest-jet, no removal from candidate pool) is many-to-one, NOT one-to-one/bijective -- verified by direct code inspection of extract_signal.py, documented as exact pseudocode in HARVEY_FIFTH_JET_SUMMARY.md section 0",
+      "n_truth_bhadrons_fromhh_distribution": {"4": 27099, "5": 3, "6": 235, "8": 2},
+      "fraction_exactly_4": 0.9912213321628442,
+      "exact_bipartite_matcher": "implemented (work/exact_bipartite_match.py, bitmask DP over (truth_index, used_jet_bitmask), maximum-cardinality then minimum-total-DeltaR, exact by full enumeration), unit-tested (adversarial greedy-fails case, tied-cardinality case, trivial cases, synthetic 8x10 worst-case timing benchmark = 1.7ms), then run over the full population",
+      "intermediate_greedy_vs_v1_check": "a separate one-to-one global-edge-sorted greedy (work/audit_and_rematch_truth_correction3.py, completed 2026-09-06, 200/200 files, 108s) differed from v1's own non-bijective j5 flag in only 5 of 27339 events (0.018%)",
+      "final_greedy_vs_exact_comparison": {
+        "n_events": 27339,
+        "assignment_differs": 3,
+        "j5_flag_differs": 1,
+        "n_matched_leading4_differs": 2,
+        "all4_leading4_differs": 0,
+        "conclusion": "differences exist (not zero) -- per instruction, EXACT matching result used everywhere in the final v2 package, not greedy or v1"
+      },
+      "final_exact_matching_results": {
+        "j5_truth_match_n": 10367, "j5_truth_match_denominator": 17520, "j5_truth_match_fraction": 0.5917237442922374,
+        "all4_leading4_n": 79, "all4_leading4_denominator": 17520, "all4_leading4_fraction": 0.0045091324200913245,
+        "note": "denominators are signal events with >=5 selected jets (has_5th_jet=True); numerically close to v1's original 59.1%/0.45% since the non-bijective collisions found were rare, but these EXACT values are the ones reported as final"
+      },
+      "heatmap": "figures/fifth_jet_signal_truth_heatmap.png regenerated using EXACT matching (work/fifth_jet_signal_heatmap_truth_EXACT.csv), same (pT5, minDeltaR5) binning as v1"
+    },
+    "correction_4_counterfactual_plan": {
+      "status": "COMPLETE_PLAN_ONLY_NOT_EXECUTED",
+      "name": "leading-four-only counterfactual (explicitly NOT a jet-5-only isolation for events with >5 selected jets)",
+      "design": "(A) original full native SPA10M input vs (B) same event with mask[:,4:]=False, both scored with the unchanged frozen 50-epoch checkpoint, raw class logits (z0,z1) saved for both",
+      "metric_corrected": "u_logit = softplus(Delta)/ln(10) where Delta = z1-z0, exactly equal to -log10(1-sigmoid(Delta)) -- consistent with Track A; corrected from an earlier draft's large-Delta approximation Delta/ln(10), which diverges badly for small/negative Delta (verified numerically)",
+      "metrics_planned": ["delta logit margin per event", "delta u_logit", "fraction score increases/decreases", "threshold crossings at u_logit-equivalents of 3.5/4.5"],
+      "stratifications_planned": ["pt5", "min_dR_j5_leading4", "audited (exact) signal j5 HH-origin truth match", "whether QCD j5 entered the original genuine SPA-Net assignment"],
+      "not_executed": "no new inference launched, no new logits produced, per instruction to finish the observational package first"
+    }
+  },
+  "deliverables": [
+    "HARVEY_MASTER_EVENT_TABLE.parquet (unchanged from v1)", "HARVEY_MASTER_EVENT_TABLE_DATA_DICTIONARY.md",
+    "HARVEY_1D_FEATURE_RANKING.csv (+_full.csv, corrected: PRIMARY, met_pt excluded)",
+    "HARVEY_2D_FEATURE_RANKING.csv (+_full.csv, corrected: PRIMARY n=110)",
+    "HARVEY_4D_FEATURE_RANKING.csv (corrected: PRIMARY n=110)",
+    "HARVEY_TTBAR_FEATURE_SUMMARY.md (corrected: 14/27, process table, exploratory ZA/B95)",
+    "HARVEY_FIFTH_JET_SUMMARY.md (corrected: pseudocode, bijectivity audit, exact-vs-greedy results, ISR/FSR language removed, counterfactual plan with corrected u_logit formula)",
+    "HARVEY_KINEMATICS_EXECUTIVE_SUMMARY.md (corrected)",
+    "STATUS.md (COMPLETE)",
+    "figures/ (1d_feature_ranking.png and fifth_jet_signal_truth_heatmap.png regenerated; others unchanged from v1)",
+    "work/analysis_primary_v2.py, work/analysis_auxiliary_met.py, work/analysis_correction2_ttbar_table.py, work/audit_and_rematch_truth_correction3.py, work/exact_bipartite_match.py, work/audit_correction3a_exact_vs_greedy.py",
+    "receipt.json", "SHA256SUMS (generated after this file, checksums verified PASS)"
+  ],
+  "final_status_line": {
+    "PRIMARY_BKG_N": 110,
+    "PRIMARY_BEST_1D": "n_btag_loose",
+    "PRIMARY_BEST_2D": "n_btag_loose + jet1_pt",
+    "PRIMARY_BEST_2D_CV_AUC": "0.8931 +/- 0.0393",
+    "PRIMARY_BEST_4D": "n_btag_loose + jet1_pt + jet2_pt + pT_H2",
+    "PRIMARY_BEST_4D_CV_AUC": "0.8938 +/- 0.0392",
+    "MET_PRIMARY_EXCLUDED": "YES",
+    "TTBAR_CUT_REJECTED": "14/27",
+    "GREEDY_VS_EXACT_ASSIGNMENT_DIFFER_EVENTS": 3,
+    "GREEDY_VS_EXACT_J5_FLAG_DIFFER_EVENTS": 1,
+    "GREEDY_VS_EXACT_LEADING4_COUNT_DIFFER_EVENTS": 2,
+    "GREEDY_VS_EXACT_ALL4_FLAG_DIFFER_EVENTS": 0,
+    "TRUTH_MATCH_AUDIT_PASS": "YES -- exact one-to-one matcher implemented, unit-tested, and run over the full population; EXACT result used as final",
+    "J5_TRUTH_MATCH_N": 10367,
+    "J5_TRUTH_MATCH_DENOMINATOR": 17520,
+    "J5_TRUTH_MATCH_FRACTION_CORRECTED": 0.5917237442922374,
+    "ALL4_LEADING4_N": 79,
+    "ALL4_LEADING4_DENOMINATOR": 17520,
+    "ALL4_LEADING4_FRACTION_CORRECTED": 0.0045091324200913245,
+    "COUNTERFACTUAL_U_LOGIT_FORMULA_CORRECTED": "YES",
+    "COUNTERFACTUAL_READY": "YES",
+    "CHECKSUMS_PASS": "PASS",
+    "READY_FOR_HARVEY": "YES",
+    "NEW_INFERENCE_LAUNCHED": "NO",
+    "NEW_TRAINING_LAUNCHED": "NO"
+  }
+}

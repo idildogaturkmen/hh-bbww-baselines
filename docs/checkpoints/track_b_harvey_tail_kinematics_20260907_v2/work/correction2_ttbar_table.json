@@ -1,0 +1,158 @@
+{
+  "frozen_cut": "pT_H1 < 406.1153676240428 GeV",
+  "cut_status": "EXPLORATORY -- selected as the median of the same 27-event ttbar sample it is evaluated on; NOT a validated/held-out cut",
+  "n_ttbar_before": 27,
+  "n_ttbar_after": 13,
+  "ttbar_fraction_rejected": 0.5185185185185185,
+  "ttbar_fraction_rejected_pct_str": "51.85% (14 of 27 removed, 13 remaining)",
+  "process_table": [
+    {
+      "process": "signal",
+      "n_raw_before": 27339,
+      "n_raw_after": 26951,
+      "weighted_before_450fb": 12.938591834999997,
+      "weighted_after_450fb": 12.754965014999996,
+      "raw_efficiency_or_survival": 0.9858078203299316,
+      "raw_rejection": 0.014192179670068361
+    },
+    {
+      "process": "QCD",
+      "n_raw_before": 68,
+      "n_raw_after": 60,
+      "weighted_before_450fb": 497.1675528093116,
+      "weighted_after_450fb": 438.67725247880435,
+      "raw_efficiency_or_survival": 0.8823529411764706,
+      "raw_rejection": 0.11764705882352944
+    },
+    {
+      "process": "ttbar (inference_ttbar_1+2 combined)",
+      "n_raw_before": 27,
+      "n_raw_after": 13,
+      "weighted_before_450fb": 62.67816561171864,
+      "weighted_after_450fb": 30.178376035271935,
+      "raw_efficiency_or_survival": 0.48148148148148145,
+      "raw_rejection": 0.5185185185185186
+    },
+    {
+      "process": "SingleTop",
+      "n_raw_before": 2,
+      "n_raw_after": 0,
+      "weighted_before_450fb": 9.769200853065943,
+      "weighted_after_450fb": 0.0,
+      "raw_efficiency_or_survival": 0.0,
+      "raw_rejection": 1.0
+    },
+    {
+      "process": "TTbarW",
+      "n_raw_before": 2,
+      "n_raw_after": 1,
+      "weighted_before_450fb": 0.67077,
+      "weighted_after_450fb": 0.335385,
+      "raw_efficiency_or_survival": 0.5,
+      "raw_rejection": 0.5
+    },
+    {
+      "process": "TTbarZ",
+      "n_raw_before": 1,
+      "n_raw_after": 1,
+      "weighted_before_450fb": 0.38655,
+      "weighted_after_450fb": 0.38655,
+      "raw_efficiency_or_survival": 1.0,
+      "raw_rejection": 0.0
+    },
+    {
+      "process": "TW",
+      "n_raw_before": 1,
+      "n_raw_after": 0,
+      "weighted_before_450fb": 6.227102637699448,
+      "weighted_after_450fb": 0.0,
+      "raw_efficiency_or_survival": 0.0,
+      "raw_rejection": 1.0
+    },
+    {
+      "process": "ZJetsToQQ",
+      "n_raw_before": 8,
+      "n_raw_after": 7,
+      "weighted_before_450fb": 11.28249,
+      "weighted_after_450fb": 9.872178749999998,
+      "raw_efficiency_or_survival": 0.875,
+      "raw_rejection": 0.125
+    },
+    {
+      "process": "ttH",
+      "n_raw_before": 1,
+      "n_raw_after": 1,
+      "weighted_before_450fb": 0.76065,
+      "weighted_after_450fb": 0.76065,
+      "raw_efficiency_or_survival": 1.0,
+      "raw_rejection": 0.0
+    },
+    {
+      "process": "TOTAL_BACKGROUND (QCD+ttbar+other, n=110)",
+      "n_raw_before": 110,
+      "n_raw_after": 83,
+      "weighted_before_450fb": 588.9424819117958,
+      "weighted_after_450fb": 480.2103922640763,
+      "raw_efficiency_or_survival": 0.7545454545454545,
+      "raw_rejection": 0.24545454545454548
+    }
+  ],
+  "exploratory_significance": {
+    "note": "asimov_z and b95_upper_mean copied verbatim from track_b_harvey_score_tail_diagnostics_20260829_v3/work/common.py, not re-derived here. Weighted yields (450 fb^-1) after the frozen exploratory cut. EXPLORATORY: the cut was chosen by looking at the same finite ttbar sample used here, so this is not a held-out estimate.",
+    "S_weighted_450fb_after_cut": 12.754965014999996,
+    "B_weighted_450fb_after_cut_nominal": 480.2103922640763,
+    "Z_A_nominal": 0.5795057174994853,
+    "B95_components_per_background_process": [
+      {
+        "process": "QCD",
+        "n_raw_after": 60,
+        "per_event_weight_450fb": 7.311287541313406,
+        "b95_upper_450fb": 543.8839834460559
+      },
+      {
+        "process": "ttbar (inference_ttbar_1+2 combined)",
+        "n_raw_after": 13,
+        "per_event_weight_450fb": 2.3214135411747643,
+        "b95_upper_450fb": 47.980296129071625
+      },
+      {
+        "process": "SingleTop",
+        "n_raw_after": 0,
+        "per_event_weight_450fb": 0.0,
+        "b95_upper_450fb": 0.0
+      },
+      {
+        "process": "TTbarW",
+        "n_raw_after": 1,
+        "per_event_weight_450fb": 0.335385,
+        "b95_upper_450fb": 1.5910210015002115
+      },
+      {
+        "process": "TTbarZ",
+        "n_raw_after": 1,
+        "per_event_weight_450fb": 0.38655,
+        "b95_upper_450fb": 1.833740829583633
+      },
+      {
+        "process": "TW",
+        "n_raw_after": 0,
+        "per_event_weight_450fb": 0.0,
+        "b95_upper_450fb": 0.0
+      },
+      {
+        "process": "ZJetsToQQ",
+        "n_raw_after": 7,
+        "per_event_weight_450fb": 1.4103112499999997,
+        "b95_upper_450fb": 18.54293281185359
+      },
+      {
+        "process": "ttH",
+        "n_raw_after": 1,
+        "per_event_weight_450fb": 0.76065,
+        "b95_upper_450fb": 3.6084205459133116
+      }
+    ],
+    "B_95upper_450fb_total": 617.4403947639782,
+    "Z_A_using_B95_upper": 0.5115601184195637
+  }
+}
