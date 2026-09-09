@@ -1,0 +1,176 @@
+{
+  "audit_id": "FULL144_PART_SPANET_SCALE_FEASIBILITY_20260826",
+  "audit_date": "2026-08-26",
+  "scope": "planning_and_audit_only",
+  "constraints_honored": [
+    "no_embedding_production_launched",
+    "frozen_2M_part_package_untouched",
+    "no_spanet_training_run",
+    "holdout_A_holdout_B_not_opened",
+    "live_full144_bdt_k_job_85248687.0_not_touched",
+    "no_expensive_inference_performed"
+  ],
+  "methodology_note": "One subagent finding was independently checked against manifest_train_2M.tsv and SHARD_MANIFEST.json and found incorrect (it treated the code-level classification label name 'ggHH' as a physical process name). Corrected: the 2M cohort's signal source is HH4b_2HDM_H3VAR_H1H2_40to200_merged_ntuple, the same family used by the full144 training population, not gghh_kl1 (the holdout process).",
+
+  "task1_population_identity": {
+    "manifest_file": "FULL144M_FILE_MANIFEST.json",
+    "total_events": 144291951,
+    "process_composition": {
+      "signal": {"events": 69750093, "files": 500, "source": "HH4b_2HDM_H3VAR_H1H2_40to200_merged_ntuple"},
+      "qcd": {"events": 62941859, "files": 400, "source": "QCD_DelphesHH4JTrig_merged_ntuple"},
+      "ttbar": {"events": 11599999, "files": 200, "source": "TTbar_ntuple"}
+    },
+    "total_source_files": 1100,
+    "source_storage": "IHEP EOS, root://cceos.ihep.ac.cn:1094/, /eos/ihep/cms/store/user/coli/datasets/hh4b/training/",
+    "provenance": "arXiv:2508.15048v2, Tianyi Yang & Congqiao Li (Peking University), pku-hep-group/jetfree-hh4b; coli = Congqiao Li",
+    "split_contract": {
+      "final_bdt_fit": {"keep_fraction": 1.0, "train_val_split": null, "note": "pooled, fixed 4000-round budget, no early stopping needed"},
+      "governing_reusable_split_step2f": {
+        "train_events": 115433723,
+        "train_files": 880,
+        "val_events": 28858228,
+        "val_files": 220
+      }
+    },
+    "event_identity_convention": "(source_file_id, source_entry_index); source_entry_index = 0-based row position in native TTree read order; source_file_id resolvable via PROVENANCE_FILE_ID_MANIFEST.json",
+    "row_definition": "one row = one event; candidate jets zero-padded to 10 slots within the row, not exploded per jet",
+    "distinct_held_out_evaluation_population": {
+      "manifest": "FROZEN_REMOTE_EVALUATION_MANIFEST.md",
+      "background_processes": 16,
+      "background_files": 718,
+      "signal_benchmark_points": 9,
+      "signal_files": 4800,
+      "holdout_A_holdout_B_identity": "gghh_kl1",
+      "excluded_from_144M_training_build": true
+    },
+    "existing_2M_spanet_cohort_is_exact_subset": {
+      "verdict": "file_population_yes_row_level_no",
+      "detail": "Touches the identical 880 governing train files (signal/qcd/ttbar) as full144, same H3VAR signal family, same process-mix percentages (48.34/43.62/8.04%). Each file is read via a cyclic_contiguous_window subsample, not keep_fraction=1.0, so it is a file-complete stratified windowed subsample of the population, not a literal row subset."
+    },
+    "existing_10M_spanet_cohort_is_exact_subset": {
+      "verdict": "likely_yes_not_independently_row_verified",
+      "detail": "phase4AI_spanet_10M_scaling_seed0_20260821_v1: 10,000,000 events, same 48.34/43.62/8.04% process mix as full144 and the 2M cohort. Distinct construction from the BDT's own step2j_interim_10m (10,474,025 rows, strict file-order prefix). Row-level provenance cross-check against PROVENANCE_FILE_ID_MANIFEST.json not performed in this audit."
+    }
+  },
+
+  "task2_constituent_availability_matrix": {
+    "fields": ["four_vectors", "pid_type", "charge", "d0_dz_uncertainties", "constituent_jet_association", "jet_axis_deta_dphi"],
+    "matrix": {
+      "local_dev_signal_qcd": {"four_vectors": "READY", "pid_type": "READY", "charge": "READY", "d0_dz_uncertainties": "DERIVABLE", "constituent_jet_association": "READY", "jet_axis_deta_dphi": "DERIVABLE"},
+      "full144_qcd_QCD_DelphesHH4JTrig": {"four_vectors": "DERIVABLE", "pid_type": "DERIVABLE", "charge": "DERIVABLE", "d0_dz_uncertainties": "DERIVABLE", "constituent_jet_association": "DERIVABLE", "jet_axis_deta_dphi": "DERIVABLE", "note": "same file family independently confirmed present in ParT SHARD_MANIFEST.json (QCD_DelphesHH4JTrig_ntuple_mergeid166.root)"},
+      "full144_ttbar_TTbar_ntuple": {"four_vectors": "UNKNOWN_NOT_CHECKED", "pid_type": "UNKNOWN_NOT_CHECKED", "charge": "UNKNOWN_NOT_CHECKED", "d0_dz_uncertainties": "UNKNOWN_NOT_CHECKED", "constituent_jet_association": "UNKNOWN_NOT_CHECKED", "jet_axis_deta_dphi": "UNKNOWN_NOT_CHECKED"},
+      "full144_signal_H3VAR": {"four_vectors": "UNKNOWN_NOT_CHECKED", "pid_type": "UNKNOWN_NOT_CHECKED", "charge": "UNKNOWN_NOT_CHECKED", "d0_dz_uncertainties": "UNKNOWN_NOT_CHECKED", "constituent_jet_association": "UNKNOWN_NOT_CHECKED", "jet_axis_deta_dphi": "UNKNOWN_NOT_CHECKED"},
+      "16_remote_evaluation_backgrounds": {"four_vectors": "UNKNOWN_NOT_CHECKED", "pid_type": "UNKNOWN_NOT_CHECKED", "charge": "UNKNOWN_NOT_CHECKED", "d0_dz_uncertainties": "UNKNOWN_NOT_CHECKED", "constituent_jet_association": "UNKNOWN_NOT_CHECKED", "jet_axis_deta_dphi": "UNKNOWN_NOT_CHECKED", "note": "metadata-only manifest; no ROOT tree ever opened"}
+    },
+    "checkpoint_level_finding": {
+      "status": "SEMANTIC_MISMATCH",
+      "scope": "uniform across all processes and all scales",
+      "detail": "ParT_full.pt trained on JetClass R=0.8 jets, pT 500-1000 GeV; applied here to AK4 R=0.4 jets, pT>30 GeV. Verdict carried forward as BLOCKED, later downgraded only to REVIEW_NEEDED/DOMAIN_SHIFT_REQUIRES_VALIDATION, never resolved to PASS.",
+      "checkpoint_sha256": "61e752f80d7c237d4b18b97705df416a8518dd9e3d5a78a8bbdeebadd787fec0"
+    }
+  },
+
+  "task3_population_scale": {
+    "full144_events_exact": 144291951,
+    "full144_real_jets": {
+      "value": 652506780,
+      "status": "estimate_not_exact",
+      "method": "144291951 events x 4.5221 jets/event (measured ratio from exact 2.4M-event cohort: 10853109 real jets / 2400000 events)",
+      "confidence_note": "low-bias extrapolation because the 2.4M cohort is a verified file-complete, process-proportional subsample of the identical governing population; no formal error bar computed"
+    },
+    "governing_train_val_split_for_full_stat_spanet": {"train_events": 115433723, "val_events": 28858228},
+    "expected_embedding_shards": 1100,
+    "exact_count_recommended_method": "sum the existing n_selected_jets field already present in the already-staged, already-checksummed FULL144M BDT feature arrays at step2k_full144m_staged_data_20260821_v1 (46.498 GiB, FNAL EOS) -- zero new XRootD/ROOT reads required; not executed in this audit"
+  },
+
+  "task4_storage_compute_plan": {
+    "embedding_dim_per_encoder": 128,
+    "dtype": "float32",
+    "bytes_per_jet_single_encoder": 512,
+    "bytes_per_jet_dual_encoder_ParT_plus_JPJEPA": 1024,
+    "storage_estimate_full144": {
+      "part_only_raw_GiB": 311.2,
+      "part_only_realistic_range_GiB": [325, 355],
+      "dual_encoder_raw_GiB": 622.4,
+      "dual_encoder_realistic_range_GiB": [635, 665],
+      "cross_check": "10.35 GiB (measured, exact 2.4M-jet cohort, both encoders) x 60.12 event-scale-factor = 622.4 GiB, matches direct estimate"
+    },
+    "source_root_io_volume": "not measured in this audit; only flat BDT-feature staging size (46.5 GiB) is known, which excludes constituent-level branches ParT needs",
+    "gpu_inference_throughput": {
+      "status": "NOT_MEASURED_ANYWHERE_IN_PROJECT",
+      "detail": "gpu_benchmark.py exists but was never executed; no session had CUDA available (torch.cuda.is_available() == False every time). No GPU number is estimated per this task's explicit instruction."
+    },
+    "cpu_throughput_measured": {
+      "both_encoders_combined_production_scale": {"jets_per_sec": 43.09, "scale_jets": 44761, "batch_size": 512, "threads": 8, "source": "SECTION_F_PRODUCTION_PILOT.md"},
+      "part_only_isolated_small_n": {"jets_per_sec": 215.1, "ms_per_jet": 4.65, "scale_jets": 100, "source": "PRIORITY_7_RUNTIME_STORAGE_BENCHMARK.md"}
+    },
+    "cpu_wall_time_single_process_full144_estimate": {
+      "using_43.09_jets_per_sec": "≈4206 hours ≈ 175 days",
+      "using_215.1_jets_per_sec_part_only": "≈843 hours ≈ 35 days",
+      "note": "requires Condor per-file parallelization to be tractable; parallel wall time not measured"
+    },
+    "scaling_factor_vs_2.4M_production": 60.12
+  },
+
+  "task5_reuse_design": {
+    "critical_correction": "the frozen 2M ParT embedding production has NOT been executed. SHARD_MANIFEST.json marks every one of 1100 shards as status=pending; only 1 canary shard exists on disk (train_0000.h5, 2720/2400000 events, 12089 real jets, 6971840 bytes). Total package footprint: 15358844 bytes (~14.6 MiB).",
+    "reusable_now": [
+      "identity-key convention (source_file_id, source_entry_index, jet_slot) shared across BDT, native SPA-Net, and ParT manifests",
+      "governing 1100-file / 80-20 split, already reused unmodified across 4 separate cohort constructions",
+      "the one produced canary shard and validated extract_shard.py pipeline (sha256 395ace2915aec9708b3408fafd7731ab9eeae4d510ac319c4f4e60e299381f22)"
+    ],
+    "gap_identified": "no single dedicated preprocessing-contract-SHA artifact exists; preprocessing is anchored only informally via extract_shard.py's own file hash. Recommend creating one before scaling.",
+    "parent_child_manifest_design": {
+      "parent": "FULL144M_FILE_MANIFEST.json (exists), key=(source_file_id, source_entry_index)",
+      "child_fields": ["source_file", "source_entry_index", "native_event_identity", "jet_slot", "checkpoint_sha", "preprocessing_contract_sha (NEW)", "coverage_window {root_offset, root_quota, wrapped}", "status"],
+      "design_target": "coverage_window field must be authoritative so any future wider-scale pass only embeds the complement of already-completed windows, guaranteeing zero duplicate computation"
+    }
+  },
+
+  "task6_spanet_ladder": {
+    "ladder": {
+      "2M": {"native_spanet": "EXISTS_frozen_sha_verified", "spanet_plus_part": "PIPELINE_VALIDATED_PRODUCTION_NOT_EXECUTED"},
+      "10M": {"native_spanet": "EXISTS_trained_adjudicated_PASS", "spanet_plus_part": "DOES_NOT_EXIST"},
+      "full144": {"native_spanet": "DOES_NOT_EXIST", "spanet_plus_part": "DOES_NOT_EXIST"}
+    },
+    "why_diagonal_comparison_full144_partspanet_vs_2M_native_is_invalid": "conflates representation (native kinematics vs ParT constituent embeddings) with statistics (60x more events); any performance delta could be entirely attributable to the larger training set. Valid causal claims require row-matched N at each rung.",
+    "native_full_stat_pipeline_exists": false,
+    "prerequisites_before_full144_part_extraction_is_useful": [
+      "build_hdf5_144M.py analog to build_hdf5_2M.py/build_hdf5_10M.py",
+      "chunked/streaming training-time data loading (naive in-memory approach not viable, see task7)",
+      "resolve val-split convention (reuse governing 28.86M-event val split rather than the BDT's pooled no-split convention)",
+      "full144 SPA-Net compute-time benchmark, currently nonexistent"
+    ],
+    "recommended_next_concrete_step": "produce SPA-Net+ParT at 10M scale to pair against the already-existing, already-adjudicated native 10M baseline"
+  },
+
+  "task7_streaming_architecture": {
+    "ram_finding_correction": "the ~10 GiB figure in the task framing is a disk-storage estimate for finished embeddings (SECTION_E, explicitly 'unremarkable'), not the RAM blocker. The actual RAM finding (SECTION_F): a 44761-jet in-memory pilot peaked at 5.89 GB RSS; naive linear scaling to the full 10,853,109-jet 2.4M-event population implies on the order of 1+ TB RAM -- before any further full144 scaling.",
+    "recommended_design": [
+      "shard-local lazy reads, one shard per governing source file (already the manifest structure)",
+      "embedding sidecars keyed by (source_file_id, source_entry_index, jet_slot), never a monolithic joined HDF5",
+      "deterministic joins at read time using the shared identity key",
+      "training-time streaming if SPA-Net's data loader permits a pluggable/side-loaded feature source -- NOT VERIFIED in this audit; recommended as a small bounded interface check before committing to this design, with a chunked per-shard 'attach' step as fallback"
+    ],
+    "implemented_in_this_audit": false
+  },
+
+  "task8_decision": {
+    "verdict": "FULL144_PART_SPANET_FEASIBLE_WITH_GPU_THROUGHPUT_MEASUREMENT_AND_10M_VALIDATION_RUN",
+    "blocking_or_gating_prerequisites": [
+      "ParT checkpoint domain-mismatch verdict still open (REVIEW_NEEDED/DOMAIN_SHIFT_REQUIRES_VALIDATION), gates validity at any scale including 2M",
+      "no GPU throughput ever measured for ParT inference in this project",
+      "frozen 2M cohort is a validated plan, not completed data (1 of 1100 shards produced)",
+      "no native full144 SPA-Net pipeline exists",
+      "full144-scale streaming/embedding-sidecar architecture designed here but not built or tested against SPA-Net's actual data loader"
+    ],
+    "favorable_findings_more_optimistic_than_task_framing_assumed": [
+      "governing 144M population, identity-key convention, and file-level split are exact, immutable, and already shared across BDT/native-SPA-Net/ParT systems",
+      "2M and 10M SPA-Net cohorts use the SAME H3VAR signal family as full144 training, not a different physical process (corrects an initial subagent misreading)",
+      "storage footprint at full144 scale (325-665 GiB) is unremarkable for this project's existing EOS usage"
+    ],
+    "recommendation": "B",
+    "recommendation_label": "scale next to 10M",
+    "recommendation_rationale": "Not A (stop at 2M): the population/identity-key/storage picture is more favorable than initially framed, and an adjudicated native 10M baseline already exists at zero additional infrastructure cost to pair against. Not C (prepare full144 immediately): would commit ~60x the compute against an unbudgeted GPU cost (no measurement exists) and an unresolved representation-validity question, before the native full144 pipeline even exists -- violates the requirement that scale decisions rest on measured resource requirements. B retires the GPU-throughput and checkpoint-validity gaps at a scale cheap enough to redo if unfavorable, while producing the first real matched-N scientific comparison."
+  }
+}

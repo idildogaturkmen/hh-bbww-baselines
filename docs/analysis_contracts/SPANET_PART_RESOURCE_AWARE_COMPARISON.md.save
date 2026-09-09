@@ -1,0 +1,147 @@
+# SPA-Net + ParT Resource-Aware Comparison Contract
+
+Status: FROZEN DECISION
+Date: 2026-09-03
+
+## Scientific question
+
+Does adding a frozen constituent-level Particle Transformer
+representation to each reconstructed AK4 jet improve the existing
+SPA-Net HH→4b reconstruction/classification baseline?
+
+## Governing baseline
+
+Model: SPA-Net 10M
+Training budget: 50 epochs
+Initialization: historical governing run
+Input object: reconstructed AK4 jets
+Maximum jet slots: 10
+
+Native per-jet features:
+1. pT
+2. eta
+3. phi
+4. mass
+5. probB
+6. probC
+7. probL
+
+Input width: 7 features / jet
+
+Governing checkpoint SHA256:
+
+fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5
+
+This checkpoint remains frozen and MUST NOT be modified or replaced.
+
+The completed 75-epoch study did not improve upon this governing
+50-epoch baseline, so no additional native-feature SPA-Net retraining
+is planned for the primary resource-aware comparison.
+
+## New model
+
+Model: SPA-Net + frozen ParT embeddings
+
+SPA-Net initialization: FRESH
+SPA-Net training budget: 50 epochs
+
+Per-jet input:
+
+    7 native reconstructed-jet features
+    +
+    128-dimensional frozen ParT embedding
+
+Total input width:
+
+    135 features / jet
+
+ParT checkpoint SHA256:
+
+61e752f80d7c237d4b18b97705df416a8518dd9e3d5a78a8bbdeebadd787fec0
+
+ParT provenance:
+official JetClass-supervised Particle Transformer checkpoint,
+not the PKU jetfree-hh4b event-level classifier.
+
+ParT is FROZEN:
+- no gradient updates
+- no fine-tuning
+- no ParT inference inside SPA-Net epochs
+- precomputed per-jet embeddings are consumed from the frozen
+  embedding dataset
+
+## Quantities held fixed
+
+The new SPA-Net+ParT run should match the governing 50-epoch SPA10M
+training contract wherever technically applicable:
+
+- same train/validation cohorts
+- same event identities
+- same seed
+- same 50-epoch budget
+- same optimizer
+- same learning-rate schedule
+- same reconstruction targets
+- same classification targets
+- same task/loss weighting
+- same jet ordering
+- same 10-jet maximum
+- same native-feature preprocessing
+- same downstream SPA-Net architecture/hidden dimensions where possible
+
+## Intentional model difference
+
+Baseline:
+
+    SPA-Net(native_7)
+
+New model:
+
+    SPA-Net(native_7 + frozen_ParT_128)
+
+No second fresh native-only SPA-Net control is planned.
+
+This is intentionally a RESOURCE-AWARE comparison against an existing
+frozen and audited governing baseline, rather than a contemporaneous
+two-run ablation.
+
+## Training gate
+
+SPA-Net+ParT training MUST NOT begin until:
+
+- 880/880 train ParT H5 shards are valid
+- 880/880 train receipts are valid
+- 220/220 validation ParT H5 shards are valid
+- 220/220 validation receipts are valid
+- train_0384 has been regenerated/canonicalized with a valid receipt
+- all 15 wrapped-window repair shards pass final validation
+- native-event ↔ ParT-event identity closure passes
+- native-jet ↔ ParT-jet identity closure passes
+- ParT embedding dimension is exactly 128
+- no nonfinite embeddings are present
+- joined tensor/mask audit passes
+- relevant code/config/checkpoint hashes are frozen
+
+## Evaluation
+
+Compare the frozen baseline and the new SPA-Net+ParT model using the
+same evaluation machinery, including where applicable:
+
+- validation average jet accuracy
+- validation loss
+- Higgs assignment performance
+- event classification performance
+- ROC/AUC
+- fixed signal-efficiency background rejection
+- downstream Z_A
+- downstream B95
+
+## Explicit non-goals
+
+For the primary comparison:
+
+- DO NOT retrain a second native-only SPA-Net control
+- DO NOT fine-tune the frozen 50-epoch SPA-Net checkpoint
+- DO NOT fine-tune ParT
+- DO NOT substitute the 75-epoch SPA-Net checkpoint
+- DO NOT change the dataset split
