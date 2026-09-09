@@ -1,0 +1,80 @@
+{
+  "n_jets_total": 1050,
+  "embedding_dim": 128,
+  "extract_time_s": 13.955010414123535,
+  "infer_time_s": 17.985904693603516,
+  "all_finite": true,
+  "norm_stats": {
+    "mean": 30.85384750366211,
+    "std": 1.4343857765197754,
+    "min": 27.436994552612305,
+    "max": 38.58301544189453
+  },
+  "per_dim_mean_stats": {
+    "mean": 0.3393900394439697,
+    "std_of_means": 2.4368302822113037
+  },
+  "per_dim_std_stats": {
+    "mean": 1.0189003944396973,
+    "min": 0.2962900996208191,
+    "max": 3.1416189670562744
+  },
+  "n_near_constant_dims_std_lt_1e-4": 0,
+  "near_constant_dim_indices": [],
+  "determinism_check": {
+    "max_abs_diff_repeat_run": 0.0,
+    "bitwise_identical": true
+  },
+  "padding_mask_sensitivity_check": {
+    "initial_adversarial_test": {
+      "description": "corrupted the zero-padded (mask=0) feature and lorentz-vector slots with large IID Gaussian noise (unconstrained px,py,pz,E, i.e. not required to satisfy E>=|p|), re-ran",
+      "max_abs_diff_vs_uncorrupted": null,
+      "mask_correctly_ignored_padding": false,
+      "note": "output was non-finite (NaN); root-caused by a follow-up isolation test (see corrected_physical_test and CANARY_RUNBOOK.md section 4) to unphysical (spacelike / negative-energy) synthetic 4-vectors violating E>=|p|, which drive ParT's internal rapidity formula (log of a negative argument in pairwise_lv_fts) to NaN for ANY constituent pair referencing that 4-vector, independent of masking. Confirmed by a minimal reproduction: even a jet's REAL (non-padded, mask=1) constituents alone, when given literally random non-physical 4-vectors, already produce non-finite output with zero padding involved at all. This is not a masking defect."
+    },
+    "corrected_physical_test": {
+      "description": "on 60 real QCD jets, replaced each jet's padded (mask=0) feature/lorentz-vector slots with ANOTHER real jet's genuine, physically-valid constituent content (donor jet's real constituents, resized to fill the padding), keeping mask unchanged at 0 for those slots; re-ran and compared to the true (zero-padded) output",
+      "max_abs_diff_vs_true_zero_padding": 0.0,
+      "mask_correctly_ignores_padding_content": true,
+      "determinism_recheck_on_this_run": {"max_abs_diff": 0.0, "bitwise_identical": true}
+    },
+    "verdict": "Masking is correctly and exactly (bitwise) implemented for any physically valid input, including non-zero content in padded slots. The architecture is numerically fragile (produces NaN) only for physically impossible 4-vectors (E<|p|), which never occur in real Yang-Li constituent data (verified: part_pt native equals hypot(px,py) exactly, FEATURE_COMPATIBILITY_MATRIX.md section 1) and never occur in real zero-padding (which is exactly (0,0,0,0), a degenerate but non-negative-energy, non-spacelike case that does not trigger the rapidity singularity)."
+  },
+  "dependence_on_kinematics": {
+    "corr_norm_vs_jet_pt": 0.4702439365833144,
+    "corr_norm_vs_jet_eta": 0.0870717258805339,
+    "corr_norm_vs_n_constituents": 0.13116039226301823
+  },
+  "per_process_stats": {
+    "qcd": {
+      "n_jets": 350,
+      "mean_norm": 30.684173583984375,
+      "std_norm": 1.3431462049484253,
+      "mean_embedding_l2_from_global_mean": 0.9116635918617249
+    },
+    "signal_hh4b": {
+      "n_jets": 350,
+      "mean_norm": 31.173097610473633,
+      "std_norm": 1.605100393295288,
+      "mean_embedding_l2_from_global_mean": 1.8490031957626343
+    },
+    "ttbar": {
+      "n_jets": 350,
+      "mean_norm": 30.704269409179688,
+      "std_norm": 1.2802010774612427,
+      "mean_embedding_l2_from_global_mean": 1.4804973602294922
+    }
+  },
+  "jet_pt_stats": {
+    "min": 30.195722579956055,
+    "max": 503.6033020019531,
+    "mean": 100.05969846634638
+  },
+  "n_constituents_stats": {
+    "min": 1,
+    "max": 55,
+    "mean": 17.763809523809524
+  },
+  "torch_version": "2.8.0+cpu",
+  "checkpoint_path": "/eos/uscms/store/user/iturkmen/hh4b_delphes/part_jpjepa_dual_production_bundle_20260825_v2/jpjepa_mini_pretrained.ckpt"
+}

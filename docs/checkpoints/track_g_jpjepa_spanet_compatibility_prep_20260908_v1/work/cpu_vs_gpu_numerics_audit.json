@@ -1,0 +1,177 @@
+{
+  "package": "track_g_jpjepa_spanet_compatibility_prep_20260908_v1",
+  "audit_date": "2026-09-09",
+  "purpose": "Focused, bounded numerical audit of the JP-JEPA Mini CPU-vs-GPU jet_embedding discrepancy first surfaced in dual_canary_report.json (2026-08-25). No new JP-JEPA production, no SPA-Net training performed.",
+  "frozen_identity": {
+    "jpjepa_pinned_commit": "c68509eead1866c2c86714147023f5e8312634c4",
+    "jpjepa_mini_checkpoint_sha256": "1484e704d9f872c17eed6ead713f9ac39c6866dd74d5ebb45c23c9af7b37e3e9",
+    "checkpoint_sha256_reverified_this_session": true,
+    "manifest_sha256": "35049c136a28dfaec377cb718a7d2e75abc5c7d931450fd8746606c453b32333",
+    "manifest_sha256_reverified_this_session": true,
+    "extract_shard_py_sha256": "9b6df35f1abff830932f098f982bd4d50897e1698822b0a6864425875b04ee58",
+    "extract_shard_py_sha256_reverified_this_session": true,
+    "shard_id": "train_0000",
+    "n_jets_full_shard": 12089,
+    "n_jets_layer_hook_subset": 200,
+    "source_evidence": "/eos/uscms/store/user/iturkmen/hh4b_delphes/track_b_part_jpjepa_dual_embedding_production_20260825_v2/ (2026-08-25 dual canary, prior session)"
+  },
+  "runtime_settings_verified_by_code_audit": {
+    "model.eval()": "present, extract_shard.py:319 (load_jpjepa_mini_encoder)",
+    "torch.no_grad()": "present, extract_shard.py:328 (run_jpjepa) and layer_hook_localization.py",
+    "dtype": "float32 throughout (no .half()/.double() cast anywhere; checkpoint itself is fp32)",
+    "autocast": "NOT used anywhere in extract_shard.py or layer_hook_localization.py",
+    "explicit_tf32_control": "NOT set anywhere (no torch.backends.cuda.matmul.allow_tf32, no torch.set_float32_matmul_precision call) -- PyTorch defaults apply (matmul TF32 disabled by default since torch 1.12; CPU is unaffected by TF32 regardless)",
+    "attention_backend": "nn.MultiheadAttention called with default need_weights=True in every Block.forward (both jpjepa_src/particle_transformer.py and the vendored ParT weaver_core_part/ParticleTransformer.py) because attn_matrix is captured and returned as part of all_outputs -- this forces PyTorch's explicit reference math attention path on BOTH CPU and GPU (fused flash/mem-efficient SDPA kernels are only selected by PyTorch when need_weights=False), ruling out 'different fused attention kernel on GPU' as an explanation",
+    "deterministic_algorithms": "torch.use_deterministic_algorithms() NOT called anywhere -- PyTorch defaults apply"
+  },
+  "cpu_vs_gpu_final_jet_embedding": {
+    "cpu_run": "bs=512, this project's CPU tiny-test receipt (2026-08-25), torch 2.8.0+cpu",
+    "gpu_run": "bs=256, EAF A100 80GB PCIe MIG 4g.40gb, torch 2.8.0+cu128, run1 (independently cross-checked against run2, bitwise identical to run1)",
+    "n_jets_compared": 12089,
+    "max_abs_diff": 0.059722900390625,
+    "mean_abs_diff": 0.001569966902025044,
+    "min_cosine_similarity": 0.9999891519546509,
+    "mean_cosine_similarity": 0.9999997019767761,
+    "max_relative_l2": 0.004693646915256977,
+    "mean_relative_l2": 0.0008122043800540268,
+    "median_relative_l2": 0.000737979426048696,
+    "rel_l2_percentiles_50_90_99_99.9_100": [
+      0.000737979426048696,
+      0.001251315395347774,
+      0.0020302547886967715,
+      0.003036529174074566,
+      0.004693646915256977
+    ],
+    "independently_reproduced_this_session": "yes -- recomputed directly from the raw per-jet EMBEDDINGS/jpjepa_mini arrays in cpu_reference/train_0000_cpu_dual.h5 and canary_eaf/run1/train_0000.h5, not merely re-reading dual_canary_report.json's own aggregate numbers. Result matches dual_canary_report.json exactly.",
+    "outlier_structure": "no small set of pathological jets dominates -- rel_l2 distribution is smooth (median 0.00074, p99 0.00203, max 0.00469, only ~6x median at the single worst jet out of 12089); correlation of rel_l2 with jet_pt=0.10, with n_constituents=-0.09, with embedding norm=-0.07 (all weak) -- consistent with generic float32 backend noise, not a specific pathological input regime (e.g. extreme multiplicity or d0/dz-saturated tracks)",
+    "per_dimension_structure": "divergence is spread across most of the 128 output dims (median fraction of squared-diff-energy carried by the single worst dim = 0.114, i.e. no dim dominates); dim 123 is the most affected on average (mean_abs_diff=0.00539, ~4x the per-dim median of 0.00132), dims 60/78/45 also mildly elevated (~2.5-3x median) -- a mild, not extreme, concentration"
+  },
+  "gpu_run_to_run_determinism": {
+    "comparison": "GPU run1 (bs=256) vs GPU run2 (bs=256), same EAF A100 MIG slice",
+    "max_abs_diff": 0.0,
+    "verdict": "bitwise identical -- GPU is internally deterministic for this fixed shape/batch-size/hardware combination even without torch.use_deterministic_algorithms(True)"
+  },
+  "part_full_part_for_comparison": {
+    "source": "eaf_gpu_validation_20260825/CPU_GPU_COMPARISON.txt (ParT_full.pt, same architecture hyperparameters as JP-JEPA Mini: embed_dims=[128,512,128], num_heads=8, num_layers=8, num_cls_layers=2, verified via canonical_part_jet_encoder.py docstring)",
+    "max_abs_diff": 0.0034001320600509644,
+    "mean_abs_diff": 1.0436562506067714e-05,
+    "min_cosine_similarity": 0.9999995556068678,
+    "max_relative_l2": 0.0009734775826629742,
+    "median_relative_l2": 5.526781871352292e-05,
+    "note": "ParT and JP-JEPA Mini share identical layer/head/embed-dim hyperparameters and are BOTH official, frozen, non-fine-tuned JetClass-pretrained checkpoints applied out-of-domain to the same AK4 jets with the same attention-kernel path forced (need_weights=True) -- yet JP-JEPA's CPU/GPU divergence is systematically larger: ~17.5x max_abs, ~150x mean_abs, ~4.8x max_rel_l2, ~13x median_rel_l2. Domain shift and attention-kernel selection are therefore ruled out as differentiators (both models face identical exposure to both); the residual difference is attributed to checkpoint-specific numerical conditioning (different pretraining objective -- JEPA self-supervised vs ParT's supervised JetClass classification -- yields different weight-magnitude/activation statistics), not to any difference in this project's extraction code, which is identical in structure for both models."
+  },
+  "cpu_layer_by_layer_magnitude_profile": {
+    "note": "GPU-side layer-by-layer capture (gpu_layers.npz) could NOT be produced in this session -- no GPU device was reachable (see execution_environment_limitations below). The existing CPU-only capture (cpu_layers.npz, 200 fixed jets, prior session) was independently reproduced bit-for-bit in this session (see batch_size_invariance.reproduction_of_frozen_artifact) and is analyzed here for activation-magnitude structure as the best available evidence of WHERE in the depth of the network divergence is architecturally most likely to be amplified, absent a literal GPU-side counterpart.",
+    "layers": {
+      "layer_00": {
+        "mean_abs": 0.4385044574737549,
+        "std": 0.650317907333374,
+        "max_abs": 7.415338039398193,
+        "p99_abs": 1.7243201732635498
+      },
+      "layer_01": {
+        "mean_abs": 0.6568736433982849,
+        "std": 0.8415482044219971,
+        "max_abs": 7.742001533508301,
+        "p99_abs": 2.3701000213623047
+      },
+      "layer_02": {
+        "mean_abs": 0.8536074161529541,
+        "std": 1.081610918045044,
+        "max_abs": 8.352020263671875,
+        "p99_abs": 2.6605186700820918
+      },
+      "layer_03": {
+        "mean_abs": 1.149998664855957,
+        "std": 1.4556857347488403,
+        "max_abs": 9.848928451538086,
+        "p99_abs": 3.8668870782851856
+      },
+      "layer_04": {
+        "mean_abs": 1.1123336553573608,
+        "std": 1.3736212253570557,
+        "max_abs": 9.849799156188965,
+        "p99_abs": 3.676347255706787
+      },
+      "layer_05": {
+        "mean_abs": 0.995271623134613,
+        "std": 1.2615362405776978,
+        "max_abs": 8.055903434753418,
+        "p99_abs": 3.4147541522979736
+      },
+      "layer_06": {
+        "mean_abs": 0.6908756494522095,
+        "std": 0.901688814163208,
+        "max_abs": 6.080803394317627,
+        "p99_abs": 2.7081103324890137
+      },
+      "layer_07": {
+        "mean_abs": 0.2653123736381531,
+        "std": 0.3773617744445801,
+        "max_abs": 4.540149688720703,
+        "p99_abs": 1.2601981163024902
+      },
+      "layer_08": {
+        "mean_abs": 0.7871166467666626,
+        "std": 1.1186726093292236,
+        "max_abs": 8.51523208618164,
+        "p99_abs": 2.787227723598472
+      },
+      "layer_09": {
+        "mean_abs": 1.4966282844543457,
+        "std": 2.6846516132354736,
+        "max_abs": 24.919347763061523,
+        "p99_abs": 8.491769857406572
+      }
+    },
+    "finding": "activation magnitude (mean_abs) grows through main blocks 0-3 (peaking near layer 3, ~2.6x layer 0), decays through layers 4-7, then jumps sharply at the two class-attention blocks: layer_08 mean_abs is 2.97x layer_07, and layer_09 (=jet_embedding, the frozen extraction point) mean_abs is a further 1.90x layer_08, with by far the largest max_abs (24.9, vs <10 for every main block) and largest std (2.68) of any captured layer. This is consistent with the class-attention mechanism's full-sequence, softmax-weighted aggregation over a 128-slot sequence that is >80% zero-padding for typical AK4 jets (mean 17.8 real constituents, FEATURE_COMPATIBILITY_MATRIX.md section 5) being the most numerically sensitive stage of the network: small per-constituent logit perturbations among the few real (non-padded) constituents can shift softmax attention weights non-negligibly when so few tokens compete for weight, and this stage sits last -- with no subsequent block to average the effect back down. This is the leading architectural hypothesis for where CPU/GPU divergence is most likely amplified, though it is inferred from CPU-only dynamic-range structure, not a direct CPU-vs-GPU layer diff."
+  },
+  "batch_size_invariance": {
+    "reproduction_of_frozen_artifact": {
+      "description": "Re-ran the exact frozen extract_shard.py code (sha256-verified) against the exact frozen checkpoint/manifest (sha256-verified) on the same 200 fixed jets (identity-verified against cpu_layers.npz's native_hdf5_row_index/jet_slot), batch_size=200 single batch, in a fresh CPU-only venv (torch 2.8.0+cpu) this session.",
+      "max_abs_diff_vs_frozen_cpu_layers_npz": 0.0,
+      "result": "BIT-IDENTICAL"
+    },
+    "cpu_bs200_vs_bs64": {
+      "max_abs_diff": 0.0,
+      "result": "BIT-IDENTICAL"
+    },
+    "cpu_bs200_vs_bs1_fully_serial": {
+      "max_abs_diff": 1.33514404296875e-05,
+      "result": "DIFFERS",
+      "note": "the ONE nonzero batch-size effect found in this audit: fully-serial (bs=1) inference differs from batched (bs=64 or bs=200) inference by up to 1.34e-5 (absolute), presumably due to different BLAS call paths for batched vs single-sample matmul. This is ~4500x SMALLER than the CPU-vs-GPU max_abs_diff (0.0597), so it does not explain the CPU/GPU gap -- it is cited here as a genuine, freshly-measured upper bound on how large a pure batch-size effect can possibly be on this architecture, which supports (rather than undermines) the prior finding that batch size is not the cause of the CPU/GPU discrepancy."
+    },
+    "prior_evidence_context": "This task's brief states CPU@512 == CPU@256 and CPU@256 vs GPU@256 reproduces the discrepancy, established in an earlier session not captured in this checkpoint package's docs. This session's own bs=200-vs-bs=64 CPU-only bitwise-identical result, plus the bs=1 upper bound above, is consistent with and reinforces that conclusion using freshly-executed evidence."
+  },
+  "signal_vs_noise_downstream_impact_argument": {
+    "cpu_vs_gpu_absolute_l2_diff_per_jet": {
+      "mean": 0.024936506524682045,
+      "median": 0.022754719480872154,
+      "p99": 0.06148110806941987,
+      "max": 0.15187132358551025
+    },
+    "physics_signal_scale_for_comparison": {
+      "process_mean_embedding_L2_distance_from_global_mean_1050_jet_canary": {
+        "QCD": 0.91,
+        "signal_HH4b": 1.85,
+        "ttbar": 1.48
+      },
+      "intra_QCD_per_jet_distance_to_file_mean_train_0000_12089_jets": {
+        "mean": 12.695900917053223,
+        "median": 11.600879669189453
+      },
+      "nearest_neighbor_L2_distance_among_2000_QCD_jets": {
+        "mean": 6.428258874279918,
+        "median": 5.845345590695704,
+        "p10": 4.12856686425935,
+        "p1": 3.3343166797149726
+      }
+    },
+    "conclusion": "Even the single worst CPU/GPU-divergent jet out of 12089 (absolute L2 diff 0.152) is ~22x smaller than the closest 1st-percentile nearest-neighbor jet-to-jet distance (3.33) within the SAME process (QCD), and ~6x smaller than the smallest between-process mean-embedding separation (0.91, QCD vs global mean). The mean CPU/GPU noise (0.025) is ~36x smaller than that same process separation and ~230x smaller than the typical nearest-neighbor jet distance (5.8). CPU/GPU backend noise at this scale cannot plausibly cause two jets, or two processes, to become indistinguishable in the frozen 128-d representation that SPA-Net will consume as an input feature."
+  },
+  "execution_environment_limitations": {
+    "gpu_access_this_session": "NONE -- this session runs on an LPC interactive node (cmslpc342.fnal.gov) with no CUDA hardware (no nvidia-smi), no torch installed in the default environment, no reachable SSH route to EAF (ssh eaf.fnal.gov timed out), and no GPU-bearing HTCondor slots visible from the LPC pool (condor_status -constraint 'TotalGpus > 0' returned empty). New GPU forward passes (a fresh gpu_layers.npz layer-by-layer capture, or a live TF32-on/off or SDP-backend ablation) could NOT be executed in this session.",
+    "what_was_used_instead": "Real, already-executed GPU artifacts from the prior (2026-08-25) session's EAF dual canary: two independent full forward passes (run1, run2) over the exact same 12089 real jets, with full receipts (checkpoint sha, commit, torch/cuda version, GPU model). These were independently re-analyzed (not just re-reading the existing summary JSON) directly from their raw per-jet EMBEDDINGS/jpjepa_mini arrays in this session.",
+    "genuinely_unresolved_by_this_audit": "A literal GPU-side layer-by-layer capture (layer_hook_localization.py --device cuda) and a literal TF32-on/off or SDP-backend-selection ablation on GPU were NOT executed. layer_hook_localization.py is fully prepared (verified present and correct in diagnostics/) and can be run in seconds on EAF by anyone with GPU access; this remains the single concrete follow-up action that would fully close this question rather than bound it."
+  }
+}
