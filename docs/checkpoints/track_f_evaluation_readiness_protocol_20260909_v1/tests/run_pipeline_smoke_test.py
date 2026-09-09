@@ -49,7 +49,8 @@ def main():
     # Amendment 2026-09-10) and the bootstrap-threshold secondary-audit verification.
     # Both are pure unit tests (no npz/tempdir needed); run as subprocesses so a
     # single invocation of this script is the one command that runs everything. ----
-    for unit_test in ("test_symmetry_invariance.py", "test_bootstrap_threshold_recompute.py"):
+    for unit_test in ("test_symmetry_invariance.py", "test_bootstrap_threshold_recompute.py",
+                       "test_exporter_contract.py"):
         r = run([sys.executable, os.path.join(THIS_DIR, unit_test)])
         print(r.stdout)
         if r.stderr:

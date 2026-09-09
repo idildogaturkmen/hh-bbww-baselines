@@ -8,10 +8,19 @@ process was never inspected, touched, or interfered with.** No join, no
 preprocessing, no SPA-Net training, no additional-8M/10M ParT production,
 no JP-JEPA, no holdout_B, no Stage C was run this session.
 
-**Verdict: `READY_TO_EXECUTE_AFTER_880_220`**, with exactly one concrete,
-non-production-blocking gap (Step 9, matched evaluation — see below). Steps
-1–8 (everything through both training launches) have no known blocker
-beyond production reaching 880/880 train + 220/220 val.
+**Verdict: `READY_TO_EXECUTE_AFTER_880_220`**. Steps 1–8 (everything through
+both training launches) have no known blocker beyond production reaching
+880/880 train + 220/220 val. **Update, 2026-09-10 (Track F matched-
+evaluation exporter implementation session): G5 (Step 9's one real
+blocker) is RESOLVED** — `code/export_model_eval_events.py` now exists in
+the authoritative evaluation package
+(`track_f_evaluation_readiness_protocol_20260909_v1`), was run for real
+against the frozen CONTROL checkpoint (not synthetic, not TEST/ParT2M —
+see Step 9 below), and Step 9's evaluation now targets the current,
+amended evaluator (`code/evaluate_multi_model.py`, PREREGISTRATION.md
+Amendment 2026-09-10), not the superseded `evaluate_matched_2m.py`. Step 9
+itself still cannot run to completion until Step 7 produces a TEST
+checkpoint — that dependency was never G5 and is unchanged.
 
 ---
 
@@ -34,13 +43,16 @@ beyond production reaching 880/880 train + 220/220 val.
 | F13 | Native H5 checksums hardcoded in `run_full_join.sh` are still correct | Re-hashed both `production_2M_{train,val}.h5` (676 MB / 135 MB) — exact match |
 | F14 | All 8 Python scripts `py_compile` clean; all 3 shell scripts `bash -n` clean | Ran this session, including the new wrapper (§0, gap G4) |
 
-## Gaps / caveats found (none block Steps 1–8; G3 doesn't block anything; only G5 blocks Step 9)
+## Gaps / caveats found (none block Steps 1–8; G3 doesn't block anything; G5 is RESOLVED — see 2026-09-10 update below)
 
 - **G1 — "routine" postflight is not actually fast.** `run_postflight_gate.sh`'s Step 2 (`aggregate_embedding_audit.py`) is invoked **without** `--partial-ok`/`--max-shards`, so it unconditionally re-downloads, re-hashes, and re-opens **every one of the 1,100 manifest shards** (≈7–8 GB, ~2,200 `xrdcp` calls) regardless of the `CHECKSUM_SAMPLE_N` setting that only affects Step 4. `POSTFLIGHT_RUNBOOK.md`'s description of the no-arg call as "fast" is stale/misleading — both the "routine" and "`CHECKSUM_SAMPLE_N=full`" invocations pay this same full-corpus cost via Step 2; they only differ in Step 4's own sample size. Budget **30–90+ minutes** for either call, not "fast." Not a defect — the design intentionally makes Step 2 a full completion proof — just a documentation correction.
 - **G2 — `JOIN_AND_PREPROCESS_RUNBOOK.md` cites a `receipt.json`'s `dry_run_verification` section that does not exist anywhere in this package.** The prior session's synthetic-H5 dry-run evidence was apparently never written to disk (or was lost). **This session regenerated that evidence for real** (F7–F11 above); the runbook's narrative claim is now actually substantiated, but the missing file itself was not recreated (no script in this package writes one — the claim lived only in prose). Not a blocker, but worth knowing the original citation was dangling.
 - **G3 — `scipy` is broken in this LPC shell's default `/usr/bin/python3`** (`numpy 1.23.5` from `/usr/lib64` is missing a working `numpy._typing`, and the user-local `scipy 1.13.1` needs it → `ModuleNotFoundError` on `from scipy import stats`). `bootstrap_utils.py`'s `exact_poisson_count_interval()` already degrades gracefully to its documented normal-approximation fallback in this environment (confirmed, F12) — not fatal, nothing else in this package imports scipy. Only matters for Step 9: if you want the *exact* Garwood CI on sparse-tail rejection working points (not the fallback), run that step in an environment with working scipy/numpy, or fix this one first (e.g. `pip install --user -U numpy scipy` in a scratch venv).
 - **G4 — No EAF GPU wrapper existed for `launch_spa2m_part.py`** (unlike the native launcher, which has `run_2M_seed0_training.sh`). **Built this session**: `scripts/train/run_spa2m_part_training.sh`, a direct generalization of the native wrapper's proven pixi-env resolution and `nvidia-smi -L` GPU/MIG discovery-and-validation logic (never a stale UUID, never a placeholder, refuses to guess among multiple visible devices), parameterized for `--variant`. `bash -n` clean; **not run** (no GPU on this node).
 - **G5 (the one real blocker, Step 9 only) — no inference/scoring script exists anywhere in the project that produces the `.npz` files `evaluate_matched_2m.py` requires.** That script's own docstring says so explicitly ("this script does not launch inference"). The closest precedent, `evaluate_classification.py` (native-control classification eval, already run and on disk), only extracts the classification signal score + reconstructed process label via a CPU forward pass — it does **not** extract per-event jet-pair assignment correctness, reconstructed Higgs masses, or `event_id`, all of which `evaluate_matched_2m.py`'s documented input schema requires for both CONTROL and TEST. **A new script must be written** (reusing `evaluate_classification.py`'s CPU-forward-pass / `DataLoader(drop_last=False)` / process-label-reconstruction pattern as a starting point, extended to also pull `outputs.assignments`, compute `higgs_mass_{1,2}` from the predicted pairing, and tag `event_id=native_hdf5_row_index`) before Step 9 can actually run. This does not block Steps 1–8; there is naturally time to write it while training runs.
+
+  **RESOLVED 2026-09-10** (Track F matched-evaluation exporter implementation session; history preserved above, not deleted). `code/export_model_eval_events.py` was written in the authoritative evaluation package
+  (`/uscms_data/d3/iturkmen/hh4b_delphes/track_f_evaluation_readiness_protocol_20260909_v1/code/`), targeting the CURRENT, amended schema (`schemas/model_eval_events.schema.json`, `pred_b1..pred_b4`/`truth_b1..truth_b4` — NOT the `assignment_correct`/`higgs1`/`higgs2` booleans `evaluate_matched_2m.py`'s own docstring, quoted above, still describes; that predecessor script and its docstring are superseded, not edited). It reuses `evaluate_classification.py`'s exact architecture/options block and `_patched_load_assignments` weight-loading patch (parameterized, not hardcoded), `model.predict(sources).assignments` (the same call `part2_spanet_assignment.py` already uses successfully against this exact checkpoint) for predicted jet-pair indices, and `four_vec()`/`pair_mass()` (copied verbatim from `part3_event_listing_and_truth.py`/`part6_pairing_accuracy_and_mass.py`) for Higgs-mass reconstruction. Truth (`TARGETS/h1/{b1,b2}`, `TARGETS/h2/{b3,b4}`) and raw kinematics (`INPUTS/Source/{pt,eta,phi,mass,MASK}`) are read directly via h5py, independent of the model's own tensor pipeline — deliberately, to stay structurally immune to this project's own documented in-place-tensor-mutation bug precedent (`RUNNER_PROVENANCE_RECEIPT.json`, `track_b_harvey_tail_characterization_20260825_v1`). **Run for real** against the frozen CONTROL checkpoint (read-only inference on an already-public checkpoint; does not touch or reveal the unseen ParT2M/TEST result) — see the evaluation package's `STATUS.md`/`receipt.json` for the full cross-check results (predicted assignments, truth, and pairing-accuracy metrics all matched existing frozen artifacts exactly). Exported: `exports/control_2m_native_eval.npz`. **Step 9 below now points at this exporter and at `code/evaluate_multi_model.py` (not `evaluate_matched_2m.py`, which `PREREGISTRATION.md` Amendment 2026-09-10 superseded).**
 - **Minor/cosmetic:** `NATIVE_CONTROL_CHECKPOINT_SHA256` is defined in `launch_spa2m_part.py` but never referenced anywhere in that file (dead constant; harmless — the real check happens implicitly since the CONTROL checkpoint itself is never touched by this launcher). Also: `launch_spa2m_part.py` does not replicate the native launcher's post-fit checkpoint-reload/`state_dict`-key integrity check (`reload_ok`, `missing_keys`, `unexpected_keys`) — a reduced-rigor omission, not a hyperparameter difference, and not required by the "reproduce hyperparameters exactly" instruction; flagging for awareness only.
 - **Resources:** disk is not a concern (17 TB free on `/uscms_data/d3`; the full pipeline through both training-input builds needs on the order of 45–50 GB of scratch: ~10 GB local shard sync + ~13 GB joined H5s + ~23 GB for both augmented-input variants × both splits). RAM: `compute_train_embedding_stats.py` peaks at **~4.6–6 GB RSS** at full 2M-train scale (the single `(9,044,239, 128)` float32 real-jet array is the dominant allocation) — this LPC worktree shell currently reports only ~8.5 GB free; run Step 5 on a node/batch slot with more comfortable headroom, not a busy shared interactive shell. Training itself needs the EAF GPU/pixi environment (`torch`/`pytorch_lightning`/the pinned `spanet` clone are **not** installed in this shell's system `python3` at all — expected, training was never meant to run here).
 
@@ -269,38 +281,112 @@ bash "$PKG/scripts/train/run_spa2m_part_training.sh" all128 \
 **Expected output / STOP condition:** identical structure and checks to
 Step 7, under `run_name=spanet_2M_part_all128_seed0`.
 
-### Step 9 — Matched evaluation (**BLOCKED on G5 above — read before attempting**)
+### Step 9 — Matched evaluation (**G5 RESOLVED 2026-09-10 — see history in "Gaps / caveats" above**)
 
-`evaluate_matched_2m.py` is ready and correct (F12; its own docstring is
-explicit that it does not perform inference). It requires two pre-built
-`.npz` files in its documented schema
-(`event_id, process, score, assignment_correct, assignment_defined,
-higgs_mass_1, higgs_mass_2, n_jets`, + optional ParT-norm/pT/eta columns)
-for the **identical** val cohort, one for the existing CONTROL checkpoint
-(`configs/FROZEN_FACTS.json:native_spa2m_control.checkpoint_path`,
-verified present and hash-correct this session) and one for the Step 7
-TEST checkpoint. **No script producing that schema exists yet anywhere in
-the project** (G5) — write one first, adapting
-`.../spanet_2M_seed0_classification_evaluation_v1/evaluate_classification.py`'s
-CPU-forward-pass pattern to also extract predicted jet-pair assignments,
-`higgs_mass_{1,2}`, and `event_id=native_hdf5_row_index`, run it once
-against CONTROL and once against TEST, then:
+The `evaluate_matched_2m.py`-based version of this step (quoted in full in
+the G5 bullet above, preserved for history, not deleted) is **superseded**:
+that script's own schema (`assignment_correct`, `higgs1_assignment_correct`,
+`higgs2_assignment_correct`) was found, in a pre-result audit, to silently
+assume a canonical H1-vs-H2 labeling that does not exist (the two Higgs
+candidates are an explicit `PERMUTATIONS.EVENT: [h1,h2]` symmetry) —
+`PREREGISTRATION.md` Amendment 2026-09-10 in the authoritative evaluation
+package corrected this before any ParT2M result existed. **Use the current
+exporter and evaluator below, not `evaluate_matched_2m.py`.**
+
+`EVAL_PKG=/uscms_data/d3/iturkmen/hh4b_delphes/track_f_evaluation_readiness_protocol_20260909_v1`
+
+**9a. Export CONTROL** (already done, real, this session — read-only
+inference against the frozen, already-public native SPA2M checkpoint; does
+not touch or reveal TEST/ParT2M):
 
 ```bash
-cd "$PKG/scripts/eval"
-python3 evaluate_matched_2m.py \
-    --control-npz <path/to/control_2m_native_eval.npz> \
-    --test-npz    <path/to/test_2m_part_active_eval.npz> \
-    --control-training-result /uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_production_training_v1/work/training_2M_seed0_result.json \
-    --test-training-result "$PKG/scripts/train/work/training_spanet_2M_part_active_seed0_result.json" \
-    --build-receipt "$JOIN_DIR/BUILD_RECEIPT_active_val.json" \
-    --out-json "$JOIN_DIR/EVALUATION_RESULT_active.json"
+PYBIN=/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4U_eaf_official_spanet_gpu_canary_20260815_v1/.pixi/envs/default/bin/python3
+TRACK_B=/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812
+PHASE4AF="$TRACK_B/phase4AF_spanet_partial_events_population_correction_20260819_v1"
+
+"$PYBIN" "$EVAL_PKG/code/export_model_eval_events.py" \
+    --arm control \
+    --checkpoint "$PHASE4AF/spanet_2M_seed0_production_training_v1/spanet_2M_seed0/version_0/checkpoints/primary-epoch=49-step=48800-validation_average_jet_accuracy=0.4912.ckpt" \
+    --checkpoint-sha256 dc39cf76f0d8e40d07228f240fe58b1179e8134cd4f96c5c786a7d528d31ea8d \
+    --input-h5 "$PHASE4AF/production_hdf5_build_v1/work/production_2M_val.h5" \
+    --input-h5-sha256 3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2 \
+    --hdf5-train "$PHASE4AF/production_hdf5_build_v1/work/production_2M_train.h5" \
+    --hdf5-train-sha256 fe9e4d8fa501e24c9585fa18f59caafe8c7631337f8e0428094fa3229e09fe76 \
+    --event-yaml "$TRACK_B/phase4S_official_spanet_integration_canary_20260814_v1/event_config/trackb_hh4b.yaml" \
+    --event-yaml-sha256 278885c34c53aee73ceece060d4f464e5195780f3e8b77594d8a2e4b6fd60ed3 \
+    --spanet-repo "$TRACK_B/phase4AE_spanet_10jet_literature_aligned_training_preflight_20260818_v1/gpu_canary_10jet_trainonlyweighted_v23exact_r2/spanet_repo_v23exact" \
+    --spanet-pinned-commit debbdc999bfb785eb110a36c5fd3eff211ebf234 \
+    --val-manifest-tsv "$PHASE4AF/production_population_contract_gate_v23exact_r2_nested_training_scaling_20260819_v1/work/manifest_validation_400k.tsv" \
+    --out-npz "$PKG/exports/control_2m_native_eval.npz"
 ```
 
-**Expected output:** `EVALUATION_RESULT_active.json` with AUC (all-bg/QCD/
-ttbar), paired-bootstrap ΔAUC, rejection-at-fixed-efficiency, McNemar
-reconstruction comparison, jet-multiplicity-stratified AUC, resource
-comparison. Every result is labeled
+Already run: 400,000/400,000 events scored (~2,300 events/s, ~174s wall),
+process composition `signal=193358 qcd=174485 ttbar=32157` (exact match to
+`FROZEN_FACTS.json`), checkpoint loaded with zero missing/unexpected keys,
+all hard validations passed. Cross-checked against existing frozen
+artifacts (see `$EVAL_PKG/STATUS.md` for full numbers): truth
+(`truth_targets_400k.npz`) exact match on all 400,000 events; classification
+AUC matches `classification_evaluation_result.json` to ~1e-10 (floating-
+point-noise level); predicted assignments match
+`spanet2m_signal_pairing_sample.npz`'s 10,000-event sample on 99.11% of
+rows exactly, with the 0.89% residual attributable to CPU floating-point
+non-determinism on near-tied assignment decisions (confirmed same
+torch 2.8.0+cu128/numpy 2.0.2 in both environments — not a version
+mismatch), producing a symmetric, non-systematic ±0.0004-0.0005 shift in
+aggregate pairing-accuracy metrics, not a directional bias.
+
+**9b. Export TEST** (**NOT run — SPA2M+ParT does not exist yet**; exact
+future command, once Step 7 completes):
+
+```bash
+# Read the actual checkpoint path/hash from Step 7's own result JSON once
+# it exists -- do not guess the filename (it encodes epoch/step/metric
+# values only known after training, exactly like CONTROL's own filename).
+TEST_RESULT_JSON="$PKG/scripts/train/work/training_spanet_2M_part_active_seed0_result.json"
+# TEST_CKPT=<primary checkpoint path recorded in $TEST_RESULT_JSON>
+# TEST_CKPT_SHA256=<primary_checkpoint_sha256 recorded in $TEST_RESULT_JSON>
+# TEST_EVENT_YAML_SHA256=$(sha256sum "$JOIN_DIR/part_augmented_active_hh4b.yaml" | cut -d' ' -f1)
+
+"$PYBIN" "$EVAL_PKG/code/export_model_eval_events.py" \
+    --arm test \
+    --checkpoint "$TEST_CKPT" --checkpoint-sha256 "$TEST_CKPT_SHA256" \
+    --input-h5 "$JOIN_DIR/spa2m_part_active_val.h5" \
+    --input-h5-sha256 "$(sha256sum "$JOIN_DIR/spa2m_part_active_val.h5" | cut -d' ' -f1)" \
+    --hdf5-train "$JOIN_DIR/spa2m_part_active_train.h5" \
+    --hdf5-train-sha256 "$(sha256sum "$JOIN_DIR/spa2m_part_active_train.h5" | cut -d' ' -f1)" \
+    --event-yaml "$JOIN_DIR/part_augmented_active_hh4b.yaml" --event-yaml-sha256 "$TEST_EVENT_YAML_SHA256" \
+    --spanet-repo "$TRACK_B/phase4AE_spanet_10jet_literature_aligned_training_preflight_20260818_v1/gpu_canary_10jet_trainonlyweighted_v23exact_r2/spanet_repo_v23exact" \
+    --spanet-pinned-commit debbdc999bfb785eb110a36c5fd3eff211ebf234 \
+    --val-manifest-tsv "$PHASE4AF/production_population_contract_gate_v23exact_r2_nested_training_scaling_20260819_v1/work/manifest_validation_400k.tsv" \
+    --out-npz "$PKG/exports/test_2m_part_active_eval.npz"
+```
+
+Same CONTROL/TEST exporter path, same event ordering/identity semantics
+(both proven via the same dataloader-vs-raw-HDF5 label identity check,
+independently, per invocation) — nothing in the exporter differs between
+arms except which checkpoint/H5/YAML it is pointed at.
+
+**9c. Run the current evaluator** (`code/evaluate_multi_model.py`, not
+`evaluate_matched_2m.py`) once both exports exist:
+
+```bash
+python3 "$EVAL_PKG/code/evaluate_multi_model.py" \
+    --control-npz "$PKG/exports/control_2m_native_eval.npz" \
+    --test-npz    "$PKG/exports/test_2m_part_active_eval.npz" \
+    --control-training-result "$PHASE4AF/spanet_2M_seed0_production_training_v1/work/training_2M_seed0_result.json" \
+    --test-training-result "$TEST_RESULT_JSON" \
+    --build-receipt "$JOIN_DIR/BUILD_RECEIPT_active_val.json" \
+    --native10m-aggregate-json /uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/classification_evaluation_10M/work/classification_evaluation_10M_result.json \
+    --seed 0 --n-boot 10000 \
+    --out-json "$JOIN_DIR/comparison_result_seed0.json"
+```
+
+**Expected output:** `comparison_result_seed0.json`
+(`schemas/comparison_result.schema.json`) with AUC (all-bg/QCD/ttbar),
+paired-bootstrap ΔAUC, rejection-at-fixed-efficiency (predeclared
+`PREREGISTRATION.md` εS points), the symmetry-safe McNemar reconstruction
+comparison, jet-multiplicity-stratified AUC, resource comparison, and
+single-seed story flags. Labeled
 `MATCHED_DEVELOPMENT_VALIDATION_RESULT_NOT_FINAL_TEST_PERFORMANCE` by the
 script itself — repeat this labeling in any downstream write-up (per
 `FROZEN_FACTS.json:data_policy.labeling_rule`).
@@ -308,9 +394,15 @@ script itself — repeat this labeling in any downstream write-up (per
 **STOP condition:** the script itself hard-fails (exit 2/3) if the
 control/test `event_id` or `process` arrays don't match after sorting —
 treat that as a real identity bug, not a warning, and do not report
-anything from that run. If G3 (scipy) is unresolved, note in the writeup
-that sparse-tail rejection CIs used the normal-approximation fallback,
-not the exact Garwood method.
+anything from that run. If additional seeds are called for
+(`PREREGISTRATION.md` section 7.1), repeat 9b/9c per seed and run
+`decide_go_no_go.py` across all of them before any GO/NO-GO conclusion.
+If G3 (scipy broken in this LPC shell's default `/usr/bin/python3`) is
+still unresolved in whatever environment runs `evaluate_multi_model.py`,
+note in the writeup that sparse-tail Poisson/binomial intervals used the
+normal-approximation fallback, not the exact method (the pixi environment
+used for 9a/9b above has a working scipy, confirmed this session — prefer
+running 9c there too if exact intervals matter).
 
 ---
 
@@ -327,8 +419,19 @@ without touching production or launching training was dry-run for real
 (not just reasoned about) and passed, including an exact ground-truth
 match on the active-dimension detection logic.
 
-**One concrete blocker exists for Step 9 only** (G5): the CONTROL/TEST
-`.npz` inference/scoring script `evaluate_matched_2m.py` depends on does
-not exist yet anywhere in the project and must be written — this does not
-block starting or completing Steps 1–8, and there is natural wall-clock
-time to write it while Step 7/8 training runs.
+**G5 is RESOLVED (2026-09-10, history preserved above, not deleted).** The
+CONTROL/TEST `.npz` inference/scoring script now exists
+(`track_f_evaluation_readiness_protocol_20260909_v1/code/
+export_model_eval_events.py`), targets the current, amended schema and
+evaluator (not the superseded `evaluate_matched_2m.py`), and has been **run
+for real** against the frozen CONTROL checkpoint — 400,000/400,000 events,
+all hard validations passed, cross-checked against existing frozen
+artifacts (truth exact on all 400k events; classification AUC to ~1e-10;
+predicted assignments 99.11% exact on a 10k-event sample, residual
+explained by CPU floating-point non-determinism, not a version mismatch or
+logic error). **Step 9's remaining dependency is unchanged and was never
+part of G5**: it still cannot run to completion until Step 7 produces a
+real TEST checkpoint (no training was launched by this exporter work, and
+none is authorized here). `EXPORTER_READY_FOR_CONTROL_AND_FUTURE_TEST` —
+see `track_f_evaluation_readiness_protocol_20260909_v1/STATUS.md` for the
+full accounting.

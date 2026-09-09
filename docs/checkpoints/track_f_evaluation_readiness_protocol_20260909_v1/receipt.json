@@ -1,8 +1,8 @@
 {
-  "status": "EVALUATION_PROTOCOL_FROZEN_BEFORE_PART2M_RESULTS_AUDITED_2026_09_10_ONE_SYMMETRY_BUG_FIXED_VIA_AMENDMENT",
-  "utc": "2026-09-10T00:00:00Z",
+  "status": "EVALUATION_PROTOCOL_FROZEN_AUDITED_EXPORTER_IMPLEMENTED_CONTROL_EXPORTED_FOR_REAL_TEST_STILL_NOT_TRAINED",
+  "utc": "2026-09-10T02:00:00Z",
   "package": "track_f_evaluation_readiness_protocol_20260909_v1",
-  "scope": "Freezes a publication-quality evaluation protocol comparing native SPA2M (CONTROL, frozen), SPA2M+ParT (TEST, not yet trained), and native SPA10M (secondary scale reference, frozen), written before any ParT2M result exists. Predeclares primary metrics (exact-event HH reconstruction efficiency, Higgs assignment/pairing accuracy as a genuinely distinct metric, all-background/QCD/ttbar AUC, background rejection at epsS in {10,7.5,5,4,3}%), secondary robustness metrics (mass resolution, score-mass correlation, jet-multiplicity/topology strata, raw tight-tail survivor counts, runtime/GPU memory/parameter count), reuses this project's existing paired-bootstrap/McNemar/Poisson-interval implementation and adds one new statistic (exact binomial interval), freezes a mechanical GO/NO-GO rule for more ParT2M seeds and additional8M authorization, and defines Story A/B/C outcomes falsifiably. Produces JSON schemas, a table generator, and a figure generator, all exercised end-to-end against synthetic (not real) fixture data.",
+  "scope": "Freezes a publication-quality evaluation protocol comparing native SPA2M (CONTROL, frozen), SPA2M+ParT (TEST, not yet trained), and native SPA10M (secondary scale reference, frozen), written before any ParT2M result exists. Predeclares primary metrics (exact-event HH reconstruction efficiency, Higgs assignment/pairing accuracy as a genuinely distinct metric, all-background/QCD/ttbar AUC, background rejection at epsS in {10,7.5,5,4,3}%), secondary robustness metrics (mass resolution, score-mass correlation, jet-multiplicity/topology strata, raw tight-tail survivor counts, runtime/GPU memory/parameter count), reuses this project's existing paired-bootstrap/McNemar/Poisson-interval implementation and adds one new statistic (exact binomial interval), freezes a mechanical GO/NO-GO rule for more ParT2M seeds and additional8M authorization, and defines Story A/B/C outcomes falsifiably. Produces JSON schemas, a table generator, and a figure generator. Also implements the unified CONTROL/TEST matched-evaluation exporter (code/export_model_eval_events.py, closing G5 in the postproduction packet's Step 9) and runs it for real against the frozen CONTROL checkpoint (400,000/400,000 events, cross-checked against existing frozen artifacts).",
   "audit_2026_09_10": {
     "trigger": "Pre-result audit of the frozen protocol, requested before SPA2M+ParT (TEST) had been trained or scored -- no ParT2M result had been seen.",
     "finding": "The 2026-09-09 higgs1_assignment_correct/higgs2_assignment_correct schema silently assumed a canonical, symmetry-safe H1-vs-H2 labeling that does not exist. The two Higgs bosons in HH->4b are an explicit PERMUTATIONS.EVENT: [h1,h2] symmetry in this project's own SPA-Net event topology (event_config/trackb_hh4b.yaml), confirmed authoritative by the official SPANet library's own validation_average_jet_accuracy code (spanet/network/jet_reconstruction/jet_reconstruction_validation.py), which takes the argmax over ALL event-level truth permutations before scoring -- the same principle this fix applies.",
@@ -13,6 +13,33 @@
     "go_no_go_thresholds_changed": false,
     "note": "This audit corrects a genuine correctness/implementation bug and a provenance citation; it does not touch, and was not motivated by, the decision rule's conservatism."
   },
+  "exporter_2026_09_10": {
+    "trigger": "Implement and fully test a unified, schema-conformant CONTROL/TEST exporter, closing G5.",
+    "new_file": "code/export_model_eval_events.py, sha256 40a8c09e0b2d3364e2731300e11d6237d6fb1376d4e3653ce8edd0dcc0ac8ba0",
+    "reused_not_invented": "evaluate_classification.py's architecture/options block and _patched_load_assignments patch (parameterized, not hardcoded); model.predict(sources).assignments (same call as part2_spanet_assignment.py); four_vec()/pair_mass() (copied verbatim from part3_event_listing_and_truth.py/part6_pairing_accuracy_and_mass.py); reconstruct_process_labels()/verify_process_reconstruction() (copied verbatim from evaluate_classification.py).",
+    "environment_discrepancy_found_and_fixed": "The pixi environment used (phase4U_eaf_official_spanet_gpu_canary_20260815_v1/.pixi/envs/default, the only environment found on this LPC node with a working torch+pytorch_lightning install -- the default /usr/bin/python3 has neither) has its OWN editable-installed spanet resolving to a DIFFERENT git commit (46c68051...) than the project's pinned commit (debbdc999...). Fixed by inserting the pinned-commit repo path at sys.path[0] before `import spanet`, with a hard self-check (spanet.__file__ must resolve under the pinned path) so this can never silently regress.",
+    "real_finding_investigated_not_waved_away": "1,173 of 400,000 events had a predicted jet pointing at a padded (non-real) slot for pred_b3/pred_b4. Investigated by cross-tabulating against n_jets: found to occur EXCLUSIVELY at n_jets<4 (mathematically unavoidable -- fewer than 4 real jets exist), ZERO occurrences at n_jets>=4 (which would have been a genuine anomaly). The exporter's validation logic distinguishes these two cases explicitly and only hard-fails on the n_jets>=4 case.",
+    "full_control_export": {
+      "path": "track_f_postproduction_pipeline_20260908_v1/exports/control_2m_native_eval.npz",
+      "sha256": "bebfb680bf8e76a90bd0e4d626997a92b00a300c21444b1c2889986dff7ee26d",
+      "n_events": 400000,
+      "process_composition": {"signal": 193358, "qcd": 174485, "ttbar": 32157},
+      "n_assignment_defined": 100868,
+      "checkpoint_load_missing_unexpected_keys": "both empty (clean load)",
+      "wall_s": 173.8, "events_per_s": 2301.6
+    },
+    "cross_checks": {
+      "truth_vs_truth_targets_400k_npz": "EXACT match, all 400,000 events, b1/b2/b3/b4",
+      "classification_score_auc_vs_classification_evaluation_result_json": "matches to ~4e-10 (all_background/qcd/ttbar), floating-point-noise level",
+      "predicted_assignments_vs_spanet2m_signal_pairing_sample_npz_10k_sample": "99.11% exact match (9911/10000 rows); 89-row (0.89%) residual investigated: identical torch 2.8.0+cu128/numpy 2.0.2 confirmed in both environments (rules out version mismatch); 74/89 flip the match_higgs_pairs() correctness verdict but the NET aggregate effect is only 3-5 events out of 10000 on every reported metric, consistent with symmetric non-directional floating-point noise on near-tied argmax decisions (a well-documented CPU-inference characteristic), not a logic defect",
+      "pairing_accuracy_metrics_vs_signal_pairing_accuracy_and_mass_10k_json": "agree to within 0.03-0.05 percentage points on every reported fraction"
+    },
+    "tests_added": "tests/test_exporter_contract.py (19 checks, against the REAL export): no forbidden H1/H2 keys; slot-swapped copy of REAL data gives identical reconstruction_metrics(); control-vs-itself gives exact-zero delta-AUC and zero McNemar-discordant pairs; dropping or duplicating one event makes evaluate_multi_model.py fail closed. Full suite now 43/43 outer checks, 85 total individual checks (was 42/65).",
+    "final_execution_packet_updated": "track_f_postproduction_pipeline_20260908_v1/FINAL_EXECUTION_PACKET.md: G5 marked RESOLVED (original text preserved, not deleted), Step 9 replaced with the current exporter/evaluate_multi_model.py commands (not the superseded evaluate_matched_2m.py), Final verdict section updated.",
+    "test_still_not_exported": true,
+    "test_still_not_trained": true,
+    "substantive_thresholds_metrics_or_architecture_changed": false
+  },
   "predecessor_documents_read_not_modified": [
     "track_b_part_producer_fix_and_resume_20260907_v1/SPANET_PART_COMPARISON_CONTRACT_v2.md",
     "track_b_part_postflight_2m_20260907_v1/evaluation/SPA2M_PART_EVALUATION_PLAN.md",
@@ -20,11 +47,15 @@
     "track_b_part_postflight_2m_20260907_v1/training_launch/TRAINING_LAUNCH_PREFLIGHT_v2.md (referenced, not opened in full this session)",
     "track_f_postproduction_pipeline_20260908_v1/scripts/eval/evaluate_matched_2m.py",
     "track_f_postproduction_pipeline_20260908_v1/scripts/eval/bootstrap_utils.py",
-    "track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/classification_evaluation_10M/work/classification_evaluation_10M_result.json (schema reference only)"
+    "track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/classification_evaluation_10M/work/classification_evaluation_10M_result.json (schema reference only)",
+    "track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_classification_evaluation_v1/evaluate_classification.py (adapted, not modified)",
+    "paper_exports/track_b_harvey_tail_characterization_20260825_v1/work/{part2_spanet_assignment.py,part3_event_listing_and_truth.py,part6_pairing_accuracy_and_mass.py} (reused verbatim in part, not modified)",
+    "track_b_phase4_preflight_20260812/phase4S_official_spanet_integration_canary_20260814_v1/event_config/trackb_hh4b.yaml (read-only, hash-verified before use)",
+    "track_f_postproduction_pipeline_20260908_v1/FINAL_EXECUTION_PACKET.md and configs/FROZEN_FACTS.json (FINAL_EXECUTION_PACKET.md's Step 9/G5 sections were UPDATED this session -- see below; FROZEN_FACTS.json itself was only read)"
   ],
   "safety_compliance": {
     "training_launched": false,
-    "inference_performed_on_real_data": false,
+    "inference_performed_on_real_data": "CONTROL only (true) -- read-only CPU forward pass against the frozen, already-public native SPA2M checkpoint, 400,000 events, does not touch or reveal TEST/ParT2M. TEST/ParT2M inference: false (not performed, checkpoint does not exist).",
     "production_launched": false,
     "exact_2m_part_production_touched": false,
     "existing_frozen_results_or_contracts_modified": false,
@@ -32,9 +63,10 @@
     "spa2m_part_evaluation_plan_modified": false,
     "evaluate_matched_2m_py_modified": false,
     "bootstrap_utils_py_modified": false,
-    "real_numbers_reported_as_results": false,
+    "real_numbers_reported_as_results": "CONTROL-only real numbers (its own already-public AUC/process-composition/pairing-accuracy, cross-checked against pre-existing frozen artifacts) are reported in STATUS.md/receipt.json -- these are NOT a ParT2M/TEST comparison result and do not reveal anything about the unseen TEST arm, which does not exist.",
     "synthetic_fixtures_clearly_labeled": true,
     "additional8m_authorized_by_this_package": false,
+    "test_checkpoint_touched": false,
     "preregistration_body_text_silently_edited": false,
     "actions_this_session_by_claude": [
       "read SPANET_PART_COMPARISON_CONTRACT_v2.md, SPA2M_PART_EVALUATION_PLAN.md, PREPROCESSING_DECISION.md, evaluate_matched_2m.py, bootstrap_utils.py, and related predecessor documents to ground the new protocol in the project's existing, already-frozen decisions rather than re-deriving or contradicting them",
@@ -47,6 +79,12 @@
       "(2026-09-10 audit) read event_config/trackb_hh4b.yaml, spanet/network/jet_reconstruction/jet_reconstruction_validation.py, part2_spanet_assignment.py, part3_event_listing_and_truth.py, and part6_pairing_accuracy_and_mass.py to ground the H<->H symmetry fix in this project's own authoritative SPA-Net semantics and an already-existing correct precedent",
       "(2026-09-10) corrected schemas/model_eval_events.schema.json and code/evaluate_multi_model.py directly (tooling, not scientific-decision prose); annotated (did not rewrite) PREREGISTRATION.md section 2/5.1; appended the full dated Amendment 2026-09-10",
       "(2026-09-10) wrote tests/test_symmetry_invariance.py (20 checks) and tests/test_bootstrap_threshold_recompute.py (3 checks); rewrote tests/fixtures/make_synthetic_fixtures.py to randomize H1/H2 slot order and inner-jet order independently on predicted and truth sides; re-ran the full suite end-to-end: 42/42 outer checks (65 total individual checks) passed",
+      "(2026-09-10, exporter session) read evaluate_classification.py, part2_spanet_assignment.py, part3_event_listing_and_truth.py, part6_pairing_accuracy_and_mass.py, FROZEN_FACTS.json, and directly inspected production_2M_val.h5 via h5py (INPUTS/Source/*, TARGETS/h1,h2/*, CLASSIFICATIONS/EVENT/signal) to ground the exporter design in real, verified file structure rather than assumption",
+      "(2026-09-10) discovered the working torch+pytorch_lightning environment on this node (phase4U's pixi env) and the spanet-commit discrepancy within it; verified the sys.path-override fix resolves spanet to the pinned commit",
+      "(2026-09-10) wrote code/export_model_eval_events.py; ran a 1-batch canary (2048 events) then the full 400,000-event CONTROL export for real; investigated and correctly resolved a genuine padded-jet-slot finding (confined to n_jets<4, zero at n_jets>=4) rather than silently loosening the check",
+      "(2026-09-10) cross-checked the real CONTROL export against truth_targets_400k.npz (exact, full 400k), classification_evaluation_result.json (AUC to ~4e-10), spanet2m_signal_pairing_sample.npz (99.11% exact on 10k sample), and signal_pairing_accuracy_and_mass_10k.json (metrics agree to 0.03-0.05pp) -- investigated the 0.89% assignment residual by comparing torch/numpy versions across environments (found identical, ruling out a version mismatch) rather than asserting agreement without checking",
+      "(2026-09-10) wrote tests/test_exporter_contract.py (19 checks against the real export); updated tests/run_pipeline_smoke_test.py to include it; re-ran the full suite: 43/43 outer checks (85 total individual checks) passed",
+      "(2026-09-10) updated FINAL_EXECUTION_PACKET.md (G5 marked RESOLVED, history preserved; Step 9 replaced with current exporter/evaluate_multi_model.py commands) and this package's own STATUS.md/code/README.md/receipt.json",
       "cleaned up __pycache__/*.pyc artifacts created by running python3 during testing"
     ],
     "eos_writes_this_session_by_claude": [],
@@ -57,8 +95,8 @@
   },
   "gated_on": [
     "SPANET_PART_COMPARISON_CONTRACT_v2.md's own 4-item gate passing (currently FULL_2M_TRAINING_READY_NOW = NO)",
-    "SPA2M+ParT (TEST) actually being trained and scored, producing a real .npz conforming to schemas/model_eval_events.schema.json",
-    "Only then: code/evaluate_multi_model.py run against real data, code/decide_go_no_go.py applied, tables/figures built from the real result -- none of which this package performs"
+    "SPA2M+ParT (TEST) actually being trained (Step 7) and exported via code/export_model_eval_events.py --arm test, producing a real .npz conforming to schemas/model_eval_events.schema.json",
+    "Only then: code/evaluate_multi_model.py run against real CONTROL+TEST data, code/decide_go_no_go.py applied, tables/figures built from the real result -- none of which this package performs; CONTROL's own export already exists and is ready to be consumed the moment TEST does too"
   ],
-  "final_status_line": "Evaluation protocol frozen before any ParT2M result exists, then audited (still before any ParT2M result) and one genuine H<->H permutation-symmetry bug fixed via a dated PREREGISTRATION.md amendment -- not a silent edit. All schemas, statistics, and decision logic implemented and exercised end-to-end on synthetic data (42/42 outer checks, 65 total individual checks, pass). No production, training, or inference launched. No existing frozen result or contract modified."
+  "final_status_line": "Evaluation protocol frozen before any ParT2M result existed, then audited (still before any ParT2M result) and one genuine H<->H permutation-symmetry bug fixed via a dated PREREGISTRATION.md amendment -- not a silent edit. The matched-evaluation exporter (code/export_model_eval_events.py) was then implemented, closing G5, and run for real against the frozen CONTROL checkpoint (400,000/400,000 events), cross-checked against existing frozen artifacts with exact or explainable agreement throughout. TEST/ParT2M was NOT exported (checkpoint does not exist) and NOT trained. All schemas, statistics, decision logic, and the exporter are exercised end-to-end (43/43 outer checks, 85 total individual checks, pass). EXPORTER_READY_FOR_CONTROL_AND_FUTURE_TEST. No production, training, additional8M, JP-JEPA, holdout_B, or Stage C touched. No existing frozen result or contract modified (FINAL_EXECUTION_PACKET.md's Step 9/G5 were updated with history preserved, not deleted)."
 }
