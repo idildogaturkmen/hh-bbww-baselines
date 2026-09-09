@@ -1,0 +1,64 @@
+{
+  "status": "EVALUATION_PROTOCOL_FROZEN_BEFORE_PART2M_RESULTS_AUDITED_2026_09_10_ONE_SYMMETRY_BUG_FIXED_VIA_AMENDMENT",
+  "utc": "2026-09-10T00:00:00Z",
+  "package": "track_f_evaluation_readiness_protocol_20260909_v1",
+  "scope": "Freezes a publication-quality evaluation protocol comparing native SPA2M (CONTROL, frozen), SPA2M+ParT (TEST, not yet trained), and native SPA10M (secondary scale reference, frozen), written before any ParT2M result exists. Predeclares primary metrics (exact-event HH reconstruction efficiency, Higgs assignment/pairing accuracy as a genuinely distinct metric, all-background/QCD/ttbar AUC, background rejection at epsS in {10,7.5,5,4,3}%), secondary robustness metrics (mass resolution, score-mass correlation, jet-multiplicity/topology strata, raw tight-tail survivor counts, runtime/GPU memory/parameter count), reuses this project's existing paired-bootstrap/McNemar/Poisson-interval implementation and adds one new statistic (exact binomial interval), freezes a mechanical GO/NO-GO rule for more ParT2M seeds and additional8M authorization, and defines Story A/B/C outcomes falsifiably. Produces JSON schemas, a table generator, and a figure generator, all exercised end-to-end against synthetic (not real) fixture data.",
+  "audit_2026_09_10": {
+    "trigger": "Pre-result audit of the frozen protocol, requested before SPA2M+ParT (TEST) had been trained or scored -- no ParT2M result had been seen.",
+    "finding": "The 2026-09-09 higgs1_assignment_correct/higgs2_assignment_correct schema silently assumed a canonical, symmetry-safe H1-vs-H2 labeling that does not exist. The two Higgs bosons in HH->4b are an explicit PERMUTATIONS.EVENT: [h1,h2] symmetry in this project's own SPA-Net event topology (event_config/trackb_hh4b.yaml), confirmed authoritative by the official SPANet library's own validation_average_jet_accuracy code (spanet/network/jet_reconstruction/jet_reconstruction_validation.py), which takes the argmax over ALL event-level truth permutations before scoring -- the same principle this fix applies.",
+    "provenance_correction": "The original PREREGISTRATION.md claim that the new per-Higgs metric was 'equivalent to this project's established per_higgs_pairing_accuracy convention (pn_c7x_spanet_evaluation.py)' was FALSE and is withdrawn: pn_c7x_spanet_evaluation.py's learned_per_higgs_pairing_accuracy/learned_per_jet_partner_accuracy are literal aliases of learned_exact_event_pairing_accuracy (same variable, learned_accuracy), computed on an unrelated single discrete partition-label representation -- it never established a genuinely distinct partial-credit metric. The correct, already-existing, symmetry-safe precedent is paper_exports/track_b_harvey_tail_characterization_20260825_v1/work/part6_pairing_accuracy_and_mass.py (2026-08-25), whose {frozenset(...)} set-matching and n_pairs_correct/2.0 formula this fix's pred_b1..pred_b4/truth_b1..truth_b4 field-naming and match_higgs_pairs() logic are deliberately aligned with.",
+    "bonus_bug_found_and_fixed": "While rewriting the reconstruction-metrics code path, found that paired_bootstrap_delta_exact_event_efficiency's stat_fn ignored its own `scores` argument and always read a `correct_arr` kwarg fixed to TEST's array regardless of whether the control or test statistic was being evaluated -- so the reported delta was always exactly 0 (test_mean - test_mean) with a degenerate zero-width CI, silently non-functional rather than visibly absent. Fixed in the same rewrite; verified non-degenerate on synthetic data (observed_delta=0.232, CI (0.205,0.256), std=0.013).",
+    "secondary_audit_bootstrap_threshold": "Verified empirically (new test_bootstrap_threshold_recompute.py, 3/3 passing) that the signal-efficiency threshold for background-rejection-at-fixed-epsS IS recomputed inside every bootstrap replicate (resampled scores/labels/process arrays are what the threshold is derived from on every call) -- NO BUG FOUND, no amendment needed for this item, recorded as audited-and-confirmed rather than silently assumed correct.",
+    "secondary_audit_exporter_readiness": "part2_spanet_assignment.py already proves predicted-index extraction is working, low-risk code against the real frozen CONTROL checkpoint today. No concrete unified exporter (predicted + truth indices + score + process + masses + n_jets, schema-conformant) currently exists for either arm. Recommendation (not performed by this audit): write and dry-run such an exporter against CONTROL now, before TEST exists, so schema-conformance is proven before results, not after.",
+    "go_no_go_thresholds_changed": false,
+    "note": "This audit corrects a genuine correctness/implementation bug and a provenance citation; it does not touch, and was not motivated by, the decision rule's conservatism."
+  },
+  "predecessor_documents_read_not_modified": [
+    "track_b_part_producer_fix_and_resume_20260907_v1/SPANET_PART_COMPARISON_CONTRACT_v2.md",
+    "track_b_part_postflight_2m_20260907_v1/evaluation/SPA2M_PART_EVALUATION_PLAN.md",
+    "track_b_part_postflight_2m_20260907_v1/preprocessing_decision/PREPROCESSING_DECISION.md",
+    "track_b_part_postflight_2m_20260907_v1/training_launch/TRAINING_LAUNCH_PREFLIGHT_v2.md (referenced, not opened in full this session)",
+    "track_f_postproduction_pipeline_20260908_v1/scripts/eval/evaluate_matched_2m.py",
+    "track_f_postproduction_pipeline_20260908_v1/scripts/eval/bootstrap_utils.py",
+    "track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/classification_evaluation_10M/work/classification_evaluation_10M_result.json (schema reference only)"
+  ],
+  "safety_compliance": {
+    "training_launched": false,
+    "inference_performed_on_real_data": false,
+    "production_launched": false,
+    "exact_2m_part_production_touched": false,
+    "existing_frozen_results_or_contracts_modified": false,
+    "spanet_part_comparison_contract_v2_modified": false,
+    "spa2m_part_evaluation_plan_modified": false,
+    "evaluate_matched_2m_py_modified": false,
+    "bootstrap_utils_py_modified": false,
+    "real_numbers_reported_as_results": false,
+    "synthetic_fixtures_clearly_labeled": true,
+    "additional8m_authorized_by_this_package": false,
+    "preregistration_body_text_silently_edited": false,
+    "actions_this_session_by_claude": [
+      "read SPANET_PART_COMPARISON_CONTRACT_v2.md, SPA2M_PART_EVALUATION_PLAN.md, PREPROCESSING_DECISION.md, evaluate_matched_2m.py, bootstrap_utils.py, and related predecessor documents to ground the new protocol in the project's existing, already-frozen decisions rather than re-deriving or contradicting them",
+      "web-searched the ParT (arXiv:2202.03772) and SPA-Net (arXiv:2106.03898 / arXiv:2010.09206) papers to verify terminology and confirm the scope of each paper's own SOTA claim before writing LITERATURE_TERMINOLOGY_NOTES.md",
+      "wrote PREREGISTRATION.md (frozen protocol), LITERATURE_TERMINOLOGY_NOTES.md",
+      "wrote 4 JSON schemas under schemas/, validated each as well-formed JSON",
+      "copied bootstrap_utils.py forward byte-identical (diff empty, sha256 matches source) into code/",
+      "wrote bootstrap_utils_ext.py (one new function: exact_binomial_interval), evaluate_multi_model.py, decide_go_no_go.py, validate_schema.py, build_tables.py, build_figures.py -- all py_compile clean",
+      "wrote tests/fixtures/make_synthetic_fixtures.py and tests/run_pipeline_smoke_test.py, ran the full pipeline end-to-end against synthetic data only: 40/40 checks passed",
+      "(2026-09-10 audit) read event_config/trackb_hh4b.yaml, spanet/network/jet_reconstruction/jet_reconstruction_validation.py, part2_spanet_assignment.py, part3_event_listing_and_truth.py, and part6_pairing_accuracy_and_mass.py to ground the H<->H symmetry fix in this project's own authoritative SPA-Net semantics and an already-existing correct precedent",
+      "(2026-09-10) corrected schemas/model_eval_events.schema.json and code/evaluate_multi_model.py directly (tooling, not scientific-decision prose); annotated (did not rewrite) PREREGISTRATION.md section 2/5.1; appended the full dated Amendment 2026-09-10",
+      "(2026-09-10) wrote tests/test_symmetry_invariance.py (20 checks) and tests/test_bootstrap_threshold_recompute.py (3 checks); rewrote tests/fixtures/make_synthetic_fixtures.py to randomize H1/H2 slot order and inner-jet order independently on predicted and truth sides; re-ran the full suite end-to-end: 42/42 outer checks (65 total individual checks) passed",
+      "cleaned up __pycache__/*.pyc artifacts created by running python3 during testing"
+    ],
+    "eos_writes_this_session_by_claude": [],
+    "network_reads_this_session_by_claude": [
+      "web search: 'Particle Transformer ParT jet tagging Qu Gouskos Li paper JetClass arXiv'",
+      "web search: 'SPANet Symmetry Preserving Attention Network jet assignment Fenton Shmakov paper arXiv'"
+    ]
+  },
+  "gated_on": [
+    "SPANET_PART_COMPARISON_CONTRACT_v2.md's own 4-item gate passing (currently FULL_2M_TRAINING_READY_NOW = NO)",
+    "SPA2M+ParT (TEST) actually being trained and scored, producing a real .npz conforming to schemas/model_eval_events.schema.json",
+    "Only then: code/evaluate_multi_model.py run against real data, code/decide_go_no_go.py applied, tables/figures built from the real result -- none of which this package performs"
+  ],
+  "final_status_line": "Evaluation protocol frozen before any ParT2M result exists, then audited (still before any ParT2M result) and one genuine H<->H permutation-symmetry bug fixed via a dated PREREGISTRATION.md amendment -- not a silent edit. All schemas, statistics, and decision logic implemented and exercised end-to-end on synthetic data (42/42 outer checks, 65 total individual checks, pass). No production, training, or inference launched. No existing frozen result or contract modified."
+}

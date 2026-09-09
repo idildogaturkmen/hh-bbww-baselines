@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "track_f_evaluation_readiness_protocol_20260909_v1/go_no_go_decision.schema.json",
+  "title": "Frozen GO/NO-GO decision output",
+  "description": "Output of code/decide_go_no_go.py applied to one or more comparison_result.json files (one per seed). Implements PREREGISTRATION.md section 7 exactly -- every boolean here must be a direct, mechanical function of the input CIs/p-values, never hand-edited.",
+  "type": "object",
+  "properties": {
+    "_label": {"type": "string"},
+    "n_seeds_evaluated": {"type": "integer", "minimum": 1},
+    "per_seed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "seed": {"type": "integer"},
+          "sig_class": {"type": "boolean"}, "sig_reco": {"type": "boolean"},
+          "harm_class": {"type": "boolean"}, "harm_reco": {"type": "boolean"},
+          "underpowered": {"type": "boolean"},
+          "delta_auc_all_background_point_estimate": {"type": "number"},
+          "delta_auc_all_background_ci": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}
+        },
+        "required": ["seed", "sig_class", "sig_reco", "harm_class", "harm_reco", "underpowered"]
+      }
+    },
+    "more_seeds_decision": {
+      "type": "object",
+      "properties": {
+        "decision": {"enum": ["GO_RUN_2_ADDITIONAL_SEEDS", "INCONCLUSIVE_RUN_1_ADDITIONAL_SEED", "NO_GO_STORY_C", "NO_GO_INVESTIGATE_HARM"]},
+        "reason": {"type": "string"}
+      },
+      "required": ["decision", "reason"]
+    },
+    "additional8m_decision": {
+      "type": "object",
+      "properties": {
+        "reachable": {"type": "boolean", "description": "false until >=2 of 3 seeds have been evaluated"},
+        "decision": {"enum": ["NOT_REACHABLE_YET", "AUTHORIZE", "DO_NOT_AUTHORIZE"]},
+        "n_agree": {"type": ["integer", "null"]},
+        "median_delta_auc_all_background": {"type": ["number", "null"]},
+        "reason": {"type": "string"}
+      },
+      "required": ["reachable", "decision", "reason"]
+    }
+  },
+  "required": ["n_seeds_evaluated", "per_seed", "more_seeds_decision", "additional8m_decision"]
+}

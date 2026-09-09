@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "track_f_evaluation_readiness_protocol_20260909_v1/model_eval_aggregate.schema.json",
+  "title": "Aggregate-only model evaluation result (native SPA10M, or any arm without a per-event array)",
+  "description": "Documents the existing classification_evaluation_10M_result.json structure (track_b_phase4_preflight_20260812/phase4AI_spanet_10M_scaling_seed0_20260821_v1/classification_evaluation_10M/work/) so code/evaluate_multi_model.py can validate against it rather than assume its shape. Used for the UNPAIRED fallback path in PREREGISTRATION.md Story B when no event_id-matched per-event array for native SPA10M exists.",
+  "type": "object",
+  "properties": {
+    "checkpoint_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "population": {
+      "type": "object",
+      "properties": {
+        "n_scored": {"type": "integer"},
+        "n_signal": {"type": "integer"},
+        "n_qcd": {"type": "integer"},
+        "n_ttbar": {"type": "integer"}
+      },
+      "required": ["n_scored", "n_signal", "n_qcd", "n_ttbar"]
+    },
+    "roc_auc": {
+      "type": "object",
+      "properties": {
+        "signal_vs_all_background": {"type": "number", "minimum": 0, "maximum": 1},
+        "signal_vs_qcd": {"type": "number", "minimum": 0, "maximum": 1},
+        "signal_vs_ttbar": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "required": ["signal_vs_all_background", "signal_vs_qcd", "signal_vs_ttbar"]
+    },
+    "working_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target_signal_efficiency": {"type": "number"},
+          "threshold": {"type": "number"},
+          "achieved_signal_efficiency": {"type": "number"},
+          "n_signal_pass": {"type": "integer"}, "n_signal_total": {"type": "integer"},
+          "all_background_rejection": {"type": ["number", "null"]}, "all_background_efficiency": {"type": ["number", "null"]},
+          "n_all_background_pass": {"type": "integer"}, "n_all_background_total": {"type": "integer"},
+          "qcd_rejection": {"type": ["number", "null"]}, "qcd_efficiency": {"type": ["number", "null"]},
+          "n_qcd_pass": {"type": "integer"}, "n_qcd_total": {"type": "integer"},
+          "ttbar_rejection": {"type": ["number", "null"]}, "ttbar_efficiency": {"type": ["number", "null"]},
+          "n_ttbar_pass": {"type": "integer"}, "n_ttbar_total": {"type": "integer"}
+        },
+        "required": ["target_signal_efficiency", "threshold", "achieved_signal_efficiency",
+                     "n_signal_pass", "n_signal_total",
+                     "all_background_rejection", "n_all_background_pass", "n_all_background_total",
+                     "qcd_rejection", "n_qcd_pass", "n_qcd_total",
+                     "ttbar_rejection", "n_ttbar_pass", "n_ttbar_total"]
+      }
+    }
+  },
+  "required": ["checkpoint_sha256", "population", "roc_auc", "working_points"],
+  "additionalProperties": true
+}

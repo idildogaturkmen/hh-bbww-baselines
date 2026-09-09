@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "track_f_evaluation_readiness_protocol_20260909_v1/comparison_result.schema.json",
+  "title": "Multi-arm comparison result (native SPA2M vs SPA2M+ParT vs native SPA10M)",
+  "description": "Output of code/evaluate_multi_model.py. Every number in this file must be traceable to a real input array/JSON described by model_eval_events.schema.json or model_eval_aggregate.schema.json -- no field here may be filled with a placeholder, estimate, or synthetic value in a non-test run. The top-level _label field is mandatory and must never read anything implying 'final test performance'.",
+  "type": "object",
+  "properties": {
+    "_label": {"type": "string", "const": "MATCHED_DEVELOPMENT_VALIDATION_RESULT_NOT_FINAL_TEST_PERFORMANCE"},
+    "_synthetic_test_fixture": {
+      "type": "boolean",
+      "description": "MUST be true and MUST be accompanied by a filename/path containing SYNTHETIC_TEST_FIXTURE whenever this result was produced from tests/fixtures/ synthetic data rather than a real model. A real evaluation run must omit this field or set it false."
+    },
+    "n_events_shared_cohort": {"type": "integer"},
+    "process_composition": {
+      "type": "object",
+      "properties": {"signal": {"type": "integer"}, "qcd": {"type": "integer"}, "ttbar": {"type": "integer"}},
+      "required": ["signal", "qcd", "ttbar"]
+    },
+    "auc": {
+      "type": "object",
+      "description": "Primary metrics #3-5, per arm.",
+      "properties": {
+        "control": {"$ref": "#/$defs/auc_triplet"},
+        "test": {"$ref": "#/$defs/auc_triplet"},
+        "native10m": {"$ref": "#/$defs/auc_triplet"}
+      },
+      "required": ["control", "test"]
+    },
+    "paired_bootstrap_delta_auc": {
+      "type": "object",
+      "description": "TEST vs CONTROL (always paired). all_background is the designated primary endpoint (PREREGISTRATION.md section 3).",
+      "properties": {
+        "all_background": {"$ref": "#/$defs/bootstrap_delta"},
+        "qcd": {"$ref": "#/$defs/bootstrap_delta"},
+        "ttbar": {"$ref": "#/$defs/bootstrap_delta"}
+      },
+      "required": ["all_background", "qcd", "ttbar"]
+    },
+    "rejection_at_fixed_efficiency": {
+      "type": "object",
+      "description": "Primary metric #6. Keyed epsS_0.1 / epsS_0.075 / epsS_0.05 / epsS_0.04 / epsS_0.03, each an all_background/qcd/ttbar triplet of working-point objects (matching model_eval_aggregate.schema.json's working_points item shape plus finite_support_warnings).",
+      "properties": {"control": {"type": "object"}, "test": {"type": "object"}, "native10m": {"type": "object"}},
+      "required": ["control", "test"]
+    },
+    "paired_bootstrap_delta_rejection": {
+      "type": "object",
+      "description": "TEST vs CONTROL, keyed epsS_0.1 ... epsS_0.03. epsS_0.05/all_background is the co-primary confirmatory endpoint."
+    },
+    "reconstruction": {
+      "type": "object",
+      "description": "Primary metrics #1 (exact_event_hh_reconstruction_efficiency) and #2 (higgs_assignment_pairing_accuracy), per arm.",
+      "properties": {"control": {"$ref": "#/$defs/reconstruction_metrics"}, "test": {"$ref": "#/$defs/reconstruction_metrics"}}
+    },
+    "mcnemar_reconstruction_correctness": {"type": "object", "description": "TEST vs CONTROL, on primary metric #1."},
+    "mcnemar_n_events_both_defined": {"type": "integer"},
+    "score_mass_correlation": {"type": "object", "description": "Secondary metrics #1-2, per arm."},
+    "jet_multiplicity_stratified_auc": {"type": "object", "description": "Secondary metric #3-4: le4/eq4/eq5/ge5/ge6 and extra_jet_activity strata."},
+    "resource": {"type": "object", "description": "Secondary metric #6."},
+    "story_evaluation": {
+      "type": "object",
+      "description": "PREREGISTRATION.md section 8, computed by code/decide_go_no_go.py, not narrated by hand.",
+      "properties": {
+        "story_a": {"type": "object", "properties": {"supported": {"type": "boolean"}, "grade": {"enum": ["not_supported", "suggestive", "confirmed", "strong"]}}},
+        "story_b": {"type": "object", "properties": {"path": {"enum": ["paired", "unpaired_fallback"]}, "approaches": {"type": "boolean"}, "beats": {"type": "boolean"}}},
+        "story_c": {"type": "object", "properties": {"supported": {"type": "boolean"}}}
+      }
+    }
+  },
+  "required": ["_label", "n_events_shared_cohort", "process_composition", "auc",
+               "paired_bootstrap_delta_auc", "rejection_at_fixed_efficiency", "reconstruction",
+               "mcnemar_reconstruction_correctness"],
+  "$defs": {
+    "auc_triplet": {
+      "type": "object",
+      "properties": {"all_background": {"type": "number"}, "qcd": {"type": "number"}, "ttbar": {"type": "number"}},
+      "required": ["all_background", "qcd", "ttbar"]
+    },
+    "bootstrap_delta": {
+      "type": "object",
+      "properties": {
+        "observed_delta_test_minus_control": {"type": "number"},
+        "bootstrap_mean_delta": {"type": "number"}, "bootstrap_std_delta": {"type": "number"},
+        "ci_level": {"type": "number"}, "ci_low": {"type": "number"}, "ci_high": {"type": "number"},
+        "n_boot": {"type": "integer"}, "excludes_zero": {"type": "boolean"}
+      },
+      "required": ["observed_delta_test_minus_control", "ci_low", "ci_high", "n_boot", "excludes_zero"]
+    },
+    "reconstruction_metrics": {
+      "type": "object",
+      "properties": {
+        "n_events_with_defined_assignment": {"type": "integer"},
+        "exact_event_hh_reconstruction_efficiency": {"type": ["number", "null"]},
+        "higgs_assignment_pairing_accuracy": {"type": ["number", "null"]}
+      },
+      "required": ["n_events_with_defined_assignment", "exact_event_hh_reconstruction_efficiency", "higgs_assignment_pairing_accuracy"]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "track_f_evaluation_readiness_protocol_20260909_v1/model_eval_events.schema.json",
+  "title": "Per-event model evaluation arrays (native SPA2M / SPA2M+ParT)",
+  "description": "Documents the field-level contract of the .npz file each of the CONTROL (native SPA2M) and TEST (SPA2M+ParT) arms must produce over the identical 400,000-event holdout_A cohort. CORRECTED 2026-09-10 (see PREREGISTRATION.md Amendment 2026-09-10): the 2026-09-09 version of this schema required precomputed higgs1_assignment_correct/higgs2_assignment_correct booleans, which silently assumed a canonical, symmetry-safe H1-vs-H2 labeling that does not exist -- the two Higgs candidates are an explicit PERMUTATIONS.EVENT: [h1,h2] symmetry in this project's own SPA-Net event topology (event_config/trackb_hh4b.yaml), and neither the model's output-slot order nor any truth-storage convention is guaranteed to respect a fixed physical H1/H2 identity across events. This version instead requires the RAW predicted and truth jet indices (pred_b1..pred_b4, truth_b1..truth_b4, matching the naming convention already established and working in paper_exports/track_b_harvey_tail_characterization_20260825_v1/work/{part2_spanet_assignment.py,part6_pairing_accuracy_and_mass.py}), and code/evaluate_multi_model.py computes all reconstruction correctness CENTRALLY via a symmetry-invariant match (matching the official SPANet library's own argmax-over-event-permutations methodology, spanet/network/jet_reconstruction/jet_reconstruction_validation.py) -- never by trusting a precomputed correctness boolean. This is a documentation/validation schema for the logical field set of an .npz archive (each property below is one array, all arrays sharing length = n_events, sorted by event_id before comparison) -- not a JSON instance of the data itself.",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "array", "items": {"type": "integer"},
+      "description": "native_hdf5_row_index. Primary key for CONTROL/TEST/native10M-if-paired matching."
+    },
+    "process": {
+      "type": "array", "items": {"type": "integer", "enum": [0, 1, 2]},
+      "description": "0=signal, 1=qcd, 2=ttbar."
+    },
+    "score": {
+      "type": "array", "items": {"type": "number"},
+      "description": "Signal-vs-all-background discriminant, higher = more signal-like."
+    },
+    "assignment_defined": {
+      "type": "array", "items": {"type": "boolean"},
+      "description": "Whether a truth assignment exists for this event (matchability gate; typically signal-only, but not assumed -- computed from truth, not from process). Must be consistent with truth_b1 != -1 (both express the same matchability condition; kept as an explicit field rather than relying on sentinel-detection alone)."
+    },
+    "pred_b1": {"type": "array", "items": {"type": "integer"}, "description": "REQUIRED, replaces the 2026-09-09 higgs1/higgs2 booleans (Amendment 2026-09-10). Jet index (0..9, into this event's up-to-10 selected jets) of the first jet of the model's first predicted Higgs-candidate pair. Always present (predictions exist for background too), matching part2_spanet_assignment.py's pred.assignments[0] extraction (h1_idx[:,0])."},
+    "pred_b2": {"type": "array", "items": {"type": "integer"}, "description": "REQUIRED. Second jet of the model's first predicted pair (pred.assignments[0][:,1])."},
+    "pred_b3": {"type": "array", "items": {"type": "integer"}, "description": "REQUIRED. First jet of the model's second predicted pair (pred.assignments[1][:,0])."},
+    "pred_b4": {"type": "array", "items": {"type": "integer"}, "description": "REQUIRED. Second jet of the model's second predicted pair (pred.assignments[1][:,1])."},
+    "truth_b1": {"type": "array", "items": {"type": "integer"}, "description": "REQUIRED. Jet index of the first jet of one truth Higgs-candidate pair, or -1 where assignment_defined is false -- matches truth_targets_400k.npz's own b1 convention (paper_exports/track_b_harvey_tail_characterization_20260825_v1/work/part3_event_listing_and_truth.py: valid_truth = (b1 != -1))."},
+    "truth_b2": {"type": "array", "items": {"type": "integer"}, "description": "REQUIRED. Partner jet of truth_b1 (same truth pair). -1 where assignment_defined is false."},
+    "truth_b3": {"type": "array", "items": {"type": "integer"}, "description": "REQUIRED. First jet of the other truth Higgs-candidate pair. -1 where assignment_defined is false."},
+    "truth_b4": {"type": "array", "items": {"type": "integer"}, "description": "REQUIRED. Partner jet of truth_b3. -1 where assignment_defined is false."},
+    "higgs_mass_1": {"type": "array", "items": {"type": "number"}, "description": "Reconstructed di-jet mass under the predicted assignment, candidate 1 (mass of the dijet formed by pred_b1,pred_b2). Secondary/descriptive diagnostic only -- not implicated in the H1<->H2 correctness-symmetry audit, unchanged."},
+    "higgs_mass_2": {"type": "array", "items": {"type": "number"}, "description": "Reconstructed di-jet mass under the predicted assignment, candidate 2."},
+    "n_jets": {
+      "type": "array", "items": {"type": "integer", "minimum": 0},
+      "description": "Real jet multiplicity (native MASK.sum() for this event). code/evaluate_multi_model.py hard-asserts min(n_jets[assignment_defined]) >= 4 before computing the le4/eq4 strata (verified, not assumed)."
+    },
+    "part_embedding_norm_mean": {
+      "type": "array", "items": {"type": "number"},
+      "description": "OPTIONAL, TEST-only. Mean L2 norm of the retained (20-dim) ParT embedding across this event's real jets. NaN/absent for CONTROL and for native10M."
+    },
+    "jet_pt_leading": {"type": "array", "items": {"type": "number"}, "description": "OPTIONAL, for the pT stratification diagnostic."},
+    "jet_eta_leading": {"type": "array", "items": {"type": "number"}, "description": "OPTIONAL, for the eta stratification diagnostic."}
+  },
+  "required": [
+    "event_id", "process", "score", "assignment_defined",
+    "pred_b1", "pred_b2", "pred_b3", "pred_b4",
+    "truth_b1", "truth_b2", "truth_b3", "truth_b4",
+    "higgs_mass_1", "higgs_mass_2", "n_jets"
+  ],
+  "additionalProperties": true
+}
