@@ -1,0 +1,108 @@
+{
+  "package": "track_b_harvey_fp32_score_precision_20260906_v1",
+  "utc": "2026-09-06T00:00:00Z",
+  "purpose": "Harvey follow-up: audit apparent score-histogram spikes near u~6.6 and u~6.9 and determine whether they are caused by FP32 quantization of the stored two-class softmax probability. Diagnostic only.",
+  "governing_model": {
+    "name": "SPA-Net 10M seed-0, 50-epoch baseline, primary checkpoint (epoch 47)",
+    "checkpoint_sha256": "fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+    "checkpoint_path": "phase4AI_spanet_10M_scaling_seed0_20260821_v1/full_run_attempt2_eaf_local_staging/spanet_10M_seed0/version_0/checkpoints/primary-epoch=47-step=234336-validation_average_jet_accuracy=0.4928.ckpt",
+    "hash_reverified_this_task": true
+  },
+  "stand_in_used_for_task_3_census": {
+    "name": "SPA-Net 2M seed-0, primary checkpoint (epoch 49)",
+    "checkpoint_sha256": "dc39cf76f0d8e40d07228f240fe58b1179e8134cd4f96c5c786a7d528d31ea8d",
+    "reason": "The governing 10M checkpoint's own evaluation script (evaluate_classification_10M.py) never persists a per-event score array -- only aggregate JSON statistics. The 2M sibling checkpoint, scored by the identical imported code path on the identical 400,000-event cohort, is the only checkpoint in this pipeline for which a real per-event float32 score archive exists on disk (val_signal_probs_400k.npy, val_process_labels_400k.npy).",
+    "auc_vs_governing_10M": "within 1e-4 to 4e-4 across all-background/QCD/ttbar (see COMPARISON_TABLE_400K_DEVELOPMENT.md)"
+  },
+  "constraints_honored": {
+    "model_trained": false,
+    "frozen_checkpoint_modified": false,
+    "stage_c_or_holdout_B_accessed": false,
+    "large_inference_job_launched": false,
+    "part_production_interfered_with": false,
+    "new_job_launched": false
+  },
+  "task_1_dtype_trace": {
+    "classification_logits_dtype": "float32",
+    "torch_softmax_dtype": "float32 (torch.softmax(logits, dim=-1), no dtype arg, no autocast)",
+    "stored_classifier_score_dtype": "float32 (probs.numpy() on a float32 tensor; np.concatenate preserves dtype)",
+    "output_file_dtype_2M_sibling": "float32 (np.save of the raw probs array, val_signal_probs_400k.npy)",
+    "output_file_dtype_governing_10M": "NO PER-EVENT FILE EXISTS -- only float64 JSON summary statistics (mean/std/min/max/percentiles) via Python float() in describe()",
+    "cast_to_float32_before_or_after_softmax": "logits are already float32 before softmax (precision=\"32-true\" training, no autocast/half anywhere in the eval code, grep-verified); only cast observed anywhere is float64 for aggregate JSON stats, never per-event",
+    "source_files": [
+      "phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_classification_evaluation_v1/evaluate_classification.py",
+      "phase4AI_spanet_10M_scaling_seed0_20260821_v1/classification_evaluation_10M/evaluate_classification_10M.py",
+      "phase4AI_spanet_10M_scaling_seed0_20260821_v1/full_run_attempt2_eaf_local_staging/launch_10M_seed0_full_50epoch_attempt2.py"
+    ]
+  },
+  "task_2_fp32_lattice": {
+    "spacing": "2^-24 = 5.9604644775390625e-08",
+    "u_k2": 6.923689900271567,
+    "u_k4": 6.622659904607587,
+    "matches_harvey_reported_locations": true,
+    "table_csv": "FP32_LATTICE_TABLE.csv"
+  },
+  "task_3_census": {
+    "source_arrays": [
+      "phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_classification_evaluation_v1/work/val_signal_probs_400k.npy",
+      "phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_classification_evaluation_v1/work/val_process_labels_400k.npy"
+    ],
+    "background_scope_note": "All 'background'/'qcd'/'ttbar' counts below are within this 400,000-event development cohort only -- not a physical background-yield determination and not a substitute for the separate full physical-background tail study, where the much larger pooled QCD/ttbar/minor-background statistics do contain rare survivors at tight working points.",
+    "n_total_events": 400000,
+    "n_signal": 193358,
+    "n_qcd": 174485,
+    "n_ttbar": 32157,
+    "n_all_background": 206642,
+    "n_other_background": 0,
+    "u_cut": 5.5,
+    "n_tail_u_gt_5p5": {"signal": 1256, "all_background": 0, "qcd": 0, "ttbar": 0, "other_background": 0},
+    "n_unique_float32_values_tail": {"signal": 27, "all_background": 0, "qcd": 0, "ttbar": 0, "other_background": 0},
+    "n_exact_score_eq_1p0": {"signal": 128, "all_background": 0, "qcd": 0, "ttbar": 0, "other_background": 0},
+    "n_exact_score_eq_nextafter_1p0": {"signal": 0, "all_background": 0, "qcd": 0, "ttbar": 0, "other_background": 0},
+    "spike_k2_u6p9237_counts": {"signal": 80, "all_background": 0, "qcd": 0, "ttbar": 0},
+    "spike_k4_u6p6226_counts": {"signal": 53, "all_background": 0, "qcd": 0, "ttbar": 0},
+    "weighted_background_yield": "NOT AVAILABLE -- no per-event physical weight field in this archive; not fabricated",
+    "csv": "FP32_UNIQUE_SCORE_CENSUS.csv"
+  },
+  "task_4_raw_logits": {
+    "raw_logits_available": false,
+    "search_performed": "grep + find across evaluate_classification.py, evaluate_classification_10M.py, and every *.npy/*.npz/*.parquet/*.csv reachable under the hh4b_delphes work tree, the hh-bbww-baselines* git worktrees, docs/checkpoints, docs/paper, and /eos/uscms/store/user/iturkmen -- zero logit archives found for either checkpoint",
+    "figures_produced": ["figures/u_probability_fp32_tail.png"],
+    "figures_not_produced_and_why": {
+      "figures/u_logit_tail.png": "no logit archive exists",
+      "figures/u_prob_vs_u_logit.png": "no logit archive exists"
+    }
+  },
+  "task_5_rerun_plan": {
+    "launched": false,
+    "n_events_identified_for_rerun": 1256,
+    "event_identity_source": "real row indices (into the shared production_2M_val.h5, same file/order used by both 2M and 10M evaluations) where the frozen 2M sibling archive has u>5.5 -- TAIL_ONLY_RERUN_EVENT_IDENTITIES.csv",
+    "prepared_script": "scripts/tail_only_rerun_logits_PREPARED_NOT_LAUNCHED.py",
+    "script_guarded": "raise SystemExit in __main__ block; requires manual edit to run",
+    "estimated_forward_pass_time_s": 0.35,
+    "estimated_total_wall_time": "well under 2 minutes (dominated by fixed model/checkpoint-load overhead, per the 2M evaluation's own 110.0s/400000-event=3636 events/s CPU throughput)",
+    "gpu_required": false,
+    "note": "CPU-only job (options.num_gpu=0 in the existing, unmodified evaluation code); no EAF GPU allocation needed, only the pinned python/torch/spanet environment"
+  },
+  "task_6_quantization_vs_pathology": {
+    "post_softmax_fp32_quantization_confirmed": true,
+    "model_pathology_claimed": false,
+    "fp32_training_invalidity_claimed": false,
+    "logit_ordering_loss_claimed": false,
+    "logit_ordering_loss_checkable_from_existing_artifacts": false,
+    "model_called_calibrated": false
+  },
+  "final_answers": {
+    "OBSERVED_SPIKE_6P6_COUNT_SIGNAL": 53,
+    "OBSERVED_SPIKE_6P9_COUNT_SIGNAL": 80,
+    "OBSERVED_SPIKE_6P6_COUNT_BACKGROUND": 0,
+    "OBSERVED_SPIKE_6P9_COUNT_BACKGROUND": 0,
+    "SPIKE_LOCATIONS_MATCH_FP32_LATTICE": "YES",
+    "EXACT_SCORE_1_SIGNAL": 128,
+    "EXACT_SCORE_1_BACKGROUND": 0,
+    "RAW_LOGITS_AVAILABLE": "NO",
+    "LOGIT_BASED_TAIL_RESOLVED": "NOT_YET",
+    "NEW_JOB_LAUNCHED": "NO"
+  },
+  "caveat": "The exact per-event counts above (53, 80, 128, etc.) are measured on the real, frozen per-event archive of the 2M sibling checkpoint, not the governing 10M checkpoint, because no per-event archive for the governing checkpoint exists anywhere in this project's frozen record (see task_1_dtype_trace.output_file_dtype_governing_10M). The governing checkpoint's own exact tail counts remain unknown until the Task 5 rerun is authorized and executed."
+}

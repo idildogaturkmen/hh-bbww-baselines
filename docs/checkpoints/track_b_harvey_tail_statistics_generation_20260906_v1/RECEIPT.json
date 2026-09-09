@@ -1,0 +1,47 @@
+{
+  "package": "track_b_harvey_tail_statistics_generation_20260906_v1",
+  "date_utc": "2026-09-06",
+  "priority": "Harvey follow-up: SPA-Net compressed-tail statistics generation feasibility + preselection variables",
+  "scope_confirmed": {
+    "new_mc_generation_launched": false,
+    "part_or_eaf_touched": false,
+    "frozen_physics_results_modified": false,
+    "holdout_B_or_stage_C_accessed": false
+  },
+  "u_definition": "u = -log10(1 - score), score = SPA-Net 10M class-1 softmax output, checkpoint fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+  "u_interpretation": "Harvey's 'u > 3/5' interpreted as u > 3.5 because the previously-used score>=0.9997 cut maps to u=3.5229",
+  "regions_studied": ["u > 3.5 (score > 0.9996837722339832)", "u > 4.5 (score > 0.9999683772233983)"],
+  "primary_data_sources": [
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_tail_characterization_20260825_v1/work/FULL_QCD_SURVIVOR_SIDECAR.h5",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_complete_3to5pct_study_20260825_v1/work/job_summary_ttbar_PRESERVED.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_complete_3to5pct_study_20260825_v1/work/job_summary_medium.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_complete_3to5pct_study_20260825_v1/work/job_summary_zjetstoqq.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_complete_3to5pct_study_20260825_v1/work/job_summary_small.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_followup_finescan_likelihood_20260829_v1/work/spa10m_finescan_rows.json",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_score_tail_diagnostics_20260829_v5_background_stats_audit/",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_spanet_compressed_tail_20260903_v2/",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_qcd_tail_generation_strategy_20260902_v1/",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_harvey_final_physics_bridge_20260825_v1/TENFOLD_BACKGROUND_FEASIBILITY_MEMO.md",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/track_a_targeted_qcd_pilot_arm1_200to500_50k_20260814_v1/PILOT_JOB_SUMMARY.tsv",
+    "docs/paper/jhep_hh4b_ml/track_b_physical_normalization/ (repo, frozen)",
+    "/eos/uscms/store/user/iturkmen/hh4b_delphes/track_b_harvey_bdt_working_points_20260818_v1/step2j_matched_400k_feature_sidecar_20260820_v1/matched_400k_features.npz",
+    "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_development_residual_backgrounds_20260821_v1/results/topology_full.npz"
+  ],
+  "methodology_notes": [
+    "Exact raw tail counts at u>3.5 and u>4.5 for QCD were obtained by directly re-thresholding the real per-event score_spanet_10m column in FULL_QCD_SURVIVOR_SIDECAR.h5 (complete coverage above the SPA10M 7.5% WP boundary, score>=0.998958945274353).",
+    "Exact raw tail counts for ttbar and the 14 minor 'other' backgrounds were obtained by directly re-thresholding the per-event 'survivors' score lists inside the frozen job_summary_*.json files (same 7.5% WP coverage boundary).",
+    "No event was rescored; only already-computed, already-frozen per-event scores were re-thresholded at the two new exact cut values.",
+    "Weighted yield / N_eff / relative MC uncertainty use the flat per-process weight_450fb convention established throughout this project, reusing the exact formulas validated in track_b_harvey_score_tail_diagnostics_20260829_v5_background_stats_audit.",
+    "The u>4.5, all-background N_eff/rel.unc. (13.99 / 26.73%) independently reproduces the already-frozen eps_S=3.5% fine-scan working point to the digit -- an internal cross-check, not an independent claim.",
+    "Task 4 preselection ranking uses the matched-400k development cohort's SPA-Net-2M score as a statistically tractable proxy for the true (too-small) SPA-Net-10M tail, explicitly flagged as such.",
+    "Task 3 CPU-hour/wall-time figures reuse the project's own measured Pythia8+Delphes pilot rate (1.35 CPU-hr / 50,000 events, track_a_targeted_qcd_pilot_arm1_200to500_50k_20260814_v1), cross-validated against the independently-published TENFOLD_BACKGROUND_FEASIBILITY_MEMO.md 10x-scenario figure (agreement to within 0.2%)."
+  ],
+  "not_found_or_not_resolved": [
+    "Process/run cards for the governing QCD sample itself (IHEP-side, received as finished ntuples only)",
+    "Physical units/derivation of the 4522600.0 and 100000.0 constants in the QCD weight formula (status: STRONG_CANDIDATE, not PROVEN)",
+    "A per-event generator-level pTHat branch anywhere in the frozen ntuples",
+    "Any SPA-Net-10M inference-only (as opposed to training) throughput measurement",
+    "Delphes-only or MG5-only production-scale (Condor) timing for this specific chain (the governing sample has no MG5 stage at all)",
+    "bias2Selection canary results (prepared, not executed, per track_b_qcd_tail_generation_strategy_20260902_v1/CANARY_PRODUCTION_PLAN.md)"
+  ]
+}

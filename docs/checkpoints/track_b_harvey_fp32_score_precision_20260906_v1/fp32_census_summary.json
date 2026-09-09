@@ -1,0 +1,330 @@
+{
+  "source_note": "Real frozen per-event archive for SPA-Net 2M seed-0 (NOT the governing 10M checkpoint -- see report). Read-only; no recomputation of scores.",
+  "source_probs_path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_classification_evaluation_v1/work/val_signal_probs_400k.npy",
+  "source_labels_path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_classification_evaluation_v1/work/val_process_labels_400k.npy",
+  "source_checkpoint_sha256": "dc39cf76f0d8e40d07228f240fe58b1179e8134cd4f96c5c786a7d528d31ea8d",
+  "u_cut": 5.5,
+  "spacing_2pow_neg24": 5.960464477539063e-08,
+  "per_population": {
+    "signal": {
+      "population": "signal",
+      "n_total": 193358,
+      "n_tail_u_gt_5p5": 1256,
+      "n_unique_tail_values": 27,
+      "n_exact_score_eq_1p0": 128,
+      "n_exact_score_eq_nextafter_1p0": 0,
+      "nextafter_1p0_f32": "0.9999999403953552",
+      "rows": [
+        {
+          "population": "signal",
+          "score_f32": "1.0",
+          "score_f32_exact_decimal": "1",
+          "score_f32_hex_be": "3f800000",
+          "k_round": 0,
+          "u": Infinity,
+          "raw_count": 128
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999998807907104",
+          "score_f32_exact_decimal": "0.99999988079071044922",
+          "score_f32_hex_be": "3f7ffffe",
+          "k_round": 2,
+          "u": 6.923689900271567,
+          "raw_count": 80
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999997615814209",
+          "score_f32_exact_decimal": "0.99999976158142089844",
+          "score_f32_hex_be": "3f7ffffc",
+          "k_round": 4,
+          "u": 6.622659904607587,
+          "raw_count": 53
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999996423721313",
+          "score_f32_exact_decimal": "0.99999964237213134766",
+          "score_f32_hex_be": "3f7ffffa",
+          "k_round": 6,
+          "u": 6.446568645551905,
+          "raw_count": 35
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999995231628418",
+          "score_f32_exact_decimal": "0.99999952316284179688",
+          "score_f32_hex_be": "3f7ffff8",
+          "k_round": 8,
+          "u": 6.321629908943605,
+          "raw_count": 39
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999994039535522",
+          "score_f32_exact_decimal": "0.99999940395355224609",
+          "score_f32_hex_be": "3f7ffff6",
+          "k_round": 10,
+          "u": 6.224719895935548,
+          "raw_count": 50
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999992847442627",
+          "score_f32_exact_decimal": "0.99999928474426269531",
+          "score_f32_hex_be": "3f7ffff4",
+          "k_round": 12,
+          "u": 6.145538649887924,
+          "raw_count": 47
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999991655349731",
+          "score_f32_exact_decimal": "0.99999916553497314453",
+          "score_f32_hex_be": "3f7ffff2",
+          "k_round": 14,
+          "u": 6.078591860257311,
+          "raw_count": 51
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999990463256836",
+          "score_f32_exact_decimal": "0.99999904632568359375",
+          "score_f32_hex_be": "3f7ffff0",
+          "k_round": 16,
+          "u": 6.020599913279624,
+          "raw_count": 40
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.999998927116394",
+          "score_f32_exact_decimal": "0.99999892711639404297",
+          "score_f32_hex_be": "3f7fffee",
+          "k_round": 18,
+          "u": 5.969447390832243,
+          "raw_count": 38
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999988079071045",
+          "score_f32_exact_decimal": "0.99999880790710449219",
+          "score_f32_hex_be": "3f7fffec",
+          "k_round": 20,
+          "u": 5.923689900271567,
+          "raw_count": 34
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999986886978149",
+          "score_f32_exact_decimal": "0.99999868869781494141",
+          "score_f32_hex_be": "3f7fffea",
+          "k_round": 22,
+          "u": 5.882297215113343,
+          "raw_count": 39
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999985694885254",
+          "score_f32_exact_decimal": "0.99999856948852539062",
+          "score_f32_hex_be": "3f7fffe8",
+          "k_round": 24,
+          "u": 5.844508654223943,
+          "raw_count": 41
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999984502792358",
+          "score_f32_exact_decimal": "0.99999845027923583984",
+          "score_f32_hex_be": "3f7fffe6",
+          "k_round": 26,
+          "u": 5.809746547964731,
+          "raw_count": 46
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999983310699463",
+          "score_f32_exact_decimal": "0.99999833106994628906",
+          "score_f32_hex_be": "3f7fffe4",
+          "k_round": 28,
+          "u": 5.77756186459333,
+          "raw_count": 48
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999982118606567",
+          "score_f32_exact_decimal": "0.99999821186065673828",
+          "score_f32_hex_be": "3f7fffe2",
+          "k_round": 30,
+          "u": 5.747598641215887,
+          "raw_count": 38
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999980926513672",
+          "score_f32_exact_decimal": "0.9999980926513671875",
+          "score_f32_hex_be": "3f7fffe0",
+          "k_round": 32,
+          "u": 5.719569917615643,
+          "raw_count": 39
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999979734420776",
+          "score_f32_exact_decimal": "0.99999797344207763672",
+          "score_f32_hex_be": "3f7fffde",
+          "k_round": 34,
+          "u": 5.693240978893294,
+          "raw_count": 39
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999978542327881",
+          "score_f32_exact_decimal": "0.99999785423278808594",
+          "score_f32_hex_be": "3f7fffdc",
+          "k_round": 36,
+          "u": 5.6684173951682615,
+          "raw_count": 44
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999977350234985",
+          "score_f32_exact_decimal": "0.99999773502349853516",
+          "score_f32_hex_be": "3f7fffda",
+          "k_round": 38,
+          "u": 5.644936299318738,
+          "raw_count": 34
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.999997615814209",
+          "score_f32_exact_decimal": "0.99999761581420898438",
+          "score_f32_hex_be": "3f7fffd8",
+          "k_round": 40,
+          "u": 5.622659904607587,
+          "raw_count": 45
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999974966049194",
+          "score_f32_exact_decimal": "0.99999749660491943359",
+          "score_f32_hex_be": "3f7fffd6",
+          "k_round": 42,
+          "u": 5.601470605537648,
+          "raw_count": 27
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999973773956299",
+          "score_f32_exact_decimal": "0.99999737739562988281",
+          "score_f32_hex_be": "3f7fffd4",
+          "k_round": 44,
+          "u": 5.581267219449361,
+          "raw_count": 46
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999972581863403",
+          "score_f32_exact_decimal": "0.99999725818634033203",
+          "score_f32_hex_be": "3f7fffd2",
+          "k_round": 46,
+          "u": 5.561962064253975,
+          "raw_count": 42
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999971389770508",
+          "score_f32_exact_decimal": "0.99999713897705078125",
+          "score_f32_hex_be": "3f7fffd0",
+          "k_round": 48,
+          "u": 5.543478658559962,
+          "raw_count": 43
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999970197677612",
+          "score_f32_exact_decimal": "0.99999701976776123047",
+          "score_f32_hex_be": "3f7fffce",
+          "k_round": 50,
+          "u": 5.52574989159953,
+          "raw_count": 50
+        },
+        {
+          "population": "signal",
+          "score_f32": "0.9999969005584717",
+          "score_f32_exact_decimal": "0.99999690055847167969",
+          "score_f32_hex_be": "3f7fffcc",
+          "k_round": 52,
+          "u": 5.50871655230075,
+          "raw_count": 40
+        }
+      ]
+    },
+    "all_background": {
+      "population": "all_background",
+      "n_total": 206642,
+      "n_tail_u_gt_5p5": 0,
+      "n_unique_tail_values": 0,
+      "n_exact_score_eq_1p0": 0,
+      "n_exact_score_eq_nextafter_1p0": 0,
+      "nextafter_1p0_f32": "0.9999999403953552",
+      "rows": [],
+      "weighted_yield_note": "NOT AVAILABLE: this development-cohort per-event archive carries no per-event physical weight/cross-section field; only raw event counts exist here. Weighted yields exist only in the separate, aggregate physical-normalization freeze (CANONICAL_FOUR_MODEL_NORMALIZED_RESULTS.csv), which does not carry per-event scores. Not fabricated."
+    },
+    "qcd": {
+      "population": "qcd",
+      "n_total": 174485,
+      "n_tail_u_gt_5p5": 0,
+      "n_unique_tail_values": 0,
+      "n_exact_score_eq_1p0": 0,
+      "n_exact_score_eq_nextafter_1p0": 0,
+      "nextafter_1p0_f32": "0.9999999403953552",
+      "rows": [],
+      "weighted_yield_note": "NOT AVAILABLE: this development-cohort per-event archive carries no per-event physical weight/cross-section field; only raw event counts exist here. Weighted yields exist only in the separate, aggregate physical-normalization freeze (CANONICAL_FOUR_MODEL_NORMALIZED_RESULTS.csv), which does not carry per-event scores. Not fabricated."
+    },
+    "ttbar": {
+      "population": "ttbar",
+      "n_total": 32157,
+      "n_tail_u_gt_5p5": 0,
+      "n_unique_tail_values": 0,
+      "n_exact_score_eq_1p0": 0,
+      "n_exact_score_eq_nextafter_1p0": 0,
+      "nextafter_1p0_f32": "0.9999999403953552",
+      "rows": [],
+      "weighted_yield_note": "NOT AVAILABLE: this development-cohort per-event archive carries no per-event physical weight/cross-section field; only raw event counts exist here. Weighted yields exist only in the separate, aggregate physical-normalization freeze (CANONICAL_FOUR_MODEL_NORMALIZED_RESULTS.csv), which does not carry per-event scores. Not fabricated."
+    },
+    "other_background": {
+      "population": "other_background",
+      "n_total": 0,
+      "n_tail_u_gt_5p5": 0,
+      "n_unique_tail_values": 0,
+      "n_exact_score_eq_1p0": 0,
+      "n_exact_score_eq_nextafter_1p0": 0,
+      "nextafter_1p0_f32": "0.9999999403953552",
+      "rows": [],
+      "weighted_yield_note": "NOT AVAILABLE: this development-cohort per-event archive carries no per-event physical weight/cross-section field; only raw event counts exist here. Weighted yields exist only in the separate, aggregate physical-normalization freeze (CANONICAL_FOUR_MODEL_NORMALIZED_RESULTS.csv), which does not carry per-event scores. Not fabricated."
+    }
+  },
+  "spike_focus_counts": {
+    "signal": {
+      "k2_u6p9237": 80,
+      "k4_u6p6226": 53
+    },
+    "all_background": {
+      "k2_u6p9237": 0,
+      "k4_u6p6226": 0
+    },
+    "qcd": {
+      "k2_u6p9237": 0,
+      "k4_u6p6226": 0
+    },
+    "ttbar": {
+      "k2_u6p9237": 0,
+      "k4_u6p6226": 0
+    },
+    "other_background": {
+      "k2_u6p9237": 0,
+      "k4_u6p6226": 0
+    }
+  }
+}
