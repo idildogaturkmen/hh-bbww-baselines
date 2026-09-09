@@ -1,0 +1,194 @@
+{
+  "_purpose": "Single source of truth for every path/hash/hyperparameter used by this package's scripts and runbooks. Every value below was read directly from an existing receipt/config/checkpoint/manifest by this session or a same-session subagent, with file paths cited. Do not hand-edit without re-verifying against the cited source.",
+  "_built_utc": "2026-09-08T23:59:00Z",
+  "_repo_state_at_prep_time": {
+    "branch": "spanet-part-resource-aware",
+    "head_commit": "2817fd7c4bb3c91570081dfa93720e07888060c6",
+    "repo_treated_as": "READ_ONLY_THIS_SESSION"
+  },
+
+  "governing_contract": {
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_part_producer_fix_and_resume_20260907_v1/SPANET_PART_COMPARISON_CONTRACT_v2.md",
+    "date": "2026-09-07",
+    "status": "CURRENT AND AUTHORITATIVE for which comparison is primary",
+    "decision_quote": "the primary controlled representation experiment is SPA-Net-2M native vs SPA-Net-2M+frozen-ParT on the exact same cohort and splits. SPA-Net-10M native vs SPA-Net-10M+ParT is the secondary scaling confirmation if it completes within the week.",
+    "superseded_docs_kept_as_historical_record_only": [
+      "/uscms_data/d3/iturkmen/repos/hh-bbww-baselines-bdt/docs/analysis_contracts/SPANET_PART_RESOURCE_AWARE_COMPARISON.md.save (2026-09-03, 10M-primary framing, superseded)",
+      "paper_exports/track_b_spanet_part_10M_production_preflight_20260903_v1/SPANET_PART_10M_COMPARISON_CONTRACT.md (2026-09-03, reinstated 10M-primary same day, superseded by the v2 decision above)"
+    ],
+    "no_fresh_native_control_planned": "Explicit project decision: CONTROL = existing frozen SPA2M checkpoint, reused unchanged, not retrained. Disclosed caveat: 'No contemporaneous native-only control.'",
+    "optional_alternative_not_adopted": "paper_exports/track_b_spanet_part_input_provenance_audit_20260903_v2/SPANET_PART_INPUT_PROVENANCE_AUDIT.md section 6 recommends ALSO training a fresh native-only control (3-way: frozen historical baseline, fresh native control, fresh ParT test) for a cleaner contemporaneous ablation. This is a stated recommendation, not adopted by the governing v2 contract. This package prepares it as an OPTIONAL appendix launcher, clearly labeled optional, not required."
+  },
+
+  "part_checkpoint": {
+    "file": "ParT_full.pt",
+    "sha256": "61e752f80d7c237d4b18b97705df416a8518dd9e3d5a78a8bbdeebadd787fec0",
+    "canonical_eos_path": "root://cmseos.fnal.gov//store/user/iturkmen/hh4b_delphes/part_jpjepa_production_bundle_20260825_v1/ParT_full.pt",
+    "embed_dim": 128,
+    "provenance": "official MIT-licensed JetClass-supervised Particle Transformer (jet-universe/particle_transformer, arXiv:2202.03772), NOT the PKU jetfree-hh4b event-level classifier",
+    "load_convention": "use_pre_activation_pair=False must be passed explicitly (class default is wrong for this checkpoint)",
+    "extraction_point": "post self.norm(cls_tokens), pre-FC-head (x_cls)",
+    "domain_mismatch_caveat": "Checkpoint trained on JetClass large-R jets (R=0.8, pT 500-1000 GeV); applied here to AK4 jets (R=0.4, pT>30 GeV). Carried-forward project verdict: REVIEW_NEEDED / DOMAIN_SHIFT_REQUIRES_VALIDATION, never resolved to PASS. This is a scientific-validity caveat, not a data-availability blocker, and applies at every scale (2M/10M/144M). Must be stated alongside any result from this pipeline.",
+    "frozen_discipline": "no gradient updates, no fine-tuning, no ParT inference inside SPA-Net epochs; embeddings are precomputed and consumed as static per-jet columns"
+  },
+
+  "part_production": {
+    "manifest_path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_part_full_embedding_production_exact_2M_20260824_v1/manifest/SHARD_MANIFEST.json",
+    "manifest_sha256": "35049c136a28dfaec377cb718a7d2e75abc5c7d931450fd8746606c453b32333",
+    "eos_shard_root": "root://cmseos.fnal.gov//store/user/iturkmen/hh4b_delphes/track_b_part_full_embedding_production_exact_2M_20260824_v1/shards",
+    "eos_failed_logs_v3": "root://cmseos.fnal.gov//store/user/iturkmen/hh4b_delphes/track_b_part_full_embedding_production_exact_2M_20260824_v1/failed_logs_v3",
+    "expected": {
+      "train": {"shards": 880, "events": 2000000, "real_jets": 9044239},
+      "val":   {"shards": 220, "events": 400000,  "real_jets": 1808870}
+    },
+    "shard_filename_pattern": "{split}_{NNNN}.h5 + sibling {split}_{NNNN}.receipt.json",
+    "h5_schema": {
+      "JOIN_KEY/native_hdf5_row_index": "int64, indexes directly into production_2M_{train,val}.h5 rows (proven row-for-row identical windowing, no remapping needed for the 2M cohort -- see SPANET_PART_COHORT_RECONCILIATION.md)",
+      "JOIN_KEY/jet_slot": "int64 in [0,10)",
+      "JOIN_KEY/shard_id, split, source_file_rank, source_entry_index_in_file": "additional provenance columns",
+      "EMBEDDINGS/part_full": "float32 (n_jets_in_shard, 128)",
+      "SANITY/n_constituents_used, SANITY/jet_pt": "sanity columns"
+    },
+    "receipt_schema": "{shard_id, split, n_events_read, n_real_jets, wall_time_s, read_time_s, device, batch_size, output_path, output_sha256, all_finite, status:'complete'}; check_shard_complete.py never trusts the receipt alone -- always re-hashes the .h5 and compares to output_sha256",
+    "status_as_of_last_census": {
+      "timestamp_utc": "2026-09-08T23:18:46Z",
+      "train_complete_pairs": 747,
+      "val_complete_pairs": 7,
+      "h5_only": 0, "receipt_only": 0, "dup": 0, "unexpected": 0,
+      "checkpoint_sha_pass": true,
+      "OVERALL_CENSUS_PASS": false,
+      "resume_status": "Launch packet (bundle_v3, run_worker_chunks_v3.sh, 346-shard 2-worker VAL-first partition) is PREPARED and canary-verified but NOT YET LAUNCHED by anyone as of this package's build time. Re-run the census fresh before trusting any number here.",
+      "source": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_part_producer_v3_ihep_auth_fix_20260908_v1/receipt.json"
+    }
+  },
+
+  "native_spa2m_control": {
+    "checkpoint_path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_production_training_v1/spanet_2M_seed0/version_0/checkpoints/primary-epoch=49-step=48800-validation_average_jet_accuracy=0.4912.ckpt",
+    "checkpoint_sha256": "dc39cf76f0d8e40d07228f240fe58b1179e8134cd4f96c5c786a7d528d31ea8d",
+    "checkpoint_size_bytes": 5699841,
+    "secondary_checkpoint_sha256": "f333911ad2b5881f01fa4be7eeea7e9d5dfd63578543f1899d3608f11cc84a64",
+    "primary_checkpoint_criterion": "max validation_average_jet_accuracy, best epoch 49, score 0.491227924823761",
+    "secondary_checkpoint_criterion": "min val/loss/total_loss, best epoch 48, score 0.5106494426727295",
+    "adjudication_verdict": "REVIEW_NEEDED (not FAIL/PASS) -- /uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_production_training_v1/ADJUDICATION_REPORT_2M_seed0.md -- sole gate failure traces to a benign sklearn recall-on-empty-slice warning (100% background validation batches), no instability/corruption/data-integrity defect, checkpoint_reload_success=True with zero missing/unexpected state-dict keys",
+    "training_result_json": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_production_training_v1/work/training_2M_seed0_result.json",
+    "launcher_script_base": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_production_training_v1/launch_2M_seed0_training.py",
+    "auc": {"all_background": 0.9692811749569128, "qcd": 0.9681550020366414, "ttbar": 0.9753918283758747},
+    "eval_report_dir_referenced": "spanet_2M_seed0_classification_evaluation_v1/ (per SPA2M_PART_EVALUATION_PLAN.md -- re-locate and verify before reuse; not independently re-confirmed on disk by this package)"
+  },
+
+  "native_2m_hdf5": {
+    "train": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/production_hdf5_build_v1/work/production_2M_train.h5",
+      "sha256": "fe9e4d8fa501e24c9585fa18f59caafe8c7631337f8e0428094fa3229e09fe76",
+      "size_bytes": 676013912,
+      "n_events": 2000000
+    },
+    "val": {
+      "path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/production_hdf5_build_v1/work/production_2M_val.h5",
+      "sha256": "3c94bf8300d1dc3324e2cf25f9b6c618dffb94819cb3a297a43ac06320d5c2a2",
+      "size_bytes": 135213912,
+      "n_events": 400000
+    },
+    "process_composition": {
+      "train": {"signal": 966791, "qcd": 872424, "ttbar": 160785},
+      "val":   {"signal": 193358, "qcd": 174485, "ttbar": 32157}
+    },
+    "split_construction": "deterministic per-file cyclic_contiguous_window(offset, quota, mod=n_events_file); NOT a random seed-based split. manifest_train_2M.tsv (880 rows) / manifest_validation_400k.tsv (220 rows), columns: process, split_role, remote_file, sha256, rank, n_events_file, offset, quota, index_rule, wrapped",
+    "builder_script": "phase4AF_.../production_hdf5_build_v1/build_hdf5_2M.py",
+    "jet_selection": "pt>30 GeV AND |eta|<2.5, sorted descending pt, top-10 kept, zero-padded; MASK is always a contiguous prefix",
+    "real_jets": {"train": 9044239, "val": 1808870}
+  },
+
+  "native_feature_schema": {
+    "features_in_order": ["pt", "eta", "phi", "mass", "probB", "probC", "probL"],
+    "n_features": 7,
+    "n_jet_slots": 10,
+    "normalization_per_feature": {"pt": "log_normalize", "eta": "normalize", "phi": "normalize", "mass": "log_normalize", "probB": "none", "probC": "none", "probL": "none"},
+    "event_yaml_path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4S_official_spanet_integration_canary_20260814_v1/event_config/trackb_hh4b.yaml",
+    "event_yaml_identical_copy_cross_checked_at": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_spanet10m_epoch_extension_50to75_20260829_v1/event_config/trackb_hh4b.yaml",
+    "assignment_targets": {
+      "EVENT": {"h1": ["b1", "b2"], "h2": ["b3", "b4"]},
+      "PERMUTATIONS": {"EVENT": [["h1", "h2"]], "h1": [["b1", "b2"]], "h2": [["b3", "b4"]]},
+      "CLASSIFICATIONS": {"EVENT": ["signal"]}
+    },
+    "reweighting": {
+      "kind": "target-mass density reweighting",
+      "mass_window_gev": [40, 200],
+      "bin_width_gev": 5.0,
+      "n_bins": 32,
+      "min_count_floor": 10,
+      "weight_definition": "p_uniform/p_mass, renormalized so mean in-range weight = 1.0",
+      "observed_weight_range": [0.672, 4.567],
+      "background_event_weight": 1.0,
+      "weight_table_path": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/target_mass_weight_table_full_population_rederivation_20260819_v1/work/target_weight_table_full_population.json",
+      "weight_table_sha256": "5baddc278ee2ef52a07c1c9e733e24310ea75060ed52f50805edaf8226161f7b",
+      "applied_identically_train_and_val": true
+    }
+  },
+
+  "spanet_architecture_and_training_protocol": {
+    "spanet_pinned_commit": "debbdc999bfb785eb110a36c5fd3eff211ebf234",
+    "spanet_repo_path_reference": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AE_spanet_10jet_literature_aligned_training_preflight_20260818_v1/gpu_canary_10jet_trainonlyweighted_v23exact_r2/spanet_repo_v23exact",
+    "seed": 0,
+    "seeded_via": "pl.seed_everything(0, workers=True)",
+    "batch_size": 2048,
+    "max_epochs": 50,
+    "num_dataloader_workers": 4,
+    "num_gpu": 1,
+    "dataset_limit": 1.0,
+    "partial_events": true,
+    "architecture": {
+      "hidden_dim": 32, "transformer_dim": 128, "transformer_dim_scale": 2.0,
+      "initial_embedding_dim": 16, "position_embedding_dim": 32,
+      "num_embedding_layers": 10, "num_encoder_layers": 8,
+      "num_branch_embedding_layers": 4, "num_branch_encoder_layers": 2,
+      "num_jet_embedding_layers": 0, "num_jet_encoder_layers": 0,
+      "num_detector_layers": 1, "num_regression_layers": 1, "num_classification_layers": 1,
+      "split_symmetric_attention": true, "num_attention_heads": 4,
+      "transformer_activation": "gelu", "skip_connections": true,
+      "initial_embedding_skip_connections": true, "linear_block_type": "GRU",
+      "transformer_type": "Gated", "linear_activation": "GELU", "normalization": "LayerNorm",
+      "masking": "Filling", "linear_prelu_activation": true, "dropout": 0.0059
+    },
+    "optimizer": {"optimizer": "AdamW", "learning_rate": 0.00659, "l2_penalty": 0.000374, "gradient_clip": 0.425},
+    "loss_scales": {"assignment_loss_scale": 1.0, "classification_loss_scale": 1.0, "detection_loss_scale": 0.0, "kl_loss_scale": 0.0, "regression_loss_scale": 0.0, "balance_losses": false},
+    "balance_flags": {"balance_particles": false, "balance_jets": false, "balance_classifications": false},
+    "trainer": {"accelerator": "gpu", "devices": 1, "precision": "32-true", "deterministic": false, "num_sanity_val_steps": 0, "check_val_every_n_epoch": 1},
+    "checkpoint_policy": {
+      "primary": {"monitor": "validation_average_jet_accuracy", "mode": "max", "save_top_k": 1, "save_last": true},
+      "secondary": {"monitor": "val/loss/total_loss", "mode": "min", "save_top_k": 1, "save_last": false}
+    },
+    "measured_2M_run": {"total_fit_wall_s": 8577.312471553989, "events_per_s_train_only": 15499.291834971384, "gpu_peak_reserved_bytes": 1614807040, "host_peak_rss_kib_self": 4440856, "gpu_device_name": "NVIDIA A100 80GB PCIe MIG 4g.40gb"}
+  },
+
+  "native_10m_baseline_for_go_nogo_reference": {
+    "checkpoint_sha256": "fd9ea100825ecc0412a2666f01fd19d1a91b25a50109b958c307102fa6943de5",
+    "n_train_events": 10000000, "n_val_events": 400000,
+    "identical_architecture_hparams_as_2M": true,
+    "primary_checkpoint_best_epoch": 47, "primary_checkpoint_best_score": 0.4928354024887085,
+    "auc": {"all_background": 0.9693, "qcd": 0.9678, "ttbar": 0.9775},
+    "note": "Scaling 2M->10M on native features alone moved headline AUC by <0.001 in any bucket (0.9693->0.9693 all-bg, 0.9682->0.9678 qcd, 0.9754->0.9775 ttbar) -- i.e. 5x more native-only data bought essentially nothing on these metrics. This is the empirical bar the GO/NO-GO for ParT 2M->10M should be measured against: a ParT effect that is smaller than this null 5x-data effect is not obviously worth a 5x-larger, much slower (~232h estimated single-worker wall time for the 8M new-category ParT embeddings) production."
+  },
+
+  "preprocessing_decision_provisional_not_frozen": {
+    "source": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_part_postflight_2m_20260907_v1/preprocessing_decision/PREPROCESSING_DECISION.md",
+    "status": "METHOD frozen (threshold placed at the data's own gap, drop-then-eps-clamp-standardize), CONSTANTS (exact dim indices, means, stds) PROVISIONAL -- computed from only 336,528 jets across 31 of 1,100 shards (24 train + 7 val), NOT the full population. This package's own task is to recompute this from the COMPLETE, TRAIN-ONLY population once the gate passes, and to justify (not blindly reuse) the std<1e-3 threshold from that recomputation.",
+    "evaluated_threshold": 1e-3,
+    "preliminary_finding_on_incomplete_sample": "108/128 dims std<=3.9e-5 (floating-point-noise-level), 2 gray-zone dims std 0.0018/0.0048, 18 clearly-varying dims std 0.040-0.694",
+    "eps_if_kept": 1e-3
+  },
+
+  "reuse_not_duplicate": {
+    "census_script": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_part_postflight_2m_20260907_v1/census/census_2m.py",
+    "aggregate_disjointness_audit_script": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_part_postproduction_tools_20260826_v2/code/aggregate_embedding_audit.py",
+    "streaming_join_writer_script": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_part_postproduction_tools_20260826_v2/code/streaming_native_part_join.py",
+    "per_shard_native_mask_validator": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_part_producer_fix_and_resume_20260907_v1/streaming_join_2m/streaming_join_2m.py",
+    "native_launcher_to_adapt": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812/phase4AF_spanet_partial_events_population_correction_20260819_v1/spanet_2M_seed0_production_training_v1/launch_2M_seed0_training.py",
+    "prior_part_launcher_stub_reference_only": "/uscms_data/d3/iturkmen/hh4b_delphes/paper_exports/track_b_spanet_part_resource_aware_training_preflight_20260903_v1/work/launch_spanet_part_50epoch.py (10M-primary-era stub, NotImplementedError training body -- superseded in framing by the 2M-primary v2 contract, kept as historical reference only, not executed or edited)"
+  },
+
+  "data_policy": {
+    "forbidden_this_pipeline": ["holdout_A is the only allowed dev/eval cohort", "holdout_B", "Stage C", "JP-JEPA", "8M/10M ParT production launch", "SPA-Net training launch", "any modification to the live exact_2M EOS production"],
+    "labeling_rule": "No untouched final test cohort is currently authorized for this comparison. All results from this pipeline must be labeled 'matched development/validation result', never 'final test performance'."
+  }
+}
