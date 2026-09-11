@@ -54,7 +54,7 @@ expected_events = weight_pb * luminosity_pb
 Now add the new QCD sample-specific folder:
 
 ```bash
-cat > backgrounds/qcd_bbbb_iht200to400_extra100k/README.md <<'MD'
+cat > docs/provenance/background_campaigns/qcd_bbbb_iht200to400_extra100k/README.md <<'MD'
 # QCD bbbb iHT200-400 extra 100k
 
 Production date: 2026-07-11
