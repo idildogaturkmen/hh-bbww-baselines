@@ -1,0 +1,31 @@
+model	target_epsS	background	threshold	achieved_epsS	rejection	epsB	n_bg_pass	n_bg_total	finite_support_warnings
+control	0.1	all_background	0.9989651441574097	0.10000620610473836	18785.636363636364	5.323215996747999e-05	11	206642	
+control	0.1	qcd	0.9989651441574097	0.10000620610473836	17448.5	5.731151674929077e-05	10	174485	
+control	0.1	ttbar	0.9989651441574097	0.10000620610473836	32157.0	3.109742824268433e-05	1	32157	only 1 survivors at epsS=0.1 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate
+control	0.075	all_background	0.999345600605011	0.07500077576309229	41328.4	2.419643634885454e-05	5	206642	only 5 survivors at epsS=0.075 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate
+control	0.075	qcd	0.999345600605011	0.07500077576309229	34897.0	2.8655758374645386e-05	5	174485	only 5 survivors at epsS=0.075 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate
+control	0.075	ttbar	0.999345600605011	0.07500077576309229		0.0	0	32157	zero survivors at epsS=0.075 (threshold=0.999346) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)
+control	0.05	all_background	0.9996824264526367	0.0500056889293435	68880.66666666667	1.4517861809312724e-05	3	206642	only 3 survivors at epsS=0.05 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate
+control	0.05	qcd	0.9996824264526367	0.0500056889293435	58161.666666666664	1.719345502478723e-05	3	174485	only 3 survivors at epsS=0.05 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate
+control	0.05	ttbar	0.9996824264526367	0.0500056889293435		0.0	0	32157	zero survivors at epsS=0.05 (threshold=0.999682) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)
+control	0.04	all_background	0.9998213648796082	0.040008688546633704	206642.0	4.839287269770908e-06	1	206642	only 1 survivors at epsS=0.04 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate
+control	0.04	qcd	0.9998213648796082	0.040008688546633704	174485.0	5.731151674929077e-06	1	174485	only 1 survivors at epsS=0.04 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate
+control	0.04	ttbar	0.9998213648796082	0.040008688546633704		0.0	0	32157	zero survivors at epsS=0.04 (threshold=0.999821) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)
+control	0.03	all_background	0.9999405145645142	0.030011688163923914		0.0	0	206642	zero survivors at epsS=0.03 (threshold=0.999941) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 206642 is supported)
+control	0.03	qcd	0.9999405145645142	0.030011688163923914		0.0	0	174485	zero survivors at epsS=0.03 (threshold=0.999941) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 174485 is supported)
+control	0.03	ttbar	0.9999405145645142	0.030011688163923914		0.0	0	32157	zero survivors at epsS=0.03 (threshold=0.999941) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)
+test	0.1	all_background	0.9925783276557922	0.10000620610473836	2402.813953488372	0.0004161787052002981	86	206642	
+test	0.1	qcd	0.9925783276557922	0.10000620610473836	2028.8953488372092	0.0004928790440439006	86	174485	
+test	0.1	ttbar	0.9925783276557922	0.10000620610473836		0.0	0	32157	zero survivors at epsS=0.1 (threshold=0.992578) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)
+test	0.075	all_background	0.993583619594574	0.07500077576309229	4492.217391304348	0.00022260721440946177	46	206642	
+test	0.075	qcd	0.993583619594574	0.07500077576309229	3793.1521739130435	0.00026363297704673754	46	174485	
+test	0.075	ttbar	0.993583619594574	0.07500077576309229		0.0	0	32157	zero survivors at epsS=0.075 (threshold=0.993584) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)
+test	0.05	all_background	0.9946204423904419	0.05000051717539487	9840.095238095239	0.00010162503266518907	21	206642	
+test	0.05	qcd	0.9946204423904419	0.05000051717539487	8308.809523809523	0.00012035418517351062	21	174485	
+test	0.05	ttbar	0.9946204423904419	0.05000051717539487		0.0	0	32157	zero survivors at epsS=0.05 (threshold=0.99462) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)
+test	0.04	all_background	0.9950340986251831	0.040008688546633704	13776.133333333333	7.258930904656363e-05	15	206642	
+test	0.04	qcd	0.9950340986251831	0.040008688546633704	11632.333333333334	8.596727512393615e-05	15	174485	
+test	0.04	ttbar	0.9950340986251831	0.040008688546633704		0.0	0	32157	zero survivors at epsS=0.04 (threshold=0.995034) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)
+test	0.03	all_background	0.995466947555542	0.030001344656026645	18785.636363636364	5.323215996747999e-05	11	206642	
+test	0.03	qcd	0.995466947555542	0.030001344656026645	15862.272727272728	6.304266842421985e-05	11	174485	
+test	0.03	ttbar	0.995466947555542	0.030001344656026645		0.0	0	32157	zero survivors at epsS=0.03 (threshold=0.995467) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)

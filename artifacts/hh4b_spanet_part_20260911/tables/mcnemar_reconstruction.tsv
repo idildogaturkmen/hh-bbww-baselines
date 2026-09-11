@@ -1,0 +1,8 @@
+quantity	value
+n_discordant	43373
+exact_binomial_p_value	0.0
+test_better_than_control	False
+contingency.control_wrong_test_right	2997
+contingency.control_right_test_wrong	40376
+contingency.both_wrong	10460
+contingency.both_right	47035

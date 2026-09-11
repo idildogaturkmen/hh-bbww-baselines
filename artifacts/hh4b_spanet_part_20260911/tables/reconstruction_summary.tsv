@@ -1,0 +1,3 @@
+model	n_events_with_defined_assignment	exact_event_hh_reconstruction_efficiency	higgs_assignment_pairing_accuracy
+control	100868	0.8665880160209383	0.8952988063607884
+test	100868	0.4960145933298965	0.5137556013800214

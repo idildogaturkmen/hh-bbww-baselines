@@ -1,0 +1,30 @@
+{
+  "_label": "GO_NO_GO_DECISION -- mechanically derived from PREREGISTRATION.md section 7, do not hand-edit",
+  "n_seeds_evaluated": 1,
+  "per_seed": [
+    {
+      "seed": 0,
+      "sig_class": false,
+      "sig_reco": false,
+      "harm_class": true,
+      "harm_reco": true,
+      "underpowered": false,
+      "delta_auc_all_background_point_estimate": -0.025058679783173443,
+      "delta_auc_all_background_ci": [
+        -0.0255037236555319,
+        -0.02461860494114646
+      ]
+    }
+  ],
+  "more_seeds_decision": {
+    "decision": "NO_GO_INVESTIGATE_HARM",
+    "reason": "original seed shows statistically supported harm (harm_class=True, harm_reco=True); investigate before running any further seed, per section 7.1."
+  },
+  "additional8m_decision": {
+    "reachable": false,
+    "decision": "NOT_REACHABLE_YET",
+    "n_agree": null,
+    "median_delta_auc_all_background": null,
+    "reason": "only 1 seed(s) evaluated; the additional8M decision requires the 3-seed replication step (section 7.1's GO branch) to have completed first."
+  }
+}

@@ -1,0 +1,3 @@
+decision_point	decision	reason
+more_seeds	NO_GO_INVESTIGATE_HARM	original seed shows statistically supported harm (harm_class=True, harm_reco=True); investigate before running any further seed, per section 7.1.
+additional8m	NOT_REACHABLE_YET	only 1 seed(s) evaluated; the additional8M decision requires the 3-seed replication step (section 7.1's GO branch) to have completed first.

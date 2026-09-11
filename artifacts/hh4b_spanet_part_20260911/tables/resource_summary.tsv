@@ -1,0 +1,3 @@
+model	total_fit_wall_s	gpu_peak_reserved_bytes	gpu_peak_allocated_bytes	host_peak_rss_kib_self	gpu_device_name
+control	8577.312471553989	1614807040	1510910976	4440856	NVIDIA A100 80GB PCIe MIG 4g.40gb
+test	6579.134847181849	1612709888	1529576960	7325868	NVIDIA A100 80GB PCIe MIG 4g.40gb
