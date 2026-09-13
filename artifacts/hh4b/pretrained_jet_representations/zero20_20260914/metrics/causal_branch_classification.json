@@ -1,0 +1,33 @@
+{
+  "auc_classification": {
+    "branch": "B",
+    "statistically_significant_vs_native": true,
+    "practically_significant_vs_native": false,
+    "delta_zero20_minus_native": -0.00016538631774798418,
+    "delta_zero20_minus_native_ci": [
+      -0.0002866723478719774,
+      -4.354293978654779e-05
+    ],
+    "delta_zero20_minus_part20": 0.02489329346542546,
+    "delta_zero20_minus_part20_ci": [
+      0.024455163492018456,
+      0.02532579029324576
+    ],
+    "auc_floor_used": 0.005
+  },
+  "reconstruction_classification": {
+    "branch": "B",
+    "native_mcnemar_p": 0.5150364077065056,
+    "native_significant_and_harmful": false,
+    "native_indistinguishable_from_zero20": true,
+    "part20_mcnemar_p": 0.0,
+    "part20_significant_recovery_vs_zero20": true
+  },
+  "metrics_agree": true,
+  "overall_branch": "B",
+  "source_files": {
+    "native_vs_part20": "/uscms_data/d3/iturkmen/hh4b_delphes/track_f_evaluation_readiness_protocol_20260909_v1/results/part2m_seed0_matched_20260911T011132Z/comparison_result_seed0.json",
+    "zero20_vs_native": "/uscms_data/d3/iturkmen/hh4b_delphes/track_j_zero20_diagnostic_20260911_v1/results/zero20_seed0_20260912T013902Z/comparison_zero20_vs_native2M.json",
+    "zero20_vs_part20": "/uscms_data/d3/iturkmen/hh4b_delphes/track_j_zero20_diagnostic_20260911_v1/results/zero20_seed0_20260912T013902Z/comparison_zero20_vs_part2m_active20.json"
+  }
+}

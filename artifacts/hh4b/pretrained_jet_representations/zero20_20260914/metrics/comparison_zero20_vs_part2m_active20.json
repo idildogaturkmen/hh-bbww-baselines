@@ -1,0 +1,1024 @@
+{
+  "_label": "MATCHED_DEVELOPMENT_VALIDATION_RESULT_NOT_FINAL_TEST_PERFORMANCE",
+  "_seed": 0,
+  "n_events_shared_cohort": 400000,
+  "process_composition": {
+    "signal": 193358,
+    "qcd": 174485,
+    "ttbar": 32157
+  },
+  "auc": {
+    "control": {
+      "all_background": 0.9442224947107287,
+      "qcd": 0.9412196477608714,
+      "ttbar": 0.9605160466604085
+    },
+    "test": {
+      "all_background": 0.9691157881761542,
+      "qcd": 0.9678679795033673,
+      "ttbar": 0.975886441417166
+    },
+    "native10m": {
+      "all_background": 0.9692723276616946,
+      "qcd": 0.9677556643819263,
+      "ttbar": 0.9775017953474364
+    }
+  },
+  "paired_bootstrap_delta_auc": {
+    "all_background": {
+      "observed_delta_test_minus_control": 0.02489329346542546,
+      "bootstrap_mean_delta": 0.02489124450683899,
+      "bootstrap_std_delta": 0.00022153224424681877,
+      "ci_level": 0.95,
+      "ci_low": 0.024455163492018456,
+      "ci_high": 0.02532579029324576,
+      "n_boot": 10000,
+      "excludes_zero": true
+    },
+    "qcd": {
+      "observed_delta_test_minus_control": 0.026648331742495923,
+      "bootstrap_mean_delta": 0.02664794733519633,
+      "bootstrap_std_delta": 0.0002385691828564476,
+      "ci_level": 0.95,
+      "ci_low": 0.026178156561161393,
+      "ci_high": 0.02711502037193644,
+      "n_boot": 10000,
+      "excludes_zero": true
+    },
+    "ttbar": {
+      "observed_delta_test_minus_control": 0.0153703947567575,
+      "bootstrap_mean_delta": 0.015363920866359028,
+      "bootstrap_std_delta": 0.00030788494621032274,
+      "ci_level": 0.95,
+      "ci_low": 0.014744394273225468,
+      "ci_high": 0.015963447432684373,
+      "n_boot": 10000,
+      "excludes_zero": true
+    }
+  },
+  "rejection_at_fixed_efficiency": {
+    "control": {
+      "epsS_0.1": {
+        "all_background": {
+          "target_epsS": 0.1,
+          "threshold": 0.9925783276557922,
+          "achieved_epsS": 0.10000620610473836,
+          "n_signal_pass": 19337,
+          "n_signal_total": 193358,
+          "n_bg_pass": 86,
+          "n_bg_total": 206642,
+          "epsB": 0.0004161787052002981,
+          "rejection": 2402.813953488372,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 86,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 0.0004161787052002981,
+            "rate_ci_low": 0.00032823832695895666,
+            "rate_ci_high": 0.0005041190834416396,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.1,
+          "threshold": 0.9925783276557922,
+          "achieved_epsS": 0.10000620610473836,
+          "n_signal_pass": 19337,
+          "n_signal_total": 193358,
+          "n_bg_pass": 86,
+          "n_bg_total": 174485,
+          "epsB": 0.0004928790440439006,
+          "rejection": 2028.8953488372092,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 86,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 0.0004928790440439006,
+            "rate_ci_low": 0.00038873554499813947,
+            "rate_ci_high": 0.0005970225430896617,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.1,
+          "threshold": 0.9925783276557922,
+          "achieved_epsS": 0.10000620610473836,
+          "n_signal_pass": 19337,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.1 (threshold=0.992578) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      },
+      "epsS_0.075": {
+        "all_background": {
+          "target_epsS": 0.075,
+          "threshold": 0.993583619594574,
+          "achieved_epsS": 0.07500077576309229,
+          "n_signal_pass": 14502,
+          "n_signal_total": 193358,
+          "n_bg_pass": 46,
+          "n_bg_total": 206642,
+          "epsB": 0.00022260721440946177,
+          "rejection": 4492.217391304348,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 46,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 0.00022260721440946177,
+            "rate_ci_low": 0.00015828513640326472,
+            "rate_ci_high": 0.00028692929241565886,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.075,
+          "threshold": 0.993583619594574,
+          "achieved_epsS": 0.07500077576309229,
+          "n_signal_pass": 14502,
+          "n_signal_total": 193358,
+          "n_bg_pass": 46,
+          "n_bg_total": 174485,
+          "epsB": 0.00026363297704673754,
+          "rejection": 3793.1521739130435,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 46,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 0.00026363297704673754,
+            "rate_ci_low": 0.00018745811886431883,
+            "rate_ci_high": 0.00033980783522915626,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.075,
+          "threshold": 0.993583619594574,
+          "achieved_epsS": 0.07500077576309229,
+          "n_signal_pass": 14502,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.075 (threshold=0.993584) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      },
+      "epsS_0.05": {
+        "all_background": {
+          "target_epsS": 0.05,
+          "threshold": 0.9946204423904419,
+          "achieved_epsS": 0.05000051717539487,
+          "n_signal_pass": 9668,
+          "n_signal_total": 193358,
+          "n_bg_pass": 21,
+          "n_bg_total": 206642,
+          "epsB": 0.00010162503266518907,
+          "rejection": 9840.095238095239,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 21,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 0.00010162503266518907,
+            "rate_ci_low": 5.816229554003449e-05,
+            "rate_ci_high": 0.00014508776979034363,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.05,
+          "threshold": 0.9946204423904419,
+          "achieved_epsS": 0.05000051717539487,
+          "n_signal_pass": 9668,
+          "n_signal_total": 193358,
+          "n_bg_pass": 21,
+          "n_bg_total": 174485,
+          "epsB": 0.00012035418517351062,
+          "rejection": 8308.809523809523,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 21,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 0.00012035418517351062,
+            "rate_ci_low": 6.888189351124838e-05,
+            "rate_ci_high": 0.00017182647683577286,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.05,
+          "threshold": 0.9946204423904419,
+          "achieved_epsS": 0.05000051717539487,
+          "n_signal_pass": 9668,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.05 (threshold=0.99462) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      },
+      "epsS_0.04": {
+        "all_background": {
+          "target_epsS": 0.04,
+          "threshold": 0.9950340986251831,
+          "achieved_epsS": 0.040008688546633704,
+          "n_signal_pass": 7736,
+          "n_signal_total": 193358,
+          "n_bg_pass": 15,
+          "n_bg_total": 206642,
+          "epsB": 7.258930904656363e-05,
+          "rejection": 13776.133333333333,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 15,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 7.258930904656363e-05,
+            "rate_ci_low": 3.5856058512251566e-05,
+            "rate_ci_high": 0.00010932255958087569,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.04,
+          "threshold": 0.9950340986251831,
+          "achieved_epsS": 0.040008688546633704,
+          "n_signal_pass": 7736,
+          "n_signal_total": 193358,
+          "n_bg_pass": 15,
+          "n_bg_total": 174485,
+          "epsB": 8.596727512393615e-05,
+          "rejection": 11632.333333333334,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 15,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 8.596727512393615e-05,
+            "rate_ci_low": 4.246450079121701e-05,
+            "rate_ci_high": 0.0001294700494566553,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.04,
+          "threshold": 0.9950340986251831,
+          "achieved_epsS": 0.040008688546633704,
+          "n_signal_pass": 7736,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.04 (threshold=0.995034) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      },
+      "epsS_0.03": {
+        "all_background": {
+          "target_epsS": 0.03,
+          "threshold": 0.995466947555542,
+          "achieved_epsS": 0.030001344656026645,
+          "n_signal_pass": 5801,
+          "n_signal_total": 193358,
+          "n_bg_pass": 11,
+          "n_bg_total": 206642,
+          "epsB": 5.323215996747999e-05,
+          "rejection": 18785.636363636364,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 11,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 5.323215996747999e-05,
+            "rate_ci_low": 2.1775379060759026e-05,
+            "rate_ci_high": 8.468894087420095e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.03,
+          "threshold": 0.995466947555542,
+          "achieved_epsS": 0.030001344656026645,
+          "n_signal_pass": 5801,
+          "n_signal_total": 193358,
+          "n_bg_pass": 11,
+          "n_bg_total": 174485,
+          "epsB": 6.304266842421985e-05,
+          "rejection": 15862.272727272728,
+          "finite_support_warnings": [],
+          "epsB_exact_binomial_interval": {
+            "k": 11,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 6.304266842421985e-05,
+            "rate_ci_low": 2.578869110373049e-05,
+            "rate_ci_high": 0.00010029664574470921,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.03,
+          "threshold": 0.995466947555542,
+          "achieved_epsS": 0.030001344656026645,
+          "n_signal_pass": 5801,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.03 (threshold=0.995467) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      }
+    },
+    "test": {
+      "epsS_0.1": {
+        "all_background": {
+          "target_epsS": 0.1,
+          "threshold": 0.998723566532135,
+          "achieved_epsS": 0.10000620610473836,
+          "n_signal_pass": 19337,
+          "n_signal_total": 193358,
+          "n_bg_pass": 8,
+          "n_bg_total": 206642,
+          "epsB": 3.8714298158167266e-05,
+          "rejection": 25830.25,
+          "finite_support_warnings": [
+            "only 8 survivors at epsS=0.1 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 8,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 3.8714298158167266e-05,
+            "rate_ci_low": 1.1887670523067198e-05,
+            "rate_ci_high": 6.554092579326734e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 8,
+            "ci_level": 0.95,
+            "count_ci_low": 2.456384702601288,
+            "count_ci_high": 13.543615297398713,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.1,
+          "threshold": 0.998723566532135,
+          "achieved_epsS": 0.10000620610473836,
+          "n_signal_pass": 19337,
+          "n_signal_total": 193358,
+          "n_bg_pass": 7,
+          "n_bg_total": 174485,
+          "epsB": 4.011806172450354e-05,
+          "rejection": 24926.428571428572,
+          "finite_support_warnings": [
+            "only 7 survivors at epsS=0.1 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 7,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 4.011806172450354e-05,
+            "rate_ci_low": 1.0399327947742059e-05,
+            "rate_ci_high": 6.983679550126501e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 7,
+            "ci_level": 0.95,
+            "count_ci_low": 1.8144227182637724,
+            "count_ci_high": 12.185577281736228,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.1,
+          "threshold": 0.998723566532135,
+          "achieved_epsS": 0.10000620610473836,
+          "n_signal_pass": 19337,
+          "n_signal_total": 193358,
+          "n_bg_pass": 1,
+          "n_bg_total": 32157,
+          "epsB": 3.109742824268433e-05,
+          "rejection": 32157.0,
+          "finite_support_warnings": [
+            "only 1 survivors at epsS=0.1 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 1,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 3.109742824268433e-05,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 9.204631991116844e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 1,
+            "ci_level": 0.95,
+            "count_ci_low": 0.0,
+            "count_ci_high": 2.959963984540054,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      },
+      "epsS_0.075": {
+        "all_background": {
+          "target_epsS": 0.075,
+          "threshold": 0.9990969896316528,
+          "achieved_epsS": 0.07500077576309229,
+          "n_signal_pass": 14502,
+          "n_signal_total": 193358,
+          "n_bg_pass": 5,
+          "n_bg_total": 206642,
+          "epsB": 2.419643634885454e-05,
+          "rejection": 41328.4,
+          "finite_support_warnings": [
+            "only 5 survivors at epsS=0.075 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 5,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 2.419643634885454e-05,
+            "rate_ci_low": 2.987971076753443e-06,
+            "rate_ci_high": 4.540490162095564e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 5,
+            "ci_level": 0.95,
+            "count_ci_low": 0.6173872971170917,
+            "count_ci_high": 9.38261270288291,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.075,
+          "threshold": 0.9990969896316528,
+          "achieved_epsS": 0.07500077576309229,
+          "n_signal_pass": 14502,
+          "n_signal_total": 193358,
+          "n_bg_pass": 5,
+          "n_bg_total": 174485,
+          "epsB": 2.8655758374645386e-05,
+          "rejection": 34897.0,
+          "finite_support_warnings": [
+            "only 5 survivors at epsS=0.075 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 5,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 2.8655758374645386e-05,
+            "rate_ci_low": 3.5387001238632547e-06,
+            "rate_ci_high": 5.377281662542752e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 5,
+            "ci_level": 0.95,
+            "count_ci_low": 0.6173872971170917,
+            "count_ci_high": 9.38261270288291,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.075,
+          "threshold": 0.9990969896316528,
+          "achieved_epsS": 0.07500077576309229,
+          "n_signal_pass": 14502,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.075 (threshold=0.999097) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      },
+      "epsS_0.05": {
+        "all_background": {
+          "target_epsS": 0.05,
+          "threshold": 0.9994422793388367,
+          "achieved_epsS": 0.0500056889293435,
+          "n_signal_pass": 9669,
+          "n_signal_total": 193358,
+          "n_bg_pass": 1,
+          "n_bg_total": 206642,
+          "epsB": 4.839287269770908e-06,
+          "rejection": 206642.0,
+          "finite_support_warnings": [
+            "only 1 survivors at epsS=0.05 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 1,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 4.839287269770908e-06,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 1.4324093079431756e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 1,
+            "ci_level": 0.95,
+            "count_ci_low": 0.0,
+            "count_ci_high": 2.959963984540054,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.05,
+          "threshold": 0.9994422793388367,
+          "achieved_epsS": 0.0500056889293435,
+          "n_signal_pass": 9669,
+          "n_signal_total": 193358,
+          "n_bg_pass": 1,
+          "n_bg_total": 174485,
+          "epsB": 5.731151674929077e-06,
+          "rejection": 174485.0,
+          "finite_support_warnings": [
+            "only 1 survivors at epsS=0.05 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 1,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 5.731151674929077e-06,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 1.696397035909431e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 1,
+            "ci_level": 0.95,
+            "count_ci_low": 0.0,
+            "count_ci_high": 2.959963984540054,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.05,
+          "threshold": 0.9994422793388367,
+          "achieved_epsS": 0.0500056889293435,
+          "n_signal_pass": 9669,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.05 (threshold=0.999442) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      },
+      "epsS_0.04": {
+        "all_background": {
+          "target_epsS": 0.04,
+          "threshold": 0.9995802044868469,
+          "achieved_epsS": 0.04001903205453097,
+          "n_signal_pass": 7738,
+          "n_signal_total": 193358,
+          "n_bg_pass": 1,
+          "n_bg_total": 206642,
+          "epsB": 4.839287269770908e-06,
+          "rejection": 206642.0,
+          "finite_support_warnings": [
+            "only 1 survivors at epsS=0.04 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 1,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 4.839287269770908e-06,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 1.4324093079431756e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 1,
+            "ci_level": 0.95,
+            "count_ci_low": 0.0,
+            "count_ci_high": 2.959963984540054,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.04,
+          "threshold": 0.9995802044868469,
+          "achieved_epsS": 0.04001903205453097,
+          "n_signal_pass": 7738,
+          "n_signal_total": 193358,
+          "n_bg_pass": 1,
+          "n_bg_total": 174485,
+          "epsB": 5.731151674929077e-06,
+          "rejection": 174485.0,
+          "finite_support_warnings": [
+            "only 1 survivors at epsS=0.04 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 1,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 5.731151674929077e-06,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 1.696397035909431e-05,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          },
+          "exact_poisson_count_interval": {
+            "n_pass": 1,
+            "ci_level": 0.95,
+            "count_ci_low": 0.0,
+            "count_ci_high": 2.959963984540054,
+            "method": "FALLBACK_normal_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.04,
+          "threshold": 0.9995802044868469,
+          "achieved_epsS": 0.04001903205453097,
+          "n_signal_pass": 7738,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.04 (threshold=0.99958) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      },
+      "epsS_0.03": {
+        "all_background": {
+          "target_epsS": 0.03,
+          "threshold": 0.9997261166572571,
+          "achieved_epsS": 0.030001344656026645,
+          "n_signal_pass": 5801,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 206642,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.03 (threshold=0.999726) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 206642 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 206642,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "qcd": {
+          "target_epsS": 0.03,
+          "threshold": 0.9997261166572571,
+          "achieved_epsS": 0.030001344656026645,
+          "n_signal_pass": 5801,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 174485,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.03 (threshold=0.999726) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 174485 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 174485,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        },
+        "ttbar": {
+          "target_epsS": 0.03,
+          "threshold": 0.9997261166572571,
+          "achieved_epsS": 0.030001344656026645,
+          "n_signal_pass": 5801,
+          "n_signal_total": 193358,
+          "n_bg_pass": 0,
+          "n_bg_total": 32157,
+          "epsB": 0.0,
+          "rejection": null,
+          "finite_support_warnings": [
+            "zero survivors at epsS=0.03 (threshold=0.999726) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 32157 is supported)"
+          ],
+          "epsB_exact_binomial_interval": {
+            "k": 0,
+            "n": 32157,
+            "ci_level": 0.95,
+            "rate": 0.0,
+            "rate_ci_low": 0.0,
+            "rate_ci_high": 0.0,
+            "method": "FALLBACK_normal_wald_approx_scipy_unavailable (ModuleNotFoundError(\"No module named 'numpy._typing'\"))"
+          }
+        }
+      }
+    }
+  },
+  "paired_bootstrap_delta_rejection": {
+    "epsS_0.1": {
+      "observed_delta_test_minus_control": 23427.436046511626,
+      "bootstrap_mean_delta": 27719.667137649973,
+      "bootstrap_std_delta": 15879.703114301938,
+      "ci_level": 0.95,
+      "ci_low": 12433.787608162213,
+      "ci_high": 66339.49593495936,
+      "n_boot": 10000,
+      "excludes_zero": true
+    },
+    "epsS_0.075": {
+      "observed_delta_test_minus_control": 36836.18260869566,
+      "bootstrap_mean_delta": 48219.3864283888,
+      "bootstrap_std_delta": 35573.31268230261,
+      "ci_level": 0.95,
+      "ci_low": 16105.444444444445,
+      "ci_high": 201056.1374269006,
+      "n_boot": 10000,
+      "excludes_zero": true
+    },
+    "epsS_0.05": {
+      "observed_delta_test_minus_control": 196801.90476190476,
+      "bootstrap_mean_delta": 90555.98866394196,
+      "bootstrap_std_delta": 89994.60992404023,
+      "ci_level": 0.95,
+      "ci_low": -14775.078571428572,
+      "ci_high": 199385.1097906404,
+      "n_boot": 10000,
+      "excludes_zero": false
+    },
+    "epsS_0.04": {
+      "observed_delta_test_minus_control": 192865.86666666667,
+      "bootstrap_mean_delta": 86196.01566553957,
+      "bootstrap_std_delta": 90307.3534531706,
+      "ci_level": 0.95,
+      "ci_low": -22977.338888888888,
+      "ci_high": 196977.1666666667,
+      "n_boot": 10000,
+      "excludes_zero": false
+    },
+    "epsS_0.03": {
+      "observed_delta_test_minus_control": -18785.636363636364,
+      "bootstrap_mean_delta": -12120.346298395967,
+      "bootstrap_std_delta": 39535.588349942904,
+      "ci_level": 0.95,
+      "ci_low": -41332.005,
+      "ci_high": 183480.0222222222,
+      "n_boot": 10000,
+      "excludes_zero": false
+    }
+  },
+  "reconstruction": {
+    "control": {
+      "n_events_with_defined_assignment": 100868,
+      "exact_event_hh_reconstruction_efficiency": 0.4960145933298965,
+      "higgs_assignment_pairing_accuracy": 0.5137556013800214
+    },
+    "test": {
+      "n_events_with_defined_assignment": 100868,
+      "exact_event_hh_reconstruction_efficiency": 0.8662013720902566,
+      "higgs_assignment_pairing_accuracy": 0.8950509576872745
+    }
+  },
+  "mcnemar_reconstruction_correctness": {
+    "contingency": {
+      "control_wrong_test_right": 40383,
+      "control_right_test_wrong": 3043,
+      "both_wrong": 10453,
+      "both_right": 46989
+    },
+    "n_discordant": 43426,
+    "exact_binomial_p_value": 0.0,
+    "continuity_corrected_chi2_statistic": 32105.211647400174,
+    "continuity_corrected_chi2_p_value": 0.0,
+    "test_better_than_control": true
+  },
+  "mcnemar_n_events_both_defined": 100868,
+  "paired_bootstrap_delta_exact_event_efficiency": {
+    "observed_delta_test_minus_control": 0.3701867787603601,
+    "bootstrap_mean_delta": 0.3701897323960323,
+    "bootstrap_std_delta": 0.0017002323965242976,
+    "ci_level": 0.95,
+    "ci_low": 0.36690097292939217,
+    "ci_high": 0.3735241049548035,
+    "n_boot": 10000,
+    "excludes_zero": true
+  },
+  "score_mass_correlation": {
+    "control": {
+      "n_signal_events_used": 193358,
+      "pearson_score_vs_mass1": -0.005340458990325694,
+      "pearson_score_vs_mass2": -0.025504902303517745,
+      "spearman_score_vs_mass1": 0.021334015630430997,
+      "spearman_score_vs_mass2": 0.029950046418060212,
+      "mass1_resolution_std": 103.9146499633789,
+      "mass2_resolution_std": 110.11611938476562
+    },
+    "test": {
+      "n_signal_events_used": 193358,
+      "pearson_score_vs_mass1": -0.09989865964113154,
+      "pearson_score_vs_mass2": -0.10331076953108555,
+      "spearman_score_vs_mass1": -0.03849634409346469,
+      "spearman_score_vs_mass2": -0.03751166493971242,
+      "mass1_resolution_std": 88.39445495605469,
+      "mass2_resolution_std": 90.87641143798828
+    }
+  },
+  "jet_multiplicity_stratified_auc": {
+    "le4": {
+      "n_events_control": 232662,
+      "n_events_test": 232662,
+      "auc_control": 0.9514731357639704,
+      "auc_test": 0.9717007767316691
+    },
+    "eq4": {
+      "n_events_control": 225072,
+      "n_events_test": 225072,
+      "auc_control": 0.9484389098117465,
+      "auc_test": 0.9699193259613292
+    },
+    "eq5": {
+      "n_events_control": 126159,
+      "n_events_test": 126159,
+      "auc_control": 0.9358470120857921,
+      "auc_test": 0.9667925847642453
+    },
+    "ge5": {
+      "n_events_control": 167338,
+      "n_events_test": 167338,
+      "auc_control": 0.9313373002949068,
+      "auc_test": 0.9644819971377907
+    },
+    "ge6": {
+      "n_events_control": 41179,
+      "n_events_test": 41179,
+      "auc_control": 0.9152735296274209,
+      "auc_test": 0.9566030907807707
+    },
+    "le4_eq4_equivalence_warning": "le4 != eq4 for CONTROL -- topology assumption in PREREGISTRATION.md 4.3 does not hold",
+    "extra_jet_activity": {
+      "extra_0": {
+        "n_events_control": 232662,
+        "n_events_test": 232662
+      },
+      "extra_1": {
+        "n_events_control": 126159,
+        "n_events_test": 126159
+      },
+      "extra_2": {
+        "n_events_control": 33569,
+        "n_events_test": 33569
+      },
+      "extra_ge_3": {
+        "n_events_control": 7610,
+        "n_events_test": 7610
+      }
+    }
+  },
+  "resource": {
+    "control": {
+      "total_fit_wall_s": 6579.134847181849,
+      "gpu_peak_reserved_bytes": 1612709888,
+      "gpu_peak_allocated_bytes": 1529576960,
+      "host_peak_rss_kib_self": 7325868,
+      "gpu_device_name": "NVIDIA A100 80GB PCIe MIG 4g.40gb"
+    },
+    "test": {
+      "total_fit_wall_s": 6753.223788456991,
+      "gpu_peak_reserved_bytes": 1612709888,
+      "gpu_peak_allocated_bytes": 1529576960,
+      "host_peak_rss_kib_self": 7323644,
+      "gpu_device_name": "NVIDIA A100 80GB PCIe MIG 4g.40gb"
+    }
+  },
+  "story_evaluation": {
+    "single_seed_flags": {
+      "sig_class": true,
+      "sig_reco": true,
+      "harm_class": false,
+      "harm_reco": false,
+      "underpowered": false
+    },
+    "story_a": {
+      "supported": true,
+      "grade": "suggestive"
+    },
+    "story_b": {
+      "path": "paired",
+      "delta_test_minus_native10m": {
+        "observed_delta_test_minus_control": -0.00015653987346830878,
+        "bootstrap_mean_delta": -0.0001570500025543626,
+        "bootstrap_std_delta": 5.72022696467716e-05,
+        "ci_level": 0.95,
+        "ci_low": -0.0002703905318863303,
+        "ci_high": -4.620852041958279e-05,
+        "n_boot": 10000,
+        "excludes_zero": true
+      },
+      "approaches": false,
+      "beats": false
+    },
+    "story_c": {
+      "supported": false
+    }
+  }
+}

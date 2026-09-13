@@ -1,0 +1,68 @@
+{
+  "native2M": {
+    "auc": {
+      "all_background": 0.9692811744939022,
+      "qcd": 0.9681550015623996,
+      "ttbar": 0.9753918279738042
+    },
+    "reco": {
+      "n_events_with_defined_assignment": 100868,
+      "exact_event_hh_reconstruction_efficiency": 0.8665880160209383,
+      "higgs_assignment_pairing_accuracy": 0.8952988063607884
+    },
+    "resource": {
+      "total_fit_wall_s": 8577.312471553989,
+      "gpu_peak_reserved_bytes": 1614807040,
+      "gpu_peak_allocated_bytes": 1510910976,
+      "host_peak_rss_kib_self": 4440856,
+      "gpu_device_name": "NVIDIA A100 80GB PCIe MIG 4g.40gb"
+    }
+  },
+  "native10M": {
+    "auc": {
+      "all_background": 0.9692723276616946,
+      "qcd": 0.9677556643819263,
+      "ttbar": 0.9775017953474364
+    },
+    "reco": null,
+    "resource": null
+  },
+  "ParT20_2M": {
+    "auc": {
+      "all_background": 0.9442224947107287,
+      "qcd": 0.9412196477608714,
+      "ttbar": 0.9605160466604085
+    },
+    "reco": {
+      "n_events_with_defined_assignment": 100868,
+      "exact_event_hh_reconstruction_efficiency": 0.4960145933298965,
+      "higgs_assignment_pairing_accuracy": 0.5137556013800214
+    },
+    "resource": {
+      "total_fit_wall_s": 6579.134847181849,
+      "gpu_peak_reserved_bytes": 1612709888,
+      "gpu_peak_allocated_bytes": 1529576960,
+      "host_peak_rss_kib_self": 7325868,
+      "gpu_device_name": "NVIDIA A100 80GB PCIe MIG 4g.40gb"
+    }
+  },
+  "ZERO20_2M": {
+    "auc": {
+      "all_background": 0.9691157881761542,
+      "qcd": 0.9678679795033673,
+      "ttbar": 0.975886441417166
+    },
+    "reco": {
+      "n_events_with_defined_assignment": 100868,
+      "exact_event_hh_reconstruction_efficiency": 0.8662013720902566,
+      "higgs_assignment_pairing_accuracy": 0.8950509576872745
+    },
+    "resource": {
+      "total_fit_wall_s": 6753.223788456991,
+      "gpu_peak_reserved_bytes": 1612709888,
+      "gpu_peak_allocated_bytes": 1529576960,
+      "host_peak_rss_kib_self": 7323644,
+      "gpu_device_name": "NVIDIA A100 80GB PCIe MIG 4g.40gb"
+    }
+  }
+}

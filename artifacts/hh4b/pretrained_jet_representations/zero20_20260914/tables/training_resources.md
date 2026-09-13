@@ -1,0 +1,5 @@
+| Model | Fit wall time (s) | Fit wall time (h) | GPU peak reserved (GiB) | GPU device |
+|---|---|---|---|---|
+| Native SPA-Net 2M | 8577.3 | 2.38 | 1.504 | NVIDIA A100 80GB PCIe MIG 4g.40gb |
+| SPA-Net + ParT active20 2M | 6579.1 | 1.83 | 1.502 | NVIDIA A100 80GB PCIe MIG 4g.40gb |
+| SPA-Net + ZERO20 2M | 6753.2 | 1.88 | 1.502 | NVIDIA A100 80GB PCIe MIG 4g.40gb |

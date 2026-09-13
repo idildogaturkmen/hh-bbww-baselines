@@ -1,0 +1,16 @@
+Model,target epsS,achieved epsS,n_signal_pass,n_bg_pass,n_bg_total,rejection (1/epsB),sparse-MC warning
+Native SPA-Net 2M,0.1,0.1000,19337,11,206642,18785.64,
+Native SPA-Net 2M,0.075,0.0750,14502,5,206642,41328.40,"only 5 survivors at epsS=0.075 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+Native SPA-Net 2M,0.05,0.0500,9669,3,206642,68880.67,"only 3 survivors at epsS=0.05 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+Native SPA-Net 2M,0.04,0.0400,7736,1,206642,206642.00,"only 1 survivors at epsS=0.04 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+Native SPA-Net 2M,0.03,0.0300,5803,0,206642,undefined (0 bg survivors),"zero survivors at epsS=0.03 (threshold=0.999941) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 206642 is supported)"
+SPA-Net + ParT active20 2M,0.1,0.1000,19337,86,206642,2402.81,
+SPA-Net + ParT active20 2M,0.075,0.0750,14502,46,206642,4492.22,
+SPA-Net + ParT active20 2M,0.05,0.0500,9668,21,206642,9840.10,
+SPA-Net + ParT active20 2M,0.04,0.0400,7736,15,206642,13776.13,
+SPA-Net + ParT active20 2M,0.03,0.0300,5801,11,206642,18785.64,
+SPA-Net + ZERO20 2M,0.1,0.1000,19337,8,206642,25830.25,"only 8 survivors at epsS=0.1 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+SPA-Net + ZERO20 2M,0.075,0.0750,14502,5,206642,41328.40,"only 5 survivors at epsS=0.075 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+SPA-Net + ZERO20 2M,0.05,0.0500,9669,1,206642,206642.00,"only 1 survivors at epsS=0.05 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+SPA-Net + ZERO20 2M,0.04,0.0400,7738,1,206642,206642.00,"only 1 survivors at epsS=0.04 -- efficiency/rejection is low-statistics (Poisson-limited), not a precise estimate"
+SPA-Net + ZERO20 2M,0.03,0.0300,5801,0,206642,undefined (0 bg survivors),"zero survivors at epsS=0.03 (threshold=0.999726) -- efficiency=0 exactly, rejection undefined (only a lower bound R > 206642 is supported)"

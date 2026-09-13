@@ -1,0 +1,5 @@
+| Model | n (assignment-defined) | Exact-event HH reconstruction | Per-Higgs pairing accuracy |
+|---|---|---|---|
+| Native SPA-Net 2M | 100868 | 0.866588 | 0.895299 |
+| SPA-Net + ParT active20 2M | 100868 | 0.496015 | 0.513756 |
+| SPA-Net + ZERO20 2M | 100868 | 0.866201 | 0.895051 |
