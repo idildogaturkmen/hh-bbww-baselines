@@ -43,8 +43,10 @@ pretrained self-supervised jet representations (ParT) help it.
    robustness checks on the frozen governing checkpoint's rare-event tail.
 8. **Frozen ParT representation study and harm diagnosis**: does appending
    pretrained ParT features help SPA-Net, and if not, why not?
-9. **ZERO20**: the currently-running controlled diagnostic isolating the
-   cause of the ParT harm result (see below).
+9. **ZERO20**: a completed, controlled width-ablation diagnostic that
+   isolates the cause of the ParT harm result — see below; input width
+   alone is ruled out, the specific embedding content/preprocessing is
+   implicated.
 10. **JP-JEPA / representation-learning direction**: exploratory
     compatibility groundwork only — **future work**, not a current result.
 
@@ -66,7 +68,10 @@ in `docs/project_overview/PROJECT_STORY.md`.
   statistical reliability checks on its rare-event tail.
 - A controlled, root-cause-diagnosed study of whether frozen pretrained ParT
   representations help SPA-Net (they significantly hurt, at this design
-  point) — including the follow-up ablation (ZERO20) designed to isolate why.
+  point), completed by a width-control ablation (ZERO20) that falsifies
+  "input width alone" as the cause and implicates the specific embedding
+  content and/or its preprocessing/optimization interaction instead. See
+  `docs/studies/pretrained_jet_representations/`.
 
 ## Headline results
 
@@ -79,7 +84,7 @@ frozen source artifacts. Top line:
 | Frozen ParT "active20" augmentation | Harm: ΔAUC −0.0251, Δ(exact-event HH reconstruction) −0.371, both diagnosed |
 | HH→4b cut-based baseline | Train-only complete; optimized cut ≈ historical simple cut; validation **blocked** by infrastructure failure (no physics result) |
 | HH→4b BDT baseline | Primary global model AUC (train-only OOF) 0.7737; categorized alternative's apparent gain not bootstrap-stable |
-| ZERO20 diagnostic | **RUNNING / pending final matched evaluation** — no result yet |
+| ZERO20 width-control ablation | **Native-like**: ΔAUC vs. native −0.00017 (~30× below the pre-registered 0.005 practical floor), reconstruction statistically indistinguishable (McNemar p=0.52) — falsifies "input width alone" as the ParT-harm cause |
 
 ## Repository map
 
@@ -92,6 +97,7 @@ left in place — see "Reproducibility / provenance policy" below.
 | Project narrative, pivot rationale | `docs/project_overview/` |
 | Stable methodology (simulation, normalization, ML baselines, paper prep) | `docs/methods/` |
 | Result summary with citations to frozen evidence | `docs/results/RESULTS_OVERVIEW.md` |
+| Deep-dive narrative for a specific study line (currently: pretrained jet representations — ParT active20, ZERO20) | `docs/studies/` |
 | Dated provenance notes, research log, background-campaign records (moved this stage) | `docs/provenance/` |
 | Full dated checkpoint ledger (167+ hash-stamped decision points; **not moved this stage**, see below) | `docs/checkpoints/` |
 | Simulation-stage production bookkeeping (**not moved this stage**) | `metadata/` |
@@ -151,8 +157,11 @@ as the move — deferred to a future stage, in line with this stage's
 - The HH→4b cut baseline and BDT baseline are frozen (train-only).
 - SPA-Net native-scaling and frozen-ParT-active20 results are frozen and
   matched (development/validation, not final blind test) as of 2026-09-11.
-- **ZERO20 is the active, currently-running diagnostic** — no result exists
-  yet; see `docs/results/RESULTS_OVERVIEW.md` §8.
+- **ZERO20 is complete and frozen** (final, 10,000-replicate matched
+  evaluation, 2026-09-14): native-like on both classification and
+  reconstruction, falsifying "input width alone" as the ParT-harm cause;
+  see `docs/results/RESULTS_OVERVIEW.md` §8 and
+  `docs/studies/pretrained_jet_representations/`.
 - JP-JEPA compatibility prep is exploratory future work.
 - This branch (`repo-reorg/2026-09`) is Stage 1 of a repository
   reorganization: documentation/provenance moves and publication-facing docs

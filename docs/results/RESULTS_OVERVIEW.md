@@ -152,20 +152,78 @@ dimensions than it kept.
 result** — the source README states this explicitly. Treat it as informative
 about mechanism, not as a final performance claim.
 
-## 8. ZERO20 — RUNNING / pending final matched evaluation
+## 8. ZERO20 — a controlled width ablation, FINAL result (2026-09-14)
 
-**Source:** `artifacts/hh4b_spanet_part_20260911/diagnosis/FOLLOWUP_DESIGNS.md`.
+**Source:** `artifacts/hh4b/pretrained_jet_representations/zero20_20260914/`
+(final, 10,000-replicate paired bootstrap both directions; see that
+bundle's `README.md`, `metrics/`, and `tables/` for full statistics), and
+`docs/studies/pretrained_jet_representations/zero20_width_control.md` for
+the narrative.
 
-The direct follow-up ablation — 20 **zeroed** (not ParT-derived) extra input
-dimensions, isolating "wider input embedding" from "ParT features
-specifically" as the cause of the §7 harm result — was designed but **not yet
-executed** as of the 2026-09-11 snapshot. Per current project status this is
-the active, currently-running controlled diagnostic. **No result exists yet.**
-When it completes, its frozen bundle belongs at `artifacts/hh4b/zero20/`
-(see `artifacts/hh4b/README.md`), and this document should be updated with
-its outcome at that time — do not anticipate the result here.
+The direct follow-up ablation to §7: 20 **zeroed** (not ParT-derived) extra
+input dimensions, isolating "wider input embedding" from "ParT features
+specifically" as the cause of the §7 harm result.
 
-## 9. A note on completeness
+| Metric | Native (2M) | + ParT active20 (2M) | + ZERO20 (2M) | Δ ZERO20−Native (95% CI) |
+|---|---:|---:|---:|---|
+| All-background AUC | 0.969281 | 0.944222 | 0.969116 | −0.00017 [−0.00029, −0.00004] |
+| Exact-event HH reconstruction | 0.866588 | 0.496015 | 0.866201 | −0.00039 [−0.00153, 0.00075] |
+
+**ZERO20 is native-like, ParT active20 is not.** The AUC difference has a
+95% CI that technically excludes zero — a large-cohort-size effect at
+n=400,000 paired events — but is ~30× below this project's own
+pre-registered 0.005-AUC practical-effect floor (§7.2 of the underlying
+evaluation protocol, itself set from a previously measured ~0.002-AUC
+native-scaling noise ceiling). Reconstruction is not statistically
+resolvable at all (McNemar p=0.52). **Mechanically applying the
+pre-registered causal-branch decision rule to these final numbers gives
+Branch B on both metrics independently: this falsifies the pure-width
+explanation for the §7 harm.** The cause is tied to the specific selected
+ParT values and/or their preprocessing/optimization interaction, not
+input width — see the source documents for the full reasoning and ranked,
+unauthorized follow-up proposals
+(`docs/studies/pretrained_jet_representations/next_experiments.md`).
+
+**This is a matched development/validation result, not a final blind-test
+result.**
+
+## 9. Whole-project model landscape
+
+Every model this project has trained, in one table, **with its dataset and
+evaluation contract stated explicitly** — because the numbers are not on a
+common scale and must not be read as a single ranking. In particular, the
+bbWW/HH→4b cut-baseline/BDT rows report a **physical-yield-projected
+significance** (Run 2, 138 fb⁻¹-equivalent, train-only, no systematics),
+while the SPA-Net-era rows (native scaling, ParT active20, ZERO20) report
+**raw AUC/reconstruction accuracy on a fixed, matched 2,000,000/400,000-event
+development cohort** — a different quantity, on a different (though
+overlapping-generation) simulated sample, under a contract with no
+Run-2-luminosity projection at all. **No single bar chart correctly
+represents both families at once** — this project deliberately does not
+produce one; see the citation caveats already stated in §1 and §3 above,
+which this table repeats for completeness rather than overriding.
+
+| Model | Channel | Dataset / evaluation contract | Headline number |
+|---|---|---|---|
+| Tabular multiclass DNN | HH→bbWW | bbWW one-lepton selection, test region Z-significance, no systematics | Z≈0.0055 (§1) |
+| LBN v0 (obj+aux, no-pair) | HH→bbWW | same as above | Z≈0.00664, N_eff≈60.1 (§1) |
+| Corrected-recoMET BDT (reference) | HH→bbWW | same as above | Z≈0.00676, N_eff≈58.7 (§1) |
+| HH→4b cut baseline (nested outer-OOF) | HH→4b | train-only, 5-fold pooled OOF, Run-2 138 fb⁻¹-eq. projected significance | Z_A=0.02698 (§2); **validation blocked, not measured** |
+| HH→4b cut baseline (historical R_HH<34) | HH→4b | same contract as above | Z_A=0.02648 (§2) |
+| HH→4b BDT `global_v1_mass_aware` (primary) | HH→4b | train-only weighted OOF AUC, same physical-yield convention | AUC=0.7737 (§3) |
+| HH→4b BDT categorized (secondary) | HH→4b | same contract; bootstrap-unstable improvement, not adopted | AUC=0.7537 / 0.8053 by category (§3) |
+| Native SPA-Net (2M) | HH→4b | matched 2M-train/400k-val cohort, raw AUC + exact-event reconstruction, no luminosity projection | AUC=0.969281, reco=0.866588 (§5, §7) |
+| Native SPA-Net (10M) | HH→4b | same contract, 5× training data | AUC=0.969272 (§5) |
+| SPA-Net + ParT active20 (2M) | HH→4b | same contract as native SPA-Net 2M | AUC=0.944222, reco=0.496015 — **harmed** (§7) |
+| SPA-Net + ZERO20 (2M) | HH→4b | same contract as native SPA-Net 2M | AUC=0.969116, reco=0.866201 — **native-like** (§8) |
+
+A separate, external, non-project reference significance point (retained
+in the paper-preparation provenance as `EXTERNAL_REFERENCE_NOT_OUR_MODEL`,
+never one of this project's own models) exists for cross-checking the
+physical-yield background-budget methodology the cut/BDT rows above use;
+it is not listed as a project result here and should not be cited as one.
+
+## 10. A note on completeness
 
 Three directories holding evidence cited above by their current paths —
 `docs/checkpoints/` (BDT model choice, physical normalization, Harvey

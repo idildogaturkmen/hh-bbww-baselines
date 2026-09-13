@@ -107,17 +107,29 @@ dynamics from the wider input embedding, compounded by a variance-only
 feature-selection rule that discarded several more discriminative embedding
 dimensions than it kept.
 
-## 9. ZERO20 — the currently-running controlled diagnostic
+## 9. ZERO20 — a controlled width ablation, completed and diagnostic (2026-09-14)
 
-The diagnosis in step 8 proposes a direct ablation: replace the 20 ParT
+The diagnosis in step 8 proposed a direct ablation: replace the 20 ParT
 dimensions with 20 **zeroed** dimensions, isolating "wider input embedding"
 from "ParT features specifically" as the cause of the harm
-(`artifacts/hh4b_spanet_part_20260911/diagnosis/FOLLOWUP_DESIGNS.md`). As of
-the 2026-09-11 snapshot this diagnostic was designed but not yet executed;
-it is the active/running workstream at the time of this reorganization. Its
-result belongs at `artifacts/hh4b/zero20/` (see `artifacts/hh4b/README.md`)
-and should be treated as **RUNNING / pending final matched evaluation** until
-that bundle exists.
+(`artifacts/hh4b_spanet_part_20260911/diagnosis/FOLLOWUP_DESIGNS.md`). This
+ablation is now complete, matched-evaluated (final, 10,000-replicate paired
+bootstrap), and frozen:
+`artifacts/hh4b/pretrained_jet_representations/zero20_20260914/`.
+
+The result: ZERO20 is statistically and practically indistinguishable from
+native SPA-Net on both classification (ΔAUC −0.00017, ~30× below the
+project's own pre-registered 0.005-AUC practical-effect floor) and
+HH-reconstruction (McNemar p=0.52, not significant), while the original
+ParT active20 result remains significantly and substantially degraded on
+both. **This falsifies the "wider input layer alone" explanation** —
+widening SPA-Net's input embedding from 7 to 27 channels does not, by
+itself, reproduce the harm. The cause is tied to the specific selected
+ParT values and/or their preprocessing/optimization interaction, not to
+input width. Full narrative and statistics:
+`docs/studies/pretrained_jet_representations/zero20_width_control.md`;
+ranked, updated follow-up proposals (none authorized):
+`docs/studies/pretrained_jet_representations/next_experiments.md`.
 
 ## 10. JP-JEPA / representation-learning direction — future work
 
