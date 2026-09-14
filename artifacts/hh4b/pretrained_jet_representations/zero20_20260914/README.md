@@ -18,9 +18,23 @@ source paths and hashes.
 | Model | AUC (all-bg) | AUC (QCD) | AUC (ttbar) | Exact-event reco. | Per-Higgs reco. |
 |---|---:|---:|---:|---:|---:|
 | Native SPA-Net 2M | 0.969281 | 0.968155 | 0.975392 | 0.866588 | 0.895299 |
-| Native SPA-Net 10M | 0.969272 | 0.967756 | 0.977502 | — | — |
+| Native SPA-Net 10M | 0.969272 | 0.967756 | 0.977502 | 0.872229* | 0.898838* |
 | SPA-Net + ParT active20 (2M) | 0.944222 | 0.941220 | 0.960516 | 0.496015 | 0.513756 |
 | **SPA-Net + ZERO20 (2M)** | **0.969116** | 0.967868 | 0.975886 | **0.866201** | 0.895051 |
+
+\*Native 10M reconstruction is a **point estimate only** — computed directly
+from the frozen `native10m_eval_400k.npz` export using the exact same
+`match_higgs_pairs()`/`reconstruction_metrics()` code as every other
+reconstruction number in this project (verbatim copy, not reimplemented;
+see `code/compute_native10m_reconstruction.py`). Before trusting it, that
+script recomputed the identical code on `control_2m_native_eval.npz` and
+required **exact** (bit-for-bit) reproduction of the already-published
+Native 2M numbers (0.8665880160209383 / 0.8952988063607884) — confirmed,
+see `metrics/native10m_reconstruction_crosscheck.json`. No paired-bootstrap
+CI was computed for the Native10M number (would require a new bootstrap,
+out of scope for this addition), so unlike every other number in this
+table it cannot be called statistically significant or not — it is
+reported as a raw point estimate, flagged as such everywhere it appears.
 
 Paired differences (test minus control), final 10,000-replicate bootstrap:
 
@@ -89,6 +103,36 @@ survivors out of 206,642 events (e.g. native at εS=5%: 3 survivors; at
 tail-rejection numbers as precise without checking the survivor count in
 the same row.
 
+## ROC and background-rejection figures (all four models, common cohort)
+
+`plots/roc_all_background_four_models.svg` and
+`plots/background_rejection_four_models.svg` are built directly from the
+frozen per-event `score`/`process` arrays of all four models
+(`code/compute_roc_curves.py`), not from the coarse 5-point
+fixed-efficiency table. Before computing either curve, the script verifies
+that all four models' `event_id` and `process` arrays are **identical**
+after sorting by `event_id` — the same matched-cohort identity check used
+throughout this project — and refuses to proceed otherwise. The AUC shown
+in the ROC legend is computed with the exact same dependency-free,
+tie-averaged rank statistic (`bootstrap_utils.roc_auc`) used for every
+other AUC in this project, and reproduces the already-published values
+exactly (0.969281 / 0.969272 / 0.944222 / 0.969116).
+
+Because Native 2M, Native 10M, and ZERO20 are statistically/practically
+indistinguishable (see above), their ROC curves nearly overlap — the
+figure includes a zoomed inset panel (εB∈[0,0.08], εS∈[0.75,1]) showing
+the same underlying curve data at a scale where the separation from ParT
+active20 is visible; no curve is refit or altered for the inset.
+
+The rejection figure plots signal efficiency vs. 1/εB on a log axis,
+**stopping each curve at its own last real background survivor** — no
+fitted or extrapolated tail is drawn past that point. The segment where
+fewer than 10 raw background events survive (this project's established
+"Poisson-limited" threshold) is drawn dashed with hollow markers, and each
+curve's sparsest endpoint is annotated with its exact survivor count
+(e.g. ParT active20 reaches εS as low as 0.0021 with 1 survivor; Native 2M
+cannot go below εS≈0.039 without running out of background entirely).
+
 ## What this bundle does not contain
 
 Per this repository's provenance policy, the training HDF5s, the ZERO20
@@ -100,21 +144,27 @@ training-history JSON) **is** committed, in `metrics/`.
 
 ## Directory layout
 
-- `metrics/` — the three final comparison JSONs (unmodified copies),
-  the training-history JSON, and this bundle's own assembled
+- `metrics/` — the three final comparison JSONs (unmodified copies), the
+  training-history JSON, the Native10M reconstruction cross-check result,
+  the ROC/rejection curve data, and this bundle's own assembled
   `model_summary.json` / `paired_statistics.json` /
   `causal_branch_classification.json`.
 - `tables/` — the five required Markdown+CSV tables (model summary,
   paired statistics, reconstruction, fixed-efficiency rejection, training
   resources).
-- `plots/` — six SVG figures: AUC comparison, reconstruction comparison,
-  paired-AUC forest plot, epoch-by-epoch assignment loss, epoch-by-epoch
-  validation jet accuracy.
+- `plots/` — eight SVG figures: AUC comparison, reconstruction comparison
+  (now including Native 10M), paired-AUC forest plot, epoch-by-epoch
+  assignment loss, epoch-by-epoch validation jet accuracy, all-background
+  ROC (four models, with zoomed inset), and background rejection (four
+  models, sparse-tail-aware).
 - `provenance/` — `SHA256SUMS` and `SOURCE_FILES.json` for the exact
-  external files this bundle was assembled from.
-- `code/` — the deterministic assembler and all five plotting scripts,
-  each re-runnable against the files in `metrics/` alone (no bootstrap,
-  no training, no GPU).
+  external files this bundle was assembled from (now including all four
+  models' per-event `.npz` exports, used for the reconstruction
+  cross-check and the ROC/rejection figures).
+- `code/` — the deterministic assembler, the Native10M reconstruction
+  cross-check, the ROC/rejection curve computation, and all seven
+  plotting scripts — every one re-runnable against already-frozen files
+  alone (no bootstrap, no training, no GPU, no inference).
 
 ## Regenerating this bundle
 
@@ -123,14 +173,24 @@ python3 code/assemble_zero20_final.py \
   --native-vs-part20-json metrics/comparison_native2M_vs_part2m_active20.json \
   --zero20-vs-native-json metrics/comparison_zero20_vs_native2M.json \
   --zero20-vs-part20-json metrics/comparison_zero20_vs_part2m_active20.json \
+  --native10m-reconstruction-json metrics/native10m_reconstruction_crosscheck.json \
   --out-dir .
+
+# Native10M reconstruction (hard-gated on exact reproduction of the frozen Native2M numbers):
+python3 code/compute_native10m_reconstruction.py --out-json metrics/native10m_reconstruction_crosscheck.json
+
+# ROC / background-rejection curve data (verifies all 4 event_id/process arrays match first):
+python3 code/compute_roc_curves.py --out-json metrics/roc_curves_data.json
 
 python3 code/plot_auc_comparison.py --model-summary-json metrics/model_summary.json --out-svg plots/auc_comparison.svg
 python3 code/plot_reconstruction_comparison.py --model-summary-json metrics/model_summary.json --out-svg plots/reconstruction_comparison.svg
 python3 code/plot_forest_auc_deltas.py --paired-statistics-json metrics/paired_statistics.json --out-svg plots/forest_auc_deltas.svg
 python3 code/plot_epoch_assignment_loss.py --training-history-json metrics/training_history_three_way.json --out-svg plots/epoch_assignment_loss.svg
 python3 code/plot_epoch_jet_accuracy.py --training-history-json metrics/training_history_three_way.json --out-svg plots/epoch_jet_accuracy.svg
+python3 code/plot_roc_all_background.py --roc-curves-json metrics/roc_curves_data.json --out-svg plots/roc_all_background_four_models.svg
+python3 code/plot_background_rejection.py --roc-curves-json metrics/roc_curves_data.json --out-svg plots/background_rejection_four_models.svg
 ```
 
-All five scripts are deterministic reads of already-computed files — none
-launches training, embedding extraction, or a new bootstrap.
+All scripts are deterministic reads/recomputations over already-frozen
+per-event files — none launches training, embedding extraction, inference,
+or a new bootstrap.

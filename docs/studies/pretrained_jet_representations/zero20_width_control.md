@@ -81,6 +81,32 @@ for what would distinguish "the selected ParT dimensions themselves carry
 misleading information" from "the preprocessing/optimization interaction
 is the problem, independent of which dimensions are used."
 
+## Seeing it directly: ROC and background rejection
+
+Tables and paired-bootstrap numbers are precise, but the four-model ROC
+comparison on the exact common 400,000-event cohort
+(`.../zero20_20260914/plots/roc_all_background_four_models.svg`) shows the
+Branch B pattern at a glance: Native 2M, Native 10M, and ZERO20 trace
+essentially one curve, while ParT active20 sits visibly below all three
+across the full efficiency range. Because the three native-like curves
+overlap so closely, the figure includes a zoomed inset
+(εB∈[0,0.08], εS∈[0.75,1]) — the same curve data, not a refit, at a scale
+where the gap from ParT active20 is legible.
+
+The companion background-rejection figure
+(`.../plots/background_rejection_four_models.svg`, signal efficiency vs.
+1/εB, log scale) makes the same point in the language of a physics
+working point rather than an ROC curve, while being explicit about where
+the underlying Monte Carlo statistics run out: each curve stops at its own
+last real background survivor (no fitted or extrapolated tail beyond that
+point), and the segment resting on fewer than 10 raw background events is
+drawn dashed with hollow markers. ParT active20 reaches implausibly low
+signal efficiencies (down to εS≈0.002) only because its background
+contamination is so much worse that a handful of background events still
+survive there; the three native-like models run out of background
+statistics much earlier (εS≈0.03–0.05), a data-availability fact, not
+itself a performance ranking at those specific points.
+
 ## Training-history confirmation
 
 The same pattern is visible from the very first training epoch (epoch-0

@@ -91,21 +91,33 @@ number. It is the numerical foundation the cut-baseline (§2) and BDT (§3)
 physical-yield tables above depend on, and should be cited as such in the
 paper's methods section rather than as an independent result.
 
-## 5. SPA-Net native scaling: 2M vs. 10M (2026-08-21, refined 2026-09-11)
+## 5. SPA-Net native scaling: 2M vs. 10M (2026-08-21, refined 2026-09-11, reconstruction added 2026-09-14)
 
 **Source:** `artifacts/hh4b_spanet_part_20260911/README.md`, refining the
 earlier development pass at
 `docs/track_b/development_snapshot_20260821/spanet_10m_scaling/README.md`
-(not moved this stage — see §9).
+(not moved this stage — see §9). The reconstruction column was computed
+directly from the frozen `native10m_eval_400k.npz` export
+(`artifacts/hh4b/pretrained_jet_representations/zero20_20260914/code/
+compute_native10m_reconstruction.py`), hard-gated on exact reproduction of
+the already-published Native 2M reconstruction numbers before being
+trusted (confirmed, bit-for-bit).
 
-| Model | All-background AUC | QCD AUC | ttbar AUC |
-|---|---:|---:|---:|
-| Native SPA-Net (2M) | 0.969281 | 0.968155 | 0.975392 |
-| Native SPA-Net (10M) | 0.969272 | 0.967756 | 0.977502 |
+| Model | All-background AUC | QCD AUC | ttbar AUC | Exact-event reco. | Per-Higgs reco. |
+|---|---:|---:|---:|---:|---:|
+| Native SPA-Net (2M) | 0.969281 | 0.968155 | 0.975392 | 0.866588 | 0.895299 |
+| Native SPA-Net (10M) | 0.969272 | 0.967756 | 0.977502 | 0.872229* | 0.898838* |
 
-The model has **saturated, not improved**, with 5x more training data. This
-is a matched, checksummed, hash-verified result
-(`artifacts/hh4b_spanet_part_20260911/diagnosis/SHA256SUMS`).
+Classification AUC has **saturated, not improved**, with 5x more training
+data. Reconstruction shows a small **point-estimate** improvement
+(+0.0056 exact-event, +0.0035 per-Higgs) — \*no paired-bootstrap CI was
+computed for this delta (out of scope for a compact provenance addition),
+so it is reported as a raw point estimate only, not claimed as
+statistically significant. This is a matched, checksummed, hash-verified
+result (`artifacts/hh4b_spanet_part_20260911/diagnosis/SHA256SUMS`;
+Native10M reconstruction cross-check:
+`artifacts/hh4b/pretrained_jet_representations/zero20_20260914/metrics/
+native10m_reconstruction_crosscheck.json`).
 
 ## 6. QCD-tail / numerical-reliability studies (2026-09-06 → 09-07)
 
@@ -183,6 +195,14 @@ ParT values and/or their preprocessing/optimization interaction, not
 input width — see the source documents for the full reasoning and ranked,
 unauthorized follow-up proposals
 (`docs/studies/pretrained_jet_representations/next_experiments.md`).
+
+A full ROC comparison of all four models on the exact common 400k cohort
+(`.../zero20_20260914/plots/roc_all_background_four_models.svg`, with a
+zoomed inset where Native 2M/10M/ZERO20 overlap) and a background-rejection
+curve (`.../background_rejection_four_models.svg`, log-scale, stopping at
+each model's own last real background survivor — no extrapolated tail)
+make the same Branch B pattern visible directly, not just in tabulated
+statistics.
 
 **This is a matched development/validation result, not a final blind-test
 result.**
