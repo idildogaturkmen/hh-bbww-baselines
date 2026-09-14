@@ -24,7 +24,11 @@
       "qcd": 0.9677556643819263,
       "ttbar": 0.9775017953474364
     },
-    "reco": null,
+    "reco": {
+      "n_events_with_defined_assignment": 100868,
+      "exact_event_hh_reconstruction_efficiency": 0.8722290518301146,
+      "higgs_assignment_pairing_accuracy": 0.8988380854185668
+    },
     "resource": null
   },
   "ParT20_2M": {

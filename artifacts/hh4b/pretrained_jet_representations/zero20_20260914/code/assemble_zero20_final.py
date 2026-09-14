@@ -119,6 +119,10 @@ def main():
     ap.add_argument("--native-vs-part20-json", required=True)
     ap.add_argument("--zero20-vs-native-json", required=True)
     ap.add_argument("--zero20-vs-part20-json", required=True)
+    ap.add_argument("--native10m-reconstruction-json", default=None,
+                     help="optional -- compute_native10m_reconstruction.py output; if given, its own "
+                          "cross_check.PASS/exact_event_exact_match/higgs_pairing_exact_match must all be "
+                          "True or this script refuses to use it")
     ap.add_argument("--out-dir", required=True, help="artifact root; writes metrics/ and tables/ under it")
     args = ap.parse_args()
 
@@ -144,10 +148,20 @@ def main():
         assert abs(native10m_from_d1[proc] - native10m_from_d2[proc]) < 1e-9, \
             f"native10M AUC[{proc}] disagrees between the two files: {native10m_from_d1[proc]} vs {native10m_from_d2[proc]}"
 
+    native10m_reco = None
+    if args.native10m_reconstruction_json:
+        with open(args.native10m_reconstruction_json) as f:
+            n10r = json.load(f)
+        assert n10r["cross_check"]["PASS"] is True, \
+            "native10m_reconstruction_json's own cross-check did not pass -- refusing to trust its numbers"
+        assert n10r["cross_check"]["exact_event_exact_match"] is True
+        assert n10r["cross_check"]["higgs_pairing_exact_match"] is True
+        native10m_reco = {k: v for k, v in n10r["native10m"].items() if k != "source_npz"}
+
     models = {
         "native2M": dict(auc=d0["auc"]["control"], reco=d0["reconstruction"]["control"],
                           resource=d0["resource"]["control"]),
-        "native10M": dict(auc=native10m_from_d1, reco=None, resource=None),
+        "native10M": dict(auc=native10m_from_d1, reco=native10m_reco, resource=None),
         "ParT20_2M": dict(auc=d0["auc"]["test"], reco=d0["reconstruction"]["test"],
                            resource=d0["resource"]["test"]),
         "ZERO20_2M": dict(auc=d1["auc"]["test"], reco=d1["reconstruction"]["test"],
@@ -229,14 +243,23 @@ def main():
     write_csv_table(os.path.join(tables_dir, "paired_statistics.csv"), headers, rows)
 
     # ---- tables/reconstruction ----
-    headers = ["Model", "n (assignment-defined)", "Exact-event HH reconstruction", "Per-Higgs pairing accuracy"]
+    # Native10M is included ONLY if a verified compute_native10m_reconstruction.py
+    # result was supplied; its delta vs Native2M has NO paired-bootstrap CI here
+    # (computing one would require a new bootstrap, out of scope for this
+    # point-estimate-only addition) -- flagged explicitly in the note column.
+    headers = ["Model", "n (assignment-defined)", "Exact-event HH reconstruction", "Per-Higgs pairing accuracy", "Note"]
     rows = []
-    for name, label in [("native2M", "Native SPA-Net 2M"), ("ParT20_2M", "SPA-Net + ParT active20 2M"),
-                         ("ZERO20_2M", "SPA-Net + ZERO20 2M")]:
+    reco_model_order = [("native2M", "Native SPA-Net 2M", "")]
+    if models["native10M"]["reco"] is not None:
+        reco_model_order.append(("native10M", "Native SPA-Net 10M",
+                                  "point estimate only -- no paired-bootstrap CI computed"))
+    reco_model_order += [("ParT20_2M", "SPA-Net + ParT active20 2M", ""),
+                         ("ZERO20_2M", "SPA-Net + ZERO20 2M", "")]
+    for name, label, note in reco_model_order:
         r = models[name]["reco"]
         rows.append([label, r["n_events_with_defined_assignment"],
                      f"{r['exact_event_hh_reconstruction_efficiency']:.6f}",
-                     f"{r['higgs_assignment_pairing_accuracy']:.6f}"])
+                     f"{r['higgs_assignment_pairing_accuracy']:.6f}", note])
     write_md_table(os.path.join(tables_dir, "reconstruction.md"), headers, rows)
     write_csv_table(os.path.join(tables_dir, "reconstruction.csv"), headers, rows)
 

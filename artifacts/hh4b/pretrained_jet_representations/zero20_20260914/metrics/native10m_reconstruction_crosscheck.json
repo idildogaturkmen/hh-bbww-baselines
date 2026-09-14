@@ -1,0 +1,21 @@
+{
+  "cross_check": {
+    "source_npz": "/uscms_data/d3/iturkmen/hh4b_delphes/track_f_postproduction_pipeline_20260908_v1/exports/control_2m_native_eval.npz",
+    "computed": {
+      "n_events_with_defined_assignment": 100868,
+      "exact_event_hh_reconstruction_efficiency": 0.8665880160209383,
+      "higgs_assignment_pairing_accuracy": 0.8952988063607884
+    },
+    "expected_exact_event_hh_reconstruction_efficiency": 0.8665880160209383,
+    "expected_higgs_assignment_pairing_accuracy": 0.8952988063607884,
+    "exact_event_exact_match": true,
+    "higgs_pairing_exact_match": true,
+    "PASS": true
+  },
+  "native10m": {
+    "source_npz": "/uscms_data/d3/iturkmen/hh4b_delphes/track_f_postproduction_pipeline_20260908_v1/exports/native10m_eval_400k.npz",
+    "n_events_with_defined_assignment": 100868,
+    "exact_event_hh_reconstruction_efficiency": 0.8722290518301146,
+    "higgs_assignment_pairing_accuracy": 0.8988380854185668
+  }
+}
