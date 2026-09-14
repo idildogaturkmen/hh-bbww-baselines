@@ -197,9 +197,10 @@ unauthorized follow-up proposals
 (`docs/studies/pretrained_jet_representations/next_experiments.md`).
 
 A full ROC comparison of all four models on the exact common 400k cohort
-(`.../zero20_20260914/plots/roc_all_background_four_models.svg`, with a
-zoomed inset where Native 2M/10M/ZERO20 overlap) and a background-rejection
-curve (`.../background_rejection_four_models.svg`, log-scale, stopping at
+(`.../zero20_20260914/plots/roc_all_background_four_models.svg`, a two-panel
+full-range-plus-zoom figure, εB∈[0,0.08]/εS∈[0.72,1.0] in the zoom panel,
+where Native 2M/10M/ZERO20 overlap) and a background-rejection curve
+(`.../background_rejection_four_models.svg`, log-scale, stopping at
 each model's own last real background survivor — no extrapolated tail)
 make the same Branch B pattern visible directly, not just in tabulated
 statistics.

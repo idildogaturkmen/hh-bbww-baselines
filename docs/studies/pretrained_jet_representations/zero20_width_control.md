@@ -88,10 +88,12 @@ comparison on the exact common 400,000-event cohort
 (`.../zero20_20260914/plots/roc_all_background_four_models.svg`) shows the
 Branch B pattern at a glance: Native 2M, Native 10M, and ZERO20 trace
 essentially one curve, while ParT active20 sits visibly below all three
-across the full efficiency range. Because the three native-like curves
-overlap so closely, the figure includes a zoomed inset
-(εB∈[0,0.08], εS∈[0.75,1]) — the same curve data, not a refit, at a scale
-where the gap from ParT active20 is legible.
+across the full efficiency range. The figure is a two-panel layout (not
+an inset): a full-range panel and a second, plain zoomed panel over the
+exact same curve data (εB∈[0,0.08], εS∈[0.72,1.0]), with the three
+native-like curves given distinct line styles (solid/dashed/dash-dot), not
+color alone, since they sit close enough that color-only encoding was not
+legible where one line overlaps another.
 
 The companion background-rejection figure
 (`.../plots/background_rejection_four_models.svg`, signal efficiency vs.

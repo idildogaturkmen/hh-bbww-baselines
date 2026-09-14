@@ -119,10 +119,14 @@ other AUC in this project, and reproduces the already-published values
 exactly (0.969281 / 0.969272 / 0.944222 / 0.969116).
 
 Because Native 2M, Native 10M, and ZERO20 are statistically/practically
-indistinguishable (see above), their ROC curves nearly overlap — the
-figure includes a zoomed inset panel (εB∈[0,0.08], εS∈[0.75,1]) showing
-the same underlying curve data at a scale where the separation from ParT
-active20 is visible; no curve is refit or altered for the inset.
+indistinguishable (see above), their ROC curves nearly overlap. The ROC
+figure is a two-panel layout, not an inset: panel (a) is the full ROC
+(εB, εS ∈ [0,1]); panel (b) is a plain second axes over the exact same
+curve arrays, zoomed to εB∈[0,0.08], εS∈[0.72,1.0] — no inset rectangle,
+no connector lines, no refitting. Native 2M/10M/ZERO20 are additionally
+distinguished by linestyle (solid/dashed/dash-dot) and partial line
+transparency, not color alone, since at this zoom level color alone was
+not enough to tell them apart where one line sits on top of the others.
 
 The rejection figure plots signal efficiency vs. 1/εB on a log axis,
 **stopping each curve at its own last real background survivor** — no
@@ -155,7 +159,7 @@ training-history JSON) **is** committed, in `metrics/`.
 - `plots/` — eight SVG figures: AUC comparison, reconstruction comparison
   (now including Native 10M), paired-AUC forest plot, epoch-by-epoch
   assignment loss, epoch-by-epoch validation jet accuracy, all-background
-  ROC (four models, with zoomed inset), and background rejection (four
+  ROC (four models, two-panel full+zoom), and background rejection (four
   models, sparse-tail-aware).
 - `provenance/` — `SHA256SUMS` and `SOURCE_FILES.json` for the exact
   external files this bundle was assembled from (now including all four
