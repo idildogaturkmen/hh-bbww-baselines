@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "shape_bins": 8,
+  "all_bins_positive": true,
+  "mu95_stat_only": 31.95647727235911,
+  "mu95_gaussian_mc": 545.7007962261,
+  "mu95_gamma_effective_count": 522.0596881654055,
+  "physical_qcd_sources": 186,
+  "auxiliary_nonphysical_qcd_sources": 23,
+  "ordinary_physical_qcd_sources": 0,
+  "selected_physical_qcd_yield": 46452891.01438077,
+  "selected_physical_qcd_rows": 123,
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0
+}

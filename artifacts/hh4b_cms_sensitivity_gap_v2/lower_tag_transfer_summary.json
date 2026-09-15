@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "label": "simulation-only lower-tag transfer diagnostic",
+  "development_source_folds": [
+    0,
+    1,
+    2
+  ],
+  "closure_source_folds": [
+    3,
+    4
+  ],
+  "transfer_features": {
+    "r_hh_125_125": [
+      0,
+      20,
+      40,
+      80,
+      "inf"
+    ],
+    "mhh": [
+      0,
+      300,
+      500,
+      "inf"
+    ],
+    "ht_candidate_jets": [
+      0,
+      250,
+      400,
+      "inf"
+    ]
+  },
+  "audit_features": {
+    "mbb1": [
+      0,
+      60,
+      100,
+      140,
+      200,
+      "inf"
+    ],
+    "mbb2": [
+      0,
+      60,
+      100,
+      140,
+      200,
+      "inf"
+    ],
+    "r_hh_125_125": [
+      0,
+      20,
+      40,
+      80,
+      "inf"
+    ],
+    "mhh": [
+      0,
+      300,
+      500,
+      "inf"
+    ],
+    "ht_candidate_jets": [
+      0,
+      250,
+      400,
+      "inf"
+    ],
+    "h1_pt": [
+      0,
+      100,
+      200,
+      400,
+      "inf"
+    ],
+    "h2_pt": [
+      0,
+      100,
+      200,
+      400,
+      "inf"
+    ],
+    "max_drbb": [
+      0,
+      1,
+      2,
+      3,
+      "inf"
+    ]
+  },
+  "results": [
+    {
+      "transfer": "2b_to_3b",
+      "distribution": "yield",
+      "predicted": 67577439.01410784,
+      "target": 67215327.27968898,
+      "predicted_over_target": 1.0053873387079122,
+      "shape_l1": null,
+      "development_nonzero_cells": 35,
+      "closure_source_rows": 1908,
+      "closure_target_rows": 211
+    },
+    {
+      "transfer": "2b_to_ge4",
+      "distribution": "yield",
+      "predicted": 1703663.5335896634,
+      "target": 5788097.488114504,
+      "predicted_over_target": 0.2943391221533552,
+      "shape_l1": null,
+      "development_nonzero_cells": 35,
+      "closure_source_rows": 1908,
+      "closure_target_rows": 24
+    }
+  ],
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0
+}

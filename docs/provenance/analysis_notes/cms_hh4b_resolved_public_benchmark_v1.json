@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "primary_source": "https://cms-results.web.cern.ch/cms-results/public-results/publications/HIG-24-010/index.html",
+  "analysis": "CMS HIG-24-010",
+  "facts": [
+    {"topology":"resolved HH to 4b","sqrt_s_tev":13.0,"luminosity_fb_inverse":138.0,"quantity":"inclusive_mu_HH_95_upper_limit","expected":5.9,"observed":10.0,"directly_comparable":true,"caveat":"Closest public topology and exposure, but CMS uses collision data, detector reconstruction, control regions, classifier shapes, and a full nuisance model."},
+    {"topology":"resolved plus merged HH to 4b","sqrt_s_tev":[13.0,13.6],"quantity":"inclusive_mu_HH_95_upper_limit","expected":2.8,"directly_comparable":false,"caveat":"Run-2+Run-3 combination includes Run 3 and merged-topology information."}
+  ],
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0
+}

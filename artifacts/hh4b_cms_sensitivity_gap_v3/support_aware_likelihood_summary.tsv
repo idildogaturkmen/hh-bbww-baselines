@@ -1,0 +1,4 @@
+minimum_qcd_neff_threshold	merged_bins	threshold_achievable_all_bins	mu95_stat_only_support_merge	gain_vs_two_channel	fraction_nominal_shape_gain_retained
+5	5	False	43.710089847270524	1.0141270560124673	0.049914277234634256
+10	4	False	43.79843208218898	1.012081543276959	0.04277326458186332
+20	2	False	44.32758473485278	1.0000000000000027	9.189705777456637e-15

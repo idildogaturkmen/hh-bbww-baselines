@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "label": "Delphes simulation expected-limit diagnostic",
+  "cms_primary_expected_mu95": 5.9,
+  "ladder": [
+    {"stage":"pooled_one_bin","mu95_stat_only":74.0151727273842,"ratio_to_cms":12.544944530064,"mu95_finite_mc_aware":68085.29934608826},
+    {"stage":"exact3tag_ge4tag","mu95_stat_only":44.32758473485289,"ratio_to_cms":7.513149954,"mu95_finite_mc_aware":32937.518650134225,"gain":1.669731684460336},
+    {"stage":"categories_fixed_rhh_shape","mu95_stat_only":31.95647727235911,"ratio_to_cms":5.41635208,"mu95_finite_mc_aware":545.7007962261,"gain_vs_categories":1.3871236293367737}
+  ],
+  "selected_signal": 184.724437805587,
+  "selected_background": 48653342.97808226,
+  "background_neff": 57.48660467004717,
+  "qcd_background_fraction": 0.9547728515861125,
+  "global_bdt": "pending",
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0
+}
