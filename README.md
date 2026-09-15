@@ -13,6 +13,33 @@ hash-stamped lab notebook (dated evidence for individual decisions), not an
 onboarding guide. This README, `docs/project_overview/PROJECT_STORY.md`, and
 `docs/results/RESULTS_OVERVIEW.md` are the onboarding path.
 
+## Studies at a glance
+
+`main` is the complete, canonical SURF repository and the single source of
+truth — every study's full code, data, and provenance lives here. The
+`study/*` branches below are optional **reader-facing entry points**: each
+is `main` (full history, nothing squashed or removed) plus one root-level
+`STUDY_BRANCH.md` written for someone who wants just that study, so you
+never need to learn this project's historical Track A/B branch names to
+navigate it. You do not need the `study/*` branches for anything `main`
+doesn't already contain.
+
+| # | Study | Folder (on `main`) | Branch |
+|---|---|---|---|
+| 01 | HH→bbWW baseline | [`docs/studies/01_hh_bbww/`](docs/studies/01_hh_bbww/README.md) | [`study/01-hh-bbww`](https://github.com/idildogaturkmen/hh-bbww-baselines/tree/study/01-hh-bbww) |
+| 02 | COLLIDE dataset studies | [`docs/studies/02_collide_dataset_studies/`](docs/studies/02_collide_dataset_studies/README.md) | [`study/02-collide`](https://github.com/idildogaturkmen/hh-bbww-baselines/tree/study/02-collide) |
+| 03 | HH→4b simulation | [`docs/studies/03_channel_pivot_and_hh4b_simulation/`](docs/studies/03_channel_pivot_and_hh4b_simulation/README.md) | [`study/03-hh4b-simulation`](https://github.com/idildogaturkmen/hh-bbww-baselines/tree/study/03-hh4b-simulation) |
+| 04 | HH→4b classical ML | [`docs/studies/04_hh4b_classical_ml/`](docs/studies/04_hh4b_classical_ml/README.md) | [`study/04-hh4b-classical-ml`](https://github.com/idildogaturkmen/hh-bbww-baselines/tree/study/04-hh4b-classical-ml) |
+| 05 | SPA-Net reconstruction | [`docs/studies/05_spanet_reconstruction/`](docs/studies/05_spanet_reconstruction/README.md) | [`study/05-spanet-reconstruction`](https://github.com/idildogaturkmen/hh-bbww-baselines/tree/study/05-spanet-reconstruction) |
+| 06 | Scaling + tail reliability | [`docs/studies/06_scaling_and_tail_reliability/`](docs/studies/06_scaling_and_tail_reliability/README.md) | [`study/06-scaling-tail-reliability`](https://github.com/idildogaturkmen/hh-bbww-baselines/tree/study/06-scaling-tail-reliability) |
+| 07 | Pretrained jet representations | [`docs/studies/07_pretrained_jet_representations/`](docs/studies/07_pretrained_jet_representations/README.md) | [`study/07-pretrained-representations`](https://github.com/idildogaturkmen/hh-bbww-baselines/tree/study/07-pretrained-representations) |
+
+Three `study/*` branches (03, 04, 07) additionally merge in real,
+previously-unmerged commit history from old topic branches that held
+unique scientific content — see
+[`docs/history/BRANCH_GUIDE.md`](docs/history/BRANCH_GUIDE.md) for exactly
+what was merged from where, with SHAs.
+
 ## Physics motivation
 
 Higgs-pair (HH) production directly probes the Higgs self-coupling and is one
