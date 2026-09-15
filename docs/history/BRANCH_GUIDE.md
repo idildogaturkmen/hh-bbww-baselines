@@ -1,0 +1,81 @@
+# Branch guide
+
+This repository's history is spread across many branches rather than linear
+commits to `main` — a consequence of how the SURF project was actually run
+(each new topic frequently got its own branch, not always merged back). This
+guide exists so a reader can tell, for any branch, what it represents,
+whether it holds unique work, and what to read instead if it doesn't.
+
+**No branch is deleted, renamed, or merged by this reorganization.** This
+guide is documentation only. Commit counts below are "commits reachable from
+this branch but not from `repo-reorg/2026-09`" (`git log --oneline
+repo-reorg/2026-09..<branch> | wc -l`), computed 2026-09-15.
+
+## How to read this table
+
+- **Governing** — the branch (or `repo-reorg/2026-09`, which absorbed most
+  branches' content) is the one to actually read for that topic.
+- **Historical** — superseded by later work, but the commits are a genuine,
+  non-duplicated record of an earlier stage.
+- **Unique, unmerged** — contains real content not present anywhere on
+  `repo-reorg/2026-09` or `main`. Worth knowing about even though nothing in
+  this stage moves it.
+- **Agent scratch** — created by an automated worktree/agent process, not
+  meaningful project history.
+
+| Branch | Scientific stage | Timeframe | Unique vs. `repo-reorg/2026-09` | Status | Read instead |
+|---|---|---|---|---|---|
+| `main` | HH→bbWW baseline only — the project's starting point, before the pivot | 2026-05 → 2026-07-01 | 0 commits (ancestor) | historical | `repo-reorg/2026-09` (contains everything on `main` plus 520+ further commits) |
+| `repo-reorg/2026-09` | This reorganization's working branch; the most complete/current state | 2026-07 → 2026-09-15 | — | **governing** | — |
+| `origin/pivot-channel-scouting` (remote-only) | The literal HH→bbWW→HH→4b **pivot decision**: `notes/channel_scouting_decision.md` (300 lines) compares candidate channels and picks resolved HH→4b; also holds the first resolved-HH4b BDT/DNN/LBN training scripts | 2026-07-01 → 07-02 | 5 commits, never merged anywhere | **unique, unmerged** | See recommendation below |
+| `origin/recover-hh4b-spanet` (remote-only) | Builds on `pivot-channel-scouting`; first resolved-HH4b SPA-Net dataset builder and a GenPart-truth diagnostic, immediately after the pivot | 2026-07-02 → 07-03 | 9 commits, never merged anywhere | **unique, unmerged** | See recommendation below |
+| `track-b-sophon-transfer` | Early "Track B" = validating the external PKU-HEP Sophon/jetfree-HH4b released model, plus a **386-line draft paper manuscript** (`docs/paper/track_b/hh4b_representation_learning_manuscript.md`) and Phase-4 interpretation-freeze provenance | 2026-08-14 → 08-17 | 12 commits, never merged anywhere | **unique, unmerged** | See recommendation below |
+| `track-b-literature-resources-20260819` | One literature-review document for the Track B / Sophon line | 2026-08-19 | 1 commit (`docs/paper/track_b/LITERATURE_RESOURCES.md`) | unique, unmerged (small) | trivial to fold in later; see recommendation |
+| `track-b-development-snapshot-20260821` | The 2026-08-21 four-model (BDT-K/KF, SPA-Net 2M/10M) development snapshot | 2026-08-21 | 0 commits — tip is already an ancestor of `repo-reorg/2026-09` | historical, fully absorbed | `docs/studies/05_spanet_reconstruction/`, `docs/studies/06_scaling_and_tail_reliability/` |
+| `track-b-physical-normalization-20260824` | The four-model physical-normalization freeze (`docs/paper/jhep_hh4b_ml/track_b_physical_normalization/`) | 2026-08-24 | 0 commits — tip is already an ancestor of `repo-reorg/2026-09` | historical, fully absorbed | `docs/studies/05_spanet_reconstruction/` |
+| `delphes-hh4b-production` | HH→4b Delphes production line; tip adds SPA-Net "compressed-tail diagnostics" (3 figures + tables) not present elsewhere | 2026-07 → 2026-09-02 | 1 commit (`e17fdbf`, "Add SPA-Net compressed-tail diagnostics") | mostly absorbed; **tip commit unique** | tip commit content not yet linked from any study — see recommendation |
+| `spanet-part-resource-aware` | The **other active worktree**'s branch (`/uscms_data/d3/iturkmen/repos/hh-bbww-baselines-bdt`) — do not touch, per this task's explicit instructions | 2026-09 (ongoing) | 1 commit (`5e8387e`, in progress on that worktree) | **active, external to this task** | leave alone |
+| `bdt-apples-to-apples-v1` | A distinct, later BDT methodology variant — "apples-to-apples" nested-OOF production comparison against the primary BDT and Harvey's ROC-tail audit, with its own scripts/tables/tests | 2026-08 → 08-11 | 8 commits, ~105 files, never merged | **unique, unmerged** | see recommendation |
+| `cms-resolved-sensitivity-gap-v1` | A diagnostic study of whether the QCD tail has enough Monte Carlo support to close a "CMS resolved-sensitivity gap" — expected-limit ladder, lower-b-tag transfer feasibility, remediation decision | 2026-08 → 08-11 | 5 commits, never merged | **unique, unmerged** | see recommendation |
+| `worktree-agent-a2ed451390d084359` | Auto-generated by a Claude Code agent worktree at some point in this project's history; identical to `main`, zero unique commits | unknown | 0 commits (identical to `main`) | **agent scratch, no unique content** | ignore |
+
+## Branches with unique, unmerged content — recommendation
+
+Four branches/remote-refs hold real scientific content that exists **nowhere
+else**, including not on `repo-reorg/2026-09`:
+
+1. `origin/pivot-channel-scouting` + `origin/recover-hh4b-spanet` — the
+   actual pivot-decision document and the first post-pivot SPA-Net dataset
+   work. `docs/project_overview/physics_goal_and_pivot.md` (already on this
+   branch) covers the pivot narrative, but `notes/channel_scouting_decision.md`
+   on `pivot-channel-scouting` is the original decision document itself and
+   is not currently linked from anywhere.
+2. `track-b-sophon-transfer` — holds a genuine draft paper manuscript
+   section and Phase-4 Sophon-transfer interpretation freeze not reflected
+   in `docs/paper/jhep_hh4b_ml/` or `docs/studies/05_spanet_reconstruction/`.
+3. `bdt-apples-to-apples-v1` and `cms-resolved-sensitivity-gap-v1` — two
+   later, methodologically distinct classical-ML/tail-reliability studies
+   with their own frozen tables and scripts.
+
+**Recommendation (not executed in this stage):** a follow-up stage should
+`git log`/read each of these four in full, decide per-document whether its
+content is (a) superseded by what already made it onto `repo-reorg/2026-09`,
+or (b) genuinely new and worth cherry-picking into the relevant study
+directory (`docs/studies/03_channel_pivot_and_hh4b_simulation/` for the
+pivot-scouting material, `docs/studies/05_spanet_reconstruction/` for the
+Sophon-transfer manuscript, `docs/studies/04_hh4b_classical_ml/` and
+`docs/studies/06_scaling_and_tail_reliability/` for the two later studies),
+with a normal `git merge` or targeted `git cherry-pick`/`git checkout
+<branch> -- <path>` rather than a bulk branch merge. This task's mandate was
+documentation/dependency-safe moves only, so no cross-branch content
+transfer was performed — flagging the opportunity here is the deliverable.
+
+**Curated archival branches:** given the above, 1–2 curated archival
+branches could materially help a future reader — e.g. a single
+`archive/pre-repo-reorg-unmerged-work` branch that merges
+`pivot-channel-scouting`, `recover-hh4b-spanet`, `track-b-sophon-transfer`,
+`bdt-apples-to-apples-v1`, and `cms-resolved-sensitivity-gap-v1` together
+(preserving all five without picking a "winner"), so a reader has one place
+to look for "unmerged work" instead of five branch names. **This is a
+proposal only — it was not created**, per this task's instruction not to
+create new branches automatically.
