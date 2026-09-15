@@ -212,6 +212,18 @@ as the move — deferred to a future stage, in line with this stage's
   `docs/provenance/REPOSITORY_CONTENT_MAP.md` and
   `docs/history/BRANCH_GUIDE.md` for what a future paper-only spinoff would
   vs. would not need.
+- **2026-09-15, consolidation pass**: the headline scientific content of 6
+  previously-unmerged branches/refs (the channel-pivot decision document, a
+  Sophon/jetfree-hh4b representation-learning manuscript's quantitative
+  result, a Track-B literature review, an unmerged BDT-vs-CMS rejection
+  audit, a CMS resolved-sensitivity-gap expected-limit study, and a SPA-Net
+  compressed-score-tail package) was incorporated additively into the
+  relevant `docs/studies/` READMEs — three small primary-source documents
+  copied verbatim with provenance headers, the rest summarized with exact
+  numbers and a link back to source. **No branch was merged, deleted, or
+  rewritten**; full raw artifact trees (figures/tables/models) remain on
+  their source branches only, per `docs/history/BRANCH_GUIDE.md`'s
+  "prefer links over duplicate gigabytes" policy.
 
 ## Citation / project links
 

@@ -58,9 +58,27 @@ explicitly in every governing source document.
   physical resonance masses as expected, but the adapter-integration
   extension was paused rather than pursued to completion — an early
   representation-learning direction that did not continue past a
-  feasibility canary. A later draft manuscript section on this line of work
-  exists **unmerged** on `track-b-sophon-transfer` — see
-  [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).
+  feasibility canary.
+- **A later, still-unmerged working manuscript** (`docs/paper_draft/hh4b_representation_learning_manuscript.md`
+  on `track-b-sophon-transfer`, tip commit `8e43e92d`, dated 2026-08-14,
+  explicitly self-labeled "working manuscript sections... [bracketed text]
+  must be frozen before a submission draft is prepared" — i.e. **provisional,
+  not a frozen project result**) reports that on the external Sophon/jetfree-hh4b
+  sample, adding continuous SophonAK4 b/c/light-flavor information to an
+  otherwise kinematics-only event classifier raised QCD rejection at 40%
+  signal efficiency from 283.1±27.2 to 370.6±26.8 in development data
+  (+30.9%) and from 285.7±43.9 to 439.5±38.4 in a held-out sample (+53.8%),
+  reproducing across all three seeds tested. The same draft states a frozen
+  pairwise-attention augmentation did **not** add further improvement in
+  that configuration, and explicitly declines to state a native-vs-representation-
+  enhanced SPA-Net conclusion pending its own blind protocol. This
+  manuscript, its supporting Track A/B mechanism-interpretation results
+  (`docs/track_a/`, `docs/track_b/phase4*`), and a related literature
+  review (now preserved at
+  [`LITERATURE_RESOURCES.md`](LITERATURE_RESOURCES.md), copied from
+  `track-b-literature-resources-20260819`) remain unmerged — see
+  [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md) for the
+  full branch status and what would be needed to fold them in.
 - **Governing native SPA-Net (2M)**: all-background AUC 0.969281, exact-event
   HH reconstruction 0.866588 — the baseline every later scaling
   ([study 06](../06_scaling_and_tail_reliability/README.md)) and pretrained-
@@ -110,3 +128,8 @@ Track A (this project's own analysis) / Track B (Sophon study) relationship.
 A draft representation-learning manuscript section exists unmerged on
 `track-b-sophon-transfer` — see
 [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).
+[`LITERATURE_RESOURCES.md`](LITERATURE_RESOURCES.md) (copied 2026-09-15
+from `track-b-literature-resources-20260819`, commit `34d261fa`) lists the
+primary literature anchors for this line of work (Chiang et al. 2024 for
+native SPA-Net; Yang & Li 2508.15048 for the Sophon/jetfree-hh4b dataset
+and framework).

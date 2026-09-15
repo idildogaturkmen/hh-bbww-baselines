@@ -71,6 +71,44 @@ A four-stage ladder, in chronological order:
   maturity levels (`results/hh4b_cut_baseline_20260724_v1`, early/narrower;
   `artifacts/hh4b_cut_baseline/`, later/physically-normalized) — both are
   kept, see the content map for how they differ.
+- **Two later, methodologically distinct classical-ML studies remain
+  unmerged** (`bdt-apples-to-apples-v1`, `cms-resolved-sensitivity-gap-v1`);
+  their headline content, incorporated additively this pass:
+  - **`bdt-apples-to-apples-v1`** (8 commits, 2026-08-11, tip `753e1df3`) —
+    a Harvey-facing "apples-to-apples" nested-outer-OOF rejection audit of
+    the global mass-aware/mass-plane-blind BDTs against the CMS HIG-24-010
+    resolved SR4b guide points. At the CMS-comparable working point
+    (ε_S≈0.4), this project's BDT achieves background rejection ≈13
+    (mass-plane-blind) / ≈13.2 (mass-aware), versus CMS HIG-24-010's guide
+    value of ≈100 at a similar signal efficiency — a real, order-of-
+    magnitude gap. Diagnosis: `CLASSIFIER_AND_QCD_LIMITING` — the current
+    feature representation lacks continuous b-tag scores, a 5th b-tag-
+    ranked jet, and alternative pairing kinematics, **and** QCD Monte
+    Carlo support thins sharply at high score (Neff drops from ~1.2k at
+    ε_S=0.6 to ~32-14 at ε_S=0.1), so the gap cannot be attributed to the
+    classifier alone. Explicitly not treated as apples-to-apples with CMS
+    in scope (different preselection), and no new production was
+    authorized to close it. Full artifact tree:
+    `artifacts/hh4b_bdt_apples_to_apples/` on that branch — not copied
+    here (large figure/table tree); see
+    [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).
+  - **`cms-resolved-sensitivity-gap-v1`** (5 commits, 2026-08-11, tip
+    `dedf3bbe`) — extends the R_HH<34 cut baseline into an actual expected-
+    limit number: pooled μ95=74.015 (cross-validated against 1.96/Z_A=74.010),
+    versus CMS HIG-24-010's expected μ95=5.9 (real collision data, full
+    detector reconstruction, data-driven multibin background model — **not
+    a like-for-like comparison**, but the scale of the gap is real). Keeping
+    the exact-3-tag/≥4-tag categories separate improves the pooled number to
+    μ95≈44.3, confirming category structure carries real information. A
+    validated 2b→3b QCD-transfer closure (yield ratio 1.005, held-fold
+    ratios 0.82–1.15) exists, but no ≥4-tag transfer validates (predicted/
+    target ratios 0.29–4.4, inconsistent across folds) — this, not a lack
+    of raw lower-tag events (1.04M available), is diagnosed as the actual
+    bottleneck to closing the sensitivity gap. No new QCD production was
+    authorized on this branch. See
+    [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md); a
+    related SPA-Net-side tail-reliability result is in
+    [study 06](../06_scaling_and_tail_reliability/README.md).
 
 ## Figures
 
@@ -123,5 +161,7 @@ are not directly comparable point-for-point.
 consumer). `results/hh4b_cut_baseline_20260724_v1/`,
 `artifacts/hh4b_cut_baseline/`. Two later, methodologically distinct
 classical-ML/tail-reliability studies exist **unmerged** on
-`bdt-apples-to-apples-v1` and `cms-resolved-sensitivity-gap-v1` — see
-[`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).
+`bdt-apples-to-apples-v1` (tip `753e1df3`) and
+`cms-resolved-sensitivity-gap-v1` (tip `dedf3bbe`) — headline findings
+incorporated above; full artifact trees remain on those branches only —
+see [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).

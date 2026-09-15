@@ -22,10 +22,17 @@ signal generated events, at CMS Run-2-like AK4/AK8 conventions.
    and chose resolved HH→4b for its cleaner, fully hadronic final state,
    more directly comparable to CMS's own resolved-HH4b search than bbWW's
    lepton+MET/WW combinatorics. Rationale:
-   `docs/project_overview/physics_goal_and_pivot.md`. The original
-   decision document, `notes/channel_scouting_decision.md`, exists on the
-   unmerged `origin/pivot-channel-scouting` branch — see
-   [Branch guide](../../history/BRANCH_GUIDE.md).
+   `docs/project_overview/physics_goal_and_pivot.md`. The original decision
+   document is preserved verbatim at
+   [`channel_scouting_decision.md`](channel_scouting_decision.md) (copied
+   from `notes/channel_scouting_decision.md` on the unmerged
+   `origin/pivot-channel-scouting` branch, commit `6bf35191`; see
+   [Branch guide](../../history/BRANCH_GUIDE.md) for the branch's full
+   status). It compares 8 candidate regions by rough Asimov significance
+   ($Z_A$) using proxy COLLIDE-era weights and picks
+   `HH4b_resolved_4b_basic` ($Z_A\approx0.079$, ~3.6× the bbWW-reference
+   region's $Z_A\approx0.022$) as the training preselection, with the
+   Higgs-mass-paired region held out for validation.
 2. **First validated samples (2026-07-06 → 07-10)** — 10k-event ggF-HEFT
    and VBF-SM signal, and QCD/Z/ttbar background pilots; a frozen
    `data_release/hh4b_delphes_analysis_v0_2026_07_08/` snapshot.
@@ -106,6 +113,9 @@ Early status updates: `docs/updates/hh4b_validation_update_2026_07_07.md`,
 `docs/harvey_update_2026_07_08/`. Background-compatibility rules:
 `docs/research/background_inventory_and_ml_readiness_20260720.md`. Full
 inventory-vs-reuse audit: `outputs/audits/existing_hh4b_assets_2026_07_16/`.
-Original pivot-decision document (unmerged branch, not moved into this
-tree): `notes/channel_scouting_decision.md` on `origin/pivot-channel-scouting`
-— see [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).
+Original pivot-decision document: [`channel_scouting_decision.md`](channel_scouting_decision.md)
+(copied 2026-09-15 from `notes/channel_scouting_decision.md` on the
+unmerged `origin/pivot-channel-scouting` branch, commit `6bf35191`, which
+also holds the first post-pivot BDT/DNN/LBN training scripts not yet
+represented here — see
+[`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md)).

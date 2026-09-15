@@ -67,6 +67,25 @@ run on the identical native 7-feature representation, evaluated on the same
   production lanes at u>3.5 (p=0.90 consistency test); at u>4.5 there are
   only 12 raw events — explicitly reported as **too few to judge either
   way**, not forced to a conclusion.
+- **An earlier, unmerged compressed-tail package** (`delphes-hh4b-production`,
+  tip commit `e17fdbf9`, 2026-09-02 — predates and directly foreshadows the
+  Harvey tail-statistics work above) introduces the same u=-log10(1-score)
+  transform used throughout this study's tail characterization and applies
+  it to the governing SPA-Net 10M checkpoint's score≥0.9997/0.99997
+  populations: n=100 raw events (Neff=81.0, tier `FINITE_SUPPORT_CAUTION`)
+  at ≥0.9997, dropping to n=15 (Neff=14.0, `EXTREMELY_LIMITED`) at
+  ≥0.99997 — QCD supplies 61% of raw events but 83.8% of the weighted
+  yield at ≥0.9997, rising to 100% of raw events by ≥0.99999. No single
+  kinematic mode explains the tail (|Spearman ρ|≤0.21 for every variable
+  tested against u). Preserved verbatim at
+  [`spanet_10m_compressed_tail_20260902.md`](spanet_10m_compressed_tail_20260902.md);
+  this content was not linked from any study before this pass — see
+  [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).
+- A related, methodologically distinct classical-baseline sensitivity-gap
+  result (`cms-resolved-sensitivity-gap-v1`) is documented in
+  [study 04](../04_hh4b_classical_ml/README.md) — it uses the same
+  QCD-Neff/tail-support diagnostic style but targets the R_HH<34 cut
+  baseline's expected limit rather than SPA-Net.
 
 ## Figures
 
@@ -99,6 +118,8 @@ development pass); `docs/checkpoints/track_b_harvey_*` (10 directories,
 2026-09-06 → 09-07); `docs/checkpoints/track_b_phase3_bounded_multifile_sophon_adapter_canary_20260806_v1/`
 (the paused Sophon-adapter thread this study's tail-reliability framing
 grew out of — see [study 05](../05_spanet_reconstruction/README.md)).
-A later, methodologically distinct tail/sensitivity-gap study
-(`cms-resolved-sensitivity-gap-v1`) exists **unmerged** — see
-[`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).
+`delphes-hh4b-production` (tip `e17fdbf9`, 2026-09-02 compressed-tail
+package, preserved above). A later, methodologically distinct tail/
+sensitivity-gap study (`cms-resolved-sensitivity-gap-v1`) exists
+**unmerged**, documented in [study 04](../04_hh4b_classical_ml/README.md) —
+see [`docs/history/BRANCH_GUIDE.md`](../../history/BRANCH_GUIDE.md).
