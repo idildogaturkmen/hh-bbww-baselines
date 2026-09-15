@@ -63,3 +63,35 @@ models — this is what makes a ΔAUC as small as 0.00017 statistically
 resolvable at all, which is exactly why this study is careful to separate
 statistical from practical significance throughout (see
 `zero20_width_control.md`).
+
+The ParT checkpoint used throughout this study is the **official
+JetClass-supervised** Particle Transformer — not a self-supervised model.
+Its exact provenance is frozen in
+`docs/analysis_contracts/SPANET_PART_RESOURCE_AWARE_COMPARISON.md.save`
+(kept at that exact, unusual filename because 8 already-frozen provenance
+documents cite it by that literal path — see
+`docs/provenance/REPOSITORY_CONTENT_MAP.md`). JP-JEPA (mentioned in
+`next_experiments.md` and under `docs/checkpoints/track_g_jpjepa_*`) is a
+**different, genuinely self-supervised** method explored only as exploratory
+compatibility groundwork — do not conflate the two.
+
+## Figures
+
+- [`figures/part_active20_delta_auc_forest.svg`](figures/part_active20_delta_auc_forest.svg) — the ParT active20 harm result as a paired-AUC-delta forest plot.
+- [`figures/zero20_delta_auc_forest.svg`](figures/zero20_delta_auc_forest.svg) — the same forest-plot presentation for ZERO20's null result; side by side with the one above, these two make the isolation argument visually.
+- [`figures/zero20_roc_all_four_models.svg`](figures/zero20_roc_all_four_models.svg) — the combined ROC across native 2M/10M, ParT active20, and ZERO20 (two-panel, full-range-plus-zoom; see `zero20_width_control.md`).
+
+## Scale feasibility and future work (not a result)
+
+[`full144_scale_feasibility_20260826.md`](full144_scale_feasibility_20260826.md)
+is a planning/audit document (2026-08-26, no production launched) assessing
+whether the ParT+SPA-Net comparison can scale to 10M or the full ~144M-event
+training population. It recommends scaling next to **10M**, not jumping to
+144M, and flags that the ParT checkpoint's own domain-mismatch verdict
+(`REVIEW_NEEDED`/`DOMAIN_SHIFT_REQUIRES_VALIDATION`) is still open and gates
+scientific validity at *any* scale — this is the same checkpoint used in
+active20/ZERO20 above. The "All-128" sensitivity run proposed in
+`next_experiments.md` (sometimes referred to informally as "full128") is
+**not authorized or running** as of this reorganization; per
+`docs/results/model_landscape.md`'s rule of only listing completed results,
+neither it nor full144 appears in that table.

@@ -81,7 +81,7 @@ TRAIN-only, variance-selected dimensions, z-scored and appended to
 SPA-Net's input, at this training contract) — it is **not** a claim that
 pretrained ParT representations are inherently unable to help jet
 reconstruction. See `next_experiments.md` (in
-`docs/studies/pretrained_jet_representations/`) for what would need to
+`docs/studies/07_pretrained_jet_representations/`) for what would need to
 change to test that more general question.
 
 The training-history record (`metrics/training_history_three_way.json`,

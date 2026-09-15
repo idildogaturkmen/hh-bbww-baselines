@@ -39,7 +39,7 @@ convention actually adopted groups all representation-learning bundles
 (ParT active20 refreshes, ZERO20, and any future frozen-embedding study)
 under one `pretrained_jet_representations/` umbrella — the same name used
 for the narrative deep-dive at
-`docs/studies/pretrained_jet_representations/`, so the code-facing and
+`docs/studies/07_pretrained_jet_representations/`, so the code-facing and
 docs-facing trees mirror each other. Future refreshes of native-scaling or
 part-active20 results, and any subsequent representation study, follow
 this same nested shape.
