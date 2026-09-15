@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "fail_closed_infrastructure_only_before_payload_access",
+  "campaign": "hh4b_bdt_apples_full_budget_pilot_outer0_blind_v1_20260811",
+  "cluster_id": 3797711,
+  "schedd": "lpcschedd4.fnal.gov",
+  "never_resubmit": true,
+  "num_job_starts": 1,
+  "execution_host": "slot1_4@cmswn2168.fnal.gov",
+  "failure": "packaged worker assumed repository-depth parents[2] and raised IndexError at module import",
+  "failure_scope": "portable path binding only; frozen scientific contract unchanged",
+  "worker_exit_status": 1,
+  "worker_elapsed_seconds": 3.41,
+  "worker_max_rss_kib": 189140,
+  "train_payloads_opened": 0,
+  "models_fitted": 0,
+  "predictions_produced": 0,
+  "validation_payloads_opened": 0,
+  "test_payloads_opened": 0,
+  "pilot_included_in_final_scientific_aggregation": false,
+  "repair": "portable repository fallback plus explicit feature-registry CLI binding and scratch-root regression test",
+  "evidence_sha256": {
+    "pilot_stdout": "feb69d7e1285bf429a7bae1ca6d5957a9cb2b89092062a2ac32893974ca8063f",
+    "pilot_stderr": "ad42b9da472085d782cef95fb641fd39fbf6564fa89f8b2a40bc0e6bb83401f3",
+    "pilot_condor_log": "d57e34b4cd69b639f2e59591bc5601579fdb1429c4b4c83a36c933c4262a2173",
+    "pilot_time": "b2b9a921c4916b3d327a7d421578e82ed4c6307c5d0c2530af44dbf6bad0a2e8"
+  }
+}

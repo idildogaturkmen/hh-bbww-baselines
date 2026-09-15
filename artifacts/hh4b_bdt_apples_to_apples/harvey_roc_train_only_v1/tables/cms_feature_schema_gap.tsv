@@ -1,0 +1,11 @@
+CMS_information	available_in_current_tables	derivable_now	requires_TRAIN_re_extraction	requires_new_Delphes_generation	evidence
+continuous per-jet b-tag discriminator	False	False	False	True	authoritative extractor reads Delphes Jet.BTag, which is binary 0/1 in frozen TRAIN sources
+fifth b-tag-ranked jet	False	False	True	False	variable-length selected jets exist upstream; fifth scalar jet not in common table
+five leading b-tagged jet four-vectors	False	False	True	False	only chosen candidate j1-j4 scalar four-vectors stored
+alternative pair masses among stored four candidate jets	False	True	False	False	derivable from j1-j4 pt/eta/phi/mass
+pair delta_eta	False	True	False	False	derivable for alternative j1-j4 pairings
+pair delta_phi	False	True	False	False	derivable for alternative j1-j4 pairings
+pair delta_R	False	True	False	False	derivable for alternative j1-j4 pairings
+continuous candidate b-tag information	False	False	False	True	j1_btag...j4_btag and upstream Jet.BTag contain only 0/1
+candidate mass-resolution information	False	False	True	False	no per-candidate mass-resolution columns
+truth pairing information (diagnostic only)	False	False	True	False	pairing columns are reconstructed choices, not truth matching

@@ -1,0 +1,9 @@
+{
+  "PRIMARY_PERFORMANCE_SOURCE": "five-fold nested outer-OOF",
+  "cms_reference_role": "context only; resolved SR4b-conditioned and not apples-to-apples",
+  "diagnosis": "CLASSIFIER_AND_QCD_LIMITING",
+  "physical_tail_qcd_starved": true,
+  "reaches_contextual_scales": false,
+  "test_payloads_opened": 0,
+  "validation_payloads_opened": 0
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "variant": "global_mass_plane_blind",
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/bdt_apples_to_apples/production_audit/cluster_3799191/pooled_oof_global_mass_plane_blind.parquet",
+    "rows": 1042397,
+    "unique_event_uid": 1042397,
+    "sha256": "dfee50e0a83ae3f0f3382f2e9e8205b39c47749c23b3e694c0fdce49e490c14a",
+    "primary_performance_source": "five-fold nested outer-OOF",
+    "production_cluster": 3799191,
+    "pilot_included": false,
+    "validation_used": false,
+    "test_used": false
+  },
+  {
+    "variant": "global_mass_aware",
+    "path": "/uscms_data/d3/iturkmen/hh4b_delphes/bdt_apples_to_apples/production_audit/cluster_3799191/pooled_oof_global_mass_aware.parquet",
+    "rows": 1042397,
+    "unique_event_uid": 1042397,
+    "sha256": "1c17362c5cae14ab3ac980033bb3052803bc81f9b121b183390594dab0988725",
+    "primary_performance_source": "five-fold nested outer-OOF",
+    "production_cluster": 3799191,
+    "pilot_included": false,
+    "validation_used": false,
+    "test_used": false
+  }
+]

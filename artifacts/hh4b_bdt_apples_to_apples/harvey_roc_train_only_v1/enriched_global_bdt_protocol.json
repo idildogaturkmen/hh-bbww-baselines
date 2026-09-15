@@ -1,0 +1,19 @@
+{
+  "candidate_inputs": [
+    "five leading b-tag-ranked jet pt/eta/phi/mass",
+    "all pair masses/delta_eta/delta_phi/delta_R among those jets",
+    "continuous tag discriminator only if upstream branch is genuinely continuous"
+  ],
+  "cv": "same immutable five-fold source-group nested CV",
+  "forbidden_inputs": [
+    "truth pairing"
+  ],
+  "new_delphes_generation_required_for_schema": false,
+  "production_submission_authorized": false,
+  "requires_train_re_extraction": true,
+  "scope": "enriched global BDT only",
+  "status": "prepared_not_started",
+  "test_payloads_allowed": false,
+  "validation_payloads_allowed": false,
+  "worker_plan": "bounded 1 signal + 1 QCD + 1 ttbar source schema/provenance canary; stop before scale-out"
+}

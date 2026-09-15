@@ -1,0 +1,4 @@
+display_method	ZA_stat
+R_HH(125,125)<34	0.0029343085318647
+Global mass-plane-blind BDT	0.015167140673312
+Global mass-aware BDT	0.0152600737381093

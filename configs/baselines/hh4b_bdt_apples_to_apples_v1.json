@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "study_id": "hh4b_bdt_apples_to_apples_v1",
+  "status": "frozen_before_full_training",
+  "repository": {
+    "branch": "bdt-apples-to-apples-v1",
+    "train_only_anchor": "d69be420d01dd2b731aac17ed4ff33cc0691722e"
+  },
+  "sealed_data": {
+    "validation_payloads_allowed": false,
+    "test_payloads_allowed": false,
+    "bdt_validation_payloads_opened": 0,
+    "bdt_test_payloads_opened": 0
+  },
+  "population": {
+    "name": "primary_broad_resolved_train",
+    "source_groups": 441,
+    "rows": 1042397,
+    "signal_rows": 90638,
+    "background_rows": 951759,
+    "auxiliary_qcd_rows_excluded": 128675,
+    "eligibility": "primary physical source and >=4 selected AK4 jets with pT>30 GeV and abs(eta)<2.5 and deterministic four-jet candidate reconstruction",
+    "btag_requirement": null,
+    "r_hh_requirement": null,
+    "source_audit": "docs/checkpoints/hh4b_train_common_table_full_output_freeze_20260805_v1/evidence/full_output_audit/source_output_audit_464.tsv"
+  },
+  "folds": {
+    "count": 5,
+    "group_key": "group_id",
+    "column": "optimized_fold_k5",
+    "immutable": true,
+    "outer_fold_used_once_for_evaluation": true,
+    "inner_protocol": "for outer k, each of the other four frozen folds is held out once; concatenate the four inner-held predictions",
+    "primary_fold_rows": [206236, 209833, 211149, 208797, 206382],
+    "primary_fold_sources": [88, 88, 89, 89, 87]
+  },
+  "features": {
+    "missing_value_policy": "fail; no imputation",
+    "nonfinite_policy": "fail",
+    "clipping_policy": "none",
+    "mass_plane_blind_exclusions": ["mbb1", "mbb2", "delta_mbb", "r_hh_125_125"],
+    "mass_plane_blind": ["n_selected_jets", "n_selected_bjets", "ht_selected_jets", "ht_selected_bjets", "ht_candidate_jets", "mhh", "hh_pt", "abs_hh_eta", "h1_pt", "abs_h1_eta", "h2_pt", "abs_h2_eta", "abs_h_delta_eta", "abs_h_delta_phi", "h_delta_r", "h_pt_balance", "drbb1", "drbb2", "j1_pt", "abs_j1_eta", "j1_mass", "j2_pt", "abs_j2_eta", "j2_mass", "j3_pt", "abs_j3_eta", "j3_mass", "j4_pt", "abs_j4_eta", "j4_mass"],
+    "mass_aware_append": ["mbb1", "mbb2", "delta_mbb", "r_hh_125_125"]
+  },
+  "weights": {
+    "training": {
+      "signed": false,
+      "physical": false,
+      "class_total_fractions": {"signal": 0.5, "background": 0.5},
+      "equal_signal_modes": true,
+      "equal_background_families": true,
+      "equal_sources_within_stratum": true,
+      "equal_rows_within_source": true,
+      "normalization": "mean outer-training-row weight equals one",
+      "computed_separately_inside_each_outer_training_partition": true
+    },
+    "evaluation": {
+      "column": "resolved_selection_contribution_weight",
+      "signed": true,
+      "luminosity_pb_inverse": 138000.0,
+      "label": "Run-2 expected-yield projection",
+      "simulation_label": "Delphes simulation"
+    }
+  },
+  "implementation": {
+    "estimator": "xgboost.XGBClassifier",
+    "python": "3.9.25",
+    "xgboost": "2.1.4",
+    "sklearn": "1.6.1",
+    "fixed_parameters": {"objective": "binary:logistic", "booster": "gbtree", "tree_method": "hist", "max_bin": 256, "eval_metric": "logloss", "n_jobs": 8, "verbosity": 0, "scale_pos_weight": 1.0},
+    "random_seed": 20260811,
+    "early_stopping": {"enabled": false, "reason": "each finite candidate freezes n_estimators explicitly"}
+  },
+  "hyperparameter_candidates": [
+    {"id": "reference", "n_estimators": 400, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 3, "subsample": 0.9, "colsample_bytree": 0.9, "reg_lambda": 5.0, "reg_alpha": 0.1, "gamma": 0.0},
+    {"id": "shallow_slow", "n_estimators": 700, "max_depth": 2, "learning_rate": 0.03, "min_child_weight": 3, "subsample": 0.9, "colsample_bytree": 0.9, "reg_lambda": 5.0, "reg_alpha": 0.1, "gamma": 0.0},
+    {"id": "shallow_fast", "n_estimators": 300, "max_depth": 2, "learning_rate": 0.08, "min_child_weight": 3, "subsample": 0.9, "colsample_bytree": 0.9, "reg_lambda": 5.0, "reg_alpha": 0.1, "gamma": 0.0},
+    {"id": "depth4", "n_estimators": 400, "max_depth": 4, "learning_rate": 0.05, "min_child_weight": 3, "subsample": 0.9, "colsample_bytree": 0.9, "reg_lambda": 5.0, "reg_alpha": 0.1, "gamma": 0.0},
+    {"id": "regularized", "n_estimators": 500, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 7, "subsample": 0.75, "colsample_bytree": 0.75, "reg_lambda": 20.0, "reg_alpha": 1.0, "gamma": 0.1},
+    {"id": "low_regularization", "n_estimators": 400, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 1, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 1.0, "reg_alpha": 0.0, "gamma": 0.0},
+    {"id": "subsampled", "n_estimators": 500, "max_depth": 3, "learning_rate": 0.03, "min_child_weight": 3, "subsample": 0.75, "colsample_bytree": 0.75, "reg_lambda": 5.0, "reg_alpha": 0.1, "gamma": 0.0},
+    {"id": "depth4_regularized", "n_estimators": 500, "max_depth": 4, "learning_rate": 0.03, "min_child_weight": 7, "subsample": 0.75, "colsample_bytree": 0.75, "reg_lambda": 20.0, "reg_alpha": 1.0, "gamma": 0.1}
+  ],
+  "model_selection": {
+    "metric": "pooled inner-OOF training-weighted ROC AUC",
+    "ranking": ["highest metric", "lowest max_depth", "lowest n_estimators", "lexicographically smallest candidate id"],
+    "same_candidate_registry_for_both_variants": true,
+    "outer_fold_influence": false
+  },
+  "operating_point": {
+    "target_signal_efficiency": 0.585957,
+    "selection_data": "selected candidate pooled inner-OOF predictions for the outer-fold development population only",
+    "comparison": "score >= threshold",
+    "rule": "choose a distinct development score threshold minimizing absolute training-weighted signal-efficiency distance to target; ties prefer efficiency at or above target, then the higher threshold",
+    "outer_fold_influence": false
+  },
+  "historical_comparator": {"variable": "r_hh_125_125", "operator": "<", "threshold": 34.0, "scan": false, "same_population_and_outer_folds": true},
+  "primary_metrics": ["signal_efficiency", "background_efficiency", "background_rejection", "roc_auc", "physical_signal_yield", "physical_background_yield", "signed_sumw", "sumw2", "effective_mc_events", "finite_mc_relative_uncertainty", "signal_over_background", "asimov_ZA_stat_only"],
+  "secondary_metrics": ["roc_curve", "precision_recall", "rejection_vs_signal_efficiency", "threshold_curves", "score_distributions", "fold_stability", "feature_importance"],
+  "finite_mc_warning": {"background_neff_below": 100.0, "action": "flag result as finite-MC dominated"},
+  "categorized_bdt": {"implemented": false, "status": "pending recovery of actual HHH reference and project notes; specialist-score categories must propagate every physical background"},
+  "authorization": {"smoke_tests_authorized": true, "full_training_authorized": false, "condor_submit_authorized": false}
+}
