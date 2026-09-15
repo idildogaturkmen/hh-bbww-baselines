@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-08-13",
+  "upstream_repo": "pku-hep-group/jetfree-hh4b",
+  "frozen_commit": "4a0b313d55b1939b8665e980dddbf224bc773736",
+  "paper": "arXiv:2508.15048v2 (Yang and Li, verified by direct PDF read in this audit)",
+  "track_b_phase4_root": "/uscms_data/d3/iturkmen/hh4b_delphes/track_b_phase4_preflight_20260812",
+  "safety": {
+    "model_trained": false,
+    "full_150M_qcd_scan_performed": false,
+    "track_a_accessed_or_modified": false,
+    "track_a_mixing_authorized": false,
+    "gen_weight_used_as_weight": false,
+    "upstream_release_modified": false,
+    "high_stat_transfer_execution_authorized": false
+  },
+  "dataset_inventory": {
+    "training_signal_h3var": {"files": 500, "events": 69750093},
+    "training_qcd": {"files": 400, "events": 62941859},
+    "training_ttbar": {"files": 200, "events": 11599999},
+    "inference_qcd_1": {"files": 176, "events": 27683689},
+    "inference_qcd_2": {"files": 381, "events": 59939617},
+    "gghh_kl0": {"files": 1000, "events": 2102188},
+    "gghh_kl1": {"files": 1000, "events": 2538851},
+    "gghh_kl5": {"files": 1000, "events": 1050267},
+    "vbf_cv1_c2v1_kl1": {"files": 300, "events": 419198},
+    "vbf_cv1_c2v2_kl1": {"files": 300, "events": 1284000},
+    "vbf_cv1_c2v1_kl2": {"files": 300, "events": 601268},
+    "vbf_cv1_c2v1_kl0": {"files": 300, "events": 430736},
+    "vbf_cv0p5_c2v1_kl1": {"files": 300, "events": 1153048},
+    "vbf_cv1p5_c2v1_kl1": {"files": 300, "events": 828202},
+    "total_files": 6457,
+    "total_bytes": 1557638260877,
+    "qcd_lanes_combined_events": 150565165
+  },
+  "tag_contract": {
+    "loose_sophonAK4_probB_wp": 0.0243,
+    "tight_sophonAK4_probB_wp": 0.643,
+    "verified_against_analyzer_source": true,
+    "verified_against_paper_text": true,
+    "training_qcd_full_scan": {
+      "tight_exact2": 37886782,
+      "tight_exact3": 1787986,
+      "tight_exact4": 103221,
+      "loose_exact2": 28574627,
+      "loose_exact3": 31466909,
+      "loose_exact4": 2900323
+    },
+    "exclusive_multiplicities_constructible": true
+  },
+  "deterministic_file_split": {
+    "development": {"files": 240, "events": 37759585, "tight2": 22731060, "tight3": 1072091, "tight4": 61948},
+    "holdout_A": {"files": 80, "events": 12595807, "tight2": 7582197, "tight3": 357597, "tight4": 20501},
+    "holdout_B": {"files": 80, "events": 12586467, "tight2": 7573525, "tight3": 358298, "tight4": 20772},
+    "disjointness_verified_this_audit": true
+  },
+  "massplane_sr_cr_analog": {
+    "name": "TRACKB_CMS_INSPIRED_TAG4_SR_ANALOG",
+    "canary_files": 8,
+    "canary_events": 1257684,
+    "tight_exact4_in_canary": 1991,
+    "sr_r_hh_lt_30_center125": 92,
+    "cr_30_to_55_center125": 225,
+    "outside_ge_55": 1674,
+    "constructible": true,
+    "full_sample_scan_performed": false,
+    "full_sample_projection_order_of_magnitude_only": {"sr": 4770, "cr": 11700}
+  },
+  "qcd_independence": {
+    "generation_provenance_level_author_documented": true,
+    "generation_provenance_source": "arXiv:2508.15048v2 Supplementary Material Appendix C.1.a (p.10), independently read and verified in this audit",
+    "event_identity_level_verified": false,
+    "event_identity_branches_available": false,
+    "file_path_and_basename_overlap": 0
+  },
+  "training_qcd_weight_contract": {
+    "resolved": false,
+    "author_weight_dict_recovered": true,
+    "author_qcd_weight_formula": "lumi_scale * 4522600.0 * 100000.0 / ((17600 + 38072) * 5000000.0)",
+    "author_qcd_weight_value_450fb": 7.3112875413134075,
+    "paper_stated_training_qcd_raw_generated_events": 200000000000,
+    "weight_formula_denominator_job_term": 278360000000,
+    "reconciliation_discrepancy_fraction": 0.28,
+    "interpretation": "denominator term structurally matches the two inference-QCD campaigns (176+381 files), not the training-QCD campaign; ~28% off from the paper's own stated training-QCD raw generation count"
+  },
+  "model_input_readiness": {
+    "enriched_xgboost_baseline": "READY_NOW",
+    "dense_dnn": "READY_NOW",
+    "native_spanet": "READY_AFTER_DETERMINISTIC_ADAPTER",
+    "two_head_spanet": "READY_AFTER_DETERMINISTIC_ADAPTER",
+    "pairwise_aware_part": "READY_NOW",
+    "spanet_plus_frozen_part_embeddings": "READY_AFTER_DETERMINISTIC_ADAPTER",
+    "spanet_plus_frozen_jp_jepa_embeddings": "READY_AFTER_DETERMINISTIC_ADAPTER"
+  },
+  "licensing": {
+    "top_level_license_file_present": false,
+    "readme_requests_citation_only": true,
+    "weaver_core_subdirectory_license": "MIT",
+    "delphes_reader_inherited_header": "GPLv3+",
+    "pythia_main_inherited_header": "GPLv2+",
+    "legal_conclusion_drawn": false
+  },
+  "final_answers": {
+    "A_raw_count_ml_benchmark_ready": true,
+    "B_physically_normalized_450or138fb_ready": false,
+    "C_train_inference_qcd_statistically_independent": "qualified_true_generation_provenance_only",
+    "D_spanet_assignment_labels_constructible": "ready_after_deterministic_adapter",
+    "E_part_constituent_inputs_available": true,
+    "E_jp_jepa_constituent_inputs_available": "ready_after_deterministic_adapter_contract_unverified",
+    "F_top_priority_blocker": "training_qcd physical-weight contract (weight_dict formula not proven to apply to the 400-file training-QCD production)",
+    "cms_tail_pairwise_transformer_experiment_safe_to_design_next": true,
+    "cms_tail_pairwise_transformer_experiment_safe_to_execute_now": false
+  }
+}

@@ -1,0 +1,40 @@
+metric	scope	value	source_phase
+training_qcd_exact_stored_events	full dataset (400 files)	62941859	4C1R1/C2 + 4E
+training_qcd_tight_exact2	full dataset, full scan	37886782	4E (global_tight_multiplicity.tsv)
+training_qcd_tight_exact3	full dataset, full scan	1787986	4E
+training_qcd_tight_exact4	full dataset, full scan	103221	4E
+training_qcd_loose_exact2	full dataset, full scan	28574627	4E
+training_qcd_loose_exact3	full dataset, full scan	31466909	4E
+training_qcd_loose_exact4	full dataset, full scan	2900323	4E
+training_qcd_tight4_fraction_stability_relstdev	400-file stability (per-file fraction relative stdev)	0.0659	4E (stability.tight4_fraction.relative_stdev)
+training_qcd_tight3_fraction_stability_relstdev	400-file stability	0.0149	4E
+training_qcd_tight2_fraction_stability_relstdev	400-file stability	0.0020	4E
+split_development_events	Phase-4F deterministic split, files 1-240 by sha256 rank	37759585	4F
+split_development_tight2	Phase-4F deterministic split	22731060	4F
+split_development_tight3	Phase-4F deterministic split	1072091	4F
+split_development_tight4	Phase-4F deterministic split	61948	4F
+split_holdoutA_events	Phase-4F deterministic split, files 241-320	12595807	4F
+split_holdoutA_tight2	Phase-4F deterministic split	7582197	4F
+split_holdoutA_tight3	Phase-4F deterministic split	357597	4F
+split_holdoutA_tight4	Phase-4F deterministic split	20501	4F
+split_holdoutB_events	Phase-4F deterministic split, files 321-400	12586467	4F
+split_holdoutB_tight2	Phase-4F deterministic split	7573525	4F
+split_holdoutB_tight3	Phase-4F deterministic split	358298	4F
+split_holdoutB_tight4	Phase-4F deterministic split	20772	4F
+split_disjointness_verified	400 unique sha256 + 400 unique basenames across 240/80/80, event sums reconcile exactly to 62,941,859 and tag sums reconcile exactly to 4E global totals	true (re-verified in this audit, 2026-08-13)	4F + this audit
+tag4_x_massplane_events_read	bounded canary, 8 development-split files (same files as Phase-4D)	1257684	4G (this audit)
+tag4_x_massplane_tight_exact4	bounded canary	1991	4G (cross-checked exactly equal to Phase-4D TIGHT_EXACT4_SUPPORT)
+tag4_x_massplane_SR_R_HH_lt_30_center125	bounded canary, deterministic min-|m1-m2| pairing, center (125,125) GeV	92	4G (this audit)
+tag4_x_massplane_CR_30to55_center125	bounded canary	225	4G (this audit)
+tag4_x_massplane_outside_ge55	bounded canary	1674	4G (this audit)
+tag4_x_massplane_SR_fraction_of_tight4	bounded canary	0.0462	4G (this audit)
+tag4_x_massplane_CR_fraction_of_tight4	bounded canary	0.1130	4G (this audit)
+tag4_x_massplane_SR_projection_full_sample_ORDER_OF_MAGNITUDE_ONLY	projection = 103221 (Phase-4E full tight4) * 0.0462 (Phase-4G canary SR fraction); NOT a scan result	~4770	4G interpretation (projection, unverified at full-sample scale)
+inference_qcd_1_exact_stored_events	full dataset, metadata only (not tag-scanned in this audit)	27683689	4C1R1/C2
+inference_qcd_2_exact_stored_events	full dataset, metadata only (not tag-scanned in this audit)	59939617	4C1R1/C2
+inference_qcd_combined_exact_stored_events	sum	87623306	4C1R1/C2
+all_three_qcd_lanes_combined	sum	150565165	4C1R1/C2
+gghh_kl0_exact_stored_events	metadata only	2102188	4C1R1/C2
+gghh_kl1_exact_stored_events	metadata only	2538851	4C1R1/C2
+gghh_kl5_exact_stored_events	metadata only	1050267	4C1R1/C2
+training_ttbar_exact_stored_events	metadata only	11599999	4C1R1/C2

@@ -1,0 +1,1003 @@
+{
+  "n_checks": 199,
+  "n_passed": 199,
+  "n_mismatches": 0,
+  "status": "ALL_CHECKS_PASS",
+  "checks": [
+    {
+      "check": "trackb_seed_agg_recompute[E0,eps_S=0.6]",
+      "ok": true,
+      "detail": "recomputed mean=105.647860 (file=105.648), std=4.085859 (file=4.086), raw_mean=194.333333 (file=194.33)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.6,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=199 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.6,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=184 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.6,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=200 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E0,eps_S=0.5]",
+      "ok": true,
+      "detail": "recomputed mean=173.740798 (file=173.741), std=9.357670 (file=9.358), raw_mean=118.333333 (file=118.33)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.5,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=125 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.5,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=110 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.5,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=120 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E0,eps_S=0.4]",
+      "ok": true,
+      "detail": "recomputed mean=285.664367 (file=285.664), std=43.877945 (file=43.878), raw_mean=73.333333 (file=73.33)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.4,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=82 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.4,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=59 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.4,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=79 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E0,eps_S=0.25]",
+      "ok": true,
+      "detail": "recomputed mean=736.372959 (file=736.373), std=54.391381 (file=54.391), raw_mean=28.000000 (file=28.00)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.25,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=31 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.25,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=26 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.25,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=27 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E0,eps_S=0.2]",
+      "ok": true,
+      "detail": "recomputed mean=1094.200198 (file=1094.200), std=133.800624 (file=133.801), raw_mean=19.000000 (file=19.00)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.2,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=16 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.2,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=21 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.2,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=20 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E0,eps_S=0.1]",
+      "ok": true,
+      "detail": "recomputed mean=4441.883333 (file=4441.883), std=483.213204 (file=483.213), raw_mean=4.666667 (file=4.67)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.1,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=5 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.1,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=5 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E0,eps_S=0.1,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=4 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E1,eps_S=0.6]",
+      "ok": true,
+      "detail": "recomputed mean=130.185229 (file=130.185), std=7.362354 (file=7.362), raw_mean=158.000000 (file=158.00)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.6,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=171 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.6,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=153 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.6,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=150 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E1,eps_S=0.5]",
+      "ok": true,
+      "detail": "recomputed mean=237.574928 (file=237.575), std=5.109988 (file=5.110), raw_mean=86.333333 (file=86.33)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.5,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=85 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.5,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=85 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.5,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=89 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E1,eps_S=0.4]",
+      "ok": true,
+      "detail": "recomputed mean=439.520179 (file=439.520), std=38.394094 (file=38.394), raw_mean=47.000000 (file=47.00)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.4,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=52 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.4,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=47 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.4,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=42 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E1,eps_S=0.25]",
+      "ok": true,
+      "detail": "recomputed mean=1193.179894 (file=1193.180), std=202.930471 (file=202.930), raw_mean=17.666667 (file=17.67)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.25,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=18 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.25,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=21 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.25,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=14 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E1,eps_S=0.2]",
+      "ok": true,
+      "detail": "recomputed mean=1740.957937 (file=1740.958), std=240.233046 (file=240.233), raw_mean=12.000000 (file=12.00)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.2,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=14 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.2,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=12 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.2,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=10 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E1,eps_S=0.1]",
+      "ok": true,
+      "detail": "recomputed mean=7972.611111 (file=7972.611), std=1610.710680 (file=1610.711), raw_mean=2.666667 (file=2.67)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.1,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=2 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.1,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=3 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E1,eps_S=0.1,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=3 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E2,eps_S=0.6]",
+      "ok": true,
+      "detail": "recomputed mean=88.880244 (file=88.880), std=8.008580 (file=8.009), raw_mean=232.666667 (file=232.67)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.6,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=214 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.6,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=220 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.6,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=264 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E2,eps_S=0.5]",
+      "ok": true,
+      "detail": "recomputed mean=144.418917 (file=144.419), std=12.261005 (file=12.261), raw_mean=143.000000 (file=143.00)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.5,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=129 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.5,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=141 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.5,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=159 expected=well_supported file=well_supported"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E2,eps_S=0.4]",
+      "ok": true,
+      "detail": "recomputed mean=244.591731 (file=244.592), std=19.302785 (file=19.303), raw_mean=84.333333 (file=84.33)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.4,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=76 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.4,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=85 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.4,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=92 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E2,eps_S=0.25]",
+      "ok": true,
+      "detail": "recomputed mean=759.816974 (file=759.817), std=124.627786 (file=124.628), raw_mean=27.666667 (file=27.67)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.25,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=22 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.25,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=32 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.25,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=29 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E2,eps_S=0.2]",
+      "ok": true,
+      "detail": "recomputed mean=1370.083170 (file=1370.083), std=501.827437 (file=501.827), raw_mean=17.000000 (file=17.00)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.2,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=10 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.2,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=17 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.2,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=24 expected=statistically_limited_but_reportable file=statistically_limited_but_reportable"
+    },
+    {
+      "check": "trackb_seed_agg_recompute[E2,eps_S=0.1]",
+      "ok": true,
+      "detail": "recomputed mean=10250.500000 (file=10250.500), std=7248.198061 (file=7248.198), raw_mean=3.000000 (file=3.00)"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.1,seed=0]",
+      "ok": true,
+      "detail": "raw_qcd=1 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.1,seed=1]",
+      "ok": true,
+      "detail": "raw_qcd=4 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_per_seed_support_label[E2,eps_S=0.1,seed=2]",
+      "ok": true,
+      "detail": "raw_qcd=4 expected=exploratory_not_primary_quantitative_claim file=exploratory_not_primary_quantitative_claim"
+    },
+    {
+      "check": "trackb_n_working_points_checked",
+      "ok": true,
+      "detail": "n=18 (expected 18 = 3 arms x 6 eps_S)"
+    },
+    {
+      "check": "trackb_gain_recompute[E1_over_E0,eps_S=0.1]",
+      "ok": true,
+      "detail": "mean_of_ratios=1.833333 (data=1.833333), ratio_of_means=1.794872 (data=1.794872)"
+    },
+    {
+      "check": "trackb_gain_recompute[E2_over_E1,eps_S=0.1]",
+      "ok": true,
+      "detail": "mean_of_ratios=1.166667 (data=1.166667), ratio_of_means=1.285714 (data=1.285714)"
+    },
+    {
+      "check": "trackb_gain_recompute[E1_over_E0,eps_S=0.2]",
+      "ok": true,
+      "detail": "mean_of_ratios=1.630952 (data=1.630952), ratio_of_means=1.591078 (data=1.591078)"
+    },
+    {
+      "check": "trackb_gain_recompute[E2_over_E1,eps_S=0.2]",
+      "ok": true,
+      "detail": "mean_of_ratios=0.840850 (data=0.840850), ratio_of_means=0.786971 (data=0.786971)"
+    },
+    {
+      "check": "trackb_gain_recompute[E1_over_E0,eps_S=0.25]",
+      "ok": true,
+      "detail": "mean_of_ratios=1.629630 (data=1.629630), ratio_of_means=1.620347 (data=1.620347)"
+    },
+    {
+      "check": "trackb_gain_recompute[E2_over_E1,eps_S=0.25]",
+      "ok": true,
+      "detail": "mean_of_ratios=0.652397 (data=0.652397), ratio_of_means=0.636800 (data=0.636800)"
+    },
+    {
+      "check": "trackb_gain_recompute[E1_over_E0,eps_S=0.4]",
+      "ok": true,
+      "detail": "mean_of_ratios=1.571065 (data=1.571065), ratio_of_means=1.538591 (data=1.538591)"
+    },
+    {
+      "check": "trackb_gain_recompute[E2_over_E1,eps_S=0.4]",
+      "ok": true,
+      "detail": "mean_of_ratios=0.564558 (data=0.564558), ratio_of_means=0.556498 (data=0.556498)"
+    },
+    {
+      "check": "trackb_gain_recompute[E1_over_E0,eps_S=0.5]",
+      "ok": true,
+      "detail": "mean_of_ratios=1.371007 (data=1.371007), ratio_of_means=1.367409 (data=1.367409)"
+    },
+    {
+      "check": "trackb_gain_recompute[E2_over_E1,eps_S=0.5]",
+      "ok": true,
+      "detail": "mean_of_ratios=0.607167 (data=0.607167), ratio_of_means=0.607888 (data=0.607888)"
+    },
+    {
+      "check": "trackb_gain_recompute[E1_over_E0,eps_S=0.6]",
+      "ok": true,
+      "detail": "mean_of_ratios=1.233230 (data=1.233230), ratio_of_means=1.232252 (data=1.232252)"
+    },
+    {
+      "check": "trackb_gain_recompute[E2_over_E1,eps_S=0.6]",
+      "ok": true,
+      "detail": "mean_of_ratios=0.687567 (data=0.687567), ratio_of_means=0.682721 (data=0.682721)"
+    },
+    {
+      "check": "tracka_model_ordering_eps_S_0.40",
+      "ok": true,
+      "detail": "recomputed order=['cut_baseline', 'bdt_control0', 'dnn', 'cmstransformer', 'fivejetpartnet', 'bdt_newc']"
+    },
+    {
+      "check": "tracka_fig3_value_cross_check[cut_baseline]",
+      "ok": true,
+      "detail": "raw_source=1.9495747539882176 data_json=1.9495747539882176"
+    },
+    {
+      "check": "tracka_fig3_value_cross_check[bdt_control0]",
+      "ok": true,
+      "detail": "raw_source=13.206219040086584 data_json=13.206219040086584"
+    },
+    {
+      "check": "tracka_fig3_value_cross_check[dnn]",
+      "ok": true,
+      "detail": "raw_source=13.293380348969748 data_json=13.293380348969748"
+    },
+    {
+      "check": "tracka_fig3_value_cross_check[cmstransformer]",
+      "ok": true,
+      "detail": "raw_source=14.004173406181598 data_json=14.004173406181598"
+    },
+    {
+      "check": "tracka_fig3_value_cross_check[fivejetpartnet]",
+      "ok": true,
+      "detail": "raw_source=14.153602498327013 data_json=14.153602498327013"
+    },
+    {
+      "check": "tracka_fig3_value_cross_check[bdt_newc]",
+      "ok": true,
+      "detail": "raw_source=14.707157647495132 data_json=14.707157647495132"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[dnn,eps_S=0.6]",
+      "ok": true,
+      "detail": "recomputed mean=5.314686 (file=5.314686), std=0.064710 (file=0.064710)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[dnn,eps_S=0.585957]",
+      "ok": true,
+      "detail": "recomputed mean=5.626304 (file=5.626304), std=0.068799 (file=0.068799)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[dnn,eps_S=0.5]",
+      "ok": true,
+      "detail": "recomputed mean=8.142670 (file=8.142670), std=0.112580 (file=0.112580)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[dnn,eps_S=0.4]",
+      "ok": true,
+      "detail": "recomputed mean=13.293380 (file=13.293380), std=0.255596 (file=0.255596)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[dnn,eps_S=0.25]",
+      "ok": true,
+      "detail": "recomputed mean=33.656871 (file=33.656871), std=0.451415 (file=0.451415)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[dnn,eps_S=0.1]",
+      "ok": true,
+      "detail": "recomputed mean=183.957738 (file=183.957738), std=10.386814 (file=10.386814)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[cmstransformer,eps_S=0.6]",
+      "ok": true,
+      "detail": "recomputed mean=5.688752 (file=5.688752), std=0.105923 (file=0.105923)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[cmstransformer,eps_S=0.585957]",
+      "ok": true,
+      "detail": "recomputed mean=6.014956 (file=6.014956), std=0.117176 (file=0.117176)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[cmstransformer,eps_S=0.5]",
+      "ok": true,
+      "detail": "recomputed mean=8.723812 (file=8.723812), std=0.136509 (file=0.136509)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[cmstransformer,eps_S=0.4]",
+      "ok": true,
+      "detail": "recomputed mean=14.004173 (file=14.004173), std=0.296793 (file=0.296793)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[cmstransformer,eps_S=0.25]",
+      "ok": true,
+      "detail": "recomputed mean=34.366479 (file=34.366479), std=1.088946 (file=1.088946)"
+    },
+    {
+      "check": "tracka_seed_agg_recompute[cmstransformer,eps_S=0.1]",
+      "ok": true,
+      "detail": "recomputed mean=174.810728 (file=174.810728), std=9.008572 (file=9.008572)"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260811,eps_S=0.6]",
+      "ok": true,
+      "detail": "raw_bkg=178953, qcd_raw=6388, qcd_Neff=1357.028, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260811,eps_S=0.585957]",
+      "ok": true,
+      "detail": "raw_bkg=168425, qcd_raw=5904, qcd_Neff=1246.017, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260811,eps_S=0.5]",
+      "ok": true,
+      "detail": "raw_bkg=116497, qcd_raw=3925, qcd_Neff=776.612, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260811,eps_S=0.4]",
+      "ok": true,
+      "detail": "raw_bkg=71925, qcd_raw=2296, qcd_Neff=404.536, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260811,eps_S=0.25]",
+      "ok": true,
+      "detail": "raw_bkg=28426, qcd_raw=881, qcd_Neff=123.578, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260811,eps_S=0.1]",
+      "ok": true,
+      "detail": "raw_bkg=5511, qcd_raw=208, qcd_Neff=19.796, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260812,eps_S=0.6]",
+      "ok": true,
+      "detail": "raw_bkg=176992, qcd_raw=5327, qcd_Neff=1416.987, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260812,eps_S=0.585957]",
+      "ok": true,
+      "detail": "raw_bkg=167581, qcd_raw=5012, qcd_Neff=1333.578, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260812,eps_S=0.5]",
+      "ok": true,
+      "detail": "raw_bkg=115516, qcd_raw=3231, qcd_Neff=803.950, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260812,eps_S=0.4]",
+      "ok": true,
+      "detail": "raw_bkg=70117, qcd_raw=1785, qcd_Neff=439.812, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260812,eps_S=0.25]",
+      "ok": true,
+      "detail": "raw_bkg=27854, qcd_raw=641, qcd_Neff=137.085, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260812,eps_S=0.1]",
+      "ok": true,
+      "detail": "raw_bkg=4927, qcd_raw=121, qcd_Neff=25.781, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260813,eps_S=0.6]",
+      "ok": true,
+      "detail": "raw_bkg=181351, qcd_raw=7678, qcd_Neff=1388.247, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260813,eps_S=0.585957]",
+      "ok": true,
+      "detail": "raw_bkg=171532, qcd_raw=7299, qcd_Neff=1308.956, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260813,eps_S=0.5]",
+      "ok": true,
+      "detail": "raw_bkg=118688, qcd_raw=5202, qcd_Neff=819.347, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260813,eps_S=0.4]",
+      "ok": true,
+      "detail": "raw_bkg=72800, qcd_raw=3376, qcd_Neff=401.762, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260813,eps_S=0.25]",
+      "ok": true,
+      "detail": "raw_bkg=28565, qcd_raw=1393, qcd_Neff=106.898, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[dnn,seed=20260813,eps_S=0.1]",
+      "ok": true,
+      "detail": "raw_bkg=5117, qcd_raw=322, qcd_Neff=19.311, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260811,eps_S=0.6]",
+      "ok": true,
+      "detail": "raw_bkg=169124, qcd_raw=8047, qcd_Neff=1333.295, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260811,eps_S=0.585957]",
+      "ok": true,
+      "detail": "raw_bkg=160107, qcd_raw=7570, qcd_Neff=1246.755, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260811,eps_S=0.5]",
+      "ok": true,
+      "detail": "raw_bkg=109676, qcd_raw=5107, qcd_Neff=756.224, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260811,eps_S=0.4]",
+      "ok": true,
+      "detail": "raw_bkg=68549, qcd_raw=2990, qcd_Neff=399.645, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260811,eps_S=0.25]",
+      "ok": true,
+      "detail": "raw_bkg=28370, qcd_raw=1085, qcd_Neff=147.325, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260811,eps_S=0.1]",
+      "ok": true,
+      "detail": "raw_bkg=5694, qcd_raw=157, qcd_Neff=28.303, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260812,eps_S=0.6]",
+      "ok": true,
+      "detail": "raw_bkg=169123, qcd_raw=8908, qcd_Neff=1383.054, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260812,eps_S=0.585957]",
+      "ok": true,
+      "detail": "raw_bkg=159956, qcd_raw=8473, qcd_Neff=1275.328, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260812,eps_S=0.5]",
+      "ok": true,
+      "detail": "raw_bkg=110462, qcd_raw=6117, qcd_Neff=802.693, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260812,eps_S=0.4]",
+      "ok": true,
+      "detail": "raw_bkg=69038, qcd_raw=3856, qcd_Neff=441.335, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260812,eps_S=0.25]",
+      "ok": true,
+      "detail": "raw_bkg=28035, qcd_raw=1485, qcd_Neff=152.534, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260812,eps_S=0.1]",
+      "ok": true,
+      "detail": "raw_bkg=5516, qcd_raw=305, qcd_Neff=30.299, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260813,eps_S=0.6]",
+      "ok": true,
+      "detail": "raw_bkg=163784, qcd_raw=5878, qcd_Neff=1482.834, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260813,eps_S=0.585957]",
+      "ok": true,
+      "detail": "raw_bkg=154752, qcd_raw=5506, qcd_Neff=1377.427, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260813,eps_S=0.5]",
+      "ok": true,
+      "detail": "raw_bkg=107212, qcd_raw=3620, qcd_Neff=848.045, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260813,eps_S=0.4]",
+      "ok": true,
+      "detail": "raw_bkg=66361, qcd_raw=2158, qcd_Neff=465.578, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260813,eps_S=0.25]",
+      "ok": true,
+      "detail": "raw_bkg=26733, qcd_raw=819, qcd_Neff=145.119, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_support_gate_recompute[cmstransformer,seed=20260813,eps_S=0.1]",
+      "ok": true,
+      "detail": "raw_bkg=5152, qcd_raw=166, qcd_Neff=24.331, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_n_support_flags_checked",
+      "ok": true,
+      "detail": "n=36 (expected 36 = 2 models x 3 seeds x 6 eps_S)"
+    },
+    {
+      "check": "tracka_eps_b_tail_gate_recompute[dnn,eps_B=0.1]",
+      "ok": true,
+      "detail": "raw_bkg=95176, qcd_raw=3134, qcd_Neff=580.904, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_eps_b_tail_gate_recompute[dnn,eps_B=0.01]",
+      "ok": true,
+      "detail": "raw_bkg=9518, qcd_raw=345, qcd_Neff=41.693, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_eps_b_tail_gate_recompute[dnn,eps_B=0.001]",
+      "ok": true,
+      "detail": "raw_bkg=952, qcd_raw=73, qcd_Neff=2.190, recomputed=False, file=False"
+    },
+    {
+      "check": "tracka_eps_b_tail_gate_recompute[dnn,eps_B=0.0001]",
+      "ok": true,
+      "detail": "raw_bkg=95, qcd_raw=15, qcd_Neff=2.029, recomputed=False, file=False"
+    },
+    {
+      "check": "tracka_eps_b_tail_gate_recompute[cmstransformer,eps_B=0.1]",
+      "ok": true,
+      "detail": "raw_bkg=95176, qcd_raw=4334, qcd_Neff=626.366, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_eps_b_tail_gate_recompute[cmstransformer,eps_B=0.01]",
+      "ok": true,
+      "detail": "raw_bkg=9518, qcd_raw=272, qcd_Neff=50.920, recomputed=True, file=True"
+    },
+    {
+      "check": "tracka_eps_b_tail_gate_recompute[cmstransformer,eps_B=0.001]",
+      "ok": true,
+      "detail": "raw_bkg=952, qcd_raw=23, qcd_Neff=6.558, recomputed=False, file=False"
+    },
+    {
+      "check": "tracka_eps_b_tail_gate_recompute[cmstransformer,eps_B=0.0001]",
+      "ok": true,
+      "detail": "raw_bkg=95, qcd_raw=2, qcd_Neff=1.135, recomputed=False, file=False"
+    },
+    {
+      "check": "tracka_n_eps_b_tail_checked",
+      "ok": true,
+      "detail": "n=8 (expected 8 = 2 models x 4 eps_B)"
+    },
+    {
+      "check": "tracka_no_fabricated_uncertainty[cut_baseline]",
+      "ok": true,
+      "detail": "kind=frozen_reference_single_operating_point R_B_err=None"
+    },
+    {
+      "check": "tracka_no_fabricated_uncertainty[bdt_control0]",
+      "ok": true,
+      "detail": "kind=frozen_reference R_B_err=None"
+    },
+    {
+      "check": "tracka_measured_model_has_uncertainty[dnn]",
+      "ok": true,
+      "detail": "R_B_err=0.2555963897130513"
+    },
+    {
+      "check": "tracka_measured_model_has_uncertainty[cmstransformer]",
+      "ok": true,
+      "detail": "R_B_err=0.2967925621786718"
+    },
+    {
+      "check": "tracka_no_fabricated_uncertainty[fivejetpartnet]",
+      "ok": true,
+      "detail": "kind=frozen_reference_cited_not_recomputed R_B_err=None"
+    },
+    {
+      "check": "tracka_no_fabricated_uncertainty[bdt_newc]",
+      "ok": true,
+      "detail": "kind=frozen_reference R_B_err=None"
+    },
+    {
+      "check": "tex_table_A_row[E0,eps_S=0.60]",
+      "ok": true,
+      "detail": "tex R_B=105.65+/-4.09 raw_qcd=194.3; json R_B=105.648+/-4.086 raw_qcd=194.330"
+    },
+    {
+      "check": "tex_table_A_row[E1,eps_S=0.60]",
+      "ok": true,
+      "detail": "tex R_B=130.19+/-7.36 raw_qcd=158.0; json R_B=130.185+/-7.362 raw_qcd=158.000"
+    },
+    {
+      "check": "tex_table_A_row[E2,eps_S=0.60]",
+      "ok": true,
+      "detail": "tex R_B=88.88+/-8.01 raw_qcd=232.7; json R_B=88.880+/-8.009 raw_qcd=232.670"
+    },
+    {
+      "check": "tex_table_A_row[E0,eps_S=0.50]",
+      "ok": true,
+      "detail": "tex R_B=173.74+/-9.36 raw_qcd=118.3; json R_B=173.741+/-9.358 raw_qcd=118.330"
+    },
+    {
+      "check": "tex_table_A_row[E1,eps_S=0.50]",
+      "ok": true,
+      "detail": "tex R_B=237.57+/-5.11 raw_qcd=86.3; json R_B=237.575+/-5.110 raw_qcd=86.330"
+    },
+    {
+      "check": "tex_table_A_row[E2,eps_S=0.50]",
+      "ok": true,
+      "detail": "tex R_B=144.42+/-12.26 raw_qcd=143.0; json R_B=144.419+/-12.261 raw_qcd=143.000"
+    },
+    {
+      "check": "tex_table_A_row[E0,eps_S=0.40]",
+      "ok": true,
+      "detail": "tex R_B=285.66+/-43.88 raw_qcd=73.3; json R_B=285.664+/-43.878 raw_qcd=73.330"
+    },
+    {
+      "check": "tex_table_A_row[E1,eps_S=0.40]",
+      "ok": true,
+      "detail": "tex R_B=439.52+/-38.39 raw_qcd=47.0; json R_B=439.520+/-38.394 raw_qcd=47.000"
+    },
+    {
+      "check": "tex_table_A_row[E2,eps_S=0.40]",
+      "ok": true,
+      "detail": "tex R_B=244.59+/-19.30 raw_qcd=84.3; json R_B=244.592+/-19.303 raw_qcd=84.330"
+    },
+    {
+      "check": "tex_table_A_row[E0,eps_S=0.25]",
+      "ok": true,
+      "detail": "tex R_B=736.37+/-54.39 raw_qcd=28.0; json R_B=736.373+/-54.391 raw_qcd=28.000"
+    },
+    {
+      "check": "tex_table_A_row[E1,eps_S=0.25]",
+      "ok": true,
+      "detail": "tex R_B=1193.18+/-202.93 raw_qcd=17.7; json R_B=1193.180+/-202.930 raw_qcd=17.670"
+    },
+    {
+      "check": "tex_table_A_row[E2,eps_S=0.25]",
+      "ok": true,
+      "detail": "tex R_B=759.82+/-124.63 raw_qcd=27.7; json R_B=759.817+/-124.628 raw_qcd=27.670"
+    },
+    {
+      "check": "tex_table_A_row[E0,eps_S=0.20]",
+      "ok": true,
+      "detail": "tex R_B=1094.20+/-133.80 raw_qcd=19.0; json R_B=1094.200+/-133.801 raw_qcd=19.000"
+    },
+    {
+      "check": "tex_table_A_row[E1,eps_S=0.20]",
+      "ok": true,
+      "detail": "tex R_B=1740.96+/-240.23 raw_qcd=12.0; json R_B=1740.958+/-240.233 raw_qcd=12.000"
+    },
+    {
+      "check": "tex_table_A_row[E2,eps_S=0.20]",
+      "ok": true,
+      "detail": "tex R_B=1370.08+/-501.83 raw_qcd=17.0; json R_B=1370.083+/-501.827 raw_qcd=17.000"
+    },
+    {
+      "check": "tex_table_A_row[E0,eps_S=0.10]",
+      "ok": true,
+      "detail": "tex R_B=4441.88+/-483.21 raw_qcd=4.7; json R_B=4441.883+/-483.213 raw_qcd=4.670"
+    },
+    {
+      "check": "tex_table_A_row[E1,eps_S=0.10]",
+      "ok": true,
+      "detail": "tex R_B=7972.61+/-1610.71 raw_qcd=2.7; json R_B=7972.611+/-1610.711 raw_qcd=2.670"
+    },
+    {
+      "check": "tex_table_A_row[E2,eps_S=0.10]",
+      "ok": true,
+      "detail": "tex R_B=10250.50+/-7248.20 raw_qcd=3.0; json R_B=10250.500+/-7248.198 raw_qcd=3.000"
+    },
+    {
+      "check": "tex_table_A_rows_found",
+      "ok": true,
+      "detail": "n=18 (expected 18)"
+    },
+    {
+      "check": "tex_table_B_value_present[cut_baseline]",
+      "ok": true,
+      "detail": "looked for '1.95'"
+    },
+    {
+      "check": "tex_table_B_value_present[bdt_control0]",
+      "ok": true,
+      "detail": "looked for '13.21'"
+    },
+    {
+      "check": "tex_table_B_value_present[dnn]",
+      "ok": true,
+      "detail": "looked for '13.29'"
+    },
+    {
+      "check": "tex_table_B_value_present[cmstransformer]",
+      "ok": true,
+      "detail": "looked for '14.00'"
+    },
+    {
+      "check": "tex_table_B_value_present[fivejetpartnet]",
+      "ok": true,
+      "detail": "looked for '14.15'"
+    },
+    {
+      "check": "tex_table_B_value_present[bdt_newc]",
+      "ok": true,
+      "detail": "looked for '14.71'"
+    },
+    {
+      "check": "paper_draft_prose_gain_pct[eps_S=0.6,E1/E0]",
+      "ok": true,
+      "detail": "prose claims +23%, recomputed +23% (raw 23.23%)"
+    },
+    {
+      "check": "paper_draft_prose_gain_pct[eps_S=0.6,E2/E1]",
+      "ok": true,
+      "detail": "prose claims -32%, recomputed -32% (raw -31.73%)"
+    },
+    {
+      "check": "paper_draft_prose_string_present[+23%]",
+      "ok": true,
+      "detail": "looked for literal '+23%' in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_string_present[-32%]",
+      "ok": true,
+      "detail": "looked for literal '-32%' in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_gain_pct[eps_S=0.5,E1/E0]",
+      "ok": true,
+      "detail": "prose claims +37%, recomputed +37% (raw 36.74%)"
+    },
+    {
+      "check": "paper_draft_prose_gain_pct[eps_S=0.5,E2/E1]",
+      "ok": true,
+      "detail": "prose claims -39%, recomputed -39% (raw -39.21%)"
+    },
+    {
+      "check": "paper_draft_prose_string_present[+37%]",
+      "ok": true,
+      "detail": "looked for literal '+37%' in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_string_present[-39%]",
+      "ok": true,
+      "detail": "looked for literal '-39%' in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_gain_pct[eps_S=0.4,E1/E0]",
+      "ok": true,
+      "detail": "prose claims +54%, recomputed +54% (raw 53.86%)"
+    },
+    {
+      "check": "paper_draft_prose_gain_pct[eps_S=0.4,E2/E1]",
+      "ok": true,
+      "detail": "prose claims -44%, recomputed -44% (raw -44.35%)"
+    },
+    {
+      "check": "paper_draft_prose_string_present[+54%]",
+      "ok": true,
+      "detail": "looked for literal '+54%' in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_string_present[-44%]",
+      "ok": true,
+      "detail": "looked for literal '-44%' in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_gain_pct[eps_S=0.1,E1/E0]",
+      "ok": true,
+      "detail": "prose claims +79%, recomputed +79% (raw 79.49%)"
+    },
+    {
+      "check": "paper_draft_prose_gain_pct[eps_S=0.1,E2/E1]",
+      "ok": true,
+      "detail": "prose claims +29%, recomputed +29% (raw 28.57%)"
+    },
+    {
+      "check": "paper_draft_prose_string_present[+79%]",
+      "ok": true,
+      "detail": "looked for literal '+79%' in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_string_present[+29%]",
+      "ok": true,
+      "detail": "looked for literal '+29%' in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_eps010_dnn_fraction",
+      "ok": true,
+      "detail": "expected literal '64.1%' (from EVALUATION_RESULTS.json=0.641) present in MECHANISM_RESULTS_PAPER_DRAFT.md"
+    },
+    {
+      "check": "paper_draft_prose_eps010_dnn_fraction_not_source_typo",
+      "ok": true,
+      "detail": "the source v2 RESULTS_SUMMARY.md prose's own transcription slip ('63.6%', vs. its own table/JSON value 0.641=64.1%) must not appear in this package's prose"
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "naming_discipline": {
+    "custom_model_correct_name": "CMS-inspired five-jet pairwise event Transformer",
+    "custom_model_source": "model_literature_freeze_20260813_v1/models/cms_inspired_fivejet_pairwise_event_transformer.py",
+    "class_name": "CMSInspiredFiveJetPairwiseEventTransformer",
+    "forbidden_names": [
+      "SPA-Net",
+      "canonical ParT",
+      "official CMS reproduction"
+    ],
+    "documented_cms_facts_matched": [
+      "five leading b-tagged jets as tokens",
+      "pairwise jet-pair features modify self-attention",
+      "eight Transformer blocks",
+      "separate 3-hidden-layer event-feature encoder",
+      "common 3-hidden-layer decoder"
+    ],
+    "undocumented_hyperparameters_tagged": "PROJECT_CHOICE_NOT_CMS in model source"
+  },
+  "cms_reference_not_a_target": {
+    "cms_hig24010_public_claim": "approximately two orders of magnitude additional background rejection at ~40% signal efficiency, three orders at ~10%",
+    "commensurable_with_this_benchmark": false,
+    "differences": [
+      "simulation",
+      "tagger",
+      "background_model",
+      "sample_support",
+      "model_implementation",
+      "physical_normalization"
+    ]
+  },
+  "measured_comparison_eps_S_0.40": {
+    "cut_baseline_historical_RHH_lt_34": {
+      "status": "measured_single_fixed_point",
+      "R_B": 1.9495747539882176
+    },
+    "BDT_CONTROL_0": {
+      "status": "measured",
+      "auc": 0.7882918119919944,
+      "R_B": 13.206219040086584
+    },
+    "dense_DNN_this_benchmark": {
+      "status": "measured_5fold_oof_3seed",
+      "auc_seed_mean": 0.7889090682949015,
+      "auc_seed_std": 0.0012797812785335016,
+      "R_B_seed_mean": 13.293380348969748,
+      "R_B_seed_std": 0.2555963897130513
+    },
+    "CMS_inspired_transformer_this_benchmark": {
+      "status": "measured_5fold_oof_3seed",
+      "auc_seed_mean": 0.7983434304151461,
+      "auc_seed_std": 0.0030538612073516117,
+      "R_B_seed_mean": 14.004173406181598,
+      "R_B_seed_std": 0.2967925621786718
+    },
+    "FiveJetParTNet": {
+      "status": "cited_frozen_reference_not_retrained",
+      "auc": 0.7988821252290026,
+      "R_B": 14.153602498327013
+    },
+    "BDT_NEW_C": {
+      "status": "measured",
+      "auc": 0.7991543480900883,
+      "R_B": 14.707157647495132
+    },
+    "categorized_BDT": {
+      "status": "UNAVAILABLE"
+    },
+    "LBN": {
+      "status": "UNAVAILABLE"
+    },
+    "point_estimate_ordering": "cut(1.9496) << CONTROL_0(13.206) < DNN(13.293) < transformer(14.004) < FiveJetParTNet(14.154) < NEW_C(14.707)",
+    "only_dnn_and_transformer_have_computed_confidence_intervals": true,
+    "no_comparison_to_control0_newc_partnet_outside_eps_s_0.40": true
+  },
+  "unavailable_comparisons": {
+    "categorized_BDT": {
+      "status": "UNAVAILABLE_AS_COMPARABLE",
+      "candidates_audited": 3,
+      "reason": "two contractually specified but never trained; one trained on a structurally different ~31,225-row physical-significance-optimization population, not this benchmark's 1,042,397-row TRAIN population"
+    },
+    "LBN": {
+      "status": "UNAVAILABLE",
+      "reason": "contractually specified (lbn_dnn, hh4b_train_fold_and_baseline_benchmark_contract_20260805_v1) intending this same population/folds/weights, but never trained -- no checkpoint or output artifact exists"
+    }
+  },
+  "three_separable_limitations": {
+    "classifier_capacity": "dense DNN (14,849 params, no pairwise/5th-jet input) underperforms the transformer (426,697 params, pairwise-attention-bias) and NEW_C (engineered pairwise features) at eps_S=0.40 -- consistent with, not proof of, a capacity/inductive-bias gap",
+    "finite_qcd_support": "both newly-trained models hit the identical qcd_Neff<10 floor at the identical working point (eps_B=0.001) -- a property of the shared QCD Monte Carlo sample's finite statistics, not of either classifier",
+    "representation_richness": "Track A's binary Delphes b-tag and single-inclusive-QCD background model cannot test whether continuous flavor information or a richer background model would add further separation on top of the pairwise-attention mechanism already measured here -- this is the question handed to Track B"
+  },
+  "max_supportable_rejection": {
+    "support_gate": "raw_background_rows>=100 AND qcd_raw_rows>=10 AND qcd_Neff>=10",
+    "deepest_fixed_epsilon_B_supported": {
+      "epsilon_B": 0.01,
+      "R_B_approx": 100.0,
+      "qcd_Neff_dnn": 41.693368,
+      "qcd_Neff_transformer": 50.920341
+    },
+    "deepest_fixed_epsilon_S_supported": {
+      "epsilon_S": 0.1,
+      "R_B_dnn": 172.701688,
+      "R_B_transformer": 167.151212,
+      "qcd_Neff_dnn": 19.79631,
+      "qcd_Neff_transformer": 28.302882
+    },
+    "first_unsupported_point": {
+      "epsilon_B": 0.001,
+      "R_B_approx": 1000.0,
+      "qcd_Neff_dnn": 2.190317,
+      "qcd_Neff_transformer": 6.558152,
+      "scientifically_supportable": false
+    },
+    "no_tail_score_converted_to_sensitivity_claim_beyond_support_floor": true
+  },
+  "paired_dnn_vs_transformer_bootstrap": {
+    "method": "Jointly-resampled (same group multiset scored by both models per replicate) group-stratified bootstrap, primary seed only (20260811). Diff/ratio convention: transformer minus/over DNN -- positive diff or ratio>1 favors the transformer.",
+    "n_replicates": 2000,
+    "seed": 20260813,
+    "by_epsilon_s": {
+      "eps_S=0.6": {
+        "target_epsilon_S": 0.6,
+        "point_estimate_transformer": 5.627580946524444,
+        "point_estimate_dnn": 5.318485859415601,
+        "point_estimate_diff_transformer_minus_dnn": 0.3090950871088429,
+        "point_estimate_ratio_transformer_over_dnn": 1.0581171211655354,
+        "n_finite_replicates": 2000,
+        "n_replicates": 2000,
+        "bootstrap_diff_transformer_minus_dnn": {
+          "median": 0.29118332968465,
+          "mean": 0.29723731245260365,
+          "std": 0.1486602463532858,
+          "ci68_lo": 0.14983387817507066,
+          "ci68_hi": 0.4485384627490215,
+          "ci95_lo": 0.022853143800515684,
+          "ci95_hi": 0.6090702456171069
+        },
+        "bootstrap_ratio_transformer_over_dnn": {
+          "median": 1.054679845484443,
+          "mean": 1.0558101201405294,
+          "std": 0.02763593578075099,
+          "ci68_lo": 1.0283720108827104,
+          "ci68_hi": 1.0838860385285767,
+          "ci95_lo": 1.0043960324301722,
+          "ci95_hi": 1.112083915697671
+        },
+        "fraction_replicates_transformer_gt_dnn": 0.985,
+        "fraction_replicates_dnn_gt_transformer": 0.015
+      },
+      "eps_S=0.585957": {
+        "target_epsilon_S": 0.585957,
+        "point_estimate_transformer": 5.944518353351197,
+        "point_estimate_dnn": 5.650936618673,
+        "point_estimate_diff_transformer_minus_dnn": 0.29358173467819704,
+        "point_estimate_ratio_transformer_over_dnn": 1.0519527565940279,
+        "n_finite_replicates": 2000,
+        "n_replicates": 2000,
+        "bootstrap_diff_transformer_minus_dnn": {
+          "median": 0.2877930607922723,
+          "mean": 0.2989392595146219,
+          "std": 0.1586939284625914,
+          "ci68_lo": 0.14268286231179908,
+          "ci68_hi": 0.45789353683326445,
+          "ci95_lo": 0.016577486342094196,
+          "ci95_hi": 0.6394293381247017
+        },
+        "bootstrap_ratio_transformer_over_dnn": {
+          "median": 1.0509415395021904,
+          "mean": 1.0528916807426874,
+          "std": 0.027765477308120887,
+          "ci68_lo": 1.0253029515455856,
+          "ci68_hi": 1.0810945902824256,
+          "ci95_lo": 1.0028700670984458,
+          "ci95_hi": 1.1117627974164948
+        },
+        "fraction_replicates_transformer_gt_dnn": 0.983,
+        "fraction_replicates_dnn_gt_transformer": 0.017
+      },
+      "eps_S=0.5": {
+        "target_epsilon_S": 0.5,
+        "point_estimate_transformer": 8.677914949487581,
+        "point_estimate_dnn": 8.16981553173043,
+        "point_estimate_diff_transformer_minus_dnn": 0.5080994177571512,
+        "point_estimate_ratio_transformer_over_dnn": 1.0621922754294468,
+        "n_finite_replicates": 2000,
+        "n_replicates": 2000,
+        "bootstrap_diff_transformer_minus_dnn": {
+          "median": 0.49186149511428834,
+          "mean": 0.50579040116166,
+          "std": 0.28406032304435014,
+          "ci68_lo": 0.22611639293590585,
+          "ci68_hi": 0.7896486456060545,
+          "ci95_lo": -0.010836701700329309,
+          "ci95_hi": 1.0997309037762997
+        },
+        "bootstrap_ratio_transformer_over_dnn": {
+          "median": 1.0602600846658121,
+          "mean": 1.0617620620314632,
+          "std": 0.03420875341995003,
+          "ci68_lo": 1.0278450125194751,
+          "ci68_hi": 1.0960181861475178,
+          "ci95_lo": 0.998707699736932,
+          "ci95_hi": 1.1314439881323197
+        },
+        "fraction_replicates_transformer_gt_dnn": 0.9715,
+        "fraction_replicates_dnn_gt_transformer": 0.0285
+      },
+      "eps_S=0.4": {
+        "target_epsilon_S": 0.4,
+        "point_estimate_transformer": 13.884360092780346,
+        "point_estimate_dnn": 13.232659019812305,
+        "point_estimate_diff_transformer_minus_dnn": 0.6517010729680415,
+        "point_estimate_ratio_transformer_over_dnn": 1.0492494420049892,
+        "n_finite_replicates": 2000,
+        "n_replicates": 2000,
+        "bootstrap_diff_transformer_minus_dnn": {
+          "median": 0.5994932661433614,
+          "mean": 0.6317448961260678,
+          "std": 0.5255005306449496,
+          "ci68_lo": 0.11394297976172901,
+          "ci68_hi": 1.169430579632907,
+          "ci95_lo": -0.3207858889865001,
+          "ci95_hi": 1.727513906105796
+        },
+        "bootstrap_ratio_transformer_over_dnn": {
+          "median": 1.0456701731673888,
+          "mean": 1.0478789204511576,
+          "std": 0.03961245195576061,
+          "ci68_lo": 1.0083845412145036,
+          "ci68_hi": 1.0883567346726946,
+          "ci95_lo": 0.9772703904196182,
+          "ci95_hi": 1.1299865402799993
+        },
+        "fraction_replicates_transformer_gt_dnn": 0.8855,
+        "fraction_replicates_dnn_gt_transformer": 0.1145
+      },
+      "eps_S=0.25": {
+        "target_epsilon_S": 0.25,
+        "point_estimate_transformer": 33.54807895664434,
+        "point_estimate_dnn": 33.48198832055161,
+        "point_estimate_diff_transformer_minus_dnn": 0.06609063609273136,
+        "point_estimate_ratio_transformer_over_dnn": 1.0019739161085652,
+        "n_finite_replicates": 2000,
+        "n_replicates": 2000,
+        "bootstrap_diff_transformer_minus_dnn": {
+          "median": -0.04492269198894405,
+          "mean": -0.01895105213337204,
+          "std": 2.091132957800509,
+          "ci68_lo": -2.0262362903501185,
+          "ci68_hi": 1.9795708003779091,
+          "ci95_lo": -4.06658102857239,
+          "ci95_hi": 4.268971512354828
+        },
+        "bootstrap_ratio_transformer_over_dnn": {
+          "median": 0.9986098637303991,
+          "mean": 1.000680736576069,
+          "std": 0.06225630845337672,
+          "ci68_lo": 0.9393229617841912,
+          "ci68_hi": 1.0621363670386845,
+          "ci95_lo": 0.8857456871025076,
+          "ci95_hi": 1.1296209298574909
+        },
+        "fraction_replicates_transformer_gt_dnn": 0.4895,
+        "fraction_replicates_dnn_gt_transformer": 0.5105
+      },
+      "eps_S=0.1": {
+        "target_epsilon_S": 0.1,
+        "point_estimate_transformer": 167.15121180189672,
+        "point_estimate_dnn": 172.70168753402285,
+        "point_estimate_diff_transformer_minus_dnn": -5.550475732126131,
+        "point_estimate_ratio_transformer_over_dnn": 0.9678609062170705,
+        "n_finite_replicates": 2000,
+        "n_replicates": 2000,
+        "bootstrap_diff_transformer_minus_dnn": {
+          "median": -7.736579049533134,
+          "mean": -8.057235073270581,
+          "std": 21.472341962707272,
+          "ci68_lo": -28.701483296585412,
+          "ci68_hi": 12.877888333103341,
+          "ci95_lo": -51.73936866461549,
+          "ci95_hi": 32.78855996980757
+        },
+        "bootstrap_ratio_transformer_over_dnn": {
+          "median": 0.955831739827602,
+          "mean": 0.963230115984907,
+          "std": 0.11781524112267014,
+          "ci68_lo": 0.8470005318173611,
+          "ci68_hi": 1.0818436728205871,
+          "ci95_lo": 0.7557275468687398,
+          "ci95_hi": 1.2156305468859232
+        },
+        "fraction_replicates_transformer_gt_dnn": 0.357,
+        "fraction_replicates_dnn_gt_transformer": 0.641
+      }
+    },
+    "ordering_flip_check_eps_S_0.40_vs_0.10": {
+      "sign_diff_transformer_minus_dnn_at_eps_S_0.40": 1.0,
+      "sign_diff_transformer_minus_dnn_at_eps_S_0.10": -1.0,
+      "ordering_flips": true
+    }
+  },
+  "cms_sensitivity_caveat": "Track A has never computed a CMS-comparable expected-signal-strength limit (blocked on 4b SR Monte Carlo statistics, unrelated to classifier choice). Even if attempted, falling short of CMS's public expected limit would not by itself diagnose a classifier failure, since CMS's full sensitivity includes trigger efficiency, flavor tagging, mass regression, a validated data-driven background model, signal-region categorization, and the full systematic treatment -- none of which this classifier-only mechanism study attempts to reproduce.",
+  "resource_summary": {
+    "dnn_total_wallclock_hours": 0.9282501254091201,
+    "cmstransformer_total_wallclock_hours": 25.166869984959185,
+    "dnn_parameters": 14849,
+    "cmstransformer_parameters": 426697,
+    "speed_ratio_transformer_slower_than_dnn": 27.112164379042827,
+    "param_ratio_transformer_vs_dnn": 28.735739780456598
+  },
+  "scope_discipline": {
+    "no_new_training": true,
+    "no_track_b_events": true,
+    "no_cms_collision_data": true,
+    "no_threshold_tuning": true,
+    "no_architecture_change": true,
+    "no_commit_or_push": true
+  },
+  "source_package": "post_training_evaluation_20260815_v2 (validated, 25/25 checks, 0 mismatches; supersedes v1 per that package's own CORRECTIONS_FROM_V1.md)"
+}
