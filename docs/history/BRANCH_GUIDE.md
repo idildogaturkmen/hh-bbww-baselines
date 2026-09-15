@@ -6,10 +6,19 @@ commits to `main` — a consequence of how the SURF project was actually run
 guide exists so a reader can tell, for any branch, what it represents,
 whether it holds unique work, and what to read instead if it doesn't.
 
-**No branch is deleted, renamed, or merged by this reorganization.** This
-guide is documentation only. Commit counts below are "commits reachable from
-this branch but not from `repo-reorg/2026-09`" (`git log --oneline
-repo-reorg/2026-09..<branch> | wc -l`), computed 2026-09-15.
+**As of 2026-09-15 (afternoon), `main` is the complete, canonical SURF
+repository** — `repo-reorg/2026-09` was promoted into `main` by a
+fast-forward-only merge (no squash, no rebase, tip
+`87720169b28855330268ca006634897cfc063f0f` on both). A tag,
+`pre-surf-reorg-main-20260915`, marks exactly where `main` stood
+immediately before that promotion, for anyone who needs the pre-reorg
+state. `repo-reorg/2026-09` is kept (identical to `main`) as the named
+provenance branch for the reorganization itself, not as a separate
+"more current" branch. **No branch is deleted, renamed, or merged away by
+this reorganization** — this guide is documentation only. Commit counts
+below are "commits reachable from this branch but not from `main`"
+(computed 2026-09-15, before the promotion; `repo-reorg/2026-09` and
+`main` are interchangeable for this purpose since the promotion).
 
 ## Branch categories
 
@@ -18,8 +27,7 @@ moved to conform to this taxonomy):
 
 | Category | Branches |
 |---|---|
-| **Canonical / current** | `repo-reorg/2026-09` |
-| **Historical analysis baselines** | `main` (HH→bbWW-only, pre-pivot) |
+| **Canonical / current** | `main` (== `repo-reorg/2026-09`, kept as the provenance branch for this reorganization) |
 | **Simulation / production** | `delphes-hh4b-production` |
 | **SPA-Net development** | `origin/recover-hh4b-spanet`, `track-b-development-snapshot-20260821`, `track-b-physical-normalization-20260824`, `spanet-part-resource-aware` |
 | **Normalization / sensitivity** | `cms-resolved-sensitivity-gap-v1`, `bdt-apples-to-apples-v1` |
@@ -41,8 +49,8 @@ moved to conform to this taxonomy):
 
 | Branch | Scientific stage | Timeframe | Unique vs. `repo-reorg/2026-09` | Status | Read instead |
 |---|---|---|---|---|---|
-| `main` | HH→bbWW baseline only — the project's starting point, before the pivot | 2026-05 → 2026-07-01 | 0 commits (ancestor) | historical | `repo-reorg/2026-09` (contains everything on `main` plus 520+ further commits) |
-| `repo-reorg/2026-09` | This reorganization's working branch; the most complete/current state | 2026-07 → 2026-09-15 | — | **governing** | — |
+| `main` | **The complete, canonical SURF repository** (promoted from `repo-reorg/2026-09` 2026-09-15 by fast-forward; identical tip) | 2026-05 → 2026-09-15 | — | **canonical** | — |
+| `repo-reorg/2026-09` | This reorganization's working branch; identical to `main` since the 2026-09-15 promotion | 2026-07 → 2026-09-15 | — | **provenance (kept, == `main`)** | `main` |
 | `origin/pivot-channel-scouting` (remote-only) | The literal HH→bbWW→HH→4b **pivot decision**: `notes/channel_scouting_decision.md` (300 lines) compares candidate channels and picks resolved HH→4b; also holds the first resolved-HH4b BDT/DNN/LBN training scripts | 2026-07-01 → 07-02 | 5 commits, never merged anywhere | **unique, unmerged** | See recommendation below |
 | `origin/recover-hh4b-spanet` (remote-only) | Builds on `pivot-channel-scouting`; first resolved-HH4b SPA-Net dataset builder and a GenPart-truth diagnostic, immediately after the pivot | 2026-07-02 → 07-03 | 9 commits, never merged anywhere | **unique, unmerged** | See recommendation below |
 | `track-b-sophon-transfer` | Early "Track B" = validating the external PKU-HEP Sophon/jetfree-HH4b released model, plus a **386-line draft paper manuscript** (`docs/paper/track_b/hh4b_representation_learning_manuscript.md`) and Phase-4 interpretation-freeze provenance | 2026-08-14 → 08-17 | 12 commits, never merged anywhere | **unique, unmerged** | See recommendation below |

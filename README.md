@@ -200,15 +200,21 @@ as the move — deferred to a future stage, in line with this stage's
   audit for a larger ParT production (`full144_scale_feasibility_20260826.md`)
   recommends scaling next to 10M, not immediately to full144, and flags that
   the ParT checkpoint's own domain-mismatch verdict is still open.
-- This branch (`repo-reorg/2026-09`) is a documentation/provenance-only
-  reorganization: it built the 7 `docs/studies/` entries, the
-  chronological/branch history under `docs/history/`, and
-  `docs/provenance/REPOSITORY_CONTENT_MAP.md`, moved 2 root-level files with
-  no live consumers, and curated a small figure set per study — it has
-  **not** touched `scripts/`, `config/`/`configs/`, or the three directories
-  named above, has not merged to `main`, and has not deleted or altered any
-  branch. This repository intentionally remains the **complete SURF
-  research record**, not a paper-only release — see
+- **`main` is now the complete, canonical SURF repository** (promoted
+  2026-09-15 via a fast-forward-only merge from the `repo-reorg/2026-09`
+  documentation/provenance reorganization — no squash, no rebase, no
+  history rewrite; verify with `git merge-base --is-ancestor` against
+  tag `pre-surf-reorg-main-20260915`, which marks exactly where `main`
+  stood before this reorganization). That reorganization built the 7
+  `docs/studies/` entries, the chronological/branch history under
+  `docs/history/`, and `docs/provenance/REPOSITORY_CONTENT_MAP.md`, moved 2
+  root-level files with no live consumers, and curated a small figure set
+  per study — it did **not** touch `scripts/`, `config/`/`configs/`, or the
+  three directories named above, and did not delete or alter any branch.
+  `repo-reorg/2026-09` is kept, identical to `main`, as the named
+  provenance branch documenting the reorganization itself; it is not a
+  separate or more-current branch. This repository intentionally remains
+  the **complete SURF research record**, not a paper-only release — see
   `docs/provenance/REPOSITORY_CONTENT_MAP.md` and
   `docs/history/BRANCH_GUIDE.md` for what a future paper-only spinoff would
   vs. would not need.
