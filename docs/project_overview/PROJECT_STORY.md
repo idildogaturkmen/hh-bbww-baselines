@@ -3,6 +3,11 @@
 A concise scientific chronology of this repository's research program, intended
 as the factual outline for writing the SURF paper. Each stage names the
 evidence it rests on so claims can be traced back to a committed artifact.
+For a more compact, table-form version of this same chronology, see
+[`docs/history/SURF_TIMELINE.md`](../history/SURF_TIMELINE.md). For the
+full per-topic writeup (question, method, what worked and what didn't,
+figures, code, provenance) behind each stage below, see the corresponding
+entry under [`docs/studies/`](../studies/).
 
 ## 1. Original baseline: HH → bbWW (2026-05 → 2026-06)
 
@@ -18,7 +23,21 @@ superior significance to the BDT reference, motivating a broader
 architecture/representation search rather than declaring an early winner.
 Results write-ups from this era are collected under `Results Summaries/`
 (kept in place this stage; a future pass may relocate it, see the migration
-notes below).
+notes below). Full writeup, including the early SPA-Net attempt's negative
+result: [`docs/studies/01_hh_bbww/`](../studies/01_hh_bbww/README.md).
+
+## 1b. COLLIDE dataset studies (2026-05 → 2026-06, in parallel with §1)
+
+The bbWW-era work above drew its background samples from **COLLIDE-1M**, an
+external public simulated-event cache, not from this project's own
+production. In parallel with the bbWW modeling work, the project inventoried
+COLLIDE-1M's contents (156 parquet files, ~208GB, across 12 process groups)
+and built cross-section/normalization metadata for it, then trained a
+simple gradient-boosted classifier on it (ttbar-vs-HH AUC=0.712) as an
+early separability check. This dataset was **not** carried forward into the
+HH→4b-era work — once the project pivoted (§2) and built its own Delphes
+production (§3), COLLIDE-1M was no longer used. Full writeup:
+[`docs/studies/02_collide_dataset_studies/`](../studies/02_collide_dataset_studies/README.md).
 
 ## 2. The pivot to resolved HH → 4b (2026-07-01)
 
@@ -127,9 +146,9 @@ widening SPA-Net's input embedding from 7 to 27 channels does not, by
 itself, reproduce the harm. The cause is tied to the specific selected
 ParT values and/or their preprocessing/optimization interaction, not to
 input width. Full narrative and statistics:
-`docs/studies/pretrained_jet_representations/zero20_width_control.md`;
+`docs/studies/07_pretrained_jet_representations/zero20_width_control.md`;
 ranked, updated follow-up proposals (none authorized):
-`docs/studies/pretrained_jet_representations/next_experiments.md`.
+`docs/studies/07_pretrained_jet_representations/next_experiments.md`.
 
 ## 10. JP-JEPA / representation-learning direction — future work
 

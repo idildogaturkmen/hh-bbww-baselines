@@ -21,37 +21,45 @@ of the highest-priority searches for the HL-LHC era. This project targets the
 Delphes-simulated, CMS Run 2-like events (AK4 jets, b-tagging, standard
 QCD/ttbar/diboson backgrounds), comparing a physically-normalized cut-based
 baseline against progressively more expressive learned models, up to a
-symmetry-aware jet-assignment network (SPA-Net) and a study of whether
-pretrained self-supervised jet representations (ParT) help it.
+symmetry-aware jet-assignment network (SPA-Net) and a study of whether a
+pretrained ParT jet representation helps it. (The ParT checkpoint used is the
+official JetClass-**supervised** Particle Transformer, not a self-supervised
+model — see `docs/analysis_contracts/SPANET_PART_RESOURCE_AWARE_COMPARISON.md.save`
+for its exact provenance.)
 
 ## Project evolution
 
 1. **HH → bbWW baseline** (2026-05 → 06): the project's original channel —
    b-jet regression, Hbb jet-pairing, lepton+MET WW-side reconstruction, and
    an early DNN/LBN architecture comparison.
-2. **Pivot to resolved HH → 4b** (2026-07-01): rationale in
+2. **COLLIDE dataset studies** (2026-05 → 06, in parallel with 1): inventory
+   and normalization-metadata work on the external COLLIDE-1M sample used to
+   support the bbWW-era work.
+3. **Pivot to resolved HH → 4b** (2026-07-01): rationale in
    `docs/project_overview/physics_goal_and_pivot.md`.
-3. **Simulation pipeline + classical baselines**: MG5→Pythia8→Delphes event
+4. **Simulation pipeline + classical baselines**: MG5→Pythia8→Delphes event
    production; a cut-based baseline; BDT, dense-DNN, and LBN comparisons.
-4. **Large-statistics dataset + physical normalization**: background/signal
+5. **Large-statistics dataset + physical normalization**: background/signal
    production campaigns and cross-section/luminosity/generator-weight
    provenance work converting raw simulated yields to Run-2-equivalent
    physical yields.
-5. **SPA-Net symmetry-preserving reconstruction and classification.**
-6. **2M → 10M scaling study**: does more native training data help?
-7. **QCD-tail / numerical-reliability studies**: causal and statistical
+6. **SPA-Net symmetry-preserving reconstruction and classification.**
+7. **2M → 10M scaling study**: does more native training data help?
+8. **QCD-tail / numerical-reliability studies**: causal and statistical
    robustness checks on the frozen governing checkpoint's rare-event tail.
-8. **Frozen ParT representation study and harm diagnosis**: does appending
+9. **Frozen ParT representation study and harm diagnosis**: does appending
    pretrained ParT features help SPA-Net, and if not, why not?
-9. **ZERO20**: a completed, controlled width-ablation diagnostic that
-   isolates the cause of the ParT harm result — see below; input width
-   alone is ruled out, the specific embedding content/preprocessing is
-   implicated.
-10. **JP-JEPA / representation-learning direction**: exploratory
+10. **ZERO20**: a completed, controlled width-ablation diagnostic that
+    isolates the cause of the ParT harm result — see below; input width
+    alone is ruled out, the specific embedding content/preprocessing is
+    implicated.
+11. **JP-JEPA / representation-learning direction**: exploratory
     compatibility groundwork only — **future work**, not a current result.
 
 Full narrative detail, with citations to the underlying frozen evidence, is
-in `docs/project_overview/PROJECT_STORY.md`.
+in `docs/project_overview/PROJECT_STORY.md`; a concise chronological table
+covering the same ground is in
+[`docs/history/SURF_TIMELINE.md`](docs/history/SURF_TIMELINE.md).
 
 ## Main contributions
 
@@ -71,7 +79,31 @@ in `docs/project_overview/PROJECT_STORY.md`.
   point), completed by a width-control ablation (ZERO20) that falsifies
   "input width alone" as the cause and implicates the specific embedding
   content and/or its preprocessing/optimization interaction instead. See
-  `docs/studies/pretrained_jet_representations/`.
+  `docs/studies/07_pretrained_jet_representations/`.
+
+## Studies
+
+This repository preserves the **full research progression**, not only the
+final HH→4b result — including early channels, dataset investigations, and
+directions that didn't pan out. Each study below is a self-contained
+README covering its question, method, findings (including negative/
+exploratory ones), figures, code, and how it relates to the final study.
+
+| Study | Question | Main result | Read |
+|---|---|---|---|
+| 01. HH→bbWW baseline | Can the original channel support full reconstruction + classification? | WW-side reconstruction largely infeasible; early SPA-Net underperformed a simpler baseline | [`docs/studies/01_hh_bbww/`](docs/studies/01_hh_bbww/README.md) |
+| 02. COLLIDE dataset studies | What does the external COLLIDE-1M sample contain, and is it adequate? | Usable but coarse (ttbar-vs-HH AUC 0.712); motivated moving to a dedicated production | [`docs/studies/02_collide_dataset_studies/`](docs/studies/02_collide_dataset_studies/README.md) |
+| 03. Channel pivot + HH→4b simulation | Which channel next, and can a physically-normalized large-statistics sample be built? | Pivoted to resolved HH→4b; 5.2M-event production physically normalized to 138 fb⁻¹ | [`docs/studies/03_channel_pivot_and_hh4b_simulation/`](docs/studies/03_channel_pivot_and_hh4b_simulation/README.md) |
+| 04. HH→4b classical ML | How far do cut/BDT/DNN/LBN baselines get? | BDT best (train-only AUC 0.7737); cut-baseline validation blocked by infrastructure, not physics | [`docs/studies/04_hh4b_classical_ml/`](docs/studies/04_hh4b_classical_ml/README.md) |
+| 05. SPA-Net reconstruction | Does a symmetry-aware network beat the classical ladder? | Governing 2M checkpoint: AUC 0.969281, exact-event reconstruction 0.866588 | [`docs/studies/05_spanet_reconstruction/`](docs/studies/05_spanet_reconstruction/README.md) |
+| 06. Training-scale + tail reliability | Does 10M beat 2M, and is the tail trustworthy? | Classification saturated (10M ≈ 2M); tail numerically/statistically bounded and reported honestly | [`docs/studies/06_scaling_and_tail_reliability/`](docs/studies/06_scaling_and_tail_reliability/README.md) |
+| 07. Pretrained jet representations | Does a frozen, pretrained ParT embedding help SPA-Net? | Significant harm (active20); ZERO20 ablation shows it's not input width, but ParT content/preprocessing | [`docs/studies/07_pretrained_jet_representations/`](docs/studies/07_pretrained_jet_representations/README.md) |
+
+See [`docs/history/SURF_TIMELINE.md`](docs/history/SURF_TIMELINE.md) for a
+chronological view across all seven, and
+[`docs/history/BRANCH_GUIDE.md`](docs/history/BRANCH_GUIDE.md) for what each
+of this repository's development branches represents (several hold unique,
+still-unmerged work).
 
 ## Headline results
 
@@ -96,8 +128,10 @@ left in place — see "Reproducibility / provenance policy" below.
 |---|---|
 | Project narrative, pivot rationale | `docs/project_overview/` |
 | Stable methodology (simulation, normalization, ML baselines, paper prep) | `docs/methods/` |
-| Result summary with citations to frozen evidence | `docs/results/RESULTS_OVERVIEW.md` |
-| Deep-dive narrative for a specific study line (currently: pretrained jet representations — ParT active20, ZERO20) | `docs/studies/` |
+| Result summary with citations to frozen evidence | `docs/results/RESULTS_OVERVIEW.md`, `docs/results/model_landscape.md` |
+| The 7 scientific studies spanning the whole SURF program (Layer 1 — start here) | `docs/studies/01_hh_bbww/` … `07_pretrained_jet_representations/` |
+| Chronological timeline and per-branch guide (Layer 1) | `docs/history/SURF_TIMELINE.md`, `docs/history/BRANCH_GUIDE.md` |
+| Thematic content map of the whole repository (Layer 2 — provenance, not onboarding) | `docs/provenance/REPOSITORY_CONTENT_MAP.md` |
 | Dated provenance notes, research log, background-campaign records (moved this stage) | `docs/provenance/` |
 | Full dated checkpoint ledger (167+ hash-stamped decision points; **not moved this stage**, see below) | `docs/checkpoints/` |
 | Simulation-stage production bookkeeping (**not moved this stage**) | `metadata/` |
@@ -161,12 +195,23 @@ as the move — deferred to a future stage, in line with this stage's
   evaluation, 2026-09-14): native-like on both classification and
   reconstruction, falsifying "input width alone" as the ParT-harm cause;
   see `docs/results/RESULTS_OVERVIEW.md` §8 and
-  `docs/studies/pretrained_jet_representations/`.
-- JP-JEPA compatibility prep is exploratory future work.
-- This branch (`repo-reorg/2026-09`) is Stage 1 of a repository
-  reorganization: documentation/provenance moves and publication-facing docs
-  only. It has not been merged, and `scripts/`, `config/`/`configs/`, and the
-  three directories named above have not yet been touched.
+  `docs/studies/07_pretrained_jet_representations/`.
+- JP-JEPA compatibility prep is exploratory future work; a scale-feasibility
+  audit for a larger ParT production (`full144_scale_feasibility_20260826.md`)
+  recommends scaling next to 10M, not immediately to full144, and flags that
+  the ParT checkpoint's own domain-mismatch verdict is still open.
+- This branch (`repo-reorg/2026-09`) is a documentation/provenance-only
+  reorganization: it built the 7 `docs/studies/` entries, the
+  chronological/branch history under `docs/history/`, and
+  `docs/provenance/REPOSITORY_CONTENT_MAP.md`, moved 2 root-level files with
+  no live consumers, and curated a small figure set per study — it has
+  **not** touched `scripts/`, `config/`/`configs/`, or the three directories
+  named above, has not merged to `main`, and has not deleted or altered any
+  branch. This repository intentionally remains the **complete SURF
+  research record**, not a paper-only release — see
+  `docs/provenance/REPOSITORY_CONTENT_MAP.md` and
+  `docs/history/BRANCH_GUIDE.md` for what a future paper-only spinoff would
+  vs. would not need.
 
 ## Citation / project links
 
